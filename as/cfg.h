@@ -25,8 +25,8 @@ int baud;
 //int port;				//DC 3.2.0
 char *pcPort;
 //char *pcIp;				//DC 3.2.0
-ulong nBit = 0;			//DC 3.2.0
-ulong nBit64 = 0;		//DC 4.0.0
+ulong nBit = 0;			
+ulong nBit64 = 0;		
 
 	sprintf_s(acCfgFile, 64, "%sas.cfg", pAll->pcPath);
 	
