@@ -1,0 +1,11 @@
+# list of remote stations (servers)
+localhost,127.0.0.1,7010,
+Mike Office PC,192.168.2.228,7010,
+ 
+#
+localPrinter=printer1,				// printer name
+mailServer=givenhansco.com,			// SMTP server name
+mailFrom=msanders@givenhansco.com,		// email originator
+mailTo=msanders@givenhansco.com,		// email receipient for tickets and reports
+
+
