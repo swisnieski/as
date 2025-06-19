@@ -80,7 +80,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -135,6 +135,7 @@
     <ClInclude Include="CfgForm.h" />
     <ClInclude Include="cfx.h" />
     <ClInclude Include="ClinkT.h" />
+    <ClInclude Include="CservT.h" />
     <ClInclude Include="DbaseT.h" />
     <ClInclude Include="DbaseTB.h" />
     <ClInclude Include="FallFm.h" />
@@ -143,12 +144,24 @@
     <ClInclude Include="InvForm.h" />
     <ClInclude Include="IOForm.h" />
     <ClInclude Include="log.h" />
+    <ClInclude Include="Opto.h" />
+    <ClInclude Include="OptoT.h" />
+    <ClInclude Include="OptoTP.h" />
+    <ClInclude Include="PreView.h" />
+    <ClInclude Include="PrintT.h" />
     <ClInclude Include="ReprintF.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="ScaleT.h" />
+    <ClInclude Include="ScaleTP.h" />
+    <ClInclude Include="ScaleTPS.h" />
+    <ClInclude Include="Silo.h" />
+    <ClInclude Include="SimT.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StopForm.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="ticket.h" />
     <ClInclude Include="TruckFm.h" />
+    <ClInclude Include="UlinkT.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="as.cpp" />

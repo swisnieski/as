@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "share.h"
+#include <string>
 
 using namespace System::Threading;
 
@@ -115,7 +116,7 @@ namespace As
 		{
 			FILE *pfLog;
 			long ret = -1;
-			Cmd^ pCmd;
+			//Cmd^ pCmd;
 			bool bCopy = false;
 
 			/*if(pAll->eAsType == A_REMOTE)
@@ -398,13 +399,22 @@ static	void calcTarget(LOG_REC *psLog)
 //DC 3.2.9			if(psTic->nDate > 0)sprintf_s(&acBuf[psTic->nDate], "%s", acDate);
 //DC 3.2.9			if(psTic->nTime > 0)sprintf_s(&acBuf[psTic->nTime], "%s", acTime);
 			DateTime^ pDate = DateTime::FromBinary(psLog->tTimeSent);				//DC 3.2.9
-			//if (psTic->nDate > 0)
-			//{
-			//	sprintf_s(&acBuf[psTic->nDate], 20, "%s", (char*)pDate->ToString("MM/dd/yyyy"));
-			//}
-			//if(psTic->nTime > 0)
-			//	sprintf_s(&acBuf[psTic->nTime], 20,"%s", pDate->ToString("HH:mm"));
+			if (psTic->nDate > 0)
+			{
+				std::string strNativeString;
 
+				MarshalStr(pDate->ToString("MM/dd/yyyy"), strNativeString);
+
+				sprintf_s(&acBuf[psTic->nDate], 20, "%s", strNativeString.c_str());
+			}
+			if (psTic->nTime > 0)
+			{
+				std::string strNativeString;
+
+				MarshalStr(pDate->ToString("HH:mm"), strNativeString);
+
+				sprintf_s(&acBuf[psTic->nTime], 20, "%s", strNativeString.c_str());
+			}
 
 			// print extra products -------------------------------------------
 			if(psTic->nExtraLine > 0)
@@ -417,16 +427,26 @@ static	void calcTarget(LOG_REC *psLog)
 				{
 					if(psProd->load_qty > 0.0)
 					{
-						if(psTic->nExLoad>0) sprintf_s(&acBuf[nOffs+psTic->nExLoad], 8, "%6.2f"   , psProd->load_qty);
-						if(psTic->nExName>0) sprintf_s(&acBuf[nOffs+psTic->nExName], 9,"%s"		, psProd->name);
-						if(psTic->nExDesc>0) sprintf_s(&acBuf[nOffs+psTic->nExDesc], 17,"%s"		, psProd->desc);
-						if(psTic->nExUnit>0) sprintf_s(&acBuf[nOffs+psTic->nExUnit], 5,"%s"		, psProd->um);
-						if((psTic->nExPrice>0) && (psProd->price>0)) sprintf_s(&acBuf[nOffs+psTic->nExPrice], 8, "%6.2f"	, psProd->price);
-						if(psTic->nExAmount>0 && psProd->amount>0) sprintf_s(&acBuf[nOffs+psTic->nExAmount], 8, "%6.2f"	, psProd->amount);
-						if(psTic->nExOrder>0 && psProd->order_qty>0) sprintf_s(&acBuf[nOffs+psTic->nExOrder], 8, "%6.2f"	, psProd->order_qty);
-						if(psTic->nExCum>0 && psProd->cum_qty>0) sprintf_s(&acBuf[nOffs+psTic->nExCum], 8, "%6.2f"	, psProd->cum_qty);
-						if(psTic->nExLong>0) sprintf_s(&acBuf[nOffs+psTic->nExLong], 41,"%s"		, psProd->long_desc);
-						if(psTic->nExPriceUm>0) sprintf_s(&acBuf[nOffs+psTic->nExPriceUm], 13,"%s"	, psProd->price_um);
+						if(psTic->nExLoad>0) 
+							sprintf_s(&acBuf[nOffs+psTic->nExLoad], 8, "%6.2f"   , psProd->load_qty);
+						if(psTic->nExName>0) 
+							sprintf_s(&acBuf[nOffs+psTic->nExName], 9,"%s"		, psProd->name);
+						if(psTic->nExDesc>0) 
+							sprintf_s(&acBuf[nOffs+psTic->nExDesc], 17,"%s"		, psProd->desc);
+						if(psTic->nExUnit>0) 
+							sprintf_s(&acBuf[nOffs+psTic->nExUnit], 5,"%s"		, psProd->um);
+						if((psTic->nExPrice>0) && (psProd->price>0)) 
+							sprintf_s(&acBuf[nOffs+psTic->nExPrice], 8, "%6.2f"	, psProd->price);
+						if(psTic->nExAmount>0 && psProd->amount>0) 
+							sprintf_s(&acBuf[nOffs+psTic->nExAmount], 8, "%6.2f"	, psProd->amount);
+						if(psTic->nExOrder>0 && psProd->order_qty>0) 
+							sprintf_s(&acBuf[nOffs+psTic->nExOrder], 8, "%6.2f"	, psProd->order_qty);
+						if(psTic->nExCum>0 && psProd->cum_qty>0) 
+							sprintf_s(&acBuf[nOffs+psTic->nExCum], 8, "%6.2f"	, psProd->cum_qty);
+						if(psTic->nExLong>0) 
+							sprintf_s(&acBuf[nOffs+psTic->nExLong], 41,"%s"		, psProd->long_desc);
+						if(psTic->nExPriceUm>0) 
+							sprintf_s(&acBuf[nOffs+psTic->nExPriceUm], 13,"%s"	, psProd->price_um);
 						nCount++;
 						nOffs += psTic->nLineLen;
 					}
@@ -435,23 +455,37 @@ static	void calcTarget(LOG_REC *psLog)
 			}
 			// print acBuf -------------------------------------------------------------
 			for(ii=1; ii<=nLen; ii++)
-				if(acBuf[ii] == 0) acBuf[ii] = ' ';
+				if(acBuf[ii] == NULL) 
+					acBuf[ii] = ' ';
 
 			switch(nPrinter)
 			{
-			default:
-				break;
-			//case 1: pAll->qPrint1->Enqueue(gcnew String(acBuf)); break;
-			//case 2: pAll->qPrint2->Enqueue(gcnew String(acBuf)); break;
-			//case 3: pAll->qPrint3->Enqueue(gcnew String(acBuf)); break;
-			//case 4: pAll->qPrint4->Enqueue(gcnew String(acBuf)); break;
-			//case 5: pAll->q2ndPrint1->Enqueue(gcnew String(acBuf)); break;	//DC 4.0.2
-			//case 6: pAll->q2ndPrint2->Enqueue(gcnew String(acBuf)); break;	//DC 4.0.2
-			//case 7: pAll->q2ndPrint3->Enqueue(gcnew String(acBuf)); break;	//DC 4.0.2
-			//case 8: pAll->q2ndPrint4->Enqueue(gcnew String(acBuf)); break;	//DC 4.0.2
+				//case 1: pAll->qPrint1->Enqueue(gcnew String(acBuf)); break;
+				//case 2: pAll->qPrint2->Enqueue(gcnew String(acBuf)); break;
+				//case 3: pAll->qPrint3->Enqueue(gcnew String(acBuf)); break;
+				case 4: 
+					pAll->qPrint4->Enqueue(gcnew String(acBuf)); 
+					break;
+				//case 5: pAll->q2ndPrint1->Enqueue(gcnew String(acBuf)); break;	//DC 4.0.2
+				//case 6: pAll->q2ndPrint2->Enqueue(gcnew String(acBuf)); break;	//DC 4.0.2
+				//case 7: pAll->q2ndPrint3->Enqueue(gcnew String(acBuf)); break;	//DC 4.0.2
+				//case 8: pAll->q2ndPrint4->Enqueue(gcnew String(acBuf)); break;	//DC 4.0.2
+				default:
+					break;
 			}
 
 			return;
+		}
+		/// <summary>
+		/// MarshalString
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="outputstring"></param>
+		void MarshalStr(String^ s, std::string& outputstring)
+		{
+			const char* kPtoC = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(s)).ToPointer();
+			outputstring = kPtoC;
+			System::Runtime::InteropServices::Marshal::FreeHGlobal(IntPtr((void*)kPtoC));
 		}
 	};
 }

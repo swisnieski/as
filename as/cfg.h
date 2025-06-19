@@ -33,7 +33,7 @@ ulong nBit64 = 0;
 	err = fopen_s(&pfCfg, acCfgFile, "r");
 	if(err != 0)
 	{
-		perror("config file missing. exit ...\n");
+		System::Windows::Forms::MessageBox::Show("as.cfg not found", "ERROR",System::Windows::Forms::MessageBoxButtons::OK);
 		return(-1);
 	}
 	size = _filelength(_fileno(pfCfg));
@@ -41,14 +41,17 @@ ulong nBit64 = 0;
 	pcCfg = (char *)malloc(size);
 	if(pcCfg == NULL)
 	{
-		perror("config memory missing. exit ...\n");
+		System::Windows::Forms::MessageBox::Show("config memory corruption", "ERROR",System::Windows::Forms::MessageBoxButtons::OK);
+		fclose(pfCfg);
 		return(-2);
 	}
 	len = fread(pcCfg, 1, size, pfCfg);
 	if(len <= 0)
 	{
-		perror("config file read error. exit ...\n");
-		return(-3);	
+		System::Windows::Forms::MessageBox::Show("config file read error", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+		free(pcCfg);
+		fclose(pfCfg);
+		return(-3);
 	}
 
 	//-------------------------------------------------------------------------
@@ -59,7 +62,7 @@ ulong nBit64 = 0;
 		{
 			if(atoi(pcTmp1+10) > 63)			//DC 6.1.2
 			{
-				nBit64 = ((ulong64)1L << atoi(pcTmp1+10)-64);
+				nBit64 = (ulong)1L << (atoi(pcTmp1+10)-64);
 				if((psIni->nMask64 & nBit64) == 0)
 				{
 					psIni->nReady1O = nBit64;
@@ -3692,33 +3695,31 @@ ulong nBit64 = 0;
 		ulong64 nBit = 0;
 		ulong64 nInp = 0;
 
-
-		//printf("as: reading config file\n");
 		sprintf_s(acCfgFile, "%sas.cfx", pAll->pcPath);
 		
 		try
 		{
-
-		err = fopen_s(&pfCfg, acCfgFile, "r");
-		if(err != 0)
-		{
-			perror("config file missing. exit ...\n");
-			return false;
-		}
-		size = _filelength(_fileno(pfCfg));
+			err = fopen_s(&pfCfg, acCfgFile, "r");
+			if(err != 0)
+			{
+				System::Windows::Forms::MessageBox::Show("missing file", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+				return false;
+			}
+			size = _filelength(_fileno(pfCfg));
 		
-		pcCfg = (char *)malloc(size);
-		if(pcCfg == NULL)
-		{
-			perror("config memory missing. exit ...\n");
-			return false;
-		}
-		len = fread(pcCfg, 1, size, pfCfg);
-		if(len <= 0)
-		{
-			perror("config file read error. exit ...\n");
-			return false;	
-		}
+			pcCfg = (char *)malloc(size);
+			if(pcCfg == NULL)
+			{
+				System::Windows::Forms::MessageBox::Show("memory allocation failed", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+				return false;
+			}
+			len = fread(pcCfg, 1, size, pfCfg);
+			if(len <= 0)
+			{
+				free(pcCfg);
+				System::Windows::Forms::MessageBox::Show("file read error", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+				return false;
+			}
 
 		/*try
 		{
@@ -5952,14 +5953,14 @@ ulong nBit64 = 0;
 	//-------------------------------------------------------------
 	catch ( Exception^ ex ) 
 	{
-//		pAll->stExc += "CFX: Exception: " + ex->Message;
+		pAll->stExc += "CFX: Exception: " + ex->Message;
 		bRet = false;
 	}
 		//-------------------------------------------------------------------------
 	fclose(pfCfg);
 	free(pcCfg);
 	return bRet;
-	}
+}
 	
 #pragma endregion
 ///////////////////////////////////////////////////////////////////////////////
