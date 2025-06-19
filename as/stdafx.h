@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <time.h>
 #include "logrec.h"
+//#include "DbaseT.h"
+#include <queue>
 
 using namespace System;
 using namespace System::Net;
@@ -802,7 +804,7 @@ public ref struct PrintQ
 {
 	LOG_REC* psLog;
 	//LOG_REC11* psLog11;
-	Queue<String^>^ qRep;
+	System::Collections::Generic::Queue<String^>^ qRep;
 	String^ stTic;		// whole ticket
 	String^ stTop;		// top only
 	String^ stBot;		// bot only
@@ -811,6 +813,10 @@ public ref struct PrintQ
 	bool		bOldLog11;	//DC 7.2.0 Print Old Log2
 	//PRINT_TYPE	eType;
 };
+
+
+
+
 
 public ref struct Dbase
 	{
@@ -848,7 +854,7 @@ public ref struct Dbase
 		double  ffGross;		//DC 4.1.0
 		double  ffTare;			//DC 4.1.0
 		double  ffLoad;
-		uchar   ccStatus;
+		char   ccStatus;
 		String^	pstCustomer;
 		String^	pstStatus;
 		String^ pstMaterial;	//DC 4.0.1
@@ -1726,8 +1732,10 @@ public ref struct Rem
 			}
 		}
 	};
+
+
 // ------------------------------------------
-public ref struct All
+	public ref struct All
 	{
 		INI		*psIni;
 		char	*pcPath;
@@ -1736,19 +1744,21 @@ public ref struct All
 		char    cLogin;		//DC 4.1.0
 		char    cRemote;	//DC 4.1.0 remote login state
 
-		System::Collections::Generic::Queue<PrintQ^>^ qPrint1;
-		System::Collections::Generic::Queue<PrintQ^>^ qPrint2;
-		System::Collections::Generic::Queue<PrintQ^>^ qPrint3;
-		System::Collections::Generic::Queue<PrintQ^>^ qPrint4;
+		System::Collections::Generic::Queue<String^>^ qPrint1;
+		System::Collections::Generic::Queue<String^>^ qPrint2;
+		System::Collections::Generic::Queue<String^>^ qPrint3;
+		//System::Collections::Generic::Queue<PrintQ^>^ qPrint4;
+		System::Collections::Generic::Queue<String^>^ qPrint4;
 		System::Collections::Generic::Queue<PrintQ^>^  q2ndPrint1;	//DC 4.0.2
 		System::Collections::Generic::Queue<PrintQ^>^  q2ndPrint2;	//DC 4.0.2
 		System::Collections::Generic::Queue<PrintQ^>^  q2ndPrint3;	//DC 4.0.2
 		System::Collections::Generic::Queue<PrintQ^>^  q2ndPrint4;	//DC 4.0.2
-		//System::Collections::Generic::Queue<CDbase^>^ qDbase;	//DC 4.0.2//Queue^ qDbase;
-		//System::Collections::Generic::Queue<CDbase^>^ qDbaseBad;	//DC 4.0.2//Queue^ qDbase;
+		
+		System::Collections::Generic::Queue<Dbase^>^ qDbase;
+		System::Collections::Generic::Queue<Dbase^>^ qDbaseBad;
 
 
-		Queue<Cmd^>^ qCmd;	//DC 4.1.0
+		System::Collections::Generic::Queue<Cmd^>^ qCmd;	//DC 4.1.0
 
 		List<Job^>^ lJob;
 		List<Job^>^ lOld;
@@ -1853,7 +1863,8 @@ public ref struct All
 		IF_TYPE eIfType;	// interfasce type
 	};
 
-public ref struct Scale
+
+	public ref struct Scale
 	{
 		Scl^  pScl;		//DC 3.2.0
 		INI   *psIni;

@@ -17,7 +17,7 @@ public:
 	//-------------------------------------------------------------------------
 	static void ThreadProc(Object^ pAllIn)
 	{
-		//All^ pAll = (All^)pAllIn;
+		All^ pAll = (All^)pAllIn;
 		//Queue^ qBad = pAll->qDbaseBad;
 		//Dbase^ pDbase;
 		//int nCount;

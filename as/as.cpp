@@ -1,8 +1,30 @@
 // as.cpp : Defines the entry point for the application.
 //
 
-#include "framework.h"
-#include "as.h"
+#include "stdafx.h"
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <io.h>
+#include <direct.h>
+#include <sys\stat.h> 
+
+#include "cfg.h"
+#include "Form1.h"
+#include "DbaseTB.h"
+#include "DbaseT.h"
+#include "OptoT.h"
+#include "OptoTP.h"
+#include "PrintT.h"
+#include "ScaleT.h"
+#include "ScaleTP.h"
+#include "ScaleTPS.h"
+#include "SimT.h"
+#include "UlinkT.h"
+#include "IOForm.h"
+#include "PreView.h"
+#include "CservT.h"		//DC 4.1.0
+#include "ClinkT.h"		//DC 4.1.0
 
 using namespace System::Threading;
 using namespace System::Diagnostics;
@@ -10,22 +32,6 @@ using namespace System;
 using namespace System::IO;
 using namespace System::Windows::Forms;
 using namespace Runtime::InteropServices;
-
-#include <thread>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <io.h>
-#include <direct.h>
-#include <sys\stat.h> 
-#include <queue>
-#include "stdafx.h"
-#include "cfg.h"
-#include "DbaseTB.h"
-#include "DbaseT.h"
-
-//#include "Form1.h"
-#include <string>
 using namespace System::Runtime::Serialization;
 using namespace System::Runtime::Serialization::Formatters::Binary;
 
@@ -33,10 +39,13 @@ namespace As
 {
 	//forward declarations
 	void MarshalStr(String^ s, std::string& outputstring);
+	string MarshalStr1(String^ s);
 	bool readRem(All^ pAll, char* pcFile);
 	int readLog(All^ pAll);
 	FILE* openInv(All^ pAll);
 
+	//had to move this out of stdafx becasue this conflicted with Windows
+	#define min(a, b)  (((a) > (b)) ? (b) : (a)) 
 
 	//moved these off the stack for memory
 	char acPath[PATH_LEN];
@@ -57,11 +66,12 @@ namespace As
 	/// <param name="args"></param>
 	/// <returns></returns>
 	[STAThreadAttribute]
-	int main(array<System::String^>^ args)
+	int main(cli::array<System::String^>^ args)
 	{
 		std::string strNativeString;
 		int i, err;
 		All^ pAll = gcnew All();
+		Dbase^ pDbase;
 
 		INI sIni = { 0 };
 		Thread^ oScaleThread1 = nullptr;
@@ -71,162 +81,190 @@ namespace As
 		Thread^ oClinkThread = nullptr;
 		Thread^ oCservThread = nullptr;
 
-		FILE * pfInv;
-		pAll->psIni = &sIni;
-		pAll->pcPath = acPath;
-		pAll->pcLog = acLog;
-		pAll->qPrint1 = gcnew System::Collections::Generic::Queue<PrintQ^>();
-		pAll->qPrint2 = gcnew System::Collections::Generic::Queue<PrintQ^>();
-		pAll->qPrint3 = gcnew System::Collections::Generic::Queue<PrintQ^>();
-		pAll->qPrint4 = gcnew System::Collections::Generic::Queue<PrintQ^>();
-		pAll->q2ndPrint1 = gcnew System::Collections::Generic::Queue<PrintQ^>();			//DC 4.0.2
-		pAll->q2ndPrint2 = gcnew System::Collections::Generic::Queue<PrintQ^>();			//DC 4.0.2
-		pAll->q2ndPrint3 = gcnew System::Collections::Generic::Queue<PrintQ^>();			//DC 4.0.2
-		pAll->q2ndPrint4 = gcnew System::Collections::Generic::Queue<PrintQ^>();		//DC 4.0.2
-		//pAll->qDbase = gcnew System::Collections::Generic::Queue<CDbase^>();
-		//pAll->qDbaseBad = gcnew System::Collections::Generic::Queue<CDbase^>();
-
-		pAll->lJobs = gcnew List<Job^>(0);
-		pAll->lOld = gcnew List<Job^>(0);
-		pAll->lTruck = gcnew List<Truck^>(0);
-
-		pAll->qCmd = gcnew System::Collections::Generic::Queue<Cmd^>();	//DC 4.1.0
-		pAll->pRem = gcnew Rem();					//DC 4.1.0 
-
-		pAll->lStat = gcnew List<String^>(0);
-		pAll->lStat->Add(L"ERROR");
-		pAll->lStat->Add(L"NEW");
-		pAll->lStat->Add(L"OK");
-		pAll->lStat->Add(L"VOIDED");
-		pAll->lStat->Add(L"ABORTED");
-		pAll->lStat->Add(L"PRINTED");
-
-		pAll->pExc = gcnew String("EXCEPTIONS\n");
-
-		// configuration ----------------------------------------------------------
-		sIni.nOptoDelay = 30;				// 30 msec default value
-
-		if (_getcwd(acPath, PATH_LEN) == NULL)
+		try
 		{
-			MessageBox::Show("PATH not found", "ERROR", MessageBoxButtons::OK);
-			return -1;
-		}
+			FILE* pfInv = NULL;
+			pAll->psIni = &sIni;
+			pAll->pcPath = acPath;
+			pAll->pcLog = acLog;
+			pAll->qPrint1 = gcnew System::Collections::Generic::Queue<String^>();
+			pAll->qPrint2 = gcnew System::Collections::Generic::Queue<String^>();
+			pAll->qPrint3 = gcnew System::Collections::Generic::Queue<String^>();
+			//pAll->qPrint4 = gcnew System::Collections::Generic::Queue<PrintQ^>();
+			pAll->qPrint4 = gcnew System::Collections::Generic::Queue<String^>();
+			pAll->q2ndPrint1 = gcnew System::Collections::Generic::Queue<PrintQ^>();			//DC 4.0.2
+			pAll->q2ndPrint2 = gcnew System::Collections::Generic::Queue<PrintQ^>();			//DC 4.0.2
+			pAll->q2ndPrint3 = gcnew System::Collections::Generic::Queue<PrintQ^>();			//DC 4.0.2
+			pAll->q2ndPrint4 = gcnew System::Collections::Generic::Queue<PrintQ^>();		//DC 4.0.2
 
+			pAll->qDbase = gcnew System::Collections::Generic::Queue<Dbase^>();
+			pAll->qDbaseBad = gcnew System::Collections::Generic::Queue<Dbase^>();
 
+			pAll->lJobs = gcnew List<Job^>(0);
+			pAll->lOld = gcnew List<Job^>(0);
+			pAll->lTruck = gcnew List<Truck^>(0);
 
-		//are there arguments?
-		if (args->Length >= 1)
-		{
-			//this is how to convert the String^ to a "normal" string we can do things with
-			MarshalStr(args[0], strNativeString);
+			pAll->qCmd = gcnew System::Collections::Generic::Queue<Cmd^>();	//DC 4.1.0
+			pAll->pRem = gcnew Rem();					//DC 4.1.0 
 
-			String^ stArgs = args[0];
-			if (stArgs->Equals("demo"))
+			pAll->lStat = gcnew List<String^>(0);
+			pAll->lStat->Add(L"ERROR");
+			pAll->lStat->Add(L"NEW");
+			pAll->lStat->Add(L"OK");
+			pAll->lStat->Add(L"VOIDED");
+			pAll->lStat->Add(L"ABORTED");
+			pAll->lStat->Add(L"PRINTED");
+
+			pAll->pExc = gcnew String("EXCEPTIONS\n");
+
+			// configuration ----------------------------------------------------------
+			sIni.nOptoDelay = 30;				// 30 msec default value
+
+			if (_getcwd(acPath, PATH_LEN) == NULL)
 			{
-				pAll->eAsType = A_DEMO;
-				pAll->psIni->bData = false;
+				MessageBox::Show("PATH not found", "ERROR", MessageBoxButtons::OK);
+				return -1;
 			}
-			else if (args[0]->Contains(".rem"))	//DC 4.1.0
-			{
-				strcpy_s(acFile, 128, acPath);
-				strcat_s(acFile, 128, "\\");
-				strcat_s(acFile, 128, strNativeString.c_str());
-				pAll->eAsType = A_REMOTE;
 
-				if (readRem(pAll, acFile) == false)
+			//are there arguments?
+			if (args->Length >= 1)
+			{
+				//this is how to convert the String^ to a "normal" string we can do things with
+				MarshalStr(args[0], strNativeString);
+
+				String^ stArgs = args[0];
+				if (stArgs->Equals("demo"))
 				{
-					MessageBox::Show(gcnew String(acFile), pAll->stExc
-						, MessageBoxButtons::OK, MessageBoxIcon::Error);
+					pAll->eAsType = A_DEMO;
+					pAll->psIni->bData = false;
+				}
+				else if (args[0]->Contains(".rem"))	//DC 4.1.0
+				{
+					strcpy_s(acFile, 128, acPath);
+					strcat_s(acFile, 128, "\\");
+					strcat_s(acFile, 128, strNativeString.c_str());
+					pAll->eAsType = A_REMOTE;
+
+					if (readRem(pAll, acFile) == false)
+					{
+						MessageBox::Show(gcnew String(acFile), pAll->stExc
+							, MessageBoxButtons::OK, MessageBoxIcon::Error);
+						return -1;
+					}
+				}
+				else
+				{
+					pAll->eAsType = A_SIM;
+					pAll->psIni->bData = false;
+				}
+				strcat(acPath, "\\demo\\");
+			}
+			else
+			{
+				pAll->eAsType = A_PROD;
+				pAll->psIni->bData = true;		//DC 4.1.0
+				strcat(acPath, "\\data\\");
+			}
+
+			pAll->stRemVersion = gcnew String(VERSION);	//DC 4.1.0
+			//int ast = (int)pAll->eAsType;
+			//int sst = (int)A_REMOTE;
+
+			//bool bSame = (int)pAll->eAsType == (int)A_REMOTE;
+
+			if (pAll->eAsType != A_REMOTE)//DC 4.1.0 if not remote
+			{
+				if (readConfig(pAll) != 0)
+				{
+					MessageBox::Show("as.cfg not found", "ERROR",
+						System::Windows::Forms::MessageBoxButtons::OK);
 					return -1;
 				}
-			}
-			else
-			{
-				pAll->eAsType = A_SIM;
-				pAll->psIni->bData = false;
-			}
-			strcat(acPath, "\\demo\\");	
-		}
-		else
-		{
-			pAll->eAsType = A_PROD;
-			pAll->psIni->bData = true;		//DC 4.1.0
-			strcat(acPath, "\\data\\");
-		}
 
-		pAll->stRemVersion = gcnew String(VERSION);	//DC 4.1.0
-		int ast = (int)pAll->eAsType;
-		int sst = (int)A_REMOTE;
+				// as.cfx
+				strcpy(acFile1, acPath);
+				strcat(acFile1, "as.cfx");
 
-		bool bSame = (int)pAll->eAsType == (int)A_REMOTE;
-
-		if (bSame) //DC 4.1.0 if not remote
-		{
-			if (readConfig(pAll) != 0)
-			{
-				MessageBox::Show("as.cfg not found", "ERROR",
-					System::Windows::Forms::MessageBoxButtons::OK);
-				return -1;
-			}
-
-			// as.cfx
-			strcpy(acFile1, acPath);
-			strcat(acFile1, "as.cfx");
-
-			if (readCfgEx(pAll) == false)		//DC 4.0.0
-			{
-				MessageBox::Show("File not found", gcnew String(acFile1)
-					, MessageBoxButtons::OK, MessageBoxIcon::Stop);
-				return -1;
-			}
-
-			if (sIni.bBotScale)	//DC 4.1.2
-			{
-				sIni.fDropMax = min(sIni.fBotScaleMax, BOTTOM_MAXL4);
-				sIni.fDropMaxL2 = min(sIni.fBotScaleMaxL2, BOTTOM_MAXL4);
-				sIni.fDropMaxL3 = min(sIni.fBotScaleMaxL3, BOTTOM_MAXL4);
-				sIni.fDropMaxL4 = min(sIni.fBotScaleMaxL4, BOTTOM_MAXL4);
-			}
-			else
-				sIni.fDropMax = min(sIni.fTopScaleMax, UPPER_MAX);
-
-			pAll->pAcPath = gcnew String(acPath);		//DC 3.2.3
-			//------------------------------------------------------------get trucks----
-			String^ truckName = gcnew String(acPath) + gcnew String("as.truck");
-
-			if (File::Exists(truckName))
-			{
-				FileStream^ fs = gcnew FileStream(truckName, FileMode::Open);
-				try
+				if (readCfgEx(pAll) == false)		//DC 4.0.0
 				{
-					BinaryFormatter^ formatter = gcnew BinaryFormatter;
-					pAll->lTruck = (List<Truck^>^)(formatter->Deserialize(fs));
+					MessageBox::Show("File not found", gcnew String(acFile1)
+						, MessageBoxButtons::OK, MessageBoxIcon::Stop);
+					return -1;
 				}
-				catch (SerializationException^ e)
-				{
-					Console::WriteLine("Failed to deserialize. Reason: {0}", e->Message);
-					throw;
-				}
-				finally
-				{
-					fs->Close();
-				}
-			}
-			else
-			{
-				MessageBox::Show("cannot open Truck file", truckName, System::Windows::Forms::MessageBoxButtons::OK);
-				return -1;
-			}
-			// inventory
-			if ((pfInv = openInv(pAll)) == NULL)
-			{
-				MessageBox::Show("cannot open Inv file", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
-				return -1;
-			}
 
-			// log --------------------------------------------------------------------
-			if (sIni.bDailyLog)
-			{
+				if (sIni.bBotScale)	//DC 4.1.2
+				{
+					sIni.fDropMax = min(sIni.fBotScaleMax, BOTTOM_MAXL4);
+					sIni.fDropMaxL2 = min(sIni.fBotScaleMaxL2, BOTTOM_MAXL4);
+					sIni.fDropMaxL3 = min(sIni.fBotScaleMaxL3, BOTTOM_MAXL4);
+					sIni.fDropMaxL4 = min(sIni.fBotScaleMaxL4, BOTTOM_MAXL4);
+				}
+				else
+					sIni.fDropMax = min(sIni.fTopScaleMax, UPPER_MAX);
+
+				pAll->pAcPath = gcnew String(acPath);		//DC 3.2.3
+				//------------------------------------------------------------get trucks----
+				String^ truckName = gcnew String(acPath) + gcnew String("as.truck");
+
+				if (File::Exists(truckName))
+				{
+					FileStream^ fs = gcnew FileStream(truckName, FileMode::Open);
+					try
+					{
+						BinaryFormatter^ formatter = gcnew BinaryFormatter;
+						pAll->lTruck = (List<Truck^>^)(formatter->Deserialize(fs));
+					}
+					catch (SerializationException^ e)
+					{
+						Console::WriteLine("Failed to deserialize. Reason: {0}", e->Message);
+						throw;
+					}
+					finally
+					{
+						fs->Close();
+					}
+				}
+				else
+				{
+					MessageBox::Show("cannot open Truck file", truckName, System::Windows::Forms::MessageBoxButtons::OK);
+					return -1;
+				}
+				// inventory
+				if ((pfInv = openInv(pAll)) == NULL)
+				{
+					MessageBox::Show("cannot open Inv file", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+					return -1;
+				}
+
+				// log --------------------------------------------------------------------
+				if (sIni.bDailyLog)
+				{
+					i = 0;
+					_strdate_s(acTmp, 12);
+
+					while (acTmp[i] != 0)
+					{
+						if (acTmp[i] == '/')
+							acTmp[i] = '-';
+						i++;
+					}
+					sprintf_s(acLog, 80, "%s/as-%s.log", acPath, acTmp);
+				}
+				else
+					sprintf_s(acLog, 80, "%sas.log", acPath);
+
+				int nErr = readLog(pAll);
+
+				if (nErr < -1)
+				{
+					MessageBox::Show("file missing", "as.log WARNING"
+						, MessageBoxButtons::OK, MessageBoxIcon::Warning);
+					return -1;
+				}
+				else if (nErr < 0)
+					nErr = readLog(pAll);
+
+				// db errors---------------------------------------------------------------
 				i = 0;
 				_strdate_s(acTmp, 12);
 
@@ -236,57 +274,229 @@ namespace As
 						acTmp[i] = '-';
 					i++;
 				}
-				sprintf_s(acLog, 80, "%s/as-%s.log", acPath, acTmp);
-			}
-			else
-				sprintf_s(acLog, 80, "%s/as.log", acPath);
+				sprintf_s(acDbe, "%sas-%s.dbe", acPath, acTmp);
+				if ((err = _access_s(acDbe, 0)) == 0)
+					err = fopen_s(&sIni.pfDbe, acDbe, "a+");
+				else
+				{
+					err = fopen_s(&sIni.pfDbe, acDbe, "w+");
+					if( sIni.pfDbe!= 0)
+						fputs(cpcDbHeader, sIni.pfDbe);
+				}
 
-			int nErr = readLog(pAll);
+				//DC 4.1.1
+				sprintf_s(acDbs, "%sas-%s.dbs", acPath, acTmp);
+				if ((err = _access_s(acDbs, 0)) == 0)
+					err = fopen_s(&sIni.pfDbs, acDbs, "a+");
+				else
+				{
+					err = fopen_s(&sIni.pfDbs, acDbs, "w+");
+					if (sIni.pfDbs != 0)
+						fputs(cpcDbsHeader, sIni.pfDbs);
+				}
+			}	//if not Remote
 
-			if (nErr < -1)
+			// PRODUCTION ////////////////////////////////////////////////////////////////
+			if (pAll->eAsType != A_DEMO && pAll->eAsType != A_REMOTE)
 			{
-				MessageBox::Show("file missing", "as.log WARNING"
-					, MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				return -1;
-			}
-			else if (nErr < 0)
-				nErr = readLog(pAll);
+				Thread^ oOptoThread;
+				if (pAll->nPort > 0)
+					oOptoThread = gcnew Thread(gcnew ParameterizedThreadStart(&COptoTP::ThreadProc));
+				else
+					oOptoThread = gcnew Thread(gcnew ParameterizedThreadStart(&COptoT::ThreadProc));
+				oOptoThread->IsBackground = true;
+				oOptoThread->Start(pAll);
+				//oOptoThread->Join();
 
-			// db errors---------------------------------------------------------------
-			i = 0;
-			_strdate_s(acTmp, 12);
+				if (sIni.nL2SilosNum > 0)	//DC 4.1.2
+				{
+					Scale^ sca2 = gcnew Scale();
+					sca2->psIni = &sIni;
+					sca2->psScale = &sIni.sScale2;
+					sca2->pScl = % pAll->sScale2;
+					sca2->pAll = pAll;
+					if (pAll->psIni->sScale2.bSerTP)
+						oScaleThread2 = gcnew Thread(gcnew ParameterizedThreadStart(&CScaleTPS::ThreadProc));
+					else if (pAll->sScale2.nPort > 0)
+						oScaleThread2 = gcnew Thread(gcnew ParameterizedThreadStart(&CScaleTP::ThreadProc));
+					else
+						oScaleThread2 = gcnew Thread(gcnew ParameterizedThreadStart(&CScale::ThreadProc));
+					oScaleThread2->IsBackground = true;
+					oScaleThread2->Start(sca2);
+				}
+				if (sIni.nL3SilosNum > 0)	//DC 4.1.2
+				{
+					Scale^ sca3 = gcnew Scale();
+					sca3->psIni = &sIni;
+					sca3->psScale = &sIni.sScale3;
+					sca3->pScl = % pAll->sScale3;
+					sca3->pAll = pAll;
+					if (pAll->psIni->sScale3.bSerTP)
+						oScaleThread3 = gcnew Thread(gcnew ParameterizedThreadStart(&CScaleTPS::ThreadProc));
+					else if (pAll->sScale3.nPort > 0)
+						oScaleThread3 = gcnew Thread(gcnew ParameterizedThreadStart(&CScaleTP::ThreadProc));
+					else
+						oScaleThread3 = gcnew Thread(gcnew ParameterizedThreadStart(&CScale::ThreadProc));
+					oScaleThread3->IsBackground = true;
+					oScaleThread3->Start(sca3);
+				}
+				if (sIni.nL4SilosNum > 0)
+				{
+					Scale^ sca4 = gcnew Scale();
+					sca4->psIni = &sIni;
+					sca4->psScale = &sIni.sScale4;
+					sca4->pScl = % pAll->sScale4;
+					sca4->pAll = pAll;
+					if (pAll->psIni->sScale4.bSerTP)
+						oScaleThread4 = gcnew Thread(gcnew ParameterizedThreadStart(&CScaleTPS::ThreadProc));
+					else if (pAll->sScale4.nPort > 0)
+						oScaleThread4 = gcnew Thread(gcnew ParameterizedThreadStart(&CScaleTP::ThreadProc));
+					else
+						oScaleThread4 = gcnew Thread(gcnew ParameterizedThreadStart(&CScale::ThreadProc));
+					oScaleThread4->IsBackground = true;
+					oScaleThread4->Start(sca4);
+				}
+			}	
 
-			while (acTmp[i] != 0)
+			if (pAll->psIni->nRlinkPort > 0 && pAll->eAsType != A_REMOTE)
 			{
-				if (acTmp[i] == '/')
-					acTmp[i] = '-';
-				i++;
+				CCserv oSlink(pAll); //, poBufs, poOps, poOps2);
+				oCservThread = gcnew Thread(gcnew ParameterizedThreadStart(&CCserv::ThreadProc));
+				oCservThread->IsBackground = true;
+				oCservThread->Start(pAll);
 			}
-			sprintf_s(acDbe, "%s/as-%s.dbe", acPath, acTmp);
-			if ((err = _access_s(acDbe, 0)) == 0)
-				err = fopen_s(&sIni.pfDbe, acDbe, "a+");
-			else
+			if (pAll->eAsType != A_REMOTE)
 			{
-				err = fopen_s(&sIni.pfDbe, acDbe, "w+");
-				fputs(cpcDbHeader, sIni.pfDbe);
+				Thread^ oDbaseThread = gcnew Thread(gcnew ParameterizedThreadStart(&CDbase::ThreadProc));
+				oDbaseThread->IsBackground = true;
+				oDbaseThread->Start(pAll);
+
+				Thread^ oDbaseThreadB = gcnew Thread(gcnew ParameterizedThreadStart(&CDbaseB::ThreadProc));
+				oDbaseThreadB->IsBackground = true;
+				oDbaseThreadB->Start(pAll);
+			}
+			if (pAll->eAsType != A_PROD && pAll->eAsType != A_REMOTE)
+			{
+				Thread^ oSimThread = gcnew Thread(gcnew ParameterizedThreadStart(&CSim::ThreadProc));
+				oSimThread->IsBackground = true;
+				oSimThread->Start(pAll);
+			}
+			//if (pAll->pPrinter1 != nullptr && pAll->eAsType != A_REMOTE)
+			//{
+			//	CPrint^ oPrint1 = gcnew CPrint(pAll, pAll->pPrinter1, &sIni.bPrinterOk1, 1);
+			//	Thread^ oPrintThread1 = gcnew Thread(gcnew ParameterizedThreadStart(oPrint1, &CPrint::ThreadProc));
+			//	oPrintThread1->IsBackground = true;
+			//	oPrintThread1->Start(pAll->qPrint1);
+			//}
+			//if (pAll->pPrinter2 != nullptr && pAll->eAsType != A_REMOTE)
+			//{
+			//	CPrint^ oPrint2 = gcnew CPrint(pAll, pAll->pPrinter2, &sIni.bPrinterOk2, 2);
+			//	Thread^ oPrintThread2 = gcnew Thread(gcnew ParameterizedThreadStart(oPrint2, &CPrint::ThreadProc));
+			//	oPrintThread2->IsBackground = true;
+			//	oPrintThread2->Start(pAll->qPrint2);
+			//}
+			//if (pAll->pPrinter3 != nullptr && pAll->eAsType != A_REMOTE)
+			//{
+			//	CPrint^ oPrint3 = gcnew CPrint(pAll, pAll->pPrinter3, &sIni.bPrinterOk3, 3);
+			//	Thread^ oPrintThread3 = gcnew Thread(gcnew ParameterizedThreadStart(oPrint3, &CPrint::ThreadProc));
+			//	oPrintThread3->IsBackground = true;
+			//	oPrintThread3->Start(pAll->qPrint3);
+			//}
+
+			if (pAll->pPrinter4 != nullptr && pAll->eAsType != A_REMOTE)
+			{
+				CPrint^ oPrint4 = gcnew CPrint(pAll, pAll->pPrinter4, &sIni.bPrinterOk4, 4);
+				Thread^ oPrintThread4 = gcnew Thread(gcnew ParameterizedThreadStart(oPrint4, &CPrint::ThreadProc));
+				oPrintThread4->IsBackground = true;
+				oPrintThread4->Start(pAll->qPrint4);
 			}
 
-			//DC 4.1.1
-			sprintf_s(acDbs, "%s/as-%s.dbs", acPath, acTmp);
-			if ((err = _access_s(acDbs, 0)) == 0)
-				err = fopen_s(&sIni.pfDbs, acDbs, "a+");
-			else
+			if (pAll->p2ndPrinter1 != nullptr && pAll->eAsType != A_REMOTE)	//DC 4.0.2
 			{
-				err = fopen_s(&sIni.pfDbs, acDbs, "w+");
-				fputs(cpcDbsHeader, sIni.pfDbs);
+				CPrint^ o2ndPrint1 = gcnew CPrint(pAll, pAll->p2ndPrinter1, &sIni.b2ndPrinterOk1, 1);
+				Thread^ o2ndPrintThread1 = gcnew Thread(gcnew ParameterizedThreadStart(o2ndPrint1, &CPrint::ThreadProc));
+				o2ndPrintThread1->IsBackground = true;
+				o2ndPrintThread1->Start(pAll->q2ndPrint1);
 			}
-		}	//if not Remote
-		
-		// PRODUCTION ////////////////////////////////////////////////////////////////
-		if (pAll->eAsType != A_DEMO && pAll->eAsType != A_REMOTE)
+
+			if (pAll->p2ndPrinter2 != nullptr && pAll->eAsType != A_REMOTE)	//DC 4.0.2
+			{
+				CPrint^ o2ndPrint2 = gcnew CPrint(pAll, pAll->p2ndPrinter2, &sIni.b2ndPrinterOk2, 2);
+				Thread^ o2ndPrintThread2 = gcnew Thread(gcnew ParameterizedThreadStart(o2ndPrint2, &CPrint::ThreadProc));
+				o2ndPrintThread2->IsBackground = true;
+				o2ndPrintThread2->Start(pAll->q2ndPrint2);
+			}
+
+			if (pAll->p2ndPrinter3 != nullptr && pAll->eAsType != A_REMOTE)	//DC 4.0.2
+			{
+				CPrint^ o2ndPrint3 = gcnew CPrint(pAll, pAll->p2ndPrinter3, &sIni.b2ndPrinterOk3, 3);
+				Thread^ o2ndPrintThread3 = gcnew Thread(gcnew ParameterizedThreadStart(o2ndPrint3, &CPrint::ThreadProc));
+				o2ndPrintThread3->IsBackground = true;
+				o2ndPrintThread3->Start(pAll->q2ndPrint3);
+			}
+
+			if (pAll->p2ndPrinter4 != nullptr && pAll->eAsType != A_REMOTE)	//DC 4.0.2
+			{
+				CPrint^ o2ndPrint4 = gcnew CPrint(pAll, pAll->p2ndPrinter4, &sIni.b2ndPrinterOk4, 4);
+				Thread^ o2ndPrintThread4 = gcnew Thread(gcnew ParameterizedThreadStart(o2ndPrint4, &CPrint::ThreadProc));
+				o2ndPrintThread4->IsBackground = true;
+				o2ndPrintThread4->Start(pAll->q2ndPrint4);
+			}
+
+			if (pAll->eAsType != A_REMOTE)
+			{
+				CUlink oUlink(pAll);
+				Thread^ oUlinkThread = gcnew Thread(gcnew ParameterizedThreadStart(&CUlink::ThreadProc));
+				oUlinkThread->IsBackground = true;
+				oUlinkThread->Start(pAll);
+			}
+
+			// Enabling Windows XP visual effects before any controls are created
+			Application::EnableVisualStyles();
+			Application::SetCompatibleTextRenderingDefault(false);
+
+			// Create the main window and run it
+			Application::Run(gcnew Form1(pAll, pfInv));
+
+			if (pAll->eAsType != A_REMOTE)
+			{
+				//	oInv.save(&sIni.sInv);
+				if (fseek(pfInv, 0, SEEK_SET) == 0)
+					fwrite(&sIni.sInv, sizeof(INV), 1, pfInv);
+				fclose(pfInv);
+
+				while (pAll->qDbaseBad->Count > 0)
+				{
+					pDbase = (Dbase^)pAll->qDbaseBad->Dequeue();
+					sprintf(acTmp, "%10d,%14s,%12s,%8.2f,%8.2f,%8.2f\n"
+						, pDbase->nTicket
+						, MarshalStr1( pDbase->pstCustCode ).c_str()
+						, MarshalStr1(pDbase->pstTruck).c_str()
+						, pDbase->fGross
+						, pDbase->fTare
+						, pDbase->fGross - pDbase->fTare);
+					fputs(acTmp, sIni.pfDbe);
+
+				}
+				if(sIni.pfDbe != 0)
+					fclose(sIni.pfDbe);
+
+				struct __stat64 fileStat;
+				err = _stat64(acDbe, &fileStat);
+				if (0 != err) return 0;
+
+				if (fileStat.st_size > (int)strlen(cpcDbHeader) + 5)
+				{
+					strcpy(acPath, "notepad ");
+					strcat(acPath, acDbe);
+					system(acPath);
+				}
+				return 0;
+			}
+		}
+		catch (Exception^ ex)
 		{
-			MessageBox::Show("file missing", "as.log WARNING"
-				, MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			pAll->stExc += "CFX: Exception: " + ex->Message;
 		}
 
 		return 0;
@@ -628,16 +838,17 @@ namespace As
 		double fAdapt7;
 		double fAdapt8;
 		double fAdapt9;
-		double fAdapt10;
-		double fAdapt11;
-		double fAdapt12;
+		//double fAdapt10;
+		//double fAdapt11;
+		//double fAdapt12;
 
 		sprintf_s(acInvFile, "%s/as.inv", pAll->pcPath);
 
 		if ((err = _access_s(acInvFile, 0)) == 0)
 		{
 			err = fopen_s(&pfInv, acInvFile, "r+b");
-			fread(&psIni->sInv, sizeof(INV), 1, pfInv);
+			if(pfInv != 0)
+				fread(&psIni->sInv, sizeof(INV), 1, pfInv);
 
 			// test change of day
 			DateTime oDate = File::GetLastWriteTime(gcnew String(acInvFile));
@@ -801,4 +1012,16 @@ namespace As
 		Marshal::FreeHGlobal(IntPtr((void*)kPtoC));
 	}
 
+	/// <summary>
+	/// MarshalString
+	/// </summary>
+	/// <param name="s"></param>
+	/// <param name="outputstring"></param>
+	string MarshalStr1(String^ s)
+	{
+		const char* kPtoC = (const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+		string outputstring = kPtoC;
+		Marshal::FreeHGlobal(IntPtr((void*)kPtoC));
+		return(outputstring);
+	}
 }

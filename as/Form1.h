@@ -15,7 +15,7 @@
 #include <string.h>			//DC 4.0.8
 #include "ClinkT.h"			//DC 4.1.0
 #include <time.h>			//Dc 4.1.1
-
+#include "DbaseT.h"
 
 namespace As
 {
@@ -46,6 +46,10 @@ namespace As
 	///          the designers will not be able to interact properly with localized
 	///          resources associated with this form.
 	/// </summary>
+	/// 
+	/// 
+	
+
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
 	public:
@@ -59,6 +63,10 @@ namespace As
 			psIni = pAll->psIni;
 			pfInv = pfInvIn;
 			poLog = gcnew CLog(pAll);
+
+			System::Collections::Generic::Queue<Dbase^>^ qDbase;	//DC 4.0.2//Queue^ qDbase;
+			System::Collections::Generic::Queue<Dbase^>^ qDbaseBad;	//DC 4.0.2//Queue^ qDbase;
+
 
 			if(pAll->eAsType == A_REMOTE)	//DC 4.1.0
 			{
@@ -98,8 +106,8 @@ namespace As
 			COL_B        = System::Drawing::Color::Blue;
 
 			// queues ---------------------------------------------------------
-			//qDbase = pAll->qDbase;
-			//qDbaseBad = pAll->qDbaseBad;
+			qDbase = pAll->qDbase;
+			qDbaseBad = pAll->qDbaseBad;
 
 //			autoEvent = gcnew AutoResetEvent( false );
 //			b485Ok = true;
@@ -741,8 +749,8 @@ namespace As
 		FILE *pfInv;		// inventory file 
 
 		// OPTO, dbase, printer
-		System::Collections::Generic::Queue^ qDbase;
-		System::Collections::Generic::Queue^ qDbaseBad;
+		//System::Collections::Generic::Queue^ qDbase;
+		//System::Collections::Generic::Queue^ qDbaseBad;
 
 		bool bShowInv;
 //		bool b485Ok;		// RS485 tester
@@ -10607,6 +10615,10 @@ private:
 		//webBrowser4->Visible = true;
 		printerLb4->Visible = true;	//DC 4.0.0
 
+
+		//System::Collections::Generic::Queue<CDbase^>^ qDbase;	//DC 4.0.2//Queue^ qDbase;
+		//System::Collections::Generic::Queue<CDbase^>^ qDbaseBad;	//DC 4.0.2//Queue^ qDbase;
+
 		siloBar4->Number = psIni->asSilos[9].nSiloNum;
 		siloBar42->Number = psIni->asSilos[10].nSiloNum;
 		siloBar43->Number = psIni->asSilos[11].nSiloNum;
@@ -10834,9 +10846,9 @@ private:
 				}
 				else
 				{
-					if(qDbaseBad->Count > 0)
-						dbaseBadLb->Text = qDbaseBad->Count.ToString();
-					else
+					//if(qDbaseBad->Count > 0)
+					//	dbaseBadLb->Text = qDbaseBad->Count.ToString();
+					//else
 						dbaseBadLb->Text = nullptr;
 				}
 				if(pAll->eAsType != A_DEMO)
@@ -11346,7 +11358,7 @@ private:
 						{
 							fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
 							truckBar1->Value = fLoad1;
-							truckBar1->Pct = ((fTarget1-fLoad1)/fTarget1)*100;	//DC 4.0.0
+							truckBar1->Pct =(int) ((fTarget1-fLoad1)/fTarget1)*100;	//DC 4.0.0
 
 							// update fall diff --------------------------------
 							fFall = fFall1 + fLoad1 - fCumTarget1;
@@ -11385,7 +11397,7 @@ private:
 						if(testHold1()) return;			//DC 4.0.0
 						fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;	//DC 4.0.0
 						truckBar1->Value = fLoad1;									//DC 4.0.0
-						truckBar1->Pct = ((fTarget1-fLoad1)/fTarget1)*100;			//DC 4.0.0
+						truckBar1->Pct =(int) ((fTarget1-fLoad1)/fTarget1)*100;			//DC 4.0.0
 						switch(psIni->sLog1.nSilo)
 						{
 							case 1: siloBar1->Add = true;	break;
@@ -11446,7 +11458,7 @@ private:
 					{
 						fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
 						truckBar1->Value = fLoad1;
-						truckBar1->Pct = ((fTarget1-fLoad1)/fTarget1)*100;	//DC 4.0.0
+						truckBar1->Pct =(int) ((fTarget1-fLoad1)/fTarget1)*100;	//DC 4.0.0
 
 						if(fLoad1 < (fCumTarget1 - fTol1))
 						{
@@ -11511,8 +11523,8 @@ private:
 
 					if(psIni->sLog1.eStop == A_NOT)
 					{
-						psIni->sLog1.eJobStatus = S_OK;
-						pJob1->eStatus = S_OK;
+						psIni->sLog1.eJobStatus = S_OK1;
+						pJob1->eStatus = S_OK1;
 					}
 					pJob1->fLoad = fLoad1;
 					pJob1->nSilo = psIni->sLog1.nSilo;
@@ -11554,10 +11566,10 @@ private:
 						pDbase->pstCustCode = gcnew String(psIni->sLog1.sT.customer_code);
 						pDbase->pstTruck = gcnew String(pJob1->stTruck);					//DC 4.1.1
 
-						//if(psIni->nDbaseOk > 0)  SRW
-						//	qDbase->Enqueue(pDbase);
+						//if(psIni->nDbaseOk > 0) 
+						//	pAll->qDbase->Enqueue(pDbase);
 						//else
-						//	qDbaseBad->Enqueue(pDbase);
+						//	pAll->qDbaseBad->Enqueue(pDbase);
 					}
 
 					// printer --------------------------------------------
@@ -11917,7 +11929,7 @@ private:
 					{
 						fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
 						truckBar2->Value = fLoad2;
-						truckBar2->Pct = ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
+						truckBar2->Pct =(int) ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
 
 						if(!psIni->bPdmPlc)
 						{
@@ -12026,7 +12038,7 @@ private:
 						{
 							fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
 							truckBar2->Value = fLoad2;
-							truckBar2->Pct = ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
+							truckBar2->Pct =(int) ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
 							if(fLoad2 >= psIni->sLog2.sT.load_size - fTol2)
 								setState2(S_UPDATE);	
 							/*else if(fLoad1 < psIni->sLog1.sT.load_size - fTol1)
@@ -12072,7 +12084,7 @@ private:
 						{
 							fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
 							truckBar2->Value = fLoad2;
-							truckBar2->Pct = ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
+							truckBar2->Pct =(int) ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
 
 							// update fall diff --------------------------------
 							fFall = fFall2 + fLoad2 - fCumTarget2;
@@ -12111,7 +12123,7 @@ private:
 					if(testHold2()) return;			//DC 4.0.0
 					fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;	//DC 4.0.0
 					truckBar2->Value = fLoad2;									//DC 4.0.0
-					truckBar2->Pct = ((fTarget2-fLoad2)/fTarget2)*100;			//DC 4.0.0
+					truckBar2->Pct =(int) ((fTarget2-fLoad2)/fTarget2)*100;			//DC 4.0.0
 					switch(psIni->sLog2.nSilo)
 					{
 						case 4: siloBar2->Add = true;	break;
@@ -12172,7 +12184,7 @@ private:
 					{
 						fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
 						truckBar2->Value = fLoad2;
-						truckBar2->Pct = ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
+						truckBar2->Pct =(int) ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
 
 						if(fLoad2 < (fCumTarget2 - fTol2))
 						{
@@ -12237,8 +12249,8 @@ private:
 
 					if(psIni->sLog2.eStop == A_NOT)
 					{
-						psIni->sLog2.eJobStatus = S_OK;
-						pJob2->eStatus = S_OK;
+						psIni->sLog2.eJobStatus = S_OK1;
+						pJob2->eStatus = S_OK1;
 					}
 					pJob2->fLoad = fLoad2;
 					pJob2->nSilo = psIni->sLog2.nSilo;
@@ -12280,11 +12292,10 @@ private:
 						pDbase->pstCustCode = gcnew String(psIni->sLog2.sT.customer_code);
 						pDbase->pstTruck = gcnew String(pJob2->stTruck);					//DC 4.1.1
 
-						//SRW
-						//if(psIni->nDbaseOk > 0)
-						//	qDbase->Enqueue(pDbase);
-						//else
-						//	qDbaseBad->Enqueue(pDbase);
+						if(psIni->nDbaseOk > 0)
+							pAll->qDbase->Enqueue(pDbase);
+						else
+							pAll->qDbaseBad->Enqueue(pDbase);
 					}
 
 					// printer --------------------------------------------
@@ -12571,7 +12582,7 @@ private:
 					{
 						fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
 						truckBar3->Value = fLoad3;
-						truckBar3->Pct = ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
+						truckBar3->Pct =(int) ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
 
 						if(!psIni->bPdmPlc)
 						{
@@ -12680,7 +12691,7 @@ private:
 						{
 							fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
 							truckBar3->Value = fLoad3;
-							truckBar3->Pct = ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
+							truckBar3->Pct =(int) ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
 							if(fLoad3 >= psIni->sLog3.sT.load_size - fTol3)
 								setState3(S_UPDATE);	
 							/*else if(fLoad1 < psIni->sLog1.sT.load_size - fTol1)
@@ -12726,7 +12737,7 @@ private:
 						{
 							fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
 							truckBar3->Value = fLoad3;
-							truckBar3->Pct = ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
+							truckBar3->Pct =(int) ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
 
 							// update fall diff --------------------------------
 							fFall = fFall3 + fLoad3 - fCumTarget3;
@@ -12765,7 +12776,7 @@ private:
 					if(testHold3()) return;			//DC 4.0.0
 					fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;	//DC 4.0.0
 					truckBar3->Value = fLoad3;									//DC 4.0.0
-					truckBar3->Pct = ((fTarget3-fLoad3)/fTarget3)*100;			//DC 4.0.0
+					truckBar3->Pct =(int) ((fTarget3-fLoad3)/fTarget3)*100;			//DC 4.0.0
 					switch(psIni->sLog3.nSilo)
 					{
 						case 7: siloBar3->Add = true;	break;
@@ -12826,7 +12837,7 @@ private:
 					{
 						fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
 						truckBar3->Value = fLoad3;
-						truckBar3->Pct = ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
+						truckBar3->Pct =(int) ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
 
 						if(fLoad3 < fCumTarget3 - fTol3)
 						{
@@ -12891,8 +12902,8 @@ private:
 
 					if(psIni->sLog3.eStop == A_NOT)
 					{
-						psIni->sLog3.eJobStatus = S_OK;
-						pJob3->eStatus = S_OK;
+						psIni->sLog3.eJobStatus = S_OK1;
+						pJob3->eStatus = S_OK1;
 					}
 					pJob3->fLoad = fLoad3;
 					pJob3->nSilo = psIni->sLog3.nSilo;
@@ -12934,10 +12945,10 @@ private:
 						pDbase->pstCustCode = gcnew String(psIni->sLog3.sT.customer_code);
 						pDbase->pstTruck = gcnew String(pJob3->stTruck);					//DC 4.1.1
 
-						//if(psIni->nDbaseOk > 0)  SRW
-						//	qDbase->Enqueue(pDbase);
-						//else
-						//	qDbaseBad->Enqueue(pDbase);
+						if(psIni->nDbaseOk > 0)
+							pAll->qDbase->Enqueue(pDbase);
+						else
+							pAll->qDbaseBad->Enqueue(pDbase);
 					}
 
 					// printer --------------------------------------------
@@ -13347,7 +13358,7 @@ private:
 					{
 						fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 						truckBar4->Value = fLoad4;
-						truckBar4->Pct = ((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
+						truckBar4->Pct =(int) ((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
 
 						if(!psIni->bPdmPlc)
 						{
@@ -13467,7 +13478,7 @@ private:
 						{
 							fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 							truckBar4->Value = fLoad4;
-							truckBar4->Pct = ((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
+							truckBar4->Pct = (int)((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
 							if(fLoad4 >= psIni->sLog4.sT.load_size - fTol4)
 								setState4(S_UPDATE);	
 							/*else if(fLoad1 < psIni->sLog1.sT.load_size - fTol1)
@@ -13517,7 +13528,7 @@ private:
 						{
 							fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 							truckBar4->Value = fLoad4;
-							truckBar4->Pct = ((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
+							truckBar4->Pct = (int)((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
 
 							// update fall diff --------------------------------
 							fFall = fFall4 + fLoad4 - fCumTarget4;
@@ -13556,7 +13567,7 @@ private:
 					if(testHold4()) return;			//DC 4.0.0
 					fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;	//DC 4.0.0
 					truckBar4->Value = fLoad4;									//DC 4.0.0
-					truckBar4->Pct = ((fTarget4-fLoad4)/fTarget4)*100;			//DC 4.0.0
+					truckBar4->Pct = (int)((fTarget4-fLoad4)/fTarget4)*100;			//DC 4.0.0
 					switch(psIni->sLog4.nSilo)
 					{
 						case 10: siloBar4->Add = true;	break;
@@ -13617,7 +13628,7 @@ private:
 					{
 						fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 						truckBar4->Value = fLoad4;
-						truckBar4->Pct = ((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
+						truckBar4->Pct = (int)((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
 
 						if(fLoad4 < fCumTarget4 - fTol4)
 						{
@@ -13686,8 +13697,8 @@ private:
 
 						if(psIni->sLog4.eStop == A_NOT)
 						{
-							psIni->sLog4.eJobStatus = S_OK;
-							pJob4->eStatus = S_OK;
+							psIni->sLog4.eJobStatus = S_OK1;
+							pJob4->eStatus = S_OK1;
 						}
 						pJob4->fLoad = fLoad4;
 						pJob4->nSilo = psIni->sLog4.nSilo;
@@ -15982,7 +15993,7 @@ private: System::Void okB_Click(System::Object^  sender, System::EventArgs^  e)
 				 if(pAll->eAsType == A_REMOTE)		//DC 4.1.0
 				 {
 					 readyBt4->Enabled = false;
-					double fLoadChg;
+					//double fLoadChg;
 					Cmd^ pCmd = gcnew Cmd();
 					
 
@@ -18137,7 +18148,7 @@ private: System::Void testBox_DoubleClick(System::Object^  sender, System::Event
 					 if(!bWrongMet)
 					 {
 						 pAll->lJob->Remove(pJob);
-						 pJob->eStatus = S_OK;
+						 pJob->eStatus = S_OK1;
 						 dataGridJob->Visible = false;
 					 }
 					 else
@@ -18575,7 +18586,8 @@ private: System::Void remLoginBt_Click(System::Object^  sender, System::EventArg
 			 pCmd->cId = CL_JOB;
 			 pAll->qCmd->Enqueue(pCmd);
 
-			 loop:			 nTime = 0;
+			 nTime = 0;
+		 //loop:			 nTime = 0;
 			 while((pAll->nCmd < 3) && (nTime < 2))
 			 {
 //		 			testLb->Text = pAll->nCmd.ToString();

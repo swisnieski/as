@@ -69,6 +69,45 @@
     <ClInclude Include="DbaseTB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Opto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OptoT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OptoTP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScaleT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScaleTP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScaleTPS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Silo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CservT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrintT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PreView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UlinkT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ticket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="as.cpp">

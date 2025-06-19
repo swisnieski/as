@@ -46,7 +46,7 @@ namespace As
 			cli::array<Byte>^ cmd = gcnew cli::array<Byte>(CMD_LEN);
 			cli::array<Byte>^ hdr = gcnew cli::array<Byte>(HDR_LEN);
 			cli::array<Byte>^ data;
-			cli::array<Byte>^ job;
+			//cli::array<Byte>^ job;
 
 			pAll->nCmd = 0;
 			TcpClient^ client;
@@ -103,7 +103,7 @@ loopX:					switch(pCmd->cId)
 						//	if(pAll->stPass != nullptr)
 						//	{
 						//		nData = pAll->stPass->Length;
-						//		data = gcnew array<Byte>(nData);
+						//		data = gcnew cli::array<Byte>(nData);
 						//		for(int i=0; i< nData; i++)
 						//			data[i] = (uchar)pAll->stPass[i];
 						//	}
@@ -157,7 +157,7 @@ loopX:					switch(pCmd->cId)
 								data = ms->ToArray();
 								/*job = ms->ToArray();
 								nData = (int)ms->Length + sizeof(LOG_REC);
-								data = gcnew array<Byte>(nData);
+								data = gcnew cli::array<Byte>(nData);
 								job->CopyTo(data, 0);
 								pcT = (uchar *)(psIni->sLog4);
 								for(int i=0; i<sizeof(LOG_REC); i++)
@@ -231,7 +231,7 @@ loopX:					switch(pCmd->cId)
 								sMoist.adMoist[i] = pAll->psAdp->asAggs[i].dMoist;
 							}
 							nData = sizeof(RMOIST);
-							data = gcnew array<Byte>(nData);
+							data = gcnew cli::array<Byte>(nData);
 							pcT = (uchar *)&sMoist;
 							for(int i=0; i<nData; i++)
 								data[i] = pcT[i];
@@ -246,7 +246,7 @@ loopX:					switch(pCmd->cId)
 
 						//case CL_SADP:			// 
 						//	nData = ADP_LEN;
-						//	data = gcnew array<Byte>(nData);
+						//	data = gcnew cli::array<Byte>(nData);
 						//	pcT = (uchar *)pAll->psAdp;
 						//	for(int i=0; i<nData; i++)
 						//		data[i] = pcT[i];
