@@ -4,7 +4,7 @@
 //#include "About.h"
 #include "InvForm.h"
 #include "StopForm.h"
-#include "TruckFm.h"
+//#include "TruckFm.h"
 #include "FallFm.h"
 #include "ReprintF.h"
 #include "Log.h"
@@ -48,7 +48,7 @@ namespace As
 	/// </summary>
 	/// 
 	/// 
-	
+
 
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
@@ -68,7 +68,7 @@ namespace As
 			System::Collections::Generic::Queue<Dbase^>^ qDbaseBad;	//DC 4.0.2//Queue^ qDbase;
 
 
-			if(pAll->eAsType == A_REMOTE)	//DC 4.1.0
+			if (pAll->eAsType == A_REMOTE)	//DC 4.1.0
 			{
 				this->remLoginBt->Enabled = true;
 				this->remLoginBt->Visible = true;
@@ -84,40 +84,40 @@ namespace As
 			jobBindingSource->DataSource = pAll->lJob;
 			oldBindingSource->DataSource = pAll->lOld;
 
-			COL_IDLE     = System::Drawing::Color::WhiteSmoke;
-			COL_CHARGE   = System::Drawing::Color::LightBlue;
-			COL_DISCH    = System::Drawing::Color::PaleGreen;
-			COL_SETTLE   = System::Drawing::Color::Green;
-			COL_HOLD     = System::Drawing::Color::Yellow;
-			COL_HOLDK    = System::Drawing::Color::Gold;
-			COL_TRANS    = System::Drawing::Color::Transparent;
-			COL_ERR      = System::Drawing::Color::Red;
+			COL_IDLE = System::Drawing::Color::WhiteSmoke;
+			COL_CHARGE = System::Drawing::Color::LightBlue;
+			COL_DISCH = System::Drawing::Color::PaleGreen;
+			COL_SETTLE = System::Drawing::Color::Green;
+			COL_HOLD = System::Drawing::Color::Yellow;
+			COL_HOLDK = System::Drawing::Color::Gold;
+			COL_TRANS = System::Drawing::Color::Transparent;
+			COL_ERR = System::Drawing::Color::Red;
 
-			COL_PGREEN   = System::Drawing::Color::PaleGreen;
-			COL_GREEN    = System::Drawing::Color::Green;
-			COL_LSB      = System::Drawing::Color::LightSteelBlue;
-			COL_LB       = System::Drawing::Color::LightBlue;
-			COL_W        = System::Drawing::Color::White;
-			COL_WS       = System::Drawing::Color::WhiteSmoke;
-			COL_R        = System::Drawing::Color::Red;
-			COL_YG       = System::Drawing::Color::YellowGreen;
-			COL_DG		 = System::Drawing::Color::DarkGray;
-			COL_G        = System::Drawing::Color::Gainsboro;
-			COL_B        = System::Drawing::Color::Blue;
+			COL_PGREEN = System::Drawing::Color::PaleGreen;
+			COL_GREEN = System::Drawing::Color::Green;
+			COL_LSB = System::Drawing::Color::LightSteelBlue;
+			COL_LB = System::Drawing::Color::LightBlue;
+			COL_W = System::Drawing::Color::White;
+			COL_WS = System::Drawing::Color::WhiteSmoke;
+			COL_R = System::Drawing::Color::Red;
+			COL_YG = System::Drawing::Color::YellowGreen;
+			COL_DG = System::Drawing::Color::DarkGray;
+			COL_G = System::Drawing::Color::Gainsboro;
+			COL_B = System::Drawing::Color::Blue;
 
 			// queues ---------------------------------------------------------
 			qDbase = pAll->qDbase;
 			qDbaseBad = pAll->qDbaseBad;
 
-//			autoEvent = gcnew AutoResetEvent( false );
-//			b485Ok = true;
+			//			autoEvent = gcnew AutoResetEvent( false );
+			//			b485Ok = true;
 			nSplash = SPLASH;
 
 			nOffs1 = 12;
 			nOffs2 = 112;
 			nOffs3 = 212;
 			nOffs4 = 312;		//DC 3.3.0
-//DC 3.2.0			
+								//DC 3.2.0			
 			this->siloBar1->ScaleInLB = psIni->bScaleInLB;
 			this->siloBar12->ScaleInLB = psIni->bScaleInLB;
 			this->siloBar13->ScaleInLB = psIni->bScaleInLB;
@@ -140,19 +140,19 @@ namespace As
 			this->truckBar2->ScaleInLB = psIni->bScaleInLB;
 			this->truckBar3->ScaleInLB = psIni->bScaleInLB;
 			this->truckBar4->ScaleInLB = psIni->bScaleInLB;
-			if(psIni->bScaleInLB)
+			if (psIni->bScaleInLB)
 			{
 				this->label11->Text = L"Today\'s\r\nTotal LB";
 				this->tonLb1->Text = L"Today\'s\r\nTotal LB";
 				this->label9->Text = L"Today\'s\r\nTotal LB";
 			}
 
-			if(psIni->bRevPlant)
+			if (psIni->bRevPlant)
 			{
 				this->groupBox1->Location = System::Drawing::Point(860, 27);
 				this->groupBox3->Location = System::Drawing::Point(8, 27);
 
-				if(psIni->bBotScale)
+				if (psIni->bBotScale)
 				{
 					//A
 					this->siloBar13->Location = System::Drawing::Point(10, 196);
@@ -163,7 +163,7 @@ namespace As
 
 					this->fill13->Location = System::Drawing::Point(70, 190);
 					this->fill1->Location = System::Drawing::Point(270, 190);
-				
+
 					//B
 					this->siloBar23->Location = System::Drawing::Point(10, 196);
 					this->siloBar2->Location = System::Drawing::Point(210, 196);
@@ -173,7 +173,7 @@ namespace As
 
 					this->fill23->Location = System::Drawing::Point(70, 190);
 					this->fill2->Location = System::Drawing::Point(270, 190);
-				
+
 					//C
 					this->siloBar33->Location = System::Drawing::Point(10, 196);
 					this->siloBar3->Location = System::Drawing::Point(210, 196);
@@ -196,7 +196,7 @@ namespace As
 			}
 
 			//-----------------------------------------------------------------
-			if(psIni->bBotScale)
+			if (psIni->bBotScale)
 			{
 				this->truckBar1->Location = System::Drawing::Point(nOffs1, BAR);
 				this->truckBar2->Location = System::Drawing::Point(nOffs2, BAR);
@@ -223,10 +223,10 @@ namespace As
 				psIni->sInv.bAutoDisch3 = true;
 				psIni->sInv.bAutoDisch4 = true;
 
-//				zoom1->Visible = pAll->pCam1 || pAll->pCam2 || pAll->pCam3;
-//				zoom2->Visible = pAll->pCam4 || pAll->pCam5 || pAll->pCam6;
-//				zoom3->Visible = false;
-			}	
+				//				zoom1->Visible = pAll->pCam1 || pAll->pCam2 || pAll->pCam3;
+				//				zoom2->Visible = pAll->pCam4 || pAll->pCam5 || pAll->pCam6;
+				//				zoom3->Visible = false;
+			}
 			else
 			{
 				autoDisch1->Visible = true;
@@ -239,9 +239,9 @@ namespace As
 				dischBt3->Visible = !psIni->sInv.bAutoDisch3;
 				dischBt4->Visible = !psIni->sInv.bAutoDisch4;
 
-//				zoom1->Visible = pAll->pCam1 != nullptr;
-//				zoom2->Visible = pAll->pCam2 != nullptr;
-//				zoom3->Visible = pAll->pCam3 != nullptr;
+				//				zoom1->Visible = pAll->pCam1 != nullptr;
+				//				zoom2->Visible = pAll->pCam2 != nullptr;
+				//				zoom3->Visible = pAll->pCam3 != nullptr;
 
 				nJogA = psIni->nSiloJog1;
 				nJogB = psIni->nSiloJog2;
@@ -249,7 +249,7 @@ namespace As
 				nJogD = psIni->nSiloJog4;
 			}
 			// adjust form size -----------------------------------------------
-			if(psIni->nNumLanes < 4)
+			if (psIni->nNumLanes < 4)
 			{
 				this->Width = 1290;			//DC 3.2.6
 				pictureSplash->Location = System::Drawing::Point(220, 200);
@@ -261,10 +261,10 @@ namespace As
 				printerLb4->Visible = false;	//DC 4.0.0
 			}
 
-			if(psIni->nNumLanes < 3)
+			if (psIni->nNumLanes < 3)
 			{
-//DC 4.0.0				this->Width = 860;			//DC 3.2.6
-//DC 4.0.0				pictureSplash->Location = System::Drawing::Point(1, 200);
+				//DC 4.0.0				this->Width = 860;			//DC 3.2.6
+				//DC 4.0.0				pictureSplash->Location = System::Drawing::Point(1, 200);
 
 				groupBox3->Visible = false;
 				zoom3->Visible = false;
@@ -272,7 +272,7 @@ namespace As
 				webBrowser3->Visible = false;
 				printerLb3->Visible = false;	//DC 4.0.0
 			}
-			if(psIni->nNumLanes < 2)
+			if (psIni->nNumLanes < 2)
 			{
 				groupBox2->Visible = false;
 				zoom2->Visible = false;
@@ -299,7 +299,7 @@ namespace As
 			siloBar43->Number = psIni->asSilos[11].nSiloNum;
 
 			//DC 4.0.10 Disable Lanes -----------------------------------------
-			if(psIni->nL1SilosNum == 0)
+			if (psIni->nL1SilosNum == 0)
 			{
 				groupBox1->Visible = false;
 				zoom1->Visible = false;
@@ -309,7 +309,7 @@ namespace As
 				copyLane1Lb->Visible = false;
 			}
 
-			if(psIni->nL2SilosNum == 0)
+			if (psIni->nL2SilosNum == 0)
 			{
 				groupBox2->Visible = false;
 				zoom2->Visible = false;
@@ -319,7 +319,7 @@ namespace As
 				copyLane2Lb->Visible = false;
 			}
 
-			if(psIni->nL3SilosNum == 0)
+			if (psIni->nL3SilosNum == 0)
 			{
 				groupBox3->Visible = false;
 				zoom3->Visible = false;
@@ -328,17 +328,17 @@ namespace As
 				printerLb3->Visible = false;	//DC 4.0.0
 				copyLane3Lb->Visible = false;
 			}
-			
-			if(psIni->nL1SilosNum == 4)	//DC 4.1.2
+
+			if (psIni->nL1SilosNum == 4)	//DC 4.1.2
 			{
 				groupBox1->Size = System::Drawing::Size(520, 840);
-				gBoxLine1->Location = System::Drawing::Point(415,4);
+				gBoxLine1->Location = System::Drawing::Point(415, 4);
 				siloBar14->Visible = true;
 				siloBar14->Location = System::Drawing::Point(310, 196);
 				scaleBar1->Size = System::Drawing::Size(370, 58);
 			}
 
-			if(psIni->nL1SilosNum == 0 && psIni->nL2SilosNum == 0 && psIni->nL3SilosNum == 0)
+			if (psIni->nL1SilosNum == 0 && psIni->nL2SilosNum == 0 && psIni->nL3SilosNum == 0)
 			{
 				groupBox4->Location = System::Drawing::Point(435, 27);
 				this->Width = 1290;			//DC 3.2.6
@@ -348,10 +348,10 @@ namespace As
 
 			// plant 1 --------------------------------------------------------
 
-			if(pAll->eAsType == A_DEMO)
+			if (pAll->eAsType == A_DEMO)
 				psIni->sScale1.cGo = '0';			// idle
 
-			if(psIni->bUseTrkMax)					//DC 3.2.0
+			if (psIni->bUseTrkMax)					//DC 3.2.0
 				this->targetLb1->Text = L"TrkMax(TN)";
 
 			siloBar1->Maximum = psIni->fSiloMax1;
@@ -361,9 +361,9 @@ namespace As
 
 			numCopy1->Value = pAll->nTicketCopy1;			//DC 4.0.2
 
-			if(psIni->bBotScale)
+			if (psIni->bBotScale)
 			{
-				if(psIni->nL1SilosNum > 1)
+				if (psIni->nL1SilosNum > 1)
 				{
 					siloBar12->Maximum = psIni->fSiloMax2;
 					siloBar12->Visible = true;
@@ -373,7 +373,7 @@ namespace As
 					//			siloBar12->Idle = psIni->fSiloMax2 == 0;
 					siloBar12_Click(nullptr, nullptr);
 				}
-				if(psIni->nL1SilosNum > 2)
+				if (psIni->nL1SilosNum > 2)
 				{
 					siloBar13->Maximum = psIni->fSiloMax3;
 					siloBar13->Visible = true;
@@ -386,9 +386,9 @@ namespace As
 			}
 			else
 			{
-				 siloBar1->Size = System::Drawing::Size(100, 230);
-				 scaleBar1->Size = System::Drawing::Size(100, 52);
-				 truckBar1->Size = System::Drawing::Size(100, 28);
+				siloBar1->Size = System::Drawing::Size(100, 230);
+				scaleBar1->Size = System::Drawing::Size(100, 52);
+				truckBar1->Size = System::Drawing::Size(100, 28);
 			}
 			tonnage1->Text = psIni->sInv.fTon1.ToString("F01");
 			scaleBar1->Maximum = psIni->bBotScale ? psIni->fBotScaleMax : psIni->fTopScaleMax;
@@ -402,7 +402,7 @@ namespace As
 			addBt1->Visible = !psIni->sInv.bJog1;
 			autoDisch1->Checked = psIni->sInv.bAutoDisch1;
 
-			if(pAll->pCam1 != nullptr)
+			if (pAll->pCam1 != nullptr)
 			{
 				webBrowser1->Visible = true;
 				webBrowser1->Navigate(pAll->pCam1);
@@ -411,233 +411,233 @@ namespace As
 			// plant 2 --------------------------------------------------------
 			bSecond = psIni->nNumLanes > 1 && psIni->nL2SilosNum != 0;	//DC 4.0.10
 
-			if(bSecond)
+			if (bSecond)
 			{
-			if(pAll->eAsType == A_DEMO)
-				psIni->sScale2.cGo = '0';			// idle
+				if (pAll->eAsType == A_DEMO)
+					psIni->sScale2.cGo = '0';			// idle
 
-			groupBox2->Visible = bSecond;
+				groupBox2->Visible = bSecond;
 
-			if(psIni->bUseTrkMax)					//DC 3.2.0
-				this->targetLb2->Text = L"TrkMax(TN)";
+				if (psIni->bUseTrkMax)					//DC 3.2.0
+					this->targetLb2->Text = L"TrkMax(TN)";
 
-			numCopy2->Value = pAll->nTicketCopy2;			//DC 4.0.2
+				numCopy2->Value = pAll->nTicketCopy2;			//DC 4.0.2
 
-			if(psIni->bBotScale)
-			{
-				siloBar2->Maximum = psIni->fSiloMax4;
-				siloBar2->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				siloBar2->Inventory = psIni->sInv.fInv4;
-				siloBar2->Value = psIni->sInv.fInv4;
-				if(psIni->nL2SilosNum > 1)
+				if (psIni->bBotScale)
 				{
-					siloBar22->Maximum = psIni->fSiloMax5;
-					siloBar22->Visible = true;
-					siloBar22->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-					siloBar22->Inventory = psIni->fSiloMax5 > 0 ? psIni->sInv.fInv5 : 0;
-					siloBar22->Enabled = psIni->fSiloMax5 > 0;
-					//				siloBar22->Idle = psIni->fSiloMax5 == 0;
-					siloBar22_Click(nullptr, nullptr);
+					siloBar2->Maximum = psIni->fSiloMax4;
+					siloBar2->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+					siloBar2->Inventory = psIni->sInv.fInv4;
+					siloBar2->Value = psIni->sInv.fInv4;
+					if (psIni->nL2SilosNum > 1)
+					{
+						siloBar22->Maximum = psIni->fSiloMax5;
+						siloBar22->Visible = true;
+						siloBar22->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+						siloBar22->Inventory = psIni->fSiloMax5 > 0 ? psIni->sInv.fInv5 : 0;
+						siloBar22->Enabled = psIni->fSiloMax5 > 0;
+						//				siloBar22->Idle = psIni->fSiloMax5 == 0;
+						siloBar22_Click(nullptr, nullptr);
+					}
+					if (psIni->nL2SilosNum > 2)
+					{
+						siloBar23->Maximum = psIni->fSiloMax6;
+						siloBar23->Visible = true;
+						siloBar23->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+						siloBar23->Inventory = psIni->fSiloMax6 > 0 ? psIni->sInv.fInv6 : 0;
+						siloBar23->Enabled = psIni->fSiloMax6 > 0;
+						//				siloBar23->Idle = psIni->fSiloMax6 == 0;
+						siloBar23_Click(nullptr, nullptr);
+					}
+
+					scaleBar2->Maximum = psIni->fBotScaleMaxL2;		//DC 4.1.2
+
+					if (pAll->pCam4 != nullptr)
+					{
+						webBrowser2->Visible = true;
+						webBrowser2->Navigate(pAll->pCam4);
+					}
 				}
-				if(psIni->nL2SilosNum > 2)
+				else
 				{
-					siloBar23->Maximum = psIni->fSiloMax6;
-					siloBar23->Visible = true;
-					siloBar23->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-					siloBar23->Inventory = psIni->fSiloMax6 > 0 ? psIni->sInv.fInv6 : 0;
-					siloBar23->Enabled = psIni->fSiloMax6 > 0;
-					//				siloBar23->Idle = psIni->fSiloMax6 == 0;
-					siloBar23_Click(nullptr, nullptr);
+					siloBar2->Text = "Silo 2";
+					siloBar2->Maximum = psIni->fSiloMax2;
+					siloBar2->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+					siloBar2->Inventory = psIni->sInv.fInv2;
+					siloBar2->Value = psIni->sInv.fInv2;
+
+					siloBar2->Size = System::Drawing::Size(100, 230);
+					scaleBar2->Size = System::Drawing::Size(100, 52);
+					truckBar2->Size = System::Drawing::Size(100, 28);
+
+					scaleBar2->Maximum = psIni->fTopScaleMax;
+
+					if (pAll->pCam2 != nullptr)
+					{
+						webBrowser2->Visible = true;
+						webBrowser2->Navigate(pAll->pCam2);
+					}
 				}
+				tonnage2->Text = psIni->sInv.fTon2.ToString("F01");
+				siloBar2_Click(nullptr, nullptr);
 
-				scaleBar2->Maximum = psIni->fBotScaleMaxL2;		//DC 4.1.2
-
-				if(pAll->pCam4 != nullptr)
-				{
-					webBrowser2->Visible = true;
-					webBrowser2->Navigate(pAll->pCam4);
-				}
-			}
-			else
-			{
-				siloBar2->Text = "Silo 2";
-				siloBar2->Maximum = psIni->fSiloMax2;
-				siloBar2->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				siloBar2->Inventory = psIni->sInv.fInv2;
-				siloBar2->Value = psIni->sInv.fInv2;
-
-				 siloBar2->Size = System::Drawing::Size(100, 230);
-				 scaleBar2->Size = System::Drawing::Size(100, 52);
-				 truckBar2->Size = System::Drawing::Size(100, 28);
-
-				scaleBar2->Maximum = psIni->fTopScaleMax;
-
-				if(pAll->pCam2 != nullptr)
-				{
-					webBrowser2->Visible = true;
-					webBrowser2->Navigate(pAll->pCam2);
-				}
-			}
-			tonnage2->Text = psIni->sInv.fTon2.ToString("F01");
-			siloBar2_Click(nullptr, nullptr);
-
-			//			printTarget2->Checked = psIni->sInv.bPrintTarget2;
-			autoFall2->Checked = psIni->sInv.bAutoFall2;
-			adapt2->Checked = psIni->sInv.bAdapt2;
-			jog2->Checked = psIni->sInv.bJog2;
-			addBt2->Visible = !psIni->sInv.bJog2;
-			autoDisch2->Checked = psIni->sInv.bAutoDisch2;
+				//			printTarget2->Checked = psIni->sInv.bPrintTarget2;
+				autoFall2->Checked = psIni->sInv.bAutoFall2;
+				adapt2->Checked = psIni->sInv.bAdapt2;
+				jog2->Checked = psIni->sInv.bJog2;
+				addBt2->Visible = !psIni->sInv.bJog2;
+				autoDisch2->Checked = psIni->sInv.bAutoDisch2;
 			}
 
 			// plant 3 --------------------------------------------------------
 			bThird = psIni->nNumLanes > 2 && psIni->nL3SilosNum != 0;	//DC 4.0.10
 
-			if(bThird)
+			if (bThird)
 			{
-			if(pAll->eAsType == A_DEMO)
-				psIni->sScale3.cGo = '0';			// idle
+				if (pAll->eAsType == A_DEMO)
+					psIni->sScale3.cGo = '0';			// idle
 
-			groupBox3->Visible = bThird;
+				groupBox3->Visible = bThird;
 
-			if(psIni->bUseTrkMax)					//DC 3.2.0
-				this->targetLb3->Text = L"TrkMax(TN)";
+				if (psIni->bUseTrkMax)					//DC 3.2.0
+					this->targetLb3->Text = L"TrkMax(TN)";
 
-			numCopy3->Value = pAll->nTicketCopy3;			//DC 4.0.2
+				numCopy3->Value = pAll->nTicketCopy3;			//DC 4.0.2
 
-			if(psIni->bBotScale)
-			{
-				siloBar3->Maximum = psIni->fSiloMax7;
-				siloBar3->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				siloBar3->Inventory = psIni->sInv.fInv7;
-				siloBar3->Value = psIni->sInv.fInv7;
-				if(psIni->nL3SilosNum > 1)
+				if (psIni->bBotScale)
 				{
-					siloBar32->Maximum = psIni->fSiloMax8;
-					siloBar32->Visible = true;
-					siloBar32->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-					siloBar32->Inventory = psIni->fSiloMax8 > 0 ? psIni->sInv.fInv8 : 0;
-					siloBar32->Enabled = psIni->fSiloMax8 > 0;
-					//				siloBar32->Idle = psIni->fSiloMax8 == 0;
-					siloBar32_Click(nullptr, nullptr);
+					siloBar3->Maximum = psIni->fSiloMax7;
+					siloBar3->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+					siloBar3->Inventory = psIni->sInv.fInv7;
+					siloBar3->Value = psIni->sInv.fInv7;
+					if (psIni->nL3SilosNum > 1)
+					{
+						siloBar32->Maximum = psIni->fSiloMax8;
+						siloBar32->Visible = true;
+						siloBar32->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+						siloBar32->Inventory = psIni->fSiloMax8 > 0 ? psIni->sInv.fInv8 : 0;
+						siloBar32->Enabled = psIni->fSiloMax8 > 0;
+						//				siloBar32->Idle = psIni->fSiloMax8 == 0;
+						siloBar32_Click(nullptr, nullptr);
+					}
+					if (psIni->nL3SilosNum > 2)
+					{
+						siloBar33->Maximum = psIni->fSiloMax9;
+						siloBar33->Visible = true;
+						siloBar33->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+						siloBar33->Inventory = psIni->fSiloMax9 > 0 ? psIni->sInv.fInv9 : 0;
+						siloBar33->Enabled = psIni->fSiloMax9 > 0;
+						//				siloBar33->Idle = psIni->fSiloMax9 == 0;
+						siloBar33_Click(nullptr, nullptr);
+					}
+
+					scaleBar3->Maximum = psIni->fBotScaleMaxL3;		//DC 7.1.2
 				}
-				if(psIni->nL3SilosNum > 2)
+				else
 				{
-					siloBar33->Maximum = psIni->fSiloMax9;
-					siloBar33->Visible = true;
-					siloBar33->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-					siloBar33->Inventory = psIni->fSiloMax9 > 0 ? psIni->sInv.fInv9 : 0;
-					siloBar33->Enabled = psIni->fSiloMax9 > 0;
-					//				siloBar33->Idle = psIni->fSiloMax9 == 0;
-					siloBar33_Click(nullptr, nullptr);
+					siloBar3->Text = "Silo 3";
+					siloBar3->Maximum = psIni->fSiloMax3;
+					siloBar3->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+					siloBar3->Inventory = psIni->sInv.fInv3;
+					siloBar3->Value = psIni->sInv.fInv3;
+
+					siloBar3->Size = System::Drawing::Size(100, 230);
+					scaleBar3->Size = System::Drawing::Size(100, 52);
+					truckBar3->Size = System::Drawing::Size(100, 28);
+					scaleBar3->Maximum = psIni->fTopScaleMax;
+
+					if (pAll->pCam3 != nullptr)
+					{
+						webBrowser3->Visible = true;
+						webBrowser3->Navigate(pAll->pCam3);
+					}
 				}
+				tonnage3->Text = psIni->sInv.fTon3.ToString("F01");
+				siloBar3_Click(nullptr, nullptr);
 
-				scaleBar3->Maximum = psIni->fBotScaleMaxL3;		//DC 7.1.2
-			}
-			else
-			{
-				siloBar3->Text = "Silo 3";
-				siloBar3->Maximum = psIni->fSiloMax3;
-				siloBar3->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				siloBar3->Inventory = psIni->sInv.fInv3;
-				siloBar3->Value = psIni->sInv.fInv3;
-
-				 siloBar3->Size = System::Drawing::Size(100, 230);
-				 scaleBar3->Size = System::Drawing::Size(100, 52);
-				 truckBar3->Size = System::Drawing::Size(100, 28);
-				scaleBar3->Maximum = psIni->fTopScaleMax;
-
-				if(pAll->pCam3 != nullptr)
-				{
-					webBrowser3->Visible = true;
-					webBrowser3->Navigate(pAll->pCam3);
-				}
-			}
-			tonnage3->Text = psIni->sInv.fTon3.ToString("F01");
-			siloBar3_Click(nullptr, nullptr);
-
-			//			printTarget3->Checked = psIni->sInv.bPrintTarget3;
-			autoFall3->Checked = psIni->sInv.bAutoFall3;
-			adapt3->Checked = psIni->sInv.bAdapt3;
-			jog3->Checked = psIni->sInv.bJog3;
-			addBt3->Visible = !psIni->sInv.bJog3;
-			autoDisch3->Checked = psIni->sInv.bAutoDisch3;
+				//			printTarget3->Checked = psIni->sInv.bPrintTarget3;
+				autoFall3->Checked = psIni->sInv.bAutoFall3;
+				adapt3->Checked = psIni->sInv.bAdapt3;
+				jog3->Checked = psIni->sInv.bJog3;
+				addBt3->Visible = !psIni->sInv.bJog3;
+				autoDisch3->Checked = psIni->sInv.bAutoDisch3;
 			}
 
 			// plant 4 //DC 3.3.0 --------------------------------------------------------
 			bForth = psIni->nNumLanes > 3;
 
-			if(bForth)
+			if (bForth)
 			{
-			if(pAll->eAsType == A_DEMO)
-				psIni->sScale4.cGo = '0';			// idle
+				if (pAll->eAsType == A_DEMO)
+					psIni->sScale4.cGo = '0';			// idle
 
-			groupBox4->Visible = bForth;
+				groupBox4->Visible = bForth;
 
-			if(psIni->bUseTrkMax)					//DC 3.2.0
-				this->targetLb4->Text = L"TrkMax(TN)";
+				if (psIni->bUseTrkMax)					//DC 3.2.0
+					this->targetLb4->Text = L"TrkMax(TN)";
 
-			numCopy4->Value = pAll->nTicketCopy4;			//DC 4.0.2
+				numCopy4->Value = pAll->nTicketCopy4;			//DC 4.0.2
 
-			if(psIni->bBotScale)
-			{
-				siloBar4->Maximum = psIni->fSiloMax10;
-				siloBar4->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				siloBar4->Inventory = psIni->sInv.fInv10;
-				siloBar4->Value = psIni->sInv.fInv10;
-				if(psIni->nL4SilosNum > 1)
+				if (psIni->bBotScale)
 				{
-					siloBar42->Maximum = psIni->fSiloMax11;
-					siloBar42->Visible = true;
-					siloBar42->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-					siloBar42->Inventory = psIni->fSiloMax11 > 0 ? psIni->sInv.fInv11 : 0;
-					siloBar42->Enabled = psIni->fSiloMax11 > 0;
-					//				siloBar32->Idle = psIni->fSiloMax8 == 0;
-					siloBar42_Click(nullptr, nullptr);
+					siloBar4->Maximum = psIni->fSiloMax10;
+					siloBar4->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+					siloBar4->Inventory = psIni->sInv.fInv10;
+					siloBar4->Value = psIni->sInv.fInv10;
+					if (psIni->nL4SilosNum > 1)
+					{
+						siloBar42->Maximum = psIni->fSiloMax11;
+						siloBar42->Visible = true;
+						siloBar42->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+						siloBar42->Inventory = psIni->fSiloMax11 > 0 ? psIni->sInv.fInv11 : 0;
+						siloBar42->Enabled = psIni->fSiloMax11 > 0;
+						//				siloBar32->Idle = psIni->fSiloMax8 == 0;
+						siloBar42_Click(nullptr, nullptr);
+					}
+					if (psIni->nL4SilosNum > 2)
+					{
+						siloBar43->Maximum = psIni->fSiloMax12;
+						siloBar43->Visible = true;
+						siloBar43->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+						siloBar43->Inventory = psIni->fSiloMax12 > 0 ? psIni->sInv.fInv12 : 0;
+						siloBar43->Enabled = psIni->fSiloMax12 > 0;
+						//				siloBar33->Idle = psIni->fSiloMax9 == 0;
+						siloBar43_Click(nullptr, nullptr);
+					}
+
+					scaleBar4->Maximum = psIni->fBotScaleMaxL4;		//DC 4.0.0
 				}
-				if(psIni->nL4SilosNum > 2)
+				else
 				{
-					siloBar43->Maximum = psIni->fSiloMax12;
-					siloBar43->Visible = true;
-					siloBar43->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-					siloBar43->Inventory = psIni->fSiloMax12 > 0 ? psIni->sInv.fInv12 : 0;
-					siloBar43->Enabled = psIni->fSiloMax12 > 0;
-					//				siloBar33->Idle = psIni->fSiloMax9 == 0;
-					siloBar43_Click(nullptr, nullptr);
+					siloBar4->Text = "Silo 4";
+					siloBar4->Maximum = psIni->fSiloMax4;
+					siloBar4->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+					siloBar4->Inventory = psIni->sInv.fInv4;
+					siloBar4->Value = psIni->sInv.fInv4;
+
+					siloBar4->Size = System::Drawing::Size(100, 230);
+					scaleBar4->Size = System::Drawing::Size(100, 52);
+					truckBar4->Size = System::Drawing::Size(100, 28);
+					scaleBar4->Maximum = psIni->fTopScaleMax;
+
+					if (pAll->pCam4 != nullptr)
+					{
+						webBrowser4->Visible = true;
+						webBrowser4->Navigate(pAll->pCam4);
+					}
 				}
+				tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
+				siloBar4_Click(nullptr, nullptr);
 
-				scaleBar4->Maximum = psIni->fBotScaleMaxL4;		//DC 4.0.0
-			}
-			else
-			{
-				siloBar4->Text = "Silo 4";
-				siloBar4->Maximum = psIni->fSiloMax4;
-				siloBar4->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				siloBar4->Inventory = psIni->sInv.fInv4;
-				siloBar4->Value = psIni->sInv.fInv4;
-
-				 siloBar4->Size = System::Drawing::Size(100, 230);
-				 scaleBar4->Size = System::Drawing::Size(100, 52);
-				 truckBar4->Size = System::Drawing::Size(100, 28);
-				scaleBar4->Maximum = psIni->fTopScaleMax;
-
-				if(pAll->pCam4 != nullptr)
-				{
-					webBrowser4->Visible = true;
-					webBrowser4->Navigate(pAll->pCam4);
-				}
-			}
-			tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
-			siloBar4_Click(nullptr, nullptr);
-
-			//			printTarget3->Checked = psIni->sInv.bPrintTarget3;
-			autoFall4->Checked = psIni->sInv.bAutoFall4;
-			adapt4->Checked = psIni->sInv.bAdapt4;
-			jog4->Checked = psIni->sInv.bJog4;
-			addBt4->Visible = !psIni->sInv.bJog4;
-			autoDisch4->Checked = psIni->sInv.bAutoDisch4;
+				//			printTarget3->Checked = psIni->sInv.bPrintTarget3;
+				autoFall4->Checked = psIni->sInv.bAutoFall4;
+				adapt4->Checked = psIni->sInv.bAdapt4;
+				jog4->Checked = psIni->sInv.bJog4;
+				addBt4->Visible = !psIni->sInv.bJog4;
+				autoDisch4->Checked = psIni->sInv.bAutoDisch4;
 			}
 
-			if(psIni->bPdmPlc)		//DC 4.0.0
+			if (psIni->bPdmPlc)		//DC 4.0.0
 			{
 				this->siloBar1->Text = gcnew String(psIni->asSilos[0].acMat);
 				this->siloBar12->Text = gcnew String(psIni->asSilos[1].acMat);
@@ -686,21 +686,21 @@ namespace As
 				this->autoFall3->Visible = false; this->autoFall4->Visible = false;
 				this->adapt1->Visible = false; this->adapt2->Visible = false;
 				this->adapt3->Visible = false; this->adapt4->Visible = false;
-				this->jog1->Visible= false; this->jog2->Visible= false;
-				this->jog3->Visible= false; this->jog4->Visible= false;
+				this->jog1->Visible = false; this->jog2->Visible = false;
+				this->jog3->Visible = false; this->jog4->Visible = false;
 				this->autoBt1->Visible = false; this->autoBt2->Visible = false;
 				this->autoBt3->Visible = false; this->autoBt4->Visible = false;
 			}
 
 			//--------------------------------------------------------------------------
-			switch(pAll->eAsType)
+			switch (pAll->eAsType)
 			{
 			case A_DEMO:
 				this->Text += "DEMO " + VERSION;
 				ulinkLb->BackColor = Color::White;
 				printerLb1->BackColor = Color::White;
-//				DbaseLb->BackColor = Color::White;
-				optoLb->BackColor = Color::White;	
+				//				DbaseLb->BackColor = Color::White;
+				optoLb->BackColor = Color::White;
 				break;
 
 			case A_SIM:
@@ -716,7 +716,7 @@ namespace As
 				break;
 			}
 			this->Text += "                                 GivenHansco Inc.";
-			versionLb->Text =  "Plants " + psIni->nPlantNum1.ToString() + "," + psIni->nPlantNum2.ToString();
+			versionLb->Text = "Plants " + psIni->nPlantNum1.ToString() + "," + psIni->nPlantNum2.ToString();
 
 			//-----------------------------------------------------------------
 			setState1(S_IDLE);
@@ -748,12 +748,12 @@ namespace As
 		CLog^ poLog;		// log file manager
 		FILE *pfInv;		// inventory file 
 
-		// OPTO, dbase, printer
-		//System::Collections::Generic::Queue^ qDbase;
-		//System::Collections::Generic::Queue^ qDbaseBad;
+							// OPTO, dbase, printer
+							//System::Collections::Generic::Queue^ qDbase;
+							//System::Collections::Generic::Queue^ qDbaseBad;
 
 		bool bShowInv;
-//		bool b485Ok;		// RS485 tester
+		//		bool b485Ok;		// RS485 tester
 		int  nSplash;
 		int  nOneSec;
 		int	 nLane;
@@ -764,7 +764,7 @@ namespace As
 		int  nOffs4;			//DC 3.3.0
 		int  nKeepAliveTimeOn;	//DC 4.0.1
 		int  nKeepAliveTimeOff;	//DC 4.0.1
-		
+
 		Color COL_IDLE;
 		Color COL_CHARGE;
 		Color COL_DISCH;
@@ -805,7 +805,7 @@ namespace As
 		double fTol1;		   // target tolerance
 		double fTarget1;       // drop size
 		double fNewTarget1;    // drop size - tare
-		double fTmpScale1;    
+		double fTmpScale1;
 		double fFall1;
 		double fLoad1;
 		double fCumTarget1; // cumulative target
@@ -817,7 +817,7 @@ namespace As
 		clock_t	tSafeA;		// safe valve timeout 
 		STATE	ePrevHold1;	//DC 4.0.0
 
-		// plant 2 ------------------------------------------------------------------
+							// plant 2 ------------------------------------------------------------------
 		bool  bAuto2;
 		bool  bSecond;
 		bool  bFill4;
@@ -837,7 +837,7 @@ namespace As
 		double fTol2;		   // target tolerance
 		double fTarget2;       // drop size
 		double fNewTarget2;    // drop size - tare 
-		double fTmpScale2;    
+		double fTmpScale2;
 		double fLoad2;
 		double fFall2;
 		double fCumTarget2;  // partial target
@@ -849,7 +849,7 @@ namespace As
 		clock_t	tSafeB;		// safe valve timeout
 		STATE	ePrevHold2;	//DC 4.0.0
 
-		// plant 3 ------------------------------------------------------------------
+							// plant 3 ------------------------------------------------------------------
 		bool  bAuto3;
 		bool  bThird;
 		bool  bFill7;
@@ -869,7 +869,7 @@ namespace As
 		double fTol3;		   // target tolerance
 		double fTarget3;       // drop size
 		double fNewTarget3;    // drop size - tare 
-		double fTmpScale3;    
+		double fTmpScale3;
 		double fFall3;
 		double fLoad3;
 		double fCumTarget3;  // partial target
@@ -881,7 +881,7 @@ namespace As
 		clock_t	tSafeC;		// safe valve timeout
 		STATE	ePrevHold3;	//DC 4.0.0
 
-		//DC 3.3.0 plant 4 ------------------------------------------------------------------
+							//DC 3.3.0 plant 4 ------------------------------------------------------------------
 		bool  bAuto4;
 		bool  bForth;
 		bool  bFill10;
@@ -901,7 +901,7 @@ namespace As
 		double fTol4;		   // target tolerance
 		double fTarget4;       // drop size
 		double fNewTarget4;    // drop size - tare 
-		double fTmpScale4;    
+		double fTmpScale4;
 		double fFall4;
 		double fLoad4;
 		double fCumTarget4;  // partial target
@@ -923,9 +923,9 @@ namespace As
 		int		nTicketsOld4; //DC 4.1.0
 		int		nCounts;	//DC 4.1.0
 
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
+							/// <summary>
+							/// Required designer variable.
+							/// </summary>
 	private: System::ComponentModel::IContainer^  components;
 	private: System::Windows::Forms::GroupBox^  groupBox3;
 	private: System::Windows::Forms::Label^  matLb3;
@@ -1031,7 +1031,7 @@ namespace As
 	private: System::Windows::Forms::ToolStripMenuItem^  exitMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  helpMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  aboutMenuItem;
-private: System::Windows::Forms::Label^  printerLb1;
+	private: System::Windows::Forms::Label^  printerLb1;
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
@@ -1106,230 +1106,230 @@ private: System::Windows::Forms::Label^  printerLb1;
 	private: System::Windows::Forms::Button^  all2;
 	private: System::Windows::Forms::DataGridView^  dataGridJob;
 	private: System::Windows::Forms::BindingSource^  jobBindingSource;
-private: System::Windows::Forms::Label^  lite3;
-private: System::Windows::Forms::Label^  lite1;
-private: System::Windows::Forms::Label^  lite2;
-private: System::Windows::Forms::Label^  optoErr;
-private: System::Windows::Forms::PictureBox^  pictureBox3;
-private: System::Windows::Forms::PictureBox^  pictureBox1;
-private: System::Windows::Forms::PictureBox^  pictureBox2;
-private: System::Windows::Forms::CheckBox^  adapt3;
-private: System::Windows::Forms::CheckBox^  adapt1;
-private: System::Windows::Forms::CheckBox^  adapt2;
-private: System::Windows::Forms::BindingSource^  oldBindingSource;
-private: System::Windows::Forms::Label^  printerLb2;
-private: System::Windows::Forms::CheckBox^  laneBCb3;
+	private: System::Windows::Forms::Label^  lite3;
+	private: System::Windows::Forms::Label^  lite1;
+	private: System::Windows::Forms::Label^  lite2;
+	private: System::Windows::Forms::Label^  optoErr;
+	private: System::Windows::Forms::PictureBox^  pictureBox3;
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::PictureBox^  pictureBox2;
+	private: System::Windows::Forms::CheckBox^  adapt3;
+	private: System::Windows::Forms::CheckBox^  adapt1;
+	private: System::Windows::Forms::CheckBox^  adapt2;
+	private: System::Windows::Forms::BindingSource^  oldBindingSource;
+	private: System::Windows::Forms::Label^  printerLb2;
+	private: System::Windows::Forms::CheckBox^  laneBCb3;
 
-private: System::Windows::Forms::CheckBox^  laneACb2;
+	private: System::Windows::Forms::CheckBox^  laneACb2;
 
 
 
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  stNameDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nRateDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nCapacityDataGridViewTextBoxColumn;
-private: System::Windows::Forms::Label^  plant1;
-private: System::Windows::Forms::Label^  plant3;
-private: System::Windows::Forms::Label^  plant2;
-private: System::Windows::Forms::Label^  printerLb3;
-private: System::Windows::Forms::ToolStripMenuItem^  testStripMenuItem;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  stNameDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nRateDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nCapacityDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::Label^  plant1;
+	private: System::Windows::Forms::Label^  plant3;
+	private: System::Windows::Forms::Label^  plant2;
+	private: System::Windows::Forms::Label^  printerLb3;
+	private: System::Windows::Forms::ToolStripMenuItem^  testStripMenuItem;
 
 
 
 
 
 
-private: System::Windows::Forms::Label^  label7;
-private: System::Windows::Forms::Label^  label1;
-private: System::Windows::Forms::Label^  label2;
-private: System::Windows::Forms::PictureBox^  pictureSplash;
-private: System::Windows::Forms::Label^  dbLb;
-private: System::Windows::Forms::GroupBox^  groupBoxC;
-private: System::Windows::Forms::Button^  okC;
-private: System::Windows::Forms::TextBox^  grossC;
-private: System::Windows::Forms::TextBox^  tareC;
-private: System::Windows::Forms::GroupBox^  groupBoxA;
-private: System::Windows::Forms::Button^  okA;
-private: System::Windows::Forms::TextBox^  grossA;
-private: System::Windows::Forms::TextBox^  tareA;
-private: System::Windows::Forms::GroupBox^  groupBoxB;
-private: System::Windows::Forms::Button^  okB;
-private: System::Windows::Forms::TextBox^  grossB;
-private: System::Windows::Forms::TextBox^  tareB;
-private: System::Windows::Forms::CheckBox^  taxExempt3;
-private: System::Windows::Forms::CheckBox^  taxExempt1;
-private: System::Windows::Forms::CheckBox^  taxExempt2;
-private: System::Windows::Forms::CheckBox^  laneACb3;
-private: System::Windows::Forms::CheckBox^  laneBCb1;
-private: System::Windows::Forms::CheckBox^  laneCCb1;
-private: System::Windows::Forms::CheckBox^  laneCCb2;
-private: System::Windows::Forms::RichTextBox^  testBox;
-private: System::Windows::Forms::ToolStripMenuItem^  ulinkMsgToolStripMenuItem;
-private: System::Windows::Forms::Label^  dbLb1;
-private: System::Windows::Forms::Label^  dbLb2;
-private: System::Windows::Forms::ToolStripMenuItem^  exceptionsToolStripMenuItem;
-private: System::Windows::Forms::Label^  safe7;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::PictureBox^  pictureSplash;
+	private: System::Windows::Forms::Label^  dbLb;
+	private: System::Windows::Forms::GroupBox^  groupBoxC;
+	private: System::Windows::Forms::Button^  okC;
+	private: System::Windows::Forms::TextBox^  grossC;
+	private: System::Windows::Forms::TextBox^  tareC;
+	private: System::Windows::Forms::GroupBox^  groupBoxA;
+	private: System::Windows::Forms::Button^  okA;
+	private: System::Windows::Forms::TextBox^  grossA;
+	private: System::Windows::Forms::TextBox^  tareA;
+	private: System::Windows::Forms::GroupBox^  groupBoxB;
+	private: System::Windows::Forms::Button^  okB;
+	private: System::Windows::Forms::TextBox^  grossB;
+	private: System::Windows::Forms::TextBox^  tareB;
+	private: System::Windows::Forms::CheckBox^  taxExempt3;
+	private: System::Windows::Forms::CheckBox^  taxExempt1;
+	private: System::Windows::Forms::CheckBox^  taxExempt2;
+	private: System::Windows::Forms::CheckBox^  laneACb3;
+	private: System::Windows::Forms::CheckBox^  laneBCb1;
+	private: System::Windows::Forms::CheckBox^  laneCCb1;
+	private: System::Windows::Forms::CheckBox^  laneCCb2;
+	private: System::Windows::Forms::RichTextBox^  testBox;
+	private: System::Windows::Forms::ToolStripMenuItem^  ulinkMsgToolStripMenuItem;
+	private: System::Windows::Forms::Label^  dbLb1;
+	private: System::Windows::Forms::Label^  dbLb2;
+	private: System::Windows::Forms::ToolStripMenuItem^  exceptionsToolStripMenuItem;
+	private: System::Windows::Forms::Label^  safe7;
 
-private: System::Windows::Forms::Label^  safe3;
-private: System::Windows::Forms::Label^  safe2;
-private: System::Windows::Forms::Label^  safe1;
-private: System::Windows::Forms::Label^  safe6;
-private: System::Windows::Forms::Label^  safe5;
-private: System::Windows::Forms::Label^  safe4;
-private: System::Windows::Forms::Label^  safe9;
-private: System::Windows::Forms::Label^  safe8;
-private: System::Windows::Forms::Label^  wrLb;
+	private: System::Windows::Forms::Label^  safe3;
+	private: System::Windows::Forms::Label^  safe2;
+	private: System::Windows::Forms::Label^  safe1;
+	private: System::Windows::Forms::Label^  safe6;
+	private: System::Windows::Forms::Label^  safe5;
+	private: System::Windows::Forms::Label^  safe4;
+	private: System::Windows::Forms::Label^  safe9;
+	private: System::Windows::Forms::Label^  safe8;
+	private: System::Windows::Forms::Label^  wrLb;
 
-private: System::Windows::Forms::Label^  rdLb;
-private: System::Windows::Forms::ToolStripMenuItem^  iOTestToolStripMenuItem;
-private: System::Windows::Forms::GroupBox^  groupBox4;
-private: System::Windows::Forms::Label^  lite4;
+	private: System::Windows::Forms::Label^  rdLb;
+	private: System::Windows::Forms::ToolStripMenuItem^  iOTestToolStripMenuItem;
+	private: System::Windows::Forms::GroupBox^  groupBox4;
+	private: System::Windows::Forms::Label^  lite4;
 
-private: System::Windows::Forms::WebBrowser^  webBrowser4;
-private: System::Windows::Forms::Label^  safe12;
+	private: System::Windows::Forms::WebBrowser^  webBrowser4;
+	private: System::Windows::Forms::Label^  safe12;
 
-private: System::Windows::Forms::Label^  safe11;
+	private: System::Windows::Forms::Label^  safe11;
 
-private: System::Windows::Forms::Label^  safe10;
+	private: System::Windows::Forms::Label^  safe10;
 
-private: System::Windows::Forms::CheckBox^  laneDCb1;
-private: System::Windows::Forms::CheckBox^  laneDCb2;
+	private: System::Windows::Forms::CheckBox^  laneDCb1;
+	private: System::Windows::Forms::CheckBox^  laneDCb2;
 
 
-private: System::Windows::Forms::CheckBox^  taxExempt4;
+	private: System::Windows::Forms::CheckBox^  taxExempt4;
 
-private: System::Windows::Forms::GroupBox^  groupBoxD;
-private: System::Windows::Forms::Button^  okD;
+	private: System::Windows::Forms::GroupBox^  groupBoxD;
+	private: System::Windows::Forms::Button^  okD;
 
 
-private: System::Windows::Forms::TextBox^  grossD;
+	private: System::Windows::Forms::TextBox^  grossD;
 
-private: System::Windows::Forms::TextBox^  tareD;
+	private: System::Windows::Forms::TextBox^  tareD;
 
-private: System::Windows::Forms::PictureBox^  pictureBox4;
-private: System::Windows::Forms::Label^  label15;
-private: System::Windows::Forms::Label^  plant4;
-private: System::Windows::Forms::CheckBox^  adapt4;
+	private: System::Windows::Forms::PictureBox^  pictureBox4;
+	private: System::Windows::Forms::Label^  label15;
+	private: System::Windows::Forms::Label^  plant4;
+	private: System::Windows::Forms::CheckBox^  adapt4;
 
 
-private: System::Windows::Forms::Button^  all4;
-private: System::Windows::Forms::CheckBox^  autoDisch4;
+	private: System::Windows::Forms::Button^  all4;
+	private: System::Windows::Forms::CheckBox^  autoDisch4;
 
 
-private: System::Windows::Forms::Label^  silo4;
-private: System::Windows::Forms::Label^  fill43;
+	private: System::Windows::Forms::Label^  silo4;
+	private: System::Windows::Forms::Label^  fill43;
 
 
-private: System::Windows::Forms::Label^  fill42;
+	private: System::Windows::Forms::Label^  fill42;
 
-private: System::Windows::Forms::Label^  fill4;
+	private: System::Windows::Forms::Label^  fill4;
 
-private: As::BarCtl^  truckBar4;
+	private: As::BarCtl^  truckBar4;
 
-private: As::ScaleCtl^  scaleBar4;
+	private: As::ScaleCtl^  scaleBar4;
 
-private: As::BinCtl^  siloBar43;
+	private: As::BinCtl^  siloBar43;
 
-private: As::BinCtl^  siloBar42;
+	private: As::BinCtl^  siloBar42;
 
-private: As::BinCtl^  siloBar4;
-private: System::Windows::Forms::CheckBox^  jog4;
+	private: As::BinCtl^  siloBar4;
+	private: System::Windows::Forms::CheckBox^  jog4;
 
 
-private: System::Windows::Forms::Button^  readyBt4;
-private: System::Windows::Forms::CheckBox^  autoFall4;
+	private: System::Windows::Forms::Button^  readyBt4;
+	private: System::Windows::Forms::CheckBox^  autoFall4;
 
 
-private: System::Windows::Forms::Label^  flow4;
-private: System::Windows::Forms::Button^  printOnly4;
-private: System::Windows::Forms::CheckBox^  printTarget4;
+	private: System::Windows::Forms::Label^  flow4;
+	private: System::Windows::Forms::Button^  printOnly4;
+	private: System::Windows::Forms::CheckBox^  printTarget4;
 
 
 
-private: System::Windows::Forms::Label^  tonnage4;
+	private: System::Windows::Forms::Label^  tonnage4;
 
-private: System::Windows::Forms::Label^  label23;
-private: System::Windows::Forms::Label^  label24;
-private: System::Windows::Forms::Label^  man4;
+	private: System::Windows::Forms::Label^  label23;
+	private: System::Windows::Forms::Label^  label24;
+	private: System::Windows::Forms::Label^  man4;
 
-private: System::Windows::Forms::Button^  autoBt4;
+	private: System::Windows::Forms::Button^  autoBt4;
 
-private: System::Windows::Forms::TextBox^  material4;
-private: System::Windows::Forms::TextBox^  tic_num4;
-private: System::Windows::Forms::TextBox^  target4;
+	private: System::Windows::Forms::TextBox^  material4;
+	private: System::Windows::Forms::TextBox^  tic_num4;
+	private: System::Windows::Forms::TextBox^  target4;
 
 
 
-private: System::Windows::Forms::TextBox^  truck4;
+	private: System::Windows::Forms::TextBox^  truck4;
 
-private: System::Windows::Forms::TextBox^  Job4;
+	private: System::Windows::Forms::TextBox^  Job4;
 
-private: System::Windows::Forms::TextBox^  customer4;
-private: System::Windows::Forms::Button^  addBt4;
-private: System::Windows::Forms::Button^  dischBt4;
+	private: System::Windows::Forms::TextBox^  customer4;
+	private: System::Windows::Forms::Button^  addBt4;
+	private: System::Windows::Forms::Button^  dischBt4;
 
 
 
-private: System::Windows::Forms::Label^  truckLb4;
-private: System::Windows::Forms::RadioButton^  drops44;
+	private: System::Windows::Forms::Label^  truckLb4;
+	private: System::Windows::Forms::RadioButton^  drops44;
 
 
-private: System::Windows::Forms::RadioButton^  drops43;
+	private: System::Windows::Forms::RadioButton^  drops43;
 
-private: System::Windows::Forms::RadioButton^  drops42;
+	private: System::Windows::Forms::RadioButton^  drops42;
 
-private: System::Windows::Forms::RadioButton^  drops41;
+	private: System::Windows::Forms::RadioButton^  drops41;
 
-private: System::Windows::Forms::Label^  JobLb4;
-private: System::Windows::Forms::Label^  cnt4;
+	private: System::Windows::Forms::Label^  JobLb4;
+	private: System::Windows::Forms::Label^  cnt4;
 
 
-private: System::Windows::Forms::Label^  ticLb4;
-private: System::Windows::Forms::PictureBox^  truckPic4;
+	private: System::Windows::Forms::Label^  ticLb4;
+	private: System::Windows::Forms::PictureBox^  truckPic4;
 
 
-private: System::Windows::Forms::Label^  ticketNum4;
+	private: System::Windows::Forms::Label^  ticketNum4;
 
-private: System::Windows::Forms::Label^  label31;
-private: System::Windows::Forms::Label^  targetLb4;
+	private: System::Windows::Forms::Label^  label31;
+	private: System::Windows::Forms::Label^  targetLb4;
 
-private: System::Windows::Forms::Label^  matLb4;
+	private: System::Windows::Forms::Label^  matLb4;
 
-private: System::Windows::Forms::Button^  nextBt4;
-private: System::Windows::Forms::Label^  dropsLb4;
+	private: System::Windows::Forms::Button^  nextBt4;
+	private: System::Windows::Forms::Label^  dropsLb4;
 
 
-private: System::Windows::Forms::Label^  scale4;
+	private: System::Windows::Forms::Label^  scale4;
 
-private: System::Windows::Forms::Label^  custLb4;
-private: System::Windows::Forms::Button^  pauseBt4;
+	private: System::Windows::Forms::Label^  custLb4;
+	private: System::Windows::Forms::Button^  pauseBt4;
 
 
-private: System::Windows::Forms::Button^  stopBt4;
-private: System::Windows::Forms::Button^  dropBt4;
-private: System::Windows::Forms::Button^  zoom4;
-private: System::Windows::Forms::ToolStripMenuItem^  configToolStripMenuItem;
-private: System::Windows::Forms::Label^  lane1StatLB;
-private: System::Windows::Forms::Label^  lane3StatLB;
-private: System::Windows::Forms::Label^  lane2StatLB;
-private: System::Windows::Forms::Label^  lane4StatLB;
-private: System::Windows::Forms::Label^  printerLb4;
-private: System::Windows::Forms::Label^  matrixPDMLb;
-private: System::Windows::Forms::Label^  prod01Lb;
-private: System::Windows::Forms::Label^  prod02Lb;
-private: System::Windows::Forms::Label^  prod03Lb;
-private: System::Windows::Forms::Label^  prod09Lb;
+	private: System::Windows::Forms::Button^  stopBt4;
+	private: System::Windows::Forms::Button^  dropBt4;
+	private: System::Windows::Forms::Button^  zoom4;
+	private: System::Windows::Forms::ToolStripMenuItem^  configToolStripMenuItem;
+	private: System::Windows::Forms::Label^  lane1StatLB;
+	private: System::Windows::Forms::Label^  lane3StatLB;
+	private: System::Windows::Forms::Label^  lane2StatLB;
+	private: System::Windows::Forms::Label^  lane4StatLB;
+	private: System::Windows::Forms::Label^  printerLb4;
+	private: System::Windows::Forms::Label^  matrixPDMLb;
+	private: System::Windows::Forms::Label^  prod01Lb;
+	private: System::Windows::Forms::Label^  prod02Lb;
+	private: System::Windows::Forms::Label^  prod03Lb;
+	private: System::Windows::Forms::Label^  prod09Lb;
 
-private: System::Windows::Forms::Label^  prod08Lb;
+	private: System::Windows::Forms::Label^  prod08Lb;
 
-private: System::Windows::Forms::Label^  prod07Lb;
-private: System::Windows::Forms::Label^  prod06Lb;
-private: System::Windows::Forms::Label^  prod05Lb;
-private: System::Windows::Forms::Label^  prod04Lb;
-private: System::Windows::Forms::Label^  prod12Lb;
+	private: System::Windows::Forms::Label^  prod07Lb;
+	private: System::Windows::Forms::Label^  prod06Lb;
+	private: System::Windows::Forms::Label^  prod05Lb;
+	private: System::Windows::Forms::Label^  prod04Lb;
+	private: System::Windows::Forms::Label^  prod12Lb;
 
-private: System::Windows::Forms::Label^  prod11Lb;
+	private: System::Windows::Forms::Label^  prod11Lb;
 
-private: System::Windows::Forms::Label^  prod10Lb;
+	private: System::Windows::Forms::Label^  prod10Lb;
 
 
 
@@ -1338,53 +1338,53 @@ private: System::Windows::Forms::Label^  prod10Lb;
 
 
 
-private: System::Windows::Forms::NumericUpDown^  numCopy1;
-private: System::Windows::Forms::CheckBox^  laneA2ndCB;
+	private: System::Windows::Forms::NumericUpDown^  numCopy1;
+	private: System::Windows::Forms::CheckBox^  laneA2ndCB;
 
 
 
 
-private: System::Windows::Forms::Label^  copyLb1;
-private: System::Windows::Forms::Label^  copyLane1Lb;
-private: System::Windows::Forms::Label^  copyLane4Lb;
-private: System::Windows::Forms::Label^  copyLane3Lb;
-private: System::Windows::Forms::Label^  copyLane2Lb;
-private: System::Windows::Forms::CheckBox^  laneC2ndCB;
+	private: System::Windows::Forms::Label^  copyLb1;
+	private: System::Windows::Forms::Label^  copyLane1Lb;
+	private: System::Windows::Forms::Label^  copyLane4Lb;
+	private: System::Windows::Forms::Label^  copyLane3Lb;
+	private: System::Windows::Forms::Label^  copyLane2Lb;
+	private: System::Windows::Forms::CheckBox^  laneC2ndCB;
 
-private: System::Windows::Forms::Label^  copyLb3;
+	private: System::Windows::Forms::Label^  copyLb3;
 
-private: System::Windows::Forms::NumericUpDown^  numCopy3;
-private: System::Windows::Forms::CheckBox^  laneB2ndCB;
+	private: System::Windows::Forms::NumericUpDown^  numCopy3;
+	private: System::Windows::Forms::CheckBox^  laneB2ndCB;
 
 
-private: System::Windows::Forms::Label^  copyLb2;
+	private: System::Windows::Forms::Label^  copyLb2;
 
-private: System::Windows::Forms::NumericUpDown^  numCopy2;
-private: System::Windows::Forms::CheckBox^  laneD2ndCB;
+	private: System::Windows::Forms::NumericUpDown^  numCopy2;
+	private: System::Windows::Forms::CheckBox^  laneD2ndCB;
 
-private: System::Windows::Forms::Label^  copyLb4;
+	private: System::Windows::Forms::Label^  copyLb4;
 
-private: System::Windows::Forms::NumericUpDown^  numCopy4;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  stTime;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nSilo;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nTicketDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  stTruck;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  stMaterial;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  stCustomer;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  fLoad;
-private: System::Windows::Forms::Button^  resetBt3;
-private: System::Windows::Forms::Button^  resetBt1;
-private: System::Windows::Forms::Button^  resetBt2;
-private: System::Windows::Forms::Button^  resetBt4;
-private: System::Windows::Forms::Button^  remLoginBt;
-private: System::Windows::Forms::Label^  loginErrLb;
-private: System::Windows::Forms::Label^  clinkLb;
-private: System::Windows::Forms::Label^  remoteLb;
-private: System::Windows::Forms::Label^  ipAddressLb;
-private: System::Windows::Forms::GroupBox^  gBoxLine1;
-private: As::BinCtl^  siloBar14;
-private: As::BinCtl^  siloBar24;
+	private: System::Windows::Forms::NumericUpDown^  numCopy4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  stTime;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nSilo;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nTicketDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  stTruck;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  stMaterial;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  stCustomer;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  fLoad;
+	private: System::Windows::Forms::Button^  resetBt3;
+	private: System::Windows::Forms::Button^  resetBt1;
+	private: System::Windows::Forms::Button^  resetBt2;
+	private: System::Windows::Forms::Button^  resetBt4;
+	private: System::Windows::Forms::Button^  remLoginBt;
+	private: System::Windows::Forms::Label^  loginErrLb;
+	private: System::Windows::Forms::Label^  clinkLb;
+	private: System::Windows::Forms::Label^  remoteLb;
+	private: System::Windows::Forms::Label^  ipAddressLb;
+	private: System::Windows::Forms::GroupBox^  gBoxLine1;
+	private: As::BinCtl^  siloBar14;
+	private: As::BinCtl^  siloBar24;
 
 
 
@@ -1967,7 +1967,7 @@ private: As::BinCtl^  siloBar24;
 				 this->groupBox3->Controls->Add(this->autoBt3);
 				 this->groupBox3->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->groupBox3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->groupBox3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->groupBox3->Location = System::Drawing::Point(860, 27);
@@ -1981,7 +1981,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneC2ndCB->AutoSize = true;
 				 this->laneC2ndCB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneC2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneC2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneC2ndCB->Location = System::Drawing::Point(304, 232);
 				 this->laneC2ndCB->Name = L"laneC2ndCB";
@@ -2004,7 +2004,7 @@ private: As::BinCtl^  siloBar24;
 				 // copyLb3
 				 // 
 				 this->copyLb3->AutoSize = true;
-				 this->copyLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->copyLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->copyLb3->Location = System::Drawing::Point(338, 202);
 				 this->copyLb3->Name = L"copyLb3";
@@ -2015,18 +2015,18 @@ private: As::BinCtl^  siloBar24;
 				 // numCopy3
 				 // 
 				 this->numCopy3->Location = System::Drawing::Point(304, 197);
-				 this->numCopy3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+				 this->numCopy3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 				 this->numCopy3->Name = L"numCopy3";
 				 this->numCopy3->Size = System::Drawing::Size(30, 23);
 				 this->numCopy3->TabIndex = 59;
-				 this->numCopy3->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {1, 0, 0, 0});
+				 this->numCopy3->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 				 this->numCopy3->ValueChanged += gcnew System::EventHandler(this, &Form1::numericUpDown2_ValueChanged);
 				 // 
 				 // prod08Lb
 				 // 
 				 this->prod08Lb->AutoSize = true;
 				 this->prod08Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod08Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod08Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod08Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod08Lb->Location = System::Drawing::Point(113, 225);
@@ -2040,7 +2040,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod07Lb->AutoSize = true;
 				 this->prod07Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod07Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod07Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod07Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod07Lb->Location = System::Drawing::Point(11, 225);
@@ -2053,7 +2053,7 @@ private: As::BinCtl^  siloBar24;
 				 // lane3StatLB
 				 // 
 				 this->lane3StatLB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->lane3StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->lane3StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->lane3StatLB->ForeColor = System::Drawing::Color::Black;
 				 this->lane3StatLB->Location = System::Drawing::Point(68, 1);
@@ -2123,7 +2123,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneCCb1->AutoSize = true;
 				 this->laneCCb1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneCCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneCCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneCCb1->Location = System::Drawing::Point(303, 170);
 				 this->laneCCb1->Name = L"laneCCb1";
@@ -2136,7 +2136,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneCCb2->AutoSize = true;
 				 this->laneCCb2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneCCb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneCCb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneCCb2->Location = System::Drawing::Point(351, 170);
 				 this->laneCCb2->Name = L"laneCCb2";
@@ -2149,7 +2149,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->taxExempt3->AutoSize = true;
 				 this->taxExempt3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->taxExempt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->taxExempt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->taxExempt3->Location = System::Drawing::Point(304, 150);
 				 this->taxExempt3->Name = L"taxExempt3";
@@ -2179,7 +2179,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->okC->BackColor = System::Drawing::Color::PaleGreen;
 				 this->okC->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->okC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->okC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->okC->Location = System::Drawing::Point(137, 22);
 				 this->okC->Name = L"okC";
@@ -2191,7 +2191,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // grossC
 				 // 
-				 this->grossC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->grossC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->grossC->Location = System::Drawing::Point(74, 22);
 				 this->grossC->Name = L"grossC";
@@ -2203,7 +2203,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // tareC
 				 // 
-				 this->tareC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tareC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tareC->Location = System::Drawing::Point(6, 22);
 				 this->tareC->Name = L"tareC";
@@ -2226,7 +2226,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label7->AutoSize = true;
 				 this->label7->BackColor = System::Drawing::Color::Transparent;
 				 this->label7->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label7->ForeColor = System::Drawing::Color::DarkRed;
 				 this->label7->Location = System::Drawing::Point(142, 104);
@@ -2242,7 +2242,7 @@ private: As::BinCtl^  siloBar24;
 				 this->plant3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->plant3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 				 this->plant3->Cursor = System::Windows::Forms::Cursors::No;
-				 this->plant3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->plant3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->plant3->ForeColor = System::Drawing::Color::Black;
 				 this->plant3->Location = System::Drawing::Point(178, 100);
@@ -2256,7 +2256,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->adapt3->AutoSize = true;
 				 this->adapt3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->adapt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->adapt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->adapt3->Location = System::Drawing::Point(304, 230);
 				 this->adapt3->Name = L"adapt3";
@@ -2272,7 +2272,7 @@ private: As::BinCtl^  siloBar24;
 				 this->all3->Enabled = false;
 				 this->all3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->all3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->all3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->all3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->all3->ForeColor = System::Drawing::Color::Black;
 				 this->all3->Location = System::Drawing::Point(339, 16);
@@ -2287,7 +2287,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoDisch3->AutoSize = true;
 				 this->autoDisch3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoDisch3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoDisch3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoDisch3->Location = System::Drawing::Point(304, 190);
 				 this->autoDisch3->Name = L"autoDisch3";
@@ -2301,7 +2301,7 @@ private: As::BinCtl^  siloBar24;
 				 // silo3
 				 // 
 				 this->silo3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->silo3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->silo3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->silo3->ForeColor = System::Drawing::Color::Black;
 				 this->silo3->Location = System::Drawing::Point(116, 476);
@@ -2474,7 +2474,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->jog3->AutoSize = true;
 				 this->jog3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->jog3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->jog3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->jog3->Location = System::Drawing::Point(304, 250);
 				 this->jog3->Name = L"jog3";
@@ -2491,7 +2491,7 @@ private: As::BinCtl^  siloBar24;
 				 this->readyBt3->Enabled = false;
 				 this->readyBt3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->readyBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->readyBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->readyBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->readyBt3->ForeColor = System::Drawing::Color::Black;
 				 this->readyBt3->Location = System::Drawing::Point(310, 270);
@@ -2506,7 +2506,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoFall3->AutoSize = true;
 				 this->autoFall3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoFall3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoFall3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoFall3->Location = System::Drawing::Point(304, 210);
 				 this->autoFall3->Name = L"autoFall3";
@@ -2519,7 +2519,7 @@ private: As::BinCtl^  siloBar24;
 				 // flow3
 				 // 
 				 this->flow3->BackColor = System::Drawing::Color::PaleGreen;
-				 this->flow3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->flow3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->flow3->ForeColor = System::Drawing::Color::Black;
 				 this->flow3->Location = System::Drawing::Point(157, 476);
@@ -2537,7 +2537,7 @@ private: As::BinCtl^  siloBar24;
 				 this->printOnly3->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->printOnly3->Enabled = false;
 				 this->printOnly3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->printOnly3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printOnly3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printOnly3->ForeColor = System::Drawing::Color::Black;
 				 this->printOnly3->Location = System::Drawing::Point(310, 308);
@@ -2552,7 +2552,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->printTarget3->AutoSize = true;
 				 this->printTarget3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->printTarget3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printTarget3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printTarget3->Location = System::Drawing::Point(304, 130);
 				 this->printTarget3->Name = L"printTarget3";
@@ -2566,7 +2566,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tonnage3->BackColor = System::Drawing::Color::MistyRose;
 				 this->tonnage3->Cursor = System::Windows::Forms::Cursors::No;
-				 this->tonnage3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tonnage3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tonnage3->ForeColor = System::Drawing::Color::Black;
 				 this->tonnage3->Location = System::Drawing::Point(206, 147);
@@ -2582,7 +2582,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label11->AutoEllipsis = true;
 				 this->label11->AutoSize = true;
 				 this->label11->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label11->Location = System::Drawing::Point(148, 150);
 				 this->label11->Name = L"label11";
@@ -2596,7 +2596,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label5->AutoSize = true;
 				 this->label5->BackColor = System::Drawing::Color::Transparent;
 				 this->label5->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label5->ForeColor = System::Drawing::Color::DarkRed;
 				 this->label5->Location = System::Drawing::Point(216, 88);
@@ -2609,7 +2609,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->man3->BackColor = System::Drawing::Color::MistyRose;
 				 this->man3->Cursor = System::Windows::Forms::Cursors::No;
-				 this->man3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->man3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->man3->ForeColor = System::Drawing::Color::Black;
 				 this->man3->Location = System::Drawing::Point(220, 104);
@@ -2623,7 +2623,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->material3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->material3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->material3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->material3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->material3->Location = System::Drawing::Point(68, 72);
 				 this->material3->MaxLength = 10;
@@ -2638,7 +2638,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tic_num3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->tic_num3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->tic_num3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tic_num3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tic_num3->Location = System::Drawing::Point(68, 100);
 				 this->tic_num3->MaxLength = 8;
@@ -2653,7 +2653,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->target3->BackColor = System::Drawing::Color::White;
 				 this->target3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->target3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->target3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->target3->Location = System::Drawing::Point(82, 156);
 				 this->target3->MaxLength = 6;
@@ -2667,7 +2667,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->truck3->BackColor = System::Drawing::Color::White;
 				 this->truck3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->truck3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truck3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truck3->Location = System::Drawing::Point(68, 128);
 				 this->truck3->MaxLength = 9;
@@ -2681,7 +2681,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->Job3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->Job3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->Job3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->Job3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->Job3->Location = System::Drawing::Point(68, 44);
 				 this->Job3->MaxLength = 16;
@@ -2695,7 +2695,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->customer3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->customer3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->customer3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->customer3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->customer3->Location = System::Drawing::Point(68, 16);
 				 this->customer3->MaxLength = 32;
@@ -2712,7 +2712,7 @@ private: As::BinCtl^  siloBar24;
 				 this->addBt3->Enabled = false;
 				 this->addBt3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->addBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->addBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->addBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->addBt3->ForeColor = System::Drawing::Color::Black;
 				 this->addBt3->Location = System::Drawing::Point(310, 474);
@@ -2730,7 +2730,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dischBt3->Enabled = false;
 				 this->dischBt3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dischBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dischBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dischBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dischBt3->ForeColor = System::Drawing::Color::Black;
 				 this->dischBt3->Location = System::Drawing::Point(226, 438);
@@ -2745,7 +2745,7 @@ private: As::BinCtl^  siloBar24;
 				 // truckLb3
 				 // 
 				 this->truckLb3->AutoSize = true;
-				 this->truckLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truckLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truckLb3->Location = System::Drawing::Point(6, 133);
 				 this->truckLb3->Name = L"truckLb3";
@@ -2758,10 +2758,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops34->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops34->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops34->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops34->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops34->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops34->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops34->ForeColor = System::Drawing::Color::Black;
 				 this->drops34->Location = System::Drawing::Point(351, 397);
@@ -2778,10 +2778,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops33->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops33->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops33->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops33->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops33->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops33->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops33->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops33->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops33->ForeColor = System::Drawing::Color::Black;
 				 this->drops33->Location = System::Drawing::Point(315, 397);
@@ -2798,10 +2798,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops32->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops32->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops32->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops32->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops32->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops32->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops32->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops32->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops32->ForeColor = System::Drawing::Color::Black;
 				 this->drops32->Location = System::Drawing::Point(351, 362);
@@ -2818,10 +2818,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops31->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops31->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops31->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops31->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops31->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops31->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops31->ForeColor = System::Drawing::Color::Black;
 				 this->drops31->Location = System::Drawing::Point(315, 362);
@@ -2836,7 +2836,7 @@ private: As::BinCtl^  siloBar24;
 				 // JobLb3
 				 // 
 				 this->JobLb3->AutoSize = true;
-				 this->JobLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->JobLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->JobLb3->Location = System::Drawing::Point(6, 48);
 				 this->JobLb3->Name = L"JobLb3";
@@ -2847,7 +2847,7 @@ private: As::BinCtl^  siloBar24;
 				 // cnt3
 				 // 
 				 this->cnt3->BackColor = System::Drawing::Color::Aquamarine;
-				 this->cnt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->cnt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->cnt3->ForeColor = System::Drawing::Color::Black;
 				 this->cnt3->Location = System::Drawing::Point(199, 476);
@@ -2861,7 +2861,7 @@ private: As::BinCtl^  siloBar24;
 				 // ticLb3
 				 // 
 				 this->ticLb3->AutoSize = true;
-				 this->ticLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticLb3->Location = System::Drawing::Point(6, 104);
 				 this->ticLb3->Name = L"ticLb3";
@@ -2883,7 +2883,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->ticketNum3->BackColor = System::Drawing::Color::MistyRose;
 				 this->ticketNum3->Cursor = System::Windows::Forms::Cursors::No;
-				 this->ticketNum3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticketNum3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticketNum3->ForeColor = System::Drawing::Color::Black;
 				 this->ticketNum3->Location = System::Drawing::Point(249, 55);
@@ -2898,7 +2898,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label13->AutoSize = true;
 				 this->label13->BackColor = System::Drawing::Color::Transparent;
 				 this->label13->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label13->ForeColor = System::Drawing::Color::DarkRed;
 				 this->label13->Location = System::Drawing::Point(215, 59);
@@ -2912,7 +2912,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->targetLb3->AutoSize = true;
 				 this->targetLb3->BackColor = System::Drawing::Color::Transparent;
-				 this->targetLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->targetLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->targetLb3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->targetLb3->Location = System::Drawing::Point(6, 160);
@@ -2925,7 +2925,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->matLb3->AutoSize = true;
 				 this->matLb3->BackColor = System::Drawing::Color::Transparent;
-				 this->matLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->matLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->matLb3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->matLb3->Location = System::Drawing::Point(6, 76);
@@ -2940,7 +2940,7 @@ private: As::BinCtl^  siloBar24;
 				 this->nextBt3->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->nextBt3->Enabled = false;
 				 this->nextBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->nextBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->nextBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->nextBt3->ForeColor = System::Drawing::Color::Black;
 				 this->nextBt3->Location = System::Drawing::Point(303, 55);
@@ -2955,7 +2955,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dropsLb3->AutoSize = true;
 				 this->dropsLb3->BackColor = System::Drawing::Color::Transparent;
-				 this->dropsLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropsLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropsLb3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->dropsLb3->Location = System::Drawing::Point(325, 344);
@@ -2967,7 +2967,7 @@ private: As::BinCtl^  siloBar24;
 				 // scale3
 				 // 
 				 this->scale3->BackColor = System::Drawing::Color::PaleGreen;
-				 this->scale3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->scale3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->scale3->ForeColor = System::Drawing::Color::Black;
 				 this->scale3->Location = System::Drawing::Point(116, 440);
@@ -2982,7 +2982,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->custLb3->AutoSize = true;
 				 this->custLb3->BackColor = System::Drawing::Color::Transparent;
-				 this->custLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->custLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->custLb3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->custLb3->Location = System::Drawing::Point(6, 23);
@@ -2995,7 +2995,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->pauseBt3->BackColor = System::Drawing::Color::Gold;
 				 this->pauseBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->pauseBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->pauseBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->pauseBt3->ForeColor = System::Drawing::Color::Black;
 				 this->pauseBt3->Location = System::Drawing::Point(310, 511);
@@ -3010,7 +3010,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->stopBt3->BackColor = System::Drawing::Color::Red;
 				 this->stopBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->stopBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->stopBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->stopBt3->ForeColor = System::Drawing::Color::Black;
 				 this->stopBt3->Location = System::Drawing::Point(310, 547);
@@ -3027,7 +3027,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dropBt3->Enabled = false;
 				 this->dropBt3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dropBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dropBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropBt3->ForeColor = System::Drawing::Color::Black;
 				 this->dropBt3->Location = System::Drawing::Point(310, 438);
@@ -3042,7 +3042,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod09Lb->AutoSize = true;
 				 this->prod09Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod09Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod09Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod09Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod09Lb->Location = System::Drawing::Point(213, 225);
@@ -3056,7 +3056,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->resetBt3->BackColor = System::Drawing::Color::Red;
 				 this->resetBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->resetBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->resetBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->resetBt3->ForeColor = System::Drawing::Color::Black;
 				 this->resetBt3->Location = System::Drawing::Point(306, 94);
@@ -3073,7 +3073,7 @@ private: As::BinCtl^  siloBar24;
 				 this->autoBt3->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->autoBt3->Enabled = false;
 				 this->autoBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->autoBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoBt3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->autoBt3->Location = System::Drawing::Point(303, 94);
@@ -3089,7 +3089,7 @@ private: As::BinCtl^  siloBar24;
 				 this->zoom3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->zoom3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->zoom3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->zoom3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->zoom3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->zoom3->ForeColor = System::Drawing::Color::Black;
 				 this->zoom3->Location = System::Drawing::Point(866, 828);
@@ -3106,7 +3106,7 @@ private: As::BinCtl^  siloBar24;
 				 this->ticketNum1->BackColor = System::Drawing::Color::LightBlue;
 				 this->ticketNum1->Cursor = System::Windows::Forms::Cursors::No;
 				 this->ticketNum1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->ticketNum1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticketNum1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticketNum1->ForeColor = System::Drawing::Color::Black;
 				 this->ticketNum1->Location = System::Drawing::Point(249, 55);
@@ -3122,7 +3122,7 @@ private: As::BinCtl^  siloBar24;
 				 this->nextBt1->Enabled = false;
 				 this->nextBt1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->nextBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->nextBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->nextBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->nextBt1->ForeColor = System::Drawing::Color::Black;
 				 this->nextBt1->Location = System::Drawing::Point(6, 51);
@@ -3137,7 +3137,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dropsLb1->AutoSize = true;
 				 this->dropsLb1->BackColor = System::Drawing::Color::Transparent;
-				 this->dropsLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropsLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropsLb1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->dropsLb1->Location = System::Drawing::Point(28, 340);
@@ -3151,7 +3151,7 @@ private: As::BinCtl^  siloBar24;
 				 this->pauseBt1->BackColor = System::Drawing::Color::Transparent;
 				 this->pauseBt1->Enabled = false;
 				 this->pauseBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->pauseBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->pauseBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->pauseBt1->ForeColor = System::Drawing::Color::Black;
 				 this->pauseBt1->Location = System::Drawing::Point(13, 507);
@@ -3166,7 +3166,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->stopBt1->BackColor = System::Drawing::Color::Red;
 				 this->stopBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->stopBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->stopBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->stopBt1->ForeColor = System::Drawing::Color::Black;
 				 this->stopBt1->Location = System::Drawing::Point(13, 543);
@@ -3183,7 +3183,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dropBt1->Enabled = false;
 				 this->dropBt1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dropBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dropBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropBt1->ForeColor = System::Drawing::Color::Black;
 				 this->dropBt1->Location = System::Drawing::Point(13, 434);
@@ -3250,7 +3250,7 @@ private: As::BinCtl^  siloBar24;
 				 this->groupBox1->Controls->Add(this->gBoxLine1);
 				 this->groupBox1->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->groupBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->groupBox1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->groupBox1->Location = System::Drawing::Point(8, 27);
@@ -3294,7 +3294,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod03Lb->AutoSize = true;
 				 this->prod03Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod03Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod03Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod03Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod03Lb->Location = System::Drawing::Point(215, 225);
@@ -3308,7 +3308,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod02Lb->AutoSize = true;
 				 this->prod02Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod02Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod02Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod02Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod02Lb->Location = System::Drawing::Point(113, 225);
@@ -3322,7 +3322,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod01Lb->AutoSize = true;
 				 this->prod01Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod01Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod01Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod01Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod01Lb->Location = System::Drawing::Point(14, 225);
@@ -3335,7 +3335,7 @@ private: As::BinCtl^  siloBar24;
 				 // lane1StatLB
 				 // 
 				 this->lane1StatLB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->lane1StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->lane1StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->lane1StatLB->ForeColor = System::Drawing::Color::Black;
 				 this->lane1StatLB->Location = System::Drawing::Point(71, 1);
@@ -3389,7 +3389,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dbLb2->AutoSize = true;
 				 this->dbLb2->BackColor = System::Drawing::Color::Yellow;
-				 this->dbLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dbLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dbLb2->Location = System::Drawing::Point(233, 547);
 				 this->dbLb2->Name = L"dbLb2";
@@ -3402,7 +3402,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dbLb1->AutoSize = true;
 				 this->dbLb1->BackColor = System::Drawing::Color::White;
-				 this->dbLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dbLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dbLb1->Location = System::Drawing::Point(232, 528);
 				 this->dbLb1->Name = L"dbLb1";
@@ -3430,7 +3430,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->okA->BackColor = System::Drawing::Color::PaleGreen;
 				 this->okA->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->okA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->okA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->okA->Location = System::Drawing::Point(137, 22);
 				 this->okA->Name = L"okA";
@@ -3442,7 +3442,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // grossA
 				 // 
-				 this->grossA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->grossA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->grossA->Location = System::Drawing::Point(74, 22);
 				 this->grossA->Name = L"grossA";
@@ -3453,7 +3453,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // tareA
 				 // 
-				 this->tareA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tareA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tareA->Location = System::Drawing::Point(6, 22);
 				 this->tareA->Name = L"tareA";
@@ -3465,7 +3465,7 @@ private: As::BinCtl^  siloBar24;
 				 // dbLb
 				 // 
 				 this->dbLb->BackColor = System::Drawing::Color::WhiteSmoke;
-				 this->dbLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dbLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dbLb->ForeColor = System::Drawing::Color::Black;
 				 this->dbLb->Location = System::Drawing::Point(1, 496);
@@ -3479,7 +3479,7 @@ private: As::BinCtl^  siloBar24;
 				 // label1
 				 // 
 				 this->label1->AutoSize = true;
-				 this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label1->Location = System::Drawing::Point(142, 104);
 				 this->label1->Name = L"label1";
@@ -3507,7 +3507,7 @@ private: As::BinCtl^  siloBar24;
 				 this->plant1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->plant1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 				 this->plant1->Cursor = System::Windows::Forms::Cursors::No;
-				 this->plant1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->plant1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->plant1->ForeColor = System::Drawing::Color::Black;
 				 this->plant1->Location = System::Drawing::Point(178, 100);
@@ -3520,7 +3520,7 @@ private: As::BinCtl^  siloBar24;
 				 // silo1
 				 // 
 				 this->silo1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->silo1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->silo1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->silo1->ForeColor = System::Drawing::Color::Black;
 				 this->silo1->Location = System::Drawing::Point(114, 471);
@@ -3617,7 +3617,7 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar1->Delay = false;
 				 this->siloBar1->DisableInv = false;
 				 this->siloBar1->Empty = false;
-				 this->siloBar1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->siloBar1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->siloBar1->ForeColor = System::Drawing::Color::Blue;
 				 this->siloBar1->Idle = false;
@@ -3707,7 +3707,7 @@ private: As::BinCtl^  siloBar24;
 				 // flow1
 				 // 
 				 this->flow1->BackColor = System::Drawing::Color::PaleGreen;
-				 this->flow1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->flow1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->flow1->ForeColor = System::Drawing::Color::Black;
 				 this->flow1->Location = System::Drawing::Point(181, 471);
@@ -3724,7 +3724,7 @@ private: As::BinCtl^  siloBar24;
 				 this->tonnage1->BackColor = System::Drawing::Color::LightBlue;
 				 this->tonnage1->Cursor = System::Windows::Forms::Cursors::No;
 				 this->tonnage1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->tonnage1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tonnage1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tonnage1->ForeColor = System::Drawing::Color::Black;
 				 this->tonnage1->Location = System::Drawing::Point(206, 147);
@@ -3740,7 +3740,7 @@ private: As::BinCtl^  siloBar24;
 				 this->tonLb1->AutoEllipsis = true;
 				 this->tonLb1->AutoSize = true;
 				 this->tonLb1->Cursor = System::Windows::Forms::Cursors::No;
-				 this->tonLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tonLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tonLb1->Location = System::Drawing::Point(148, 150);
 				 this->tonLb1->Name = L"tonLb1";
@@ -3753,7 +3753,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label3->AutoSize = true;
 				 this->label3->BackColor = System::Drawing::Color::Transparent;
 				 this->label3->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label3->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->label3->Location = System::Drawing::Point(216, 88);
@@ -3766,7 +3766,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->man1->BackColor = System::Drawing::Color::LightBlue;
 				 this->man1->Cursor = System::Windows::Forms::Cursors::No;
-				 this->man1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->man1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->man1->ForeColor = System::Drawing::Color::Black;
 				 this->man1->Location = System::Drawing::Point(220, 104);
@@ -3780,7 +3780,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->material1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->material1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->material1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->material1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->material1->Location = System::Drawing::Point(68, 72);
 				 this->material1->MaxLength = 8;
@@ -3794,7 +3794,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tic_num1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->tic_num1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->tic_num1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tic_num1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tic_num1->Location = System::Drawing::Point(68, 100);
 				 this->tic_num1->MaxLength = 8;
@@ -3810,7 +3810,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->target1->BackColor = System::Drawing::Color::White;
 				 this->target1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->target1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->target1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->target1->Location = System::Drawing::Point(82, 156);
 				 this->target1->MaxLength = 6;
@@ -3825,7 +3825,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->truck1->BackColor = System::Drawing::Color::White;
 				 this->truck1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->truck1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truck1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truck1->Location = System::Drawing::Point(68, 128);
 				 this->truck1->MaxLength = 9;
@@ -3840,7 +3840,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->Job1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->Job1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->Job1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->Job1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->Job1->Location = System::Drawing::Point(68, 44);
 				 this->Job1->MaxLength = 16;
@@ -3854,7 +3854,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->customer1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->customer1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->customer1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->customer1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->customer1->Location = System::Drawing::Point(68, 16);
 				 this->customer1->MaxLength = 32;
@@ -3870,7 +3870,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dischBt1->Enabled = false;
 				 this->dischBt1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dischBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dischBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dischBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dischBt1->ForeColor = System::Drawing::Color::Black;
 				 this->dischBt1->Location = System::Drawing::Point(226, 438);
@@ -3885,7 +3885,7 @@ private: As::BinCtl^  siloBar24;
 				 // trackLb1
 				 // 
 				 this->trackLb1->AutoSize = true;
-				 this->trackLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->trackLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->trackLb1->Location = System::Drawing::Point(6, 133);
 				 this->trackLb1->Name = L"trackLb1";
@@ -3896,7 +3896,7 @@ private: As::BinCtl^  siloBar24;
 				 // JobLb1
 				 // 
 				 this->JobLb1->AutoSize = true;
-				 this->JobLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->JobLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->JobLb1->Location = System::Drawing::Point(6, 48);
 				 this->JobLb1->Name = L"JobLb1";
@@ -3907,7 +3907,7 @@ private: As::BinCtl^  siloBar24;
 				 // cnt1
 				 // 
 				 this->cnt1->BackColor = System::Drawing::Color::Aquamarine;
-				 this->cnt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->cnt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->cnt1->ForeColor = System::Drawing::Color::Black;
 				 this->cnt1->Location = System::Drawing::Point(246, 471);
@@ -3921,7 +3921,7 @@ private: As::BinCtl^  siloBar24;
 				 // ticLb1
 				 // 
 				 this->ticLb1->AutoSize = true;
-				 this->ticLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticLb1->Location = System::Drawing::Point(6, 104);
 				 this->ticLb1->Name = L"ticLb1";
@@ -3934,7 +3934,7 @@ private: As::BinCtl^  siloBar24;
 				 this->of1->AutoSize = true;
 				 this->of1->BackColor = System::Drawing::Color::Transparent;
 				 this->of1->Cursor = System::Windows::Forms::Cursors::No;
-				 this->of1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->of1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->of1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->of1->Location = System::Drawing::Point(215, 59);
@@ -3948,7 +3948,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->targetLb1->AutoSize = true;
 				 this->targetLb1->BackColor = System::Drawing::Color::Transparent;
-				 this->targetLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->targetLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->targetLb1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->targetLb1->Location = System::Drawing::Point(6, 160);
@@ -3961,7 +3961,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->matLb1->AutoSize = true;
 				 this->matLb1->BackColor = System::Drawing::Color::Transparent;
-				 this->matLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->matLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->matLb1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->matLb1->Location = System::Drawing::Point(6, 76);
@@ -3973,7 +3973,7 @@ private: As::BinCtl^  siloBar24;
 				 // scale1
 				 // 
 				 this->scale1->BackColor = System::Drawing::Color::PaleGreen;
-				 this->scale1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->scale1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->scale1->ForeColor = System::Drawing::Color::Black;
 				 this->scale1->Location = System::Drawing::Point(117, 440);
@@ -3988,7 +3988,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->custLb1->AutoSize = true;
 				 this->custLb1->BackColor = System::Drawing::Color::Transparent;
-				 this->custLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->custLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->custLb1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->custLb1->Location = System::Drawing::Point(6, 23);
@@ -4045,7 +4045,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->resetBt1->BackColor = System::Drawing::Color::Red;
 				 this->resetBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->resetBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->resetBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->resetBt1->ForeColor = System::Drawing::Color::Black;
 				 this->resetBt1->Location = System::Drawing::Point(9, 90);
@@ -4060,7 +4060,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneA2ndCB->AutoSize = true;
 				 this->laneA2ndCB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneA2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneA2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneA2ndCB->Location = System::Drawing::Point(7, 228);
 				 this->laneA2ndCB->Name = L"laneA2ndCB";
@@ -4072,7 +4072,7 @@ private: As::BinCtl^  siloBar24;
 				 // copyLb1
 				 // 
 				 this->copyLb1->AutoSize = true;
-				 this->copyLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->copyLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->copyLb1->Location = System::Drawing::Point(41, 198);
 				 this->copyLb1->Name = L"copyLb1";
@@ -4083,11 +4083,11 @@ private: As::BinCtl^  siloBar24;
 				 // numCopy1
 				 // 
 				 this->numCopy1->Location = System::Drawing::Point(7, 193);
-				 this->numCopy1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+				 this->numCopy1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 				 this->numCopy1->Name = L"numCopy1";
 				 this->numCopy1->Size = System::Drawing::Size(30, 23);
 				 this->numCopy1->TabIndex = 56;
-				 this->numCopy1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {1, 0, 0, 0});
+				 this->numCopy1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 				 // 
 				 // drops11
 				 // 
@@ -4095,10 +4095,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops11->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops11->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops11->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops11->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops11->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops11->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops11->ForeColor = System::Drawing::Color::Black;
 				 this->drops11->Location = System::Drawing::Point(18, 358);
@@ -4116,10 +4116,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops12->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops12->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops12->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops12->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops12->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops12->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops12->ForeColor = System::Drawing::Color::Black;
 				 this->drops12->Location = System::Drawing::Point(54, 358);
@@ -4137,10 +4137,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops13->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops13->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops13->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops13->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops13->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops13->ForeColor = System::Drawing::Color::Black;
 				 this->drops13->Location = System::Drawing::Point(18, 393);
@@ -4158,10 +4158,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops14->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops14->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops14->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops14->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops14->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops14->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops14->ForeColor = System::Drawing::Color::Black;
 				 this->drops14->Location = System::Drawing::Point(54, 393);
@@ -4179,7 +4179,7 @@ private: As::BinCtl^  siloBar24;
 				 this->addBt1->Enabled = false;
 				 this->addBt1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->addBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->addBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->addBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->addBt1->ForeColor = System::Drawing::Color::Black;
 				 this->addBt1->Location = System::Drawing::Point(13, 470);
@@ -4196,7 +4196,7 @@ private: As::BinCtl^  siloBar24;
 				 this->autoBt1->BackColor = System::Drawing::Color::Transparent;
 				 this->autoBt1->Enabled = false;
 				 this->autoBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->autoBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoBt1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->autoBt1->Location = System::Drawing::Point(6, 90);
@@ -4211,7 +4211,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->printTarget1->AutoSize = true;
 				 this->printTarget1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->printTarget1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printTarget1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printTarget1->Location = System::Drawing::Point(7, 126);
 				 this->printTarget1->Name = L"printTarget1";
@@ -4227,7 +4227,7 @@ private: As::BinCtl^  siloBar24;
 				 this->printOnly1->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->printOnly1->Enabled = false;
 				 this->printOnly1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->printOnly1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printOnly1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printOnly1->ForeColor = System::Drawing::Color::Black;
 				 this->printOnly1->Location = System::Drawing::Point(13, 304);
@@ -4242,7 +4242,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoFall1->AutoSize = true;
 				 this->autoFall1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoFall1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoFall1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoFall1->Location = System::Drawing::Point(7, 206);
 				 this->autoFall1->Name = L"autoFall1";
@@ -4259,7 +4259,7 @@ private: As::BinCtl^  siloBar24;
 				 this->readyBt1->Enabled = false;
 				 this->readyBt1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->readyBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->readyBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->readyBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->readyBt1->ForeColor = System::Drawing::Color::Black;
 				 this->readyBt1->Location = System::Drawing::Point(13, 266);
@@ -4274,7 +4274,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneACb3->AutoSize = true;
 				 this->laneACb3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneACb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneACb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneACb3->Location = System::Drawing::Point(53, 166);
 				 this->laneACb3->Name = L"laneACb3";
@@ -4287,7 +4287,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->jog1->AutoSize = true;
 				 this->jog1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->jog1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->jog1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->jog1->Location = System::Drawing::Point(7, 246);
 				 this->jog1->Name = L"jog1";
@@ -4301,7 +4301,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->taxExempt1->AutoSize = true;
 				 this->taxExempt1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->taxExempt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->taxExempt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->taxExempt1->Location = System::Drawing::Point(7, 146);
 				 this->taxExempt1->Name = L"taxExempt1";
@@ -4314,7 +4314,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoDisch1->AutoSize = true;
 				 this->autoDisch1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoDisch1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoDisch1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoDisch1->Location = System::Drawing::Point(7, 186);
 				 this->autoDisch1->Name = L"autoDisch1";
@@ -4331,7 +4331,7 @@ private: As::BinCtl^  siloBar24;
 				 this->all1->Enabled = false;
 				 this->all1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->all1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->all1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->all1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->all1->ForeColor = System::Drawing::Color::Black;
 				 this->all1->Location = System::Drawing::Point(42, 12);
@@ -4346,7 +4346,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneACb2->AutoSize = true;
 				 this->laneACb2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneACb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneACb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneACb2->Location = System::Drawing::Point(7, 166);
 				 this->laneACb2->Name = L"laneACb2";
@@ -4359,7 +4359,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->adapt1->AutoSize = true;
 				 this->adapt1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->adapt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->adapt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->adapt1->Location = System::Drawing::Point(7, 226);
 				 this->adapt1->Name = L"adapt1";
@@ -4376,8 +4376,10 @@ private: As::BinCtl^  siloBar24;
 				 this->dataGridTruck->AutoGenerateColumns = false;
 				 this->dataGridTruck->BackgroundColor = System::Drawing::Color::Gainsboro;
 				 this->dataGridTruck->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-				 this->dataGridTruck->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {this->stNameDataGridViewTextBoxColumn, 
-					 this->nRateDataGridViewTextBoxColumn, this->nCapacityDataGridViewTextBoxColumn});
+				 this->dataGridTruck->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
+					 this->stNameDataGridViewTextBoxColumn,
+						 this->nRateDataGridViewTextBoxColumn, this->nCapacityDataGridViewTextBoxColumn
+				 });
 				 this->dataGridTruck->DataSource = this->truckBindingSource;
 				 this->dataGridTruck->Location = System::Drawing::Point(66, 620);
 				 this->dataGridTruck->MultiSelect = false;
@@ -4396,7 +4398,7 @@ private: As::BinCtl^  siloBar24;
 				 // stNameDataGridViewTextBoxColumn
 				 // 
 				 this->stNameDataGridViewTextBoxColumn->DataPropertyName = L"stName";
-				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				 this->stNameDataGridViewTextBoxColumn->DefaultCellStyle = dataGridViewCellStyle1;
 				 this->stNameDataGridViewTextBoxColumn->HeaderText = L"Name";
@@ -4406,7 +4408,7 @@ private: As::BinCtl^  siloBar24;
 				 // nRateDataGridViewTextBoxColumn
 				 // 
 				 this->nRateDataGridViewTextBoxColumn->DataPropertyName = L"nRate";
-				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				 this->nRateDataGridViewTextBoxColumn->DefaultCellStyle = dataGridViewCellStyle2;
 				 this->nRateDataGridViewTextBoxColumn->HeaderText = L"Rate";
@@ -4417,7 +4419,7 @@ private: As::BinCtl^  siloBar24;
 				 // nCapacityDataGridViewTextBoxColumn
 				 // 
 				 this->nCapacityDataGridViewTextBoxColumn->DataPropertyName = L"nCapacity";
-				 dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				 this->nCapacityDataGridViewTextBoxColumn->DefaultCellStyle = dataGridViewCellStyle3;
 				 this->nCapacityDataGridViewTextBoxColumn->HeaderText = L"Capacity";
@@ -4434,7 +4436,7 @@ private: As::BinCtl^  siloBar24;
 				 this->zoom1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->zoom1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->zoom1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->zoom1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->zoom1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->zoom1->ForeColor = System::Drawing::Color::Black;
 				 this->zoom1->Location = System::Drawing::Point(14, 828);
@@ -4479,7 +4481,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->pauseBt2->BackColor = System::Drawing::Color::Gold;
 				 this->pauseBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->pauseBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->pauseBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->pauseBt2->ForeColor = System::Drawing::Color::Black;
 				 this->pauseBt2->Location = System::Drawing::Point(310, 511);
@@ -4494,7 +4496,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->stopBt2->BackColor = System::Drawing::Color::Red;
 				 this->stopBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->stopBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->stopBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->stopBt2->ForeColor = System::Drawing::Color::Black;
 				 this->stopBt2->Location = System::Drawing::Point(310, 547);
@@ -4511,7 +4513,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dropBt2->Enabled = false;
 				 this->dropBt2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dropBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dropBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropBt2->ForeColor = System::Drawing::Color::Black;
 				 this->dropBt2->Location = System::Drawing::Point(310, 438);
@@ -4526,7 +4528,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->custLb2->AutoSize = true;
 				 this->custLb2->BackColor = System::Drawing::Color::Transparent;
-				 this->custLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->custLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->custLb2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->custLb2->Location = System::Drawing::Point(6, 23);
@@ -4539,7 +4541,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dropsLb2->AutoSize = true;
 				 this->dropsLb2->BackColor = System::Drawing::Color::Transparent;
-				 this->dropsLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropsLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropsLb2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->dropsLb2->Location = System::Drawing::Point(325, 344);
@@ -4551,7 +4553,7 @@ private: As::BinCtl^  siloBar24;
 				 // scale2
 				 // 
 				 this->scale2->BackColor = System::Drawing::Color::PaleGreen;
-				 this->scale2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->scale2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->scale2->ForeColor = System::Drawing::Color::Black;
 				 this->scale2->Location = System::Drawing::Point(120, 440);
@@ -4568,7 +4570,7 @@ private: As::BinCtl^  siloBar24;
 				 this->nextBt2->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->nextBt2->Enabled = false;
 				 this->nextBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->nextBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->nextBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->nextBt2->ForeColor = System::Drawing::Color::Black;
 				 this->nextBt2->Location = System::Drawing::Point(303, 55);
@@ -4583,7 +4585,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->matLb2->AutoSize = true;
 				 this->matLb2->BackColor = System::Drawing::Color::Transparent;
-				 this->matLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->matLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->matLb2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->matLb2->Location = System::Drawing::Point(6, 76);
@@ -4596,7 +4598,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->targetLb2->AutoSize = true;
 				 this->targetLb2->BackColor = System::Drawing::Color::Transparent;
-				 this->targetLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->targetLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->targetLb2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->targetLb2->Location = System::Drawing::Point(6, 160);
@@ -4609,7 +4611,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->label6->AutoSize = true;
 				 this->label6->BackColor = System::Drawing::Color::Transparent;
-				 this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label6->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->label6->Location = System::Drawing::Point(215, 59);
@@ -4623,7 +4625,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->ticketNum2->BackColor = System::Drawing::Color::PaleGreen;
 				 this->ticketNum2->Cursor = System::Windows::Forms::Cursors::No;
-				 this->ticketNum2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticketNum2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticketNum2->ForeColor = System::Drawing::Color::Black;
 				 this->ticketNum2->Location = System::Drawing::Point(249, 55);
@@ -4646,7 +4648,7 @@ private: As::BinCtl^  siloBar24;
 				 // ticLb2
 				 // 
 				 this->ticLb2->AutoSize = true;
-				 this->ticLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticLb2->Location = System::Drawing::Point(6, 104);
 				 this->ticLb2->Name = L"ticLb2";
@@ -4657,7 +4659,7 @@ private: As::BinCtl^  siloBar24;
 				 // JobLb2
 				 // 
 				 this->JobLb2->AutoSize = true;
-				 this->JobLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->JobLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->JobLb2->Location = System::Drawing::Point(6, 48);
 				 this->JobLb2->Name = L"JobLb2";
@@ -4745,7 +4747,7 @@ private: As::BinCtl^  siloBar24;
 				 this->groupBox2->Controls->Add(this->pauseBt2);
 				 this->groupBox2->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->groupBox2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->groupBox2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->groupBox2->Location = System::Drawing::Point(435, 27);
@@ -4788,7 +4790,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->resetBt2->BackColor = System::Drawing::Color::Red;
 				 this->resetBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->resetBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->resetBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->resetBt2->ForeColor = System::Drawing::Color::Black;
 				 this->resetBt2->Location = System::Drawing::Point(307, 94);
@@ -4803,7 +4805,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneB2ndCB->AutoSize = true;
 				 this->laneB2ndCB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneB2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneB2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneB2ndCB->Location = System::Drawing::Point(304, 232);
 				 this->laneB2ndCB->Name = L"laneB2ndCB";
@@ -4816,7 +4818,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod06Lb->AutoSize = true;
 				 this->prod06Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod06Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod06Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod06Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod06Lb->Location = System::Drawing::Point(213, 225);
@@ -4829,7 +4831,7 @@ private: As::BinCtl^  siloBar24;
 				 // copyLb2
 				 // 
 				 this->copyLb2->AutoSize = true;
-				 this->copyLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->copyLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->copyLb2->Location = System::Drawing::Point(338, 202);
 				 this->copyLb2->Name = L"copyLb2";
@@ -4840,17 +4842,17 @@ private: As::BinCtl^  siloBar24;
 				 // numCopy2
 				 // 
 				 this->numCopy2->Location = System::Drawing::Point(304, 197);
-				 this->numCopy2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+				 this->numCopy2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 				 this->numCopy2->Name = L"numCopy2";
 				 this->numCopy2->Size = System::Drawing::Size(30, 23);
 				 this->numCopy2->TabIndex = 59;
-				 this->numCopy2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {1, 0, 0, 0});
+				 this->numCopy2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 				 // 
 				 // prod05Lb
 				 // 
 				 this->prod05Lb->AutoSize = true;
 				 this->prod05Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod05Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod05Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod05Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod05Lb->Location = System::Drawing::Point(114, 225);
@@ -4864,7 +4866,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod04Lb->AutoSize = true;
 				 this->prod04Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod04Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod04Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod04Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod04Lb->Location = System::Drawing::Point(14, 225);
@@ -4877,7 +4879,7 @@ private: As::BinCtl^  siloBar24;
 				 // lane2StatLB
 				 // 
 				 this->lane2StatLB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->lane2StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->lane2StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->lane2StatLB->ForeColor = System::Drawing::Color::Black;
 				 this->lane2StatLB->Location = System::Drawing::Point(69, 1);
@@ -4903,7 +4905,7 @@ private: As::BinCtl^  siloBar24;
 				 // wrLb
 				 // 
 				 this->wrLb->BackColor = System::Drawing::Color::PaleGreen;
-				 this->wrLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->wrLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->wrLb->ForeColor = System::Drawing::Color::Black;
 				 this->wrLb->Location = System::Drawing::Point(148, 542);
@@ -4917,7 +4919,7 @@ private: As::BinCtl^  siloBar24;
 				 // rdLb
 				 // 
 				 this->rdLb->BackColor = System::Drawing::Color::MediumTurquoise;
-				 this->rdLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->rdLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->rdLb->ForeColor = System::Drawing::Color::Black;
 				 this->rdLb->Location = System::Drawing::Point(150, 511);
@@ -4959,7 +4961,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneBCb1->AutoSize = true;
 				 this->laneBCb1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneBCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneBCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneBCb1->Location = System::Drawing::Point(303, 170);
 				 this->laneBCb1->Name = L"laneBCb1";
@@ -4987,7 +4989,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->taxExempt2->AutoSize = true;
 				 this->taxExempt2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->taxExempt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->taxExempt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->taxExempt2->Location = System::Drawing::Point(304, 150);
 				 this->taxExempt2->Name = L"taxExempt2";
@@ -5017,7 +5019,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->okB->BackColor = System::Drawing::Color::PaleGreen;
 				 this->okB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->okB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->okB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->okB->Location = System::Drawing::Point(137, 22);
 				 this->okB->Name = L"okB";
@@ -5029,7 +5031,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // grossB
 				 // 
-				 this->grossB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->grossB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->grossB->Location = System::Drawing::Point(74, 22);
 				 this->grossB->Name = L"grossB";
@@ -5040,7 +5042,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // tareB
 				 // 
-				 this->tareB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tareB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tareB->Location = System::Drawing::Point(6, 22);
 				 this->tareB->Name = L"tareB";
@@ -5053,7 +5055,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->label2->AutoSize = true;
 				 this->label2->BackColor = System::Drawing::Color::Transparent;
-				 this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->label2->Location = System::Drawing::Point(142, 104);
@@ -5068,7 +5070,7 @@ private: As::BinCtl^  siloBar24;
 				 this->plant2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->plant2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 				 this->plant2->Cursor = System::Windows::Forms::Cursors::No;
-				 this->plant2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->plant2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->plant2->ForeColor = System::Drawing::Color::Black;
 				 this->plant2->Location = System::Drawing::Point(178, 100);
@@ -5082,7 +5084,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneBCb3->AutoSize = true;
 				 this->laneBCb3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneBCb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneBCb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneBCb3->Location = System::Drawing::Point(351, 170);
 				 this->laneBCb3->Name = L"laneBCb3";
@@ -5095,7 +5097,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->adapt2->AutoSize = true;
 				 this->adapt2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->adapt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->adapt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->adapt2->Location = System::Drawing::Point(304, 230);
 				 this->adapt2->Name = L"adapt2";
@@ -5111,7 +5113,7 @@ private: As::BinCtl^  siloBar24;
 				 this->all2->Enabled = false;
 				 this->all2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->all2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->all2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->all2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->all2->ForeColor = System::Drawing::Color::Black;
 				 this->all2->Location = System::Drawing::Point(339, 16);
@@ -5126,7 +5128,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoDisch2->AutoSize = true;
 				 this->autoDisch2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoDisch2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoDisch2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoDisch2->Location = System::Drawing::Point(304, 190);
 				 this->autoDisch2->Name = L"autoDisch2";
@@ -5140,7 +5142,7 @@ private: As::BinCtl^  siloBar24;
 				 // silo2
 				 // 
 				 this->silo2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->silo2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->silo2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->silo2->ForeColor = System::Drawing::Color::Black;
 				 this->silo2->Location = System::Drawing::Point(119, 476);
@@ -5322,7 +5324,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->jog2->AutoSize = true;
 				 this->jog2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->jog2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->jog2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->jog2->Location = System::Drawing::Point(304, 250);
 				 this->jog2->Name = L"jog2";
@@ -5338,7 +5340,7 @@ private: As::BinCtl^  siloBar24;
 				 this->readyBt2->Enabled = false;
 				 this->readyBt2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->readyBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->readyBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->readyBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->readyBt2->ForeColor = System::Drawing::Color::Black;
 				 this->readyBt2->Location = System::Drawing::Point(310, 270);
@@ -5353,7 +5355,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoFall2->AutoSize = true;
 				 this->autoFall2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoFall2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoFall2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoFall2->Location = System::Drawing::Point(304, 210);
 				 this->autoFall2->Name = L"autoFall2";
@@ -5366,7 +5368,7 @@ private: As::BinCtl^  siloBar24;
 				 // flow2
 				 // 
 				 this->flow2->BackColor = System::Drawing::Color::PaleGreen;
-				 this->flow2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->flow2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->flow2->ForeColor = System::Drawing::Color::Black;
 				 this->flow2->Location = System::Drawing::Point(158, 476);
@@ -5383,7 +5385,7 @@ private: As::BinCtl^  siloBar24;
 				 this->printOnly2->BackColor = System::Drawing::Color::Transparent;
 				 this->printOnly2->Enabled = false;
 				 this->printOnly2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->printOnly2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printOnly2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printOnly2->ForeColor = System::Drawing::Color::Black;
 				 this->printOnly2->Location = System::Drawing::Point(310, 308);
@@ -5398,7 +5400,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->printTarget2->AutoSize = true;
 				 this->printTarget2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->printTarget2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printTarget2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printTarget2->Location = System::Drawing::Point(304, 130);
 				 this->printTarget2->Name = L"printTarget2";
@@ -5412,7 +5414,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tonnage2->BackColor = System::Drawing::Color::PaleGreen;
 				 this->tonnage2->Cursor = System::Windows::Forms::Cursors::No;
-				 this->tonnage2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tonnage2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tonnage2->ForeColor = System::Drawing::Color::Black;
 				 this->tonnage2->Location = System::Drawing::Point(206, 147);
@@ -5428,7 +5430,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label9->AutoEllipsis = true;
 				 this->label9->AutoSize = true;
 				 this->label9->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label9->Location = System::Drawing::Point(148, 150);
 				 this->label9->Name = L"label9";
@@ -5441,7 +5443,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label4->AutoSize = true;
 				 this->label4->BackColor = System::Drawing::Color::Transparent;
 				 this->label4->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label4->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->label4->Location = System::Drawing::Point(216, 88);
@@ -5454,7 +5456,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->man2->BackColor = System::Drawing::Color::PaleGreen;
 				 this->man2->Cursor = System::Windows::Forms::Cursors::No;
-				 this->man2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->man2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->man2->ForeColor = System::Drawing::Color::Black;
 				 this->man2->Location = System::Drawing::Point(220, 104);
@@ -5470,7 +5472,7 @@ private: As::BinCtl^  siloBar24;
 				 this->autoBt2->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->autoBt2->Enabled = false;
 				 this->autoBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->autoBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoBt2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->autoBt2->Location = System::Drawing::Point(303, 94);
@@ -5485,7 +5487,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->material2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->material2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->material2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->material2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->material2->Location = System::Drawing::Point(68, 72);
 				 this->material2->MaxLength = 8;
@@ -5499,7 +5501,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tic_num2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->tic_num2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->tic_num2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tic_num2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tic_num2->Location = System::Drawing::Point(68, 100);
 				 this->tic_num2->MaxLength = 8;
@@ -5514,7 +5516,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->target2->BackColor = System::Drawing::Color::White;
 				 this->target2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->target2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->target2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->target2->Location = System::Drawing::Point(82, 156);
 				 this->target2->MaxLength = 6;
@@ -5528,7 +5530,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->truck2->BackColor = System::Drawing::Color::White;
 				 this->truck2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->truck2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truck2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truck2->Location = System::Drawing::Point(68, 128);
 				 this->truck2->MaxLength = 9;
@@ -5542,7 +5544,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->Job2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->Job2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->Job2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->Job2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->Job2->Location = System::Drawing::Point(68, 44);
 				 this->Job2->MaxLength = 16;
@@ -5556,7 +5558,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->customer2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->customer2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->customer2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->customer2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->customer2->Location = System::Drawing::Point(68, 16);
 				 this->customer2->MaxLength = 32;
@@ -5572,7 +5574,7 @@ private: As::BinCtl^  siloBar24;
 				 this->addBt2->Enabled = false;
 				 this->addBt2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->addBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->addBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->addBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->addBt2->ForeColor = System::Drawing::Color::Black;
 				 this->addBt2->Location = System::Drawing::Point(310, 474);
@@ -5590,7 +5592,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dischBt2->Enabled = false;
 				 this->dischBt2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dischBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dischBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dischBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dischBt2->ForeColor = System::Drawing::Color::Black;
 				 this->dischBt2->Location = System::Drawing::Point(226, 438);
@@ -5605,7 +5607,7 @@ private: As::BinCtl^  siloBar24;
 				 // truckLb2
 				 // 
 				 this->truckLb2->AutoSize = true;
-				 this->truckLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truckLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truckLb2->Location = System::Drawing::Point(6, 133);
 				 this->truckLb2->Name = L"truckLb2";
@@ -5619,10 +5621,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops24->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops24->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops24->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops24->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops24->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops24->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops24->ForeColor = System::Drawing::Color::Black;
 				 this->drops24->Location = System::Drawing::Point(351, 397);
@@ -5640,10 +5642,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops23->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops23->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops23->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops23->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops23->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops23->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops23->ForeColor = System::Drawing::Color::Black;
 				 this->drops23->Location = System::Drawing::Point(315, 397);
@@ -5661,10 +5663,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops22->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops22->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops22->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops22->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops22->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops22->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops22->ForeColor = System::Drawing::Color::Black;
 				 this->drops22->Location = System::Drawing::Point(351, 362);
@@ -5682,10 +5684,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops21->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops21->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops21->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops21->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops21->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops21->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops21->ForeColor = System::Drawing::Color::Black;
 				 this->drops21->Location = System::Drawing::Point(315, 362);
@@ -5700,7 +5702,7 @@ private: As::BinCtl^  siloBar24;
 				 // cnt2
 				 // 
 				 this->cnt2->BackColor = System::Drawing::Color::Aquamarine;
-				 this->cnt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->cnt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->cnt2->ForeColor = System::Drawing::Color::Black;
 				 this->cnt2->Location = System::Drawing::Point(202, 476);
@@ -5716,7 +5718,7 @@ private: As::BinCtl^  siloBar24;
 				 this->zoom2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->zoom2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->zoom2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->zoom2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->zoom2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->zoom2->ForeColor = System::Drawing::Color::Black;
 				 this->zoom2->Location = System::Drawing::Point(441, 828);
@@ -5749,8 +5751,10 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fileMenuItem
 				 // 
-				 this->fileMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {this->toolStripSeparator1, 
-					 this->printManualJobs, this->configToolStripMenuItem, this->exitMenuItem});
+				 this->fileMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+					 this->toolStripSeparator1,
+						 this->printManualJobs, this->configToolStripMenuItem, this->exitMenuItem
+				 });
 				 this->fileMenuItem->Name = L"fileMenuItem";
 				 this->fileMenuItem->Size = System::Drawing::Size(35, 20);
 				 this->fileMenuItem->Text = L"File";
@@ -5783,8 +5787,10 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // helpMenuItem
 				 // 
-				 this->helpMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {this->aboutMenuItem, 
-					 this->testStripMenuItem, this->ulinkMsgToolStripMenuItem, this->exceptionsToolStripMenuItem, this->iOTestToolStripMenuItem});
+				 this->helpMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+					 this->aboutMenuItem,
+						 this->testStripMenuItem, this->ulinkMsgToolStripMenuItem, this->exceptionsToolStripMenuItem, this->iOTestToolStripMenuItem
+				 });
 				 this->helpMenuItem->Name = L"helpMenuItem";
 				 this->helpMenuItem->Size = System::Drawing::Size(40, 20);
 				 this->helpMenuItem->Text = L"Help";
@@ -5828,8 +5834,10 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->menu->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 				 this->menu->Font = (gcnew System::Drawing::Font(L"Tahoma", 8.25F));
-				 this->menu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {this->fileMenuItem, this->inventoryMenuItem, 
-					 this->trucksToolStripMenuItem, this->reprintToolStripMenuItem, this->helpMenuItem});
+				 this->menu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+					 this->fileMenuItem, this->inventoryMenuItem,
+						 this->trucksToolStripMenuItem, this->reprintToolStripMenuItem, this->helpMenuItem
+				 });
 				 this->menu->Location = System::Drawing::Point(0, 0);
 				 this->menu->Name = L"menu";
 				 this->menu->Size = System::Drawing::Size(1701, 24);
@@ -5876,7 +5884,7 @@ private: As::BinCtl^  siloBar24;
 				 this->versionLb->AutoSize = true;
 				 this->versionLb->BackColor = System::Drawing::Color::White;
 				 this->versionLb->Cursor = System::Windows::Forms::Cursors::No;
-				 this->versionLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->versionLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->versionLb->ForeColor = System::Drawing::Color::RoyalBlue;
 				 this->versionLb->Location = System::Drawing::Point(392, 3);
@@ -5890,7 +5898,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dbaseBadLb->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 				 this->dbaseBadLb->BackColor = System::Drawing::Color::White;
 				 this->dbaseBadLb->Cursor = System::Windows::Forms::Cursors::No;
-				 this->dbaseBadLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dbaseBadLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dbaseBadLb->ForeColor = System::Drawing::Color::Red;
 				 this->dbaseBadLb->Location = System::Drawing::Point(1020, 4);
@@ -5907,8 +5915,10 @@ private: As::BinCtl^  siloBar24;
 				 this->dataGridJob->AutoGenerateColumns = false;
 				 this->dataGridJob->BackgroundColor = System::Drawing::Color::Gainsboro;
 				 this->dataGridJob->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-				 this->dataGridJob->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {this->stTime, this->Column1, 
-					 this->nSilo, this->nTicketDataGridViewTextBoxColumn, this->stTruck, this->stMaterial, this->stCustomer, this->fLoad});
+				 this->dataGridJob->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
+					 this->stTime, this->Column1,
+						 this->nSilo, this->nTicketDataGridViewTextBoxColumn, this->stTruck, this->stMaterial, this->stCustomer, this->fLoad
+				 });
 				 this->dataGridJob->DataSource = this->jobBindingSource;
 				 this->dataGridJob->Location = System::Drawing::Point(334, 618);
 				 this->dataGridJob->MultiSelect = false;
@@ -5927,7 +5937,7 @@ private: As::BinCtl^  siloBar24;
 				 // stTime
 				 // 
 				 this->stTime->DataPropertyName = L"stTime";
-				 dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				 this->stTime->DefaultCellStyle = dataGridViewCellStyle4;
 				 this->stTime->HeaderText = L"Time Sent";
@@ -5939,7 +5949,7 @@ private: As::BinCtl^  siloBar24;
 				 // Column1
 				 // 
 				 this->Column1->DataPropertyName = L"nPlant";
-				 dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				 this->Column1->DefaultCellStyle = dataGridViewCellStyle5;
 				 this->Column1->HeaderText = L"Plant";
@@ -5951,7 +5961,7 @@ private: As::BinCtl^  siloBar24;
 				 // nSilo
 				 // 
 				 this->nSilo->DataPropertyName = L"nSilo";
-				 dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				 this->nSilo->DefaultCellStyle = dataGridViewCellStyle6;
 				 this->nSilo->HeaderText = L"Silo";
@@ -5963,7 +5973,7 @@ private: As::BinCtl^  siloBar24;
 				 // nTicketDataGridViewTextBoxColumn
 				 // 
 				 this->nTicketDataGridViewTextBoxColumn->DataPropertyName = L"nTicket";
-				 dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				 this->nTicketDataGridViewTextBoxColumn->DefaultCellStyle = dataGridViewCellStyle7;
 				 this->nTicketDataGridViewTextBoxColumn->HeaderText = L"Ticket #";
@@ -5990,7 +6000,7 @@ private: As::BinCtl^  siloBar24;
 				 // stCustomer
 				 // 
 				 this->stCustomer->DataPropertyName = L"stCustomer";
-				 dataGridViewCellStyle8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				 this->stCustomer->DefaultCellStyle = dataGridViewCellStyle8;
 				 this->stCustomer->HeaderText = L"Customer";
@@ -6003,7 +6013,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->fLoad->DataPropertyName = L"fLoad";
 				 dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleRight;
-				 dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				 dataGridViewCellStyle9->Format = L"n2";
 				 this->fLoad->DefaultCellStyle = dataGridViewCellStyle9;
@@ -6022,7 +6032,7 @@ private: As::BinCtl^  siloBar24;
 				 this->optoErr->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 				 this->optoErr->BackColor = System::Drawing::Color::White;
 				 this->optoErr->Cursor = System::Windows::Forms::Cursors::No;
-				 this->optoErr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->optoErr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->optoErr->ForeColor = System::Drawing::Color::Red;
 				 this->optoErr->Location = System::Drawing::Point(982, 4);
@@ -6151,7 +6161,7 @@ private: As::BinCtl^  siloBar24;
 				 this->groupBox4->Controls->Add(this->dropBt4);
 				 this->groupBox4->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->groupBox4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->groupBox4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->groupBox4->Location = System::Drawing::Point(1284, 27);
@@ -6166,7 +6176,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->remoteLb->AutoSize = true;
 				 this->remoteLb->BackColor = System::Drawing::Color::DarkGray;
-				 this->remoteLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->remoteLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->remoteLb->ForeColor = System::Drawing::Color::Red;
 				 this->remoteLb->Location = System::Drawing::Point(102, 301);
@@ -6180,7 +6190,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->resetBt4->BackColor = System::Drawing::Color::Red;
 				 this->resetBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->resetBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->resetBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->resetBt4->ForeColor = System::Drawing::Color::Black;
 				 this->resetBt4->Location = System::Drawing::Point(307, 94);
@@ -6195,7 +6205,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneD2ndCB->AutoSize = true;
 				 this->laneD2ndCB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneD2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneD2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneD2ndCB->Location = System::Drawing::Point(304, 232);
 				 this->laneD2ndCB->Name = L"laneD2ndCB";
@@ -6207,7 +6217,7 @@ private: As::BinCtl^  siloBar24;
 				 // copyLb4
 				 // 
 				 this->copyLb4->AutoSize = true;
-				 this->copyLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->copyLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->copyLb4->Location = System::Drawing::Point(338, 202);
 				 this->copyLb4->Name = L"copyLb4";
@@ -6218,18 +6228,18 @@ private: As::BinCtl^  siloBar24;
 				 // numCopy4
 				 // 
 				 this->numCopy4->Location = System::Drawing::Point(304, 197);
-				 this->numCopy4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+				 this->numCopy4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 				 this->numCopy4->Name = L"numCopy4";
 				 this->numCopy4->Size = System::Drawing::Size(30, 23);
 				 this->numCopy4->TabIndex = 59;
-				 this->numCopy4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {1, 0, 0, 0});
+				 this->numCopy4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 				 this->numCopy4->ValueChanged += gcnew System::EventHandler(this, &Form1::numericUpDown3_ValueChanged);
 				 // 
 				 // prod12Lb
 				 // 
 				 this->prod12Lb->AutoSize = true;
 				 this->prod12Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod12Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod12Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod12Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod12Lb->Location = System::Drawing::Point(213, 225);
@@ -6243,7 +6253,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod11Lb->AutoSize = true;
 				 this->prod11Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod11Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod11Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod11Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod11Lb->Location = System::Drawing::Point(113, 225);
@@ -6257,7 +6267,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod10Lb->AutoSize = true;
 				 this->prod10Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod10Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod10Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod10Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod10Lb->Location = System::Drawing::Point(14, 225);
@@ -6270,7 +6280,7 @@ private: As::BinCtl^  siloBar24;
 				 // lane4StatLB
 				 // 
 				 this->lane4StatLB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->lane4StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->lane4StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->lane4StatLB->ForeColor = System::Drawing::Color::Black;
 				 this->lane4StatLB->Location = System::Drawing::Point(70, 1);
@@ -6286,7 +6296,7 @@ private: As::BinCtl^  siloBar24;
 				 this->zoom4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->zoom4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->zoom4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->zoom4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->zoom4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->zoom4->ForeColor = System::Drawing::Color::Black;
 				 this->zoom4->Location = System::Drawing::Point(0, 801);
@@ -6357,7 +6367,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneDCb1->AutoSize = true;
 				 this->laneDCb1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneDCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneDCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneDCb1->Location = System::Drawing::Point(303, 170);
 				 this->laneDCb1->Name = L"laneDCb1";
@@ -6370,7 +6380,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneDCb2->AutoSize = true;
 				 this->laneDCb2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneDCb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneDCb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneDCb2->Location = System::Drawing::Point(351, 170);
 				 this->laneDCb2->Name = L"laneDCb2";
@@ -6383,7 +6393,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->taxExempt4->AutoSize = true;
 				 this->taxExempt4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->taxExempt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->taxExempt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->taxExempt4->Location = System::Drawing::Point(304, 150);
 				 this->taxExempt4->Name = L"taxExempt4";
@@ -6412,7 +6422,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->okD->BackColor = System::Drawing::Color::PaleGreen;
 				 this->okD->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->okD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->okD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->okD->Location = System::Drawing::Point(147, 22);
 				 this->okD->Name = L"okD";
@@ -6424,7 +6434,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // grossD
 				 // 
-				 this->grossD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->grossD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->grossD->Location = System::Drawing::Point(74, 22);
 				 this->grossD->Name = L"grossD";
@@ -6435,7 +6445,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // tareD
 				 // 
-				 this->tareD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tareD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tareD->Location = System::Drawing::Point(6, 22);
 				 this->tareD->Name = L"tareD";
@@ -6458,7 +6468,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label15->AutoSize = true;
 				 this->label15->BackColor = System::Drawing::Color::Transparent;
 				 this->label15->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label15->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->label15->Location = System::Drawing::Point(142, 104);
@@ -6473,7 +6483,7 @@ private: As::BinCtl^  siloBar24;
 				 this->plant4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->plant4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 				 this->plant4->Cursor = System::Windows::Forms::Cursors::No;
-				 this->plant4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->plant4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->plant4->ForeColor = System::Drawing::Color::Black;
 				 this->plant4->Location = System::Drawing::Point(178, 100);
@@ -6487,7 +6497,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->adapt4->AutoSize = true;
 				 this->adapt4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->adapt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->adapt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->adapt4->Location = System::Drawing::Point(304, 230);
 				 this->adapt4->Name = L"adapt4";
@@ -6503,7 +6513,7 @@ private: As::BinCtl^  siloBar24;
 				 this->all4->Enabled = false;
 				 this->all4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->all4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->all4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->all4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->all4->ForeColor = System::Drawing::Color::Black;
 				 this->all4->Location = System::Drawing::Point(339, 16);
@@ -6518,7 +6528,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoDisch4->AutoSize = true;
 				 this->autoDisch4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoDisch4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoDisch4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoDisch4->Location = System::Drawing::Point(304, 190);
 				 this->autoDisch4->Name = L"autoDisch4";
@@ -6532,7 +6542,7 @@ private: As::BinCtl^  siloBar24;
 				 // silo4
 				 // 
 				 this->silo4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->silo4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->silo4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->silo4->ForeColor = System::Drawing::Color::Black;
 				 this->silo4->Location = System::Drawing::Point(116, 476);
@@ -6705,7 +6715,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->jog4->AutoSize = true;
 				 this->jog4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->jog4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->jog4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->jog4->Location = System::Drawing::Point(304, 250);
 				 this->jog4->Name = L"jog4";
@@ -6722,7 +6732,7 @@ private: As::BinCtl^  siloBar24;
 				 this->readyBt4->Enabled = false;
 				 this->readyBt4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->readyBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->readyBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->readyBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->readyBt4->ForeColor = System::Drawing::Color::Black;
 				 this->readyBt4->Location = System::Drawing::Point(310, 270);
@@ -6737,7 +6747,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoFall4->AutoSize = true;
 				 this->autoFall4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoFall4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoFall4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoFall4->Location = System::Drawing::Point(304, 210);
 				 this->autoFall4->Name = L"autoFall4";
@@ -6750,7 +6760,7 @@ private: As::BinCtl^  siloBar24;
 				 // flow4
 				 // 
 				 this->flow4->BackColor = System::Drawing::Color::PaleGreen;
-				 this->flow4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->flow4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->flow4->ForeColor = System::Drawing::Color::Black;
 				 this->flow4->Location = System::Drawing::Point(157, 476);
@@ -6768,7 +6778,7 @@ private: As::BinCtl^  siloBar24;
 				 this->printOnly4->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->printOnly4->Enabled = false;
 				 this->printOnly4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->printOnly4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printOnly4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printOnly4->ForeColor = System::Drawing::Color::Black;
 				 this->printOnly4->Location = System::Drawing::Point(310, 308);
@@ -6783,7 +6793,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->printTarget4->AutoSize = true;
 				 this->printTarget4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->printTarget4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printTarget4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printTarget4->Location = System::Drawing::Point(304, 130);
 				 this->printTarget4->Name = L"printTarget4";
@@ -6797,7 +6807,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tonnage4->BackColor = System::Drawing::Color::MistyRose;
 				 this->tonnage4->Cursor = System::Windows::Forms::Cursors::No;
-				 this->tonnage4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tonnage4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tonnage4->ForeColor = System::Drawing::Color::Black;
 				 this->tonnage4->Location = System::Drawing::Point(206, 147);
@@ -6813,7 +6823,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label23->AutoEllipsis = true;
 				 this->label23->AutoSize = true;
 				 this->label23->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label23->Location = System::Drawing::Point(148, 150);
 				 this->label23->Name = L"label23";
@@ -6826,7 +6836,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label24->AutoSize = true;
 				 this->label24->BackColor = System::Drawing::Color::Transparent;
 				 this->label24->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label24->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->label24->Location = System::Drawing::Point(216, 88);
@@ -6839,7 +6849,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->man4->BackColor = System::Drawing::Color::MistyRose;
 				 this->man4->Cursor = System::Windows::Forms::Cursors::No;
-				 this->man4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->man4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->man4->ForeColor = System::Drawing::Color::Black;
 				 this->man4->Location = System::Drawing::Point(220, 104);
@@ -6855,7 +6865,7 @@ private: As::BinCtl^  siloBar24;
 				 this->autoBt4->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->autoBt4->Enabled = false;
 				 this->autoBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->autoBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoBt4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->autoBt4->Location = System::Drawing::Point(303, 94);
@@ -6870,7 +6880,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->material4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->material4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->material4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->material4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->material4->Location = System::Drawing::Point(68, 72);
 				 this->material4->MaxLength = 10;
@@ -6884,7 +6894,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tic_num4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->tic_num4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->tic_num4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tic_num4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tic_num4->Location = System::Drawing::Point(68, 100);
 				 this->tic_num4->MaxLength = 8;
@@ -6899,7 +6909,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->target4->BackColor = System::Drawing::Color::White;
 				 this->target4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->target4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->target4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->target4->Location = System::Drawing::Point(82, 156);
 				 this->target4->MaxLength = 6;
@@ -6914,7 +6924,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->truck4->BackColor = System::Drawing::Color::White;
 				 this->truck4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->truck4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truck4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truck4->Location = System::Drawing::Point(68, 128);
 				 this->truck4->MaxLength = 9;
@@ -6928,7 +6938,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->Job4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->Job4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->Job4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->Job4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->Job4->Location = System::Drawing::Point(68, 44);
 				 this->Job4->MaxLength = 16;
@@ -6942,7 +6952,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->customer4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->customer4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->customer4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->customer4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->customer4->Location = System::Drawing::Point(68, 16);
 				 this->customer4->MaxLength = 32;
@@ -6958,7 +6968,7 @@ private: As::BinCtl^  siloBar24;
 				 this->addBt4->Enabled = false;
 				 this->addBt4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->addBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->addBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->addBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->addBt4->ForeColor = System::Drawing::Color::Black;
 				 this->addBt4->Location = System::Drawing::Point(310, 474);
@@ -6976,7 +6986,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dischBt4->Enabled = false;
 				 this->dischBt4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dischBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dischBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dischBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dischBt4->ForeColor = System::Drawing::Color::Black;
 				 this->dischBt4->Location = System::Drawing::Point(226, 438);
@@ -6991,7 +7001,7 @@ private: As::BinCtl^  siloBar24;
 				 // truckLb4
 				 // 
 				 this->truckLb4->AutoSize = true;
-				 this->truckLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truckLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truckLb4->Location = System::Drawing::Point(6, 133);
 				 this->truckLb4->Name = L"truckLb4";
@@ -7004,10 +7014,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops44->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops44->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops44->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops44->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops44->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops44->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops44->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops44->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops44->ForeColor = System::Drawing::Color::Black;
 				 this->drops44->Location = System::Drawing::Point(351, 397);
@@ -7025,10 +7035,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops43->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops43->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops43->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops43->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops43->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops43->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops43->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops43->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops43->ForeColor = System::Drawing::Color::Black;
 				 this->drops43->Location = System::Drawing::Point(315, 397);
@@ -7045,10 +7055,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops42->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops42->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops42->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops42->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops42->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops42->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops42->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops42->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops42->ForeColor = System::Drawing::Color::Black;
 				 this->drops42->Location = System::Drawing::Point(351, 362);
@@ -7065,10 +7075,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops41->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops41->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops41->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops41->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops41->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops41->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops41->ForeColor = System::Drawing::Color::Black;
 				 this->drops41->Location = System::Drawing::Point(315, 362);
@@ -7083,7 +7093,7 @@ private: As::BinCtl^  siloBar24;
 				 // JobLb4
 				 // 
 				 this->JobLb4->AutoSize = true;
-				 this->JobLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->JobLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->JobLb4->Location = System::Drawing::Point(6, 48);
 				 this->JobLb4->Name = L"JobLb4";
@@ -7094,7 +7104,7 @@ private: As::BinCtl^  siloBar24;
 				 // cnt4
 				 // 
 				 this->cnt4->BackColor = System::Drawing::Color::Aquamarine;
-				 this->cnt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->cnt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->cnt4->ForeColor = System::Drawing::Color::Black;
 				 this->cnt4->Location = System::Drawing::Point(199, 476);
@@ -7108,7 +7118,7 @@ private: As::BinCtl^  siloBar24;
 				 // ticLb4
 				 // 
 				 this->ticLb4->AutoSize = true;
-				 this->ticLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticLb4->Location = System::Drawing::Point(6, 104);
 				 this->ticLb4->Name = L"ticLb4";
@@ -7130,7 +7140,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->ticketNum4->BackColor = System::Drawing::Color::MistyRose;
 				 this->ticketNum4->Cursor = System::Windows::Forms::Cursors::No;
-				 this->ticketNum4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticketNum4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticketNum4->ForeColor = System::Drawing::Color::Black;
 				 this->ticketNum4->Location = System::Drawing::Point(249, 55);
@@ -7145,7 +7155,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label31->AutoSize = true;
 				 this->label31->BackColor = System::Drawing::Color::Transparent;
 				 this->label31->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label31->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->label31->Location = System::Drawing::Point(215, 59);
@@ -7159,7 +7169,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->targetLb4->AutoSize = true;
 				 this->targetLb4->BackColor = System::Drawing::Color::Transparent;
-				 this->targetLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->targetLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->targetLb4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->targetLb4->Location = System::Drawing::Point(6, 160);
@@ -7172,7 +7182,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->matLb4->AutoSize = true;
 				 this->matLb4->BackColor = System::Drawing::Color::Transparent;
-				 this->matLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->matLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->matLb4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->matLb4->Location = System::Drawing::Point(6, 76);
@@ -7187,7 +7197,7 @@ private: As::BinCtl^  siloBar24;
 				 this->nextBt4->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->nextBt4->Enabled = false;
 				 this->nextBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->nextBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->nextBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->nextBt4->ForeColor = System::Drawing::Color::Black;
 				 this->nextBt4->Location = System::Drawing::Point(303, 55);
@@ -7202,7 +7212,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dropsLb4->AutoSize = true;
 				 this->dropsLb4->BackColor = System::Drawing::Color::Transparent;
-				 this->dropsLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropsLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropsLb4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->dropsLb4->Location = System::Drawing::Point(325, 344);
@@ -7214,7 +7224,7 @@ private: As::BinCtl^  siloBar24;
 				 // scale4
 				 // 
 				 this->scale4->BackColor = System::Drawing::Color::PaleGreen;
-				 this->scale4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->scale4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->scale4->ForeColor = System::Drawing::Color::Black;
 				 this->scale4->Location = System::Drawing::Point(116, 440);
@@ -7229,7 +7239,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->custLb4->AutoSize = true;
 				 this->custLb4->BackColor = System::Drawing::Color::Transparent;
-				 this->custLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->custLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->custLb4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->custLb4->Location = System::Drawing::Point(6, 23);
@@ -7242,7 +7252,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->pauseBt4->BackColor = System::Drawing::Color::Gold;
 				 this->pauseBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->pauseBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->pauseBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->pauseBt4->ForeColor = System::Drawing::Color::Black;
 				 this->pauseBt4->Location = System::Drawing::Point(310, 511);
@@ -7257,7 +7267,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->stopBt4->BackColor = System::Drawing::Color::Red;
 				 this->stopBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->stopBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->stopBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->stopBt4->ForeColor = System::Drawing::Color::Black;
 				 this->stopBt4->Location = System::Drawing::Point(310, 547);
@@ -7274,7 +7284,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dropBt4->Enabled = false;
 				 this->dropBt4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dropBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dropBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropBt4->ForeColor = System::Drawing::Color::Black;
 				 this->dropBt4->Location = System::Drawing::Point(310, 438);
@@ -7372,7 +7382,7 @@ private: As::BinCtl^  siloBar24;
 				 // remLoginBt
 				 // 
 				 this->remLoginBt->Enabled = false;
-				 this->remLoginBt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->remLoginBt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->remLoginBt->Location = System::Drawing::Point(599, 585);
 				 this->remLoginBt->Name = L"remLoginBt";
@@ -7387,7 +7397,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->loginErrLb->AutoSize = true;
 				 this->loginErrLb->BackColor = System::Drawing::Color::Yellow;
-				 this->loginErrLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->loginErrLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->loginErrLb->Location = System::Drawing::Point(599, 630);
 				 this->loginErrLb->Name = L"loginErrLb";
@@ -7415,7 +7425,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->ipAddressLb->BackColor = System::Drawing::Color::Gray;
 				 this->ipAddressLb->Enabled = false;
-				 this->ipAddressLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ipAddressLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ipAddressLb->Location = System::Drawing::Point(594, 562);
 				 this->ipAddressLb->Name = L"ipAddressLb";
@@ -7466,7 +7476,7 @@ private: As::BinCtl^  siloBar24;
 				 this->Controls->Add(this->groupBox3);
 				 this->Controls->Add(this->groupBox1);
 				 this->Controls->Add(this->groupBox2);
-				 this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
 				 this->MainMenuStrip = this->menu;
@@ -7523,3122 +7533,3122 @@ private: As::BinCtl^  siloBar24;
 			 //-------------------------------------------------------------------------
 	private: void idleBar(As::BinCtl^ siloBar)
 	{
-		 siloBar->Idle = true;
-		 siloBar->Target = 0;
-		 siloBar->BarColor = COL_IDLE;
+		siloBar->Idle = true;
+		siloBar->Target = 0;
+		siloBar->BarColor = COL_IDLE;
 	}
 
 			 //-------------------------------------------------------------------------
 	private: void zeroBar(As::BinCtl^ siloBar)
 	{
-		 siloBar->Target = 0;
-		 siloBar->BarColor = COL_IDLE;
+		siloBar->Target = 0;
+		siloBar->BarColor = COL_IDLE;
 	}
 
 			 //-------------------------------------------------------------------------
 	private: System::Void setState1(STATE eNew)
-			 {
-				 switch(psIni->sLog1.eState = eNew)
-				 {
-				 case S_IDLE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 psIni->nWpoints &= ~P_CLEAR_A;
-							 zeroBar(siloBar12);
-							 zeroBar(siloBar13);
-						 }
-						 else
-							 psIni->nWpoints &= ~O_CLEARAA;
-					 }
-					 else
-					 {
-						psIni->nWpoints &= ~psIni->asSilos[0].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[1].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[2].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[0].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[1].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[2].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[0].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[1].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[2].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[0].uHoldO;		// turn off Hold
-						psIni->nWpoints &= ~psIni->asSilos[1].uHoldO;		// turn off Hold
-						psIni->nWpoints &= ~psIni->asSilos[2].uHoldO;		// turn off Hold
-						zeroBar(siloBar12);
-						zeroBar(siloBar13);
-					 }
-					 
-					 zeroBar(siloBar1);
-					 scaleBar1->Target = 0;
-					 bTruck1 = false;
+	{
+		switch (psIni->sLog1.eState = eNew)
+		{
+		case S_IDLE:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					psIni->nWpoints &= ~P_CLEAR_A;
+					zeroBar(siloBar12);
+					zeroBar(siloBar13);
+				}
+				else
+					psIni->nWpoints &= ~O_CLEARAA;
+			}
+			else
+			{
+				psIni->nWpoints &= ~psIni->asSilos[0].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[1].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[2].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[0].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[1].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[2].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[0].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[1].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[2].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[0].uHoldO;		// turn off Hold
+				psIni->nWpoints &= ~psIni->asSilos[1].uHoldO;		// turn off Hold
+				psIni->nWpoints &= ~psIni->asSilos[2].uHoldO;		// turn off Hold
+				zeroBar(siloBar12);
+				zeroBar(siloBar13);
+			}
 
-					 // clear display
-					 customer1->Text = nullptr;
-					 Job1->Text = nullptr;
-					 material1->Text = nullptr;
-					 tic_num1->Text = nullptr;
-					 truck1->Text = nullptr;
-					 target1->Text = nullptr;
+			zeroBar(siloBar1);
+			scaleBar1->Target = 0;
+			bTruck1 = false;
 
-					 truck1->BackColor = COL_W;
-					 target1->BackColor = COL_W;
+			// clear display
+			customer1->Text = nullptr;
+			Job1->Text = nullptr;
+			material1->Text = nullptr;
+			tic_num1->Text = nullptr;
+			truck1->Text = nullptr;
+			target1->Text = nullptr;
 
-					 // setup buttons
-					 all1->Enabled = true;		
-					 all1->BackColor = COL_LSB;
-					 nextBt1->Enabled = true;		
-					 nextBt1->BackColor = COL_LSB;
-					 autoBt1->Enabled = !psIni->bDisableManual;		//DC 3.2.0 true;
-					 autoBt1->BackColor = COL_WS;
+			truck1->BackColor = COL_W;
+			target1->BackColor = COL_W;
 
-					 printOnly1->Enabled = false;
-					 printOnly1->BackColor = COL_TRANS;
-					 readyBt1->Enabled = false;
-					 readyBt1->BackColor = COL_TRANS;
+			// setup buttons
+			all1->Enabled = true;
+			all1->BackColor = COL_LSB;
+			nextBt1->Enabled = true;
+			nextBt1->BackColor = COL_LSB;
+			autoBt1->Enabled = !psIni->bDisableManual;		//DC 3.2.0 true;
+			autoBt1->BackColor = COL_WS;
 
-					 printTarget1->Checked = false;
-					 taxExempt1->Checked = false;
+			printOnly1->Enabled = false;
+			printOnly1->BackColor = COL_TRANS;
+			readyBt1->Enabled = false;
+			readyBt1->BackColor = COL_TRANS;
 
-					 drops11->Checked = false;
-					 drops12->Checked = false;
-					 drops13->Checked = false;
-					 drops14->Checked = false;
+			printTarget1->Checked = false;
+			taxExempt1->Checked = false;
 
-					 dropBt1->Enabled = false;
-					 dropBt1->BackColor = COL_TRANS;
+			drops11->Checked = false;
+			drops12->Checked = false;
+			drops13->Checked = false;
+			drops14->Checked = false;
 
-					 addBt1->Enabled = false;
-					 addBt1->BackColor = COL_TRANS;
+			dropBt1->Enabled = false;
+			dropBt1->BackColor = COL_TRANS;
 
-					 dischBt1->Enabled = false;
-					 dischBt1->BackColor = COL_TRANS;		
-					 dischBt1->Visible = !psIni->sInv.bAutoDisch1;		
+			addBt1->Enabled = false;
+			addBt1->BackColor = COL_TRANS;
 
-					 pauseBt1->Enabled = false;
-					 pauseBt1->BackColor = COL_TRANS;
+			dischBt1->Enabled = false;
+			dischBt1->BackColor = COL_TRANS;
+			dischBt1->Visible = !psIni->sInv.bAutoDisch1;
 
-					 if(pAll->eAsType == A_SIM)
-						psIni->sScale1.cGo = 'I';		// idle
-				 
-					if(pAll->eAsType == A_DEMO)
+			pauseBt1->Enabled = false;
+			pauseBt1->BackColor = COL_TRANS;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'I';		// idle
+
+			if (pAll->eAsType == A_DEMO)
+			{
+				if (psIni->bBotScale)
+					psIni->sScale1.dValue = 10.0;				// truck on scale
+				else
+					psIni->sScale1.dValue = 0.0;
+			}
+			break;
+
+		case S_NEXT:
+			all1->Enabled = false;
+			all1->BackColor = COL_TRANS;
+			nextBt1->Enabled = false;
+			nextBt1->BackColor = COL_TRANS;
+			autoBt1->Enabled = false;
+			autoBt1->BackColor = COL_TRANS;
+
+			readyBt1->Enabled = true;
+			readyBt1->BackColor = COL_PGREEN;
+
+			if (pAll->eAsType == A_SIM)
+			{
+				if (!psIni->bBotScale)
+					psIni->sScale1.cGo = 'I';		// idle
+				else
+					psIni->sScale1.cGo = 'E';		// enter						 
+			}
+			bFirstDrop1 = true;
+			break;
+
+		case S_READY:
+			bTruck1 = true;
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints |= psIni->nReady1O;	//DC 3.2.0
+			}
+			else if (!psIni->bSendBitWise)			//DC 4.0.1
+			{
+				switch (psIni->sLog1.nSilo)
+				{
+				case 1: psIni->nWpoints |= psIni->asSilos[0].uReadyO; break;
+				case 2: psIni->nWpoints |= psIni->asSilos[1].uReadyO; break;
+				case 3: psIni->nWpoints |= psIni->asSilos[2].uReadyO; break;
+				}
+			}
+			else if (psIni->bSendBitWise)			//DC 4.0.1
+			{
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;	// turn on Hold
+			}
+
+			//					 psIni->nWpoints &= ~O_DROP1;
+			psIni->sLog1.eStop = A_NOT;
+
+			bool bCheckIOk;		//DC 4.0.1
+			if (psIni->bUseTrkMax)						//DC 3.2.0
+			{
+				truckBar1->Maximum = pJob1->fLoad;
+				truckBar1->Target = pJob1->fLoad - psIni->sLog1.fTruckTare;
+
+				if (psIni->bSendBitWise)
+				{
+					bCheckIOk = DecimalToBinaryIO(int(truckBar1->Maximum * 2000), psIni->sLog1.nSilo);	//DC 4.0.0 send BitWise
+				}
+				else if (psIni->bSendTarget)
+					psIni->nSclOutEU[0] = truckBar1->Maximum;		//DC 4.0.0 set analog output value
+			}
+			else
+			{
+				truckBar1->Maximum = pTruck1->nCapacity;
+				truckBar1->Target = pJob1->fLoad;
+			}
+
+			if (psIni->bBotScale)
+			{
+				if (psIni->bUseTrkMax)					//DC 3.2.0
+					scaleBar1->Target = pJob1->fLoad;
+				else
+					scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
+			}
+			else
+				scaleBar1->Target = fTarget1;
+
+			readyBt1->Enabled = false;
+			readyBt1->BackColor = COL_TRANS;
+
+			printOnly1->Enabled = true;
+			printOnly1->BackColor = COL_LB;
+
+			if (!psIni->bPdmPlc)		//DC 4.0.0
+			{
+				dropBt1->Enabled = true;
+				dropBt1->BackColor = COL_PGREEN;
+			}
+
+			if (pAll->eAsType == A_SIM)
+			{
+				if (!psIni->bBotScale)
+					psIni->sScale1.cGo = 'I';	// idle
+				else
+					psIni->sScale1.cGo = 'S';	// stop							 	
+			}
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					switch (psIni->sLog1.nSilo)
 					{
-						 if(psIni->bBotScale)
-							 psIni->sScale1.dValue = 10.0;				// truck on scale
-						 else
-							psIni->sScale1.dValue = 0.0;
+					case 1: psIni->nWpoints |= P_SAFE1; break;
+					case 2: psIni->nWpoints |= P_SAFE2; break;
+					case 3: psIni->nWpoints |= P_SAFE3; break;
 					}
-					 break;
+					//						 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
+				}
+				else
+				{
+					psIni->nWpoints |= O_SAFE1;
+					scaleBar1->Target = fTarget1;
+				}
+			}
+			tSafeA = clock();		// safe valve timeout 
 
-				 case S_NEXT:
-					 all1->Enabled = false;
-					 all1->BackColor = COL_TRANS;
-					 nextBt1->Enabled = false;
-					 nextBt1->BackColor = COL_TRANS;
-					 autoBt1->Enabled = false;
-					 autoBt1->BackColor = COL_TRANS;
+									//DC 4.0.1 Check send target IO
+			if (!bCheckIOk)
+			{
+				bCheckIOk = checkTargetIO();
+			}
 
-					 readyBt1->Enabled = true;
-					 readyBt1->BackColor = COL_PGREEN;
+			if (bCheckIOk)
+				psIni->nWpoints |= psIni->uSendTargetO;		//DC 4.0.1 turn on send target output
+			else
+			{
+				setState1(S_NEXT);
+				psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
+				MessageBox::Show("Target Send Error Check IO", "Lane A",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+			}
+			break;
 
-					 if(pAll->eAsType == A_SIM)
-					 {
-						 if(!psIni->bBotScale)
-							 psIni->sScale1.cGo = 'I';		// idle
-						 else					
-							 psIni->sScale1.cGo = 'E';		// enter						 
-					 }				 
-					 bFirstDrop1 = true;
-					 break;
+		case S_SAFE:
+			break;
 
-				 case S_READY:			 
-					 bTruck1 = true;
-					 if(!psIni->bPdmPlc)
-					 {
-						psIni->nWpoints |= psIni->nReady1O;	//DC 3.2.0
-					 }
-					 else if(!psIni->bSendBitWise)			//DC 4.0.1
-					 {
-						 switch(psIni->sLog1.nSilo)
-						 {
-						 case 1: psIni->nWpoints |= psIni->asSilos[0].uReadyO; break;
-						 case 2: psIni->nWpoints |= psIni->asSilos[1].uReadyO; break;
-						 case 3: psIni->nWpoints |= psIni->asSilos[2].uReadyO; break;
-						 }
-					 }
-					 else if(psIni->bSendBitWise)			//DC 4.0.1
-					 {
-						 psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uHoldO;	// turn on Hold
-					 }
+		case S_DROP:
+			fScaleVal1 = psIni->sScale1.dValue;
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints |= psIni->nDrop1O;		//DC 3.2.0
+			}
+			if (psIni->bBotScale)
+			{
+				if (!psIni->bPdmPlc)
+				{
+					switch (psIni->sLog1.nSilo)
+					{
+					case 1: psIni->nWpoints |= P_DROP1; siloBar1->BarColor = COL_DISCH; break;
+					case 2: psIni->nWpoints |= P_DROP2; siloBar12->BarColor = COL_DISCH; break;
+					case 3: psIni->nWpoints |= P_DROP3; siloBar13->BarColor = COL_DISCH; break;
+					}
+					scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
+				}
+				else if (!psIni->bSendTarget && !psIni->bSendBitWise)
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uReadyO;	// turn off ready
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;	// turn off Hold
+					switch (psIni->sLog1.nSilo)
+					{
+					case 1: psIni->nWpoints |= psIni->asSilos[0].uDropO; siloBar1->BarColor = COL_DISCH; break;
+					case 2: psIni->nWpoints |= psIni->asSilos[1].uDropO; siloBar12->BarColor = COL_DISCH; break;
+					case 3: psIni->nWpoints |= psIni->asSilos[2].uDropO; siloBar13->BarColor = COL_DISCH; break;
+					}
+					scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
+				}
+				else if (psIni->bSendBitWise)		//DC 4.0.1
+				{
+					psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uDropO;	// turn on drop  //DC 4.0.1
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uDoneO;	// turn off Done
+					psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;	// turn on Hold
+					switch (psIni->sLog1.nSilo)			//DC 4.0.0
+					{
+					case 1: siloBar1->BarColor = COL_DISCH; break;
+					case 2: siloBar12->BarColor = COL_DISCH; break;
+					case 3: siloBar13->BarColor = COL_DISCH; break;
+					}
+					scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
+				}
+			}
+			else
+			{
+				psIni->nWpoints |= O_DROP1;
+				siloBar1->BarColor = COL_DISCH;
+				scaleBar1->Target = fTarget1;
+			}
+			scaleBar1->BarColor = COL_CHARGE;
+			fTmpScale1 = psIni->sScale1.dValue;
+			nTmpCnt1 = 0;
+			nSettle1 = 0;
 
-					 //					 psIni->nWpoints &= ~O_DROP1;
-					 psIni->sLog1.eStop = A_NOT;
+			printOnly1->Enabled = false;
+			printOnly1->BackColor = COL_TRANS;
 
-					 bool bCheckIOk;		//DC 4.0.1
-					 if(psIni->bUseTrkMax)						//DC 3.2.0
-					 {
-						truckBar1->Maximum = pJob1->fLoad;
-						truckBar1->Target = pJob1->fLoad - psIni->sLog1.fTruckTare;
+			//					 printOnly1->Enabled = true;		//DC 4.0.8
+			//					 printOnly1->BackColor = COL_LB;	//DC 4.0.8
 
-						if(psIni->bSendBitWise)
-						{
-							bCheckIOk = DecimalToBinaryIO(int(truckBar1->Maximum*2000), psIni->sLog1.nSilo);	//DC 4.0.0 send BitWise
-						}
-						else if(psIni->bSendTarget)
-							psIni->nSclOutEU[0] = truckBar1->Maximum;		//DC 4.0.0 set analog output value
-					 }
-					 else
-					 {
-						truckBar1->Maximum = pTruck1->nCapacity;
-						truckBar1->Target = pJob1->fLoad;
-					 }
+			dropBt1->Enabled = false;
+			dropBt1->BackColor = COL_TRANS;
 
-					 if(psIni->bBotScale)
-					 {
-						 if(psIni->bUseTrkMax)					//DC 3.2.0
-							 scaleBar1->Target = pJob1->fLoad;
-						 else
-							scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
-					 }
-					 else
-						scaleBar1->Target = fTarget1;
+			pauseBt1->Enabled = true;
+			pauseBt1->BackColor = COL_HOLDK;
 
-					 readyBt1->Enabled = false;
-					 readyBt1->BackColor = COL_TRANS;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'G';		// go	
+			break;
 
-					 printOnly1->Enabled = true;
-					 printOnly1->BackColor = COL_LB;
-					
-					 if(!psIni->bPdmPlc)		//DC 4.0.0
-					 {
-						 dropBt1->Enabled = true;
-						 dropBt1->BackColor = COL_PGREEN;
-					 }
+		case S_DELAY_PLC:
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
 
-					 if(pAll->eAsType == A_SIM)
-					 {
-						 if(!psIni->bBotScale)
-							 psIni->sScale1.cGo = 'I';	// idle
-						 else	
-							 psIni->sScale1.cGo = 'S';	// stop							 	
-					 }
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 switch(psIni->sLog1.nSilo)
-							 {
-							 case 1: psIni->nWpoints |= P_SAFE1; break;
-							 case 2: psIni->nWpoints |= P_SAFE2; break;
-							 case 3: psIni->nWpoints |= P_SAFE3; break;
-							 }
-	//						 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
-						 }
-						 else
-						 {
-							 psIni->nWpoints |= O_SAFE1;
-							 scaleBar1->Target = fTarget1;
-						 }
-					 }
-					 tSafeA = clock();		// safe valve timeout 
+			psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;	// turn on Hold
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uDropO;	// turn off Drop
 
-					 //DC 4.0.1 Check send target IO
-					 if(!bCheckIOk)
-					 {
-						 bCheckIOk = checkTargetIO();
-					 }
+			switch (psIni->sLog1.nSilo)
+			{
+			case 1: siloBar1->BarColor = COL_IDLE;	break;
+			case 2: siloBar12->BarColor = COL_IDLE; 	break;
+			case 3: siloBar13->BarColor = COL_IDLE; 	break;
+			}
 
-					 if(bCheckIOk)
-						psIni->nWpoints |= psIni->uSendTargetO;		//DC 4.0.1 turn on send target output
-					 else
-					 {
-						setState1(S_NEXT);
-						psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
-						MessageBox::Show("Target Send Error Check IO", "Lane A", 
-						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-					 }
-					 break;
+			dropBt1->Enabled = false;
+			dropBt1->BackColor = COL_YG;
 
-				 case S_SAFE:
-					 break;
+			pauseBt1->Enabled = false;
+			pauseBt1->BackColor = COL_TRANS;
 
-				 case S_DROP:
-					 fScaleVal1 = psIni->sScale1.dValue;
-					 if(!psIni->bPdmPlc)
-					 {
-						psIni->nWpoints |= psIni->nDrop1O;		//DC 3.2.0
-					 }
-					 if(psIni->bBotScale)
-					 {
-						 if(!psIni->bPdmPlc)
-						 {
-							 switch(psIni->sLog1.nSilo)
-							 {
-							 case 1: psIni->nWpoints |= P_DROP1; siloBar1->BarColor = COL_DISCH; break;
-							 case 2: psIni->nWpoints |= P_DROP2; siloBar12->BarColor = COL_DISCH; break;
-							 case 3: psIni->nWpoints |= P_DROP3; siloBar13->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
-						 }
-						 else if(!psIni->bSendTarget && !psIni->bSendBitWise)
-						 {
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uReadyO;	// turn off ready
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uHoldO;	// turn off Hold
-							 switch(psIni->sLog1.nSilo)
-							 {
-							 case 1: psIni->nWpoints |= psIni->asSilos[0].uDropO; siloBar1->BarColor = COL_DISCH; break;
-							 case 2: psIni->nWpoints |= psIni->asSilos[1].uDropO; siloBar12->BarColor = COL_DISCH; break;
-							 case 3: psIni->nWpoints |= psIni->asSilos[2].uDropO; siloBar13->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
-						 }
-						 else if (psIni->bSendBitWise)		//DC 4.0.1
-						 {
-							 psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uDropO;	// turn on drop  //DC 4.0.1
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uDoneO;	// turn off Done
-							 psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uHoldO;	// turn on Hold
-							 switch(psIni->sLog1.nSilo)			//DC 4.0.0
-							 {
-							 case 1: siloBar1->BarColor = COL_DISCH; break;
-							 case 2: siloBar12->BarColor = COL_DISCH; break;
-							 case 3: siloBar13->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints |= O_DROP1;
-						 siloBar1->BarColor = COL_DISCH;
-						 scaleBar1->Target = fTarget1;
-					 }
-					 scaleBar1->BarColor = COL_CHARGE;
-					 fTmpScale1 = psIni->sScale1.dValue;
-					 nTmpCnt1 = 0;
-					 nSettle1 = 0;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'S';	// go
+			break;
 
-					 printOnly1->Enabled = false;
-					 printOnly1->BackColor = COL_TRANS;
+		case S_SETTLE_PLC:
+			if (!psIni->bSendBitWise)	//DC 4.0.1
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uDropO;	// turn off Drop
+			}
+			else
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uDropO;	// turn off drop	//DC 4.0.1
 
-//					 printOnly1->Enabled = true;		//DC 4.0.8
-//					 printOnly1->BackColor = COL_LB;	//DC 4.0.8
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;	// turn off Hold		//DC 4.0.1
 
-					 dropBt1->Enabled = false;
-					 dropBt1->BackColor = COL_TRANS;
+			switch (psIni->sLog1.nSilo)
+			{
+			case 1: siloBar1->BarColor = COL_SETTLE;	break;
+			case 2: siloBar12->BarColor = COL_SETTLE;	break;
+			case 3: siloBar13->BarColor = COL_SETTLE;	break;
+			}
 
-					 pauseBt1->Enabled = true;
-					 pauseBt1->BackColor = COL_HOLDK;
+			dropBt1->Enabled = false;
+			dropBt1->BackColor = COL_YG;
 
-					 if(pAll->eAsType == A_SIM)
-						psIni->sScale1.cGo = 'G';		// go	
-					 break;
+			pauseBt1->Enabled = false;
+			pauseBt1->BackColor = COL_TRANS;
 
-				 case S_DELAY_PLC:
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'S';		// stop
+			break;
 
-					 psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uHoldO;	// turn on Hold
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uDropO;	// turn off Drop
+		case S_SETTLE:
+			if (psIni->bBotScale)
+			{
+				psIni->nWpoints &= ~P_CLRDRP_A;
+				if (psIni->bSafeJob == false)
+					psIni->nWpoints &= ~P_CLRSV_A;
+				switch (psIni->sLog1.nSilo)
+				{
+				case 1: siloBar1->BarColor = COL_SETTLE;	break;
+				case 2: siloBar12->BarColor = COL_SETTLE;	break;
+				case 3: siloBar13->BarColor = COL_SETTLE;	break;
+				}
+				fAdapt1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
+			}
+			else
+			{
+				psIni->nWpoints &= ~O_DROP1;
+				if (psIni->bSafeJob == false)
+					psIni->nWpoints &= ~O_SAFE1;
+				siloBar1->BarColor = COL_SETTLE;
+				fAdapt1 = psIni->sScale1.dValue;
+			}
+			dropBt1->Enabled = false;
+			dropBt1->BackColor = COL_YG;
 
-					 switch(psIni->sLog1.nSilo)
-					 {
-					 case 1: siloBar1->BarColor = COL_IDLE;	break;
-					 case 2: siloBar12->BarColor = COL_IDLE; 	break;
-					 case 3: siloBar13->BarColor = COL_IDLE; 	break;
-					 }
+			pauseBt1->Enabled = false;
+			pauseBt1->BackColor = COL_TRANS;
 
-					 dropBt1->Enabled = false;
-					 dropBt1->BackColor = COL_YG;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'S';		// stop						
+			break;
 
-					 pauseBt1->Enabled = false;
-					 pauseBt1->BackColor = COL_TRANS;
+		case S_ADD_WAIT:
+			break;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale1.cGo = 'S';	// go
-					 break;
+		case S_ADD:
+			fScaleVal1 = psIni->sScale1.dValue;
+			if (psIni->bBotScale)
+			{
+				if (!psIni->bPdmPlc)
+				{
+					switch (psIni->sLog1.nSilo)
+					{
+					case 1: psIni->nWpoints |= P_DROP1; siloBar1->BarColor = COL_DISCH; break;
+					case 2: psIni->nWpoints |= P_DROP2; siloBar12->BarColor = COL_DISCH; break;
+					case 3: psIni->nWpoints |= P_DROP3; siloBar13->BarColor = COL_DISCH; break;
+					}
+					scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
+				}
+				else
+				{
+					switch (psIni->sLog1.nSilo)
+					{
+					case 1: psIni->nWpoints |= psIni->asSilos[0].uDropO; siloBar1->BarColor = COL_DISCH; break;
+					case 2: psIni->nWpoints |= psIni->asSilos[1].uDropO; siloBar12->BarColor = COL_DISCH; break;
+					case 3: psIni->nWpoints |= psIni->asSilos[2].uDropO; siloBar13->BarColor = COL_DISCH; break;
+					}
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
 
-				 case S_SETTLE_PLC:
-					 if(!psIni->bSendBitWise)	//DC 4.0.1
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;			 
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uDropO;	// turn off Drop
-					 }
-					 else
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uDropO;	// turn off drop	//DC 4.0.1
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;	// turn off Hold
 
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uHoldO;	// turn off Hold		//DC 4.0.1
+					scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
+				}
+			}
+			else
+			{
+				psIni->nWpoints |= O_DROP1;
+				siloBar1->BarColor = COL_DISCH;
+			}
 
-					 switch(psIni->sLog1.nSilo)
+			scaleBar1->BarColor = COL_CHARGE;
+			addBt1->BackColor = COL_CHARGE;
+			fTmpScale1 = psIni->sScale1.dValue;
+			nTmpCnt1 = 0;
+
+			pauseBt1->Enabled = true;			//DC 4.0.0
+			pauseBt1->BackColor = COL_HOLDK;	//DC 4.0.0
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'G';		// go					 
+			break;
+
+		case S_ASETTLE:
+			if (psIni->bBotScale)
+			{
+				psIni->nWpoints &= ~P_CLRDRP_A;
+				switch (psIni->sLog1.nSilo)
+				{
+				case 1: siloBar1->BarColor = COL_SETTLE;	break;
+				case 2: siloBar12->BarColor = COL_SETTLE;	break;
+				case 3: siloBar13->BarColor = COL_SETTLE;	break;
+				}
+			}
+			else
+			{
+				psIni->nWpoints &= ~O_DROP1;
+				siloBar1->BarColor = COL_SETTLE;
+			}
+			nTmpCnt1 = 0;
+			addBt1->BackColor = COL_SETTLE;
+			pauseBt1->Enabled = true;
+			pauseBt1->BackColor = COL_HOLDK;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'S';		// stop							 
+			break;
+
+		case S_DISCH_WAIT:
+			siloBar1->BarColor = COL_IDLE;
+			dropBt1->BackColor = COL_TRANS;
+			dischBt1->Enabled = true;
+			dischBt1->BackColor = COL_PGREEN;
+			dischBt1->Visible = !psIni->sInv.bAutoDisch1;
+			pauseBt1->Enabled = false;
+			pauseBt1->BackColor = COL_TRANS;
+			break;
+
+		case S_DISCH:
+			psIni->nWpoints |= O_DISCH1;
+			scaleBar1->BarColor = COL_DISCH;
+			dropBt1->BackColor = COL_TRANS;
+			dischBt1->Enabled = false;
+			dischBt1->BackColor = COL_PGREEN;
+			dischBt1->Visible = !psIni->sInv.bAutoDisch1;
+			nSettle1 = 0;      // scale settle timout
+			pauseBt1->Enabled = true;
+			pauseBt1->BackColor = COL_HOLDK;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'L';		// leave					
+			break;
+
+		case S_DSETTLE:
+			psIni->nWpoints &= ~O_DISCH1;
+			scaleBar1->BarColor = COL_SETTLE;
+			pauseBt1->Enabled = false;
+			pauseBt1->BackColor = COL_TRANS;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'P';		// pause					 					
+			break;
+
+		case S_HOLD_ASETTLE:
+		case S_HOLD_SETTLE:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					psIni->nWpoints &= ~P_CLRDRP_A;
+					switch (psIni->sLog1.nSilo)
 					{
 					case 1: siloBar1->BarColor = COL_SETTLE;	break;
 					case 2: siloBar12->BarColor = COL_SETTLE;	break;
 					case 3: siloBar13->BarColor = COL_SETTLE;	break;
 					}
+				}
+				else
+				{
+					psIni->nWpoints &= ~O_DROP1;
+					siloBar1->BarColor = COL_SETTLE;
+				}
+			}
+			else
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
 
-					 dropBt1->Enabled = false;
-					 dropBt1->BackColor = COL_YG;
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;	// turn on Hold
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uDropO;	// turn off Drop
+				switch (psIni->sLog1.nSilo)
+				{
+				case 1: siloBar1->BarColor = COL_SETTLE;	break;
+				case 2: siloBar12->BarColor = COL_SETTLE;	break;
+				case 3: siloBar13->BarColor = COL_SETTLE;	break;
+				}
+			}
+			nTmpCnt1 = 0;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'P';		// stop							 
+			break;
 
-					 pauseBt1->Enabled = false;
-					 pauseBt1->BackColor = COL_TRANS;
+		case S_HOLD_DROP:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					switch (psIni->sLog1.nSilo)
+					{
+					case 1: siloBar1->BarColor = COL_HOLD;		break;
+					case 2: siloBar12->BarColor = COL_HOLD;	break;
+					case 3: siloBar13->BarColor = COL_HOLD;	break;
+					}
+				}
+				else
+				{
+					siloBar1->BarColor = COL_HOLD;
+				}
+				dropBt1->Enabled = false;
+				dropBt1->BackColor = COL_PGREEN;
+			}
+			else
+			{
+				if (!psIni->bSendBitWise)
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
+				}
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uDropO;	// turn off Drop //DC 4.0.1
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;	// turn off Hold //DC 4.0.1
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale1.cGo = 'S';		// stop
-					 break;
+				switch (psIni->sLog1.nSilo)
+				{
+				case 1: siloBar1->BarColor = COL_HOLD;		break;
+				case 2: siloBar12->BarColor = COL_HOLD;	break;
+				case 3: siloBar13->BarColor = COL_HOLD;	break;
+				}
+				dropBt1->Enabled = false;
+				dropBt1->BackColor = COL_PGREEN;
+				if (pAll->eAsType == A_SIM)
+					psIni->sScale1.cGo = 'P';		// stop
+													//if (fLoad1 >= (fTarget1 + psIni->asSilos[psIni->sLog1.nSilo-1].dAddTol))
+													//{
+													//	if(MessageBox::Show("TRUCK CAPACITY WARNING, continue ?", "Lane A", 
+													//	System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
+													//	== System::Windows::Forms::DialogResult::Yes)
+													//		bConDrop = true;							//DC 4.0.0 Continue Drop
+													//}
+			}
+			break;
 
-				 case S_SETTLE:
-					 if(psIni->bBotScale)
-					 {
-						 psIni->nWpoints &= ~P_CLRDRP_A;
-						 if(psIni->bSafeJob == false)
-								 psIni->nWpoints &= ~P_CLRSV_A;
-						 switch(psIni->sLog1.nSilo)
-						 {
-						 case 1: siloBar1->BarColor = COL_SETTLE;	break;
-						 case 2: siloBar12->BarColor = COL_SETTLE;	break;
-						 case 3: siloBar13->BarColor = COL_SETTLE;	break;
-						 }
-						 fAdapt1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
-					 }
-					 else
-					 {
-						 psIni->nWpoints &= ~O_DROP1;
-						 if(psIni->bSafeJob == false)
-							 psIni->nWpoints &= ~O_SAFE1;
-						 siloBar1->BarColor = COL_SETTLE;
-						 fAdapt1 = psIni->sScale1.dValue;
-					 }
-					 dropBt1->Enabled = false;
-					 dropBt1->BackColor = COL_YG;
+		case S_HOLD_ADD:	//DC 4.0.0
+		case S_HOLD:
+			if (!psIni->bSendBitWise)
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uDropO;	// turn off Drop
+			}
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uDropO;	// turn off Drop //DC 4.0.1
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;	// turn off Hold //DC 4.0.1
 
-					 pauseBt1->Enabled = false;
-					 pauseBt1->BackColor = COL_TRANS;
+			switch (psIni->sLog1.nSilo)
+			{
+			case 1: siloBar1->BarColor = COL_HOLD;		break;
+			case 2: siloBar12->BarColor = COL_HOLD;	break;
+			case 3: siloBar13->BarColor = COL_HOLD;	break;
+			}
+			dropBt1->Enabled = false;
+			dropBt1->BackColor = COL_PGREEN;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'P';		// stop
+			break;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale1.cGo = 'S';		// stop						
-					 break;
+		case S_HOLD_DISCH:
+			if (!psIni->bPdmPlc)
+				psIni->nWpoints &= ~O_DISCH1;
+			dischBt1->Enabled = false;
+			dischBt1->BackColor = COL_PGREEN;
+			scaleBar1->BarColor = COL_HOLD;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale1.cGo = 'P';		// pause				 
+			break;
 
-				 case S_ADD_WAIT:
-					 break;
+		case S_UPDATE:
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints &= ~psIni->nReady1O;		//DC 3.2.0
+				psIni->nWpoints &= ~psIni->nDrop1O;		//DC 3.2.0
 
-				 case S_ADD:
-					 fScaleVal1 = psIni->sScale1.dValue;
-					 if(psIni->bBotScale)
-					 {
-						 if(!psIni->bPdmPlc)
-						 {
-							 switch(psIni->sLog1.nSilo)
-							 {
-							 case 1: psIni->nWpoints |= P_DROP1; siloBar1->BarColor = COL_DISCH; break;
-							 case 2: psIni->nWpoints |= P_DROP2; siloBar12->BarColor = COL_DISCH; break;
-							 case 3: psIni->nWpoints |= P_DROP3; siloBar13->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
-						 }
-						 else
-						 {
-							 switch(psIni->sLog1.nSilo)
-							 {
-							 case 1: psIni->nWpoints |= psIni->asSilos[0].uDropO; siloBar1->BarColor = COL_DISCH; break;
-							 case 2: psIni->nWpoints |= psIni->asSilos[1].uDropO; siloBar12->BarColor = COL_DISCH; break;
-							 case 3: psIni->nWpoints |= psIni->asSilos[2].uDropO; siloBar13->BarColor = COL_DISCH; break;
-							 }
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
+				if (psIni->bSafeJob == false)
+				{
+					if (psIni->bBotScale)
+						psIni->nWpoints &= ~P_CLRSV_A;
+					else
+						psIni->nWpoints &= ~O_SAFE1;
+				}
+			}
+			else
+			{
+				if (!psIni->bSendBitWise)
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
+				}
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;		// turn on Hold		//DC 4.0.1
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uDoneO;		// turn on Done
+			}
+			break;
 
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uHoldO;	// turn off Hold
-
-							 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints |= O_DROP1;
-						 siloBar1->BarColor = COL_DISCH;
-					 }
-
-					 scaleBar1->BarColor = COL_CHARGE;
-					 addBt1->BackColor = COL_CHARGE;
-					 fTmpScale1 = psIni->sScale1.dValue;	
-					 nTmpCnt1 = 0;
-
-					 pauseBt1->Enabled = true;			//DC 4.0.0
-					 pauseBt1->BackColor = COL_HOLDK;	//DC 4.0.0
-
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale1.cGo = 'G';		// go					 
-					 break;
-
-				 case S_ASETTLE:
-					 if(psIni->bBotScale)
-					 {
-						 psIni->nWpoints &= ~P_CLRDRP_A;
-						 switch(psIni->sLog1.nSilo)
-						 {
-						 case 1: siloBar1->BarColor = COL_SETTLE;	break;
-						 case 2: siloBar12->BarColor = COL_SETTLE;	break;
-						 case 3: siloBar13->BarColor = COL_SETTLE;	break;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints &= ~O_DROP1;
-						 siloBar1->BarColor = COL_SETTLE;
-					 }
-					 nTmpCnt1 = 0;
-					 addBt1->BackColor = COL_SETTLE;
-					 pauseBt1->Enabled = true;
-					 pauseBt1->BackColor = COL_HOLDK;
-
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale1.cGo = 'S';		// stop							 
-					 break;
-
-				 case S_DISCH_WAIT:
-					 siloBar1->BarColor = COL_IDLE;
-					 dropBt1->BackColor = COL_TRANS;
-					 dischBt1->Enabled = true;
-					 dischBt1->BackColor = COL_PGREEN;	
-					 dischBt1->Visible = !psIni->sInv.bAutoDisch1;		
-					 pauseBt1->Enabled = false;
-					 pauseBt1->BackColor = COL_TRANS;
-					 break;
-
-				 case S_DISCH:
-					 psIni->nWpoints |= O_DISCH1;
-					 scaleBar1->BarColor = COL_DISCH;
-					 dropBt1->BackColor = COL_TRANS;
-					 dischBt1->Enabled = false;
-					 dischBt1->BackColor = COL_PGREEN;	
-					 dischBt1->Visible = !psIni->sInv.bAutoDisch1;		
-					 nSettle1 = 0;      // scale settle timout
-					 pauseBt1->Enabled = true;
-					 pauseBt1->BackColor = COL_HOLDK;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale1.cGo = 'L';		// leave					
-					 break;
-
-				 case S_DSETTLE:
-					 psIni->nWpoints &= ~O_DISCH1;
-					 scaleBar1->BarColor = COL_SETTLE;
-					 pauseBt1->Enabled = false;
-					 pauseBt1->BackColor = COL_TRANS;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale1.cGo = 'P';		// pause					 					
-					 break;
-
-				 case S_HOLD_ASETTLE:
-				 case S_HOLD_SETTLE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 psIni->nWpoints &= ~P_CLRDRP_A;
-							 switch(psIni->sLog1.nSilo)
-							 {
-							 case 1: siloBar1->BarColor = COL_SETTLE;	break;
-							 case 2: siloBar12->BarColor = COL_SETTLE;	break;
-							 case 3: siloBar13->BarColor = COL_SETTLE;	break;
-							 }
-						 }
-						 else
-						 {
-							 psIni->nWpoints &= ~O_DROP1;
-							 siloBar1->BarColor = COL_SETTLE;
-						 }
-					 }
-					 else
-					 {
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
-
-						 psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uHoldO;	// turn on Hold
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uDropO;	// turn off Drop
-						 switch(psIni->sLog1.nSilo)
-						{
-						case 1: siloBar1->BarColor = COL_SETTLE;	break;
-						case 2: siloBar12->BarColor = COL_SETTLE;	break;
-						case 3: siloBar13->BarColor = COL_SETTLE;	break;
-						}
-					 }
-					 nTmpCnt1 = 0;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale1.cGo = 'P';		// stop							 
-					 break;
-
-				 case S_HOLD_DROP:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 switch(psIni->sLog1.nSilo)
-							 {
-							 case 1: siloBar1->BarColor = COL_HOLD;		break;
-							 case 2: siloBar12->BarColor = COL_HOLD;	break;
-							 case 3: siloBar13->BarColor = COL_HOLD;	break;
-							 }
-						 }
-						 else
-						 {
-							 siloBar1->BarColor = COL_HOLD;
-						 }
-						 dropBt1->Enabled = false;
-						 dropBt1->BackColor = COL_PGREEN;
-					 }
-					 else
-					 {
-						 if(!psIni->bSendBitWise)
-						 {
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
-						 }
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uDropO;	// turn off Drop //DC 4.0.1
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uHoldO;	// turn off Hold //DC 4.0.1
-						 
-						 switch(psIni->sLog1.nSilo)
-						 {
-						 case 1: siloBar1->BarColor = COL_HOLD;		break;
-						 case 2: siloBar12->BarColor = COL_HOLD;	break;
-						 case 3: siloBar13->BarColor = COL_HOLD;	break;
-						 }
-						 dropBt1->Enabled = false;
-						 dropBt1->BackColor = COL_PGREEN;
-						 if(pAll->eAsType == A_SIM)
-							psIni->sScale1.cGo = 'P';		// stop
-						//if (fLoad1 >= (fTarget1 + psIni->asSilos[psIni->sLog1.nSilo-1].dAddTol))
-						//{
-						//	if(MessageBox::Show("TRUCK CAPACITY WARNING, continue ?", "Lane A", 
-						//	System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						//	== System::Windows::Forms::DialogResult::Yes)
-						//		bConDrop = true;							//DC 4.0.0 Continue Drop
-						//}
-					 }
-					 break;				 
-				
-				 case S_HOLD_ADD:	//DC 4.0.0
-				 case S_HOLD:
-					 if(!psIni->bSendBitWise)
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uDropO;	// turn off Drop
-					 }
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uDropO;	// turn off Drop //DC 4.0.1
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uHoldO;	// turn off Hold //DC 4.0.1
-					 
-					 switch(psIni->sLog1.nSilo)
-					 {
-					 case 1: siloBar1->BarColor = COL_HOLD;		break;
-					 case 2: siloBar12->BarColor = COL_HOLD;	break;
-					 case 3: siloBar13->BarColor = COL_HOLD;	break;
-					 }
-					 dropBt1->Enabled = false;
-					 dropBt1->BackColor = COL_PGREEN;
-					 if(pAll->eAsType == A_SIM)
-						psIni->sScale1.cGo = 'P';		// stop
-					 break;
-
-				 case S_HOLD_DISCH:
-					 if(!psIni->bPdmPlc)
-						psIni->nWpoints &= ~O_DISCH1;
-					 dischBt1->Enabled = false;
-					 dischBt1->BackColor = COL_PGREEN;
-					 scaleBar1->BarColor = COL_HOLD;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale1.cGo = 'P';		// pause				 
-					 break;
-
-				 case S_UPDATE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 psIni->nWpoints &= ~psIni->nReady1O;		//DC 3.2.0
-						 psIni->nWpoints &= ~psIni->nDrop1O;		//DC 3.2.0
-
-						 if(psIni->bSafeJob == false)
-						 {
-							 if(psIni->bBotScale)
-								 psIni->nWpoints &= ~P_CLRSV_A;
-							 else
-								 psIni->nWpoints &= ~O_SAFE1;
-						 }
-					 }
-					 else
-					 {
-						if(!psIni->bSendBitWise)
-						{
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
-						}
-						psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldO;		// turn on Hold		//DC 4.0.1
-						psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uDoneO;		// turn on Done
-					 }				 
-					 break;
-
-				 case S_HORN:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-							 psIni->nWpoints |= P_LIGHTA;
-						 else
-							 psIni->nWpoints |= O_LIGHT1;
-					 }
-					 nTmpCnt1 = 0;
-					 break;
-				 }
-			 }
+		case S_HORN:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+					psIni->nWpoints |= P_LIGHTA;
+				else
+					psIni->nWpoints |= O_LIGHT1;
+			}
+			nTmpCnt1 = 0;
+			break;
+		}
+	}
 #pragma endregion
 
 #pragma region STATE2
 			 //-------------------------------------------------------------------------
 	private: System::Void setState2(STATE eNew)
-			 {
-				 switch(psIni->sLog2.eState = eNew)
-				 {
-				 case S_IDLE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 psIni->nWpoints &= ~P_CLEAR_B;
-							 zeroBar(siloBar22);
-							 zeroBar(siloBar23);
-						 }
-						 else
-							 psIni->nWpoints &= ~O_CLEARBB;
-					 }
-					 else
-					 {
-						psIni->nWpoints &= ~psIni->asSilos[3].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[4].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[5].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[3].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[4].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[5].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[3].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[4].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[5].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[3].uHoldO;		// turn off Hold
-						psIni->nWpoints &= ~psIni->asSilos[4].uHoldO;		// turn off Hold
-						psIni->nWpoints &= ~psIni->asSilos[5].uHoldO;		// turn off Hold
-						zeroBar(siloBar22);
-						zeroBar(siloBar23);
-					 }
+	{
+		switch (psIni->sLog2.eState = eNew)
+		{
+		case S_IDLE:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					psIni->nWpoints &= ~P_CLEAR_B;
+					zeroBar(siloBar22);
+					zeroBar(siloBar23);
+				}
+				else
+					psIni->nWpoints &= ~O_CLEARBB;
+			}
+			else
+			{
+				psIni->nWpoints &= ~psIni->asSilos[3].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[4].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[5].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[3].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[4].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[5].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[3].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[4].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[5].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[3].uHoldO;		// turn off Hold
+				psIni->nWpoints &= ~psIni->asSilos[4].uHoldO;		// turn off Hold
+				psIni->nWpoints &= ~psIni->asSilos[5].uHoldO;		// turn off Hold
+				zeroBar(siloBar22);
+				zeroBar(siloBar23);
+			}
 
-					 zeroBar(siloBar2);
-					 scaleBar2->Target = 0;
-					 bTruck2 = false;
+			zeroBar(siloBar2);
+			scaleBar2->Target = 0;
+			bTruck2 = false;
 
-					 // clear display
-					 customer2->Text = nullptr;
-					 Job2->Text = nullptr;
-					 material2->Text = nullptr;
-					 tic_num2->Text = nullptr;
-					 truck2->Text = nullptr;
-					 target2->Text = nullptr;
+			// clear display
+			customer2->Text = nullptr;
+			Job2->Text = nullptr;
+			material2->Text = nullptr;
+			tic_num2->Text = nullptr;
+			truck2->Text = nullptr;
+			target2->Text = nullptr;
 
-					 truck2->BackColor = COL_W;
-					 target2->BackColor = COL_W;
+			truck2->BackColor = COL_W;
+			target2->BackColor = COL_W;
 
-					 // setup buttons
-					 all2->Enabled = true;		
-					 all2->BackColor = COL_LSB;
-					 nextBt2->Enabled = true;		
-					 nextBt2->BackColor = COL_LSB;
-					 autoBt2->Enabled = !psIni->bDisableManual;		//DC 3.2.0 true;
-					 autoBt2->BackColor = COL_WS;
+			// setup buttons
+			all2->Enabled = true;
+			all2->BackColor = COL_LSB;
+			nextBt2->Enabled = true;
+			nextBt2->BackColor = COL_LSB;
+			autoBt2->Enabled = !psIni->bDisableManual;		//DC 3.2.0 true;
+			autoBt2->BackColor = COL_WS;
 
-					 printOnly2->Enabled = false;
-					 printOnly2->BackColor = COL_TRANS;
-					 readyBt2->Enabled = false;
-					 readyBt2->BackColor = COL_TRANS;
+			printOnly2->Enabled = false;
+			printOnly2->BackColor = COL_TRANS;
+			readyBt2->Enabled = false;
+			readyBt2->BackColor = COL_TRANS;
 
-					 printTarget2->Checked = false;
-					 taxExempt2->Checked = false;
+			printTarget2->Checked = false;
+			taxExempt2->Checked = false;
 
-					 drops21->Checked = false;
-					 drops22->Checked = false;
-					 drops23->Checked = false;
-					 drops24->Checked = false;
+			drops21->Checked = false;
+			drops22->Checked = false;
+			drops23->Checked = false;
+			drops24->Checked = false;
 
-					 dropBt2->Enabled = false;
-					 dropBt2->BackColor = COL_TRANS;
+			dropBt2->Enabled = false;
+			dropBt2->BackColor = COL_TRANS;
 
-					 addBt2->Enabled = false;
-					 addBt2->BackColor = COL_TRANS;
+			addBt2->Enabled = false;
+			addBt2->BackColor = COL_TRANS;
 
-					 dischBt2->Enabled = false;
-					 dischBt2->BackColor = COL_TRANS;							 
-					 dischBt2->Visible = !psIni->sInv.bAutoDisch2;		
+			dischBt2->Enabled = false;
+			dischBt2->BackColor = COL_TRANS;
+			dischBt2->Visible = !psIni->sInv.bAutoDisch2;
 
-					 pauseBt2->Enabled = false;
-					 pauseBt2->BackColor = COL_TRANS;
+			pauseBt2->Enabled = false;
+			pauseBt2->BackColor = COL_TRANS;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'I';		// idle
-					 
-					 if(pAll->eAsType == A_DEMO)
-					 {
-						 if(psIni->bBotScale)
-							psIni->sScale2.dValue = 10.0;
-						 else
-							psIni->sScale2.dValue = 0.0;
-					 }
-					 break;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'I';		// idle
 
-				 case S_NEXT:
-					 all2->Enabled = false;
-					 all2->BackColor = COL_TRANS;
-					 nextBt2->Enabled = false;
-					 nextBt2->BackColor = COL_TRANS;
-					 autoBt2->Enabled = false;
-					 autoBt2->BackColor = COL_TRANS;
+			if (pAll->eAsType == A_DEMO)
+			{
+				if (psIni->bBotScale)
+					psIni->sScale2.dValue = 10.0;
+				else
+					psIni->sScale2.dValue = 0.0;
+			}
+			break;
 
-					 readyBt2->Enabled = true;
-					 readyBt2->BackColor = COL_PGREEN;
+		case S_NEXT:
+			all2->Enabled = false;
+			all2->BackColor = COL_TRANS;
+			nextBt2->Enabled = false;
+			nextBt2->BackColor = COL_TRANS;
+			autoBt2->Enabled = false;
+			autoBt2->BackColor = COL_TRANS;
 
-					 if(pAll->eAsType == A_SIM)
-					 {
-						 if(!psIni->bBotScale)
-							 psIni->sScale2.cGo = 'I';		// idle
-						 else					
-							 psIni->sScale2.cGo = 'E';		// enter	
-					 }					 
-					 bFirstDrop2 = true;
-					 break;
+			readyBt2->Enabled = true;
+			readyBt2->BackColor = COL_PGREEN;
 
-				 case S_READY:
-					 bTruck2 = true;
-					 if(!psIni->bPdmPlc)
-					 {
-						psIni->nWpoints |= psIni->nReady2O;	//DC 3.2.0
-					 }
-					 else if(!psIni->bSendBitWise)			//DC 4.0.1
-					 {
-						 switch(psIni->sLog2.nSilo)
-						 {
-						 case 4: psIni->nWpoints |= psIni->asSilos[3].uReadyO; break;
-						 case 5: psIni->nWpoints |= psIni->asSilos[4].uReadyO; break;
-						 case 6: psIni->nWpoints |= psIni->asSilos[5].uReadyO; break;
-						 }
-					 }
-					 else if(psIni->bSendBitWise)			//DC 4.0.1
-					 {
-						 psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo-1].uHoldO;	// turn on Hold
-					 }
+			if (pAll->eAsType == A_SIM)
+			{
+				if (!psIni->bBotScale)
+					psIni->sScale2.cGo = 'I';		// idle
+				else
+					psIni->sScale2.cGo = 'E';		// enter	
+			}
+			bFirstDrop2 = true;
+			break;
 
-					 //					 psIni->nWpoints &= ~O_DROP2;
-					 psIni->sLog2.eStop = A_NOT;
+		case S_READY:
+			bTruck2 = true;
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints |= psIni->nReady2O;	//DC 3.2.0
+			}
+			else if (!psIni->bSendBitWise)			//DC 4.0.1
+			{
+				switch (psIni->sLog2.nSilo)
+				{
+				case 4: psIni->nWpoints |= psIni->asSilos[3].uReadyO; break;
+				case 5: psIni->nWpoints |= psIni->asSilos[4].uReadyO; break;
+				case 6: psIni->nWpoints |= psIni->asSilos[5].uReadyO; break;
+				}
+			}
+			else if (psIni->bSendBitWise)			//DC 4.0.1
+			{
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;	// turn on Hold
+			}
 
-					 bool bCheckIOk;		//DC 4.0.1
-					 if(psIni->bUseTrkMax)						//DC 3.2.0
-					 {
-						truckBar2->Maximum = pJob2->fLoad;
-						truckBar2->Target = pJob2->fLoad - psIni->sLog2.fTruckTare;
+			//					 psIni->nWpoints &= ~O_DROP2;
+			psIni->sLog2.eStop = A_NOT;
 
-						if(psIni->bSendBitWise)
-						{
-							bCheckIOk = DecimalToBinaryIO(int(truckBar2->Maximum*2000), psIni->sLog2.nSilo);	//DC 4.0.0 send BitWise
-						}
-						else if(psIni->bSendTarget)
-							psIni->nSclOutEU[1] = truckBar2->Maximum;		//DC 4.0.0 set analog output value
-					 }
-					 else
-					 {
-						truckBar2->Maximum = pTruck2->nCapacity;
-						truckBar2->Target = pJob2->fLoad;
-					 }
+			bool bCheckIOk;		//DC 4.0.1
+			if (psIni->bUseTrkMax)						//DC 3.2.0
+			{
+				truckBar2->Maximum = pJob2->fLoad;
+				truckBar2->Target = pJob2->fLoad - psIni->sLog2.fTruckTare;
 
-					 if(psIni->bBotScale)
-					 {
-						 if(psIni->bUseTrkMax)					//DC 3.2.0
-							 scaleBar2->Target = pJob2->fLoad;
-						 else
-							scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
-					 }
-					 else
-						scaleBar2->Target = fTarget2;
+				if (psIni->bSendBitWise)
+				{
+					bCheckIOk = DecimalToBinaryIO(int(truckBar2->Maximum * 2000), psIni->sLog2.nSilo);	//DC 4.0.0 send BitWise
+				}
+				else if (psIni->bSendTarget)
+					psIni->nSclOutEU[1] = truckBar2->Maximum;		//DC 4.0.0 set analog output value
+			}
+			else
+			{
+				truckBar2->Maximum = pTruck2->nCapacity;
+				truckBar2->Target = pJob2->fLoad;
+			}
 
-					 readyBt2->Enabled = false;
-					 readyBt2->BackColor = COL_TRANS;
+			if (psIni->bBotScale)
+			{
+				if (psIni->bUseTrkMax)					//DC 3.2.0
+					scaleBar2->Target = pJob2->fLoad;
+				else
+					scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
+			}
+			else
+				scaleBar2->Target = fTarget2;
 
-					 printOnly2->Enabled = true;
-					 printOnly2->BackColor = COL_LB;
+			readyBt2->Enabled = false;
+			readyBt2->BackColor = COL_TRANS;
 
-					 if(!psIni->bPdmPlc)		//DC 4.0.0
-					 {
-						 dropBt2->Enabled = true;
-						 dropBt2->BackColor = COL_PGREEN;
-					 }
+			printOnly2->Enabled = true;
+			printOnly2->BackColor = COL_LB;
 
-					 if(pAll->eAsType == A_SIM)
-					 {
-						 if(!psIni->bBotScale)
-							 psIni->sScale2.cGo = 'I';
-						 else	
-							 psIni->sScale2.cGo = 'S';
-					 }				 
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 switch(psIni->sLog2.nSilo)
-							 {
-							 case 4: psIni->nWpoints |= P_SAFE4; break;
-							 case 5: psIni->nWpoints |= P_SAFE5; break;
-							 case 6: psIni->nWpoints |= P_SAFE6; break;
-							 }
-	//						 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
-						 }
-						 else
-						 {
-							 psIni->nWpoints |= O_SAFE2;
-							 scaleBar2->Target = fTarget2;
-						 }
-					 }
-					 tSafeB = clock();		// safe valve timeout
+			if (!psIni->bPdmPlc)		//DC 4.0.0
+			{
+				dropBt2->Enabled = true;
+				dropBt2->BackColor = COL_PGREEN;
+			}
 
-					 //DC 4.0.1 Check send target IO
-					 if(bCheckIOk)
-						psIni->nWpoints |= psIni->uSendTargetO;		//DC 4.0.1 turn on send target output
-					 else
-					 {
-						setState2(S_NEXT);
-						psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
-						MessageBox::Show("Target Send Error Check IO", "Lane B", 
-						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-					 }
-					 break;
+			if (pAll->eAsType == A_SIM)
+			{
+				if (!psIni->bBotScale)
+					psIni->sScale2.cGo = 'I';
+				else
+					psIni->sScale2.cGo = 'S';
+			}
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					switch (psIni->sLog2.nSilo)
+					{
+					case 4: psIni->nWpoints |= P_SAFE4; break;
+					case 5: psIni->nWpoints |= P_SAFE5; break;
+					case 6: psIni->nWpoints |= P_SAFE6; break;
+					}
+					//						 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
+				}
+				else
+				{
+					psIni->nWpoints |= O_SAFE2;
+					scaleBar2->Target = fTarget2;
+				}
+			}
+			tSafeB = clock();		// safe valve timeout
 
-				 case S_SAFE:
-					 break;
+									//DC 4.0.1 Check send target IO
+			if (bCheckIOk)
+				psIni->nWpoints |= psIni->uSendTargetO;		//DC 4.0.1 turn on send target output
+			else
+			{
+				setState2(S_NEXT);
+				psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
+				MessageBox::Show("Target Send Error Check IO", "Lane B",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+			}
+			break;
 
-				 case S_DROP: 
-					 fScaleVal2 = psIni->sScale2.dValue;
-					 if(!psIni->bPdmPlc)
-					 {
-						psIni->nWpoints |= psIni->nDrop2O;		//DC 3.2.0
-					 }
-					 if(psIni->bBotScale)
-					 {
-						 if(!psIni->bPdmPlc)
-						 {
-							 switch(psIni->sLog2.nSilo)
-							 {
-							 case 4: psIni->nWpoints |= P_DROP4; siloBar2->BarColor = COL_DISCH; break;
-							 case 5: psIni->nWpoints |= P_DROP5; siloBar22->BarColor = COL_DISCH; break;
-							 case 6: psIni->nWpoints |= P_DROP6; siloBar23->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
-						 }
-						 else if(!psIni->bSendBitWise)		//DC 4.0.1
-						 {
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uReadyO;	// turn off ready
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uHoldO;	// turn off Hold
-							 switch(psIni->sLog2.nSilo)
-							 {
-							 case 4: psIni->nWpoints |= psIni->asSilos[3].uDropO; siloBar2->BarColor = COL_DISCH; break;
-							 case 5: psIni->nWpoints |= psIni->asSilos[4].uDropO; siloBar22->BarColor = COL_DISCH; break;
-							 case 6: psIni->nWpoints |= psIni->asSilos[5].uDropO; siloBar23->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
-						 }
-						 else if (psIni->bSendBitWise)		//DC 4.0.1
-						 {
-							 psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo-1].uDropO;	// turn on drop  //DC 4.0.1
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uDoneO;	// turn off Done
-							 psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo-1].uHoldO;	// turn on Hold
-							 switch(psIni->sLog2.nSilo)			//DC 4.0.0
-							 {
-							 case 4: siloBar2->BarColor = COL_DISCH; break;
-							 case 5: siloBar22->BarColor = COL_DISCH; break;
-							 case 6: siloBar23->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints |= O_DROP2;
-						 siloBar2->BarColor = COL_DISCH;
-//						 dischBt2->Enabled = false;
-//						 dischBt2->BackColor = COL_TRANS;							 
-						 scaleBar2->Target = fTarget2;
-					 }
-					 scaleBar2->BarColor = COL_CHARGE;
-					 fTmpScale2 = psIni->sScale2.dValue;
-					 nSettle2 = 0;
-					 nTmpCnt2 = 0;
+		case S_SAFE:
+			break;
 
-					 printOnly2->Enabled = false;
-					 printOnly2->BackColor = COL_TRANS;
-					 dropBt2->Enabled = false;
-					 dropBt2->BackColor = COL_TRANS;
+		case S_DROP:
+			fScaleVal2 = psIni->sScale2.dValue;
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints |= psIni->nDrop2O;		//DC 3.2.0
+			}
+			if (psIni->bBotScale)
+			{
+				if (!psIni->bPdmPlc)
+				{
+					switch (psIni->sLog2.nSilo)
+					{
+					case 4: psIni->nWpoints |= P_DROP4; siloBar2->BarColor = COL_DISCH; break;
+					case 5: psIni->nWpoints |= P_DROP5; siloBar22->BarColor = COL_DISCH; break;
+					case 6: psIni->nWpoints |= P_DROP6; siloBar23->BarColor = COL_DISCH; break;
+					}
+					scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
+				}
+				else if (!psIni->bSendBitWise)		//DC 4.0.1
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uReadyO;	// turn off ready
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;	// turn off Hold
+					switch (psIni->sLog2.nSilo)
+					{
+					case 4: psIni->nWpoints |= psIni->asSilos[3].uDropO; siloBar2->BarColor = COL_DISCH; break;
+					case 5: psIni->nWpoints |= psIni->asSilos[4].uDropO; siloBar22->BarColor = COL_DISCH; break;
+					case 6: psIni->nWpoints |= psIni->asSilos[5].uDropO; siloBar23->BarColor = COL_DISCH; break;
+					}
+					scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
+				}
+				else if (psIni->bSendBitWise)		//DC 4.0.1
+				{
+					psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uDropO;	// turn on drop  //DC 4.0.1
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uDoneO;	// turn off Done
+					psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;	// turn on Hold
+					switch (psIni->sLog2.nSilo)			//DC 4.0.0
+					{
+					case 4: siloBar2->BarColor = COL_DISCH; break;
+					case 5: siloBar22->BarColor = COL_DISCH; break;
+					case 6: siloBar23->BarColor = COL_DISCH; break;
+					}
+					scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
+				}
+			}
+			else
+			{
+				psIni->nWpoints |= O_DROP2;
+				siloBar2->BarColor = COL_DISCH;
+				//						 dischBt2->Enabled = false;
+				//						 dischBt2->BackColor = COL_TRANS;							 
+				scaleBar2->Target = fTarget2;
+			}
+			scaleBar2->BarColor = COL_CHARGE;
+			fTmpScale2 = psIni->sScale2.dValue;
+			nSettle2 = 0;
+			nTmpCnt2 = 0;
 
-					 pauseBt2->Enabled = true;
-					 pauseBt2->BackColor = COL_HOLDK;
+			printOnly2->Enabled = false;
+			printOnly2->BackColor = COL_TRANS;
+			dropBt2->Enabled = false;
+			dropBt2->BackColor = COL_TRANS;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'G';		// go						 
-					 break;
+			pauseBt2->Enabled = true;
+			pauseBt2->BackColor = COL_HOLDK;
 
-				 case S_DELAY_PLC:
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'G';		// go						 
+			break;
 
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uHoldO;	// turn off Hold
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uDropO;	// turn off Drop
+		case S_DELAY_PLC:
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
 
-					 switch(psIni->sLog2.nSilo)
-					 {
-					 case 4: siloBar2->BarColor = COL_IDLE;	break;
-					 case 5: siloBar22->BarColor = COL_IDLE; 	break;
-					 case 6: siloBar23->BarColor = COL_IDLE; 	break;
-					 }
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;	// turn off Hold
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uDropO;	// turn off Drop
 
-					 dropBt2->Enabled = false;
-					 dropBt2->BackColor = COL_YG;
+			switch (psIni->sLog2.nSilo)
+			{
+			case 4: siloBar2->BarColor = COL_IDLE;	break;
+			case 5: siloBar22->BarColor = COL_IDLE; 	break;
+			case 6: siloBar23->BarColor = COL_IDLE; 	break;
+			}
 
-					 pauseBt2->Enabled = false;
-					 pauseBt2->BackColor = COL_TRANS;
+			dropBt2->Enabled = false;
+			dropBt2->BackColor = COL_YG;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'S';	// go
-					 break;
+			pauseBt2->Enabled = false;
+			pauseBt2->BackColor = COL_TRANS;
 
-				 case S_SETTLE_PLC:
-					 if(!psIni->bSendBitWise)	//DC 4.0.1
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uDropO;	// turn off Drop
-						 
-					 }
-					 else
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uDropO;	// turn off drop	//DC 4.0.1
-		
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uHoldO;		// turn off Hold		//DC 4.0.1
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'S';	// go
+			break;
 
-					 switch(psIni->sLog2.nSilo)
+		case S_SETTLE_PLC:
+			if (!psIni->bSendBitWise)	//DC 4.0.1
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uDropO;	// turn off Drop
+
+			}
+			else
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uDropO;	// turn off drop	//DC 4.0.1
+
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;		// turn off Hold		//DC 4.0.1
+
+			switch (psIni->sLog2.nSilo)
+			{
+			case 4: siloBar2->BarColor = COL_SETTLE;	break;
+			case 5: siloBar22->BarColor = COL_SETTLE;	break;
+			case 6: siloBar23->BarColor = COL_SETTLE;	break;
+			}
+
+			dropBt2->Enabled = false;
+			dropBt2->BackColor = COL_YG;
+
+			pauseBt2->Enabled = false;
+			pauseBt2->BackColor = COL_TRANS;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'S';		// stop
+			break;
+
+		case S_SETTLE:
+			if (psIni->bBotScale)
+			{
+				psIni->nWpoints &= ~P_CLRDRP_B;
+				if (psIni->bSafeJob == false)
+					psIni->nWpoints &= ~P_CLRSV_B;
+				switch (psIni->sLog2.nSilo)
+				{
+				case 4: siloBar2->BarColor = COL_SETTLE;	break;
+				case 5: siloBar22->BarColor = COL_SETTLE;	break;
+				case 6: siloBar23->BarColor = COL_SETTLE;	break;
+				}
+				fAdapt2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
+			}
+			else
+			{
+				psIni->nWpoints &= ~O_DROP2;
+				if (psIni->bSafeJob == false)
+					psIni->nWpoints &= ~O_SAFE2;
+				siloBar2->BarColor = COL_SETTLE;
+				fAdapt2 = psIni->sScale2.dValue;
+			}
+			dropBt2->Enabled = false;
+			dropBt2->BackColor = COL_YG;
+
+			pauseBt2->Enabled = false;
+			pauseBt2->BackColor = COL_TRANS;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'S';		// stop						 
+			break;
+
+		case S_ADD_WAIT:
+			break;
+
+		case S_ADD:
+			fScaleVal2 = psIni->sScale2.dValue;
+			if (psIni->bBotScale)
+			{
+				if (!psIni->bPdmPlc)
+				{
+					switch (psIni->sLog2.nSilo)
+					{
+					case 4: psIni->nWpoints |= P_DROP4; siloBar2->BarColor = COL_DISCH; break;
+					case 5: psIni->nWpoints |= P_DROP5; siloBar22->BarColor = COL_DISCH;  break;
+					case 6: psIni->nWpoints |= P_DROP6; siloBar23->BarColor = COL_DISCH;  break;
+					}
+					scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
+				}
+				else
+				{
+					switch (psIni->sLog2.nSilo)
+					{
+					case 4: psIni->nWpoints |= psIni->asSilos[3].uDropO; siloBar2->BarColor = COL_DISCH; break;
+					case 5: psIni->nWpoints |= psIni->asSilos[4].uDropO; siloBar22->BarColor = COL_DISCH; break;
+					case 6: psIni->nWpoints |= psIni->asSilos[5].uDropO; siloBar23->BarColor = COL_DISCH; break;
+					}
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
+
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;	// turn off Hold
+
+					scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
+				}
+			}
+			else
+			{
+				psIni->nWpoints |= O_DROP2;
+				siloBar2->BarColor = COL_DISCH;
+			}
+
+			scaleBar2->BarColor = COL_CHARGE;
+			addBt2->BackColor = COL_CHARGE;
+			fTmpScale2 = psIni->sScale2.dValue;
+			nTmpCnt2 = 0;
+
+			pauseBt2->Enabled = true;			//DC 4.0.0
+			pauseBt2->BackColor = COL_HOLDK;	//DC 4.0.0
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'G';		// go						 
+			break;
+
+		case S_ASETTLE:
+			if (psIni->bBotScale)
+			{
+				psIni->nWpoints &= ~P_CLRDRP_B;
+				switch (psIni->sLog2.nSilo)
+				{
+				case 4: siloBar2->BarColor = COL_SETTLE;	break;
+				case 5: siloBar22->BarColor = COL_SETTLE;	break;
+				case 6: siloBar23->BarColor = COL_SETTLE;	break;
+				}
+			}
+			else
+			{
+				psIni->nWpoints &= ~O_DROP2;
+				siloBar2->BarColor = COL_SETTLE;
+			}
+			nTmpCnt2 = 0;
+			addBt2->BackColor = COL_SETTLE;
+			pauseBt2->Enabled = true;
+			pauseBt2->BackColor = COL_HOLDK;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'S';		// stop						 
+			break;
+
+		case S_DISCH_WAIT:
+			siloBar2->BarColor = COL_IDLE;
+			dropBt2->BackColor = COL_TRANS;
+			dischBt2->Enabled = true;
+			dischBt2->BackColor = COL_PGREEN;
+			dischBt2->Visible = !psIni->sInv.bAutoDisch2;
+			pauseBt2->Enabled = false;
+			pauseBt2->BackColor = COL_TRANS;
+			break;
+
+		case S_DISCH:
+			psIni->nWpoints |= O_DISCH2;
+			scaleBar2->BarColor = COL_DISCH;
+			dropBt2->BackColor = COL_TRANS;
+			dischBt2->Enabled = false;
+			dischBt2->BackColor = COL_PGREEN;
+			dischBt2->Visible = !psIni->sInv.bAutoDisch2;
+			nSettle2 = 0;
+			pauseBt2->Enabled = true;
+			pauseBt2->BackColor = COL_HOLDK;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'L';		// leave				
+			break;
+
+		case S_DSETTLE:
+			scaleBar2->BarColor = COL_SETTLE;
+			psIni->nWpoints &= ~O_DISCH2;
+			pauseBt2->Enabled = false;
+			pauseBt2->BackColor = COL_TRANS;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'P';		// pause					 
+			break;
+
+		case S_HOLD_ASETTLE:
+		case S_HOLD_SETTLE:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					psIni->nWpoints &= ~P_CLRDRP_B;
+					switch (psIni->sLog2.nSilo)
 					{
 					case 4: siloBar2->BarColor = COL_SETTLE;	break;
 					case 5: siloBar22->BarColor = COL_SETTLE;	break;
 					case 6: siloBar23->BarColor = COL_SETTLE;	break;
 					}
-
-					 dropBt2->Enabled = false;
-					 dropBt2->BackColor = COL_YG;
-
-					 pauseBt2->Enabled = false;
-					 pauseBt2->BackColor = COL_TRANS;
-
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'S';		// stop
-					 break;
-
-				 case S_SETTLE:
-					 if(psIni->bBotScale)
-					 {
-						 psIni->nWpoints &= ~P_CLRDRP_B;
-						 if(psIni->bSafeJob == false)
-								 psIni->nWpoints &= ~P_CLRSV_B;
-						 switch(psIni->sLog2.nSilo)
-						 {
-						 case 4: siloBar2->BarColor = COL_SETTLE;	break;
-						 case 5: siloBar22->BarColor = COL_SETTLE;	break;
-						 case 6: siloBar23->BarColor = COL_SETTLE;	break;
-						 }
-						 fAdapt2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
-					 }
-					 else
-					 {
-						 psIni->nWpoints &= ~O_DROP2;
-						 if(psIni->bSafeJob == false)
-							 psIni->nWpoints &= ~O_SAFE2;
-						 siloBar2->BarColor = COL_SETTLE;
-						 fAdapt2 = psIni->sScale2.dValue;
-					 }
-					 dropBt2->Enabled = false;
-					 dropBt2->BackColor = COL_YG;
-
-					 pauseBt2->Enabled = false;
-					 pauseBt2->BackColor = COL_TRANS;
-
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'S';		// stop						 
-					 break;
-
-				 case S_ADD_WAIT:
-					 break;
-
-				 case S_ADD:
-					 fScaleVal2 = psIni->sScale2.dValue;
-					 if(psIni->bBotScale)
-					 {
-						 if(!psIni->bPdmPlc)
-						 {
-							 switch(psIni->sLog2.nSilo)
-							 {
-								 case 4: psIni->nWpoints |= P_DROP4; siloBar2->BarColor = COL_DISCH; break;
-								 case 5: psIni->nWpoints |= P_DROP5; siloBar22->BarColor = COL_DISCH;  break;
-								 case 6: psIni->nWpoints |= P_DROP6; siloBar23->BarColor = COL_DISCH;  break;
-							 }
-							 scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
-						 }
-						 else
-						 {
-							 switch(psIni->sLog2.nSilo)
-							 {
-							 case 4: psIni->nWpoints |= psIni->asSilos[3].uDropO; siloBar2->BarColor = COL_DISCH; break;
-							 case 5: psIni->nWpoints |= psIni->asSilos[4].uDropO; siloBar22->BarColor = COL_DISCH; break;
-							 case 6: psIni->nWpoints |= psIni->asSilos[5].uDropO; siloBar23->BarColor = COL_DISCH; break;
-							 }
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
-
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uHoldO;	// turn off Hold
-
-							 scaleBar2->Target = pJob2->fLoad + psIni->sLog2.fTruckTare;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints |= O_DROP2;
-						 siloBar2->BarColor = COL_DISCH;
-					 }
-
-					 scaleBar2->BarColor = COL_CHARGE;
-					 addBt2->BackColor = COL_CHARGE;
-					 fTmpScale2 = psIni->sScale2.dValue;	
-					 nTmpCnt2 = 0;
-
-					 pauseBt2->Enabled = true;			//DC 4.0.0
-					 pauseBt2->BackColor = COL_HOLDK;	//DC 4.0.0
-
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'G';		// go						 
-					 break;
-
-				 case S_ASETTLE:
-					 if(psIni->bBotScale)
-					 {
-						 psIni->nWpoints &= ~P_CLRDRP_B;
-						 switch(psIni->sLog2.nSilo)
-						 {
-						 case 4: siloBar2->BarColor = COL_SETTLE;	break;
-						 case 5: siloBar22->BarColor = COL_SETTLE;	break;
-						 case 6: siloBar23->BarColor = COL_SETTLE;	break;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints &= ~O_DROP2;
-						 siloBar2->BarColor = COL_SETTLE;
-					 }
-					 nTmpCnt2 = 0;
-					 addBt2->BackColor = COL_SETTLE;
-					 pauseBt2->Enabled = true;
-					 pauseBt2->BackColor = COL_HOLDK;
-
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'S';		// stop						 
-					 break;
-
-				 case S_DISCH_WAIT:
-					 siloBar2->BarColor = COL_IDLE;
-					 dropBt2->BackColor = COL_TRANS;
-					 dischBt2->Enabled = true;
-					 dischBt2->BackColor = COL_PGREEN;	
-					 dischBt2->Visible = !psIni->sInv.bAutoDisch2;		
-					 pauseBt2->Enabled = false;
-					 pauseBt2->BackColor = COL_TRANS;
-					 break;
-
-				 case S_DISCH:
-					 psIni->nWpoints |= O_DISCH2;
-					 scaleBar2->BarColor = COL_DISCH;
-					 dropBt2->BackColor = COL_TRANS;
-					 dischBt2->Enabled = false;
-					 dischBt2->BackColor = COL_PGREEN;							 
-					 dischBt2->Visible = !psIni->sInv.bAutoDisch2;	
-					 nSettle2 = 0;
-					 pauseBt2->Enabled = true;
-					 pauseBt2->BackColor = COL_HOLDK;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'L';		// leave				
-					 break;
-
-				 case S_DSETTLE:
-					 scaleBar2->BarColor = COL_SETTLE;
-					 psIni->nWpoints &= ~O_DISCH2;
-					 pauseBt2->Enabled = false;
-					 pauseBt2->BackColor = COL_TRANS;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'P';		// pause					 
-					 break;
-
-				 case S_HOLD_ASETTLE:
-				 case S_HOLD_SETTLE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 psIni->nWpoints &= ~P_CLRDRP_B;
-							 switch(psIni->sLog2.nSilo)
-							 {
-							 case 4: siloBar2->BarColor = COL_SETTLE;	break;
-							 case 5: siloBar22->BarColor = COL_SETTLE;	break;
-							 case 6: siloBar23->BarColor = COL_SETTLE;	break;
-							 }
-						 }
-						 else
-						 {
-							 psIni->nWpoints &= ~O_DROP2;
-							 siloBar2->BarColor = COL_SETTLE;
-						 }
-					 }
-					 else
-					 {
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
-
-						 psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo-1].uHoldO;	// turn on Hold
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uDropO;	// turn off Drop
-						 switch(psIni->sLog2.nSilo)
-						{
-						case 4: siloBar2->BarColor = COL_SETTLE;	break;
-						case 5: siloBar22->BarColor = COL_SETTLE;	break;
-						case 6: siloBar23->BarColor = COL_SETTLE;	break;
-						}
-					 }
-					 nTmpCnt2 = 0;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'P';		// pause						 
-					 break;
-
-				 case S_HOLD_DROP:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 switch(psIni->sLog2.nSilo)
-							 {
-							 case 4: siloBar2->BarColor = COL_HOLD;	break;
-							 case 5: siloBar22->BarColor = COL_HOLD;	break;
-							 case 6: siloBar23->BarColor = COL_HOLD;	break;
-							 }
-						 }
-						 else
-						 {
-							 siloBar2->BarColor = COL_HOLD;
-						 }
-						 dropBt2->Enabled = false;
-						 dropBt2->BackColor = COL_PGREEN;	
-					 }
-					 else
-					 {
-						 if(!psIni->bSendBitWise)
-						 {
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
-							 
-						 }
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uDropO;	// turn off Drop //DC 4.0.1
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uHoldO;	// turn off Hold //DC 4.0.1
-						 
-						 switch(psIni->sLog2.nSilo)
-						 {
-						 case 4: siloBar2->BarColor = COL_HOLD;		break;
-						 case 5: siloBar22->BarColor = COL_HOLD;	break;
-						 case 6: siloBar23->BarColor = COL_HOLD;	break;
-						 }
-						 dropBt2->Enabled = false;
-						 dropBt2->BackColor = COL_PGREEN;
-						 if(pAll->eAsType == A_SIM)
-							psIni->sScale2.cGo = 'P';		// stop
-					 }
-					 break;
-
-				 case S_HOLD_ADD:	//DC 4.0.0
-				 case S_HOLD:
-					 if(!psIni->bSendBitWise)
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
-					 }	 
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uDropO;	// turn off Drop //DC 4.0.1
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uHoldO;	// turn off Hold //DC 4.0.1
-					 
-					 switch(psIni->sLog2.nSilo)
-					 {
-					 case 4: siloBar2->BarColor = COL_HOLD;		break;
-					 case 5: siloBar22->BarColor = COL_HOLD;	break;
-					 case 6: siloBar23->BarColor = COL_HOLD;	break;
-					 }
-					 dropBt2->Enabled = false;
-					 dropBt2->BackColor = COL_PGREEN;
-					 if(pAll->eAsType == A_SIM)
-						psIni->sScale2.cGo = 'P';		// stop
-					 break;
-
-				 case S_HOLD_DISCH:
-					 psIni->nWpoints &= ~O_DISCH2;
-					 scaleBar2->BarColor = COL_HOLD;
-					 dischBt2->Enabled = false;
-					 dischBt2->BackColor = COL_PGREEN;							 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale2.cGo = 'P';	// pause					 
-					 break;	
-
-				 case S_UPDATE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 psIni->nWpoints &= ~psIni->nReady2O;		//DC 3.2.0
-						 psIni->nWpoints &= ~psIni->nDrop2O;		//DC 3.2.0
-						 if(psIni->bSafeJob == false)
-						 {
-							 if(psIni->bBotScale)
-								 psIni->nWpoints &= ~P_CLRSV_B;
-							 else
-								 psIni->nWpoints &= ~O_SAFE2;
-						 }
-					 }
-					 else
-					 {
-						 if(!psIni->bSendBitWise)
-						{
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
-						}							
-						psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;		// turn on Hold		//DC 4.0.1
-						psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uDoneO;		// turn on Done
-					 }
-					 break;
-
-				 case S_HORN:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-							 psIni->nWpoints |= P_LIGHTB;
-						 else
-							 psIni->nWpoints |= O_LIGHT2;
-					 }
-					 nTmpCnt2 = 0;
-					 break;				 
 				}
-			 }
+				else
+				{
+					psIni->nWpoints &= ~O_DROP2;
+					siloBar2->BarColor = COL_SETTLE;
+				}
+			}
+			else
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
+
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;	// turn on Hold
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uDropO;	// turn off Drop
+				switch (psIni->sLog2.nSilo)
+				{
+				case 4: siloBar2->BarColor = COL_SETTLE;	break;
+				case 5: siloBar22->BarColor = COL_SETTLE;	break;
+				case 6: siloBar23->BarColor = COL_SETTLE;	break;
+				}
+			}
+			nTmpCnt2 = 0;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'P';		// pause						 
+			break;
+
+		case S_HOLD_DROP:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					switch (psIni->sLog2.nSilo)
+					{
+					case 4: siloBar2->BarColor = COL_HOLD;	break;
+					case 5: siloBar22->BarColor = COL_HOLD;	break;
+					case 6: siloBar23->BarColor = COL_HOLD;	break;
+					}
+				}
+				else
+				{
+					siloBar2->BarColor = COL_HOLD;
+				}
+				dropBt2->Enabled = false;
+				dropBt2->BackColor = COL_PGREEN;
+			}
+			else
+			{
+				if (!psIni->bSendBitWise)
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
+
+				}
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uDropO;	// turn off Drop //DC 4.0.1
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;	// turn off Hold //DC 4.0.1
+
+				switch (psIni->sLog2.nSilo)
+				{
+				case 4: siloBar2->BarColor = COL_HOLD;		break;
+				case 5: siloBar22->BarColor = COL_HOLD;	break;
+				case 6: siloBar23->BarColor = COL_HOLD;	break;
+				}
+				dropBt2->Enabled = false;
+				dropBt2->BackColor = COL_PGREEN;
+				if (pAll->eAsType == A_SIM)
+					psIni->sScale2.cGo = 'P';		// stop
+			}
+			break;
+
+		case S_HOLD_ADD:	//DC 4.0.0
+		case S_HOLD:
+			if (!psIni->bSendBitWise)
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
+			}
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uDropO;	// turn off Drop //DC 4.0.1
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;	// turn off Hold //DC 4.0.1
+
+			switch (psIni->sLog2.nSilo)
+			{
+			case 4: siloBar2->BarColor = COL_HOLD;		break;
+			case 5: siloBar22->BarColor = COL_HOLD;	break;
+			case 6: siloBar23->BarColor = COL_HOLD;	break;
+			}
+			dropBt2->Enabled = false;
+			dropBt2->BackColor = COL_PGREEN;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'P';		// stop
+			break;
+
+		case S_HOLD_DISCH:
+			psIni->nWpoints &= ~O_DISCH2;
+			scaleBar2->BarColor = COL_HOLD;
+			dischBt2->Enabled = false;
+			dischBt2->BackColor = COL_PGREEN;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale2.cGo = 'P';	// pause					 
+			break;
+
+		case S_UPDATE:
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints &= ~psIni->nReady2O;		//DC 3.2.0
+				psIni->nWpoints &= ~psIni->nDrop2O;		//DC 3.2.0
+				if (psIni->bSafeJob == false)
+				{
+					if (psIni->bBotScale)
+						psIni->nWpoints &= ~P_CLRSV_B;
+					else
+						psIni->nWpoints &= ~O_SAFE2;
+				}
+			}
+			else
+			{
+				if (!psIni->bSendBitWise)
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
+				}
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldO;		// turn on Hold		//DC 4.0.1
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uDoneO;		// turn on Done
+			}
+			break;
+
+		case S_HORN:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+					psIni->nWpoints |= P_LIGHTB;
+				else
+					psIni->nWpoints |= O_LIGHT2;
+			}
+			nTmpCnt2 = 0;
+			break;
+		}
+	}
 #pragma endregion
 
 #pragma region STATE3
 			 //-------------------------------------------------------------------------
 	private: System::Void setState3(STATE eNew)
-			 {
-				 switch(psIni->sLog3.eState = eNew)
-				 {
-				 case S_IDLE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 psIni->nWpoints &= ~P_CLEAR_C;
-							 zeroBar(siloBar32);
-							 zeroBar(siloBar33);
-						 }
-						 else
-							 psIni->nWpoints &= ~O_CLEARCC;
-					 }
-					  else
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[6].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[7].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[8].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[6].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[7].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[8].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[6].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[7].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[8].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[6].uHoldO;		// turn off Hold
-						psIni->nWpoints &= ~psIni->asSilos[7].uHoldO;		// turn off Hold
-						psIni->nWpoints &= ~psIni->asSilos[8].uHoldO;		// turn off Hold
-						zeroBar(siloBar32);
-						zeroBar(siloBar33);
-					 }
+	{
+		switch (psIni->sLog3.eState = eNew)
+		{
+		case S_IDLE:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					psIni->nWpoints &= ~P_CLEAR_C;
+					zeroBar(siloBar32);
+					zeroBar(siloBar33);
+				}
+				else
+					psIni->nWpoints &= ~O_CLEARCC;
+			}
+			else
+			{
+				psIni->nWpoints &= ~psIni->asSilos[6].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[7].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[8].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[6].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[7].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[8].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[6].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[7].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[8].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[6].uHoldO;		// turn off Hold
+				psIni->nWpoints &= ~psIni->asSilos[7].uHoldO;		// turn off Hold
+				psIni->nWpoints &= ~psIni->asSilos[8].uHoldO;		// turn off Hold
+				zeroBar(siloBar32);
+				zeroBar(siloBar33);
+			}
 
-					 zeroBar(siloBar3);
-					 scaleBar3->Target = 0;
-					 bTruck3 = false;
+			zeroBar(siloBar3);
+			scaleBar3->Target = 0;
+			bTruck3 = false;
 
-					 // clear display
-					 customer3->Text = nullptr;
-					 Job3->Text = nullptr;
-					 material3->Text = nullptr;
-					 tic_num3->Text = nullptr;
-					 truck3->Text = nullptr;
-					 target3->Text = nullptr;
+			// clear display
+			customer3->Text = nullptr;
+			Job3->Text = nullptr;
+			material3->Text = nullptr;
+			tic_num3->Text = nullptr;
+			truck3->Text = nullptr;
+			target3->Text = nullptr;
 
-					 truck3->BackColor = COL_W;
-					 target3->BackColor = COL_W;
+			truck3->BackColor = COL_W;
+			target3->BackColor = COL_W;
 
-					 // setup buttons
-					 all3->Enabled = true;		
-					 all3->BackColor = COL_LSB;
-					 nextBt3->Enabled = true;		// enabled for manual
-					 nextBt3->BackColor = COL_LSB;
-					 autoBt3->Enabled = !psIni->bDisableManual;		//DC 3.2.0 true;
-					 autoBt3->BackColor = COL_WS;
+			// setup buttons
+			all3->Enabled = true;
+			all3->BackColor = COL_LSB;
+			nextBt3->Enabled = true;		// enabled for manual
+			nextBt3->BackColor = COL_LSB;
+			autoBt3->Enabled = !psIni->bDisableManual;		//DC 3.2.0 true;
+			autoBt3->BackColor = COL_WS;
 
-					 printOnly3->Enabled = false;
-					 printOnly3->BackColor = COL_TRANS;
-					 readyBt3->Enabled = false;
-					 readyBt3->BackColor = COL_TRANS;
+			printOnly3->Enabled = false;
+			printOnly3->BackColor = COL_TRANS;
+			readyBt3->Enabled = false;
+			readyBt3->BackColor = COL_TRANS;
 
-					 printTarget3->Checked = false;
-					 taxExempt3->Checked = false;
+			printTarget3->Checked = false;
+			taxExempt3->Checked = false;
 
-					 drops31->Checked = false;
-					 drops32->Checked = false;
-					 drops33->Checked = false;
-					 drops34->Checked = false;
+			drops31->Checked = false;
+			drops32->Checked = false;
+			drops33->Checked = false;
+			drops34->Checked = false;
 
-					 dropBt3->Enabled = false;
-					 dropBt3->BackColor = COL_TRANS;
+			dropBt3->Enabled = false;
+			dropBt3->BackColor = COL_TRANS;
 
-					 addBt3->Enabled = false;
-					 addBt3->BackColor = COL_TRANS;
+			addBt3->Enabled = false;
+			addBt3->BackColor = COL_TRANS;
 
-					 dischBt3->Enabled = false;
-					 dischBt3->BackColor = COL_TRANS;							 
-					 dischBt3->Visible = !psIni->sInv.bAutoDisch3;		
+			dischBt3->Enabled = false;
+			dischBt3->BackColor = COL_TRANS;
+			dischBt3->Visible = !psIni->sInv.bAutoDisch3;
 
-					 pauseBt3->Enabled = false;
-					 pauseBt3->BackColor = COL_TRANS;
+			pauseBt3->Enabled = false;
+			pauseBt3->BackColor = COL_TRANS;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'I';	// idle
-				 
-					 if(pAll->eAsType == A_DEMO)
-					 {
-						 if(psIni->bBotScale)
-							psIni->sScale3.dValue = 10.0;
-						 else
-							psIni->sScale3.dValue = 0.0;
-					 }
-					 break;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'I';	// idle
 
-				 case S_NEXT:
-					 all3->Enabled = false;
-					 all3->BackColor = COL_TRANS;
-					 nextBt3->Enabled = false;
-					 nextBt3->BackColor = COL_TRANS;
-					 autoBt3->Enabled = false;
-					 autoBt3->BackColor = COL_TRANS;
+			if (pAll->eAsType == A_DEMO)
+			{
+				if (psIni->bBotScale)
+					psIni->sScale3.dValue = 10.0;
+				else
+					psIni->sScale3.dValue = 0.0;
+			}
+			break;
 
-					 readyBt3->Enabled = true;
-					 readyBt3->BackColor = COL_PGREEN;
+		case S_NEXT:
+			all3->Enabled = false;
+			all3->BackColor = COL_TRANS;
+			nextBt3->Enabled = false;
+			nextBt3->BackColor = COL_TRANS;
+			autoBt3->Enabled = false;
+			autoBt3->BackColor = COL_TRANS;
 
-					 if(pAll->eAsType == A_SIM)
-					 {
-						 if(!psIni->bBotScale)
-							 psIni->sScale3.cGo = 'I';
-						 else					
-							 psIni->sScale3.cGo = 'E';
-					 }					 
-					 bFirstDrop3 = true;
-					 break;
+			readyBt3->Enabled = true;
+			readyBt3->BackColor = COL_PGREEN;
 
-				 case S_READY:
-					 bTruck3 = true;
-					 if(!psIni->bPdmPlc)
-					 {
-						psIni->nWpoints |= psIni->nReady3O;	//DC 3.2.0
-					 }
-					 else if(!psIni->bSendBitWise)			//DC 4.0.1
-					 {
-						 switch(psIni->sLog3.nSilo)
-						 {
-						 case 7: psIni->nWpoints |= psIni->asSilos[6].uReadyO; break;
-						 case 8: psIni->nWpoints |= psIni->asSilos[7].uReadyO; break;
-						 case 9: psIni->nWpoints |= psIni->asSilos[8].uReadyO; break;
-						 }
-					 }
-					 else if(psIni->bSendBitWise)			//DC 4.0.1
-					 {
-						 psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uHoldO;	// turn on Hold
-					 }
+			if (pAll->eAsType == A_SIM)
+			{
+				if (!psIni->bBotScale)
+					psIni->sScale3.cGo = 'I';
+				else
+					psIni->sScale3.cGo = 'E';
+			}
+			bFirstDrop3 = true;
+			break;
 
-					 //					 psIni->nWpoints &= ~O_DROP3;
-					 psIni->sLog3.eStop = A_NOT;
+		case S_READY:
+			bTruck3 = true;
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints |= psIni->nReady3O;	//DC 3.2.0
+			}
+			else if (!psIni->bSendBitWise)			//DC 4.0.1
+			{
+				switch (psIni->sLog3.nSilo)
+				{
+				case 7: psIni->nWpoints |= psIni->asSilos[6].uReadyO; break;
+				case 8: psIni->nWpoints |= psIni->asSilos[7].uReadyO; break;
+				case 9: psIni->nWpoints |= psIni->asSilos[8].uReadyO; break;
+				}
+			}
+			else if (psIni->bSendBitWise)			//DC 4.0.1
+			{
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;	// turn on Hold
+			}
 
-					 bool bCheckIOk;		//DC 4.0.1
-					 if(psIni->bUseTrkMax)						//DC 3.2.0
-					 {
-						truckBar3->Maximum = pJob3->fLoad;
-						truckBar3->Target = pJob3->fLoad - psIni->sLog3.fTruckTare;
-						
-						if(psIni->bSendBitWise)
-						{
-							bCheckIOk = DecimalToBinaryIO(int(truckBar3->Maximum*2000), psIni->sLog3.nSilo);	//DC 4.0.0 send BitWise
-						}
-						else if(psIni->bSendTarget)
-							psIni->nSclOutEU[2] = truckBar3->Maximum;		//DC 4.0.0 set analog output value
-					 }
-					 else
-					 {
-						 truckBar3->Maximum = pTruck3->nCapacity;
-						 truckBar3->Target = pJob3->fLoad;
-					 }
+			//					 psIni->nWpoints &= ~O_DROP3;
+			psIni->sLog3.eStop = A_NOT;
 
-					 if(psIni->bBotScale)
-					 {
-						 if(psIni->bUseTrkMax)					//DC 3.2.0
-							 scaleBar3->Target = pJob3->fLoad;
-						 else
-							scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
-					 }
-					 else
-						scaleBar3->Target = fTarget3;
+			bool bCheckIOk;		//DC 4.0.1
+			if (psIni->bUseTrkMax)						//DC 3.2.0
+			{
+				truckBar3->Maximum = pJob3->fLoad;
+				truckBar3->Target = pJob3->fLoad - psIni->sLog3.fTruckTare;
 
-					 readyBt3->Enabled = false;
-					 readyBt3->BackColor = COL_TRANS;
+				if (psIni->bSendBitWise)
+				{
+					bCheckIOk = DecimalToBinaryIO(int(truckBar3->Maximum * 2000), psIni->sLog3.nSilo);	//DC 4.0.0 send BitWise
+				}
+				else if (psIni->bSendTarget)
+					psIni->nSclOutEU[2] = truckBar3->Maximum;		//DC 4.0.0 set analog output value
+			}
+			else
+			{
+				truckBar3->Maximum = pTruck3->nCapacity;
+				truckBar3->Target = pJob3->fLoad;
+			}
 
-					 printOnly3->Enabled = true;
-					 printOnly3->BackColor = COL_LB;
+			if (psIni->bBotScale)
+			{
+				if (psIni->bUseTrkMax)					//DC 3.2.0
+					scaleBar3->Target = pJob3->fLoad;
+				else
+					scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
+			}
+			else
+				scaleBar3->Target = fTarget3;
 
-					 if(!psIni->bPdmPlc)		//DC 4.0.0
-					 {
-						 dropBt3->Enabled = true;
-						 dropBt3->BackColor = COL_PGREEN;
-					 }
+			readyBt3->Enabled = false;
+			readyBt3->BackColor = COL_TRANS;
 
-					 if(pAll->eAsType == A_SIM)
-					 {
-						 if(!psIni->bBotScale)
-							 psIni->sScale3.cGo = 'I';
-						 else
-							 psIni->sScale3.cGo = 'S';	// stop
-					 }
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 switch(psIni->sLog3.nSilo)
-							 {
-							 case 7: psIni->nWpoints |= P_SAFE7; break;
-							 case 8: psIni->nWpoints |= P_SAFE8; break;
-							 case 9: psIni->nWpoints |= P_SAFE9; break;
-							 }
-	//						 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
-						 }
-						 else
-						 {
-							 psIni->nWpoints |= O_SAFE3;
-							 scaleBar3->Target = fTarget3;
-						 }	
-					 }
-					 tSafeC = clock();		// safe valve timeout 
+			printOnly3->Enabled = true;
+			printOnly3->BackColor = COL_LB;
 
-					 //DC 4.0.1 Check send target IO
-					 if(bCheckIOk)
-						psIni->nWpoints |= psIni->uSendTargetO;		//DC 4.0.1 turn on send target output
-					 else
-					 {
-						setState3(S_NEXT);
-						psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
-						MessageBox::Show("Target Send Error Check IO", "Lane C", 
-						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-					 }
-					 break;
+			if (!psIni->bPdmPlc)		//DC 4.0.0
+			{
+				dropBt3->Enabled = true;
+				dropBt3->BackColor = COL_PGREEN;
+			}
 
-				 case S_SAFE:
-					 break;
+			if (pAll->eAsType == A_SIM)
+			{
+				if (!psIni->bBotScale)
+					psIni->sScale3.cGo = 'I';
+				else
+					psIni->sScale3.cGo = 'S';	// stop
+			}
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					switch (psIni->sLog3.nSilo)
+					{
+					case 7: psIni->nWpoints |= P_SAFE7; break;
+					case 8: psIni->nWpoints |= P_SAFE8; break;
+					case 9: psIni->nWpoints |= P_SAFE9; break;
+					}
+					//						 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
+				}
+				else
+				{
+					psIni->nWpoints |= O_SAFE3;
+					scaleBar3->Target = fTarget3;
+				}
+			}
+			tSafeC = clock();		// safe valve timeout 
 
-				 case S_DROP:
-					 fScaleVal3 = psIni->sScale3.dValue;
-					 if(!psIni->bPdmPlc)
-					 {
-						psIni->nWpoints |= psIni->nDrop3O;		//DC 3.2.0
-					 }
-					 if(psIni->bBotScale)
-					 {
-						 if(!psIni->bPdmPlc)
-						 {
-							 switch(psIni->sLog3.nSilo)
-							 {
-							 case 7: psIni->nWpoints |= P_DROP7; siloBar3->BarColor = COL_DISCH; break;
-							 case 8: psIni->nWpoints |= P_DROP8; siloBar32->BarColor = COL_DISCH; break;
-							 case 9: psIni->nWpoints |= P_DROP9; siloBar33->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
-						 }
-						 else if(!psIni->bSendBitWise)		//DC 4.0.1
-						 {
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uReadyO;	// turn off ready
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uHoldO;	// turn off Hold
-							 switch(psIni->sLog3.nSilo)
-							 {
-							 case 7: psIni->nWpoints |= psIni->asSilos[6].uDropO; siloBar3->BarColor = COL_DISCH; break;
-							 case 8: psIni->nWpoints |= psIni->asSilos[7].uDropO; siloBar32->BarColor = COL_DISCH; break;
-							 case 9: psIni->nWpoints |= psIni->asSilos[8].uDropO; siloBar33->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
-						 }
-						 else if (psIni->bSendBitWise)		//DC 4.0.1
-						 {
-							 psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uDropO;	// turn on drop  //DC 4.0.1
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uDoneO;	// turn off Done
-							 psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uHoldO;	// turn on Hold
-							 switch(psIni->sLog3.nSilo)			//DC 4.0.0
-							 {
-							 case 7: siloBar3->BarColor = COL_DISCH; break;
-							 case 8: siloBar32->BarColor = COL_DISCH; break;
-							 case 9: siloBar33->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints |= O_DROP3;
-						 siloBar3->BarColor = COL_DISCH;
-//						 dischBt3->Enabled = false;
-//						 dischBt3->BackColor = COL_TRANS;							 
-						 scaleBar3->Target = fTarget3;
-					 }
-					 scaleBar3->BarColor = COL_CHARGE;
-					 fTmpScale3 = psIni->sScale3.dValue;
-					 nSettle3 = 0;
-					 nTmpCnt3 = 0;
+									//DC 4.0.1 Check send target IO
+			if (bCheckIOk)
+				psIni->nWpoints |= psIni->uSendTargetO;		//DC 4.0.1 turn on send target output
+			else
+			{
+				setState3(S_NEXT);
+				psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
+				MessageBox::Show("Target Send Error Check IO", "Lane C",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+			}
+			break;
 
-					 printOnly3->Enabled = false;
-					 printOnly3->BackColor = COL_TRANS;
-					 dropBt3->Enabled = false;
-					 dropBt3->BackColor = COL_TRANS;							 
+		case S_SAFE:
+			break;
 
-					 pauseBt3->Enabled = true;
-					 pauseBt3->BackColor = COL_HOLDK;
+		case S_DROP:
+			fScaleVal3 = psIni->sScale3.dValue;
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints |= psIni->nDrop3O;		//DC 3.2.0
+			}
+			if (psIni->bBotScale)
+			{
+				if (!psIni->bPdmPlc)
+				{
+					switch (psIni->sLog3.nSilo)
+					{
+					case 7: psIni->nWpoints |= P_DROP7; siloBar3->BarColor = COL_DISCH; break;
+					case 8: psIni->nWpoints |= P_DROP8; siloBar32->BarColor = COL_DISCH; break;
+					case 9: psIni->nWpoints |= P_DROP9; siloBar33->BarColor = COL_DISCH; break;
+					}
+					scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
+				}
+				else if (!psIni->bSendBitWise)		//DC 4.0.1
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uReadyO;	// turn off ready
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;	// turn off Hold
+					switch (psIni->sLog3.nSilo)
+					{
+					case 7: psIni->nWpoints |= psIni->asSilos[6].uDropO; siloBar3->BarColor = COL_DISCH; break;
+					case 8: psIni->nWpoints |= psIni->asSilos[7].uDropO; siloBar32->BarColor = COL_DISCH; break;
+					case 9: psIni->nWpoints |= psIni->asSilos[8].uDropO; siloBar33->BarColor = COL_DISCH; break;
+					}
+					scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
+				}
+				else if (psIni->bSendBitWise)		//DC 4.0.1
+				{
+					psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uDropO;	// turn on drop  //DC 4.0.1
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uDoneO;	// turn off Done
+					psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;	// turn on Hold
+					switch (psIni->sLog3.nSilo)			//DC 4.0.0
+					{
+					case 7: siloBar3->BarColor = COL_DISCH; break;
+					case 8: siloBar32->BarColor = COL_DISCH; break;
+					case 9: siloBar33->BarColor = COL_DISCH; break;
+					}
+					scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
+				}
+			}
+			else
+			{
+				psIni->nWpoints |= O_DROP3;
+				siloBar3->BarColor = COL_DISCH;
+				//						 dischBt3->Enabled = false;
+				//						 dischBt3->BackColor = COL_TRANS;							 
+				scaleBar3->Target = fTarget3;
+			}
+			scaleBar3->BarColor = COL_CHARGE;
+			fTmpScale3 = psIni->sScale3.dValue;
+			nSettle3 = 0;
+			nTmpCnt3 = 0;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'G';	// go					 
-					 break;
+			printOnly3->Enabled = false;
+			printOnly3->BackColor = COL_TRANS;
+			dropBt3->Enabled = false;
+			dropBt3->BackColor = COL_TRANS;
 
-				 case S_DELAY_PLC:
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
+			pauseBt3->Enabled = true;
+			pauseBt3->BackColor = COL_HOLDK;
 
-					 psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uHoldO;	// turn on Hold
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uDropO;	// turn off Drop
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'G';	// go					 
+			break;
 
-					 switch(psIni->sLog3.nSilo)
-					 {
-					 case 7: siloBar3->BarColor = COL_IDLE;	break;
-					 case 8: siloBar32->BarColor = COL_IDLE; 	break;
-					 case 9: siloBar33->BarColor = COL_IDLE; 	break;
-					 }
+		case S_DELAY_PLC:
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
 
-					 dropBt3->Enabled = false;
-					 dropBt3->BackColor = COL_YG;
+			psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;	// turn on Hold
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uDropO;	// turn off Drop
 
-					 pauseBt3->Enabled = false;
-					 pauseBt3->BackColor = COL_TRANS;
+			switch (psIni->sLog3.nSilo)
+			{
+			case 7: siloBar3->BarColor = COL_IDLE;	break;
+			case 8: siloBar32->BarColor = COL_IDLE; 	break;
+			case 9: siloBar33->BarColor = COL_IDLE; 	break;
+			}
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'S';	// go
-					 break;
+			dropBt3->Enabled = false;
+			dropBt3->BackColor = COL_YG;
 
-				 case S_SETTLE_PLC:
-					 if(!psIni->bSendBitWise)	//DC 4.0.1
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uDropO;	// turn off Drop
-						 
-					 }
-					 else
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uDropO;	// turn off drop	//DC 4.0.1
-		
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uHoldO;		// turn off Hold		//DC 4.0.1
+			pauseBt3->Enabled = false;
+			pauseBt3->BackColor = COL_TRANS;
 
-					 switch(psIni->sLog3.nSilo)
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'S';	// go
+			break;
+
+		case S_SETTLE_PLC:
+			if (!psIni->bSendBitWise)	//DC 4.0.1
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uDropO;	// turn off Drop
+
+			}
+			else
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uDropO;	// turn off drop	//DC 4.0.1
+
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;		// turn off Hold		//DC 4.0.1
+
+			switch (psIni->sLog3.nSilo)
+			{
+			case 7: siloBar3->BarColor = COL_SETTLE;	break;
+			case 8: siloBar32->BarColor = COL_SETTLE;	break;
+			case 9: siloBar33->BarColor = COL_SETTLE;	break;
+			}
+
+			dropBt3->Enabled = false;
+			dropBt3->BackColor = COL_YG;
+
+			pauseBt3->Enabled = false;
+			pauseBt3->BackColor = COL_TRANS;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'S';		// stop
+			break;
+
+		case S_SETTLE:
+			if (psIni->bBotScale)
+			{
+				psIni->nWpoints &= ~P_CLRDRP_C;
+				if (psIni->bSafeJob == false)
+					psIni->nWpoints &= ~P_CLRSV_C;
+				switch (psIni->sLog3.nSilo)
+				{
+				case 7: siloBar3->BarColor = COL_SETTLE;	break;
+				case 8: siloBar32->BarColor = COL_SETTLE;	break;
+				case 9: siloBar33->BarColor = COL_SETTLE;	break;
+				}
+				fAdapt3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
+			}
+			else
+			{
+				psIni->nWpoints &= ~O_DROP3;
+				if (psIni->bSafeJob == false)
+					psIni->nWpoints &= ~O_SAFE3;
+				siloBar3->BarColor = COL_SETTLE;
+				fAdapt3 = psIni->sScale3.dValue;
+			}
+			dropBt3->Enabled = false;
+			dropBt3->BackColor = COL_YG;
+
+			pauseBt3->Enabled = false;
+			pauseBt3->BackColor = COL_TRANS;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'S';	// stop						 
+			break;
+
+		case S_ADD_WAIT:
+			break;
+
+		case S_ADD:
+			fScaleVal3 = psIni->sScale3.dValue;
+			if (psIni->bBotScale)
+			{
+				if (!psIni->bPdmPlc)
+				{
+					switch (psIni->sLog3.nSilo)
+					{
+					case 7: psIni->nWpoints |= P_DROP7; siloBar3->BarColor = COL_DISCH;  break;
+					case 8: psIni->nWpoints |= P_DROP8; siloBar32->BarColor = COL_DISCH; break;
+					case 9: psIni->nWpoints |= P_DROP9; siloBar33->BarColor = COL_DISCH; break;
+					}
+					scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
+				}
+				else
+				{
+					switch (psIni->sLog3.nSilo)
+					{
+					case 7: psIni->nWpoints |= psIni->asSilos[6].uDropO; siloBar3->BarColor = COL_DISCH; break;
+					case 8: psIni->nWpoints |= psIni->asSilos[7].uDropO; siloBar32->BarColor = COL_DISCH; break;
+					case 9: psIni->nWpoints |= psIni->asSilos[8].uDropO; siloBar33->BarColor = COL_DISCH; break;
+					}
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
+
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;	// turn off Hold
+
+					scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
+				}
+			}
+			else
+			{
+				psIni->nWpoints |= O_DROP3;
+				siloBar3->BarColor = COL_DISCH;
+			}
+
+			scaleBar3->BarColor = COL_CHARGE;
+			addBt3->BackColor = COL_CHARGE;
+			fTmpScale3 = psIni->sScale3.dValue;
+			nTmpCnt3 = 0;
+
+			pauseBt3->Enabled = true;			//DC 4.0.0
+			pauseBt3->BackColor = COL_HOLDK;	//DC 4.0.0
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'G';	// go					 
+			break;
+
+		case S_ASETTLE:
+			if (psIni->bBotScale)
+			{
+				psIni->nWpoints &= ~P_CLRDRP_C;
+				switch (psIni->sLog3.nSilo)
+				{
+				case 7: siloBar3->BarColor = COL_SETTLE;	break;
+				case 8: siloBar32->BarColor = COL_SETTLE;	break;
+				case 9: siloBar33->BarColor = COL_SETTLE;	break;
+				}
+			}
+			else
+			{
+				psIni->nWpoints &= ~O_DROP3;
+				siloBar3->BarColor = COL_SETTLE;
+			}
+			nTmpCnt3 = 0;
+			addBt3->BackColor = COL_SETTLE;
+			pauseBt3->Enabled = true;
+			pauseBt3->BackColor = COL_HOLDK;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'S';	// stop						 
+			break;
+
+		case S_DISCH_WAIT:
+			siloBar3->BarColor = COL_IDLE;
+			dropBt3->BackColor = COL_TRANS;
+			dischBt3->Enabled = true;
+			dischBt3->BackColor = COL_PGREEN;
+			dischBt3->Visible = !psIni->sInv.bAutoDisch3;
+			pauseBt3->Enabled = false;
+			pauseBt3->BackColor = COL_TRANS;
+			break;
+
+		case S_DISCH:
+			psIni->nWpoints |= O_DISCH3;
+			scaleBar3->BarColor = COL_DISCH;
+			nSettle3 = 0;      // scale settle timout
+			dropBt3->BackColor = COL_TRANS;
+			dischBt3->Enabled = false;
+			dischBt3->BackColor = COL_PGREEN;
+			dischBt3->Visible = !psIni->sInv.bAutoDisch3;
+			pauseBt3->Enabled = true;
+			pauseBt3->BackColor = COL_HOLDK;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'L';	// leave					
+			break;
+
+		case S_DSETTLE:
+			psIni->nWpoints &= ~O_DISCH3;
+			scaleBar3->BarColor = COL_SETTLE;
+			pauseBt3->Enabled = false;
+			pauseBt3->BackColor = COL_TRANS;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'P';	// pause					 										 
+			break;
+
+		case S_HOLD_ASETTLE:
+		case S_HOLD_SETTLE:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					psIni->nWpoints &= ~P_CLRDRP_C;
+					switch (psIni->sLog3.nSilo)
 					{
 					case 7: siloBar3->BarColor = COL_SETTLE;	break;
 					case 8: siloBar32->BarColor = COL_SETTLE;	break;
 					case 9: siloBar33->BarColor = COL_SETTLE;	break;
 					}
+				}
+				else
+				{
+					psIni->nWpoints &= ~O_DROP3;
+					siloBar3->BarColor = COL_SETTLE;
+				}
+			}
+			else
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
 
-					 dropBt3->Enabled = false;
-					 dropBt3->BackColor = COL_YG;
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;	// turn on Hold
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uDropO;	// turn off Drop
+				switch (psIni->sLog3.nSilo)
+				{
+				case 7: siloBar3->BarColor = COL_SETTLE;	break;
+				case 8: siloBar32->BarColor = COL_SETTLE;	break;
+				case 9: siloBar33->BarColor = COL_SETTLE;	break;
+				}
+			}
+			nTmpCnt3 = 0;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'P';	// pause						 
+			break;
 
-					 pauseBt3->Enabled = false;
-					 pauseBt3->BackColor = COL_TRANS;
+		case S_HOLD_DROP:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					switch (psIni->sLog3.nSilo)
+					{
+					case 7: siloBar3->BarColor = COL_HOLD;	break;
+					case 8: siloBar32->BarColor = COL_HOLD;	break;
+					case 9: siloBar33->BarColor = COL_HOLD;	break;
+					}
+				}
+				else
+				{
+					siloBar3->BarColor = COL_HOLD;
+				}
+				dropBt3->Enabled = false;
+				dropBt3->BackColor = COL_PGREEN;
+			}
+			else
+			{
+				if (!psIni->bSendBitWise)
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'S';		// stop
-					 break;
+				}
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uDropO;	// turn off Drop //DC 4.0.1
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;	// turn off Hold //DC 4.0.1
 
-				 case S_SETTLE:
-					 if(psIni->bBotScale)
-					 {
-						 psIni->nWpoints &= ~P_CLRDRP_C;
-						 if(psIni->bSafeJob == false)
-							psIni->nWpoints &= ~P_CLRSV_C;
-						 switch(psIni->sLog3.nSilo)
-						 {
-						 case 7: siloBar3->BarColor = COL_SETTLE;	break;
-						 case 8: siloBar32->BarColor = COL_SETTLE;	break;
-						 case 9: siloBar33->BarColor = COL_SETTLE;	break;
-						 }
-						 fAdapt3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
-					 }
-					 else
-					 {
-						 psIni->nWpoints &= ~O_DROP3;
-						 if(psIni->bSafeJob == false)
-							 psIni->nWpoints &= ~O_SAFE3;
-						 siloBar3->BarColor = COL_SETTLE;
-						 fAdapt3 = psIni->sScale3.dValue;
-					 }
-					 dropBt3->Enabled = false;
-					 dropBt3->BackColor = COL_YG;
+				switch (psIni->sLog3.nSilo)
+				{
+				case 7: siloBar3->BarColor = COL_HOLD;		break;
+				case 8: siloBar32->BarColor = COL_HOLD;	break;
+				case 9: siloBar33->BarColor = COL_HOLD;	break;
+				}
+				dropBt3->Enabled = false;
+				dropBt3->BackColor = COL_PGREEN;
+				if (pAll->eAsType == A_SIM)
+					psIni->sScale3.cGo = 'P';		// stop
+			}
+			break;
 
-					 pauseBt3->Enabled = false;
-					 pauseBt3->BackColor = COL_TRANS;
+		case S_HOLD_ADD:	//DC 4.0.0
+		case S_HOLD:
+			if (!psIni->bSendBitWise)
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
+			}
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uDropO;	// turn off Drop //DC 4.0.1
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;	// turn off Hold //DC 4.0.1
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'S';	// stop						 
-					 break;
+			switch (psIni->sLog3.nSilo)
+			{
+			case 7: siloBar3->BarColor = COL_HOLD;		break;
+			case 8: siloBar32->BarColor = COL_HOLD;	break;
+			case 9: siloBar33->BarColor = COL_HOLD;	break;
+			}
+			dropBt3->Enabled = false;
+			dropBt3->BackColor = COL_PGREEN;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'P';		// stop
+			break;
 
-				 case S_ADD_WAIT:
-					 break;
+		case S_HOLD_DISCH:
+			if (!psIni->bPdmPlc)
+				psIni->nWpoints &= ~O_DISCH3;
+			scaleBar3->BarColor = COL_HOLD;
+			dischBt3->Enabled = true;
+			dischBt3->BackColor = COL_PGREEN;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale3.cGo = 'P';	// pause					 
+			break;
 
-				 case S_ADD:
-					 fScaleVal3 = psIni->sScale3.dValue;
-					 if(psIni->bBotScale)
-					 {
-						 if(!psIni->bPdmPlc)
-						 {
-							 switch(psIni->sLog3.nSilo)
-							 {
-							 case 7: psIni->nWpoints |= P_DROP7; siloBar3->BarColor = COL_DISCH;  break;
-							 case 8: psIni->nWpoints |= P_DROP8; siloBar32->BarColor = COL_DISCH; break;
-							 case 9: psIni->nWpoints |= P_DROP9; siloBar33->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
-						 }
-						 else
-						 {
-							 switch(psIni->sLog3.nSilo)
-							 {
-							 case 7: psIni->nWpoints |= psIni->asSilos[6].uDropO; siloBar3->BarColor = COL_DISCH; break;
-							 case 8: psIni->nWpoints |= psIni->asSilos[7].uDropO; siloBar32->BarColor = COL_DISCH; break;
-							 case 9: psIni->nWpoints |= psIni->asSilos[8].uDropO; siloBar33->BarColor = COL_DISCH; break;
-							 }
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
+		case S_UPDATE:
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints &= ~psIni->nReady3O;		//DC 3.2.0
+				psIni->nWpoints &= ~psIni->nDrop3O;		//DC 3.2.0
+				if (psIni->bSafeJob == false)
+				{
+					if (psIni->bBotScale)
+						psIni->nWpoints &= ~P_CLRSV_C;
+					else
+						psIni->nWpoints &= ~O_SAFE3;
+				}
+			}
+			else
+			{
+				if (!psIni->bSendBitWise)
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
+				}
+				else
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uReadyO;		// turn off Ready
 
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uHoldO;	// turn off Hold
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;		// turn on Hold		//DC 4.0.1
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uDoneO;		// turn on Done
+			}
+			break;
 
-							 scaleBar3->Target = pJob3->fLoad + psIni->sLog3.fTruckTare;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints |= O_DROP3;
-						 siloBar3->BarColor = COL_DISCH;
-					 }
-
-					 scaleBar3->BarColor = COL_CHARGE;
-					 addBt3->BackColor = COL_CHARGE;				
-					 fTmpScale3 = psIni->sScale3.dValue;	
-					 nTmpCnt3 = 0;
-
-					 pauseBt3->Enabled = true;			//DC 4.0.0
-					 pauseBt3->BackColor = COL_HOLDK;	//DC 4.0.0
-
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'G';	// go					 
-					 break;
-
-				 case S_ASETTLE:
-					 if(psIni->bBotScale)
-					 {
-						 psIni->nWpoints &= ~P_CLRDRP_C;
-						 switch(psIni->sLog3.nSilo)
-						 {
-						 case 7: siloBar3->BarColor = COL_SETTLE;	break;
-						 case 8: siloBar32->BarColor = COL_SETTLE;	break;
-						 case 9: siloBar33->BarColor = COL_SETTLE;	break;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints &= ~O_DROP3;
-						 siloBar3->BarColor = COL_SETTLE;
-					 }
-					 nTmpCnt3 = 0;
-					 addBt3->BackColor = COL_SETTLE;
-					 pauseBt3->Enabled = true;
-					 pauseBt3->BackColor = COL_HOLDK;
-
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'S';	// stop						 
-					 break;
-
-				 case S_DISCH_WAIT:
-					 siloBar3->BarColor = COL_IDLE;
-					 dropBt3->BackColor = COL_TRANS;
-					 dischBt3->Enabled = true;
-					 dischBt3->BackColor = COL_PGREEN;	
-					 dischBt3->Visible = !psIni->sInv.bAutoDisch3;		
-					 pauseBt3->Enabled = false;
-					 pauseBt3->BackColor = COL_TRANS;
-					 break;
-
-				 case S_DISCH:
-					 psIni->nWpoints |= O_DISCH3;
-					 scaleBar3->BarColor = COL_DISCH;
-					 nSettle3 = 0;      // scale settle timout
-					 dropBt3->BackColor = COL_TRANS;
-					 dischBt3->Enabled = false;
-					 dischBt3->BackColor = COL_PGREEN;							 
-					 dischBt3->Visible = !psIni->sInv.bAutoDisch3;
-					 pauseBt3->Enabled = true;
-					 pauseBt3->BackColor = COL_HOLDK;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'L';	// leave					
-					 break;
-
-				 case S_DSETTLE:
-					 psIni->nWpoints &= ~O_DISCH3;
-					 scaleBar3->BarColor = COL_SETTLE;
-					 pauseBt3->Enabled = false;
-					 pauseBt3->BackColor = COL_TRANS;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'P';	// pause					 										 
-					 break;
-
-				 case S_HOLD_ASETTLE:
-				 case S_HOLD_SETTLE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 psIni->nWpoints &= ~P_CLRDRP_C;
-							 switch(psIni->sLog3.nSilo)
-							 {
-							 case 7: siloBar3->BarColor = COL_SETTLE;	break;
-							 case 8: siloBar32->BarColor = COL_SETTLE;	break;
-							 case 9: siloBar33->BarColor = COL_SETTLE;	break;
-							 }
-						 }
-						 else
-						 {
-							 psIni->nWpoints &= ~O_DROP3;
-							 siloBar3->BarColor = COL_SETTLE;
-						 }
-					 }
-					 else
-					 {
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
-
-						 psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uHoldO;	// turn on Hold
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uDropO;	// turn off Drop
-						 switch(psIni->sLog3.nSilo)
-						{
-						case 7: siloBar3->BarColor = COL_SETTLE;	break;
-						case 8: siloBar32->BarColor = COL_SETTLE;	break;
-						case 9: siloBar33->BarColor = COL_SETTLE;	break;
-						}
-					 }
-					 nTmpCnt3 = 0;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'P';	// pause						 
-					 break;
-
-				 case S_HOLD_DROP:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 switch(psIni->sLog3.nSilo)
-							 {
-							 case 7: siloBar3->BarColor = COL_HOLD;	break;
-							 case 8: siloBar32->BarColor = COL_HOLD;	break;
-							 case 9: siloBar33->BarColor = COL_HOLD;	break;
-							 }
-						 }
-						 else
-						 {
-							 siloBar3->BarColor = COL_HOLD;
-						 }
-						 dropBt3->Enabled = false;
-						 dropBt3->BackColor = COL_PGREEN;
-					 }
-					 else
-					 {
-						 if(!psIni->bSendBitWise)
-						 {
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
-							 
-						 }
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uDropO;	// turn off Drop //DC 4.0.1
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uHoldO;	// turn off Hold //DC 4.0.1
-						 
-						 switch(psIni->sLog3.nSilo)
-						 {
-						 case 7: siloBar3->BarColor = COL_HOLD;		break;
-						 case 8: siloBar32->BarColor = COL_HOLD;	break;
-						 case 9: siloBar33->BarColor = COL_HOLD;	break;
-						 }
-						 dropBt3->Enabled = false;
-						 dropBt3->BackColor = COL_PGREEN;
-						 if(pAll->eAsType == A_SIM)
-							psIni->sScale3.cGo = 'P';		// stop
-					 }
-					 break;
-
-				 case S_HOLD_ADD:	//DC 4.0.0
-				 case S_HOLD:
-					 if(!psIni->bSendBitWise)
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
-					 }
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uDropO;	// turn off Drop //DC 4.0.1
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uHoldO;	// turn off Hold //DC 4.0.1
-					 
-					 switch(psIni->sLog3.nSilo)
-					 {
-					 case 7: siloBar3->BarColor = COL_HOLD;		break;
-					 case 8: siloBar32->BarColor = COL_HOLD;	break;
-					 case 9: siloBar33->BarColor = COL_HOLD;	break;
-					 }
-					 dropBt3->Enabled = false;
-					 dropBt3->BackColor = COL_PGREEN;
-					 if(pAll->eAsType == A_SIM)
-						psIni->sScale3.cGo = 'P';		// stop
-					 break;
-
-				 case S_HOLD_DISCH:
-					 if(!psIni->bPdmPlc)
-						 psIni->nWpoints &= ~O_DISCH3;
-					 scaleBar3->BarColor = COL_HOLD;
-					 dischBt3->Enabled = true;
-					 dischBt3->BackColor = COL_PGREEN;							 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale3.cGo = 'P';	// pause					 
-					 break;
-
-				 case S_UPDATE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 psIni->nWpoints &= ~psIni->nReady3O;		//DC 3.2.0
-						 psIni->nWpoints &= ~psIni->nDrop3O;		//DC 3.2.0
-						 if(psIni->bSafeJob == false)
-						 {
-							 if(psIni->bBotScale)
-								 psIni->nWpoints &= ~P_CLRSV_C;
-							 else
-								 psIni->nWpoints &= ~O_SAFE3;
-						 }
-					 }
-					  else
-					 {
-						 if(!psIni->bSendBitWise)
-						 {
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
-						 }
-						 else
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uReadyO;		// turn off Ready
-
-						psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldO;		// turn on Hold		//DC 4.0.1
-						psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uDoneO;		// turn on Done
-					 }
-					 break;
-
-				 case S_HORN:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-							 psIni->nWpoints |= P_LIGHTC;
-						 else
-							 psIni->nWpoints |= O_LIGHT3;
-					 }
-					 nTmpCnt3 = 0;
-					 break;				 
-				 }
-			 }
+		case S_HORN:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+					psIni->nWpoints |= P_LIGHTC;
+				else
+					psIni->nWpoints |= O_LIGHT3;
+			}
+			nTmpCnt3 = 0;
+			break;
+		}
+	}
 #pragma endregion
 
 #pragma region STATE4		
 			 //DC 3.3.0  -------------------------------------------------------------------------
 	private: System::Void setState4(STATE eNew)
-			 {
-				 switch(psIni->sLog4.eState = eNew)
-				 {
-				 case S_IDLE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 psIni->nWpoints &= ~P_CLEAR_D;
-							 zeroBar(siloBar42);
-							 zeroBar(siloBar43);
-						 }
-						 else
-							 psIni->nWpoints &= ~O_CLEARDD;
-					 }
-					 else
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[9].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[10].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[11].uReadyO;		// turn off Ready
-						psIni->nWpoints &= ~psIni->asSilos[9].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[10].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[11].uDropO;		// turn off Drop
-						psIni->nWpoints &= ~psIni->asSilos[9].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[10].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[11].uDoneO;		// turn off Done
-						psIni->nWpoints &= ~psIni->asSilos[9].uHoldO;		// turn off Hold
-						psIni->nWpoints &= ~psIni->asSilos[10].uHoldO;		// turn off Hold
-						psIni->nWpoints &= ~psIni->asSilos[11].uHoldO;		// turn off Hold
-						zeroBar(siloBar42);
-						zeroBar(siloBar43);
-					 }
+	{
+		switch (psIni->sLog4.eState = eNew)
+		{
+		case S_IDLE:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					psIni->nWpoints &= ~P_CLEAR_D;
+					zeroBar(siloBar42);
+					zeroBar(siloBar43);
+				}
+				else
+					psIni->nWpoints &= ~O_CLEARDD;
+			}
+			else
+			{
+				psIni->nWpoints &= ~psIni->asSilos[9].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[10].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[11].uReadyO;		// turn off Ready
+				psIni->nWpoints &= ~psIni->asSilos[9].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[10].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[11].uDropO;		// turn off Drop
+				psIni->nWpoints &= ~psIni->asSilos[9].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[10].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[11].uDoneO;		// turn off Done
+				psIni->nWpoints &= ~psIni->asSilos[9].uHoldO;		// turn off Hold
+				psIni->nWpoints &= ~psIni->asSilos[10].uHoldO;		// turn off Hold
+				psIni->nWpoints &= ~psIni->asSilos[11].uHoldO;		// turn off Hold
+				zeroBar(siloBar42);
+				zeroBar(siloBar43);
+			}
 
-					 zeroBar(siloBar4);
-					 scaleBar4->Target = 0;
-					 bTruck4 = false;
+			zeroBar(siloBar4);
+			scaleBar4->Target = 0;
+			bTruck4 = false;
 
-					 // clear display
-					 customer4->Text = nullptr;
-					 Job4->Text = nullptr;
-					 material4->Text = nullptr;
-					 tic_num4->Text = nullptr;
-					 truck4->Text = nullptr;
-					 target4->Text = nullptr;
+			// clear display
+			customer4->Text = nullptr;
+			Job4->Text = nullptr;
+			material4->Text = nullptr;
+			tic_num4->Text = nullptr;
+			truck4->Text = nullptr;
+			target4->Text = nullptr;
 
-					 truck4->BackColor = COL_W;
-					 target4->BackColor = COL_W;
+			truck4->BackColor = COL_W;
+			target4->BackColor = COL_W;
 
-					 // setup buttons
-					 all4->Enabled = true;		
-					 all4->BackColor = COL_LSB;
-					 nextBt4->Enabled = true;		// enabled for manual
-					 nextBt4->BackColor = COL_LSB;
-					 autoBt4->Enabled = !psIni->bDisableManual;		//DC 3.2.0 true;
-					 autoBt4->BackColor = COL_WS;
+			// setup buttons
+			all4->Enabled = true;
+			all4->BackColor = COL_LSB;
+			nextBt4->Enabled = true;		// enabled for manual
+			nextBt4->BackColor = COL_LSB;
+			autoBt4->Enabled = !psIni->bDisableManual;		//DC 3.2.0 true;
+			autoBt4->BackColor = COL_WS;
 
-					 printOnly4->Enabled = false;
-					 printOnly4->BackColor = COL_TRANS;
-					 readyBt4->Enabled = false;
-					 readyBt4->BackColor = COL_TRANS;
+			printOnly4->Enabled = false;
+			printOnly4->BackColor = COL_TRANS;
+			readyBt4->Enabled = false;
+			readyBt4->BackColor = COL_TRANS;
 
-					 printTarget4->Checked = false;
-					 taxExempt4->Checked = false;
+			printTarget4->Checked = false;
+			taxExempt4->Checked = false;
 
-					 drops41->Checked = false;
-					 drops42->Checked = false;
-					 drops43->Checked = false;
-					 drops44->Checked = false;
+			drops41->Checked = false;
+			drops42->Checked = false;
+			drops43->Checked = false;
+			drops44->Checked = false;
 
-					 dropBt4->Enabled = false;
-					 dropBt4->BackColor = COL_TRANS;
+			dropBt4->Enabled = false;
+			dropBt4->BackColor = COL_TRANS;
 
-					 addBt4->Enabled = false;
-					 addBt4->BackColor = COL_TRANS;
+			addBt4->Enabled = false;
+			addBt4->BackColor = COL_TRANS;
 
-					 dischBt4->Enabled = false;
-					 dischBt4->BackColor = COL_TRANS;							 
-					 dischBt4->Visible = !psIni->sInv.bAutoDisch4;		
+			dischBt4->Enabled = false;
+			dischBt4->BackColor = COL_TRANS;
+			dischBt4->Visible = !psIni->sInv.bAutoDisch4;
 
-					 pauseBt4->Enabled = false;
-					 pauseBt4->BackColor = COL_TRANS;
+			pauseBt4->Enabled = false;
+			pauseBt4->BackColor = COL_TRANS;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'I';	// idle
-				 
-					 if(pAll->eAsType == A_DEMO)
-					 {
-						 if(psIni->bBotScale)
-							psIni->sScale4.dValue = 10.0;
-						 else
-							psIni->sScale4.dValue = 0.0;
-					 }
-					 break;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'I';	// idle
 
-				 case S_NEXT:
-					 all4->Enabled = false;
-					 all4->BackColor = COL_TRANS;
-					 nextBt4->Enabled = false;
-					 nextBt4->BackColor = COL_TRANS;
-					 autoBt4->Enabled = false;
-					 autoBt4->BackColor = COL_TRANS;
-					 
-					 if(!psIni->bSendBitWise)			//DC 4.1.0
-					 {
-						 readyBt4->Enabled = true;
-						 readyBt4->BackColor = COL_PGREEN;
-					 }
+			if (pAll->eAsType == A_DEMO)
+			{
+				if (psIni->bBotScale)
+					psIni->sScale4.dValue = 10.0;
+				else
+					psIni->sScale4.dValue = 0.0;
+			}
+			break;
 
-					 if(pAll->eAsType == A_SIM)
-					 {
-						 if(!psIni->bBotScale)
-							 psIni->sScale4.cGo = 'I';
-						 else					
-							 psIni->sScale4.cGo = 'E';
-					 }					 
-					 bFirstDrop4 = true;
-					 break;
+		case S_NEXT:
+			all4->Enabled = false;
+			all4->BackColor = COL_TRANS;
+			nextBt4->Enabled = false;
+			nextBt4->BackColor = COL_TRANS;
+			autoBt4->Enabled = false;
+			autoBt4->BackColor = COL_TRANS;
 
-				 case S_READY:
-					 bTruck4 = true;
-					 if(!psIni->bPdmPlc)
-					 {
-						psIni->nWpoints |= psIni->nReady4O;	//DC 3.2.0
-					 }
-					 else if(!psIni->bSendBitWise)			//DC 4.0.1
-					 {
-						 switch(psIni->sLog4.nSilo)
-						 {
-						 case 10: psIni->nWpoints |= psIni->asSilos[9].uReadyO; break;
-						 case 11: psIni->nWpoints |= psIni->asSilos[10].uReadyO; break;
-						 case 12: psIni->nWpoints |= psIni->asSilos[11].uReadyO; break;
-						 }
-					 }
-					 else if(psIni->bSendBitWise)			//DC 4.0.1
-					 {
-						 psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uHoldO;	// turn on Hold
-					 }
+			if (!psIni->bSendBitWise)			//DC 4.1.0
+			{
+				readyBt4->Enabled = true;
+				readyBt4->BackColor = COL_PGREEN;
+			}
 
-					 //					 psIni->nWpoints &= ~O_DROP3;
-					 psIni->sLog4.eStop = A_NOT;
+			if (pAll->eAsType == A_SIM)
+			{
+				if (!psIni->bBotScale)
+					psIni->sScale4.cGo = 'I';
+				else
+					psIni->sScale4.cGo = 'E';
+			}
+			bFirstDrop4 = true;
+			break;
 
-					 bool bCheckIOk;							//DC 4.0.1
-					 if(psIni->bUseTrkMax)						//DC 3.2.0
-					 {
-						truckBar4->Maximum = pJob4->fLoad;
-						truckBar4->Target = pJob4->fLoad - psIni->sLog4.fTruckTare;
-						
-						if(psIni->bSendBitWise)
-						{
-							bCheckIOk = DecimalToBinaryIO(int(truckBar4->Maximum*2000), psIni->sLog4.nSilo);	//DC 4.0.0 send BitWise
-						}
-						else if(psIni->bSendTarget)
-							psIni->nSclOutEU[3] = truckBar4->Maximum;		//DC 4.0.0 set analog output value
-					 }
-					 else
-					 {
-						 truckBar4->Maximum = pTruck4->nCapacity;
-						 truckBar4->Target = pJob4->fLoad;
-					 }
+		case S_READY:
+			bTruck4 = true;
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints |= psIni->nReady4O;	//DC 3.2.0
+			}
+			else if (!psIni->bSendBitWise)			//DC 4.0.1
+			{
+				switch (psIni->sLog4.nSilo)
+				{
+				case 10: psIni->nWpoints |= psIni->asSilos[9].uReadyO; break;
+				case 11: psIni->nWpoints |= psIni->asSilos[10].uReadyO; break;
+				case 12: psIni->nWpoints |= psIni->asSilos[11].uReadyO; break;
+				}
+			}
+			else if (psIni->bSendBitWise)			//DC 4.0.1
+			{
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;	// turn on Hold
+			}
+
+			//					 psIni->nWpoints &= ~O_DROP3;
+			psIni->sLog4.eStop = A_NOT;
+
+			bool bCheckIOk;							//DC 4.0.1
+			if (psIni->bUseTrkMax)						//DC 3.2.0
+			{
+				truckBar4->Maximum = pJob4->fLoad;
+				truckBar4->Target = pJob4->fLoad - psIni->sLog4.fTruckTare;
+
+				if (psIni->bSendBitWise)
+				{
+					bCheckIOk = DecimalToBinaryIO(int(truckBar4->Maximum * 2000), psIni->sLog4.nSilo);	//DC 4.0.0 send BitWise
+				}
+				else if (psIni->bSendTarget)
+					psIni->nSclOutEU[3] = truckBar4->Maximum;		//DC 4.0.0 set analog output value
+			}
+			else
+			{
+				truckBar4->Maximum = pTruck4->nCapacity;
+				truckBar4->Target = pJob4->fLoad;
+			}
 
 
-				 	 if(psIni->bBotScale)
-					 {
-						 if(psIni->bUseTrkMax)					//DC 3.2.0
-							 scaleBar4->Target = pJob4->fLoad;
-						 else
-							scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
-					 }
-					 else
-						scaleBar4->Target = fTarget4;
+			if (psIni->bBotScale)
+			{
+				if (psIni->bUseTrkMax)					//DC 3.2.0
+					scaleBar4->Target = pJob4->fLoad;
+				else
+					scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
+			}
+			else
+				scaleBar4->Target = fTarget4;
 
-					 readyBt4->Enabled = false;
-					 readyBt4->BackColor = COL_TRANS;
+			readyBt4->Enabled = false;
+			readyBt4->BackColor = COL_TRANS;
 
-					 printOnly4->Enabled = true;
-					 printOnly4->BackColor = COL_LB;
+			printOnly4->Enabled = true;
+			printOnly4->BackColor = COL_LB;
 
-					 if(!psIni->bPdmPlc)		//DC 4.0.0
-					 {
-						 dropBt4->Enabled = true;
-						 dropBt4->BackColor = COL_PGREEN;
-					 }
+			if (!psIni->bPdmPlc)		//DC 4.0.0
+			{
+				dropBt4->Enabled = true;
+				dropBt4->BackColor = COL_PGREEN;
+			}
 
-					 if(pAll->eAsType == A_SIM)
-					 {
-						 if(!psIni->bBotScale)
-							 psIni->sScale4.cGo = 'I';
-						 else
-							 psIni->sScale4.cGo = 'S';	// stop
-					 }
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 switch(psIni->sLog4.nSilo)
-							 {
-							 case 10: psIni->nWpoints |= P_SAFE10; break;
-							 case 11: psIni->nWpoints |= P_SAFE11; break;
-							 case 12: psIni->nWpoints |= P_SAFE12; break;
-							 }
-	//						 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
-						 }
-						 else
-						 {
-							 psIni->nWpoints |= O_SAFE4;
-							 scaleBar4->Target = fTarget4;
-						 }
-					 }
-					 tSafeD = clock();		// safe valve timeout 
+			if (pAll->eAsType == A_SIM)
+			{
+				if (!psIni->bBotScale)
+					psIni->sScale4.cGo = 'I';
+				else
+					psIni->sScale4.cGo = 'S';	// stop
+			}
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					switch (psIni->sLog4.nSilo)
+					{
+					case 10: psIni->nWpoints |= P_SAFE10; break;
+					case 11: psIni->nWpoints |= P_SAFE11; break;
+					case 12: psIni->nWpoints |= P_SAFE12; break;
+					}
+					//						 scaleBar1->Target = pJob1->fLoad + psIni->sLog1.fTruckTare;
+				}
+				else
+				{
+					psIni->nWpoints |= O_SAFE4;
+					scaleBar4->Target = fTarget4;
+				}
+			}
+			tSafeD = clock();		// safe valve timeout 
 
-					 //DC 4.0.1 Check send target IO
-					 if(bCheckIOk)
-						psIni->nWpoints |= psIni->uSendTargetO;		//DC 4.0.1 turn on send target output
-					 else
-					 {
-						truck4->BackColor = COL_W;
-						target4->BackColor = COL_W;
-						target4->ReadOnly = false;		//DC 3.2.4
-						setState4(S_NEXT);
-						psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
+									//DC 4.0.1 Check send target IO
+			if (bCheckIOk)
+				psIni->nWpoints |= psIni->uSendTargetO;		//DC 4.0.1 turn on send target output
+			else
+			{
+				truck4->BackColor = COL_W;
+				target4->BackColor = COL_W;
+				target4->ReadOnly = false;		//DC 3.2.4
+				setState4(S_NEXT);
+				psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
 
-						if(pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
-						{
-							MessageBox::Show("Target Send Error Check IO", "Lane R", 
-							System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-						}
-						else if(pAll->eAsType == A_REMOTE)
-						{
-							MessageBox::Show("Target Send Error Check IO", "Lane R", 
-							System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-						}
-					 }
-					 pAll->bRemoteCall = false;
-					 break;
+				if (pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
+				{
+					MessageBox::Show("Target Send Error Check IO", "Lane R",
+						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+				}
+				else if (pAll->eAsType == A_REMOTE)
+				{
+					MessageBox::Show("Target Send Error Check IO", "Lane R",
+						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+				}
+			}
+			pAll->bRemoteCall = false;
+			break;
 
-				 case S_SAFE:
-					 break;
+		case S_SAFE:
+			break;
 
-				 case S_DROP:
-					 fScaleVal4 = psIni->sScale4.dValue;
-					 if(!psIni->bPdmPlc)
-					 {
-						psIni->nWpoints |= psIni->nDrop4O;		//DC 3.2.0
-					 }
-					 if(psIni->bBotScale)
-					 {
-						 if(!psIni->bPdmPlc)
-						 {
-							 switch(psIni->sLog4.nSilo)
-							 {
-							 case 10: psIni->nWpoints |= P_DROP10; siloBar4->BarColor = COL_DISCH; break;
-							 case 11: psIni->nWpoints |= P_DROP11; siloBar42->BarColor = COL_DISCH; break;
-							 case 12: psIni->nWpoints |= P_DROP12; siloBar43->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
-						 }
-						 else if(!psIni->bSendBitWise)		//DC 4.0.1
-						 {
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uReadyO;	// turn off ready
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uHoldO;	// turn off Hold
-							 switch(psIni->sLog4.nSilo)
-							 {
-							 case 10: psIni->nWpoints |= psIni->asSilos[9].uDropO; siloBar4->BarColor = COL_DISCH; break;
-							 case 11: psIni->nWpoints |= psIni->asSilos[10].uDropO; siloBar42->BarColor = COL_DISCH; break;
-							 case 12: psIni->nWpoints |= psIni->asSilos[11].uDropO; siloBar43->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
-						 }
-						 else if (psIni->bSendBitWise)		//DC 4.0.1
-						 {
-							 psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uDropO;	// turn on drop  //DC 4.0.1
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uDoneO;	// turn off Done
-							 psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uHoldO;	// turn on Hold
-							 switch(psIni->sLog4.nSilo)			//DC 4.0.0
-							 {
-							 case 10: siloBar4->BarColor = COL_DISCH; break;
-							 case 11: siloBar42->BarColor = COL_DISCH; break;
-							 case 12: siloBar43->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints |= O_DROP4;
-						 siloBar4->BarColor = COL_DISCH;
-//						 dischBt4->Enabled = false;
-//						 dischBt4->BackColor = COL_TRANS;							 
-						 scaleBar4->Target = fTarget4;
-					 }
-					 scaleBar4->BarColor = COL_CHARGE;
-					 fTmpScale4 = psIni->sScale4.dValue;
-					 nSettle4 = 0;
-					 nTmpCnt4 = 0;
+		case S_DROP:
+			fScaleVal4 = psIni->sScale4.dValue;
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints |= psIni->nDrop4O;		//DC 3.2.0
+			}
+			if (psIni->bBotScale)
+			{
+				if (!psIni->bPdmPlc)
+				{
+					switch (psIni->sLog4.nSilo)
+					{
+					case 10: psIni->nWpoints |= P_DROP10; siloBar4->BarColor = COL_DISCH; break;
+					case 11: psIni->nWpoints |= P_DROP11; siloBar42->BarColor = COL_DISCH; break;
+					case 12: psIni->nWpoints |= P_DROP12; siloBar43->BarColor = COL_DISCH; break;
+					}
+					scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
+				}
+				else if (!psIni->bSendBitWise)		//DC 4.0.1
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uReadyO;	// turn off ready
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;	// turn off Hold
+					switch (psIni->sLog4.nSilo)
+					{
+					case 10: psIni->nWpoints |= psIni->asSilos[9].uDropO; siloBar4->BarColor = COL_DISCH; break;
+					case 11: psIni->nWpoints |= psIni->asSilos[10].uDropO; siloBar42->BarColor = COL_DISCH; break;
+					case 12: psIni->nWpoints |= psIni->asSilos[11].uDropO; siloBar43->BarColor = COL_DISCH; break;
+					}
+					scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
+				}
+				else if (psIni->bSendBitWise)		//DC 4.0.1
+				{
+					psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uDropO;	// turn on drop  //DC 4.0.1
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uDoneO;	// turn off Done
+					psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;	// turn on Hold
+					switch (psIni->sLog4.nSilo)			//DC 4.0.0
+					{
+					case 10: siloBar4->BarColor = COL_DISCH; break;
+					case 11: siloBar42->BarColor = COL_DISCH; break;
+					case 12: siloBar43->BarColor = COL_DISCH; break;
+					}
+					scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
+				}
+			}
+			else
+			{
+				psIni->nWpoints |= O_DROP4;
+				siloBar4->BarColor = COL_DISCH;
+				//						 dischBt4->Enabled = false;
+				//						 dischBt4->BackColor = COL_TRANS;							 
+				scaleBar4->Target = fTarget4;
+			}
+			scaleBar4->BarColor = COL_CHARGE;
+			fTmpScale4 = psIni->sScale4.dValue;
+			nSettle4 = 0;
+			nTmpCnt4 = 0;
 
-					 printOnly4->Enabled = false;
-					 printOnly4->BackColor = COL_TRANS;
-					 dropBt4->Enabled = false;
-					 dropBt4->BackColor = COL_TRANS;							 
+			printOnly4->Enabled = false;
+			printOnly4->BackColor = COL_TRANS;
+			dropBt4->Enabled = false;
+			dropBt4->BackColor = COL_TRANS;
 
-					 pauseBt4->Enabled = true;
-					 pauseBt4->BackColor = COL_HOLDK;
+			pauseBt4->Enabled = true;
+			pauseBt4->BackColor = COL_HOLDK;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'G';	// go					 
-					 break;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'G';	// go					 
+			break;
 
-				 case S_DELAY_PLC:
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
+		case S_DELAY_PLC:
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
 
-					 psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uHoldO;	// turn on Hold
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uDropO;	// turn off Drop
+			psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;	// turn on Hold
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uDropO;	// turn off Drop
 
-					 switch(psIni->sLog4.nSilo)
-					 {
-					 case 10: siloBar4->BarColor = COL_IDLE;	break;
-					 case 11: siloBar42->BarColor = COL_IDLE; 	break;
-					 case 12: siloBar43->BarColor = COL_IDLE; 	break;
-					 }
+			switch (psIni->sLog4.nSilo)
+			{
+			case 10: siloBar4->BarColor = COL_IDLE;	break;
+			case 11: siloBar42->BarColor = COL_IDLE; 	break;
+			case 12: siloBar43->BarColor = COL_IDLE; 	break;
+			}
 
-					 dropBt4->Enabled = false;
-					 dropBt4->BackColor = COL_YG;
+			dropBt4->Enabled = false;
+			dropBt4->BackColor = COL_YG;
 
-					 pauseBt4->Enabled = false;
-					 pauseBt4->BackColor = COL_TRANS;
+			pauseBt4->Enabled = false;
+			pauseBt4->BackColor = COL_TRANS;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'S';	// go
-					 break;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'S';	// go
+			break;
 
-				 case S_SETTLE_PLC:
-					 if(!psIni->bSendBitWise)	//DC 4.0.1
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uDropO;	// turn off Drop					 
-					 }
-					 else
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uDropO;	// turn off drop	//DC 4.0.1
-					 
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uHoldO;		// turn off Hold		//DC 4.0.1
+		case S_SETTLE_PLC:
+			if (!psIni->bSendBitWise)	//DC 4.0.1
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uDropO;	// turn off Drop					 
+			}
+			else
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uDropO;	// turn off drop	//DC 4.0.1
 
-					 switch(psIni->sLog4.nSilo)
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;		// turn off Hold		//DC 4.0.1
+
+			switch (psIni->sLog4.nSilo)
+			{
+			case 10: siloBar4->BarColor = COL_SETTLE;	break;
+			case 11: siloBar42->BarColor = COL_SETTLE;	break;
+			case 12: siloBar43->BarColor = COL_SETTLE;	break;
+			}
+
+			dropBt4->Enabled = false;
+			dropBt4->BackColor = COL_YG;
+
+			pauseBt4->Enabled = false;
+			pauseBt4->BackColor = COL_TRANS;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'S';		// stop
+			break;
+
+		case S_SETTLE:
+			if (psIni->bBotScale)
+			{
+				psIni->nWpoints &= ~P_CLRDRP_D;
+				if (psIni->bSafeJob == false)
+					psIni->nWpoints &= ~P_CLRSV_D;
+				switch (psIni->sLog4.nSilo)
+				{
+				case 10: siloBar4->BarColor = COL_SETTLE;	break;
+				case 11: siloBar42->BarColor = COL_SETTLE;	break;
+				case 12: siloBar43->BarColor = COL_SETTLE;	break;
+				}
+				fAdapt4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
+			}
+			else
+			{
+				psIni->nWpoints &= ~O_DROP4;
+				if (psIni->bSafeJob == false)
+					psIni->nWpoints &= ~O_SAFE4;
+				siloBar4->BarColor = COL_SETTLE;
+				fAdapt4 = psIni->sScale4.dValue;
+			}
+			dropBt4->Enabled = false;
+			dropBt4->BackColor = COL_YG;
+
+			pauseBt4->Enabled = false;
+			pauseBt4->BackColor = COL_TRANS;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'S';	// stop						 
+			break;
+
+		case S_ADD_WAIT:
+			break;
+
+		case S_ADD:
+			fScaleVal4 = psIni->sScale4.dValue;
+			if (psIni->bBotScale)
+			{
+				if (!psIni->bPdmPlc)
+				{
+					switch (psIni->sLog4.nSilo)
+					{
+					case 10: psIni->nWpoints |= P_DROP10; siloBar4->BarColor = COL_DISCH;  break;
+					case 11: psIni->nWpoints |= P_DROP11; siloBar42->BarColor = COL_DISCH; break;
+					case 12: psIni->nWpoints |= P_DROP12; siloBar43->BarColor = COL_DISCH; break;
+					}
+					scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
+				}
+				else
+				{
+					switch (psIni->sLog4.nSilo)
+					{
+					case 10: psIni->nWpoints |= psIni->asSilos[9].uDropO; siloBar4->BarColor = COL_DISCH; break;
+					case 11: psIni->nWpoints |= psIni->asSilos[10].uDropO; siloBar42->BarColor = COL_DISCH; break;
+					case 12: psIni->nWpoints |= psIni->asSilos[11].uDropO; siloBar43->BarColor = COL_DISCH; break;
+					}
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
+
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;	// turn off Hold
+
+					scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
+				}
+			}
+			else
+			{
+				psIni->nWpoints |= O_DROP4;
+				siloBar4->BarColor = COL_DISCH;
+			}
+
+			scaleBar4->BarColor = COL_CHARGE;
+			addBt4->BackColor = COL_CHARGE;
+			fTmpScale4 = psIni->sScale4.dValue;
+			nTmpCnt4 = 0;
+
+			pauseBt4->Enabled = true;			//DC 4.0.0
+			pauseBt4->BackColor = COL_HOLDK;	//DC 4.0.0
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'G';	// go					 
+			break;
+
+		case S_ASETTLE:
+			if (psIni->bBotScale)
+			{
+				psIni->nWpoints &= ~P_CLRDRP_D;
+				switch (psIni->sLog4.nSilo)
+				{
+				case 10: siloBar4->BarColor = COL_SETTLE;	break;
+				case 11: siloBar42->BarColor = COL_SETTLE;	break;
+				case 12: siloBar43->BarColor = COL_SETTLE;	break;
+				}
+			}
+			else
+			{
+				psIni->nWpoints &= ~O_DROP4;
+				siloBar4->BarColor = COL_SETTLE;
+			}
+			nTmpCnt4 = 0;
+			addBt4->BackColor = COL_SETTLE;
+			pauseBt4->Enabled = true;
+			pauseBt4->BackColor = COL_HOLDK;
+
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'S';	// stop						 
+			break;
+
+		case S_DISCH_WAIT:
+			siloBar4->BarColor = COL_IDLE;
+			dropBt4->BackColor = COL_TRANS;
+			dischBt4->Enabled = true;
+			dischBt4->BackColor = COL_PGREEN;
+			dischBt4->Visible = !psIni->sInv.bAutoDisch4;
+			pauseBt4->Enabled = false;
+			pauseBt4->BackColor = COL_TRANS;
+			break;
+
+		case S_DISCH:
+			psIni->nWpoints |= O_DISCH4;
+			scaleBar4->BarColor = COL_DISCH;
+			nSettle4 = 0;      // scale settle timout
+			dropBt4->BackColor = COL_TRANS;
+			dischBt4->Enabled = false;
+			dischBt4->BackColor = COL_PGREEN;
+			dischBt4->Visible = !psIni->sInv.bAutoDisch4;
+			pauseBt4->Enabled = true;
+			pauseBt4->BackColor = COL_HOLDK;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'L';	// leave					
+			break;
+
+		case S_DSETTLE:
+			if (!psIni->bPdmPlc)
+				psIni->nWpoints &= ~O_DISCH4;
+			scaleBar4->BarColor = COL_SETTLE;
+			pauseBt4->Enabled = false;
+			pauseBt4->BackColor = COL_TRANS;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'P';	// pause					 										 
+			break;
+
+		case S_HOLD_ASETTLE:
+		case S_HOLD_SETTLE:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					psIni->nWpoints &= ~P_CLRDRP_D;
+					switch (psIni->sLog4.nSilo)
 					{
 					case 10: siloBar4->BarColor = COL_SETTLE;	break;
 					case 11: siloBar42->BarColor = COL_SETTLE;	break;
 					case 12: siloBar43->BarColor = COL_SETTLE;	break;
 					}
+				}
+				else
+				{
+					psIni->nWpoints &= ~O_DROP4;
+					siloBar4->BarColor = COL_SETTLE;
+				}
+			}
+			else
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
 
-					 dropBt4->Enabled = false;
-					 dropBt4->BackColor = COL_YG;
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;	// turn on Hold
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uDropO;	// turn off Drop
+				switch (psIni->sLog4.nSilo)
+				{
+				case 10: siloBar4->BarColor = COL_SETTLE;	break;
+				case 11: siloBar42->BarColor = COL_SETTLE;	break;
+				case 12: siloBar43->BarColor = COL_SETTLE;	break;
+				}
+			}
+			nTmpCnt4 = 0;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'P';	// pause						 
+			break;
 
-					 pauseBt4->Enabled = false;
-					 pauseBt4->BackColor = COL_TRANS;
+		case S_HOLD_DROP:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+				{
+					switch (psIni->sLog4.nSilo)
+					{
+					case 10: siloBar4->BarColor = COL_HOLD;	break;
+					case 11: siloBar42->BarColor = COL_HOLD;	break;
+					case 12: siloBar43->BarColor = COL_HOLD;	break;
+					}
+				}
+				else
+				{
+					siloBar4->BarColor = COL_HOLD;
+				}
+				dropBt4->Enabled = false;
+				dropBt4->BackColor = COL_PGREEN;
+			}
+			else
+			{
+				if (!psIni->bSendBitWise)
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
+				}
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uDropO;	// turn off Drop //DC 4.0.1
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;	// turn off Hold //DC 4.0.1
+				switch (psIni->sLog4.nSilo)
+				{
+				case 10: siloBar4->BarColor = COL_HOLD;		break;
+				case 11: siloBar42->BarColor = COL_HOLD;	break;
+				case 12: siloBar43->BarColor = COL_HOLD;	break;
+				}
+				dropBt4->Enabled = false;
+				dropBt4->BackColor = COL_PGREEN;
+				if (pAll->eAsType == A_SIM)
+					psIni->sScale4.cGo = 'P';		// stop
+			}
+			break;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'S';		// stop
-					 break;
+		case S_HOLD_ADD:	//DC 4.0.0
+		case S_HOLD:
+			if (!psIni->bSendBitWise)
+			{
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+				psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
+			}
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uDropO;	// turn off Drop //DC 4.0.1
+			psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;	// turn off Hold //DC 4.0.1
 
-				 case S_SETTLE:
-					 if(psIni->bBotScale)
-					 {
-						 psIni->nWpoints &= ~P_CLRDRP_D;
-						 if(psIni->bSafeJob == false)
-							psIni->nWpoints &= ~P_CLRSV_D;
-						 switch(psIni->sLog4.nSilo)
-						 {
-						 case 10: siloBar4->BarColor = COL_SETTLE;	break;
-						 case 11: siloBar42->BarColor = COL_SETTLE;	break;
-						 case 12: siloBar43->BarColor = COL_SETTLE;	break;
-						 }
-						 fAdapt4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
-					 }
-					 else
-					 {
-						 psIni->nWpoints &= ~O_DROP4;
-						 if(psIni->bSafeJob == false)
-							 psIni->nWpoints &= ~O_SAFE4;
-						 siloBar4->BarColor = COL_SETTLE;
-						 fAdapt4 = psIni->sScale4.dValue;
-					 }
-					 dropBt4->Enabled = false;
-					 dropBt4->BackColor = COL_YG;
+			switch (psIni->sLog4.nSilo)
+			{
+			case 10: siloBar4->BarColor = COL_HOLD;		break;
+			case 11: siloBar42->BarColor = COL_HOLD;	break;
+			case 12: siloBar43->BarColor = COL_HOLD;	break;
+			}
+			dropBt4->Enabled = false;
+			dropBt4->BackColor = COL_PGREEN;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'P';		// stop
+			break;
 
-					 pauseBt4->Enabled = false;
-					 pauseBt4->BackColor = COL_TRANS;
+		case S_HOLD_DISCH:
+			if (!psIni->bPdmPlc)
+				psIni->nWpoints &= ~O_DISCH4;
+			scaleBar4->BarColor = COL_HOLD;
+			dischBt4->Enabled = true;
+			dischBt4->BackColor = COL_PGREEN;
+			if (pAll->eAsType == A_SIM)
+				psIni->sScale4.cGo = 'P';	// pause					 
+			break;
 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'S';	// stop						 
-					 break;
+		case S_UPDATE:
+			if (!psIni->bPdmPlc)
+			{
+				psIni->nWpoints &= ~psIni->nReady4O;		//DC 3.2.0
+				psIni->nWpoints &= ~psIni->nDrop4O;		//DC 3.2.0
+				if (psIni->bSafeJob == false)
+				{
+					if (psIni->bBotScale)
+						psIni->nWpoints &= ~P_CLRSV_D;
+					else
+						psIni->nWpoints &= ~O_SAFE4;
+				}
+			}
+			else
+			{
+				if (!psIni->bSendBitWise)
+				{
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+					psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
+				}
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;		// turn on Hold		//DC 4.0.1
+				psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uDoneO;		// turn on Done
+			}
+			break;
 
-				 case S_ADD_WAIT:
-					 break;
-
-				 case S_ADD:
-					 fScaleVal4 = psIni->sScale4.dValue;
-					 if(psIni->bBotScale)
-					 {
-						 if(!psIni->bPdmPlc)
-						 {
-							 switch(psIni->sLog4.nSilo)
-							 {
-							 case 10: psIni->nWpoints |= P_DROP10; siloBar4->BarColor = COL_DISCH;  break;
-							 case 11: psIni->nWpoints |= P_DROP11; siloBar42->BarColor = COL_DISCH; break;
-							 case 12: psIni->nWpoints |= P_DROP12; siloBar43->BarColor = COL_DISCH; break;
-							 }
-							 scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
-						 }
-						 else
-						 {
-							 switch(psIni->sLog4.nSilo)
-							 {
-							 case 10: psIni->nWpoints |= psIni->asSilos[9].uDropO; siloBar4->BarColor = COL_DISCH; break;
-							 case 11: psIni->nWpoints |= psIni->asSilos[10].uDropO; siloBar42->BarColor = COL_DISCH; break;
-							 case 12: psIni->nWpoints |= psIni->asSilos[11].uDropO; siloBar43->BarColor = COL_DISCH; break;
-							 }
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
-
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uHoldO;	// turn off Hold
-
-							 scaleBar4->Target = pJob4->fLoad + psIni->sLog4.fTruckTare;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints |= O_DROP4;
-						 siloBar4->BarColor = COL_DISCH;
-					 }
-
-					 scaleBar4->BarColor = COL_CHARGE;
-					 addBt4->BackColor = COL_CHARGE;				
-					 fTmpScale4 = psIni->sScale4.dValue;	
-					 nTmpCnt4 = 0;
-
-					 pauseBt4->Enabled = true;			//DC 4.0.0
-					 pauseBt4->BackColor = COL_HOLDK;	//DC 4.0.0
-
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'G';	// go					 
-					 break;
-
-				 case S_ASETTLE:
-					 if(psIni->bBotScale)
-					 {
-						 psIni->nWpoints &= ~P_CLRDRP_D;
-						 switch(psIni->sLog4.nSilo)
-						 {
-						 case 10: siloBar4->BarColor = COL_SETTLE;	break;
-						 case 11: siloBar42->BarColor = COL_SETTLE;	break;
-						 case 12: siloBar43->BarColor = COL_SETTLE;	break;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints &= ~O_DROP4;
-						 siloBar4->BarColor = COL_SETTLE;
-					 }
-					 nTmpCnt4 = 0;
-					 addBt4->BackColor = COL_SETTLE;
-					 pauseBt4->Enabled = true;
-					 pauseBt4->BackColor = COL_HOLDK;
-
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'S';	// stop						 
-					 break;
-
-				 case S_DISCH_WAIT:
-					 siloBar4->BarColor = COL_IDLE;
-					 dropBt4->BackColor = COL_TRANS;
-					 dischBt4->Enabled = true;
-					 dischBt4->BackColor = COL_PGREEN;	
-					 dischBt4->Visible = !psIni->sInv.bAutoDisch4;		
-					 pauseBt4->Enabled = false;
-					 pauseBt4->BackColor = COL_TRANS;
-					 break;
-
-				 case S_DISCH:
-					 psIni->nWpoints |= O_DISCH4;
-					 scaleBar4->BarColor = COL_DISCH;
-					 nSettle4 = 0;      // scale settle timout
-					 dropBt4->BackColor = COL_TRANS;
-					 dischBt4->Enabled = false;
-					 dischBt4->BackColor = COL_PGREEN;							 
-					 dischBt4->Visible = !psIni->sInv.bAutoDisch4;
-					 pauseBt4->Enabled = true;
-					 pauseBt4->BackColor = COL_HOLDK;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'L';	// leave					
-					 break;
-
-				 case S_DSETTLE:
-					 if(!psIni->bPdmPlc)
-						psIni->nWpoints &= ~O_DISCH4;
-					 scaleBar4->BarColor = COL_SETTLE;
-					 pauseBt4->Enabled = false;
-					 pauseBt4->BackColor = COL_TRANS;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'P';	// pause					 										 
-					 break;
-
-				 case S_HOLD_ASETTLE:
-				 case S_HOLD_SETTLE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 psIni->nWpoints &= ~P_CLRDRP_D;
-							 switch(psIni->sLog4.nSilo)
-							 {
-							 case 10: siloBar4->BarColor = COL_SETTLE;	break;
-							 case 11: siloBar42->BarColor = COL_SETTLE;	break;
-							 case 12: siloBar43->BarColor = COL_SETTLE;	break;
-							 }
-						 }
-						 else
-						 {
-							 psIni->nWpoints &= ~O_DROP4;
-							 siloBar4->BarColor = COL_SETTLE;
-						 }
-					 }
-					 else
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-						psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
-
-						 psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uHoldO;	// turn on Hold
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uDropO;	// turn off Drop
-						 switch(psIni->sLog4.nSilo)
-						{
-						case 10: siloBar4->BarColor = COL_SETTLE;	break;
-						case 11: siloBar42->BarColor = COL_SETTLE;	break;
-						case 12: siloBar43->BarColor = COL_SETTLE;	break;
-						}
-					 }
-					 nTmpCnt4 = 0;
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'P';	// pause						 
-					 break;
-
-				 case S_HOLD_DROP:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-						 {
-							 switch(psIni->sLog4.nSilo)
-							 {
-							 case 10: siloBar4->BarColor = COL_HOLD;	break;
-							 case 11: siloBar42->BarColor = COL_HOLD;	break;
-							 case 12: siloBar43->BarColor = COL_HOLD;	break;
-							 }
-						 }
-						 else
-						 {
-							 siloBar4->BarColor = COL_HOLD;
-						 }
-						 dropBt4->Enabled = false;
-						 dropBt4->BackColor = COL_PGREEN;
-					 }
-					 else
-					 {
-						 if(!psIni->bSendBitWise)
-						 {
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-							 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;						 
-						 }
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uDropO;	// turn off Drop //DC 4.0.1
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uHoldO;	// turn off Hold //DC 4.0.1
-						 switch(psIni->sLog4.nSilo)
-						 {
-						 case 10: siloBar4->BarColor = COL_HOLD;		break;
-						 case 11: siloBar42->BarColor = COL_HOLD;	break;
-						 case 12: siloBar43->BarColor = COL_HOLD;	break;
-						 }
-						 dropBt4->Enabled = false;
-						 dropBt4->BackColor = COL_PGREEN;
-						 if(pAll->eAsType == A_SIM)
-							psIni->sScale4.cGo = 'P';		// stop
-					 }
-					 break;
-
-				 case S_HOLD_ADD:	//DC 4.0.0
-				 case S_HOLD:
-					 if(!psIni->bSendBitWise)
-					 {
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-						 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
-					 }
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uDropO;	// turn off Drop //DC 4.0.1
-					 psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uHoldO;	// turn off Hold //DC 4.0.1
-					 
-					 switch(psIni->sLog4.nSilo)
-					 {
-					 case 10: siloBar4->BarColor = COL_HOLD;		break;
-					 case 11: siloBar42->BarColor = COL_HOLD;	break;
-					 case 12: siloBar43->BarColor = COL_HOLD;	break;
-					 }
-					 dropBt4->Enabled = false;
-					 dropBt4->BackColor = COL_PGREEN;
-					 if(pAll->eAsType == A_SIM)
-						psIni->sScale4.cGo = 'P';		// stop
-					 break;
-
-				 case S_HOLD_DISCH:
-					 if(!psIni->bPdmPlc)
-						psIni->nWpoints &= ~O_DISCH4;
-					 scaleBar4->BarColor = COL_HOLD;
-					 dischBt4->Enabled = true;
-					 dischBt4->BackColor = COL_PGREEN;							 
-					 if(pAll->eAsType == A_SIM)
-						 psIni->sScale4.cGo = 'P';	// pause					 
-					 break;
-
-				 case S_UPDATE:
-					 if(!psIni->bPdmPlc)
-					 {
-						 psIni->nWpoints &= ~psIni->nReady4O;		//DC 3.2.0
-						 psIni->nWpoints &= ~psIni->nDrop4O;		//DC 3.2.0
-						 if(psIni->bSafeJob == false)
-						 {
-							 if(psIni->bBotScale)
-								 psIni->nWpoints &= ~P_CLRSV_D;
-							 else
-								 psIni->nWpoints &= ~O_SAFE4;
-						 }
-					 }
-					 else
-					 {
-						 if(!psIni->bSendBitWise)
-						 {
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-							psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
-						 }
-						psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldO;		// turn on Hold		//DC 4.0.1
-						psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uDoneO;		// turn on Done
-					 }
-					 break;
-
-				 case S_HORN:
-					 if(!psIni->bPdmPlc)
-					 {
-						 if(psIni->bBotScale)
-							 psIni->nWpoints |= P_LIGHTD;
-						 else
-							 psIni->nWpoints |= O_LIGHT4;
-					 }
-					 nTmpCnt4 = 0;
-					 break;				 
-				 }
-			 }
+		case S_HORN:
+			if (!psIni->bPdmPlc)
+			{
+				if (psIni->bBotScale)
+					psIni->nWpoints |= P_LIGHTD;
+				else
+					psIni->nWpoints |= O_LIGHT4;
+			}
+			nTmpCnt4 = 0;
+			break;
+		}
+	}
 #pragma endregion
 
 #pragma region TIMER_UTI
 			 //----------------------------------------------------------------
 	private: void updateFall(uint nSilo, uint nIdx, double fFall)
-			 {
-				FALL *psF = psIni->sInv.asFall1;
+	{
+		FALL *psF = psIni->sInv.asFall1;
 
-				if((nIdx >= LOAD_MAX) || (fFall < 0.0)) 
-					return;
+		if ((nIdx >= LOAD_MAX) || (fFall < 0.0))
+			return;
 
-				switch(nSilo)
-				{
-				case 1: psF = &psIni->sInv.asFall1[nIdx]; break;
-				case 2: psF = &psIni->sInv.asFall2[nIdx]; break;
-				case 3: psF = &psIni->sInv.asFall3[nIdx]; break;
-				case 4: psF = &psIni->sInv.asFall4[nIdx]; break;
-				case 5: psF = &psIni->sInv.asFall5[nIdx]; break;
-				case 6: psF = &psIni->sInv.asFall6[nIdx]; break;
-				case 7: psF = &psIni->sInv.asFall7[nIdx]; break;
-				case 8: psF = &psIni->sInv.asFall8[nIdx]; break;
-				case 9: psF = &psIni->sInv.asFall9[nIdx]; break;
-				case 10: psF = &psIni->sInv.asFall10[nIdx]; break;	//DC 3.3.0
-				case 11: psF = &psIni->sInv.asFall11[nIdx]; break;
-				case 12: psF = &psIni->sInv.asFall12[nIdx]; break;
-				}
+		switch (nSilo)
+		{
+		case 1: psF = &psIni->sInv.asFall1[nIdx]; break;
+		case 2: psF = &psIni->sInv.asFall2[nIdx]; break;
+		case 3: psF = &psIni->sInv.asFall3[nIdx]; break;
+		case 4: psF = &psIni->sInv.asFall4[nIdx]; break;
+		case 5: psF = &psIni->sInv.asFall5[nIdx]; break;
+		case 6: psF = &psIni->sInv.asFall6[nIdx]; break;
+		case 7: psF = &psIni->sInv.asFall7[nIdx]; break;
+		case 8: psF = &psIni->sInv.asFall8[nIdx]; break;
+		case 9: psF = &psIni->sInv.asFall9[nIdx]; break;
+		case 10: psF = &psIni->sInv.asFall10[nIdx]; break;	//DC 3.3.0
+		case 11: psF = &psIni->sInv.asFall11[nIdx]; break;
+		case 12: psF = &psIni->sInv.asFall12[nIdx]; break;
+		}
 
-				psF->fFall -=  psF->afFall[psF->nIdx];
-				psF->fFall += fFall;
-				psF->afFall[psF->nIdx] = fFall;
-				psF->nIdx = ++psF->nIdx & (SAMPLE_NBR-1);		
-			 }
+		psF->fFall -= psF->afFall[psF->nIdx];
+		psF->fFall += fFall;
+		psF->afFall[psF->nIdx] = fFall;
+		psF->nIdx = ++psF->nIdx & (SAMPLE_NBR - 1);
+	}
 
 			 //----------------------------------------------------------------
 	private: void updateAdapt(uint nSilo, uint nIdx, double fAdapt)
-			 {
-				ADAPT *psA = psIni->sInv.asAdapt1;
+	{
+		ADAPT *psA = psIni->sInv.asAdapt1;
 
-				if((nIdx >= LOAD_MAX) || (fAdapt < 0.0)) return;
+		if ((nIdx >= LOAD_MAX) || (fAdapt < 0.0)) return;
 
-				switch(nSilo)
-				{
-				case 1: psA = &psIni->sInv.asAdapt1[nIdx]; break;
-				case 2: psA = &psIni->sInv.asAdapt2[nIdx]; break;
-				case 3: psA = &psIni->sInv.asAdapt3[nIdx]; break;
-				case 4: psA = &psIni->sInv.asAdapt4[nIdx]; break;
-				case 5: psA = &psIni->sInv.asAdapt5[nIdx]; break;
-				case 6: psA = &psIni->sInv.asAdapt6[nIdx]; break;
-				case 7: psA = &psIni->sInv.asAdapt7[nIdx]; break;
-				case 8: psA = &psIni->sInv.asAdapt8[nIdx]; break;
-				case 9: psA = &psIni->sInv.asAdapt9[nIdx]; break;
-				case 10: psA = &psIni->sInv.asAdapt10[nIdx]; break;		//DC 3.3.0
-				case 11: psA = &psIni->sInv.asAdapt11[nIdx]; break;
-				case 12: psA = &psIni->sInv.asAdapt12[nIdx]; break;
-				}
+		switch (nSilo)
+		{
+		case 1: psA = &psIni->sInv.asAdapt1[nIdx]; break;
+		case 2: psA = &psIni->sInv.asAdapt2[nIdx]; break;
+		case 3: psA = &psIni->sInv.asAdapt3[nIdx]; break;
+		case 4: psA = &psIni->sInv.asAdapt4[nIdx]; break;
+		case 5: psA = &psIni->sInv.asAdapt5[nIdx]; break;
+		case 6: psA = &psIni->sInv.asAdapt6[nIdx]; break;
+		case 7: psA = &psIni->sInv.asAdapt7[nIdx]; break;
+		case 8: psA = &psIni->sInv.asAdapt8[nIdx]; break;
+		case 9: psA = &psIni->sInv.asAdapt9[nIdx]; break;
+		case 10: psA = &psIni->sInv.asAdapt10[nIdx]; break;		//DC 3.3.0
+		case 11: psA = &psIni->sInv.asAdapt11[nIdx]; break;
+		case 12: psA = &psIni->sInv.asAdapt12[nIdx]; break;
+		}
 
-				psA->fAdapt -=  psA->afAdapt[psA->nIdx];
-				psA->fAdapt += fAdapt;
-				psA->afAdapt[psA->nIdx] = fAdapt;
-				psA->nIdx = ++psA->nIdx & (SAMPLE_NBR-1);		
-			 }
+		psA->fAdapt -= psA->afAdapt[psA->nIdx];
+		psA->fAdapt += fAdapt;
+		psA->afAdapt[psA->nIdx] = fAdapt;
+		psA->nIdx = ++psA->nIdx & (SAMPLE_NBR - 1);
+	}
 
 			 //----------------------------------------------------------------
 	private: double getAdapt(uint nSilo, uint nIdx)
-			 {
-				ADAPT *psA = psIni->sInv.asAdapt1;
+	{
+		ADAPT *psA = psIni->sInv.asAdapt1;
 
-				if(nIdx >= LOAD_MAX) 
-					return(0);
+		if (nIdx >= LOAD_MAX)
+			return(0);
 
-				switch(nSilo)
-				{
-				case 1: psA = &psIni->sInv.asAdapt1[nIdx]; break;
-				case 2: psA = &psIni->sInv.asAdapt2[nIdx]; break;
-				case 3: psA = &psIni->sInv.asAdapt3[nIdx]; break;
-				case 4: psA = &psIni->sInv.asAdapt4[nIdx]; break;
-				case 5: psA = &psIni->sInv.asAdapt5[nIdx]; break;
-				case 6: psA = &psIni->sInv.asAdapt6[nIdx]; break;
-				case 7: psA = &psIni->sInv.asAdapt7[nIdx]; break;
-				case 8: psA = &psIni->sInv.asAdapt8[nIdx]; break;
-				case 9: psA = &psIni->sInv.asAdapt9[nIdx]; break;
-				case 10: psA = &psIni->sInv.asAdapt10[nIdx]; break;
-				case 11: psA = &psIni->sInv.asAdapt11[nIdx]; break;
-				case 12: psA = &psIni->sInv.asAdapt12[nIdx]; break;
-				}
-				return(psA->fAdapt / SAMPLE_NBR);
-			 }
+		switch (nSilo)
+		{
+		case 1: psA = &psIni->sInv.asAdapt1[nIdx]; break;
+		case 2: psA = &psIni->sInv.asAdapt2[nIdx]; break;
+		case 3: psA = &psIni->sInv.asAdapt3[nIdx]; break;
+		case 4: psA = &psIni->sInv.asAdapt4[nIdx]; break;
+		case 5: psA = &psIni->sInv.asAdapt5[nIdx]; break;
+		case 6: psA = &psIni->sInv.asAdapt6[nIdx]; break;
+		case 7: psA = &psIni->sInv.asAdapt7[nIdx]; break;
+		case 8: psA = &psIni->sInv.asAdapt8[nIdx]; break;
+		case 9: psA = &psIni->sInv.asAdapt9[nIdx]; break;
+		case 10: psA = &psIni->sInv.asAdapt10[nIdx]; break;
+		case 11: psA = &psIni->sInv.asAdapt11[nIdx]; break;
+		case 12: psA = &psIni->sInv.asAdapt12[nIdx]; break;
+		}
+		return(psA->fAdapt / SAMPLE_NBR);
+	}
 
 			 //----------------------------------------------------------------
 	private: void showInv()
-			 {
-				if(psIni->bBotScale)
-				{
-					siloBar1->Value = psIni->sInv.fInv1;
-					siloBar1->Inventory = psIni->sInv.fInv1; 
-					siloBar12->Value = psIni->sInv.fInv2; 
-					siloBar12->Inventory = psIni->sInv.fInv2; 
-					siloBar13->Value = psIni->sInv.fInv3; 
-					siloBar13->Inventory = psIni->sInv.fInv3; 
-
-					if(bSecond)
-					{
-						siloBar2->Value = psIni->sInv.fInv4; 
-						siloBar2->Inventory = psIni->sInv.fInv4; 
-						siloBar22->Value = psIni->sInv.fInv5;
-						siloBar22->Inventory = psIni->sInv.fInv5;
-						siloBar23->Value = psIni->sInv.fInv6;
-						siloBar23->Inventory = psIni->sInv.fInv6;
-					}
-					if(bThird)
-					{
-						siloBar3->Value = psIni->sInv.fInv7; 
-						siloBar3->Inventory = psIni->sInv.fInv7; 
-						siloBar32->Value = psIni->sInv.fInv8;
-						siloBar32->Inventory = psIni->sInv.fInv8;
-						siloBar33->Value = psIni->sInv.fInv9;
-						siloBar33->Inventory = psIni->sInv.fInv9;
-					}
-					if(bForth)	//DC 3.3.0
-					{
-						siloBar4->Value = psIni->sInv.fInv10; 
-						siloBar4->Inventory = psIni->sInv.fInv10; 
-						siloBar42->Value = psIni->sInv.fInv11;
-						siloBar42->Inventory = psIni->sInv.fInv11;
-						siloBar43->Value = psIni->sInv.fInv12;
-						siloBar43->Inventory = psIni->sInv.fInv12;
-					}
-				}
-				else
-				{
-					siloBar1->Value = psIni->sInv.fInv1; 
-					siloBar1->Inventory = psIni->sInv.fInv1; 
-					if(bSecond)
-					{
-						siloBar2->Value = psIni->sInv.fInv2; 
-						siloBar2->Inventory = psIni->sInv.fInv2; 
-					}
-					if(bThird)
-					{
-						siloBar3->Value = psIni->sInv.fInv3;
-						siloBar3->Inventory = psIni->sInv.fInv3;
-					}
-					if(bForth)
-					{
-						siloBar4->Value = psIni->sInv.fInv4;
-						siloBar4->Inventory = psIni->sInv.fInv4;
-					}
-				}
-			 }
-
-	//-------------------------------------------------------------------------
-	void addInv(int nSilo)
 	{
-		switch(nSilo)
+		if (psIni->bBotScale)
 		{
-		case 1: psIni->sInv.fInv1 += psIni->fSiloFill1; break;
-		case 2: psIni->sInv.fInv2 += psIni->fSiloFill2; break;
-		case 3: psIni->sInv.fInv3 += psIni->fSiloFill3; break;
-		case 4: psIni->sInv.fInv4 += psIni->fSiloFill4; break;
-		case 5: psIni->sInv.fInv5 += psIni->fSiloFill5; break;
-		case 6: psIni->sInv.fInv6 += psIni->fSiloFill6; break;
-		case 7: psIni->sInv.fInv7 += psIni->fSiloFill7; break;
-		case 8: psIni->sInv.fInv8 += psIni->fSiloFill8; break;
-		case 9: psIni->sInv.fInv9 += psIni->fSiloFill9; break;
-		case 10: psIni->sInv.fInv10 += psIni->fSiloFill10; break;
-		case 11: psIni->sInv.fInv11 += psIni->fSiloFill11; break;
-		case 12: psIni->sInv.fInv12 += psIni->fSiloFill12; break;
-		}
-		showInv();						// show inventory  
-	}	
+			siloBar1->Value = psIni->sInv.fInv1;
+			siloBar1->Inventory = psIni->sInv.fInv1;
+			siloBar12->Value = psIni->sInv.fInv2;
+			siloBar12->Inventory = psIni->sInv.fInv2;
+			siloBar13->Value = psIni->sInv.fInv3;
+			siloBar13->Inventory = psIni->sInv.fInv3;
 
-	//-------------------------------------------------------------------------
-	void subInv(int nLane)
-	{
-		double dSub;
-
-		if(psIni->bBotScale)
-		{
-			switch(nLane)
+			if (bSecond)
 			{
-			case 1:
-				dSub = psIni->sScale1.dValue - fScaleVal1;
-				if(!psIni->bDisableInv)
-				{
-					switch(psIni->sLog1.nSilo)
-					{
-					case 1: psIni->sInv.fInv1 -= dSub; break;
-					case 2: psIni->sInv.fInv2 -= dSub; break;
-					case 3: psIni->sInv.fInv3 -= dSub; break;
-					}
-				}
-				psIni->sInv.fTon1 += dSub;					// update tonnage
-				if(psIni->bScaleInLB)
-					tonnage1->Text = psIni->sInv.fTon1.ToString("F00");
-				else
-					tonnage1->Text = psIni->sInv.fTon1.ToString("F01");
-				break;
-
-			case 2: 
-				dSub = psIni->sScale2.dValue - fScaleVal2;
-				if(!psIni->bDisableInv)
-				{
-					switch(psIni->sLog2.nSilo)
-					{
-					case 4: psIni->sInv.fInv4 -= dSub; break;
-					case 5: psIni->sInv.fInv5 -= dSub; break;
-					case 6: psIni->sInv.fInv6 -= dSub; break;
-					}
-				}
-				psIni->sInv.fTon2 += dSub;					// update tonnage
-				if(psIni->bScaleInLB)
-					tonnage2->Text = psIni->sInv.fTon2.ToString("F00");
-				else
-					tonnage2->Text = psIni->sInv.fTon2.ToString("F01");
-				break;
-
-			case 3: 
-				dSub = psIni->sScale3.dValue - fScaleVal3;
-				if(!psIni->bDisableInv)
-				{
-					switch(psIni->sLog3.nSilo)
-					{
-					case 7: psIni->sInv.fInv7 -= dSub; break;
-					case 8: psIni->sInv.fInv8 -= dSub; break;
-					case 9: psIni->sInv.fInv9 -= dSub; break;
-					}
-				}
-				psIni->sInv.fTon3 += dSub;					// update tonnage
-				if(psIni->bScaleInLB)
-					tonnage3->Text = psIni->sInv.fTon3.ToString("F00");
-				else
-					tonnage3->Text = psIni->sInv.fTon3.ToString("F01");
-				break;
-
-			 case 4:										//DC 3.3.0
-				dSub = psIni->sScale4.dValue - fScaleVal4;
-				if(!psIni->bDisableInv)
-				{
-					switch(psIni->sLog4.nSilo)
-					{
-					case 10: psIni->sInv.fInv10 -= dSub; break;
-					case 11: psIni->sInv.fInv11 -= dSub; break;
-					case 12: psIni->sInv.fInv12 -= dSub; break;
-					}
-				}
-				psIni->sInv.fTon4 += dSub;					// update tonnage
-				if(psIni->bScaleInLB)
-					tonnage4->Text = psIni->sInv.fTon4.ToString("F00");
-				else
-					tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
-				break;
+				siloBar2->Value = psIni->sInv.fInv4;
+				siloBar2->Inventory = psIni->sInv.fInv4;
+				siloBar22->Value = psIni->sInv.fInv5;
+				siloBar22->Inventory = psIni->sInv.fInv5;
+				siloBar23->Value = psIni->sInv.fInv6;
+				siloBar23->Inventory = psIni->sInv.fInv6;
+			}
+			if (bThird)
+			{
+				siloBar3->Value = psIni->sInv.fInv7;
+				siloBar3->Inventory = psIni->sInv.fInv7;
+				siloBar32->Value = psIni->sInv.fInv8;
+				siloBar32->Inventory = psIni->sInv.fInv8;
+				siloBar33->Value = psIni->sInv.fInv9;
+				siloBar33->Inventory = psIni->sInv.fInv9;
+			}
+			if (bForth)	//DC 3.3.0
+			{
+				siloBar4->Value = psIni->sInv.fInv10;
+				siloBar4->Inventory = psIni->sInv.fInv10;
+				siloBar42->Value = psIni->sInv.fInv11;
+				siloBar42->Inventory = psIni->sInv.fInv11;
+				siloBar43->Value = psIni->sInv.fInv12;
+				siloBar43->Inventory = psIni->sInv.fInv12;
 			}
 		}
 		else
 		{
-			switch(nLane)
+			siloBar1->Value = psIni->sInv.fInv1;
+			siloBar1->Inventory = psIni->sInv.fInv1;
+			if (bSecond)
 			{
-			case 1: 
-				dSub = psIni->sScale1.dValue - fScaleVal1;
-				psIni->sInv.fInv1 -= dSub;
-				psIni->sInv.fTon1 += dSub;					// update tonnage
-				if(psIni->bScaleInLB)
-					tonnage1->Text = psIni->sInv.fTon1.ToString("F00");
-				else
-					tonnage1->Text = psIni->sInv.fTon1.ToString("F01");
-				break;
-			case 2: 
-				dSub = psIni->sScale2.dValue - fScaleVal2;
-				psIni->sInv.fInv2 -= dSub;
-				psIni->sInv.fTon2 += dSub;					// update tonnage
-				if(psIni->bScaleInLB)
-					tonnage2->Text = psIni->sInv.fTon2.ToString("F00");
-				else
-					tonnage2->Text = psIni->sInv.fTon2.ToString("F01");
-				break;
-			case 3: 
-				dSub = psIni->sScale3.dValue - fScaleVal3;
-				psIni->sInv.fInv3 -= dSub;
-				psIni->sInv.fTon3 += dSub;					// update tonnage
-				if(psIni->bScaleInLB)
-					tonnage3->Text = psIni->sInv.fTon3.ToString("F00");
-				else
-					tonnage3->Text = psIni->sInv.fTon3.ToString("F01");
-				break;
-
-			 case 4:										//DC 3.3.0
-				dSub = psIni->sScale4.dValue - fScaleVal4;
-				psIni->sInv.fInv4 -= dSub;
-				psIni->sInv.fTon4 += dSub;					// update tonnage
-				if(psIni->bScaleInLB)
-					tonnage4->Text = psIni->sInv.fTon4.ToString("F00");
-				else
-					tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
-				break;
+				siloBar2->Value = psIni->sInv.fInv2;
+				siloBar2->Inventory = psIni->sInv.fInv2;
+			}
+			if (bThird)
+			{
+				siloBar3->Value = psIni->sInv.fInv3;
+				siloBar3->Inventory = psIni->sInv.fInv3;
+			}
+			if (bForth)
+			{
+				siloBar4->Value = psIni->sInv.fInv4;
+				siloBar4->Inventory = psIni->sInv.fInv4;
 			}
 		}
-		showInv();						// show inventory  
-	}	
-
-	//-------------------------------------------------------------------------
-static void str2arr(String^ pStr, char *pcArr)
-	{
-		int ii;
-
-		 for(ii = 0; ii < pStr->Length; ii++) 
-			 pcArr[ii] = (char)pStr[ii];
-		 pcArr[ii] = 0;
 	}
+
+			 //-------------------------------------------------------------------------
+			 void addInv(int nSilo)
+			 {
+				 switch (nSilo)
+				 {
+				 case 1: psIni->sInv.fInv1 += psIni->fSiloFill1; break;
+				 case 2: psIni->sInv.fInv2 += psIni->fSiloFill2; break;
+				 case 3: psIni->sInv.fInv3 += psIni->fSiloFill3; break;
+				 case 4: psIni->sInv.fInv4 += psIni->fSiloFill4; break;
+				 case 5: psIni->sInv.fInv5 += psIni->fSiloFill5; break;
+				 case 6: psIni->sInv.fInv6 += psIni->fSiloFill6; break;
+				 case 7: psIni->sInv.fInv7 += psIni->fSiloFill7; break;
+				 case 8: psIni->sInv.fInv8 += psIni->fSiloFill8; break;
+				 case 9: psIni->sInv.fInv9 += psIni->fSiloFill9; break;
+				 case 10: psIni->sInv.fInv10 += psIni->fSiloFill10; break;
+				 case 11: psIni->sInv.fInv11 += psIni->fSiloFill11; break;
+				 case 12: psIni->sInv.fInv12 += psIni->fSiloFill12; break;
+				 }
+				 showInv();						// show inventory  
+			 }
+
+			 //-------------------------------------------------------------------------
+			 void subInv(int nLane)
+			 {
+				 double dSub;
+
+				 if (psIni->bBotScale)
+				 {
+					 switch (nLane)
+					 {
+					 case 1:
+						 dSub = psIni->sScale1.dValue - fScaleVal1;
+						 if (!psIni->bDisableInv)
+						 {
+							 switch (psIni->sLog1.nSilo)
+							 {
+							 case 1: psIni->sInv.fInv1 -= dSub; break;
+							 case 2: psIni->sInv.fInv2 -= dSub; break;
+							 case 3: psIni->sInv.fInv3 -= dSub; break;
+							 }
+						 }
+						 psIni->sInv.fTon1 += dSub;					// update tonnage
+						 if (psIni->bScaleInLB)
+							 tonnage1->Text = psIni->sInv.fTon1.ToString("F00");
+						 else
+							 tonnage1->Text = psIni->sInv.fTon1.ToString("F01");
+						 break;
+
+					 case 2:
+						 dSub = psIni->sScale2.dValue - fScaleVal2;
+						 if (!psIni->bDisableInv)
+						 {
+							 switch (psIni->sLog2.nSilo)
+							 {
+							 case 4: psIni->sInv.fInv4 -= dSub; break;
+							 case 5: psIni->sInv.fInv5 -= dSub; break;
+							 case 6: psIni->sInv.fInv6 -= dSub; break;
+							 }
+						 }
+						 psIni->sInv.fTon2 += dSub;					// update tonnage
+						 if (psIni->bScaleInLB)
+							 tonnage2->Text = psIni->sInv.fTon2.ToString("F00");
+						 else
+							 tonnage2->Text = psIni->sInv.fTon2.ToString("F01");
+						 break;
+
+					 case 3:
+						 dSub = psIni->sScale3.dValue - fScaleVal3;
+						 if (!psIni->bDisableInv)
+						 {
+							 switch (psIni->sLog3.nSilo)
+							 {
+							 case 7: psIni->sInv.fInv7 -= dSub; break;
+							 case 8: psIni->sInv.fInv8 -= dSub; break;
+							 case 9: psIni->sInv.fInv9 -= dSub; break;
+							 }
+						 }
+						 psIni->sInv.fTon3 += dSub;					// update tonnage
+						 if (psIni->bScaleInLB)
+							 tonnage3->Text = psIni->sInv.fTon3.ToString("F00");
+						 else
+							 tonnage3->Text = psIni->sInv.fTon3.ToString("F01");
+						 break;
+
+					 case 4:										//DC 3.3.0
+						 dSub = psIni->sScale4.dValue - fScaleVal4;
+						 if (!psIni->bDisableInv)
+						 {
+							 switch (psIni->sLog4.nSilo)
+							 {
+							 case 10: psIni->sInv.fInv10 -= dSub; break;
+							 case 11: psIni->sInv.fInv11 -= dSub; break;
+							 case 12: psIni->sInv.fInv12 -= dSub; break;
+							 }
+						 }
+						 psIni->sInv.fTon4 += dSub;					// update tonnage
+						 if (psIni->bScaleInLB)
+							 tonnage4->Text = psIni->sInv.fTon4.ToString("F00");
+						 else
+							 tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
+						 break;
+					 }
+				 }
+				 else
+				 {
+					 switch (nLane)
+					 {
+					 case 1:
+						 dSub = psIni->sScale1.dValue - fScaleVal1;
+						 psIni->sInv.fInv1 -= dSub;
+						 psIni->sInv.fTon1 += dSub;					// update tonnage
+						 if (psIni->bScaleInLB)
+							 tonnage1->Text = psIni->sInv.fTon1.ToString("F00");
+						 else
+							 tonnage1->Text = psIni->sInv.fTon1.ToString("F01");
+						 break;
+					 case 2:
+						 dSub = psIni->sScale2.dValue - fScaleVal2;
+						 psIni->sInv.fInv2 -= dSub;
+						 psIni->sInv.fTon2 += dSub;					// update tonnage
+						 if (psIni->bScaleInLB)
+							 tonnage2->Text = psIni->sInv.fTon2.ToString("F00");
+						 else
+							 tonnage2->Text = psIni->sInv.fTon2.ToString("F01");
+						 break;
+					 case 3:
+						 dSub = psIni->sScale3.dValue - fScaleVal3;
+						 psIni->sInv.fInv3 -= dSub;
+						 psIni->sInv.fTon3 += dSub;					// update tonnage
+						 if (psIni->bScaleInLB)
+							 tonnage3->Text = psIni->sInv.fTon3.ToString("F00");
+						 else
+							 tonnage3->Text = psIni->sInv.fTon3.ToString("F01");
+						 break;
+
+					 case 4:										//DC 3.3.0
+						 dSub = psIni->sScale4.dValue - fScaleVal4;
+						 psIni->sInv.fInv4 -= dSub;
+						 psIni->sInv.fTon4 += dSub;					// update tonnage
+						 if (psIni->bScaleInLB)
+							 tonnage4->Text = psIni->sInv.fTon4.ToString("F00");
+						 else
+							 tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
+						 break;
+					 }
+				 }
+				 showInv();						// show inventory  
+			 }
+
+			 //-------------------------------------------------------------------------
+			 static void str2arr(String^ pStr, char *pcArr)
+			 {
+				 int ii;
+
+				 for (ii = 0; ii < pStr->Length; ii++)
+					 pcArr[ii] = (char)pStr[ii];
+				 pcArr[ii] = 0;
+			 }
 #pragma endregion
 
-private:
-	//DC 4.0.0 Convert Max Target Weight to Scaled Value
-	double TruckMax2ScaledValue(double nTargetMax)
-	{
-		double ScaledOutput = (nTargetMax - psIni->nTruckMin)/(psIni->nTruckMax - psIni->nTruckMin)*20;
-		return ScaledOutput;
-	}
-
-	//DC 4.0.0 Convert Max Cart Weight to Scaled Value
-	double CartMax2ScaledValue(double nTargetMax)
-	{
-		double ScaledOutput = (nTargetMax - psIni->nCartMin)/(psIni->nCartMax - psIni->nCartMin)*20;
-		return ScaledOutput;
-	}
-
-	//DC 4.0.0 Convert Target (LBS) Decimal to Binary and IO 
-	bool DecimalToBinaryIO(int n, int s)
-	{
-		int binaryNumber[19] = {0};
-		int siloBinary[4] = {0};
-		int  i = 0;
-		int  z = 0;
-		while (n>0)
+	private:
+		//DC 4.0.0 Convert Max Target Weight to Scaled Value
+		double TruckMax2ScaledValue(double nTargetMax)
 		{
-			binaryNumber[i] = n % 2;
-			n = n/2;
-			i++;
+			double ScaledOutput = (nTargetMax - psIni->nTruckMin) / (psIni->nTruckMax - psIni->nTruckMin) * 20;
+			return ScaledOutput;
 		}
-		while (s>0)
+
+		//DC 4.0.0 Convert Max Cart Weight to Scaled Value
+		double CartMax2ScaledValue(double nTargetMax)
 		{
-			siloBinary[z] = s % 2;
-			s = s/2;
-			z++;
+			double ScaledOutput = (nTargetMax - psIni->nCartMin) / (psIni->nCartMax - psIni->nCartMin) * 20;
+			return ScaledOutput;
 		}
-		for( int j = 0; j < 19; j++)
+
+		//DC 4.0.0 Convert Target (LBS) Decimal to Binary and IO 
+		bool DecimalToBinaryIO(int n, int s)
 		{
-			if(binaryNumber[j] > 0)
+			int binaryNumber[19] = { 0 };
+			int siloBinary[4] = { 0 };
+			int  i = 0;
+			int  z = 0;
+			while (n>0)
 			{
-				psIni->nWpoints |= psIni->uBitWiseO[j];			// turn on bit
-				psIni->nBinaryNumber[j] = 1;
+				binaryNumber[i] = n % 2;
+				n = n / 2;
+				i++;
 			}
-			else
+			while (s>0)
+			{
+				siloBinary[z] = s % 2;
+				s = s / 2;
+				z++;
+			}
+			for (int j = 0; j < 19; j++)
+			{
+				if (binaryNumber[j] > 0)
+				{
+					psIni->nWpoints |= psIni->uBitWiseO[j];			// turn on bit
+					psIni->nBinaryNumber[j] = 1;
+				}
+				else
+				{
+					psIni->nWpoints &= ~psIni->uBitWiseO[j];		// turn off bit
+					psIni->nBinaryNumber[j] = 0;
+				}
+			}
+			for (int j = 0; j < 4; j++)
+			{
+				if (siloBinary[j] > 0)
+				{
+					psIni->nWpoints |= psIni->uSiloBitO[j];			// turn on bit
+					psIni->nSiloBitNum[j] = 1;
+				}
+				else
+				{
+					psIni->nWpoints &= ~psIni->uSiloBitO[j];		// turn off bit
+					psIni->nSiloBitNum[j] = 0;
+				}
+			}
+
+			Thread::Sleep(500);
+
+			for (int j = 0; j < 19; j++)
+			{
+				if (binaryNumber[j] > 0)
+				{
+					if (!((psIni->nRpoints & psIni->uBitCheckI[j]) > 0))
+						return false;
+				}
+				else
+				{
+					if ((psIni->nRpoints & psIni->uBitCheckI[j]) > 0)
+						return false;
+				}
+			}
+			for (int j = 0; j < 4; j++)
+			{
+				if (siloBinary[j] > 0)
+				{
+					if (!((psIni->nRpoints & psIni->uSiloBitCheckI[j]) > 0))
+						return false;
+				}
+				else
+				{
+					if ((psIni->nRpoints & psIni->uSiloBitCheckI[j]) > 0)
+						return false;
+				}
+			}
+			return true;
+		}
+
+		void resetTargetOutput()
+		{
+			for (int j = 0; j < 19; j++)
 			{
 				psIni->nWpoints &= ~psIni->uBitWiseO[j];		// turn off bit
 				psIni->nBinaryNumber[j] = 0;
 			}
-		}
-		for( int j = 0; j < 4; j++)
-		{
-			if(siloBinary[j] > 0)
-			{
-				psIni->nWpoints |= psIni->uSiloBitO[j];			// turn on bit
-				psIni->nSiloBitNum[j] = 1;
-			}
-			else
+			for (int j = 0; j < 4; j++)
 			{
 				psIni->nWpoints &= ~psIni->uSiloBitO[j];		// turn off bit
 				psIni->nSiloBitNum[j] = 0;
 			}
+			psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
 		}
-		
-		Thread::Sleep(500);
 
-		for( int j = 0; j < 19; j++)
+		bool checkTargetIO()
 		{
-			if(binaryNumber[j] > 0)
+			for (int j = 0; j < 19; j++)
 			{
-				if(!((psIni->nRpoints & psIni->uBitCheckI[j]) > 0))
-					return false;
+				if (psIni->nBinaryNumber[j] > 0)
+				{
+					if (!((psIni->nRpoints & psIni->uBitCheckI[j]) > 0))
+						return false;
+				}
+				else
+				{
+					if ((psIni->nRpoints & psIni->uBitCheckI[j]) > 0)
+						return false;
+				}
 			}
-			else
+			for (int j = 0; j < 4; j++)
 			{
-				if((psIni->nRpoints & psIni->uBitCheckI[j]) > 0)
-					return false;
+				if (psIni->nSiloBitNum[j] > 0)
+				{
+					if (!((psIni->nRpoints & psIni->uSiloBitCheckI[j]) > 0))
+						return false;
+				}
+				else
+				{
+					if ((psIni->nRpoints & psIni->uSiloBitCheckI[j]) > 0)
+						return false;
+				}
 			}
+			return true;
 		}
-		for( int j = 0; j < 4; j++)
+
+		void init(void)
 		{
-			if(siloBinary[j] > 0)
-			{
-				if(!((psIni->nRpoints & psIni->uSiloBitCheckI[j]) > 0))
-					return false;
-			}
-			else
-			{
-				if((psIni->nRpoints & psIni->uSiloBitCheckI[j]) > 0)
-					return false;
-			}
-		}
-		return true;
-	}
+			nOffs1 = 12;		//DC 3.3.0
+			groupBox4->Location = System::Drawing::Point(435, 27);
+			this->Width = 1290;			//DC 3.2.6
 
-	void resetTargetOutput()
-	{
-		 for( int j = 0; j < 19; j++)
-		{
-			psIni->nWpoints &= ~psIni->uBitWiseO[j];		// turn off bit
-			psIni->nBinaryNumber[j] = 0;
-		}
-		 for( int j = 0; j < 4; j++)
-		{
-			psIni->nWpoints &= ~psIni->uSiloBitO[j];		// turn off bit
-			psIni->nSiloBitNum[j] = 0;
-		}
-		 psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
-	}
-
-	bool checkTargetIO()
-	{
-		for( int j = 0; j < 19; j++)
-		{
-			if(psIni->nBinaryNumber[j] > 0)
-			{
-				if(!((psIni->nRpoints & psIni->uBitCheckI[j]) > 0))
-					return false;
-			}
-			else
-			{
-				if((psIni->nRpoints & psIni->uBitCheckI[j]) > 0)
-					return false;
-			}
-		}
-		for( int j = 0; j < 4; j++)
-		{
-			if(psIni->nSiloBitNum[j] > 0)
-			{
-				if(!((psIni->nRpoints & psIni->uSiloBitCheckI[j]) > 0))
-					return false;
-			}
-			else
-			{
-				if((psIni->nRpoints & psIni->uSiloBitCheckI[j]) > 0)
-					return false;
-			}
-		}
-		return true;
-	}
-
-	void init(void)
-	{
-		nOffs1 = 12;		//DC 3.3.0
-		groupBox4->Location = System::Drawing::Point(435, 27);
-		this->Width = 1290;			//DC 3.2.6
-
-		groupBox4->Visible = true;
-		//zoom4->Visible = true;
-		lite4->Visible = true;
-		//webBrowser4->Visible = true;
-		printerLb4->Visible = true;	//DC 4.0.0
+			groupBox4->Visible = true;
+			//zoom4->Visible = true;
+			lite4->Visible = true;
+			//webBrowser4->Visible = true;
+			printerLb4->Visible = true;	//DC 4.0.0
 
 
-		//System::Collections::Generic::Queue<CDbase^>^ qDbase;	//DC 4.0.2//Queue^ qDbase;
-		//System::Collections::Generic::Queue<CDbase^>^ qDbaseBad;	//DC 4.0.2//Queue^ qDbase;
+										//System::Collections::Generic::Queue<CDbase^>^ qDbase;	//DC 4.0.2//Queue^ qDbase;
+										//System::Collections::Generic::Queue<CDbase^>^ qDbaseBad;	//DC 4.0.2//Queue^ qDbase;
 
-		siloBar4->Number = psIni->asSilos[9].nSiloNum;
-		siloBar42->Number = psIni->asSilos[10].nSiloNum;
-		siloBar43->Number = psIni->asSilos[11].nSiloNum;
+			siloBar4->Number = psIni->asSilos[9].nSiloNum;
+			siloBar42->Number = psIni->asSilos[10].nSiloNum;
+			siloBar43->Number = psIni->asSilos[11].nSiloNum;
 
-		// plant 4 //DC 3.3.0 --------------------------------------------------------
+			// plant 4 //DC 3.3.0 --------------------------------------------------------
 			bForth = psIni->nNumLanes > 3;
 
-			if(bForth)
+			if (bForth)
 			{
-				if(pAll->eAsType == A_DEMO)
+				if (pAll->eAsType == A_DEMO)
 					psIni->sScale4.cGo = '0';			// idle
 
 				groupBox4->Visible = bForth;
 
-				if(psIni->bUseTrkMax)					//DC 3.2.0
+				if (psIni->bUseTrkMax)					//DC 3.2.0
 					this->targetLb4->Text = L"TrkMax(TN)";
 
 				numCopy4->Value = psIni->nTicketCopy4;			//DC 4.0.2
 
-				if(psIni->bBotScale)
+				if (psIni->bBotScale)
 				{
 					this->truckBar4->Location = System::Drawing::Point(nOffs1, BAR);
 					this->truckPic4->Location = System::Drawing::Point(nOffs1, PIC);
@@ -10650,7 +10660,7 @@ private:
 					siloBar4->DisableInv = psIni->bDisableInv;		//DC 4.0.1
 					siloBar4->Inventory = psIni->sInv.fInv10;
 					siloBar4->Value = psIni->sInv.fInv10;
-					if(psIni->nL4SilosNum > 1)
+					if (psIni->nL4SilosNum > 1)
 					{
 						siloBar42->Maximum = psIni->fSiloMax11;
 						siloBar42->Visible = true;
@@ -10660,7 +10670,7 @@ private:
 						//				siloBar32->Idle = psIni->fSiloMax8 == 0;
 						siloBar42_Click(nullptr, nullptr);
 					}
-					if(psIni->nL4SilosNum > 2)
+					if (psIni->nL4SilosNum > 2)
 					{
 						siloBar43->Maximum = psIni->fSiloMax12;
 						siloBar43->Visible = true;
@@ -10681,12 +10691,12 @@ private:
 					siloBar4->Inventory = psIni->sInv.fInv4;
 					siloBar4->Value = psIni->sInv.fInv4;
 
-					 siloBar4->Size = System::Drawing::Size(100, 230);
-					 scaleBar4->Size = System::Drawing::Size(100, 52);
-					 truckBar4->Size = System::Drawing::Size(100, 28);
+					siloBar4->Size = System::Drawing::Size(100, 230);
+					scaleBar4->Size = System::Drawing::Size(100, 52);
+					truckBar4->Size = System::Drawing::Size(100, 28);
 					scaleBar4->Maximum = psIni->fTopScaleMax;
 
-					if(pAll->pCam4 != nullptr)
+					if (pAll->pCam4 != nullptr)
 					{
 						webBrowser4->Visible = true;
 						webBrowser4->Navigate(pAll->pCam4);
@@ -10705,7 +10715,7 @@ private:
 				dischBt4->Visible = false;
 			}
 
-		if(psIni->bPdmPlc)		//DC 4.0.0
+			if (psIni->bPdmPlc)		//DC 4.0.0
 			{
 				this->siloBar1->Text = gcnew String(psIni->asSilos[0].acMat);
 				this->siloBar12->Text = gcnew String(psIni->asSilos[1].acMat);
@@ -10754,19 +10764,19 @@ private:
 				this->autoFall3->Visible = false; this->autoFall4->Visible = false;
 				this->adapt1->Visible = false; this->adapt2->Visible = false;
 				this->adapt3->Visible = false; this->adapt4->Visible = false;
-				this->jog1->Visible= false; this->jog2->Visible= false;
-				this->jog3->Visible= false; this->jog4->Visible= false;
+				this->jog1->Visible = false; this->jog2->Visible = false;
+				this->jog3->Visible = false; this->jog4->Visible = false;
 				this->autoBt1->Visible = false; this->autoBt2->Visible = false;
 				this->autoBt3->Visible = false; this->autoBt4->Visible = false;
 			}
-	}
+		}
 
 #pragma region TIMER
-	//////////////////////////////////////////////////////////////////////////////
+		//////////////////////////////////////////////////////////////////////////////
 	private:
 		System::Void timer1_Tick(System::Object^  sender, ElapsedEventArgs^  e)
 		{
-			Dbase^ pDbase; 
+			Dbase^ pDbase;
 			double fTarget;
 			double fFall;
 			int nPrinterA = 1;
@@ -10777,48 +10787,48 @@ private:
 			int n2ndPrinterB = 6;	//DC 4.0.2
 			int n2ndPrinterC = 7;	//DC 4.0.2
 			int n2ndPrinterD = 8;	//DC 4.0.2
-			 if(laneACb2->Checked)
-				 nPrinterA = 2;
-			 else if(laneACb3->Checked)
-				 nPrinterA = 3;
+			if (laneACb2->Checked)
+				nPrinterA = 2;
+			else if (laneACb3->Checked)
+				nPrinterA = 3;
 
-			 if(laneBCb1->Checked)
-				 nPrinterB = 1;
-			 else if(laneBCb3->Checked)
-				 nPrinterB = 3;
+			if (laneBCb1->Checked)
+				nPrinterB = 1;
+			else if (laneBCb3->Checked)
+				nPrinterB = 3;
 
-			 if(laneCCb1->Checked)
-				 nPrinterC = 1;
-			 else if(laneCCb2->Checked)
-				 nPrinterC = 2;
+			if (laneCCb1->Checked)
+				nPrinterC = 1;
+			else if (laneCCb2->Checked)
+				nPrinterC = 2;
 
-			 if(laneDCb1->Checked)		//DC 3.3.0
-				 nPrinterD = 1;
-			 else if(laneDCb2->Checked)
-				 nPrinterD = 2;
+			if (laneDCb1->Checked)		//DC 3.3.0
+				nPrinterD = 1;
+			else if (laneDCb2->Checked)
+				nPrinterD = 2;
 
-			 if(pAll->eAsType == A_REMOTE && bRemLogin)
-			 {
-				 pictureSplash->Enabled = false;
-				 pictureSplash->Visible = false;
-			 }
+			if (pAll->eAsType == A_REMOTE && bRemLogin)
+			{
+				pictureSplash->Enabled = false;
+				pictureSplash->Visible = false;
+			}
 
-			 if(pAll->eAsType != A_REMOTE && pAll->pExc != nullptr)		//Dc 4.1.1
-			 {
-				 time_t rawtime;
-				 struct tm * timeinfo;
-				 struct stat st;
+			if (pAll->eAsType != A_REMOTE && pAll->pExc != nullptr)		//Dc 4.1.1
+			{
+				time_t rawtime;
+				struct tm * timeinfo;
+				struct stat st;
 
-				 time(&rawtime);
-				 timeinfo = localtime(&rawtime);
+				time(&rawtime);
+				timeinfo = localtime(&rawtime);
 
 				char acFile[128];
 				strcpy_s(acFile, 128, pAll->pcPath);
-				strcat_s(acFile, 128, "\\Exception.log");	
+				strcat_s(acFile, 128, "\\Exception.log");
 
 				if (stat(acFile, &st) == 0)
 				{
-					System::IO::File::AppendAllText(gcnew String(acFile), "\r\n" + gcnew String(asctime(timeinfo)) +": "+ pAll->pExc);
+					System::IO::File::AppendAllText(gcnew String(acFile), "\r\n" + gcnew String(asctime(timeinfo)) + ": " + pAll->pExc);
 				}
 				else
 				{
@@ -10826,18 +10836,18 @@ private:
 					System::IO::File::AppendAllText(gcnew String(acFile), "\r\n" + gcnew String(asctime(timeinfo)) + ": " + pAll->pExc);
 				}
 				pAll->pExc = nullptr;
-			 }
+			}
 
-			 if(nOneSec > 0)
+			if (nOneSec > 0)
 				nOneSec--;
 			else
 			{
 				nOneSec = 10;
 
 				// one sec task ------------------------------------------
-				if(nSplash > 0 && pAll->eAsType != A_REMOTE)
+				if (nSplash > 0 && pAll->eAsType != A_REMOTE)
 				{
-					if(nSplash == 1)
+					if (nSplash == 1)
 					{
 						pictureSplash->Enabled = false;
 						pictureSplash->Visible = false;
@@ -10849,135 +10859,135 @@ private:
 					//if(qDbaseBad->Count > 0)
 					//	dbaseBadLb->Text = qDbaseBad->Count.ToString();
 					//else
-						dbaseBadLb->Text = nullptr;
+					dbaseBadLb->Text = nullptr;
 				}
-				if(pAll->eAsType != A_DEMO)
+				if (pAll->eAsType != A_DEMO)
 				{
 					// scales health ----------------------------------------------
-					if(pAll->eAsType != A_REMOTE)
+					if (pAll->eAsType != A_REMOTE)
 					{
-						if(pAll->psIni->sScale1.bSerTP)		//DC 3.2.6
+						if (pAll->psIni->sScale1.bSerTP)		//DC 3.2.6
 						{
 							tDiff = clock() - psIni->sScale1.tSample;
-							psIni->sScale1.bSerial = (psIni->sScale1.nClock > psIni->nScaleRedLo) 
-												  && (psIni->sScale1.nClock < psIni->nScaleRedHi)
-												  &&  psIni->sScale1.bSample;
+							psIni->sScale1.bSerial = (psIni->sScale1.nClock > psIni->nScaleRedLo)
+								&& (psIni->sScale1.nClock < psIni->nScaleRedHi)
+								&& psIni->sScale1.bSample;
 							psIni->sScale1.bSample = false;
 							scaleBar1->BarColor = psIni->sScale1.bSerial ? COL_IDLE : COL_ERR;
 						}
 						else
 						{
-							psIni->sScale1.bSerial = (psIni->sScale1.nClock > psIni->nScaleRedLo) 
-												  && (psIni->sScale1.nClock < psIni->nScaleRedHi)
-												  &&  psIni->sScale1.bSample;
+							psIni->sScale1.bSerial = (psIni->sScale1.nClock > psIni->nScaleRedLo)
+								&& (psIni->sScale1.nClock < psIni->nScaleRedHi)
+								&& psIni->sScale1.bSample;
 							psIni->sScale1.bSample = false;
 							scaleBar1->BarColor = psIni->sScale1.bSerial ? COL_IDLE : COL_ERR;
 						}
 					}
 
-					if(bSecond && pAll->eAsType != A_REMOTE)
+					if (bSecond && pAll->eAsType != A_REMOTE)
 					{
-						if(pAll->psIni->sScale2.bSerTP)		//DC 3.2.6
+						if (pAll->psIni->sScale2.bSerTP)		//DC 3.2.6
 						{
 							tDiff = clock() - psIni->sScale2.tSample;
-							psIni->sScale2.bSerial = (psIni->sScale2.nClock > psIni->nScaleRedLo) 
-												  && (psIni->sScale2.nClock < psIni->nScaleRedHi)
-												  &&  psIni->sScale2.bSample;
+							psIni->sScale2.bSerial = (psIni->sScale2.nClock > psIni->nScaleRedLo)
+								&& (psIni->sScale2.nClock < psIni->nScaleRedHi)
+								&& psIni->sScale2.bSample;
 							psIni->sScale2.bSample = false;
 							scaleBar2->BarColor = psIni->sScale2.bSerial ? COL_IDLE : COL_ERR;
 						}
 						else
 						{
-							psIni->sScale2.bSerial = (psIni->sScale2.nClock > psIni->nScaleRedLo) 
-												  && (psIni->sScale2.nClock < psIni->nScaleRedHi)
-												  &&  psIni->sScale2.bSample;
+							psIni->sScale2.bSerial = (psIni->sScale2.nClock > psIni->nScaleRedLo)
+								&& (psIni->sScale2.nClock < psIni->nScaleRedHi)
+								&& psIni->sScale2.bSample;
 							psIni->sScale2.bSample = false;
 							scaleBar2->BarColor = psIni->sScale2.bSerial ? COL_IDLE : COL_ERR;
 						}
 					}
-					if(bThird && pAll->eAsType != A_REMOTE)
+					if (bThird && pAll->eAsType != A_REMOTE)
 					{
-						if(pAll->psIni->sScale3.bSerTP)		//DC 3.2.6
+						if (pAll->psIni->sScale3.bSerTP)		//DC 3.2.6
 						{
 							tDiff = clock() - psIni->sScale3.tSample;
-							psIni->sScale3.bSerial = (psIni->sScale3.nClock > psIni->nScaleRedLo) 
-												  && (psIni->sScale3.nClock < psIni->nScaleRedHi)
-												  &&  psIni->sScale3.bSample;
+							psIni->sScale3.bSerial = (psIni->sScale3.nClock > psIni->nScaleRedLo)
+								&& (psIni->sScale3.nClock < psIni->nScaleRedHi)
+								&& psIni->sScale3.bSample;
 							psIni->sScale3.bSample = false;
 							scaleBar3->BarColor = psIni->sScale3.bSerial ? COL_IDLE : COL_ERR;
 						}
 						else
 						{
-							psIni->sScale3.bSerial = (psIni->sScale3.nClock > psIni->nScaleRedLo) 
-												  && (psIni->sScale3.nClock < psIni->nScaleRedHi)
-												  &&  psIni->sScale3.bSample;
+							psIni->sScale3.bSerial = (psIni->sScale3.nClock > psIni->nScaleRedLo)
+								&& (psIni->sScale3.nClock < psIni->nScaleRedHi)
+								&& psIni->sScale3.bSample;
 							psIni->sScale3.bSample = false;
 							scaleBar3->BarColor = psIni->sScale3.bSerial ? COL_IDLE : COL_ERR;
 						}
 					}
 
-					if(bForth && psIni->bData)		//DC 3.3.0
+					if (bForth && psIni->bData)		//DC 3.3.0
 					{
-						if(pAll->psIni->sScale4.bSerTP)		//DC 3.2.6
+						if (pAll->psIni->sScale4.bSerTP)		//DC 3.2.6
 						{
 							tDiff = clock() - psIni->sScale4.tSample;
-							psIni->sScale4.bSerial = (psIni->sScale4.nClock > psIni->nScaleRedLo) 
-												  && (psIni->sScale4.nClock < psIni->nScaleRedHi)
-												  &&  psIni->sScale4.bSample;
+							psIni->sScale4.bSerial = (psIni->sScale4.nClock > psIni->nScaleRedLo)
+								&& (psIni->sScale4.nClock < psIni->nScaleRedHi)
+								&& psIni->sScale4.bSample;
 							psIni->sScale4.bSample = false;
 							scaleBar4->BarColor = psIni->sScale4.bSerial ? COL_IDLE : COL_ERR;
 						}
 						else
 						{
-							psIni->sScale4.bSerial = (psIni->sScale4.nClock > psIni->nScaleRedLo) 
-												  && (psIni->sScale4.nClock < psIni->nScaleRedHi)
-												  &&  psIni->sScale4.bSample;
+							psIni->sScale4.bSerial = (psIni->sScale4.nClock > psIni->nScaleRedLo)
+								&& (psIni->sScale4.nClock < psIni->nScaleRedHi)
+								&& psIni->sScale4.bSample;
 							psIni->sScale4.bSample = false;
 							scaleBar4->BarColor = psIni->sScale4.bSerial ? COL_IDLE : COL_ERR;
 						}
 					}
-					else if(pAll->eAsType == A_REMOTE && !psIni->bData)
+					else if (pAll->eAsType == A_REMOTE && !psIni->bData)
 					{
 						scaleBar4->BarColor = psIni->sScale4.bSerial ? COL_IDLE : COL_ERR;
 					}
 					// opto error -------------------------------------------------------------
-					if(psIni->bTest)
+					if (psIni->bTest)
 						optoErr->Text = pAll->nOptoError.ToString();
 				}
 				//------------------------------------------------------------------------
-				if(bShowInv)
+				if (bShowInv)
 				{
 					bShowInv = false;
 					showInv();
 				}
-				if(pAll->eAsType != A_REMOTE)
+				if (pAll->eAsType != A_REMOTE)
 				{
-					if(psIni->bSaveInv)
+					if (psIni->bSaveInv)
 					{
 						psIni->bSaveInv = false;
-						if(fseek(pfInv, 0, SEEK_SET) == 0)	
+						if (fseek(pfInv, 0, SEEK_SET) == 0)
 							fwrite(&psIni->sInv, sizeof(INV), 1, pfInv);
 						showInv();
 					}
 				}
 
-				if(psIni->bTest)
+				if (psIni->bTest)
 				{
 					dbLb->Text = pAll->pDbCmd;
 					dbLb1->Text = pAll->nTicket.ToString();
-					if(psIni->bScaleInLB)	//DC 3.2.0
+					if (psIni->bScaleInLB)	//DC 3.2.0
 						dbLb2->Text = pAll->dSold.ToString("f00");
 					else
 						dbLb2->Text = pAll->dSold.ToString("f02");
 				}
-				if(pAll->bUlink)
+				if (pAll->bUlink)
 					testBox->Text = pAll->pTestBox;
-				if(pAll->bExcept)
+				if (pAll->bExcept)
 					testBox->Text = pAll->pExc;
 			}
 			//////////////////////////////////////////////////////////////
 
-			if(psIni->bTest)
+			if (psIni->bTest)
 			{
 				int a = psIni->sLog1.eState;
 				int b = psIni->sLog2.eState;
@@ -10988,49 +10998,49 @@ private:
 				wrLb->Text = psIni->nWpoints.ToString("x");
 				double nTruckTarget1;
 				double nTruckTarget2;
-				if(target1->Text != "" && target2->Text != "")
+				if (target1->Text != "" && target2->Text != "")
 				{
 					nTruckTarget1 = Convert::ToDouble(target1->Text);
 					nTruckTarget2 = Convert::ToDouble(target2->Text);
 				}
 
-//				silo1->Text = nTmpCnt1.ToString();
-//				silo1->Text = bFirstDrop1.ToString();
-//				silo1->Text = psIni->sScale1.nClock.ToString();
-//				flow1->Text = a.ToString();
-//				silo1->Text = TruckMax2ScaledValue(nTruckTarget1).ToString();
+				//				silo1->Text = nTmpCnt1.ToString();
+				//				silo1->Text = bFirstDrop1.ToString();
+				//				silo1->Text = psIni->sScale1.nClock.ToString();
+				//				flow1->Text = a.ToString();
+				//				silo1->Text = TruckMax2ScaledValue(nTruckTarget1).ToString();
 				cnt1->Text = fNewTarget1.ToString();
 				flow1->Text = TruckMax2ScaledValue(nTruckTarget1).ToString();
 
-//				cnt1->Text = nJogA.ToString();
-//				silo1->Text = fFall1.ToString("F2");
-//				flow1->Text = psIni->sScale1.bSerial.ToString();
+				//				cnt1->Text = nJogA.ToString();
+				//				silo1->Text = fFall1.ToString("F2");
+				//				flow1->Text = psIni->sScale1.bSerial.ToString();
 
-//				silo2->Text = nTmpCnt2.ToString();
-//				silo2->Text = TruckMax2ScaledValue(nTruckTarget2).ToString();
-//				flow2->Text = b.ToString();
+				//				silo2->Text = nTmpCnt2.ToString();
+				//				silo2->Text = TruckMax2ScaledValue(nTruckTarget2).ToString();
+				//				flow2->Text = b.ToString();
 				cnt2->Text = psIni->sScale2.nClock.ToString();
-//				silo2->Text = fFall2.ToString("F2");
+				//				silo2->Text = fFall2.ToString("F2");
 				flow2->Text = CartMax2ScaledValue(nTruckTarget2).ToString();
 
-//				silo3->Text = nTmpCnt3.ToString();
+				//				silo3->Text = nTmpCnt3.ToString();
 				silo3->Text = psIni->sScale3.nClock.ToString();
-//				flow3->Text = c.ToString();
+				//				flow3->Text = c.ToString();
 				cnt3->Text = nJogC.ToString();
-//				silo3->Text = fFall3.ToString("F2");
+				//				silo3->Text = fFall3.ToString("F2");
 				flow3->Text = psIni->sScale3.bSerial.ToString();
-//DC 3.3.0
-				if(pJob4 != nullptr)
+				//DC 3.3.0
+				if (pJob4 != nullptr)
 				{
 					silo4->Text = pJob4->stTruck;
-					flow4->Text =  pJob4->nTicket.ToString();
+					flow4->Text = pJob4->nTicket.ToString();
 				}
 				else
 				{
 					silo4->Text = "null";
-					flow4->Text =  "null";
+					flow4->Text = "null";
 				}
-				
+
 				//flow4->Text = fLoad4.ToString();
 
 				cnt4->Text = nDelay4.ToString();
@@ -11039,72 +11049,72 @@ private:
 				lane2StatLB->Text = "S - " + b.ToString();
 				lane3StatLB->Text = "S - " + c.ToString();
 				lane4StatLB->Text = "S - " + d.ToString();
-				if(target1->Text != "")// || target2->Text != "")
+				if (target1->Text != "")// || target2->Text != "")
 				{
 					nTruckTarget1 = Convert::ToDouble(target1->Text);
-//					nTruckTarget2 = Convert::ToDouble(target2->Text);
-				//	Scl_Out_EU = int( nTruckTarget);
-				//	Scl_Out_EU = int(((nTruckTarget - MIN_WEIGHT)/(MAX_WEIGHT - MIN_WEIGHT))*(SCL_MAX - SCL_MIN) + SCL_MIN);
-//					switch(psIni->sLog1.nSilo)
+					//					nTruckTarget2 = Convert::ToDouble(target2->Text);
+					//	Scl_Out_EU = int( nTruckTarget);
+					//	Scl_Out_EU = int(((nTruckTarget - MIN_WEIGHT)/(MAX_WEIGHT - MIN_WEIGHT))*(SCL_MAX - SCL_MIN) + SCL_MIN);
+					//					switch(psIni->sLog1.nSilo)
 
-					if(psIni->bSendBitWise && nTruckTarget1 >0)
+					if (psIni->bSendBitWise && nTruckTarget1 >0)
 
 					{
-						DecimalToBinaryIO(int(truckBar1->Maximum*2000), psIni->sLog1.nSilo);	//DC 4.0.0 send BitWise
+						DecimalToBinaryIO(int(truckBar1->Maximum * 2000), psIni->sLog1.nSilo);	//DC 4.0.0 send BitWise
 					}
 					{
-//						psIni->nSclOutEU[0] = nTruckTarget1;//TruckMax2ScaledValue(nTruckTarget1);
-//						psIni->nSclOutEU[1] = nTruckTarget2;//CartMax2ScaledValue(nTruckTarget2);
+						//						psIni->nSclOutEU[0] = nTruckTarget1;//TruckMax2ScaledValue(nTruckTarget1);
+						//						psIni->nSclOutEU[1] = nTruckTarget2;//CartMax2ScaledValue(nTruckTarget2);
 					}
 				}
 
 
 			}
-			
+
 			//DC 4.0.1 monitor keep alive output from PDM system
-			if(psIni->bSendBitWise)
+			if (psIni->bSendBitWise)
 			{
-				if((psIni->nWpoints & psIni->uKeepAliveO) > 0 && nKeepAliveTimeOn > psIni->nKeepOnTime)
+				if ((psIni->nWpoints & psIni->uKeepAliveO) > 0 && nKeepAliveTimeOn > psIni->nKeepOnTime)
 				{
 					psIni->nWpoints &= ~psIni->uKeepAliveO;		//turn off keep alive
 					nKeepAliveTimeOff = 0;
 				}
-				else if(nKeepAliveTimeOff > psIni->nKeepOffTime)
+				else if (nKeepAliveTimeOff > psIni->nKeepOffTime)
 				{
 					psIni->nWpoints |= psIni->uKeepAliveO;		//turn on keep alive
 					nKeepAliveTimeOff = 0;
 					nKeepAliveTimeOn = 0;
 				}
-				nKeepAliveTimeOn ++;
-				nKeepAliveTimeOff ++;
+				nKeepAliveTimeOn++;
+				nKeepAliveTimeOff++;
 			}
 
 			resetBt1->Enabled = target1->Text != "";	//DC 4.0.5
 			resetBt2->Enabled = target2->Text != "";	//DC 4.0.5
 			resetBt3->Enabled = target3->Text != "";	//DC 4.0.5
 			resetBt4->Enabled = target4->Text != "";	//DC 4.0.5
-			
-//DC 4.1.2			if(pAll->eAsType == A_REMOTE)				//DC 4.1.1
-//DC 4.1.2				target4->Enabled = false;
+
+														//DC 4.1.2			if(pAll->eAsType == A_REMOTE)				//DC 4.1.1
+														//DC 4.1.2				target4->Enabled = false;
 
 
-			//DC 4.1.0 plant1 start -------------------------------------------
-			if(pAll->eAsType != A_REMOTE)
+														//DC 4.1.0 plant1 start -------------------------------------------
+			if (pAll->eAsType != A_REMOTE)
 			{
-				if(psIni->sLog1.nCopy > 0)					//DC 4.0.3
+				if (psIni->sLog1.nCopy > 0)					//DC 4.0.3
 					numCopy1->Value = psIni->sLog1.nCopy;
 				else
 					numCopy1->Value = numCopy1->Value;		//DC 4.0.4
 
 				int nCopies = (int)numCopy1->Value;		//DC 4.0.2
 
-				// plant 1 ///////////////////////////////////////////////////
-				if(psIni->bPdmPlc && ((psIni->nRpoints & psIni->asSilos[psIni->sLog1.nSilo-1].uHoldI) > 0 || !((psIni->nRpoints & psIni->uKeepAliveI) > 0))) //DC 4.0.1 //DC 4.0.0
+														// plant 1 ///////////////////////////////////////////////////
+				if (psIni->bPdmPlc && ((psIni->nRpoints & psIni->asSilos[psIni->sLog1.nSilo - 1].uHoldI) > 0 || !((psIni->nRpoints & psIni->uKeepAliveI) > 0))) //DC 4.0.1 //DC 4.0.0
 					psIni->bHold1 = true;
 				else
 					psIni->bHold1 = false;
-				
-				switch(psIni->sLog1.eState)
+
+				switch (psIni->sLog1.eState)
 				{
 				case S_IDLE:
 					nDelay1 = 0;		// reset delay timer
@@ -11113,15 +11123,15 @@ private:
 					truckBar1->Pct = 0;	//DC 4.0.0
 					fTarget1 = 0;		//DC 4.0.0
 					bStopAdd1 = false;	//DC 4.0.0
-					if(!psIni->bTest && !psIni->bSendBitWise)
+					if (!psIni->bTest && !psIni->bSendBitWise)
 						psIni->nSclOutEU[0] = 0;		//DC 4.0.0 set analog output value to 0
 					break;
 
 				case S_NEXT:
-					if(!((psIni->nWpoints & psIni->uSendTargetO) > 0) && ((psIni->nRpoints & psIni->uLaneTareI[0]) > 0))	//DC 4.0.1
+					if (!((psIni->nWpoints & psIni->uSendTargetO) > 0) && ((psIni->nRpoints & psIni->uLaneTareI[0]) > 0))	//DC 4.0.1
 					{
 						bTruck1 = true;											//DC 4.0.1
-						if(readyBt1->Enabled != true)							//DC 4.0.8
+						if (readyBt1->Enabled != true)							//DC 4.0.8
 							psIni->sLog1.fTruckTare = psIni->sScale1.dValue;	//DC 4.0.1
 						readyBt1->Enabled = true;
 						readyBt1->BackColor = COL_PGREEN;
@@ -11134,13 +11144,13 @@ private:
 					break;
 
 				case S_READY:
-					if(!psIni->bSendBitWise)
+					if (!psIni->bSendBitWise)
 						psIni->nSclOutEU[0] = truckBar1->Maximum;		//DC 4.0.0 set analog output value
 
-					if(psIni->bBotScale)
+					if (psIni->bBotScale)
 						fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
 
-					if(psIni->bPdmPlc && !psIni->bSendBitWise && (psIni->nRpoints & psIni->asSilos[psIni->sLog1.nSilo-1].uDropReadyI) > 0)
+					if (psIni->bPdmPlc && !psIni->bSendBitWise && (psIni->nRpoints & psIni->asSilos[psIni->sLog1.nSilo - 1].uDropReadyI) > 0)
 					{
 						dropBt1->Enabled = true;
 						dropBt1->BackColor = COL_PGREEN;
@@ -11155,180 +11165,180 @@ private:
 
 					//=========================================================================
 				case S_SAFE:
-					if((clock() - tSafeA) >= psIni->nSafeTime)	
-						setState1(S_DROP);	
+					if ((clock() - tSafeA) >= psIni->nSafeTime)
+						setState1(S_DROP);
 					break;
 
 					//------------------------------------------------------------------------
 				case S_DROP:
-					if(testHold1()) return;			//DC 4.0.0
-					// pulse drop button
+					if (testHold1()) return;			//DC 4.0.0
+														// pulse drop button
 					nBlink1 = ++nBlink1 & 3;
-					if(nBlink1 > 1)
+					if (nBlink1 > 1)
 						dropBt1->BackColor = COL_GREEN;
 					else
-						dropBt1->BackColor = COL_PGREEN;	
+						dropBt1->BackColor = COL_PGREEN;
 
-					if(psIni->sScale1.dValue == fTmpScale1)
+					if (psIni->sScale1.dValue == fTmpScale1)
 					{
 						nTmpCnt1++;
-						if(nTmpCnt1 > psIni->nScaleIdle)
+						if (nTmpCnt1 > psIni->nScaleIdle)
 						{
 							setState1(S_HOLD_SETTLE);
-							MessageBox::Show("Scale is IDLE, lane put on HOLD", "Lane A", 
+							MessageBox::Show("Scale is IDLE, lane put on HOLD", "Lane A",
 								MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
 						}
 					}
 					else
 					{
 						fTmpScale1 = psIni->sScale1.dValue;
-						nTmpCnt1 = 0; 
+						nTmpCnt1 = 0;
 					}
 
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 					{
 						// adapt -----------------------------------------------------------------
-						if(adapt1->Checked)
+						if (adapt1->Checked)
 							fFall1 = getAdapt(1, (uint)psIni->sScale1.dValue);
 
 						// final test
-						if(psIni->sScale1.dValue > (fNewTarget1 - fFall1 - fTol1))
+						if (psIni->sScale1.dValue > (fNewTarget1 - fFall1 - fTol1))
 						{
 							fCumTarget1 += fTarget1;
 							setState1(S_SETTLE);
 						}
 					}
-					else	
+					else
 					{
 						fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
 						truckBar1->Value = fLoad1;
-						truckBar1->Pct = (int)((fTarget1-fLoad1)/fTarget1)*100;	//DC 4.0.0
-						
-						if(!psIni->bPdmPlc)
+						truckBar1->Pct = (int)((fTarget1 - fLoad1) / fTarget1) * 100;	//DC 4.0.0
+
+						if (!psIni->bPdmPlc)
 						{
 							// adapt 
-							if(adapt1->Checked)
+							if (adapt1->Checked)
 								fFall1 = getAdapt(psIni->sLog1.nSilo, (uint)fLoad1);
 
 							// final test
-							if(fLoad1 >= (fCumTarget1 - fFall1 - fTol1))
+							if (fLoad1 >= (fCumTarget1 - fFall1 - fTol1))
 								setState1(S_SETTLE);
 						}
-						else if(!psIni->bSendTarget && !psIni->bSendBitWise)
+						else if (!psIni->bSendTarget && !psIni->bSendBitWise)
 						{
-	//						 switch(psIni->sLog1.nSilo)
-							 { 
-								 if(fTarget1-fLoad1 >= fTarget1 * psIni->asSilos[psIni->sLog1.nSilo-1].nFlowRatePct1/100)
-								 {
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
-								 }
-								 else if(fTarget1-fLoad1 >= fTarget1 * psIni->asSilos[psIni->sLog1.nSilo-1].nFlowRatePct2/100)
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
-								 }
-								 else if(fTarget1-fLoad1 >= fTarget1 * psIni->asSilos[psIni->sLog1.nSilo-1].nFlowRatePct3/100)
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
-								 }
-								 else
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
-								 }
+							//						 switch(psIni->sLog1.nSilo)
+							{
+								if (fTarget1 - fLoad1 >= fTarget1 * psIni->asSilos[psIni->sLog1.nSilo - 1].nFlowRatePct1 / 100)
+								{
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
+								}
+								else if (fTarget1 - fLoad1 >= fTarget1 * psIni->asSilos[psIni->sLog1.nSilo - 1].nFlowRatePct2 / 100)
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
+								}
+								else if (fTarget1 - fLoad1 >= fTarget1 * psIni->asSilos[psIni->sLog1.nSilo - 1].nFlowRatePct3 / 100)
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
+								}
+								else
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
+								}
 
-								 if(fLoad1 >= (fTarget1 - psIni->asSilos[psIni->sLog1.nSilo-1].fFall - fTol1))
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
+								if (fLoad1 >= (fTarget1 - psIni->asSilos[psIni->sLog1.nSilo - 1].fFall - fTol1))
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
 									setState1(S_SETTLE_PLC);
-								 }
+								}
 
-								 if(nDelay1 == 0 && psIni->asSilos[psIni->sLog1.nSilo-1].nDelayPct > 0 && psIni->asSilos[psIni->sLog1.nSilo-1].nDelayTime > 0)
-									 {
-										 if(fTarget1-fLoad1 <= fTarget1 * psIni->asSilos[psIni->sLog1.nSilo-1].nDelayPct/100)
-										 {
-											psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate1O;
-											psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate2O;
-											psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo-1].uFlowRate3O;
-											setState1(S_DELAY_PLC);
-										 }
-									 }
+								if (nDelay1 == 0 && psIni->asSilos[psIni->sLog1.nSilo - 1].nDelayPct > 0 && psIni->asSilos[psIni->sLog1.nSilo - 1].nDelayTime > 0)
+								{
+									if (fTarget1 - fLoad1 <= fTarget1 * psIni->asSilos[psIni->sLog1.nSilo - 1].nDelayPct / 100)
+									{
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate1O;
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate2O;
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog1.nSilo - 1].uFlowRate3O;
+										setState1(S_DELAY_PLC);
+									}
+								}
 
-							 }
+							}
 
 						}
 					}
 
-					
-					if(psIni->bPdmPlc && psIni->bSendBitWise) 
+
+					if (psIni->bPdmPlc && psIni->bSendBitWise)
 					{
 						//DC 4.0.0 wait for complete input from PDM
-						if((psIni->nRpoints & psIni->asSilos[psIni->sLog1.nSilo-1].uDoneI) > 0)
+						if ((psIni->nRpoints & psIni->asSilos[psIni->sLog1.nSilo - 1].uDoneI) > 0)
 							setState1(S_SETTLE_PLC);
 						//else if (fLoad1 >= (fTarget1 + psIni->asSilos[psIni->sLog1.nSilo-1].dAddTol))
 						//	setState1(S_HOLD_DROP);
 					}
 					break;
-					
-						// delay ------------------------------------------------------
-					case S_DELAY_PLC:
-						if(nDelay1 < psIni->asSilos[psIni->sLog1.nSilo-1].nDelayTime*10)
+
+					// delay ------------------------------------------------------
+				case S_DELAY_PLC:
+					if (nDelay1 < psIni->asSilos[psIni->sLog1.nSilo - 1].nDelayTime * 10)
+					{
+						nDelay1++;
+						switch (psIni->sLog1.nSilo)
 						{
-							nDelay1++;
-							switch(psIni->sLog1.nSilo)
-							 {
-							 case 1: siloBar1->Delay = true; siloBar1->Count = psIni->asSilos[psIni->sLog1.nSilo-1].nDelayTime - nDelay1/10;	break;
-							 case 2: siloBar12->Delay = true; siloBar12->Count = psIni->asSilos[psIni->sLog1.nSilo-1].nDelayTime - nDelay1/10;	break;
-							 case 3: siloBar13->Delay = true; siloBar13->Count = psIni->asSilos[psIni->sLog1.nSilo-1].nDelayTime - nDelay1/10;	break;
-							 }
+						case 1: siloBar1->Delay = true; siloBar1->Count = psIni->asSilos[psIni->sLog1.nSilo - 1].nDelayTime - nDelay1 / 10;	break;
+						case 2: siloBar12->Delay = true; siloBar12->Count = psIni->asSilos[psIni->sLog1.nSilo - 1].nDelayTime - nDelay1 / 10;	break;
+						case 3: siloBar13->Delay = true; siloBar13->Count = psIni->asSilos[psIni->sLog1.nSilo - 1].nDelayTime - nDelay1 / 10;	break;
 						}
-						else
+					}
+					else
+					{
+						switch (psIni->sLog1.nSilo)
 						{
-							switch(psIni->sLog1.nSilo)
-							 {
-							 case 1: siloBar1->Delay = false; siloBar1->Count = 0;	break;
-							 case 2: siloBar12->Delay = false; siloBar12->Count = 0;	break;
-							 case 3: siloBar13->Delay = false; siloBar13->Count = 0;	break;
-							 }
-							setState1(S_DROP);
+						case 1: siloBar1->Delay = false; siloBar1->Count = 0;	break;
+						case 2: siloBar12->Delay = false; siloBar12->Count = 0;	break;
+						case 3: siloBar13->Delay = false; siloBar13->Count = 0;	break;
 						}
-						break;
+						setState1(S_DROP);
+					}
+					break;
 
 					//-------------------------------------------------------------
 				case S_SETTLE_PLC:
-					if(nSettle1 < psIni->nScaleSettle)
+					if (nSettle1 < psIni->nScaleSettle)
 						nSettle1++;
 					else
 					{
-						if(!psIni->bSendBitWise)
+						if (!psIni->bSendBitWise)
 						{
 							fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
 							truckBar1->Value = fLoad1;
-							truckBar1->Pct = (int)((fTarget1-fLoad1)/fTarget1)*100;	//DC 4.0.0
-							if(fLoad1 >= psIni->sLog1.sT.load_size - fTol1)
-								setState1(S_UPDATE);	
+							truckBar1->Pct = (int)((fTarget1 - fLoad1) / fTarget1) * 100;	//DC 4.0.0
+							if (fLoad1 >= psIni->sLog1.sT.load_size - fTol1)
+								setState1(S_UPDATE);
 							/*else if(fLoad1 < psIni->sLog1.sT.load_size - fTol1)
 							{
-								setState1(S_DROP);
+							setState1(S_DROP);
 							}*/
 							else
 							{
-								if(psIni->sInv.bJog1)
-		//							setState1(S_ADD);	
+								if (psIni->sInv.bJog1)
+									//							setState1(S_ADD);	
 									addBt1_Click(nullptr, nullptr);
 								else
 								{
 									addBt1->BackColor = COL_CHARGE;
 									addBt1->Enabled = true;
-									setState1(S_ADD_WAIT);	
+									setState1(S_ADD_WAIT);
 								}
 							}
 						}
@@ -11339,18 +11349,18 @@ private:
 
 					//-------------------------------------------------------------
 				case S_SETTLE:
-					if(nSettle1 < psIni->nScaleSettle)
+					if (nSettle1 < psIni->nScaleSettle)
 						nSettle1++;
 					else
 					{
 						subInv(1);
-						if(!psIni->bBotScale)					// upper scale
+						if (!psIni->bBotScale)					// upper scale
 						{
 							// update fall diff --------------------------------
 							fFall = fFall1 + psIni->sScale1.dValue - fTarget1;
 							updateFall(1, (uint)fTarget1, fFall);
 							updateAdapt(1, (uint)fAdapt1, psIni->sScale1.dValue - fAdapt1);
-							
+
 							fLoad1 += psIni->sScale1.dValue;
 							setState1(S_DISCH_WAIT);
 						}
@@ -11358,63 +11368,63 @@ private:
 						{
 							fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
 							truckBar1->Value = fLoad1;
-							truckBar1->Pct =(int) ((fTarget1-fLoad1)/fTarget1)*100;	//DC 4.0.0
+							truckBar1->Pct = (int)((fTarget1 - fLoad1) / fTarget1) * 100;	//DC 4.0.0
 
-							// update fall diff --------------------------------
+																							// update fall diff --------------------------------
 							fFall = fFall1 + fLoad1 - fCumTarget1;
 							updateFall(psIni->sLog1.nSilo, (uint)fTarget1, fFall);
-							updateAdapt(psIni->sLog1.nSilo, (uint)fAdapt1, fLoad1 - fAdapt1);					
+							updateAdapt(psIni->sLog1.nSilo, (uint)fAdapt1, fLoad1 - fAdapt1);
 
-							if(fLoad1 >= psIni->sLog1.sT.load_size - fTol1)
-								setState1(S_UPDATE);	
-							else if(fCumTarget1 < psIni->sLog1.sT.load_size)
+							if (fLoad1 >= psIni->sLog1.sT.load_size - fTol1)
+								setState1(S_UPDATE);
+							else if (fCumTarget1 < psIni->sLog1.sT.load_size)
 							{
 								setState1(S_READY);
 							}
 							else
 							{
-								if(psIni->sInv.bJog1)
-	//								setState1(S_ADD);	
+								if (psIni->sInv.bJog1)
+									//								setState1(S_ADD);	
 									addBt1_Click(nullptr, nullptr);
 								else
 								{
 									addBt1->BackColor = COL_CHARGE;
 									addBt1->Enabled = true;
-									setState1(S_ADD_WAIT);	
+									setState1(S_ADD_WAIT);
 								}
 							}
-						}						
+						}
 					}
 					break;
 
 					//------------------------------------------------------------------------
 				case S_ADD_WAIT:
-					if(psIni->bAutoAdd && !bStopAdd1)
-							addBt1_Click(nullptr, nullptr);
+					if (psIni->bAutoAdd && !bStopAdd1)
+						addBt1_Click(nullptr, nullptr);
 					break;
 
 				case S_ADD:
-						if(testHold1()) return;			//DC 4.0.0
-						fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;	//DC 4.0.0
-						truckBar1->Value = fLoad1;									//DC 4.0.0
-						truckBar1->Pct =(int) ((fTarget1-fLoad1)/fTarget1)*100;			//DC 4.0.0
-						switch(psIni->sLog1.nSilo)
-						{
-							case 1: siloBar1->Add = true;	break;
-							case 2: siloBar12->Add = true;	break;
-							case 3: siloBar13->Add = true;	break;
-						}
-					if(nTmpCnt1 < nJogA)
+					if (testHold1()) return;			//DC 4.0.0
+					fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;	//DC 4.0.0
+					truckBar1->Value = fLoad1;									//DC 4.0.0
+					truckBar1->Pct = (int)((fTarget1 - fLoad1) / fTarget1) * 100;			//DC 4.0.0
+					switch (psIni->sLog1.nSilo)
+					{
+					case 1: siloBar1->Add = true;	break;
+					case 2: siloBar12->Add = true;	break;
+					case 3: siloBar13->Add = true;	break;
+					}
+					if (nTmpCnt1 < nJogA)
 						nTmpCnt1++;
 					else
 					{
-						switch(psIni->sLog1.nSilo)
-							{
-								case 1: siloBar1->Add = false;	break;
-								case 2: siloBar12->Add = false;	break;
-								case 3: siloBar13->Add = false;	break;
-							}
-						if(psIni->bPdmPlc)
+						switch (psIni->sLog1.nSilo)
+						{
+						case 1: siloBar1->Add = false;	break;
+						case 2: siloBar12->Add = false;	break;
+						case 3: siloBar13->Add = false;	break;
+						}
+						if (psIni->bPdmPlc)
 							setState1(S_SETTLE_PLC);
 						else
 							setState1(S_ASETTLE);
@@ -11422,14 +11432,14 @@ private:
 					break;
 
 				case S_ASETTLE:
-					if(nTmpCnt1 < psIni->nScaleSettle)
+					if (nTmpCnt1 < psIni->nScaleSettle)
 						nTmpCnt1++;
 					else
 					{
 						subInv(1);
-						if(!psIni->bBotScale)					// upper scale
+						if (!psIni->bBotScale)					// upper scale
 						{
-							fLoad1 += psIni->sScale1.dValue - fTmpScale1; 
+							fLoad1 += psIni->sScale1.dValue - fTmpScale1;
 							addBt1->Enabled = false;
 						}
 						setState1(S_DISCH_WAIT);
@@ -11438,32 +11448,32 @@ private:
 
 					//------------------------------------------------------------------------
 				case S_DISCH_WAIT:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 					{
-						if((fCumTarget1 == psIni->sLog1.sT.load_size)
-						&& (fLoad1 < (psIni->sLog1.sT.load_size - fTol1)))
+						if ((fCumTarget1 == psIni->sLog1.sT.load_size)
+							&& (fLoad1 < (psIni->sLog1.sT.load_size - fTol1)))
 						{
-							if(psIni->sInv.bJog1)
-								setState1(S_ADD);	
+							if (psIni->sInv.bJog1)
+								setState1(S_ADD);
 							else
 							{
 								addBt1->BackColor = COL_CHARGE;
 								addBt1->Enabled = true;
 							}
 						}
-						else if(psIni->sInv.bAutoDisch1)		
-							setState1(S_DISCH);	
+						else if (psIni->sInv.bAutoDisch1)
+							setState1(S_DISCH);
 					}
 					else
 					{
 						fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
 						truckBar1->Value = fLoad1;
-						truckBar1->Pct =(int) ((fTarget1-fLoad1)/fTarget1)*100;	//DC 4.0.0
+						truckBar1->Pct = (int)((fTarget1 - fLoad1) / fTarget1) * 100;	//DC 4.0.0
 
-						if(fLoad1 < (fCumTarget1 - fTol1))
+						if (fLoad1 < (fCumTarget1 - fTol1))
 						{
-							if(psIni->sInv.bJog1)
-								setState1(S_ADD);	
+							if (psIni->sInv.bJog1)
+								setState1(S_ADD);
 							else
 							{
 								addBt1->BackColor = COL_CHARGE;
@@ -11471,7 +11481,7 @@ private:
 							}
 						}
 						else
-							setState1(S_UPDATE);	
+							setState1(S_UPDATE);
 					}
 					break;
 
@@ -11479,49 +11489,49 @@ private:
 				case S_DISCH:
 					// pulse
 					nBlink1 = ++nBlink1 & 3;
-					if(nBlink1 > 1)
+					if (nBlink1 > 1)
 						dischBt1->BackColor = COL_GREEN;
 					else
-						dischBt1->BackColor = COL_PGREEN;	
+						dischBt1->BackColor = COL_PGREEN;
 
 					addBt1->Enabled = false;
-					truckBar1->Value = fLoad1-psIni->sScale1.dValue;
+					truckBar1->Value = fLoad1 - psIni->sScale1.dValue;
 
-					if(psIni->sScale1.dValue <= psIni->sScale1.fTolerance)
-						setState1(S_DSETTLE);	
+					if (psIni->sScale1.dValue <= psIni->sScale1.fTolerance)
+						setState1(S_DSETTLE);
 					break;
 
-				case S_DSETTLE:	 
-					truckBar1->Value = fLoad1-psIni->sScale1.dValue;
+				case S_DSETTLE:
+					truckBar1->Value = fLoad1 - psIni->sScale1.dValue;
 
-					if(nSettle1 > psIni->nScaleDisSettle)
+					if (nSettle1 > psIni->nScaleDisSettle)
 					{
-						if(psIni->sLog1.eStop != A_NOT)
+						if (psIni->sLog1.eStop != A_NOT)
 							setState1(S_ABORT);
-						else if(fCumTarget1 < psIni->sLog1.sT.load_size)
+						else if (fCumTarget1 < psIni->sLog1.sT.load_size)
 							setState1(S_READY);
-						else		
+						else
 							setState1(S_UPDATE);
-					}		
+					}
 					else
 						nSettle1++;
 					break;
 
 					//------------------------------------------------------------------------
 				case S_ABORT:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 						fLoad1 += psIni->sScale1.dValue;
 					else
 						fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
 
-					setState1(S_UPDATE);	
+					setState1(S_UPDATE);
 					break;
 
 				case S_UPDATE:
 					subInv(1);
 					psIni->sLog1.bPrintTarget = printTarget1->Checked || (psIni->sLog1.eStop == A_TARGET);
 
-					if(psIni->sLog1.eStop == A_NOT)
+					if (psIni->sLog1.eStop == A_NOT)
 					{
 						psIni->sLog1.eJobStatus = S_OK1;
 						pJob1->eStatus = S_OK1;
@@ -11529,10 +11539,10 @@ private:
 					pJob1->fLoad = fLoad1;
 					pJob1->nSilo = psIni->sLog1.nSilo;
 
-					if(psIni->sLog1.bPrintTarget == true)
+					if (psIni->sLog1.bPrintTarget == true)
 						fLoad1 = psIni->sLog1.sT.load_size;
 
-					if(taxExempt1->Checked)
+					if (taxExempt1->Checked)
 						psIni->sLog1.fTax = 0;
 
 					psIni->sLog1.tTimeDone = DateTime::Now.ToBinary();
@@ -11553,7 +11563,7 @@ private:
 					psIni->bSaveInv = true;
 
 					// dbase ---------------------------------------------
-					if(bAuto1)
+					if (bAuto1)
 					{
 						pDbase = gcnew Dbase();
 						pDbase->nPlant = pJob1->nPlant;
@@ -11566,20 +11576,20 @@ private:
 						pDbase->pstCustCode = gcnew String(psIni->sLog1.sT.customer_code);
 						pDbase->pstTruck = gcnew String(pJob1->stTruck);					//DC 4.1.1
 
-						//if(psIni->nDbaseOk > 0) 
-						//	pAll->qDbase->Enqueue(pDbase);
-						//else
-						//	pAll->qDbaseBad->Enqueue(pDbase);
+																							//if(psIni->nDbaseOk > 0) 
+																							//	pAll->qDbase->Enqueue(pDbase);
+																							//else
+																							//	pAll->qDbaseBad->Enqueue(pDbase);
 					}
 
 					// printer --------------------------------------------
-					while(nCopies > 0)									//DC 4.0.2
+					while (nCopies > 0)									//DC 4.0.2
 					{
 						poLog->printTicket(&psIni->sLog1, nPrinterA, false);
 						nCopies--;
 					}
 
-					if(psIni->b2ndPrinterOk1 && laneA2ndCB->Checked)	//DC 4.0.2
+					if (psIni->b2ndPrinterOk1 && laneA2ndCB->Checked)	//DC 4.0.2
 						poLog->printTicket(&psIni->sLog1, n2ndPrinterA, false);
 
 					poLog->log(C_UPDATE, &psIni->sLog1, pJob1->nLogIdx);
@@ -11589,23 +11599,23 @@ private:
 					pAll->lOld->Add(pJob1);
 					pAll->nDone1++;
 
-					if((psIni->sLog1.eStop == A_TARGET) 
-						|| (psIni->sLog1.eStop == A_VOID) 
+					if ((psIni->sLog1.eStop == A_TARGET)
+						|| (psIni->sLog1.eStop == A_VOID)
 						|| (psIni->nHornTime == 0))
-						setState1(S_IDLE);	
+						setState1(S_IDLE);
 					else
-						setState1(S_HORN);	 
+						setState1(S_HORN);
 					break;
 
 				case S_HORN:
-					if(nTmpCnt1 < psIni->nHornTime)
+					if (nTmpCnt1 < psIni->nHornTime)
 						++nTmpCnt1;
 					else
-						setState1(S_IDLE);	 
+						setState1(S_IDLE);
 					break;
 
 				case S_HOLD_SETTLE:
-					if(nTmpCnt1 < psIni->nScaleSettle)
+					if (nTmpCnt1 < psIni->nScaleSettle)
 						nTmpCnt1++;
 					else
 					{
@@ -11630,7 +11640,7 @@ private:
 					break;
 
 				case S_HOLD:
-					if(psIni->bHold1 == false)
+					if (psIni->bHold1 == false)
 					{
 						pauseBt1->BackColor = COL_HOLDK;
 						setState1(ePrevHold1);
@@ -11638,53 +11648,53 @@ private:
 					break;
 
 				default:							// PAUSE
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 						fLoad1 = psIni->sScale1.dValue + fCumTarget1;
-					else		
+					else
 						fLoad1 = psIni->sScale1.dValue - psIni->sLog1.fTruckTare;
 					break;
 				}
 
 				//-----------------------------------------------------------inventory
-				if(psIni->bBotScale && !psIni->bSendTarget && !psIni->bSendBitWise)
+				if (psIni->bBotScale && !psIni->bSendTarget && !psIni->bSendBitWise)
 				{
-					if(psIni->bTickAddress)
+					if (psIni->bTickAddress)
 					{
-						if((psIni->nRpoints & J_FILL1) > 0)
+						if ((psIni->nRpoints & J_FILL1) > 0)
 						{
-							if(!bFill1)
+							if (!bFill1)
 							{
 								bFill1 = true;
 
-								if((psIni->nRpoints & J_FILL9) > 0)
+								if ((psIni->nRpoints & J_FILL9) > 0)
 								{
 									addInv(9);					// update silo 9
 								}
-								else if((psIni->nRpoints & J_FILL8) > 0)
+								else if ((psIni->nRpoints & J_FILL8) > 0)
 								{
 									addInv(8);					// update silo 8
 								}
-								else if((psIni->nRpoints & J_FILL7) > 0)
+								else if ((psIni->nRpoints & J_FILL7) > 0)
 								{
 									addInv(7);					// update silo 7
 								}
-								else if((psIni->nRpoints & J_FILL6) > 0)
+								else if ((psIni->nRpoints & J_FILL6) > 0)
 								{
 									addInv(6);					// update silo 6
 								}
-								else if((psIni->nRpoints & J_FILL5) > 0)
+								else if ((psIni->nRpoints & J_FILL5) > 0)
 								{
 									addInv(5);					// update silo 5
 								}
-								else if((psIni->nRpoints & J_FILL4) > 0)
+								else if ((psIni->nRpoints & J_FILL4) > 0)
 								{
 									addInv(4);					// update silo 4
 								}
-								else if((psIni->nRpoints & J_FILL3) > 0)
+								else if ((psIni->nRpoints & J_FILL3) > 0)
 								{
 									addInv(3);					// update silo 3
 								}
-								else if((psIni->nRpoints & J_FILL2) > 0)
+								else if ((psIni->nRpoints & J_FILL2) > 0)
 								{
 									addInv(2);					// update silo 2
 								}
@@ -11699,9 +11709,9 @@ private:
 					}
 					else
 					{
-						if((psIni->nRpoints & J_FILL1) > 0)
+						if ((psIni->nRpoints & J_FILL1) > 0)
 						{
-							if(!bFill1)
+							if (!bFill1)
 							{
 								bFill1 = true;
 								addInv(1);						// update silo
@@ -11710,9 +11720,9 @@ private:
 						else
 							bFill1 = false;
 
-						if((psIni->nRpoints & J_FILL2) > 0)
+						if ((psIni->nRpoints & J_FILL2) > 0)
 						{
-							if(!bFill2)
+							if (!bFill2)
 							{
 								bFill2 = true;
 								addInv(2);						// update silo
@@ -11721,9 +11731,9 @@ private:
 						else
 							bFill2 = false;
 
-						if((psIni->nRpoints & J_FILL3) > 0)
+						if ((psIni->nRpoints & J_FILL3) > 0)
 						{
-							if(!bFill3)
+							if (!bFill3)
 							{
 								bFill3 = true;
 								addInv(3);						// update silo
@@ -11733,11 +11743,11 @@ private:
 							bFill3 = false;
 					}
 				}
-				else if(!psIni->bSendTarget && !psIni->bSendBitWise)
+				else if (!psIni->bSendTarget && !psIni->bSendBitWise)
 				{
-					if((psIni->nRpoints & I_FILL1) > 0)
+					if ((psIni->nRpoints & I_FILL1) > 0)
 					{
-						if(!bFill1)
+						if (!bFill1)
 						{
 							bFill1 = true;
 							addInv(1);						// update Silo 1
@@ -11753,25 +11763,25 @@ private:
 				ticketNum1->Text = pAll->nTickets1.ToString();
 				man1->Text = pAll->nDone1.ToString();
 
-				if(psIni->bBotScale)
+				if (psIni->bBotScale)
 				{
-					if(!psIni->bSendTarget && !psIni->bSendBitWise)
+					if (!psIni->bSendTarget && !psIni->bSendBitWise)
 					{
-						if(psIni->bTickAddress)
+						if (psIni->bTickAddress)
 						{
 							fill1->Visible = ((psIni->nRpoints & J_FILL1) > 0)
-										  && ((psIni->nRpoints & J_FILL2) == 0) 
-										  && ((psIni->nRpoints & J_FILL3) == 0)
-										  && ((psIni->nRpoints & J_FILL4) == 0) 
-										  && ((psIni->nRpoints & J_FILL5) == 0)
-										  && ((psIni->nRpoints & J_FILL6) == 0)
-										  && ((psIni->nRpoints & J_FILL7) == 0) 
-										  && ((psIni->nRpoints & J_FILL8) == 0)
-										  && ((psIni->nRpoints & J_FILL9) == 0);
-							fill12->Visible =((psIni->nRpoints & J_FILL1) > 0) 
-										  && ((psIni->nRpoints & J_FILL2) > 0);
-							fill13->Visible =((psIni->nRpoints & J_FILL1) > 0) 
-										  && ((psIni->nRpoints & J_FILL3) > 0);
+								&& ((psIni->nRpoints & J_FILL2) == 0)
+								&& ((psIni->nRpoints & J_FILL3) == 0)
+								&& ((psIni->nRpoints & J_FILL4) == 0)
+								&& ((psIni->nRpoints & J_FILL5) == 0)
+								&& ((psIni->nRpoints & J_FILL6) == 0)
+								&& ((psIni->nRpoints & J_FILL7) == 0)
+								&& ((psIni->nRpoints & J_FILL8) == 0)
+								&& ((psIni->nRpoints & J_FILL9) == 0);
+							fill12->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL2) > 0);
+							fill13->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL3) > 0);
 						}
 						else
 						{
@@ -11795,7 +11805,7 @@ private:
 						siloBar13->Open = (psIni->nWpoints & psIni->asSilos[2].uDropO) > 0;
 					}
 
-					if(pAll->eAsType == A_PROD)
+					if (pAll->eAsType == A_PROD)
 						bTruck1 = psIni->sScale1.dValue > psIni->fBotScaleTruck;
 				}
 				else
@@ -11809,29 +11819,29 @@ private:
 				truckBar1->Visible = bTruck1;
 				truckPic1->Visible = bTruck1;
 
-				if(psIni->bTest)
+				if (psIni->bTest)
 				{
 					scale1->Text = gcnew String((char *)psIni->sScale1.acData);
-	//				cnt1->Text = psIni->sScale1.nClock.ToString();
+					//				cnt1->Text = psIni->sScale1.nClock.ToString();
 				}
 			}	//DC 4.1.0 plant1 End
 
-			// plant 2 ///////////////////////////////////////////////////
-			if(bSecond && pAll->eAsType != A_REMOTE)
+				// plant 2 ///////////////////////////////////////////////////
+			if (bSecond && pAll->eAsType != A_REMOTE)
 			{
-				if(psIni->sLog2.nCopy > 0)					//DC 4.0.3
+				if (psIni->sLog2.nCopy > 0)					//DC 4.0.3
 					numCopy2->Value = psIni->sLog2.nCopy;
 				else
 					numCopy2->Value = numCopy2->Value;		//DC 4.0.4
 
 				int nCopies2 = (int)numCopy2->Value;		//DC 4.0.2
 
-				if(psIni->bPdmPlc && ((psIni->nRpoints & psIni->asSilos[psIni->sLog2.nSilo-1].uHoldI) > 0 || !((psIni->nRpoints & psIni->uKeepAliveI) > 0))) //DC 4.0.1 //DC 4.0.0
+				if (psIni->bPdmPlc && ((psIni->nRpoints & psIni->asSilos[psIni->sLog2.nSilo - 1].uHoldI) > 0 || !((psIni->nRpoints & psIni->uKeepAliveI) > 0))) //DC 4.0.1 //DC 4.0.0
 					psIni->bHold2 = true;
 				else
 					psIni->bHold2 = false;
 
-				switch(psIni->sLog2.eState)
+				switch (psIni->sLog2.eState)
 				{
 				case S_IDLE:
 					nDelay2 = 0;		// reset delay timer
@@ -11840,15 +11850,15 @@ private:
 					truckBar2->Pct = 0;	//DC 4.0.0
 					fTarget2 = 0;		//DC 4.0.0
 					bStopAdd2 = false;	//DC 4.0.0
-					if(!psIni->bTest && !psIni->bSendBitWise)
+					if (!psIni->bTest && !psIni->bSendBitWise)
 						psIni->nSclOutEU[1] = 0;		//DC 4.0.0 set analog output value to 0
 					break;
 
 				case S_NEXT:
-					if(!((psIni->nWpoints & psIni->uSendTargetO) > 0) && ((psIni->nRpoints & psIni->uLaneTareI[1]) > 0))	//DC 4.0.1
+					if (!((psIni->nWpoints & psIni->uSendTargetO) > 0) && ((psIni->nRpoints & psIni->uLaneTareI[1]) > 0))	//DC 4.0.1
 					{
 						bTruck2 = true;											//DC 4.0.1
-						if(readyBt2->Enabled != true)							//DC 4.0.8
+						if (readyBt2->Enabled != true)							//DC 4.0.8
 							psIni->sLog2.fTruckTare = psIni->sScale2.dValue;		//DC 4.0.1
 						readyBt2->Enabled = true;
 						readyBt2->BackColor = COL_PGREEN;
@@ -11861,13 +11871,13 @@ private:
 					break;
 
 				case S_READY:
-					if(!psIni->bSendBitWise)
+					if (!psIni->bSendBitWise)
 						psIni->nSclOutEU[1] = truckBar2->Maximum;		//DC 4.0.0 set analog output value
 
-					if(psIni->bBotScale)					 
+					if (psIni->bBotScale)
 						fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
 
-					if(psIni->bPdmPlc && !psIni->bSendBitWise && (psIni->nRpoints & psIni->asSilos[psIni->sLog2.nSilo-1].uDropReadyI) > 0)
+					if (psIni->bPdmPlc && !psIni->bSendBitWise && (psIni->nRpoints & psIni->asSilos[psIni->sLog2.nSilo - 1].uDropReadyI) > 0)
 					{
 						dropBt2->Enabled = true;
 						dropBt2->BackColor = COL_PGREEN;
@@ -11880,181 +11890,181 @@ private:
 					}
 					break;
 
-				//=========================================================================
+					//=========================================================================
 				case S_SAFE:
-					if((clock() - tSafeB) >= psIni->nSafeTime)	
-						setState2(S_DROP);	
+					if ((clock() - tSafeB) >= psIni->nSafeTime)
+						setState2(S_DROP);
 					break;
 
 					//------------------------------------------------------------------------
 				case S_DROP:
-					if(testHold2()) return;			//DC 4.0.0
-					// pulse
+					if (testHold2()) return;			//DC 4.0.0
+														// pulse
 					nBlink2 = ++nBlink2 & 3;
-					if(nBlink2 > 1)
+					if (nBlink2 > 1)
 						dropBt2->BackColor = COL_GREEN;
 					else
-						dropBt2->BackColor = COL_PGREEN;	
+						dropBt2->BackColor = COL_PGREEN;
 
-					if(psIni->sScale2.dValue == fTmpScale2)
+					if (psIni->sScale2.dValue == fTmpScale2)
 					{
 						nTmpCnt2++;
-						if(nTmpCnt2 > psIni->nScaleIdle)
+						if (nTmpCnt2 > psIni->nScaleIdle)
 						{
 							setState2(S_HOLD_SETTLE);
-							MessageBox::Show("Scale is IDLE, put on HOLD", "Lane B", 
+							MessageBox::Show("Scale is IDLE, put on HOLD", "Lane B",
 								System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
 						}
 					}
 					else
 					{
 						fTmpScale2 = psIni->sScale2.dValue;
-						nTmpCnt2 = 0; 
+						nTmpCnt2 = 0;
 					}
 
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 					{
 						// adapt --------------------------------------------------
-						if(adapt2->Checked)
+						if (adapt2->Checked)
 							fFall2 = getAdapt(2, (uint)psIni->sScale2.dValue);
 
 						// final test
-						if(psIni->sScale2.dValue > (fNewTarget2 - fFall2 - fTol2))
+						if (psIni->sScale2.dValue > (fNewTarget2 - fFall2 - fTol2))
 						{
 							fCumTarget2 += fTarget2;
 							setState2(S_SETTLE);
 						}
 					}
-					else	
+					else
 					{
 						fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
 						truckBar2->Value = fLoad2;
-						truckBar2->Pct =(int) ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
+						truckBar2->Pct = (int)((fTarget2 - fLoad2) / fTarget2) * 100;	//DC 4.0.0
 
-						if(!psIni->bPdmPlc)
+						if (!psIni->bPdmPlc)
 						{
 							// adapt
-							if(adapt2->Checked)
+							if (adapt2->Checked)
 								fFall2 = getAdapt(pJob2->nSilo, (uint)fLoad2);
 
 							// final test
-							if(fLoad2 >= (fCumTarget2 - fFall2 - fTol2))
+							if (fLoad2 >= (fCumTarget2 - fFall2 - fTol2))
 								setState2(S_SETTLE);
 						}
-						else if(!psIni->bSendTarget && !psIni->bSendBitWise)
+						else if (!psIni->bSendTarget && !psIni->bSendBitWise)
 						{
-	//						 switch(psIni->sLog1.nSilo)
-							 { 
-								 if(fTarget2-fLoad2 >= fTarget2 * psIni->asSilos[psIni->sLog2.nSilo-1].nFlowRatePct1/100)
-								 {
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
-								 }
-								 else if(fTarget2-fLoad2 >= fTarget2 * psIni->asSilos[psIni->sLog2.nSilo-1].nFlowRatePct2/100)
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
-								 }
-								 else if(fTarget2-fLoad2 >= fTarget2 * psIni->asSilos[psIni->sLog2.nSilo-1].nFlowRatePct3/100)
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
-								 }
-								 else
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
-								 }
+							//						 switch(psIni->sLog1.nSilo)
+							{
+								if (fTarget2 - fLoad2 >= fTarget2 * psIni->asSilos[psIni->sLog2.nSilo - 1].nFlowRatePct1 / 100)
+								{
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
+								}
+								else if (fTarget2 - fLoad2 >= fTarget2 * psIni->asSilos[psIni->sLog2.nSilo - 1].nFlowRatePct2 / 100)
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
+								}
+								else if (fTarget2 - fLoad2 >= fTarget2 * psIni->asSilos[psIni->sLog2.nSilo - 1].nFlowRatePct3 / 100)
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
+								}
+								else
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
+								}
 
-								 if(fLoad2>= (fTarget2 - psIni->asSilos[psIni->sLog2.nSilo-1].fFall - fTol2))
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
+								if (fLoad2 >= (fTarget2 - psIni->asSilos[psIni->sLog2.nSilo - 1].fFall - fTol2))
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
 									setState2(S_SETTLE_PLC);
-								 }
+								}
 
-								 if(nDelay2 == 0 && psIni->asSilos[psIni->sLog2.nSilo-1].nDelayPct > 0 && psIni->asSilos[psIni->sLog2.nSilo-1].nDelayTime > 0)
-								 {
-									 if(fTarget2-fLoad2 <= fTarget2 * psIni->asSilos[psIni->sLog2.nSilo-1].nDelayPct/100)
-									 {
-										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate1O;
-										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate2O;
-										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo-1].uFlowRate3O;
+								if (nDelay2 == 0 && psIni->asSilos[psIni->sLog2.nSilo - 1].nDelayPct > 0 && psIni->asSilos[psIni->sLog2.nSilo - 1].nDelayTime > 0)
+								{
+									if (fTarget2 - fLoad2 <= fTarget2 * psIni->asSilos[psIni->sLog2.nSilo - 1].nDelayPct / 100)
+									{
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate1O;
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate2O;
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog2.nSilo - 1].uFlowRate3O;
 										setState2(S_DELAY_PLC);
-									 }
-								 }
+									}
+								}
 
-							 }
+							}
 
 						}
 					}
 
-					if(psIni->bPdmPlc && psIni->bSendBitWise) 
+					if (psIni->bPdmPlc && psIni->bSendBitWise)
 					{
 						//DC 4.0.0 wait for complete input from PDM
-						if((psIni->nRpoints & psIni->asSilos[psIni->sLog2.nSilo-1].uDoneI) > 0)
+						if ((psIni->nRpoints & psIni->asSilos[psIni->sLog2.nSilo - 1].uDoneI) > 0)
 							setState2(S_SETTLE_PLC);
 						//else if (fLoad1 >= (fTarget1 + psIni->asSilos[psIni->sLog1.nSilo-1].dAddTol))
 						//	setState1(S_HOLD_DROP);
 					}
 					break;
-					
+
 					// delay ------------------------------------------------------
 				case S_DELAY_PLC:
-					if(nDelay2 < psIni->asSilos[psIni->sLog2.nSilo-1].nDelayTime*10)
+					if (nDelay2 < psIni->asSilos[psIni->sLog2.nSilo - 1].nDelayTime * 10)
 					{
 						nDelay2++;
-						switch(psIni->sLog2.nSilo)
-						 {
-						 case 4: siloBar2->Delay = true; siloBar2->Count = psIni->asSilos[psIni->sLog2.nSilo-1].nDelayTime - nDelay2/10;	break;
-						 case 5: siloBar22->Delay = true; siloBar22->Count = psIni->asSilos[psIni->sLog2.nSilo-1].nDelayTime - nDelay2/10;	break;
-						 case 6: siloBar23->Delay = true; siloBar23->Count = psIni->asSilos[psIni->sLog2.nSilo-1].nDelayTime - nDelay2/10;	break;
-						 }
+						switch (psIni->sLog2.nSilo)
+						{
+						case 4: siloBar2->Delay = true; siloBar2->Count = psIni->asSilos[psIni->sLog2.nSilo - 1].nDelayTime - nDelay2 / 10;	break;
+						case 5: siloBar22->Delay = true; siloBar22->Count = psIni->asSilos[psIni->sLog2.nSilo - 1].nDelayTime - nDelay2 / 10;	break;
+						case 6: siloBar23->Delay = true; siloBar23->Count = psIni->asSilos[psIni->sLog2.nSilo - 1].nDelayTime - nDelay2 / 10;	break;
+						}
 					}
 					else
 					{
-						switch(psIni->sLog2.nSilo)
-						 {
-						 case 4: siloBar2->Delay = false; siloBar2->Count = 0;	break;
-						 case 5: siloBar22->Delay = false; siloBar22->Count = 0;	break;
-						 case 6: siloBar23->Delay = false; siloBar23->Count = 0;	break;
-						 }
+						switch (psIni->sLog2.nSilo)
+						{
+						case 4: siloBar2->Delay = false; siloBar2->Count = 0;	break;
+						case 5: siloBar22->Delay = false; siloBar22->Count = 0;	break;
+						case 6: siloBar23->Delay = false; siloBar23->Count = 0;	break;
+						}
 						setState2(S_DROP);
 					}
 					break;
 
 					//-------------------------------------------------------------
 				case S_SETTLE_PLC:
-					if(nSettle2 < psIni->nScaleSettle)
+					if (nSettle2 < psIni->nScaleSettle)
 						nSettle2++;
 					else
 					{
-						if(!psIni->bSendBitWise)
+						if (!psIni->bSendBitWise)
 						{
 							fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
 							truckBar2->Value = fLoad2;
-							truckBar2->Pct =(int) ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
-							if(fLoad2 >= psIni->sLog2.sT.load_size - fTol2)
-								setState2(S_UPDATE);	
+							truckBar2->Pct = (int)((fTarget2 - fLoad2) / fTarget2) * 100;	//DC 4.0.0
+							if (fLoad2 >= psIni->sLog2.sT.load_size - fTol2)
+								setState2(S_UPDATE);
 							/*else if(fLoad1 < psIni->sLog1.sT.load_size - fTol1)
 							{
-								setState1(S_DROP);
+							setState1(S_DROP);
 							}*/
 							else
 							{
-								if(psIni->sInv.bJog2)
-		//							setState1(S_ADD);	
+								if (psIni->sInv.bJog2)
+									//							setState1(S_ADD);	
 									addBt2_Click(nullptr, nullptr);
 								else
 								{
 									addBt2->BackColor = COL_CHARGE;
 									addBt2->Enabled = true;
-									setState2(S_ADD_WAIT);	
+									setState2(S_ADD_WAIT);
 								}
 							}
 						}
@@ -12065,48 +12075,48 @@ private:
 
 					//------------------------------------------------------------------------
 				case S_SETTLE:
-					if(nSettle2 < psIni->nScaleSettle)
+					if (nSettle2 < psIni->nScaleSettle)
 						nSettle2++;
 					else
 					{
 						subInv(2);
-						if(!psIni->bBotScale)
-						{						
+						if (!psIni->bBotScale)
+						{
 							// update fall --------------------------------
 							fFall = fFall2 + (psIni->sScale2.dValue - fTarget2);
 							updateFall(2, (uint)fTarget2, fFall);
 							updateAdapt(2, (uint)fAdapt2, psIni->sScale2.dValue - fAdapt2);
-							
-							fLoad2 += psIni->sScale2.dValue;			 
-							setState2(S_DISCH_WAIT);	
+
+							fLoad2 += psIni->sScale2.dValue;
+							setState2(S_DISCH_WAIT);
 						}
-						else	
+						else
 						{
 							fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
 							truckBar2->Value = fLoad2;
-							truckBar2->Pct =(int) ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
+							truckBar2->Pct = (int)((fTarget2 - fLoad2) / fTarget2) * 100;	//DC 4.0.0
 
-							// update fall diff --------------------------------
+																							// update fall diff --------------------------------
 							fFall = fFall2 + fLoad2 - fCumTarget2;
 							updateFall(pJob2->nSilo, (uint)fTarget2, fFall);
 							updateAdapt(psIni->sLog2.nSilo, (uint)fAdapt2, fLoad2 - fAdapt2);
-							
-							if(fLoad2 >= psIni->sLog2.sT.load_size - fTol2)
-								setState2(S_UPDATE);	
-							else if(fCumTarget2 < psIni->sLog2.sT.load_size)
+
+							if (fLoad2 >= psIni->sLog2.sT.load_size - fTol2)
+								setState2(S_UPDATE);
+							else if (fCumTarget2 < psIni->sLog2.sT.load_size)
 							{
 								setState2(S_READY);
 							}
 							else
 							{
-								if(psIni->sInv.bJog2)
-//									setState2(S_ADD);	
+								if (psIni->sInv.bJog2)
+									//									setState2(S_ADD);	
 									addBt2_Click(nullptr, nullptr);
 								else
 								{
 									addBt2->BackColor = COL_CHARGE;
 									addBt2->Enabled = true;
-									setState2(S_ADD_WAIT);	
+									setState2(S_ADD_WAIT);
 								}
 							}
 						}
@@ -12115,32 +12125,32 @@ private:
 
 					//------------------------------------------------------------------------
 				case S_ADD_WAIT:
-					if(psIni->bAutoAdd && !bStopAdd2)
+					if (psIni->bAutoAdd && !bStopAdd2)
 						addBt2_Click(nullptr, nullptr);
 					break;
 
 				case S_ADD:
-					if(testHold2()) return;			//DC 4.0.0
+					if (testHold2()) return;			//DC 4.0.0
 					fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;	//DC 4.0.0
 					truckBar2->Value = fLoad2;									//DC 4.0.0
-					truckBar2->Pct =(int) ((fTarget2-fLoad2)/fTarget2)*100;			//DC 4.0.0
-					switch(psIni->sLog2.nSilo)
+					truckBar2->Pct = (int)((fTarget2 - fLoad2) / fTarget2) * 100;			//DC 4.0.0
+					switch (psIni->sLog2.nSilo)
 					{
-						case 4: siloBar2->Add = true;	break;
-						case 5: siloBar22->Add = true;	break;
-						case 6: siloBar23->Add = true;	break;
+					case 4: siloBar2->Add = true;	break;
+					case 5: siloBar22->Add = true;	break;
+					case 6: siloBar23->Add = true;	break;
 					}
-					if(nTmpCnt2 < nJogB)
+					if (nTmpCnt2 < nJogB)
 						nTmpCnt2++;
 					else
 					{
-						switch(psIni->sLog2.nSilo)
+						switch (psIni->sLog2.nSilo)
 						{
-							case 4: siloBar2->Add = false;	break;
-							case 5: siloBar22->Add = false;	break;
-							case 6: siloBar23->Add = false;	break;
+						case 4: siloBar2->Add = false;	break;
+						case 5: siloBar22->Add = false;	break;
+						case 6: siloBar23->Add = false;	break;
 						}
-						if(psIni->bPdmPlc)
+						if (psIni->bPdmPlc)
 							setState2(S_SETTLE_PLC);
 						else
 							setState2(S_ASETTLE);
@@ -12148,48 +12158,48 @@ private:
 					break;
 
 				case S_ASETTLE:
-					if(nTmpCnt2 < psIni->nScaleSettle)
+					if (nTmpCnt2 < psIni->nScaleSettle)
 						nTmpCnt2++;
 					else
 					{
 						subInv(2);
-						if(!psIni->bBotScale)					// upper scale
+						if (!psIni->bBotScale)					// upper scale
 						{
-							fLoad2 += psIni->sScale2.dValue - fTmpScale2; 
+							fLoad2 += psIni->sScale2.dValue - fTmpScale2;
 							addBt2->Enabled = false;
 						}
 						setState2(S_DISCH_WAIT);
 					}
 					break;
 
-				//------------------------------------------------------------------------
+					//------------------------------------------------------------------------
 				case S_DISCH_WAIT:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 					{
-						if((fCumTarget2 == psIni->sLog2.sT.load_size)
-						&& (fLoad2 < (psIni->sLog2.sT.load_size - fTol2)))
+						if ((fCumTarget2 == psIni->sLog2.sT.load_size)
+							&& (fLoad2 < (psIni->sLog2.sT.load_size - fTol2)))
 						{
-							if(psIni->sInv.bJog2)
-								setState2(S_ADD);	
+							if (psIni->sInv.bJog2)
+								setState2(S_ADD);
 							else
 							{
 								addBt2->BackColor = COL_CHARGE;
 								addBt2->Enabled = true;
 							}
 						}
-						else if(psIni->sInv.bAutoDisch2)						 
-							setState2(S_DISCH);	
+						else if (psIni->sInv.bAutoDisch2)
+							setState2(S_DISCH);
 					}
 					else
 					{
 						fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
 						truckBar2->Value = fLoad2;
-						truckBar2->Pct =(int) ((fTarget2-fLoad2)/fTarget2)*100;	//DC 4.0.0
+						truckBar2->Pct = (int)((fTarget2 - fLoad2) / fTarget2) * 100;	//DC 4.0.0
 
-						if(fLoad2 < (fCumTarget2 - fTol2))
+						if (fLoad2 < (fCumTarget2 - fTol2))
 						{
-							if(psIni->sInv.bJog2)
-								setState2(S_ADD);	
+							if (psIni->sInv.bJog2)
+								setState2(S_ADD);
 							else
 							{
 								addBt2->BackColor = COL_CHARGE;
@@ -12197,7 +12207,7 @@ private:
 							}
 						}
 						else
-							setState2(S_UPDATE);	
+							setState2(S_UPDATE);
 					}
 					break;
 
@@ -12205,49 +12215,49 @@ private:
 				case S_DISCH:
 					// pulse
 					nBlink2 = ++nBlink2 & 3;
-					if(nBlink2 > 1)
+					if (nBlink2 > 1)
 						dischBt2->BackColor = COL_GREEN;
 					else
-						dischBt2->BackColor = COL_PGREEN;	
+						dischBt2->BackColor = COL_PGREEN;
 
 					addBt2->Enabled = false;
-					truckBar2->Value = fLoad2-psIni->sScale2.dValue;
+					truckBar2->Value = fLoad2 - psIni->sScale2.dValue;
 
-					if(psIni->sScale2.dValue < psIni->sScale2.fTolerance)
-						setState2(S_DSETTLE);	
+					if (psIni->sScale2.dValue < psIni->sScale2.fTolerance)
+						setState2(S_DSETTLE);
 					break;
 
-				case S_DSETTLE:	 
-					truckBar2->Value = fLoad2-psIni->sScale2.dValue;
+				case S_DSETTLE:
+					truckBar2->Value = fLoad2 - psIni->sScale2.dValue;
 
-					if(nSettle2 > psIni->nScaleDisSettle)
+					if (nSettle2 > psIni->nScaleDisSettle)
 					{
-						if(psIni->sLog2.eStop != A_NOT)
+						if (psIni->sLog2.eStop != A_NOT)
 							setState2(S_ABORT);
-						else if(fCumTarget2 < psIni->sLog2.sT.load_size)
+						else if (fCumTarget2 < psIni->sLog2.sT.load_size)
 							setState2(S_READY);
-						else		
+						else
 							setState2(S_UPDATE);
-					}		
+					}
 					else
 						nSettle2++;
 					break;
 
-				//------------------------------------------------------------------------
+					//------------------------------------------------------------------------
 				case S_ABORT:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 						fLoad2 += psIni->sScale2.dValue;
 					else
 						fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
-						
-						setState2(S_UPDATE);	
+
+					setState2(S_UPDATE);
 					break;
 
 				case S_UPDATE:
 					subInv(2);				//DC 4.0.3 update tonnage
 					psIni->sLog2.bPrintTarget = printTarget2->Checked || (psIni->sLog2.eStop == A_TARGET);
 
-					if(psIni->sLog2.eStop == A_NOT)
+					if (psIni->sLog2.eStop == A_NOT)
 					{
 						psIni->sLog2.eJobStatus = S_OK1;
 						pJob2->eStatus = S_OK1;
@@ -12255,10 +12265,10 @@ private:
 					pJob2->fLoad = fLoad2;
 					pJob2->nSilo = psIni->sLog2.nSilo;
 
-					if(psIni->sLog2.bPrintTarget == true)
+					if (psIni->sLog2.bPrintTarget == true)
 						fLoad2 = psIni->sLog2.sT.load_size;
 
-					if(taxExempt2->Checked)
+					if (taxExempt2->Checked)
 						psIni->sLog2.fTax = 0;
 
 					psIni->sLog2.tTimeDone = DateTime::Now.ToBinary();
@@ -12279,7 +12289,7 @@ private:
 					psIni->bSaveInv = true;
 
 					// dbase ---------------------------------------------
-					if(bAuto2)
+					if (bAuto2)
 					{
 						pDbase = gcnew Dbase();
 						pDbase->nPlant = pJob2->nPlant;
@@ -12292,21 +12302,21 @@ private:
 						pDbase->pstCustCode = gcnew String(psIni->sLog2.sT.customer_code);
 						pDbase->pstTruck = gcnew String(pJob2->stTruck);					//DC 4.1.1
 
-						if(psIni->nDbaseOk > 0)
+						if (psIni->nDbaseOk > 0)
 							pAll->qDbase->Enqueue(pDbase);
 						else
 							pAll->qDbaseBad->Enqueue(pDbase);
 					}
 
 					// printer --------------------------------------------
-					while(nCopies2 > 0)									//DC 4.0.2
+					while (nCopies2 > 0)									//DC 4.0.2
 					{
 						poLog->printTicket(&psIni->sLog2, nPrinterB, false);
 						nCopies2--;
 					}
 
-					if(psIni->b2ndPrinterOk2 && laneB2ndCB->Checked)	//DC 4.0.2
-						poLog->printTicket(&psIni->sLog2, n2ndPrinterB, false);					 
+					if (psIni->b2ndPrinterOk2 && laneB2ndCB->Checked)	//DC 4.0.2
+						poLog->printTicket(&psIni->sLog2, n2ndPrinterB, false);
 
 					poLog->log(C_UPDATE, &psIni->sLog2, pJob2->nLogIdx);
 
@@ -12315,23 +12325,23 @@ private:
 					pAll->lOld->Add(pJob2);
 					pAll->nDone2++;
 
-					if((psIni->sLog2.eStop == A_TARGET) 
-						|| (psIni->sLog2.eStop == A_VOID) 
+					if ((psIni->sLog2.eStop == A_TARGET)
+						|| (psIni->sLog2.eStop == A_VOID)
 						|| (psIni->nHornTime == 0))
-						setState2(S_IDLE);	
-					else						 
-						setState2(S_HORN);	 
+						setState2(S_IDLE);
+					else
+						setState2(S_HORN);
 					break;
 
 				case S_HORN:
-					if(nTmpCnt2 < psIni->nHornTime)
+					if (nTmpCnt2 < psIni->nHornTime)
 						++nTmpCnt2;
 					else
-						setState2(S_IDLE);	 
+						setState2(S_IDLE);
 					break;
 
 				case S_HOLD_SETTLE:
-					if(nTmpCnt2 < psIni->nScaleSettle)
+					if (nTmpCnt2 < psIni->nScaleSettle)
 						nTmpCnt2++;
 					else
 					{
@@ -12346,7 +12356,7 @@ private:
 					break;
 
 				case S_HOLD:
-					if(psIni->bHold2 == false)
+					if (psIni->bHold2 == false)
 					{
 						pauseBt2->BackColor = COL_HOLDK;
 						setState2(ePrevHold2);
@@ -12354,21 +12364,21 @@ private:
 					break;
 
 				default:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 						fLoad2 = psIni->sScale2.dValue + fCumTarget2;
-					else						 
+					else
 						fLoad2 = psIni->sScale2.dValue - psIni->sLog2.fTruckTare;
 					break;
-				}													
+				}
 
 				//-----------------------------------------------------------inventory
-				if(psIni->bBotScale && !psIni->bSendTarget && !psIni->bSendBitWise)
+				if (psIni->bBotScale && !psIni->bSendTarget && !psIni->bSendBitWise)
 				{
-					if(!psIni->bTickAddress)
+					if (!psIni->bTickAddress)
 					{
-						if((psIni->nRpoints & J_FILL4) > 0)
+						if ((psIni->nRpoints & J_FILL4) > 0)
 						{
-							if(!bFill4)
+							if (!bFill4)
 							{
 								bFill4 = true;
 								addInv(4);					// update silo
@@ -12376,9 +12386,9 @@ private:
 						}
 						else
 							bFill4 = false;
-						if((psIni->nRpoints & J_FILL5) > 0)
+						if ((psIni->nRpoints & J_FILL5) > 0)
 						{
-							if(!bFill5)
+							if (!bFill5)
 							{
 								bFill5 = true;
 								addInv(5);						// update silo
@@ -12386,9 +12396,9 @@ private:
 						}
 						else
 							bFill5 = false;
-						if((psIni->nRpoints & J_FILL6) > 0)
+						if ((psIni->nRpoints & J_FILL6) > 0)
 						{
-							if(!bFill6)
+							if (!bFill6)
 							{
 								bFill6 = true;
 								addInv(6);						// update silo
@@ -12398,11 +12408,11 @@ private:
 							bFill6 = false;
 					}
 				}
-				else if(!psIni->bSendTarget && !psIni->bSendBitWise)
+				else if (!psIni->bSendTarget && !psIni->bSendBitWise)
 				{
-					if((psIni->nRpoints & I_FILL2) > 0)
+					if ((psIni->nRpoints & I_FILL2) > 0)
 					{
-						if(!bFill2)
+						if (!bFill2)
 						{
 							bFill2 = true;
 							addInv(2);						// update Silo 2
@@ -12418,18 +12428,18 @@ private:
 				ticketNum2->Text = pAll->nTickets2.ToString();
 				man2->Text = pAll->nDone2.ToString();
 
-				if(psIni->bBotScale)
+				if (psIni->bBotScale)
 				{
-					if(!psIni->bSendTarget && !psIni->bSendBitWise)
+					if (!psIni->bSendTarget && !psIni->bSendBitWise)
 					{
-						if(psIni->bTickAddress)
+						if (psIni->bTickAddress)
 						{
-							fill2->Visible = ((psIni->nRpoints & J_FILL1) > 0) 
-										  && ((psIni->nRpoints & J_FILL4) > 0);
-							fill22->Visible =((psIni->nRpoints & J_FILL1) > 0) 
-										  && ((psIni->nRpoints & J_FILL5) > 0);
-							fill23->Visible =((psIni->nRpoints & J_FILL1) > 0) 
-										  && ((psIni->nRpoints & J_FILL6) > 0);
+							fill2->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL4) > 0);
+							fill22->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL5) > 0);
+							fill23->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL6) > 0);
 						}
 						else
 						{
@@ -12452,8 +12462,8 @@ private:
 						siloBar23->Open = (psIni->nWpoints & psIni->asSilos[5].uDropO) > 0;
 					}
 
-					if(pAll->eAsType == A_PROD)
-						bTruck2 = psIni->sScale2.dValue > psIni->fBotScaleTruck;		
+					if (pAll->eAsType == A_PROD)
+						bTruck2 = psIni->sScale2.dValue > psIni->fBotScaleTruck;
 				}
 				else
 				{
@@ -12466,7 +12476,7 @@ private:
 				truckBar2->Visible = bTruck2;
 				truckPic2->Visible = bTruck2;
 
-				if(psIni->bTest)
+				if (psIni->bTest)
 				{
 					scale2->Text = gcnew String((char *)psIni->sScale2.acData);
 					cnt2->Text = psIni->sScale2.nClock.ToString();
@@ -12474,21 +12484,21 @@ private:
 			}
 
 			// plant 3 ///////////////////////////////////////////////////
-			if(bThird  && pAll->eAsType != A_REMOTE)
+			if (bThird  && pAll->eAsType != A_REMOTE)
 			{
-				if(psIni->sLog3.nCopy > 0)					//DC 4.0.3
+				if (psIni->sLog3.nCopy > 0)					//DC 4.0.3
 					numCopy3->Value = psIni->sLog3.nCopy;
 				else
 					numCopy3->Value = numCopy3->Value;		//DC 4.0.4
 
 				int nCopies3 = (int)numCopy3->Value;		//DC 4.0.2
 
-				if(psIni->bPdmPlc && ((psIni->nRpoints & psIni->asSilos[psIni->sLog3.nSilo-1].uHoldI) > 0 || !((psIni->nRpoints & psIni->uKeepAliveI) > 0))) //DC 4.0.1 //DC 4.0.0
+				if (psIni->bPdmPlc && ((psIni->nRpoints & psIni->asSilos[psIni->sLog3.nSilo - 1].uHoldI) > 0 || !((psIni->nRpoints & psIni->uKeepAliveI) > 0))) //DC 4.0.1 //DC 4.0.0
 					psIni->bHold3 = true;
 				else
 					psIni->bHold3 = false;
 
-				switch(psIni->sLog3.eState)
+				switch (psIni->sLog3.eState)
 				{
 				case S_IDLE:
 					nDelay3 = 0;		// reset delay timer
@@ -12501,10 +12511,10 @@ private:
 					break;
 
 				case S_NEXT:
-					if(!((psIni->nWpoints & psIni->uSendTargetO) > 0) && ((psIni->nRpoints & psIni->uLaneTareI[2]) > 0))	//DC 4.0.1
+					if (!((psIni->nWpoints & psIni->uSendTargetO) > 0) && ((psIni->nRpoints & psIni->uLaneTareI[2]) > 0))	//DC 4.0.1
 					{
 						bTruck3 = true;											//DC 4.0.1
-						if(readyBt3->Enabled != true)							//DC 4.0.8
+						if (readyBt3->Enabled != true)							//DC 4.0.8
 							psIni->sLog3.fTruckTare = psIni->sScale3.dValue;		//DC 4.0.1
 						readyBt3->Enabled = true;
 						readyBt3->BackColor = COL_PGREEN;
@@ -12518,9 +12528,9 @@ private:
 
 				case S_READY:
 					psIni->nSclOutEU[2] = truckBar3->Maximum;		//DC 4.0.0 set analog output value
-					if(psIni->bBotScale)
+					if (psIni->bBotScale)
 						fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
-					if(psIni->bPdmPlc && !psIni->bSendBitWise && (psIni->nRpoints & psIni->asSilos[psIni->sLog3.nSilo-1].uDropReadyI) > 0)
+					if (psIni->bPdmPlc && !psIni->bSendBitWise && (psIni->nRpoints & psIni->asSilos[psIni->sLog3.nSilo - 1].uDropReadyI) > 0)
 					{
 						dropBt3->Enabled = true;
 						dropBt3->BackColor = COL_PGREEN;
@@ -12533,181 +12543,181 @@ private:
 					}
 					break;
 
-				//=========================================================================
+					//=========================================================================
 				case S_SAFE:
-					if((clock() - tSafeC) >= psIni->nSafeTime)	
-						setState3(S_DROP);	
+					if ((clock() - tSafeC) >= psIni->nSafeTime)
+						setState3(S_DROP);
 					break;
 
 					//------------------------------------------------------------------------
 				case S_DROP:
-					if(testHold3()) return;			//DC 4.0.0
-					// pulse
+					if (testHold3()) return;			//DC 4.0.0
+														// pulse
 					nBlink3 = ++nBlink3 & 3;
-					if(nBlink3 > 1)
+					if (nBlink3 > 1)
 						dropBt3->BackColor = COL_GREEN;
 					else
-						dropBt3->BackColor = COL_PGREEN;		
+						dropBt3->BackColor = COL_PGREEN;
 
-					if(psIni->sScale3.dValue == fTmpScale3)
+					if (psIni->sScale3.dValue == fTmpScale3)
 					{
 						nTmpCnt3++;
-						if(nTmpCnt3 > psIni->nScaleIdle)
+						if (nTmpCnt3 > psIni->nScaleIdle)
 						{
 							setState3(S_HOLD_SETTLE);
-							MessageBox::Show("Scale is IDLE, pause", "Lane C", 
+							MessageBox::Show("Scale is IDLE, pause", "Lane C",
 								System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-						}			 
+						}
 					}
 					else
 					{
 						fTmpScale3 = psIni->sScale3.dValue;
-						nTmpCnt3 = 0; 
+						nTmpCnt3 = 0;
 					}
 
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 					{
 						// adapt --------------------------------------------------
-						if(adapt3->Checked)
+						if (adapt3->Checked)
 							fFall3 = getAdapt(3, (uint)psIni->sScale3.dValue);
 
 						// final test
-						if(psIni->sScale3.dValue > (fNewTarget3 - fFall3 - fTol3))
+						if (psIni->sScale3.dValue > (fNewTarget3 - fFall3 - fTol3))
 						{
 							fCumTarget3 += fTarget3;
 							setState3(S_SETTLE);
-						}		
+						}
 					}
 					else
 					{
 						fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
 						truckBar3->Value = fLoad3;
-						truckBar3->Pct =(int) ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
+						truckBar3->Pct = (int)((fTarget3 - fLoad3) / fTarget3) * 100;	//DC 4.0.0
 
-						if(!psIni->bPdmPlc)
+						if (!psIni->bPdmPlc)
 						{
 							// adapt --------------------------------------------------
-							if(adapt3->Checked)
+							if (adapt3->Checked)
 								fFall3 = getAdapt(psIni->sLog3.nSilo, (uint)(fLoad3));
 
 							// final test
-							if(fLoad3 >= (fCumTarget3 - fFall3 - fTol3))
+							if (fLoad3 >= (fCumTarget3 - fFall3 - fTol3))
 								setState3(S_SETTLE);
 						}
-						else if(!psIni->bSendTarget && !psIni->bSendBitWise)
+						else if (!psIni->bSendTarget && !psIni->bSendBitWise)
 						{
-	//						 switch(psIni->sLog1.nSilo)
-							 { 
-								 if(fTarget3-fLoad3 >= fTarget3 * psIni->asSilos[psIni->sLog3.nSilo-1].nFlowRatePct1/100)
-								 {
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
-								 }
-								 else if(fTarget3-fLoad3 >= fTarget3 * psIni->asSilos[psIni->sLog3.nSilo-1].nFlowRatePct2/100)
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
-								 }
-								 else if(fTarget3-fLoad3 >= fTarget3 * psIni->asSilos[psIni->sLog3.nSilo-1].nFlowRatePct3/100)
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
-								 }
-								 else
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
-								 }
+							//						 switch(psIni->sLog1.nSilo)
+							{
+								if (fTarget3 - fLoad3 >= fTarget3 * psIni->asSilos[psIni->sLog3.nSilo - 1].nFlowRatePct1 / 100)
+								{
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
+								}
+								else if (fTarget3 - fLoad3 >= fTarget3 * psIni->asSilos[psIni->sLog3.nSilo - 1].nFlowRatePct2 / 100)
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
+								}
+								else if (fTarget3 - fLoad3 >= fTarget3 * psIni->asSilos[psIni->sLog3.nSilo - 1].nFlowRatePct3 / 100)
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
+								}
+								else
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
+								}
 
-								 if(fLoad3 >= (fTarget3 - psIni->asSilos[psIni->sLog3.nSilo-1].fFall - fTol3))
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
+								if (fLoad3 >= (fTarget3 - psIni->asSilos[psIni->sLog3.nSilo - 1].fFall - fTol3))
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
 									setState3(S_SETTLE_PLC);
-								 }
+								}
 
-								 if(nDelay3 == 0 && psIni->asSilos[psIni->sLog3.nSilo-1].nDelayPct > 0 && psIni->asSilos[psIni->sLog4.nSilo-1].nDelayTime > 0)
-								 {
-									 if(fTarget3-fLoad3 <= fTarget3 * psIni->asSilos[psIni->sLog3.nSilo-1].nDelayPct/100)
-									 {
-										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate1O;
-										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate2O;
-										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo-1].uFlowRate3O;
+								if (nDelay3 == 0 && psIni->asSilos[psIni->sLog3.nSilo - 1].nDelayPct > 0 && psIni->asSilos[psIni->sLog4.nSilo - 1].nDelayTime > 0)
+								{
+									if (fTarget3 - fLoad3 <= fTarget3 * psIni->asSilos[psIni->sLog3.nSilo - 1].nDelayPct / 100)
+									{
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate1O;
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate2O;
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog3.nSilo - 1].uFlowRate3O;
 										setState3(S_DELAY_PLC);
-									 }
-								 }
+									}
+								}
 
-							 }
+							}
 
 						}
 					}
 
-					if(psIni->bPdmPlc && psIni->bSendBitWise) 
+					if (psIni->bPdmPlc && psIni->bSendBitWise)
 					{
 						//DC 4.0.0 wait for complete input from PDM
-						if((psIni->nRpoints & psIni->asSilos[psIni->sLog3.nSilo-1].uDoneI) > 0)
+						if ((psIni->nRpoints & psIni->asSilos[psIni->sLog3.nSilo - 1].uDoneI) > 0)
 							setState3(S_SETTLE_PLC);
 						//else if (fLoad1 >= (fTarget1 + psIni->asSilos[psIni->sLog1.nSilo-1].dAddTol))
 						//	setState1(S_HOLD_DROP);
 					}
 					break;
-					
+
 					// delay ------------------------------------------------------
 				case S_DELAY_PLC:
-					if(nDelay3 < psIni->asSilos[psIni->sLog3.nSilo-1].nDelayTime*10)
+					if (nDelay3 < psIni->asSilos[psIni->sLog3.nSilo - 1].nDelayTime * 10)
 					{
 						nDelay3++;
-						switch(psIni->sLog3.nSilo)
-						 {
-						 case 10: siloBar3->Delay = true; siloBar3->Count = psIni->asSilos[psIni->sLog3.nSilo-1].nDelayTime - nDelay3/10;	break;
-						 case 11: siloBar32->Delay = true; siloBar32->Count = psIni->asSilos[psIni->sLog3.nSilo-1].nDelayTime - nDelay3/10;	break;
-						 case 12: siloBar33->Delay = true; siloBar33->Count = psIni->asSilos[psIni->sLog3.nSilo-1].nDelayTime - nDelay3/10;	break;
-						 }
+						switch (psIni->sLog3.nSilo)
+						{
+						case 10: siloBar3->Delay = true; siloBar3->Count = psIni->asSilos[psIni->sLog3.nSilo - 1].nDelayTime - nDelay3 / 10;	break;
+						case 11: siloBar32->Delay = true; siloBar32->Count = psIni->asSilos[psIni->sLog3.nSilo - 1].nDelayTime - nDelay3 / 10;	break;
+						case 12: siloBar33->Delay = true; siloBar33->Count = psIni->asSilos[psIni->sLog3.nSilo - 1].nDelayTime - nDelay3 / 10;	break;
+						}
 					}
 					else
 					{
-						switch(psIni->sLog3.nSilo)
-						 {
-						 case 10: siloBar3->Delay = false; siloBar3->Count = 0;	break;
-						 case 11: siloBar32->Delay = false; siloBar32->Count = 0;	break;
-						 case 12: siloBar33->Delay = false; siloBar33->Count = 0;	break;
-						 }
+						switch (psIni->sLog3.nSilo)
+						{
+						case 10: siloBar3->Delay = false; siloBar3->Count = 0;	break;
+						case 11: siloBar32->Delay = false; siloBar32->Count = 0;	break;
+						case 12: siloBar33->Delay = false; siloBar33->Count = 0;	break;
+						}
 						setState3(S_DROP);
 					}
 					break;
 
 					//-------------------------------------------------------------
 				case S_SETTLE_PLC:
-					if(nSettle3 < psIni->nScaleSettle)
+					if (nSettle3 < psIni->nScaleSettle)
 						nSettle3++;
 					else
 					{
-						if(!psIni->bSendBitWise)
+						if (!psIni->bSendBitWise)
 						{
 							fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
 							truckBar3->Value = fLoad3;
-							truckBar3->Pct =(int) ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
-							if(fLoad3 >= psIni->sLog3.sT.load_size - fTol3)
-								setState3(S_UPDATE);	
+							truckBar3->Pct = (int)((fTarget3 - fLoad3) / fTarget3) * 100;	//DC 4.0.0
+							if (fLoad3 >= psIni->sLog3.sT.load_size - fTol3)
+								setState3(S_UPDATE);
 							/*else if(fLoad1 < psIni->sLog1.sT.load_size - fTol1)
 							{
-								setState1(S_DROP);
+							setState1(S_DROP);
 							}*/
 							else
 							{
-								if(psIni->sInv.bJog3)
-		//							setState1(S_ADD);	
+								if (psIni->sInv.bJog3)
+									//							setState1(S_ADD);	
 									addBt3_Click(nullptr, nullptr);
 								else
 								{
 									addBt3->BackColor = COL_CHARGE;
 									addBt3->Enabled = true;
-									setState3(S_ADD_WAIT);	
+									setState3(S_ADD_WAIT);
 								}
 							}
 						}
@@ -12718,48 +12728,48 @@ private:
 
 					//------------------------------------------------------------------------
 				case S_SETTLE:
-					if(nSettle3 < psIni->nScaleSettle)
+					if (nSettle3 < psIni->nScaleSettle)
 						nSettle3++;
 					else
 					{
 						subInv(3);
-						if(!psIni->bBotScale)
-						{							
+						if (!psIni->bBotScale)
+						{
 							// update fall --------------------------------
 							fFall = fFall3 + (psIni->sScale3.dValue - fTarget3);
 							updateFall(3, (uint)fTarget3, fFall);
 							updateAdapt(3, (uint)fAdapt3, psIni->sScale3.dValue - fAdapt3);
-							
+
 							fLoad3 += psIni->sScale3.dValue;
-							setState3(S_DISCH_WAIT);	
+							setState3(S_DISCH_WAIT);
 						}
-						else	
+						else
 						{
 							fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
 							truckBar3->Value = fLoad3;
-							truckBar3->Pct =(int) ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
+							truckBar3->Pct = (int)((fTarget3 - fLoad3) / fTarget3) * 100;	//DC 4.0.0
 
-							// update fall diff --------------------------------
+																							// update fall diff --------------------------------
 							fFall = fFall3 + fLoad3 - fCumTarget3;
 							updateFall(psIni->sLog3.nSilo, (uint)fTarget3, fFall);
 							updateAdapt(psIni->sLog3.nSilo, (uint)fAdapt3, fLoad3 - fAdapt3);
-							
-							if(fLoad3 >= psIni->sLog3.sT.load_size - fTol3)
-								setState3(S_UPDATE);	
-							else if(fCumTarget3 < psIni->sLog3.sT.load_size)
+
+							if (fLoad3 >= psIni->sLog3.sT.load_size - fTol3)
+								setState3(S_UPDATE);
+							else if (fCumTarget3 < psIni->sLog3.sT.load_size)
 							{
 								setState3(S_READY);
 							}
 							else
 							{
-								if(psIni->sInv.bJog3)
-//									setState3(S_ADD);	
+								if (psIni->sInv.bJog3)
+									//									setState3(S_ADD);	
 									addBt3_Click(nullptr, nullptr);
 								else
 								{
 									addBt3->BackColor = COL_CHARGE;
 									addBt3->Enabled = true;
-									setState3(S_ADD_WAIT);	
+									setState3(S_ADD_WAIT);
 								}
 							}
 						}
@@ -12768,32 +12778,32 @@ private:
 
 					//------------------------------------------------------------------------
 				case S_ADD_WAIT:
-					if(psIni->bAutoAdd && !bStopAdd3)
+					if (psIni->bAutoAdd && !bStopAdd3)
 						addBt3_Click(nullptr, nullptr);
 					break;
 
 				case S_ADD:
-					if(testHold3()) return;			//DC 4.0.0
+					if (testHold3()) return;			//DC 4.0.0
 					fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;	//DC 4.0.0
 					truckBar3->Value = fLoad3;									//DC 4.0.0
-					truckBar3->Pct =(int) ((fTarget3-fLoad3)/fTarget3)*100;			//DC 4.0.0
-					switch(psIni->sLog3.nSilo)
+					truckBar3->Pct = (int)((fTarget3 - fLoad3) / fTarget3) * 100;			//DC 4.0.0
+					switch (psIni->sLog3.nSilo)
 					{
-						case 7: siloBar3->Add = true;	break;
-						case 8: siloBar32->Add = true;	break;
-						case 9: siloBar33->Add = true;	break;
+					case 7: siloBar3->Add = true;	break;
+					case 8: siloBar32->Add = true;	break;
+					case 9: siloBar33->Add = true;	break;
 					}
-					if(nTmpCnt3 < nJogC)
+					if (nTmpCnt3 < nJogC)
 						nTmpCnt3++;
 					else
 					{
-						switch(psIni->sLog3.nSilo)
+						switch (psIni->sLog3.nSilo)
 						{
-							case 7: siloBar3->Add = false;	break;
-							case 8: siloBar32->Add = false;	break;
-							case 9: siloBar33->Add = false;	break;
+						case 7: siloBar3->Add = false;	break;
+						case 8: siloBar32->Add = false;	break;
+						case 9: siloBar33->Add = false;	break;
 						}
-						if(psIni->bPdmPlc)
+						if (psIni->bPdmPlc)
 							setState3(S_SETTLE_PLC);
 						else
 							setState3(S_ASETTLE);
@@ -12801,48 +12811,48 @@ private:
 					break;
 
 				case S_ASETTLE:
-					if(nTmpCnt3 < psIni->nScaleSettle)
+					if (nTmpCnt3 < psIni->nScaleSettle)
 						nTmpCnt3++;
 					else
 					{
 						subInv(3);
-						if(!psIni->bBotScale)					// upper scale
+						if (!psIni->bBotScale)					// upper scale
 						{
-							fLoad3 += psIni->sScale3.dValue - fTmpScale3; 
+							fLoad3 += psIni->sScale3.dValue - fTmpScale3;
 							addBt3->Enabled = false;
 						}
 						setState3(S_DISCH_WAIT);
 					}
 					break;
 
-				//------------------------------------------------------------------------
+					//------------------------------------------------------------------------
 				case S_DISCH_WAIT:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 					{
-						if((fCumTarget3 == psIni->sLog3.sT.load_size)
-						&& (fLoad3 < (psIni->sLog3.sT.load_size - fTol3)))
+						if ((fCumTarget3 == psIni->sLog3.sT.load_size)
+							&& (fLoad3 < (psIni->sLog3.sT.load_size - fTol3)))
 						{
-							if(psIni->sInv.bJog3)
-								setState3(S_ADD);	
+							if (psIni->sInv.bJog3)
+								setState3(S_ADD);
 							else
 							{
 								addBt3->BackColor = COL_CHARGE;
 								addBt3->Enabled = true;
 							}
 						}
-						else if(psIni->sInv.bAutoDisch3)						 
-							setState3(S_DISCH);	
+						else if (psIni->sInv.bAutoDisch3)
+							setState3(S_DISCH);
 					}
 					else
 					{
 						fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
 						truckBar3->Value = fLoad3;
-						truckBar3->Pct =(int) ((fTarget3-fLoad3)/fTarget3)*100;	//DC 4.0.0
+						truckBar3->Pct = (int)((fTarget3 - fLoad3) / fTarget3) * 100;	//DC 4.0.0
 
-						if(fLoad3 < fCumTarget3 - fTol3)
+						if (fLoad3 < fCumTarget3 - fTol3)
 						{
-							if(psIni->sInv.bJog3)
-								setState3(S_ADD);	
+							if (psIni->sInv.bJog3)
+								setState3(S_ADD);
 							else
 							{
 								addBt3->BackColor = COL_CHARGE;
@@ -12850,57 +12860,57 @@ private:
 							}
 						}
 						else
-							setState3(S_UPDATE);	
+							setState3(S_UPDATE);
 					}
 					break;
 
 					//------------------------------------------------------------------------
-				case S_DISCH:	 
+				case S_DISCH:
 					// pulse
 					nBlink3 = ++nBlink3 & 3;
-					if(nBlink3 > 1)
+					if (nBlink3 > 1)
 						dischBt3->BackColor = COL_GREEN;
 					else
-						dischBt3->BackColor = COL_PGREEN;		
+						dischBt3->BackColor = COL_PGREEN;
 
 					addBt3->Enabled = false;
-					truckBar3->Value = fLoad3-psIni->sScale3.dValue;
+					truckBar3->Value = fLoad3 - psIni->sScale3.dValue;
 
-					if(psIni->sScale3.dValue < psIni->sScale3.fTolerance)
+					if (psIni->sScale3.dValue < psIni->sScale3.fTolerance)
 						setState3(S_DSETTLE);
 					break;
 
-				case S_DSETTLE:	 
-					truckBar3->Value = fLoad3-psIni->sScale3.dValue;
+				case S_DSETTLE:
+					truckBar3->Value = fLoad3 - psIni->sScale3.dValue;
 
-					if(nSettle3 > psIni->nScaleDisSettle)
+					if (nSettle3 > psIni->nScaleDisSettle)
 					{
-						if(psIni->sLog3.eStop != A_NOT)
+						if (psIni->sLog3.eStop != A_NOT)
 							setState3(S_ABORT);
-						else if(fCumTarget3 < psIni->sLog3.sT.load_size)
+						else if (fCumTarget3 < psIni->sLog3.sT.load_size)
 							setState3(S_READY);
-						else		
+						else
 							setState3(S_UPDATE);
-					}		
+					}
 					else
 						nSettle3++;
 					break;
 
-				//------------------------------------------------------------------------
+					//------------------------------------------------------------------------
 				case S_ABORT:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 						fLoad3 += psIni->sScale3.dValue;
 					else
 						fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
 
-					setState3(S_UPDATE);	
+					setState3(S_UPDATE);
 					break;
 
 				case S_UPDATE:
 					subInv(3);				//DC 4.0.3 update tonnage
 					psIni->sLog3.bPrintTarget = printTarget3->Checked || (psIni->sLog3.eStop == A_TARGET);
 
-					if(psIni->sLog3.eStop == A_NOT)
+					if (psIni->sLog3.eStop == A_NOT)
 					{
 						psIni->sLog3.eJobStatus = S_OK1;
 						pJob3->eStatus = S_OK1;
@@ -12908,10 +12918,10 @@ private:
 					pJob3->fLoad = fLoad3;
 					pJob3->nSilo = psIni->sLog3.nSilo;
 
-					if(psIni->sLog3.bPrintTarget == true)
+					if (psIni->sLog3.bPrintTarget == true)
 						fLoad3 = psIni->sLog3.sT.load_size;
 
-					if(taxExempt3->Checked)
+					if (taxExempt3->Checked)
 						psIni->sLog3.fTax = 0;
 
 					psIni->sLog3.tTimeDone = DateTime::Now.ToBinary();
@@ -12932,7 +12942,7 @@ private:
 					psIni->bSaveInv = true;
 
 					// dbase ---------------------------------------------
-					if(bAuto3)
+					if (bAuto3)
 					{
 						pDbase = gcnew Dbase();
 						pDbase->nPlant = pJob3->nPlant;
@@ -12945,21 +12955,21 @@ private:
 						pDbase->pstCustCode = gcnew String(psIni->sLog3.sT.customer_code);
 						pDbase->pstTruck = gcnew String(pJob3->stTruck);					//DC 4.1.1
 
-						if(psIni->nDbaseOk > 0)
+						if (psIni->nDbaseOk > 0)
 							pAll->qDbase->Enqueue(pDbase);
 						else
 							pAll->qDbaseBad->Enqueue(pDbase);
 					}
 
 					// printer --------------------------------------------
-					while(nCopies3 > 0)									//DC 4.0.2
+					while (nCopies3 > 0)									//DC 4.0.2
 					{
 						poLog->printTicket(&psIni->sLog3, nPrinterC, false);
 						nCopies3--;
 					}
 
-					if(psIni->b2ndPrinterOk3 && laneC2ndCB->Checked)	//DC 4.0.2
-						poLog->printTicket(&psIni->sLog3, n2ndPrinterC, false);	
+					if (psIni->b2ndPrinterOk3 && laneC2ndCB->Checked)	//DC 4.0.2
+						poLog->printTicket(&psIni->sLog3, n2ndPrinterC, false);
 
 					poLog->log(C_UPDATE, &psIni->sLog3, pJob3->nLogIdx);
 
@@ -12968,23 +12978,23 @@ private:
 					pAll->lOld->Add(pJob3);
 					pAll->nDone3++;
 
-					if((psIni->sLog3.eStop == A_TARGET) 
-					|| (psIni->sLog3.eStop == A_VOID)
-					|| (psIni->nHornTime == 0))
-						setState3(S_IDLE);	
-					else						 
-						setState3(S_HORN);	 
+					if ((psIni->sLog3.eStop == A_TARGET)
+						|| (psIni->sLog3.eStop == A_VOID)
+						|| (psIni->nHornTime == 0))
+						setState3(S_IDLE);
+					else
+						setState3(S_HORN);
 					break;
 
 				case S_HORN:
-					if(nTmpCnt3 < psIni->nHornTime)
+					if (nTmpCnt3 < psIni->nHornTime)
 						++nTmpCnt3;
 					else
-						setState3(S_IDLE);	 
+						setState3(S_IDLE);
 					break;
 
 				case S_HOLD_SETTLE:
-					if(nTmpCnt3 < psIni->nScaleSettle)
+					if (nTmpCnt3 < psIni->nScaleSettle)
 						nTmpCnt3++;
 					else
 					{
@@ -12999,7 +13009,7 @@ private:
 					break;
 
 				case S_HOLD:
-					if(psIni->bHold3 == false)
+					if (psIni->bHold3 == false)
 					{
 						pauseBt3->BackColor = COL_HOLDK;
 						setState3(ePrevHold3);
@@ -13007,21 +13017,21 @@ private:
 					break;
 
 				default:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 						fLoad3 = psIni->sScale3.dValue + fCumTarget3;
-					else						 
+					else
 						fLoad3 = psIni->sScale3.dValue - psIni->sLog3.fTruckTare;
 					break;
 				}
 
 				//-----------------------------------------------------------inventory
-				if(psIni->bBotScale && !psIni->bSendTarget && !psIni->bSendBitWise)
+				if (psIni->bBotScale && !psIni->bSendTarget && !psIni->bSendBitWise)
 				{
-					if(!psIni->bTickAddress)
+					if (!psIni->bTickAddress)
 					{
-						if((psIni->nRpoints & J_FILL7) > 0)
+						if ((psIni->nRpoints & J_FILL7) > 0)
 						{
-							if(!bFill7)
+							if (!bFill7)
 							{
 								bFill7 = true;
 								addInv(7);					// update silo
@@ -13029,9 +13039,9 @@ private:
 						}
 						else
 							bFill7 = false;
-						if((psIni->nRpoints & J_FILL8) > 0)
+						if ((psIni->nRpoints & J_FILL8) > 0)
 						{
-							if(!bFill8)
+							if (!bFill8)
 							{
 								bFill8 = true;
 								addInv(8);						// update silo
@@ -13039,9 +13049,9 @@ private:
 						}
 						else
 							bFill8 = false;
-						if((psIni->nRpoints & J_FILL9) > 0)
+						if ((psIni->nRpoints & J_FILL9) > 0)
 						{
-							if(!bFill9)
+							if (!bFill9)
 							{
 								bFill9 = true;
 								addInv(9);						// update silo
@@ -13051,11 +13061,11 @@ private:
 							bFill9 = false;
 					}
 				}
-				else if(!psIni->bSendTarget && !psIni->bSendBitWise)
+				else if (!psIni->bSendTarget && !psIni->bSendBitWise)
 				{
-					if((psIni->nRpoints & I_FILL3) > 0)
+					if ((psIni->nRpoints & I_FILL3) > 0)
 					{
-						if(!bFill3)
+						if (!bFill3)
 						{
 							bFill3 = true;
 							addInv(3);						// update Silo 3
@@ -13071,18 +13081,18 @@ private:
 				ticketNum3->Text = pAll->nTickets3.ToString();
 				man3->Text = pAll->nDone3.ToString();
 
-				if(psIni->bBotScale)
+				if (psIni->bBotScale)
 				{
-					if(!psIni->bSendTarget && !psIni->bSendBitWise)
+					if (!psIni->bSendTarget && !psIni->bSendBitWise)
 					{
-						if(psIni->bTickAddress)
+						if (psIni->bTickAddress)
 						{
-							fill3->Visible = ((psIni->nRpoints & J_FILL1) > 0) 
-										  && ((psIni->nRpoints & J_FILL7) > 0);
-							fill32->Visible =((psIni->nRpoints & J_FILL1) > 0) 
-										  && ((psIni->nRpoints & J_FILL8) > 0);
-							fill33->Visible =((psIni->nRpoints & J_FILL1) > 0)
-										  && ((psIni->nRpoints & J_FILL9) > 0);
+							fill3->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL7) > 0);
+							fill32->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL8) > 0);
+							fill33->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL9) > 0);
 						}
 						else
 						{
@@ -13105,8 +13115,8 @@ private:
 						siloBar33->Open = (psIni->nWpoints & psIni->asSilos[8].uDropO) > 0;
 					}
 
-					if(pAll->eAsType == A_PROD)
-						bTruck3 = psIni->sScale3.dValue > psIni->fBotScaleTruck;			
+					if (pAll->eAsType == A_PROD)
+						bTruck3 = psIni->sScale3.dValue > psIni->fBotScaleTruck;
 				}
 				else
 				{
@@ -13119,7 +13129,7 @@ private:
 				truckBar3->Visible = bTruck3;
 				truckPic3->Visible = bTruck3;
 
-				if(psIni->bTest)
+				if (psIni->bTest)
 				{
 					scale3->Text = gcnew String((char *)psIni->sScale3.acData);
 					cnt3->Text = psIni->sScale3.nClock.ToString();
@@ -13127,49 +13137,49 @@ private:
 			}
 
 			// plant 4 //DC 3.3.0 /////////////////////////////////////////////////
-			if(bForth)
+			if (bForth)
 			{
-				if(psIni->sLog4.nCopy > 0)					//DC 4.0.3
+				if (psIni->sLog4.nCopy > 0)					//DC 4.0.3
 					numCopy4->Value = psIni->sLog4.nCopy;
 				else
 					numCopy4->Value = numCopy4->Value;		//DC 4.0.4
 
 				int nCopies4 = (int)numCopy4->Value;		//DC 4.0.2
 
-				if(psIni->bPdmPlc && ((psIni->nRpoints & psIni->asSilos[psIni->sLog4.nSilo-1].uHoldI) > 0 || !((psIni->nRpoints & psIni->uKeepAliveI) > 0))) //DC 4.0.1 //DC 4.0.0
+				if (psIni->bPdmPlc && ((psIni->nRpoints & psIni->asSilos[psIni->sLog4.nSilo - 1].uHoldI) > 0 || !((psIni->nRpoints & psIni->uKeepAliveI) > 0))) //DC 4.0.1 //DC 4.0.0
 					psIni->bHold4 = true;
 				else
 					psIni->bHold4 = false;
 
-				if(pAll->eAsType == A_REMOTE && bRemLogin)				//DC 4.1.0
-				 {
-					 pAll->bIni = true;
-					 if(psIni->nTickets4 != nTicketsOld4)// || psIni->sLog4.eState == S_NEXT)
-					 {
-						 nTicketsOld4 = psIni->nTickets4;
-						 int k = 0;
-						 Cmd^ pCmd = gcnew Cmd();
-						 pCmd->cId = CL_JOB;
-						 pAll->qCmd->Enqueue(pCmd);
+				if (pAll->eAsType == A_REMOTE && bRemLogin)				//DC 4.1.0
+				{
+					pAll->bIni = true;
+					if (psIni->nTickets4 != nTicketsOld4)// || psIni->sLog4.eState == S_NEXT)
+					{
+						nTicketsOld4 = psIni->nTickets4;
+						int k = 0;
+						Cmd^ pCmd = gcnew Cmd();
+						pCmd->cId = CL_JOB;
+						pAll->qCmd->Enqueue(pCmd);
 
-						 pCmd = gcnew Cmd();
-						 pCmd->cId = CL_TRUCKS;
-						 pAll->qCmd->Enqueue(pCmd);
+						pCmd = gcnew Cmd();
+						pCmd->cId = CL_TRUCKS;
+						pAll->qCmd->Enqueue(pCmd);
 
-						 while(1 > 0 && k++ < 5)
-						Thread::Sleep(100);
-					 }
-					 //this->groupBox4->Refresh();
-				 }
+						while (1 > 0 && k++ < 5)
+							Thread::Sleep(100);
+					}
+					//this->groupBox4->Refresh();
+				}
 
-				if(pAll->eAsType != A_REMOTE && pAll->nCservOk == 1)
+				if (pAll->eAsType != A_REMOTE && pAll->nCservOk == 1)
 				{
 					this->groupBox4->BackColor = COL_DG;
 					this->siloBar4->BackColor = COL_DG;
 					this->scaleBar4->BackColor = COL_DG;
 					this->remoteLb->Visible = true;
 				}
-				else if(pAll->eAsType == A_REMOTE && pAll->nClinkOk == 0)
+				else if (pAll->eAsType == A_REMOTE && pAll->nClinkOk == 0)
 				{
 					this->groupBox4->BackColor = COL_R;
 					this->siloBar4->BackColor = COL_R;
@@ -13178,9 +13188,9 @@ private:
 					this->remoteLb->ForeColor = System::Drawing::Color::Black;
 					this->remoteLb->Visible = true;
 				}
-				else if(pAll->eAsType == A_REMOTE && pAll->nClinkOk == 2)
+				else if (pAll->eAsType == A_REMOTE && pAll->nClinkOk == 2)
 				{
-					if(nCounts > 100)
+					if (nCounts > 100)
 					{
 						this->groupBox4->BackColor = COL_R;
 						this->siloBar4->BackColor = COL_R;
@@ -13200,7 +13210,7 @@ private:
 					this->remoteLb->Visible = false;
 				}
 
-				switch(psIni->sLog4.eState)
+				switch (psIni->sLog4.eState)
 				{
 				case S_IDLE:
 					nDelay4 = 0;		// reset delay timer
@@ -13209,21 +13219,21 @@ private:
 					truckBar4->Pct = 0;	//DC 4.0.0
 					fTarget4 = 0;		//DC 4.0.0
 					bStopAdd4 = false;	//DC 4.0.0
-					//if(pAll->eAsType != A_REMOTE)	//DC 4.1.0
-					//	tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
+										//if(pAll->eAsType != A_REMOTE)	//DC 4.1.0
+										//	tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
 
 					tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
-					if(!psIni->bTest && !psIni->bSendBitWise)
+					if (!psIni->bTest && !psIni->bSendBitWise)
 						psIni->nSclOutEU[3] = 0;		//DC 4.0.0 set analog output value to 0
-					if(pAll->eAsType == A_REMOTE && bRemLogin && target4->Text != "")
+					if (pAll->eAsType == A_REMOTE && bRemLogin && target4->Text != "")
 						setState4(S_IDLE);
 					break;
 
 				case S_NEXT:
-					if(!((psIni->nWpoints & psIni->uSendTargetO) > 0) && ((psIni->nRpoints & psIni->uLaneTareI[3]) > 0))	//DC 4.0.1
+					if (!((psIni->nWpoints & psIni->uSendTargetO) > 0) && ((psIni->nRpoints & psIni->uLaneTareI[3]) > 0))	//DC 4.0.1
 					{
 						bTruck4 = true;											//DC 4.0.1
-						if(readyBt4->Enabled != true)							//DC 4.0.8
+						if (readyBt4->Enabled != true)							//DC 4.0.8
 							psIni->sLog4.fTruckTare = psIni->sScale4.dValue;		//DC 4.0.1
 						readyBt4->Enabled = true;
 						readyBt4->BackColor = COL_PGREEN;
@@ -13233,37 +13243,37 @@ private:
 						readyBt4->Enabled = false;
 						readyBt4->BackColor = COL_TRANS;
 					}
-					if(pAll->eAsType == A_REMOTE && bRemLogin && target4->Text == "")				//DC 4.1.0
+					if (pAll->eAsType == A_REMOTE && bRemLogin && target4->Text == "")				//DC 4.1.0
 					{
 						customer4->Text = gcnew String(psIni->sLog4.sT.customer_name_1);
-						 Job4->Text = gcnew String(psIni->sLog4.sT.project_code);
-						 material4->Text = gcnew String(psIni->sLog4.sT.mix_code);
-						 tic_num4->Text = psIni->sLog4.sT.ticket_num.ToString();
-						 truck4->Text = gcnew String(psIni->sLog4.sT.truck_id);
-						 if(psIni->bScaleInLB)	//DC 3.2.0
-							 target4->Text = psIni->sLog4.sT.load_size.ToString("F00");
-						 else
+						Job4->Text = gcnew String(psIni->sLog4.sT.project_code);
+						material4->Text = gcnew String(psIni->sLog4.sT.mix_code);
+						tic_num4->Text = psIni->sLog4.sT.ticket_num.ToString();
+						truck4->Text = gcnew String(psIni->sLog4.sT.truck_id);
+						if (psIni->bScaleInLB)	//DC 3.2.0
+							target4->Text = psIni->sLog4.sT.load_size.ToString("F00");
+						else
 							target4->Text = psIni->sLog4.sT.load_size.ToString("F02");
-						 plant4->Text = psIni->sLog4.sT.plant_num.ToString();
+						plant4->Text = psIni->sLog4.sT.plant_num.ToString();
 
-						 pJob4 = gcnew Job();
-						 pJob4->nLogIdx = poLog->log(C_APPEND,&psIni->sLog4, 0);
-						 pJob4->nTicket = psIni->sLog4.sT.ticket_num;
-						 pJob4->nSilo = psIni->sLog4.nSilo;
-						 pJob4->stCustomer = gcnew String(psIni->sLog4.sT.customer_name_1);
-						 pJob4->eStatus = psIni->sLog4.eJobStatus;
-						 pJob4->fLoad = Convert::ToDouble(target4->Text);
-						 scaleBar4->Target = pJob4->fLoad;
+						pJob4 = gcnew Job();
+						pJob4->nLogIdx = poLog->log(C_APPEND, &psIni->sLog4, 0);
+						pJob4->nTicket = psIni->sLog4.sT.ticket_num;
+						pJob4->nSilo = psIni->sLog4.nSilo;
+						pJob4->stCustomer = gcnew String(psIni->sLog4.sT.customer_name_1);
+						pJob4->eStatus = psIni->sLog4.eJobStatus;
+						pJob4->fLoad = Convert::ToDouble(target4->Text);
+						scaleBar4->Target = pJob4->fLoad;
 					}
-					if(pAll->eAsType == A_REMOTE && bRemLogin && nextBt4->Enabled == true )
+					if (pAll->eAsType == A_REMOTE && bRemLogin && nextBt4->Enabled == true)
 					{
-						 all4->Enabled = false;
-						 all4->BackColor = COL_TRANS;
+						all4->Enabled = false;
+						all4->BackColor = COL_TRANS;
 
-						 nextBt4->Enabled = false;
-						 nextBt4->BackColor = COL_TRANS;
+						nextBt4->Enabled = false;
+						nextBt4->BackColor = COL_TRANS;
 					}
-					if(pAll->eAsType == A_REMOTE && bRemLogin && target4->ReadOnly == true )
+					if (pAll->eAsType == A_REMOTE && bRemLogin && target4->ReadOnly == true)
 					{
 						truck4->BackColor = COL_W;
 						target4->BackColor = COL_W;
@@ -13272,13 +13282,13 @@ private:
 					break;
 
 				case S_READY:
-					if(!psIni->bSendBitWise)
+					if (!psIni->bSendBitWise)
 						psIni->nSclOutEU[3] = truckBar4->Maximum;		//DC 4.0.0 set analog output value
 
-					if(psIni->bBotScale)
+					if (psIni->bBotScale)
 						fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 
-					if(psIni->bPdmPlc && !psIni->bSendBitWise && (psIni->nRpoints & psIni->asSilos[psIni->sLog4.nSilo-1].uDropReadyI) > 0)
+					if (psIni->bPdmPlc && !psIni->bSendBitWise && (psIni->nRpoints & psIni->asSilos[psIni->sLog4.nSilo - 1].uDropReadyI) > 0)
 					{
 						dropBt4->Enabled = true;
 						dropBt4->BackColor = COL_PGREEN;
@@ -13289,12 +13299,12 @@ private:
 						psIni->nWpoints &= ~psIni->uSendTargetO;		//DC 4.0.1 turn off send target output
 						resetTargetOutput();							//DC 4.0.1
 					}
-					if(pAll->eAsType == A_REMOTE && bRemLogin && fTarget4 == 0)				//DC 4.1.0
+					if (pAll->eAsType == A_REMOTE && bRemLogin && fTarget4 == 0)				//DC 4.1.0
 					{
 						setDrops4(psIni->sLog4.nDrops);
 					}
 
-					if(pAll->eAsType == A_REMOTE && bRemLogin && readyBt4->Enabled == true )
+					if (pAll->eAsType == A_REMOTE && bRemLogin && readyBt4->Enabled == true)
 					{
 						readyBt4->Enabled = false;
 						readyBt4->BackColor = COL_TRANS;
@@ -13308,249 +13318,249 @@ private:
 					}
 					break;
 
-				//=========================================================================
+					//=========================================================================
 				case S_SAFE:
-					if((clock() - tSafeD) >= psIni->nSafeTime)	
-						setState4(S_DROP);	
+					if ((clock() - tSafeD) >= psIni->nSafeTime)
+						setState4(S_DROP);
 					break;
 
 					//------------------------------------------------------------------------
 				case S_DROP:
-					if(testHold4()) return;			//DC 4.0.0
-					// pulse
+					if (testHold4()) return;			//DC 4.0.0
+														// pulse
 					nBlink4 = ++nBlink4 & 3;
 
-					if(nBlink4 > 1)
+					if (nBlink4 > 1)
 						dropBt4->BackColor = COL_GREEN;
 					else
-						dropBt4->BackColor = COL_PGREEN;		
+						dropBt4->BackColor = COL_PGREEN;
 
-					if(psIni->sScale4.dValue == fTmpScale4)
+					if (psIni->sScale4.dValue == fTmpScale4)
 					{
 						nTmpCnt4++;
-						if(nTmpCnt4 > psIni->nScaleIdle)
+						if (nTmpCnt4 > psIni->nScaleIdle)
 						{
 							setState4(S_HOLD_SETTLE);
-							MessageBox::Show("Scale is IDLE, pause", "Lane D", 
+							MessageBox::Show("Scale is IDLE, pause", "Lane D",
 								System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-						}			 
+						}
 					}
 					else
 					{
 						fTmpScale4 = psIni->sScale4.dValue;
-						nTmpCnt4 = 0; 
+						nTmpCnt4 = 0;
 					}
 
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 					{
 						// adapt --------------------------------------------------
-						if(adapt4->Checked)
+						if (adapt4->Checked)
 							fFall4 = getAdapt(4, (uint)psIni->sScale4.dValue);
 
 						// final test
-						if(psIni->sScale4.dValue > (fNewTarget4 - fFall4 - fTol4))
+						if (psIni->sScale4.dValue > (fNewTarget4 - fFall4 - fTol4))
 						{
 							fCumTarget4 += fTarget4;
 							setState4(S_SETTLE);
-						}		
+						}
 					}
 					else
 					{
 						fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 						truckBar4->Value = fLoad4;
-						truckBar4->Pct =(int) ((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
+						truckBar4->Pct = (int)((fTarget4 - fLoad4) / fTarget4) * 100;	//DC 4.0.0
 
-						if(!psIni->bPdmPlc)
+						if (!psIni->bPdmPlc)
 						{
 							// adapt --------------------------------------------------
-							if(adapt4->Checked)
+							if (adapt4->Checked)
 								fFall4 = getAdapt(psIni->sLog4.nSilo, (uint)(fLoad4));
 
 							// final test
-							if(fLoad4 >= (fCumTarget4 - fFall4 - fTol4))
+							if (fLoad4 >= (fCumTarget4 - fFall4 - fTol4))
 								setState4(S_SETTLE);
 						}
-						else if(!psIni->bSendTarget && !psIni->bSendBitWise)
+						else if (!psIni->bSendTarget && !psIni->bSendBitWise)
 						{
-	//						 switch(psIni->sLog1.nSilo)
-							 { 
-								 if(fTarget4-fLoad4 >= fTarget4 * psIni->asSilos[psIni->sLog4.nSilo-1].nFlowRatePct1/100)
-								 {
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
-								 }
-								 else if(fTarget4-fLoad4 >= fTarget4 * psIni->asSilos[psIni->sLog4.nSilo-1].nFlowRatePct2/100)
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
-								 }
-								 else if(fTarget4-fLoad4 >= fTarget4 * psIni->asSilos[psIni->sLog4.nSilo-1].nFlowRatePct3/100)
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
-								 }
-								 else
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
-								 }
+							//						 switch(psIni->sLog1.nSilo)
+							{
+								if (fTarget4 - fLoad4 >= fTarget4 * psIni->asSilos[psIni->sLog4.nSilo - 1].nFlowRatePct1 / 100)
+								{
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
+								}
+								else if (fTarget4 - fLoad4 >= fTarget4 * psIni->asSilos[psIni->sLog4.nSilo - 1].nFlowRatePct2 / 100)
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
+								}
+								else if (fTarget4 - fLoad4 >= fTarget4 * psIni->asSilos[psIni->sLog4.nSilo - 1].nFlowRatePct3 / 100)
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints |= psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
+								}
+								else
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
+								}
 
-								 if(fLoad4>= (fTarget4 - psIni->asSilos[psIni->sLog4.nSilo-1].fFall - fTol4))
-								 {
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
+								if (fLoad4 >= (fTarget4 - psIni->asSilos[psIni->sLog4.nSilo - 1].fFall - fTol4))
+								{
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+									psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
 									setState4(S_SETTLE_PLC);
-								 }
+								}
 
-								 if(nDelay4 == 0 && psIni->asSilos[psIni->sLog4.nSilo-1].nDelayPct > 0 && psIni->asSilos[psIni->sLog4.nSilo-1].nDelayTime > 0)
-								 {
-									 if(fTarget4-fLoad4 <= fTarget4 * psIni->asSilos[psIni->sLog4.nSilo-1].nDelayPct/100)
-									 {
-										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate1O;
-										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate2O;
-										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo-1].uFlowRate3O;
+								if (nDelay4 == 0 && psIni->asSilos[psIni->sLog4.nSilo - 1].nDelayPct > 0 && psIni->asSilos[psIni->sLog4.nSilo - 1].nDelayTime > 0)
+								{
+									if (fTarget4 - fLoad4 <= fTarget4 * psIni->asSilos[psIni->sLog4.nSilo - 1].nDelayPct / 100)
+									{
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate1O;
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate2O;
+										psIni->nWpoints &= ~psIni->asSilos[psIni->sLog4.nSilo - 1].uFlowRate3O;
 										setState4(S_DELAY_PLC);
-									 }
-								 }
-							 }
+									}
+								}
+							}
 
 						}
 					}
-					if(psIni->bPdmPlc && psIni->bSendBitWise) 
+					if (psIni->bPdmPlc && psIni->bSendBitWise)
 					{
 						//DC 4.0.0 wait for complete input from PDM
-						if((psIni->nRpoints & psIni->asSilos[psIni->sLog4.nSilo-1].uDoneI) > 0)
+						if ((psIni->nRpoints & psIni->asSilos[psIni->sLog4.nSilo - 1].uDoneI) > 0)
 							setState4(S_SETTLE_PLC);
 						//else if (fLoad1 >= (fTarget1 + psIni->asSilos[psIni->sLog1.nSilo-1].dAddTol))
 						//	setState1(S_HOLD_DROP);
 					}
-					if(pAll->eAsType == A_REMOTE && bRemLogin && pauseBt4->Enabled == false )
+					if (pAll->eAsType == A_REMOTE && bRemLogin && pauseBt4->Enabled == false)
 					{
-						 printOnly4->Enabled = false;
-						 printOnly4->BackColor = COL_TRANS;
+						printOnly4->Enabled = false;
+						printOnly4->BackColor = COL_TRANS;
 
-						 dropBt4->Enabled = false;
-						 dropBt4->BackColor = COL_TRANS;							 
+						dropBt4->Enabled = false;
+						dropBt4->BackColor = COL_TRANS;
 
-						 pauseBt4->Enabled = true;
-						 pauseBt4->BackColor = COL_HOLDK;
+						pauseBt4->Enabled = true;
+						pauseBt4->BackColor = COL_HOLDK;
 
-						 siloBar4->BarColor = COL_DISCH;
+						siloBar4->BarColor = COL_DISCH;
 					}
 					break;
 
 					// delay ------------------------------------------------------
 				case S_DELAY_PLC:
-					if(nDelay4 < psIni->asSilos[psIni->sLog4.nSilo-1].nDelayTime*10)
+					if (nDelay4 < psIni->asSilos[psIni->sLog4.nSilo - 1].nDelayTime * 10)
 					{
 						nDelay4++;
-						switch(psIni->sLog4.nSilo)
-						 {
-						 case 10: siloBar4->Delay = true; siloBar4->Count = psIni->asSilos[psIni->sLog4.nSilo-1].nDelayTime - nDelay4/10;	break;
-						 case 11: siloBar42->Delay = true; siloBar42->Count = psIni->asSilos[psIni->sLog4.nSilo-1].nDelayTime - nDelay4/10;	break;
-						 case 12: siloBar43->Delay = true; siloBar43->Count = psIni->asSilos[psIni->sLog4.nSilo-1].nDelayTime - nDelay4/10;	break;
-						 }
+						switch (psIni->sLog4.nSilo)
+						{
+						case 10: siloBar4->Delay = true; siloBar4->Count = psIni->asSilos[psIni->sLog4.nSilo - 1].nDelayTime - nDelay4 / 10;	break;
+						case 11: siloBar42->Delay = true; siloBar42->Count = psIni->asSilos[psIni->sLog4.nSilo - 1].nDelayTime - nDelay4 / 10;	break;
+						case 12: siloBar43->Delay = true; siloBar43->Count = psIni->asSilos[psIni->sLog4.nSilo - 1].nDelayTime - nDelay4 / 10;	break;
+						}
 					}
 					else
 					{
-						switch(psIni->sLog4.nSilo)
-						 {
-						 case 10: siloBar4->Delay = false; siloBar4->Count = 0;	break;
-						 case 11: siloBar42->Delay = false; siloBar42->Count = 0;	break;
-						 case 12: siloBar43->Delay = false; siloBar43->Count = 0;	break;
-						 }
+						switch (psIni->sLog4.nSilo)
+						{
+						case 10: siloBar4->Delay = false; siloBar4->Count = 0;	break;
+						case 11: siloBar42->Delay = false; siloBar42->Count = 0;	break;
+						case 12: siloBar43->Delay = false; siloBar43->Count = 0;	break;
+						}
 						setState4(S_DROP);
 					}
 					break;
 
 					//-------------------------------------------------------------
 				case S_SETTLE_PLC:
-					if(nSettle4 < psIni->nScaleSettle)
+					if (nSettle4 < psIni->nScaleSettle)
 						nSettle4++;
 					else
 					{
-						if(!psIni->bSendBitWise)
+						if (!psIni->bSendBitWise)
 						{
 							fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 							truckBar4->Value = fLoad4;
-							truckBar4->Pct = (int)((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
-							if(fLoad4 >= psIni->sLog4.sT.load_size - fTol4)
-								setState4(S_UPDATE);	
+							truckBar4->Pct = (int)((fTarget4 - fLoad4) / fTarget4) * 100;	//DC 4.0.0
+							if (fLoad4 >= psIni->sLog4.sT.load_size - fTol4)
+								setState4(S_UPDATE);
 							/*else if(fLoad1 < psIni->sLog1.sT.load_size - fTol1)
 							{
-								setState1(S_DROP);
+							setState1(S_DROP);
 							}*/
 							else
 							{
-								if(psIni->sInv.bJog4)
-		//							setState1(S_ADD);	
+								if (psIni->sInv.bJog4)
+									//							setState1(S_ADD);	
 									addBt4_Click(nullptr, nullptr);
 								else
 								{
 									addBt4->BackColor = COL_CHARGE;
 									addBt4->Enabled = true;
-									setState4(S_ADD_WAIT);	
+									setState4(S_ADD_WAIT);
 								}
 							}
 						}
 						else
 							setState4(S_UPDATE);
 					}
-					if(pAll->eAsType == A_REMOTE && bRemLogin && siloBar4->BarColor == COL_DISCH )
+					if (pAll->eAsType == A_REMOTE && bRemLogin && siloBar4->BarColor == COL_DISCH)
 					{
-						 siloBar4->BarColor = COL_SETTLE;
+						siloBar4->BarColor = COL_SETTLE;
 					}
 					break;
 
 					//------------------------------------------------------------------------
 				case S_SETTLE:
-					if(nSettle4 < psIni->nScaleSettle)
+					if (nSettle4 < psIni->nScaleSettle)
 						nSettle4++;
 					else
 					{
 						subInv(4);
-						if(!psIni->bBotScale)
-						{							
+						if (!psIni->bBotScale)
+						{
 							// update fall --------------------------------
 							fFall = fFall4 + (psIni->sScale4.dValue - fTarget4);
 							updateFall(4, (uint)fTarget4, fFall);
 							updateAdapt(4, (uint)fAdapt4, psIni->sScale4.dValue - fAdapt4);
-							
+
 							fLoad4 += psIni->sScale4.dValue;
-							setState4(S_DISCH_WAIT);	
+							setState4(S_DISCH_WAIT);
 						}
-						else	
+						else
 						{
 							fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 							truckBar4->Value = fLoad4;
-							truckBar4->Pct = (int)((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
+							truckBar4->Pct = (int)((fTarget4 - fLoad4) / fTarget4) * 100;	//DC 4.0.0
 
-							// update fall diff --------------------------------
+																							// update fall diff --------------------------------
 							fFall = fFall4 + fLoad4 - fCumTarget4;
 							updateFall(psIni->sLog4.nSilo, (uint)fTarget4, fFall);
 							updateAdapt(psIni->sLog4.nSilo, (uint)fAdapt4, fLoad4 - fAdapt4);
-							
-							if(fLoad4 >= psIni->sLog4.sT.load_size - fTol4)
-								setState4(S_UPDATE);	
-							else if(fCumTarget4 < psIni->sLog4.sT.load_size)
+
+							if (fLoad4 >= psIni->sLog4.sT.load_size - fTol4)
+								setState4(S_UPDATE);
+							else if (fCumTarget4 < psIni->sLog4.sT.load_size)
 							{
 								setState4(S_READY);
 							}
 							else
 							{
-								if(psIni->sInv.bJog4)
-//									setState4(S_ADD);	
+								if (psIni->sInv.bJog4)
+									//									setState4(S_ADD);	
 									addBt4_Click(nullptr, nullptr);
 								else
 								{
 									addBt4->BackColor = COL_CHARGE;
 									addBt4->Enabled = true;
-									setState4(S_ADD_WAIT);	
+									setState4(S_ADD_WAIT);
 								}
 							}
 						}
@@ -13559,32 +13569,32 @@ private:
 
 					//------------------------------------------------------------------------
 				case S_ADD_WAIT:
-					if(psIni->bAutoAdd && !bStopAdd4)
+					if (psIni->bAutoAdd && !bStopAdd4)
 						addBt4_Click(nullptr, nullptr);
 					break;
 
 				case S_ADD:
-					if(testHold4()) return;			//DC 4.0.0
+					if (testHold4()) return;			//DC 4.0.0
 					fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;	//DC 4.0.0
 					truckBar4->Value = fLoad4;									//DC 4.0.0
-					truckBar4->Pct = (int)((fTarget4-fLoad4)/fTarget4)*100;			//DC 4.0.0
-					switch(psIni->sLog4.nSilo)
+					truckBar4->Pct = (int)((fTarget4 - fLoad4) / fTarget4) * 100;			//DC 4.0.0
+					switch (psIni->sLog4.nSilo)
 					{
-						case 10: siloBar4->Add = true;	break;
-						case 11: siloBar42->Add = true;	break;
-						case 12: siloBar43->Add = true;	break;
+					case 10: siloBar4->Add = true;	break;
+					case 11: siloBar42->Add = true;	break;
+					case 12: siloBar43->Add = true;	break;
 					}
-					if(nTmpCnt4 < nJogD)
+					if (nTmpCnt4 < nJogD)
 						nTmpCnt4++;
 					else
 					{
-						switch(psIni->sLog4.nSilo)
+						switch (psIni->sLog4.nSilo)
 						{
-							case 10: siloBar4->Add = false;		break;
-							case 11: siloBar42->Add = false;	break;
-							case 12: siloBar43->Add = false;	break;
+						case 10: siloBar4->Add = false;		break;
+						case 11: siloBar42->Add = false;	break;
+						case 12: siloBar43->Add = false;	break;
 						}
-						if(psIni->bPdmPlc)
+						if (psIni->bPdmPlc)
 							setState4(S_SETTLE_PLC);
 						else
 							setState4(S_ASETTLE);
@@ -13592,48 +13602,48 @@ private:
 					break;
 
 				case S_ASETTLE:
-					if(nTmpCnt4 < psIni->nScaleSettle)
+					if (nTmpCnt4 < psIni->nScaleSettle)
 						nTmpCnt4++;
 					else
 					{
 						subInv(4);
-						if(!psIni->bBotScale)					// upper scale
+						if (!psIni->bBotScale)					// upper scale
 						{
-							fLoad4 += psIni->sScale4.dValue - fTmpScale4; 
+							fLoad4 += psIni->sScale4.dValue - fTmpScale4;
 							addBt4->Enabled = false;
 						}
 						setState4(S_DISCH_WAIT);
 					}
 					break;
 
-				//------------------------------------------------------------------------
+					//------------------------------------------------------------------------
 				case S_DISCH_WAIT:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 					{
-						if((fCumTarget4 == psIni->sLog4.sT.load_size)
-						&& (fLoad4 < (psIni->sLog4.sT.load_size - fTol4)))
+						if ((fCumTarget4 == psIni->sLog4.sT.load_size)
+							&& (fLoad4 < (psIni->sLog4.sT.load_size - fTol4)))
 						{
-							if(psIni->sInv.bJog4)
-								setState4(S_ADD);	
+							if (psIni->sInv.bJog4)
+								setState4(S_ADD);
 							else
 							{
 								addBt4->BackColor = COL_CHARGE;
 								addBt4->Enabled = true;
 							}
 						}
-						else if(psIni->sInv.bAutoDisch4)						 
-							setState4(S_DISCH);	
+						else if (psIni->sInv.bAutoDisch4)
+							setState4(S_DISCH);
 					}
 					else
 					{
 						fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 						truckBar4->Value = fLoad4;
-						truckBar4->Pct = (int)((fTarget4-fLoad4)/fTarget4)*100;	//DC 4.0.0
+						truckBar4->Pct = (int)((fTarget4 - fLoad4) / fTarget4) * 100;	//DC 4.0.0
 
-						if(fLoad4 < fCumTarget4 - fTol4)
+						if (fLoad4 < fCumTarget4 - fTol4)
 						{
-							if(psIni->sInv.bJog4)
-								setState4(S_ADD);	
+							if (psIni->sInv.bJog4)
+								setState4(S_ADD);
 							else
 							{
 								addBt4->BackColor = COL_CHARGE;
@@ -13641,61 +13651,61 @@ private:
 							}
 						}
 						else
-							setState4(S_UPDATE);	
+							setState4(S_UPDATE);
 					}
 					break;
 
 					//------------------------------------------------------------------------
-				case S_DISCH:	 
+				case S_DISCH:
 					// pulse
 					nBlink4 = ++nBlink4 & 3;
-					if(nBlink4 > 1)
+					if (nBlink4 > 1)
 						dischBt4->BackColor = COL_GREEN;
 					else
-						dischBt4->BackColor = COL_PGREEN;		
+						dischBt4->BackColor = COL_PGREEN;
 
 					addBt4->Enabled = false;
-					truckBar4->Value = fLoad4-psIni->sScale4.dValue;
+					truckBar4->Value = fLoad4 - psIni->sScale4.dValue;
 
-					if(psIni->sScale4.dValue < psIni->sScale4.fTolerance)
+					if (psIni->sScale4.dValue < psIni->sScale4.fTolerance)
 						setState4(S_DSETTLE);
 					break;
 
-				case S_DSETTLE:	 
-					truckBar4->Value = fLoad4-psIni->sScale4.dValue;
+				case S_DSETTLE:
+					truckBar4->Value = fLoad4 - psIni->sScale4.dValue;
 
-					if(nSettle4 > psIni->nScaleDisSettle)
+					if (nSettle4 > psIni->nScaleDisSettle)
 					{
-						if(psIni->sLog4.eStop != A_NOT)
+						if (psIni->sLog4.eStop != A_NOT)
 							setState4(S_ABORT);
-						else if(fCumTarget4 < psIni->sLog4.sT.load_size)
+						else if (fCumTarget4 < psIni->sLog4.sT.load_size)
 							setState4(S_READY);
-						else		
+						else
 							setState4(S_UPDATE);
-					}		
+					}
 					else
 						nSettle4++;
 					break;
 
-				//------------------------------------------------------------------------
+					//------------------------------------------------------------------------
 				case S_ABORT:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 						fLoad4 += psIni->sScale4.dValue;
 					else
 						fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 
-					setState4(S_UPDATE);	
+					setState4(S_UPDATE);
 					break;
 
 				case S_UPDATE:
-					if(pAll->eAsType != A_REMOTE)	//DC 4.1.0
+					if (pAll->eAsType != A_REMOTE)	//DC 4.1.0
 						subInv(4);					//DC 4.0.3 update tonnage
 
-					if(pAll->eAsType != A_REMOTE)	//DC 4.1.0
+					if (pAll->eAsType != A_REMOTE)	//DC 4.1.0
 					{
 						psIni->sLog4.bPrintTarget = printTarget4->Checked || (psIni->sLog4.eStop == A_TARGET);
 
-						if(psIni->sLog4.eStop == A_NOT)
+						if (psIni->sLog4.eStop == A_NOT)
 						{
 							psIni->sLog4.eJobStatus = S_OK1;
 							pJob4->eStatus = S_OK1;
@@ -13703,10 +13713,10 @@ private:
 						pJob4->fLoad = fLoad4;
 						pJob4->nSilo = psIni->sLog4.nSilo;
 
-						if(psIni->sLog4.bPrintTarget == true)
+						if (psIni->sLog4.bPrintTarget == true)
 							fLoad4 = psIni->sLog4.sT.load_size;
 
-						if(taxExempt4->Checked)
+						if (taxExempt4->Checked)
 							psIni->sLog4.fTax = 0;
 
 						psIni->sLog4.tTimeDone = DateTime::Now.ToBinary();
@@ -13727,7 +13737,7 @@ private:
 						psIni->bSaveInv = true;
 
 						// dbase ---------------------------------------------
-						if(bAuto4)
+						if (bAuto4)
 						{
 							pDbase = gcnew Dbase();
 							pDbase->nPlant = pJob4->nPlant;
@@ -13740,25 +13750,25 @@ private:
 							pDbase->pstCustCode = gcnew String(psIni->sLog4.sT.customer_code);
 							pDbase->pstTruck = gcnew String(pJob4->stTruck);					//DC 4.1.1
 
-							//if(psIni->nDbaseOk > 0)  SRW
-							//	qDbase->Enqueue(pDbase);
-							//else
-							//	qDbaseBad->Enqueue(pDbase);
+																								//if(psIni->nDbaseOk > 0)  SRW
+																								//	qDbase->Enqueue(pDbase);
+																								//else
+																								//	qDbaseBad->Enqueue(pDbase);
 						}
 
-					
+
 						// printer --------------------------------------------
-						while(nCopies4 > 0)									//DC 4.0.2
+						while (nCopies4 > 0)									//DC 4.0.2
 						{
 							poLog->printTicket(&psIni->sLog4, nPrinterD, false);
 							nCopies4--;
 						}
 
-						if(psIni->b2ndPrinterOk4 && laneD2ndCB->Checked)	//DC 4.0.2
-							poLog->printTicket(&psIni->sLog4, n2ndPrinterD, false);					 
+						if (psIni->b2ndPrinterOk4 && laneD2ndCB->Checked)	//DC 4.0.2
+							poLog->printTicket(&psIni->sLog4, n2ndPrinterD, false);
 
 						poLog->log(C_UPDATE, &psIni->sLog4, pJob4->nLogIdx);
-					
+
 
 						// old job list
 						pJob4->stStatus = pAll->lStat[pJob4->eStatus];
@@ -13767,23 +13777,23 @@ private:
 						psIni->nOldDone4++;
 					}
 
-					if((psIni->sLog4.eStop == A_TARGET) 
-					|| (psIni->sLog4.eStop == A_VOID)
-					|| (psIni->nHornTime == 0))
-						setState4(S_IDLE);	
-					else						 
-						setState4(S_HORN);	 
+					if ((psIni->sLog4.eStop == A_TARGET)
+						|| (psIni->sLog4.eStop == A_VOID)
+						|| (psIni->nHornTime == 0))
+						setState4(S_IDLE);
+					else
+						setState4(S_HORN);
 					break;
 
 				case S_HORN:
-					if(nTmpCnt4 < psIni->nHornTime)
+					if (nTmpCnt4 < psIni->nHornTime)
 						++nTmpCnt4;
 					else
-						setState4(S_IDLE);	 
+						setState4(S_IDLE);
 					break;
 
 				case S_HOLD_SETTLE:
-					if(nTmpCnt4 < psIni->nScaleSettle)
+					if (nTmpCnt4 < psIni->nScaleSettle)
 						nTmpCnt4++;
 					else
 					{
@@ -13798,7 +13808,7 @@ private:
 					break;
 
 				case S_HOLD:
-					if(psIni->bHold4 == false)
+					if (psIni->bHold4 == false)
 					{
 						pauseBt4->BackColor = COL_HOLDK;
 						setState4(ePrevHold4);
@@ -13806,21 +13816,21 @@ private:
 					break;
 
 				default:
-					if(!psIni->bBotScale)
+					if (!psIni->bBotScale)
 						fLoad4 = psIni->sScale4.dValue + fCumTarget4;
-					else						 
+					else
 						fLoad4 = psIni->sScale4.dValue - psIni->sLog4.fTruckTare;
 					break;
 				}
 
 				//-----------------------------------------------------------inventory
-				if(psIni->bBotScale && !psIni->bSendTarget && !psIni->bSendBitWise)
+				if (psIni->bBotScale && !psIni->bSendTarget && !psIni->bSendBitWise)
 				{
-					if(!psIni->bTickAddress)
+					if (!psIni->bTickAddress)
 					{
-						if((psIni->nRpoints & J_FILL10) > 0)
+						if ((psIni->nRpoints & J_FILL10) > 0)
 						{
-							if(!bFill10)
+							if (!bFill10)
 							{
 								bFill10 = true;
 								addInv(10);					// update silo
@@ -13828,9 +13838,9 @@ private:
 						}
 						else
 							bFill10 = false;
-						if((psIni->nRpoints & J_FILL11) > 0)
+						if ((psIni->nRpoints & J_FILL11) > 0)
 						{
-							if(!bFill11)
+							if (!bFill11)
 							{
 								bFill11 = true;
 								addInv(11);						// update silo
@@ -13838,9 +13848,9 @@ private:
 						}
 						else
 							bFill11 = false;
-						if((psIni->nRpoints & J_FILL12) > 0)
+						if ((psIni->nRpoints & J_FILL12) > 0)
 						{
-							if(!bFill12)
+							if (!bFill12)
 							{
 								bFill12 = true;
 								addInv(12);						// update silo
@@ -13850,11 +13860,11 @@ private:
 							bFill12 = false;
 					}
 				}
-				else if(!psIni->bSendTarget && !psIni->bSendBitWise)
+				else if (!psIni->bSendTarget && !psIni->bSendBitWise)
 				{
-					if((psIni->nRpoints & I_FILL4) > 0)
+					if ((psIni->nRpoints & I_FILL4) > 0)
 					{
-						if(!bFill4)
+						if (!bFill4)
 						{
 							bFill4 = true;
 							addInv(4);						// update Silo 4
@@ -13870,18 +13880,18 @@ private:
 				ticketNum4->Text = psIni->nTickets4.ToString();
 				man4->Text = psIni->nOldDone4.ToString();
 
-				if(psIni->bBotScale)
+				if (psIni->bBotScale)
 				{
-					if(!psIni->bSendTarget && !psIni->bSendBitWise)
+					if (!psIni->bSendTarget && !psIni->bSendBitWise)
 					{
-						if(psIni->bTickAddress)
+						if (psIni->bTickAddress)
 						{
-							fill4->Visible = ((psIni->nRpoints & J_FILL1) > 0) 
-										  && ((psIni->nRpoints & J_FILL10) > 0);
-							fill42->Visible =((psIni->nRpoints & J_FILL1) > 0) 
-										  && ((psIni->nRpoints & J_FILL11) > 0);
-							fill43->Visible =((psIni->nRpoints & J_FILL1) > 0)
-										  && ((psIni->nRpoints & J_FILL12) > 0);
+							fill4->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL10) > 0);
+							fill42->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL11) > 0);
+							fill43->Visible = ((psIni->nRpoints & J_FILL1) > 0)
+								&& ((psIni->nRpoints & J_FILL12) > 0);
 						}
 						else
 						{
@@ -13904,8 +13914,8 @@ private:
 						siloBar43->Open = (psIni->nWpoints & psIni->asSilos[11].uDropO) > 0;
 					}
 
-					if(pAll->eAsType == A_PROD || (pAll->eAsType == A_REMOTE && psIni->bData))
-						bTruck4 = psIni->sScale4.dValue > psIni->fBotScaleTruck;			
+					if (pAll->eAsType == A_PROD || (pAll->eAsType == A_REMOTE && psIni->bData))
+						bTruck4 = psIni->sScale4.dValue > psIni->fBotScaleTruck;
 				}
 				else
 				{
@@ -13918,7 +13928,7 @@ private:
 				truckBar4->Visible = bTruck4;
 				truckPic4->Visible = bTruck4;
 
-				if(psIni->bTest)
+				if (psIni->bTest)
 				{
 					scale4->Text = gcnew String((char *)psIni->sScale4.acData);
 					cnt4->Text = psIni->sScale4.nClock.ToString();
@@ -13926,39 +13936,39 @@ private:
 			}
 
 			//////////////////////////////////////////////////////////////////////////
-			if(psIni->nUlinkOk > 1)
+			if (psIni->nUlinkOk > 1)
 				ulinkLb->BackColor = COL_LB;
-			else if (psIni->nUlinkOk > 0) 
+			else if (psIni->nUlinkOk > 0)
 				ulinkLb->BackColor = COL_W;
 			else
 				ulinkLb->BackColor = COL_R;
 
-			if(psIni->nDbaseOk > 1)
+			if (psIni->nDbaseOk > 1)
 			{
 				DbaseLb->BackColor = COL_LB;
 				psIni->nDbaseOk--;
 			}
-			else if (psIni->nDbaseOk == 1) 
+			else if (psIni->nDbaseOk == 1)
 				DbaseLb->BackColor = COL_W;
 			else
-				DbaseLb->BackColor = COL_R;	
+				DbaseLb->BackColor = COL_R;
 
-			if (psIni->bPrinterOk1) 
+			if (psIni->bPrinterOk1)
 				printerLb1->BackColor = COL_W;
 			else
-				printerLb1->BackColor = COL_R;	
+				printerLb1->BackColor = COL_R;
 
-			if (psIni->bPrinterOk2) 
+			if (psIni->bPrinterOk2)
 				printerLb2->BackColor = COL_W;
 			else
-				printerLb2->BackColor = COL_R;	
+				printerLb2->BackColor = COL_R;
 
-			if (psIni->bPrinterOk3) 
+			if (psIni->bPrinterOk3)
 				printerLb3->BackColor = COL_W;
 			else
 				printerLb3->BackColor = COL_R;
 
-			if (psIni->bPrinterOk4) 
+			if (psIni->bPrinterOk4)
 				printerLb4->BackColor = COL_W;
 			else
 				printerLb4->BackColor = COL_R;
@@ -14007,42 +14017,42 @@ private:
 				laneD2ndCB->Checked = false;
 			}
 
-			if(pAll->eAsType != A_DEMO)
+			if (pAll->eAsType != A_DEMO)
 			{
-				if(psIni->nOptoOk > 1)
+				if (psIni->nOptoOk > 1)
 					optoLb->BackColor = COL_LB;
-				else if (psIni->nOptoOk > 0) 
+				else if (psIni->nOptoOk > 0)
 					optoLb->BackColor = COL_W;
 				else
-					optoLb->BackColor = COL_R;	
+					optoLb->BackColor = COL_R;
 			}
-			if ((psIni->nRpoints & psIni->uKeepAliveI) > 0) 
+			if ((psIni->nRpoints & psIni->uKeepAliveI) > 0)
 				matrixPDMLb->BackColor = COL_W;
 			else
 				matrixPDMLb->BackColor = COL_R;
 
-			if(pAll->eAsType == A_REMOTE)
+			if (pAll->eAsType == A_REMOTE)
 			{
-				if(pAll->nClinkOk > 2)
+				if (pAll->nClinkOk > 2)
 					clinkLb->BackColor = COL_YG;		// 3
-				else if(pAll->nClinkOk > 1)
+				else if (pAll->nClinkOk > 1)
 					clinkLb->BackColor = COL_LB;	// 2
-				else if (pAll->nClinkOk > 0) 
+				else if (pAll->nClinkOk > 0)
 					clinkLb->BackColor = COL_W;		// 1
 				else
 					clinkLb->BackColor = COL_R;		// 0
 			}
 
-			if(pAll->eAsType != A_REMOTE)	//DC 4.1.0
+			if (pAll->eAsType != A_REMOTE)	//DC 4.1.0
 			{
-				if(pAll->nCservOk > 1)
+				if (pAll->nCservOk > 1)
 					clinkLb->BackColor = COL_LB;
-				else if (pAll->nCservOk > 0) 
+				else if (pAll->nCservOk > 0)
 					clinkLb->BackColor = COL_W;
 				else
 					clinkLb->BackColor = COL_R;
 
-				switch(pAll->nKey)
+				switch (pAll->nKey)
 				{
 				case K_SBAR4: siloBar4_Click(nullptr, nullptr); break;
 				case K_NEXT4: pAll->bRemoteCall = true; nextBt4_Click(nullptr, nullptr); break;
@@ -14060,12 +14070,12 @@ private:
 					LOG_REC sLog;
 					Job^ pJob;
 					pJob = pAll->pJob;
-					if(pJob != nullptr)
+					if (pJob != nullptr)
 					{
-						if(poLog->findTicket(pJob->nTicket, &sLog) > 0)
-						 {
-							 poLog->calcTicket(&sLog);					 
-							 poLog->printTicket(&sLog, 4, true);	
+						if (poLog->findTicket(pJob->nTicket, &sLog) > 0)
+						{
+							poLog->calcTicket(&sLog);
+							poLog->printTicket(&sLog, 4, true);
 						}
 					}
 					break;
@@ -14074,2739 +14084,2733 @@ private:
 				pAll->nKey = 0;
 			}
 #ifdef SIM			 
-//			if(b485Ok)
+			//			if(b485Ok)
 #endif			 
 			{
-//				autoEvent->Set();
+				//				autoEvent->Set();
 			}
 		}
 #pragma endregion
 
 #pragma region COMMON
 	private: Truck^ findTruck(char *pcId)
+	{
+		Truck^ pTruck;
+		String^ stName = gcnew String(pcId);
+
+		for (int i = 0; i<pAll->lTruck->Count; i++)
 		{
-			Truck^ pTruck;
-			String^ stName = gcnew String(pcId);
+			pTruck = pAll->lTruck[i];
 
-			for(int i=0; i<pAll->lTruck->Count; i++)
-			{
-				pTruck = pAll->lTruck[i];
-
-				 if(pTruck->stName->Equals(stName))
-					return pTruck;
-			}
-			return nullptr;
+			if (pTruck->stName->Equals(stName))
+				return pTruck;
 		}
+		return nullptr;
+	}
 
 #pragma endregion
 
 #pragma region SILO1
-		//================================================================
-	private: System::Void nextBt1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bool bDone = false;
-				 int nIdx = 0;
+			 //================================================================
+	private: System::Void nextBt1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bool bDone = false;
+		int nIdx = 0;
 
-				 if(pAll->lJob->Count == 0)
-					 return;
+		if (pAll->lJob->Count == 0)
+			return;
 
-				 if(psIni->sScale1.bSerial == false)
-				 {
-					 if(MessageBox::Show("Scale ERROR, continue ?", "Lane A", 
-					 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-					 == System::Windows::Forms::DialogResult::No)
-					 {
-						 return;
-					 }
-				 }
-				 bAuto1 = true;
+		if (psIni->sScale1.bSerial == false)
+		{
+			if (MessageBox::Show("Scale ERROR, continue ?", "Lane A",
+				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+				== System::Windows::Forms::DialogResult::No)
+			{
+				return;
+			}
+		}
+		bAuto1 = true;
 
-				 customer1->BackColor = COL_G;
-				 customer1->ReadOnly = true;
-				 Job1->BackColor = COL_G;
-				 Job1->ReadOnly = true;
-				 material1->BackColor = COL_G;
-				 material1->ReadOnly = true;
-				 truck1->BackColor = COL_W;
-				 truck1->Select();
-				 target1->BackColor = COL_W;
-				 target1->ReadOnly = false;		//DC 3.2.4
+		customer1->BackColor = COL_G;
+		customer1->ReadOnly = true;
+		Job1->BackColor = COL_G;
+		Job1->ReadOnly = true;
+		material1->BackColor = COL_G;
+		material1->ReadOnly = true;
+		truck1->BackColor = COL_W;
+		truck1->Select();
+		target1->BackColor = COL_W;
+		target1->ReadOnly = false;		//DC 3.2.4
 
-				 //---------------------------------------
-				 while(!bDone && (nIdx < pAll->lJob->Count))
-				 {
-					 pJob1 = pAll->lJob[nIdx++];
+										//---------------------------------------
+		while (!bDone && (nIdx < pAll->lJob->Count))
+		{
+			pJob1 = pAll->lJob[nIdx++];
 
-					 if(psIni->bBotScale)
-					 {
-						 if((pJob1->eStatus != S_NEW) || (pJob1->nSilo > 3))
-							 continue;
-					 }
-					 else
-					 {
-						 if((pJob1->eStatus != S_NEW) || (pJob1->nSilo != 1))
-							 continue;
-					 }
-					 poLog->log(C_READ, &psIni->sLog1, pJob1->nLogIdx);
-					 if(gcnew String(psIni->sLog1.sT.mix_code) != "" 
-						 && (gcnew String(psIni->sLog1.sT.mix_code) != gcnew String(psIni->asSilos[psIni->sLog1.nSilo-1].acProduct))) //DC 4.0.1
-					 {
-						 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[psIni->sLog1.nSilo-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog1.sT.ticket_num
-							 + " for Truck: " + gcnew String(psIni->sLog1.sT.truck_id)
-							 + ", NEED Material: " + gcnew String(psIni->sLog1.sT.mix_code),"Lane A",
-						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-//						 bWrongMet = true;	//DC 4.0.1
-						return;
-					 }
-					 pAll->lJob->Remove(pJob1);
-					 pAll->nTickets1--;
+			if (psIni->bBotScale)
+			{
+				if ((pJob1->eStatus != S_NEW) || (pJob1->nSilo > 3))
+					continue;
+			}
+			else
+			{
+				if ((pJob1->eStatus != S_NEW) || (pJob1->nSilo != 1))
+					continue;
+			}
+			poLog->log(C_READ, &psIni->sLog1, pJob1->nLogIdx);
+			if (gcnew String(psIni->sLog1.sT.mix_code) != ""
+				&& (gcnew String(psIni->sLog1.sT.mix_code) != gcnew String(psIni->asSilos[psIni->sLog1.nSilo - 1].acProduct))) //DC 4.0.1
+			{
+				MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[psIni->sLog1.nSilo - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog1.sT.ticket_num
+					+ " for Truck: " + gcnew String(psIni->sLog1.sT.truck_id)
+					+ ", NEED Material: " + gcnew String(psIni->sLog1.sT.mix_code), "Lane A",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+				//						 bWrongMet = true;	//DC 4.0.1
+				return;
+			}
+			pAll->lJob->Remove(pJob1);
+			pAll->nTickets1--;
 
-					 pTruck1 = findTruck(psIni->sLog1.sT.truck_id);
+			pTruck1 = findTruck(psIni->sLog1.sT.truck_id);
 
-					 customer1->Text = gcnew String(psIni->sLog1.sT.customer_name_1);
-					 Job1->Text = gcnew String(psIni->sLog1.sT.project_code);
-					 material1->Text = gcnew String(psIni->sLog1.sT.mix_code);
-					 tic_num1->Text = psIni->sLog1.sT.ticket_num.ToString();
-					 truck1->Text = gcnew String(psIni->sLog1.sT.truck_id);
-					 if(psIni->bScaleInLB)	//DC 3.2.0
-						 target1->Text = psIni->sLog1.sT.load_size.ToString("F00");
-					 else
-						target1->Text = psIni->sLog1.sT.load_size.ToString("F02");
-					 plant1->Text = psIni->sLog1.sT.plant_num.ToString();
+			customer1->Text = gcnew String(psIni->sLog1.sT.customer_name_1);
+			Job1->Text = gcnew String(psIni->sLog1.sT.project_code);
+			material1->Text = gcnew String(psIni->sLog1.sT.mix_code);
+			tic_num1->Text = psIni->sLog1.sT.ticket_num.ToString();
+			truck1->Text = gcnew String(psIni->sLog1.sT.truck_id);
+			if (psIni->bScaleInLB)	//DC 3.2.0
+				target1->Text = psIni->sLog1.sT.load_size.ToString("F00");
+			else
+				target1->Text = psIni->sLog1.sT.load_size.ToString("F02");
+			plant1->Text = psIni->sLog1.sT.plant_num.ToString();
 
-					 if(psIni->bBotScale)
-					 {
-						 switch(psIni->sLog1.nSilo)
-						 {
-						 case 1:	siloBar1_Click(nullptr, nullptr);	break;
-						 case 2:	siloBar12_Click(nullptr, nullptr);	break;
-						 case 3:	siloBar13_Click(nullptr, nullptr);	break;
-						 }
-					 }
-					 bDone = true;
-				 }
-				 if(bDone)
-					setState1(S_NEXT);
-			 }
+			if (psIni->bBotScale)
+			{
+				switch (psIni->sLog1.nSilo)
+				{
+				case 1:	siloBar1_Click(nullptr, nullptr);	break;
+				case 2:	siloBar12_Click(nullptr, nullptr);	break;
+				case 3:	siloBar13_Click(nullptr, nullptr);	break;
+				}
+			}
+			bDone = true;
+		}
+		if (bDone)
+			setState1(S_NEXT);
+	}
 
 			 //----------------------------------------------------------------
-	private: System::Void autoBt1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bAuto1 = false;
+	private: System::Void autoBt1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bAuto1 = false;
 
-				 customer1->BackColor = COL_W;
-				 Job1->BackColor = COL_W;
-				 material1->BackColor = COL_W;
-				 truck1->BackColor = COL_W;
-				 target1->BackColor = COL_W;
-				 customer1->ReadOnly = false;
-				 Job1->ReadOnly = false;
-				 material1->ReadOnly = false;
+		customer1->BackColor = COL_W;
+		Job1->BackColor = COL_W;
+		material1->BackColor = COL_W;
+		truck1->BackColor = COL_W;
+		target1->BackColor = COL_W;
+		customer1->ReadOnly = false;
+		Job1->ReadOnly = false;
+		material1->ReadOnly = false;
 
-				 customer1->Text = nullptr;
-				 Job1->Text = nullptr;
-				 material1->Text = nullptr;
-				 truck1->Text = nullptr;
-				 target1->Text = nullptr;
-				 tic_num1->Text = psIni->sInv.nLastTicket.ToString();
-				 plant1->Text = psIni->nPlantNum1.ToString();
+		customer1->Text = nullptr;
+		Job1->Text = nullptr;
+		material1->Text = nullptr;
+		truck1->Text = nullptr;
+		target1->Text = nullptr;
+		tic_num1->Text = psIni->sInv.nLastTicket.ToString();
+		plant1->Text = psIni->nPlantNum1.ToString();
 
-				 memset(&psIni->sLog1, 0, sizeof(LOG_REC));
-				 psIni->sLog1.eJobStatus = S_NEW;
-				 psIni->sLog1.sT.mix_price = psIni->fTonPrice;
-				 psIni->sLog1.fTax = psIni->fTaxRate;
-				 psIni->sLog1.sT.ticket_num = psIni->sInv.nLastTicket++;
-				 psIni->sLog1.sT.plant_num = psIni->nPlantNum1;
+		memset(&psIni->sLog1, 0, sizeof(LOG_REC));
+		psIni->sLog1.eJobStatus = S_NEW;
+		psIni->sLog1.sT.mix_price = psIni->fTonPrice;
+		psIni->sLog1.fTax = psIni->fTaxRate;
+		psIni->sLog1.sT.ticket_num = psIni->sInv.nLastTicket++;
+		psIni->sLog1.sT.plant_num = psIni->nPlantNum1;
 
-				 siloBar1_Click(nullptr, nullptr);	
-				 setState1(S_NEXT);
-			 }
-
-			 //================================================================
-	private: System::Void readyBt1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if(!psIni->bBotScale)
-				 {
-					 if((psIni->sScale1.dValue < 0.0)
-						 && (MessageBox::Show("Scale under 0.0, continue ?", "Lane A", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::No))
-					 {
-						 return;
-					 }
-					 else if((psIni->sScale1.dValue > psIni->sScale1.fTolerance)
-						 && (MessageBox::Show("Scale over 0.0, continue ?", "Lane A", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::No))
-					 {
-						 return;
-					 }
-				 }
-				 
-				 try
-				 {
-					 psIni->sLog1.sT.load_size = Convert::ToDouble(target1->Text);
-					 pJob1->fLoad = Convert::ToDouble(target1->Text);				//DC 4.0.1
-				 }
-				 catch ( System::FormatException^ ) 
-				 {
-					 MessageBox::Show("Please correct numeric entry !", "Lane A", 
-						 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					 return;
-				 }
-			 
-				 // find truck
-/*				
-				 if(psIni->sLog1.sT.truck_id == nullptr)			//DC 3.2.9
-				 {
-					 char truckChar1[33];
-					 strncpy(truckChar1, truck1->Text->s, strlen(truck1->Text));
-					 pTruck1 = findTruck(truckChar1);
-				 }
-				 else
-*/
-					 pTruck1 = findTruck(psIni->sLog1.sT.truck_id);
-
-				 if(pTruck1 == nullptr)
-				 {
-					 MessageBox::Show("Truck "+gcnew String(psIni->sLog1.sT.truck_id)+" not found !", "Lane A", 
-					 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error); 
-					 return;
-				 }
-
-				 // test target versus truck capacity
-				 if(psIni->sLog1.sT.load_size > pTruck1->nCapacity) //DC 3.2.4 && !psIni->bUseTrkMax)		//DC 3.2.0
-				 {
-					 MessageBox::Show("Target exceeds truck capacity !", "Lane A", 
-					 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error); 
-					 return;
-				 }
-
-				 if(!bAuto1)
-				 {
-					 str2arr(customer1->Text, psIni->sLog1.sT.customer_name_1);
-					 str2arr(Job1->Text, psIni->sLog1.sT.project_code);
-					 str2arr(material1->Text, psIni->sLog1.sT.mix_code);
-					 str2arr(truck1->Text, psIni->sLog1.sT.truck_id);
-
-					 pJob1 = gcnew Job();
-					 pJob1->nLogIdx = poLog->log(C_APPEND,&psIni->sLog1, 0);
-					 pJob1->nTicket = psIni->sLog1.sT.ticket_num;
-					 pJob1->nSilo = psIni->sLog1.nSilo;
-					 pJob1->stCustomer = gcnew String(psIni->sLog1.sT.customer_name_1);
-					 pJob1->eStatus = psIni->sLog1.eJobStatus;
-//					 psIni->sLog1.fTruckTare = psIni->sScale1.dValue;
-				 }
-
-				 // lock job record
-				 customer1->BackColor = COL_G;
-				 customer1->ReadOnly = true;
-				 Job1->BackColor = COL_G;
-				 Job1->ReadOnly = true;
-				 material1->BackColor = COL_G;
-				 material1->ReadOnly = true;
-				 truck1->BackColor = COL_G;
-				 target1->BackColor = COL_G;
-				 target1->ReadOnly = true;		//DC 3.2.4
-
-				 nextBt1->Enabled = true;
-				 nextBt1->BackColor = COL_TRANS;
-				 autoBt1->Enabled = true;
-				 autoBt1->BackColor = COL_TRANS;
-
-				 if(psIni->bBotScale)					// update truck tare
-				 {
-				    if(!psIni->bSendBitWise)			//DC 4.0.1
-						psIni->sLog1.fTruckTare = psIni->sScale1.dValue;
-					if(psIni->bUseTrkMax)				//DC 3.2.0
-						psIni->sLog1.sT.load_size = psIni->sLog1.sT.load_size - psIni->sLog1.fTruckTare;
-				 }
-				 fCumTarget1 = 0.0;
-				 fFall1 = 0;
-				 setDrops1(psIni->sLog1.nDrops);
-				 setState1(S_READY);	
-			 }
+		siloBar1_Click(nullptr, nullptr);
+		setState1(S_NEXT);
+	}
 
 			 //================================================================
-	private: System::Void printOnly1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				if(taxExempt1->Checked)
-					psIni->sLog1.fTax = 0;
-				 poLog->calcTarget(&psIni->sLog1);	
-				 
-				 if(psIni->bScaleInLB)	//DC 3.2.0
-				 {
-					 tareA->Text = psIni->sLog1.fTruckTare.ToString("F00");
-					grossA->Text = psIni->sLog1.fGross.ToString("F00");
-				 }
-				 else
-				 {
-					 tareA->Text = psIni->sLog1.fTruckTare.ToString("F02");
-					 grossA->Text = psIni->sLog1.fGross.ToString("F02");
-				 }
-				 groupBoxA->Visible = true;
-			 }
+	private: System::Void readyBt1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (!psIni->bBotScale)
+		{
+			if ((psIni->sScale1.dValue < 0.0)
+				&& (MessageBox::Show("Scale under 0.0, continue ?", "Lane A",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::No))
+			{
+				return;
+			}
+			else if ((psIni->sScale1.dValue > psIni->sScale1.fTolerance)
+				&& (MessageBox::Show("Scale over 0.0, continue ?", "Lane A",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::No))
+			{
+				return;
+			}
+		}
+
+		try
+		{
+			psIni->sLog1.sT.load_size = Convert::ToDouble(target1->Text);
+			pJob1->fLoad = Convert::ToDouble(target1->Text);				//DC 4.0.1
+		}
+		catch (System::FormatException^)
+		{
+			MessageBox::Show("Please correct numeric entry !", "Lane A",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		// find truck
+		/*
+		if(psIni->sLog1.sT.truck_id == nullptr)			//DC 3.2.9
+		{
+		char truckChar1[33];
+		strncpy(truckChar1, truck1->Text->s, strlen(truck1->Text));
+		pTruck1 = findTruck(truckChar1);
+		}
+		else
+		*/
+		pTruck1 = findTruck(psIni->sLog1.sT.truck_id);
+
+		if (pTruck1 == nullptr)
+		{
+			MessageBox::Show("Truck " + gcnew String(psIni->sLog1.sT.truck_id) + " not found !", "Lane A",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		// test target versus truck capacity
+		if (psIni->sLog1.sT.load_size > pTruck1->nCapacity) //DC 3.2.4 && !psIni->bUseTrkMax)		//DC 3.2.0
+		{
+			MessageBox::Show("Target exceeds truck capacity !", "Lane A",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		if (!bAuto1)
+		{
+			str2arr(customer1->Text, psIni->sLog1.sT.customer_name_1);
+			str2arr(Job1->Text, psIni->sLog1.sT.project_code);
+			str2arr(material1->Text, psIni->sLog1.sT.mix_code);
+			str2arr(truck1->Text, psIni->sLog1.sT.truck_id);
+
+			pJob1 = gcnew Job();
+			pJob1->nLogIdx = poLog->log(C_APPEND, &psIni->sLog1, 0);
+			pJob1->nTicket = psIni->sLog1.sT.ticket_num;
+			pJob1->nSilo = psIni->sLog1.nSilo;
+			pJob1->stCustomer = gcnew String(psIni->sLog1.sT.customer_name_1);
+			pJob1->eStatus = psIni->sLog1.eJobStatus;
+			//					 psIni->sLog1.fTruckTare = psIni->sScale1.dValue;
+		}
+
+		// lock job record
+		customer1->BackColor = COL_G;
+		customer1->ReadOnly = true;
+		Job1->BackColor = COL_G;
+		Job1->ReadOnly = true;
+		material1->BackColor = COL_G;
+		material1->ReadOnly = true;
+		truck1->BackColor = COL_G;
+		target1->BackColor = COL_G;
+		target1->ReadOnly = true;		//DC 3.2.4
+
+		nextBt1->Enabled = true;
+		nextBt1->BackColor = COL_TRANS;
+		autoBt1->Enabled = true;
+		autoBt1->BackColor = COL_TRANS;
+
+		if (psIni->bBotScale)					// update truck tare
+		{
+			if (!psIni->bSendBitWise)			//DC 4.0.1
+				psIni->sLog1.fTruckTare = psIni->sScale1.dValue;
+			if (psIni->bUseTrkMax)				//DC 3.2.0
+				psIni->sLog1.sT.load_size = psIni->sLog1.sT.load_size - psIni->sLog1.fTruckTare;
+		}
+		fCumTarget1 = 0.0;
+		fFall1 = 0;
+		setDrops1(psIni->sLog1.nDrops);
+		setState1(S_READY);
+	}
+
+			 //================================================================
+	private: System::Void printOnly1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (taxExempt1->Checked)
+			psIni->sLog1.fTax = 0;
+		poLog->calcTarget(&psIni->sLog1);
+
+		if (psIni->bScaleInLB)	//DC 3.2.0
+		{
+			tareA->Text = psIni->sLog1.fTruckTare.ToString("F00");
+			grossA->Text = psIni->sLog1.fGross.ToString("F00");
+		}
+		else
+		{
+			tareA->Text = psIni->sLog1.fTruckTare.ToString("F02");
+			grossA->Text = psIni->sLog1.fGross.ToString("F02");
+		}
+		groupBoxA->Visible = true;
+	}
 
 			 //--------------------------------------------------------------------
-	private: System::Void okA_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 int nPrinter = 1;
-				 if(laneACb2->Checked)
-					 nPrinter = 2;
-				 else if(laneACb3->Checked)
-					 nPrinter = 3;
-				try
-				 {
-					 psIni->sLog1.fTruckTare = Convert::ToDouble(tareA->Text);
-					 psIni->sLog1.fGross = Convert::ToDouble(grossA->Text);
-					 psIni->sLog1.fLoad = psIni->sLog1.fGross - psIni->sLog1.fTruckTare;
-				 }
-				 catch ( System::FormatException^ ) 
-				 {
-					 MessageBox::Show("Please correct numeric entry !", "Lane A", 
-						 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					 return;
-				 }
-				 groupBoxA->Visible = false;
+	private: System::Void okA_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		int nPrinter = 1;
+		if (laneACb2->Checked)
+			nPrinter = 2;
+		else if (laneACb3->Checked)
+			nPrinter = 3;
+		try
+		{
+			psIni->sLog1.fTruckTare = Convert::ToDouble(tareA->Text);
+			psIni->sLog1.fGross = Convert::ToDouble(grossA->Text);
+			psIni->sLog1.fLoad = psIni->sLog1.fGross - psIni->sLog1.fTruckTare;
+		}
+		catch (System::FormatException^)
+		{
+			MessageBox::Show("Please correct numeric entry !", "Lane A",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+		groupBoxA->Visible = false;
 
-				 poLog->calcLoad(&psIni->sLog1);	
-				 poLog->printTicket(&psIni->sLog1, nPrinter, false);					 
-				 psIni->sLog1.eJobStatus = S_PRINTED;
-				 poLog->log(C_UPDATE, &psIni->sLog1, pJob1->nLogIdx);
+		poLog->calcLoad(&psIni->sLog1);
+		poLog->printTicket(&psIni->sLog1, nPrinter, false);
+		psIni->sLog1.eJobStatus = S_PRINTED;
+		poLog->log(C_UPDATE, &psIni->sLog1, pJob1->nLogIdx);
 
-				 // add to old job list
-				 pJob1->stStatus = pAll->lStat[pJob1->eStatus];
-				 pAll->lOld->Add(pJob1);
+		// add to old job list
+		pJob1->stStatus = pAll->lStat[pJob1->eStatus];
+		pAll->lOld->Add(pJob1);
 
-				 setState1(S_IDLE);
-			 }
+		setState1(S_IDLE);
+	}
 
 			 //================================================================
-	private: System::Void setDrops1(int nDropsIn) 
-			 {
-				int	nDropsMin = (int)(psIni->sLog1.sT.load_size / psIni->fDropMax) + 1;
-				int nDrops = max(nDropsMin, nDropsIn);
+	private: System::Void setDrops1(int nDropsIn)
+	{
+		int	nDropsMin = (int)(psIni->sLog1.sT.load_size / psIni->fDropMax) + 1;
+		int nDrops = max(nDropsMin, nDropsIn);
 
-				 // test size of drop against scale capacity
-				 fTarget1 = psIni->sLog1.sT.load_size / nDrops;
-				 fTol1 = max(psIni->fTarTolAbs, psIni->fTarTolPerc * fTarget1 / 100);
-				 truckBar1->Separators = nDrops - 1;
-				 psIni->sLog1.nDrops = nDrops;
+		// test size of drop against scale capacity
+		fTarget1 = psIni->sLog1.sT.load_size / nDrops;
+		fTol1 = max(psIni->fTarTolAbs, psIni->fTarTolPerc * fTarget1 / 100);
+		truckBar1->Separators = nDrops - 1;
+		psIni->sLog1.nDrops = nDrops;
 
-				 if(psIni->bBotScale)
-				 {
-					 switch(psIni->sLog1.nSilo)
-					 {
-					 case 1:  siloBar1->Target = fTarget1;	break;
-					 case 2:  siloBar12->Target = fTarget1;	break;
-					 case 3:  siloBar13->Target = fTarget1;	break;
-					 }
-					 scaleBar1->Target = fTarget1 + psIni->sLog1.fTruckTare;
-				 }
-				 else
-				 {
-					 siloBar1->Target = fTarget1;
-					 scaleBar1->Target = fTarget1;
-				 }
-				 switch(psIni->sLog1.nDrops)
-				 {
-				 case 1: drops11->Checked = true; break;
-				 case 2: drops12->Checked = true; break;
-				 case 3: drops13->Checked = true; break;
-				 case 4: drops14->Checked = true; break;
-				 }
-			 }
+		if (psIni->bBotScale)
+		{
+			switch (psIni->sLog1.nSilo)
+			{
+			case 1:  siloBar1->Target = fTarget1;	break;
+			case 2:  siloBar12->Target = fTarget1;	break;
+			case 3:  siloBar13->Target = fTarget1;	break;
+			}
+			scaleBar1->Target = fTarget1 + psIni->sLog1.fTruckTare;
+		}
+		else
+		{
+			siloBar1->Target = fTarget1;
+			scaleBar1->Target = fTarget1;
+		}
+		switch (psIni->sLog1.nDrops)
+		{
+		case 1: drops11->Checked = true; break;
+		case 2: drops12->Checked = true; break;
+		case 3: drops13->Checked = true; break;
+		case 4: drops14->Checked = true; break;
+		}
+	}
 			 //-------------------------------------------------------------------------
-	private: System::Void drops11_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops1(1);
-			 }
-	private: System::Void drops12_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops1(2);
-			 }
-	private: System::Void drops13_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops1(3);
-			 }
-	private: System::Void drops14_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops1(4);
-			 }
+	private: System::Void drops11_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops1(1);
+	}
+	private: System::Void drops12_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops1(2);
+	}
+	private: System::Void drops13_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops1(3);
+	}
+	private: System::Void drops14_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops1(4);
+	}
 
 			 //----------------------------------------------------------------
-	private: double getFall1(void) 
-			 {
-				 double fFall;
-				 int nIdx = (int)fTarget1;
+	private: double getFall1(void)
+	{
+		double fFall;
+		int nIdx = (int)fTarget1;
 
-				 if(!psIni->bBotScale)
-				 {
-					 if(autoFall1->Checked)
-						 fFall = psIni->sInv.asFall1[nIdx].fFall / SAMPLE_NBR;
-					 else
-						fFall = psIni->afManFall1[nIdx];
-				 }
-				 else
-				 {
-					 switch(psIni->sLog1.nSilo)
-					 {
-					 case 1:
-						 if(autoFall1->Checked)
-							 fFall = psIni->sInv.asFall1[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall1[nIdx];
-						 break;
-					 case 2:
-						 if(autoFall1->Checked)
-							 fFall = psIni->sInv.asFall2[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall2[nIdx];
-						 break;
-					 case 3:
-						 if(autoFall1->Checked)
-							 fFall = psIni->sInv.asFall3[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall3[nIdx];
-						 break;
-					 }
-				 }
-				 return fFall;
-			 }
+		if (!psIni->bBotScale)
+		{
+			if (autoFall1->Checked)
+				fFall = psIni->sInv.asFall1[nIdx].fFall / SAMPLE_NBR;
+			else
+				fFall = psIni->afManFall1[nIdx];
+		}
+		else
+		{
+			switch (psIni->sLog1.nSilo)
+			{
+			case 1:
+				if (autoFall1->Checked)
+					fFall = psIni->sInv.asFall1[nIdx].fFall / SAMPLE_NBR;
+				else
+					fFall = psIni->afManFall1[nIdx];
+				break;
+			case 2:
+				if (autoFall1->Checked)
+					fFall = psIni->sInv.asFall2[nIdx].fFall / SAMPLE_NBR;
+				else
+					fFall = psIni->afManFall2[nIdx];
+				break;
+			case 3:
+				if (autoFall1->Checked)
+					fFall = psIni->sInv.asFall3[nIdx].fFall / SAMPLE_NBR;
+				else
+					fFall = psIni->afManFall3[nIdx];
+				break;
+			}
+		}
+		return fFall;
+	}
 
 			 //-------------------------------------------------------------------------
-	private: System::Void dropBt1_Click(System::Object^  sender, 
-				 System::EventArgs^  e) 
-			 {
-				 bool bSafe = psIni->nSafeTime > 0;
-				 readyBt1->Enabled = false;
-				 readyBt1->BackColor = COL_TRANS;
+	private: System::Void dropBt1_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		bool bSafe = psIni->nSafeTime > 0;
+		readyBt1->Enabled = false;
+		readyBt1->BackColor = COL_TRANS;
 
-				 str2arr(truck1->Text, psIni->sLog1.sT.truck_id);
+		str2arr(truck1->Text, psIni->sLog1.sT.truck_id);
 
-				 if(!psIni->bBotScale)				//#ifdef UPSCALE
-				 {
-					 fNewTarget1 = fTarget1;
-				 }
-				 else
-				 {
-					if(pAll->eAsType == A_PROD)
-						 if(!bTruck1) return;
+		if (!psIni->bBotScale)				//#ifdef UPSCALE
+		{
+			fNewTarget1 = fTarget1;
+		}
+		else
+		{
+			if (pAll->eAsType == A_PROD)
+				if (!bTruck1) return;
 
-					 if(bFirstDrop1 && !psIni->bSendBitWise)
-						 psIni->sLog1.fTruckTare = psIni->sScale1.dValue;
-					 fCumTarget1 += fTarget1;
-				 }			 		 
-				 fFall1 = getFall1();
+			if (bFirstDrop1 && !psIni->bSendBitWise)
+				psIni->sLog1.fTruckTare = psIni->sScale1.dValue;
+			fCumTarget1 += fTarget1;
+		}
+		fFall1 = getFall1();
 
-				 if(psIni->bSafeJob)
-					 bSafe = bFirstDrop1;
+		if (psIni->bSafeJob)
+			bSafe = bFirstDrop1;
 
-				 if(bSafe)
-					setState1(S_SAFE);	
-				 else
-					 setState1(S_DROP);
-				 bFirstDrop1 = false;
-			 }
+		if (bSafe)
+			setState1(S_SAFE);
+		else
+			setState1(S_DROP);
+		bFirstDrop1 = false;
+	}
 
 			 //----------------------------------------------------------------		
-	private: System::Void dischBt1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 dischBt1->BackColor = COL_PGREEN;	
-				 setState1(S_DISCH);		
-			 }
+	private: System::Void dischBt1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		dischBt1->BackColor = COL_PGREEN;
+		setState1(S_DISCH);
+	}
 
 			 //-------------------------------------------------------------------------
 	private: System::Void pauseBt1_Click(System::Object^  sender,
-				 System::EventArgs^  e)
-			 {
-				 switch(psIni->sLog1.eState)
-				 {
-				 case S_DROP:			setState1(S_HOLD_DROP); //setState1(S_HOLD_SETTLE); 
-										pauseBt1->BackColor = COL_HOLD; 
-					break;
-				 case S_ASETTLE:		setState1(S_HOLD_ASETTLE); 
-										pauseBt1->BackColor = COL_HOLD; 
-					 break;
-				 case S_DISCH:			setState1(S_HOLD_DISCH); 
-										pauseBt1->BackColor = COL_HOLD; 
-					 break;
-				 case S_ADD:			setState1(S_HOLD_ADD); //DC 4.0.0
-										pauseBt1->BackColor = COL_HOLD; 
-					break;
+		System::EventArgs^  e)
+	{
+		switch (psIni->sLog1.eState)
+		{
+		case S_DROP:			setState1(S_HOLD_DROP); //setState1(S_HOLD_SETTLE); 
+			pauseBt1->BackColor = COL_HOLD;
+			break;
+		case S_ASETTLE:		setState1(S_HOLD_ASETTLE);
+			pauseBt1->BackColor = COL_HOLD;
+			break;
+		case S_DISCH:			setState1(S_HOLD_DISCH);
+			pauseBt1->BackColor = COL_HOLD;
+			break;
+		case S_ADD:			setState1(S_HOLD_ADD); //DC 4.0.0
+			pauseBt1->BackColor = COL_HOLD;
+			break;
 
-				 case S_HOLD_ADD:		setState1(S_ADD);		//DC 4.0.0
-										pauseBt1->BackColor = COL_HOLDK; 
-					 break;
-				 case S_HOLD_DROP:		setState1(S_DROP);
-										pauseBt1->BackColor = COL_HOLDK; 
-					 break;
-				 case S_HOLD_ASETTLE:	setState1(S_ASETTLE); 
-										pauseBt1->BackColor = COL_HOLDK; 
-					 break;
-				 case S_HOLD_DISCH:		setState1(S_DISCH); 
-										pauseBt1->BackColor = COL_HOLDK; 
-					 break;
-				 }
-			 }
+		case S_HOLD_ADD:		setState1(S_ADD);		//DC 4.0.0
+			pauseBt1->BackColor = COL_HOLDK;
+			break;
+		case S_HOLD_DROP:		setState1(S_DROP);
+			pauseBt1->BackColor = COL_HOLDK;
+			break;
+		case S_HOLD_ASETTLE:	setState1(S_ASETTLE);
+			pauseBt1->BackColor = COL_HOLDK;
+			break;
+		case S_HOLD_DISCH:		setState1(S_DISCH);
+			pauseBt1->BackColor = COL_HOLDK;
+			break;
+		}
+	}
 			 //-------------------------------------------------------------------------
-	private: System::Void stopBt1_Click(System::Object^  sender, 
-				 System::EventArgs^  e) 
-			 {
-				 switch(psIni->sLog1.eState)
-				 {
-				 case S_IDLE:	
-					 return;
-				 case S_NEXT:	   
-				 case S_READY:     
-					 if(bAuto1)
-					 {
-						 resetTargetOutput();		//DC 4.0.1
+	private: System::Void stopBt1_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		switch (psIni->sLog1.eState)
+		{
+		case S_IDLE:
+			return;
+		case S_NEXT:
+		case S_READY:
+			if (bAuto1)
+			{
+				resetTargetOutput();		//DC 4.0.1
 
-						 if(MessageBox::Show("Void Ticket ?", "Lane A", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::Yes)
-						 {
-							 pJob1->eStatus = S_VOIDED;
-							 psIni->sLog1.eJobStatus  = S_VOIDED;
-							 psIni->sLog1.eStop = A_VOID;
-							 psIni->sLog1.eState = S_ABORT;
-						 }
-						 else
-						 {
-							 pJob1->eStatus = S_NEW;
-							 pAll->lJob->Add(pJob1);
-
-							 if(!psIni->bBotScale)
-								 switch(psIni->sLog1.nSilo)
-								 {
-								 case 1: pAll->nTickets1++; break;
-								 case 2: pAll->nTickets2++; break;
-								 case 3: pAll->nTickets3++; break;
-								 case 4: psIni->nTickets4++; break;
-								 }
-							 else
-								 switch(psIni->sLog1.nSilo)
-								 {
-								 case 1: 
-								 case 2: 
-								 case 3: pAll->nTickets1++; break;
-								 case 4: 
-								 case 5: 
-								 case 6: pAll->nTickets2++; break;
-								 case 7: 
-								 case 8: 
-								 case 9: pAll->nTickets3++; break;
-								 case 10: 
-								 case 11: 
-								 case 12: psIni->nTickets4++; break;
-								 }
-							setState1(S_IDLE); 
-						 }
-					 }
-					 else
-						setState1(S_IDLE); 
-					 return;
-
-				 case S_DROP:      setState1(S_HOLD_SETTLE); break;
-				 case S_DISCH:     setState1(S_HOLD_DISCH); break;
-				 }
-				 StopForm^ pStop = gcnew StopForm(&psIni->sLog1, pJob1);
-				 pStop->Show();
-			 }
-
-			 //-------------------------------------------------------------------------
-	private: System::Void addBt1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bool bAdd = true;
-				 bool bAsk = false;
-				 addBt1->Enabled = false;
-
-				if(!psIni->bBotScale)
+				if (MessageBox::Show("Void Ticket ?", "Lane A",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::Yes)
 				{
-					bAsk = (fLoad1 + psIni->dAddQty) > psIni->sLog1.sT.load_size;
+					pJob1->eStatus = S_VOIDED;
+					psIni->sLog1.eJobStatus = S_VOIDED;
+					psIni->sLog1.eStop = A_VOID;
+					psIni->sLog1.eState = S_ABORT;
 				}
 				else
 				{
-					if(!psIni->bPdmPlc)
-						bAsk = (fLoad1 + psIni->dAddQty) > fCumTarget1;
+					pJob1->eStatus = S_NEW;
+					pAll->lJob->Add(pJob1);
+
+					if (!psIni->bBotScale)
+						switch (psIni->sLog1.nSilo)
+						{
+						case 1: pAll->nTickets1++; break;
+						case 2: pAll->nTickets2++; break;
+						case 3: pAll->nTickets3++; break;
+						case 4: psIni->nTickets4++; break;
+						}
 					else
-						bAsk = (fLoad1 + psIni->asSilos[psIni->sLog1.nSilo-1].dAddTol) > fCumTarget1;		//DC 4.0.0
+						switch (psIni->sLog1.nSilo)
+						{
+						case 1:
+						case 2:
+						case 3: pAll->nTickets1++; break;
+						case 4:
+						case 5:
+						case 6: pAll->nTickets2++; break;
+						case 7:
+						case 8:
+						case 9: pAll->nTickets3++; break;
+						case 10:
+						case 11:
+						case 12: psIni->nTickets4++; break;
+						}
+					setState1(S_IDLE);
 				}
+			}
+			else
+				setState1(S_IDLE);
+			return;
 
-				 if(bAsk)
-				 {
-					 bStopAdd1 = true;		//DC 4.0.0
-					if(MessageBox::Show("TRUCK CAPACITY WARNING, continue ?", "Lane A", 
-						System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						== System::Windows::Forms::DialogResult::No)
-						bAdd = false;
-				 }
-				 if(bAdd)
-					 setState1(S_ADD);
-				 else
-					 setState1(S_UPDATE);
-			 }
+		case S_DROP:      setState1(S_HOLD_SETTLE); break;
+		case S_DISCH:     setState1(S_HOLD_DISCH); break;
+		}
+		StopForm^ pStop = gcnew StopForm(&psIni->sLog1, pJob1);
+		pStop->Show();
+	}
 
-	 private: bool testHold1(void)
-			  {
-				  if(psIni->bHold1 && psIni->sLog1.eState != S_HOLD)
-				  {
-					  ePrevHold1 = psIni->sLog1.eState;
-					  setState1(S_HOLD);
-					  pauseBt1->BackColor = COL_HOLD;
-					  return true;
-				  }
-				  return false;
-			  }
+			 //-------------------------------------------------------------------------
+	private: System::Void addBt1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bool bAdd = true;
+		bool bAsk = false;
+		addBt1->Enabled = false;
+
+		if (!psIni->bBotScale)
+		{
+			bAsk = (fLoad1 + psIni->dAddQty) > psIni->sLog1.sT.load_size;
+		}
+		else
+		{
+			if (!psIni->bPdmPlc)
+				bAsk = (fLoad1 + psIni->dAddQty) > fCumTarget1;
+			else
+				bAsk = (fLoad1 + psIni->asSilos[psIni->sLog1.nSilo - 1].dAddTol) > fCumTarget1;		//DC 4.0.0
+		}
+
+		if (bAsk)
+		{
+			bStopAdd1 = true;		//DC 4.0.0
+			if (MessageBox::Show("TRUCK CAPACITY WARNING, continue ?", "Lane A",
+				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+				== System::Windows::Forms::DialogResult::No)
+				bAdd = false;
+		}
+		if (bAdd)
+			setState1(S_ADD);
+		else
+			setState1(S_UPDATE);
+	}
+
+	private: bool testHold1(void)
+	{
+		if (psIni->bHold1 && psIni->sLog1.eState != S_HOLD)
+		{
+			ePrevHold1 = psIni->sLog1.eState;
+			setState1(S_HOLD);
+			pauseBt1->BackColor = COL_HOLD;
+			return true;
+		}
+		return false;
+	}
 
 #pragma endregion
 
 #pragma region SILO2	
 			 //=========================================================================
-	private: System::Void nextBt2_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bool bDone = false;
-				 int nIdx = 0;
+	private: System::Void nextBt2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bool bDone = false;
+		int nIdx = 0;
 
-				 if(pAll->lJob->Count == 0)
-					 return;
+		if (pAll->lJob->Count == 0)
+			return;
 
-				 if((psIni->sScale2.bSerial == false)
-					 && (MessageBox::Show("Scale ERROR, continue ?", "Lane B", 
-					 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-					 == System::Windows::Forms::DialogResult::No))
-				 {
-					 return;
-				 }
+		if ((psIni->sScale2.bSerial == false)
+			&& (MessageBox::Show("Scale ERROR, continue ?", "Lane B",
+				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+				== System::Windows::Forms::DialogResult::No))
+		{
+			return;
+		}
 
-				 bAuto2 = true;
+		bAuto2 = true;
 
-				 customer2->BackColor = COL_G;
-				 customer2->ReadOnly = true;
-				 Job2->BackColor = COL_G;
-				 Job2->ReadOnly = true;
-				 material2->BackColor = COL_G;
-				 material2->ReadOnly = true;
-				 truck2->BackColor = COL_W;
-				 truck2->Select();
-				 target2->BackColor = COL_W;
-				 target2->ReadOnly = false;		//DC 3.2.4
+		customer2->BackColor = COL_G;
+		customer2->ReadOnly = true;
+		Job2->BackColor = COL_G;
+		Job2->ReadOnly = true;
+		material2->BackColor = COL_G;
+		material2->ReadOnly = true;
+		truck2->BackColor = COL_W;
+		truck2->Select();
+		target2->BackColor = COL_W;
+		target2->ReadOnly = false;		//DC 3.2.4
 
-				 //---------------------------------------
-				 while(!bDone && (nIdx < pAll->lJob->Count))
-				 {
-					 pJob2 = pAll->lJob[nIdx++];
+										//---------------------------------------
+		while (!bDone && (nIdx < pAll->lJob->Count))
+		{
+			pJob2 = pAll->lJob[nIdx++];
 
-					 if(psIni->bBotScale)
-					 {
-						 if((pJob2->eStatus != S_NEW) || (pJob2->nSilo < 4) || (pJob2->nSilo > 6))
-							 continue;
-					 }
-					 else
-					 {
-						 if((pJob2->eStatus != S_NEW) || (pJob2->nSilo != 2))
-							 continue;
-					 }
-					 poLog->log(C_READ, &psIni->sLog2, pJob2->nLogIdx);
-					 if(gcnew String(psIni->sLog2.sT.mix_code) != "" 
-						 && (gcnew String(psIni->sLog2.sT.mix_code) != gcnew String(psIni->asSilos[psIni->sLog2.nSilo-1].acProduct))) //DC 4.0.1
-					 {
-						 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[psIni->sLog2.nSilo-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog2.sT.ticket_num
-							 + " for Truck: " + gcnew String(psIni->sLog2.sT.truck_id)
-							 + ", NEED Material: " + gcnew String(psIni->sLog2.sT.mix_code),"Lane A",
-						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-//						 bWrongMet = true;	//DC 4.0.1
-						return;
-					 }
-					 pAll->lJob->Remove(pJob2);
-					 pAll->nTickets2--;
+			if (psIni->bBotScale)
+			{
+				if ((pJob2->eStatus != S_NEW) || (pJob2->nSilo < 4) || (pJob2->nSilo > 6))
+					continue;
+			}
+			else
+			{
+				if ((pJob2->eStatus != S_NEW) || (pJob2->nSilo != 2))
+					continue;
+			}
+			poLog->log(C_READ, &psIni->sLog2, pJob2->nLogIdx);
+			if (gcnew String(psIni->sLog2.sT.mix_code) != ""
+				&& (gcnew String(psIni->sLog2.sT.mix_code) != gcnew String(psIni->asSilos[psIni->sLog2.nSilo - 1].acProduct))) //DC 4.0.1
+			{
+				MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[psIni->sLog2.nSilo - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog2.sT.ticket_num
+					+ " for Truck: " + gcnew String(psIni->sLog2.sT.truck_id)
+					+ ", NEED Material: " + gcnew String(psIni->sLog2.sT.mix_code), "Lane A",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+				//						 bWrongMet = true;	//DC 4.0.1
+				return;
+			}
+			pAll->lJob->Remove(pJob2);
+			pAll->nTickets2--;
 
-					 pTruck2 = findTruck(psIni->sLog2.sT.truck_id);
+			pTruck2 = findTruck(psIni->sLog2.sT.truck_id);
 
-					 customer2->Text = gcnew String(psIni->sLog2.sT.customer_name_1);
-					 Job2->Text = gcnew String(psIni->sLog2.sT.project_code);
-					 material2->Text = gcnew String(psIni->sLog2.sT.mix_code);
-					 tic_num2->Text = psIni->sLog2.sT.ticket_num.ToString();
-					 truck2->Text = gcnew String(psIni->sLog2.sT.truck_id);
-					 if(psIni->bScaleInLB)	//DC 3.2.0
-						target2->Text = psIni->sLog2.sT.load_size.ToString("F00");
-					 else
-						target2->Text = psIni->sLog2.sT.load_size.ToString("F02");
-					 plant2->Text = psIni->sLog2.sT.plant_num.ToString();
+			customer2->Text = gcnew String(psIni->sLog2.sT.customer_name_1);
+			Job2->Text = gcnew String(psIni->sLog2.sT.project_code);
+			material2->Text = gcnew String(psIni->sLog2.sT.mix_code);
+			tic_num2->Text = psIni->sLog2.sT.ticket_num.ToString();
+			truck2->Text = gcnew String(psIni->sLog2.sT.truck_id);
+			if (psIni->bScaleInLB)	//DC 3.2.0
+				target2->Text = psIni->sLog2.sT.load_size.ToString("F00");
+			else
+				target2->Text = psIni->sLog2.sT.load_size.ToString("F02");
+			plant2->Text = psIni->sLog2.sT.plant_num.ToString();
 
-					 if(psIni->bBotScale)
-					 {
-						 switch(psIni->sLog2.nSilo)
-						 {
-						 case 4:	siloBar2_Click(nullptr, nullptr);	break;
-						 case 5:	siloBar22_Click(nullptr, nullptr);	break;
-						 case 6:	siloBar23_Click(nullptr, nullptr);	break;
-						 }
-					 }
-					 bDone = true;
-				 }
-				 if(bDone)
-					setState2(S_NEXT);
-			 }				 
+			if (psIni->bBotScale)
+			{
+				switch (psIni->sLog2.nSilo)
+				{
+				case 4:	siloBar2_Click(nullptr, nullptr);	break;
+				case 5:	siloBar22_Click(nullptr, nullptr);	break;
+				case 6:	siloBar23_Click(nullptr, nullptr);	break;
+				}
+			}
+			bDone = true;
+		}
+		if (bDone)
+			setState2(S_NEXT);
+	}
 
 			 //-----------------------------------------------------------------	 
-	private: System::Void autoBt2_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bAuto2 = false;
+	private: System::Void autoBt2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bAuto2 = false;
 
-				 customer2->BackColor = COL_W;
-				 customer2->ReadOnly = false;
-				 Job2->BackColor = COL_W;
-				 Job2->ReadOnly = false;
-				 material2->BackColor = COL_W;
-				 material2->ReadOnly = false;
-				 truck2->BackColor = COL_W;
-				 target2->BackColor = COL_W;
+		customer2->BackColor = COL_W;
+		customer2->ReadOnly = false;
+		Job2->BackColor = COL_W;
+		Job2->ReadOnly = false;
+		material2->BackColor = COL_W;
+		material2->ReadOnly = false;
+		truck2->BackColor = COL_W;
+		target2->BackColor = COL_W;
 
-				 customer2->Text = nullptr;
-				 Job2->Text = nullptr;
-				 material2->Text = nullptr;
-				 truck2->Text = nullptr;
-				 target2->Text = nullptr;
-				 tic_num2->Text = psIni->sInv.nLastTicket.ToString();
-				 plant2->Text = psIni->nPlantNum1.ToString();
+		customer2->Text = nullptr;
+		Job2->Text = nullptr;
+		material2->Text = nullptr;
+		truck2->Text = nullptr;
+		target2->Text = nullptr;
+		tic_num2->Text = psIni->sInv.nLastTicket.ToString();
+		plant2->Text = psIni->nPlantNum1.ToString();
 
-				 memset(&psIni->sLog2, 0, sizeof(LOG_REC));
-				 psIni->sLog2.eJobStatus = S_NEW;
-				 psIni->sLog2.sT.mix_price = psIni->fTonPrice;
-				 psIni->sLog2.fTax = psIni->fTaxRate;
-				 psIni->sLog2.sT.ticket_num = psIni->sInv.nLastTicket++;
-				 psIni->sLog2.sT.plant_num = psIni->nPlantNum1;
+		memset(&psIni->sLog2, 0, sizeof(LOG_REC));
+		psIni->sLog2.eJobStatus = S_NEW;
+		psIni->sLog2.sT.mix_price = psIni->fTonPrice;
+		psIni->sLog2.fTax = psIni->fTaxRate;
+		psIni->sLog2.sT.ticket_num = psIni->sInv.nLastTicket++;
+		psIni->sLog2.sT.plant_num = psIni->nPlantNum1;
 
-				 siloBar2_Click(nullptr, nullptr);	
-				 setState2(S_NEXT);
-			 }
+		siloBar2_Click(nullptr, nullptr);
+		setState2(S_NEXT);
+	}
 
 			 //================================================================
-	private: System::Void readyBt2_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if(!psIni->bBotScale)
-				 {
-					 if((psIni->sScale2.dValue < 0.0)
-						 && (MessageBox::Show("Scale under 0.0, continue ?", "Lane B", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::No))
-					 {
-						 return;
-					 }
-					 else if((psIni->sScale2.dValue > psIni->sScale2.fTolerance)
-						 && (MessageBox::Show("Scale over 0.0, continue ?", "Lane B", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::No))
-					 {
-						 return;
-					 }
-				 }
-				 
-				 try
-				 {
-					 psIni->sLog2.sT.load_size = Convert::ToDouble(target2->Text);
-					 pJob2->fLoad = Convert::ToDouble(target2->Text);				//DC 4.0.1
-				 }
-				 catch ( System::FormatException^ ) 
-				 {
-					 MessageBox::Show("Please correct numeric entry !", "Lane B", 
-						 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					 return;
-				 }
-				 
-				 // find truck
-				 pTruck2 = findTruck(psIni->sLog2.sT.truck_id);
-				 if(pTruck2 == nullptr)
-				 {
-					 MessageBox::Show("Truck "+gcnew String(psIni->sLog2.sT.truck_id)+" not found !", "Lane B", 
-					 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error); 
-					 return;
-				 }
+	private: System::Void readyBt2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (!psIni->bBotScale)
+		{
+			if ((psIni->sScale2.dValue < 0.0)
+				&& (MessageBox::Show("Scale under 0.0, continue ?", "Lane B",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::No))
+			{
+				return;
+			}
+			else if ((psIni->sScale2.dValue > psIni->sScale2.fTolerance)
+				&& (MessageBox::Show("Scale over 0.0, continue ?", "Lane B",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::No))
+			{
+				return;
+			}
+		}
 
-				 // test target versus truck capacity
-				 if(psIni->sLog2.sT.load_size > pTruck2->nCapacity)	//DC 3.2.4  && !psIni->bUseTrkMax)		//DC 3.2.0
-				 {
-					 MessageBox::Show("Target exceeds truck capacity !", "Lane B", 
-					 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error); 
-					 return;
-				 }
+		try
+		{
+			psIni->sLog2.sT.load_size = Convert::ToDouble(target2->Text);
+			pJob2->fLoad = Convert::ToDouble(target2->Text);				//DC 4.0.1
+		}
+		catch (System::FormatException^)
+		{
+			MessageBox::Show("Please correct numeric entry !", "Lane B",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
-				 if(!bAuto2)
-				 {
-					 str2arr(customer2->Text, psIni->sLog2.sT.customer_name_1);
-					 str2arr(Job2->Text, psIni->sLog2.sT.project_code);
-					 str2arr(material2->Text, psIni->sLog2.sT.mix_code);
-					 str2arr(truck2->Text, psIni->sLog2.sT.truck_id);
+		// find truck
+		pTruck2 = findTruck(psIni->sLog2.sT.truck_id);
+		if (pTruck2 == nullptr)
+		{
+			MessageBox::Show("Truck " + gcnew String(psIni->sLog2.sT.truck_id) + " not found !", "Lane B",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
-					 pJob2 = gcnew Job();
-					 pJob2->nLogIdx = poLog->log(C_APPEND,&psIni->sLog2, 0);
-					 pJob2->nTicket = psIni->sLog2.sT.ticket_num;
-					 pJob2->nSilo = psIni->sLog2.nSilo;
-					 pJob2->stCustomer = gcnew String(psIni->sLog2.sT.customer_name_1);
-					 pJob2->eStatus = psIni->sLog2.eJobStatus;
-//					 psIni->sLog2.fTruckTare = psIni->sScale2.dValue;
-				 }
+		// test target versus truck capacity
+		if (psIni->sLog2.sT.load_size > pTruck2->nCapacity)	//DC 3.2.4  && !psIni->bUseTrkMax)		//DC 3.2.0
+		{
+			MessageBox::Show("Target exceeds truck capacity !", "Lane B",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
-				 // lock job record
-				 customer2->BackColor = COL_G;
-				 customer2->ReadOnly = true;
-				 Job2->BackColor = COL_G;
-				 Job2->ReadOnly = true;
-				 material2->BackColor = COL_G;
-				 material2->ReadOnly = true;
-				 truck2->BackColor = COL_G;
-				 target2->BackColor = COL_G;
-				 target2->ReadOnly = true;		//DC 3.2.4
+		if (!bAuto2)
+		{
+			str2arr(customer2->Text, psIni->sLog2.sT.customer_name_1);
+			str2arr(Job2->Text, psIni->sLog2.sT.project_code);
+			str2arr(material2->Text, psIni->sLog2.sT.mix_code);
+			str2arr(truck2->Text, psIni->sLog2.sT.truck_id);
 
-				 nextBt2->Enabled = true;
-				 nextBt2->BackColor = COL_TRANS;
-				 autoBt2->Enabled = true;
-				 autoBt2->BackColor = COL_TRANS;
+			pJob2 = gcnew Job();
+			pJob2->nLogIdx = poLog->log(C_APPEND, &psIni->sLog2, 0);
+			pJob2->nTicket = psIni->sLog2.sT.ticket_num;
+			pJob2->nSilo = psIni->sLog2.nSilo;
+			pJob2->stCustomer = gcnew String(psIni->sLog2.sT.customer_name_1);
+			pJob2->eStatus = psIni->sLog2.eJobStatus;
+			//					 psIni->sLog2.fTruckTare = psIni->sScale2.dValue;
+		}
 
-				 if(psIni->bBotScale)
-				 {
-					if(!psIni->bSendBitWise)			//DC 4.0.1
-						psIni->sLog2.fTruckTare = psIni->sScale2.dValue;
-					if(psIni->bUseTrkMax)				//DC 3.2.0
-						psIni->sLog2.sT.load_size = psIni->sLog2.sT.load_size - psIni->sLog2.fTruckTare;
-				 }
-				 fCumTarget2 = 0.0;
-				 fFall2 = 0;
-				 setDrops2(psIni->sLog2.nDrops);
-				 setState2(S_READY);		 
-			 }			 
+		// lock job record
+		customer2->BackColor = COL_G;
+		customer2->ReadOnly = true;
+		Job2->BackColor = COL_G;
+		Job2->ReadOnly = true;
+		material2->BackColor = COL_G;
+		material2->ReadOnly = true;
+		truck2->BackColor = COL_G;
+		target2->BackColor = COL_G;
+		target2->ReadOnly = true;		//DC 3.2.4
+
+		nextBt2->Enabled = true;
+		nextBt2->BackColor = COL_TRANS;
+		autoBt2->Enabled = true;
+		autoBt2->BackColor = COL_TRANS;
+
+		if (psIni->bBotScale)
+		{
+			if (!psIni->bSendBitWise)			//DC 4.0.1
+				psIni->sLog2.fTruckTare = psIni->sScale2.dValue;
+			if (psIni->bUseTrkMax)				//DC 3.2.0
+				psIni->sLog2.sT.load_size = psIni->sLog2.sT.load_size - psIni->sLog2.fTruckTare;
+		}
+		fCumTarget2 = 0.0;
+		fFall2 = 0;
+		setDrops2(psIni->sLog2.nDrops);
+		setState2(S_READY);
+	}
 
 			 //--------------------------------------------------------------------
-	private: System::Void printOnly2_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				if(taxExempt2->Checked)
-					psIni->sLog2.fTax = 0;
-				 poLog->calcTarget(&psIni->sLog2);	
-				
-				 if(psIni->bScaleInLB)	//DC 3.2.0
-				 {
-					 tareB->Text = psIni->sLog2.fTruckTare.ToString("F00");
-					 grossB->Text = psIni->sLog2.fGross.ToString("F00");
-				 }
-				 else
-				 {
-					 tareB->Text = psIni->sLog2.fTruckTare.ToString("F02");
-					 grossB->Text = psIni->sLog2.fGross.ToString("F02");
-				 }
-				 groupBoxB->Visible = true;
-			 }
+	private: System::Void printOnly2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (taxExempt2->Checked)
+			psIni->sLog2.fTax = 0;
+		poLog->calcTarget(&psIni->sLog2);
+
+		if (psIni->bScaleInLB)	//DC 3.2.0
+		{
+			tareB->Text = psIni->sLog2.fTruckTare.ToString("F00");
+			grossB->Text = psIni->sLog2.fGross.ToString("F00");
+		}
+		else
+		{
+			tareB->Text = psIni->sLog2.fTruckTare.ToString("F02");
+			grossB->Text = psIni->sLog2.fGross.ToString("F02");
+		}
+		groupBoxB->Visible = true;
+	}
 
 			 //----------------------------------------------------------------
-private: System::Void okB_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 int nPrinter = 2;
-			 if(laneBCb1->Checked)
-				 nPrinter = 1;
-			 else if(laneBCb3->Checked)
-				 nPrinter = 3;
-			 try
-			 {
-				 psIni->sLog2.fTruckTare = Convert::ToDouble(tareB->Text);
-				 psIni->sLog2.fGross = Convert::ToDouble(grossB->Text);
-				 psIni->sLog2.fLoad = psIni->sLog2.fGross - psIni->sLog2.fTruckTare;
-			 }
-			 catch ( System::FormatException^ ) 
-			 {
-				 MessageBox::Show("Please correct numeric entry !", "Lane B", 
-					 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-				 return;
-			 }
-			 groupBoxB->Visible = false;
+	private: System::Void okB_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		int nPrinter = 2;
+		if (laneBCb1->Checked)
+			nPrinter = 1;
+		else if (laneBCb3->Checked)
+			nPrinter = 3;
+		try
+		{
+			psIni->sLog2.fTruckTare = Convert::ToDouble(tareB->Text);
+			psIni->sLog2.fGross = Convert::ToDouble(grossB->Text);
+			psIni->sLog2.fLoad = psIni->sLog2.fGross - psIni->sLog2.fTruckTare;
+		}
+		catch (System::FormatException^)
+		{
+			MessageBox::Show("Please correct numeric entry !", "Lane B",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+		groupBoxB->Visible = false;
 
-			 poLog->calcLoad(&psIni->sLog2);					 
-			 poLog->printTicket(&psIni->sLog2, nPrinter, false);					 
-			 psIni->sLog2.eJobStatus = S_PRINTED;
-			 poLog->log(C_UPDATE, &psIni->sLog2, pJob2->nLogIdx);
+		poLog->calcLoad(&psIni->sLog2);
+		poLog->printTicket(&psIni->sLog2, nPrinter, false);
+		psIni->sLog2.eJobStatus = S_PRINTED;
+		poLog->log(C_UPDATE, &psIni->sLog2, pJob2->nLogIdx);
 
-			 // add to old job list
-			 pJob2->stStatus = pAll->lStat[pJob2->eStatus];
-			 pAll->lOld->Add(pJob2);
+		// add to old job list
+		pJob2->stStatus = pAll->lStat[pJob2->eStatus];
+		pAll->lOld->Add(pJob2);
 
-			 setState2(S_IDLE);
-		 }
-		 
-		 //================================================================
-	private: System::Void setDrops2(int nDropsIn) 
-			 {
-				int	nDropsMin = (int)(psIni->sLog2.sT.load_size / psIni->fDropMaxL2) + 1;
-				int nDrops = nDropsIn > nDropsMin ? nDropsIn : nDropsMin;
+		setState2(S_IDLE);
+	}
 
-				 // test size of drop against scale capacity
-				 fTarget2 = psIni->sLog2.sT.load_size / nDrops;
-				 fTol2 = max(psIni->fTarTolAbs, psIni->fTarTolPerc * fTarget2 / 100);
-				 truckBar2->Separators = nDrops - 1;
-				 psIni->sLog2.nDrops = nDrops;
+			 //================================================================
+	private: System::Void setDrops2(int nDropsIn)
+	{
+		int	nDropsMin = (int)(psIni->sLog2.sT.load_size / psIni->fDropMaxL2) + 1;
+		int nDrops = nDropsIn > nDropsMin ? nDropsIn : nDropsMin;
 
-				 if(psIni->bBotScale)
-				 {
-					 switch(psIni->sLog2.nSilo)
-					 {
-					 case 4:  siloBar2->Target = fTarget2;	break;
-					 case 5:  siloBar22->Target = fTarget2;	break;
-					 case 6:  siloBar23->Target = fTarget2;	break;
-					 }
-					 scaleBar2->Target = fTarget2 + psIni->sLog2.fTruckTare;
-				 }
-				 else
-				 {
-					 siloBar2->Target = fTarget2;
-					 scaleBar2->Target = fTarget2;
-				 }
-				 switch(psIni->sLog2.nDrops)
-				 {
-				 case 1: drops21->Checked = true; break;
-				 case 2: drops22->Checked = true; break;
-				 case 3: drops23->Checked = true; break;
-				 case 4: drops24->Checked = true; break;
-				 }
-			 }
+		// test size of drop against scale capacity
+		fTarget2 = psIni->sLog2.sT.load_size / nDrops;
+		fTol2 = max(psIni->fTarTolAbs, psIni->fTarTolPerc * fTarget2 / 100);
+		truckBar2->Separators = nDrops - 1;
+		psIni->sLog2.nDrops = nDrops;
+
+		if (psIni->bBotScale)
+		{
+			switch (psIni->sLog2.nSilo)
+			{
+			case 4:  siloBar2->Target = fTarget2;	break;
+			case 5:  siloBar22->Target = fTarget2;	break;
+			case 6:  siloBar23->Target = fTarget2;	break;
+			}
+			scaleBar2->Target = fTarget2 + psIni->sLog2.fTruckTare;
+		}
+		else
+		{
+			siloBar2->Target = fTarget2;
+			scaleBar2->Target = fTarget2;
+		}
+		switch (psIni->sLog2.nDrops)
+		{
+		case 1: drops21->Checked = true; break;
+		case 2: drops22->Checked = true; break;
+		case 3: drops23->Checked = true; break;
+		case 4: drops24->Checked = true; break;
+		}
+	}
 			 //-------------------------------------------------------------------------
-	private: System::Void drops21_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops2(1);
-			 }
-	private: System::Void drops22_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops2(2);
-			 }
-	private: System::Void drops23_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops2(3);
-			 }
-	private: System::Void drops24_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops2(4);
-			 }		
+	private: System::Void drops21_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops2(1);
+	}
+	private: System::Void drops22_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops2(2);
+	}
+	private: System::Void drops23_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops2(3);
+	}
+	private: System::Void drops24_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops2(4);
+	}
 
 			 //----------------------------------------------------------------
-	private: double getFall2(void) 
-			 {
-				 double fFall;
-				 int nIdx = (int)fTarget2;
+	private: double getFall2(void)
+	{
+		double fFall;
+		int nIdx = (int)fTarget2;
 
-				 if(!psIni->bBotScale)
-				 {
-					 if(autoFall2->Checked)
-						 fFall = psIni->sInv.asFall2[nIdx].fFall / SAMPLE_NBR;
-					 else
-						fFall = psIni->afManFall2[nIdx];
-				 }
-				 else
-				 {
-					 switch(psIni->sLog2.nSilo)
-					 {
-					 case 4:
-						 if(autoFall2->Checked)
-							 fFall = psIni->sInv.asFall4[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall4[nIdx];
-						 break;
-					 case 5:
-						 if(autoFall2->Checked)
-							 fFall = psIni->sInv.asFall5[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall5[nIdx];
-						 break;
-					 case 6:
-						 if(autoFall2->Checked)
-							 fFall = psIni->sInv.asFall6[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall6[nIdx];
-						 break;
-					 }
-				 }
-				 return fFall;
-			 }
-
-			 //-------------------------------------------------------------------------
-	private: System::Void dropBt2_Click(System::Object^  sender, 
-				 System::EventArgs^  e) 
-			 {
-				 bool bSafe = psIni->nSafeTime > 0;
-				 readyBt2->Enabled = false;
-				 readyBt2->BackColor = COL_TRANS;
-
-				 str2arr(truck2->Text, psIni->sLog2.sT.truck_id);
-
-				 if(!psIni->bBotScale)
-				 {
-					 fNewTarget2 = fTarget2;
-				 }
-				 else
-				 {
-					if(pAll->eAsType == A_PROD)
-						 if(!bTruck2) return;
-		
-					 if(bFirstDrop2 && !psIni->bSendBitWise)
-						 psIni->sLog2.fTruckTare = psIni->sScale2.dValue;
-					 fCumTarget2 += fTarget2;
-				 }		 
-				 fFall2 = getFall2();
-
-				 if(psIni->bSafeJob)
-					 bSafe = bFirstDrop2;
-
-				 if(bSafe)
-					setState2(S_SAFE);	
+		if (!psIni->bBotScale)
+		{
+			if (autoFall2->Checked)
+				fFall = psIni->sInv.asFall2[nIdx].fFall / SAMPLE_NBR;
+			else
+				fFall = psIni->afManFall2[nIdx];
+		}
+		else
+		{
+			switch (psIni->sLog2.nSilo)
+			{
+			case 4:
+				if (autoFall2->Checked)
+					fFall = psIni->sInv.asFall4[nIdx].fFall / SAMPLE_NBR;
 				else
-					setState2(S_DROP);	
-				 bFirstDrop2 = false;
-			 }
+					fFall = psIni->afManFall4[nIdx];
+				break;
+			case 5:
+				if (autoFall2->Checked)
+					fFall = psIni->sInv.asFall5[nIdx].fFall / SAMPLE_NBR;
+				else
+					fFall = psIni->afManFall5[nIdx];
+				break;
+			case 6:
+				if (autoFall2->Checked)
+					fFall = psIni->sInv.asFall6[nIdx].fFall / SAMPLE_NBR;
+				else
+					fFall = psIni->afManFall6[nIdx];
+				break;
+			}
+		}
+		return fFall;
+	}
+
+			 //-------------------------------------------------------------------------
+	private: System::Void dropBt2_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		bool bSafe = psIni->nSafeTime > 0;
+		readyBt2->Enabled = false;
+		readyBt2->BackColor = COL_TRANS;
+
+		str2arr(truck2->Text, psIni->sLog2.sT.truck_id);
+
+		if (!psIni->bBotScale)
+		{
+			fNewTarget2 = fTarget2;
+		}
+		else
+		{
+			if (pAll->eAsType == A_PROD)
+				if (!bTruck2) return;
+
+			if (bFirstDrop2 && !psIni->bSendBitWise)
+				psIni->sLog2.fTruckTare = psIni->sScale2.dValue;
+			fCumTarget2 += fTarget2;
+		}
+		fFall2 = getFall2();
+
+		if (psIni->bSafeJob)
+			bSafe = bFirstDrop2;
+
+		if (bSafe)
+			setState2(S_SAFE);
+		else
+			setState2(S_DROP);
+		bFirstDrop2 = false;
+	}
 
 			 //-------------------------------------------------------------------------
 	private: System::Void dischBt2_Click(System::Object^  sender, System::EventArgs^  e)
-			 {						
-				 dischBt2->BackColor = COL_PGREEN;	
-				 setState2(S_DISCH);		
-			 }
+	{
+		dischBt2->BackColor = COL_PGREEN;
+		setState2(S_DISCH);
+	}
 
 			 //-------------------------------------------------------------------------
-	private: System::Void pause2_Click(System::Object^  sender, 
-				 System::EventArgs^  e)
-			 {
-				 switch(psIni->sLog2.eState)
-				 {
-				 case S_DROP:			setState2(S_HOLD_DROP); //setState2(S_HOLD_SETTLE); 
-										pauseBt2->BackColor = COL_HOLD; 
-					break;
-				 case S_ASETTLE:		setState2(S_HOLD_ASETTLE); 
-										pauseBt2->BackColor = COL_HOLD; 
-					 break;
-				 case S_DISCH:			setState2(S_HOLD_DISCH); 
-										pauseBt2->BackColor = COL_HOLD; 
-					 break;
-				 case S_ADD:			setState2(S_HOLD_ADD); //DC 4.0.0
-										pauseBt2->BackColor = COL_HOLD; 
-					break;
+	private: System::Void pause2_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		switch (psIni->sLog2.eState)
+		{
+		case S_DROP:			setState2(S_HOLD_DROP); //setState2(S_HOLD_SETTLE); 
+			pauseBt2->BackColor = COL_HOLD;
+			break;
+		case S_ASETTLE:		setState2(S_HOLD_ASETTLE);
+			pauseBt2->BackColor = COL_HOLD;
+			break;
+		case S_DISCH:			setState2(S_HOLD_DISCH);
+			pauseBt2->BackColor = COL_HOLD;
+			break;
+		case S_ADD:			setState2(S_HOLD_ADD); //DC 4.0.0
+			pauseBt2->BackColor = COL_HOLD;
+			break;
 
-				 case S_HOLD_ADD:		setState2(S_ADD);		//DC 4.0.0
-										pauseBt2->BackColor = COL_HOLDK; 
-					 break;
-				 case S_HOLD_DROP:		setState2(S_DROP);
-										pauseBt2->BackColor = COL_HOLDK; 
-					 break;
-				 case S_HOLD_ASETTLE:	setState2(S_ASETTLE); 
-										pauseBt2->BackColor = COL_HOLDK; 
-					 break;
-				 case S_HOLD_DISCH:		setState2(S_DISCH); 
-										pauseBt2->BackColor = COL_HOLDK; 
-					 break;
-				 }
-			 }
+		case S_HOLD_ADD:		setState2(S_ADD);		//DC 4.0.0
+			pauseBt2->BackColor = COL_HOLDK;
+			break;
+		case S_HOLD_DROP:		setState2(S_DROP);
+			pauseBt2->BackColor = COL_HOLDK;
+			break;
+		case S_HOLD_ASETTLE:	setState2(S_ASETTLE);
+			pauseBt2->BackColor = COL_HOLDK;
+			break;
+		case S_HOLD_DISCH:		setState2(S_DISCH);
+			pauseBt2->BackColor = COL_HOLDK;
+			break;
+		}
+	}
 			 //-------------------------------------------------------------------------
-	private: System::Void stopBt2_Click(System::Object^  sender, 
-				 System::EventArgs^  e) 
-			 {
-				 switch(psIni->sLog2.eState)
-				 {
-				 case S_IDLE:	
-					 return;
-				 case S_NEXT:   
-				 case S_READY:     
-					 if(bAuto2)
-					 {
-						 resetTargetOutput();		//DC 4.0.1
+	private: System::Void stopBt2_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		switch (psIni->sLog2.eState)
+		{
+		case S_IDLE:
+			return;
+		case S_NEXT:
+		case S_READY:
+			if (bAuto2)
+			{
+				resetTargetOutput();		//DC 4.0.1
 
-						 if(MessageBox::Show("Void Ticket ?", "Lane B", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::Yes)
-						 {
-							 pJob2->eStatus = S_VOIDED;
-							 psIni->sLog2.eJobStatus  = S_VOIDED;
-							 psIni->sLog2.eStop = A_VOID;
-							 psIni->sLog2.eState = S_ABORT;
-						 }
-						 else
-						 {
-							 pJob2->eStatus = S_NEW;
-							 pAll->lJob->Add(pJob2);
-							 
-							 if(!psIni->bBotScale)
-								 switch(psIni->sLog2.nSilo)
-								 {
-								 case 1: pAll->nTickets1++; break;
-								 case 2: pAll->nTickets2++; break;
-								 case 3: pAll->nTickets3++; break;
-								 case 4: psIni->nTickets4++; break;
-								 }
-							 else
-								 switch(psIni->sLog2.nSilo)
-								 {
-								 case 1: 
-								 case 2: 
-								 case 3: pAll->nTickets1++; break;
-								 case 4: 
-								 case 5: 
-								 case 6: pAll->nTickets2++; break;
-								 case 7: 
-								 case 8: 
-								 case 9: pAll->nTickets3++; break;
-								 case 10: 
-								 case 11: 
-								 case 12: psIni->nTickets4++; break;
-								 }
-							 setState2(S_IDLE); 
-						 }
-					 }
-					 else
-						setState2(S_IDLE); 
-					 return;
-
-				 case S_DROP:      setState2(S_HOLD_SETTLE); break;
-				 case S_DISCH:     setState2(S_HOLD_DISCH); break;
-				 }
-				 StopForm^ pStop = gcnew StopForm(&psIni->sLog2, pJob2);
-				 pStop->Show();
-			 }
-
-			 //-------------------------------------------------------------------------
-	private: System::Void addBt2_Click(System::Object^  sender, System::EventArgs^  e)
-			 {
-				 bool bAdd = true;
-				 bool bAsk = false;
-				 addBt2->Enabled = false;
-
-				 if(!psIni->bBotScale)
-				 {
-					bAsk = (fLoad2 + psIni->dAddQty) > psIni->sLog2.sT.load_size;
+				if (MessageBox::Show("Void Ticket ?", "Lane B",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::Yes)
+				{
+					pJob2->eStatus = S_VOIDED;
+					psIni->sLog2.eJobStatus = S_VOIDED;
+					psIni->sLog2.eStop = A_VOID;
+					psIni->sLog2.eState = S_ABORT;
 				}
 				else
 				{
-					if(!psIni->bPdmPlc)
-						bAsk = (fLoad2 + psIni->dAddQty) > fCumTarget2;
+					pJob2->eStatus = S_NEW;
+					pAll->lJob->Add(pJob2);
+
+					if (!psIni->bBotScale)
+						switch (psIni->sLog2.nSilo)
+						{
+						case 1: pAll->nTickets1++; break;
+						case 2: pAll->nTickets2++; break;
+						case 3: pAll->nTickets3++; break;
+						case 4: psIni->nTickets4++; break;
+						}
 					else
-						bAsk = (fLoad2 + psIni->asSilos[psIni->sLog2.nSilo-1].dAddTol) > fCumTarget2;		//DC 4.0.0
+						switch (psIni->sLog2.nSilo)
+						{
+						case 1:
+						case 2:
+						case 3: pAll->nTickets1++; break;
+						case 4:
+						case 5:
+						case 6: pAll->nTickets2++; break;
+						case 7:
+						case 8:
+						case 9: pAll->nTickets3++; break;
+						case 10:
+						case 11:
+						case 12: psIni->nTickets4++; break;
+						}
+					setState2(S_IDLE);
 				}
+			}
+			else
+				setState2(S_IDLE);
+			return;
 
-				 if(bAsk)
-				 {
-					 bStopAdd2 = true;		//DC 4.0.0
-					if(MessageBox::Show("TRUCK CAPACITY WARNING, continue ?", "Lane B", 
-						System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						== System::Windows::Forms::DialogResult::No)
-						bAdd = false;
-				 }
-				 if(bAdd)
-					 setState2(S_ADD);
-				 else
-					 setState2(S_UPDATE);
-			 }
+		case S_DROP:      setState2(S_HOLD_SETTLE); break;
+		case S_DISCH:     setState2(S_HOLD_DISCH); break;
+		}
+		StopForm^ pStop = gcnew StopForm(&psIni->sLog2, pJob2);
+		pStop->Show();
+	}
 
-		private: bool testHold2(void)
-			  {
-				  if(psIni->bHold2 && psIni->sLog2.eState != S_HOLD)
-				  {
-					  ePrevHold2 = psIni->sLog2.eState;
-					  setState2(S_HOLD);
-					  pauseBt2->BackColor = COL_HOLD;
-					  return true;
-				  }
-				  return false;
-			  }
+			 //-------------------------------------------------------------------------
+	private: System::Void addBt2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bool bAdd = true;
+		bool bAsk = false;
+		addBt2->Enabled = false;
+
+		if (!psIni->bBotScale)
+		{
+			bAsk = (fLoad2 + psIni->dAddQty) > psIni->sLog2.sT.load_size;
+		}
+		else
+		{
+			if (!psIni->bPdmPlc)
+				bAsk = (fLoad2 + psIni->dAddQty) > fCumTarget2;
+			else
+				bAsk = (fLoad2 + psIni->asSilos[psIni->sLog2.nSilo - 1].dAddTol) > fCumTarget2;		//DC 4.0.0
+		}
+
+		if (bAsk)
+		{
+			bStopAdd2 = true;		//DC 4.0.0
+			if (MessageBox::Show("TRUCK CAPACITY WARNING, continue ?", "Lane B",
+				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+				== System::Windows::Forms::DialogResult::No)
+				bAdd = false;
+		}
+		if (bAdd)
+			setState2(S_ADD);
+		else
+			setState2(S_UPDATE);
+	}
+
+	private: bool testHold2(void)
+	{
+		if (psIni->bHold2 && psIni->sLog2.eState != S_HOLD)
+		{
+			ePrevHold2 = psIni->sLog2.eState;
+			setState2(S_HOLD);
+			pauseBt2->BackColor = COL_HOLD;
+			return true;
+		}
+		return false;
+	}
 
 #pragma endregion
 
 #pragma region SILO3	
 			 //================================================================
-	private: System::Void nextBt3_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bool bDone = false;
-				 int nIdx = 0;
+	private: System::Void nextBt3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bool bDone = false;
+		int nIdx = 0;
 
-				 if(pAll->lJob->Count == 0)
-					 return;
+		if (pAll->lJob->Count == 0)
+			return;
 
-				 if((psIni->sScale3.bSerial == false)
-					 && (MessageBox::Show("Scale ERROR, continue ?", "Lane C", 
-					 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-					 == System::Windows::Forms::DialogResult::No))
-				 {
-					 return;
-				 }
-				 bAuto3 = true;
+		if ((psIni->sScale3.bSerial == false)
+			&& (MessageBox::Show("Scale ERROR, continue ?", "Lane C",
+				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+				== System::Windows::Forms::DialogResult::No))
+		{
+			return;
+		}
+		bAuto3 = true;
 
-				 customer3->BackColor = COL_G;
-				 customer3->ReadOnly = true;
-				 Job3->BackColor = COL_G;
-				 Job3->ReadOnly = true;
-				 material3->BackColor = COL_G;
-				 material3->ReadOnly = true;
-				 truck3->BackColor = COL_W;
-				 truck3->Select();
-				 target3->BackColor = COL_W;
-				 target3->ReadOnly = false;		//DC 3.2.4
+		customer3->BackColor = COL_G;
+		customer3->ReadOnly = true;
+		Job3->BackColor = COL_G;
+		Job3->ReadOnly = true;
+		material3->BackColor = COL_G;
+		material3->ReadOnly = true;
+		truck3->BackColor = COL_W;
+		truck3->Select();
+		target3->BackColor = COL_W;
+		target3->ReadOnly = false;		//DC 3.2.4
 
-				 //---------------------------------------
-				 while(!bDone && (nIdx < pAll->lJob->Count))
-				 {
-					 pJob3 = pAll->lJob[nIdx++];
+										//---------------------------------------
+		while (!bDone && (nIdx < pAll->lJob->Count))
+		{
+			pJob3 = pAll->lJob[nIdx++];
 
-					 if(psIni->bBotScale)
-					 {
-						 if((pJob3->eStatus != S_NEW) || (pJob3->nSilo < 7) || (pJob3->nSilo > 9))
-							 continue;
-					 }
-					 else
-					 {
-						 if((pJob3->eStatus != S_NEW) || (pJob3->nSilo != 3))
-							 continue;
-					 }
-					 poLog->log(C_READ, &psIni->sLog3, pJob3->nLogIdx);
-					 if(gcnew String(psIni->sLog3.sT.mix_code) != "" 
-						 && (gcnew String(psIni->sLog3.sT.mix_code) != gcnew String(psIni->asSilos[psIni->sLog3.nSilo-1].acProduct))) //DC 4.0.1
-					 {
-						 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[psIni->sLog3.nSilo-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog3.sT.ticket_num
-							 + " for Truck: " + gcnew String(psIni->sLog3.sT.truck_id)
-							 + ", NEED Material: " + gcnew String(psIni->sLog3.sT.mix_code),"Lane A",
-						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-//						 bWrongMet = true;	//DC 4.0.1
-						return;
-					 }
-					 pAll->lJob->Remove(pJob3);
-					 pAll->nTickets3--;
+			if (psIni->bBotScale)
+			{
+				if ((pJob3->eStatus != S_NEW) || (pJob3->nSilo < 7) || (pJob3->nSilo > 9))
+					continue;
+			}
+			else
+			{
+				if ((pJob3->eStatus != S_NEW) || (pJob3->nSilo != 3))
+					continue;
+			}
+			poLog->log(C_READ, &psIni->sLog3, pJob3->nLogIdx);
+			if (gcnew String(psIni->sLog3.sT.mix_code) != ""
+				&& (gcnew String(psIni->sLog3.sT.mix_code) != gcnew String(psIni->asSilos[psIni->sLog3.nSilo - 1].acProduct))) //DC 4.0.1
+			{
+				MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[psIni->sLog3.nSilo - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog3.sT.ticket_num
+					+ " for Truck: " + gcnew String(psIni->sLog3.sT.truck_id)
+					+ ", NEED Material: " + gcnew String(psIni->sLog3.sT.mix_code), "Lane A",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+				//						 bWrongMet = true;	//DC 4.0.1
+				return;
+			}
+			pAll->lJob->Remove(pJob3);
+			pAll->nTickets3--;
 
-					 pTruck3 = findTruck(psIni->sLog3.sT.truck_id);
+			pTruck3 = findTruck(psIni->sLog3.sT.truck_id);
 
-					 customer3->Text = gcnew String(psIni->sLog3.sT.customer_name_1);
-					 Job3->Text = gcnew String(psIni->sLog3.sT.project_code);
-					 material3->Text = gcnew String(psIni->sLog3.sT.mix_code);
-					 tic_num3->Text = psIni->sLog3.sT.ticket_num.ToString();
-					 truck3->Text = gcnew String(psIni->sLog3.sT.truck_id);
-					 if(psIni->bScaleInLB)	//DC 3.2.0
-						 target3->Text = psIni->sLog3.sT.load_size.ToString("F00");
-					 else
-						target3->Text = psIni->sLog3.sT.load_size.ToString("F02");
-					 plant3->Text = psIni->sLog3.sT.plant_num.ToString();
+			customer3->Text = gcnew String(psIni->sLog3.sT.customer_name_1);
+			Job3->Text = gcnew String(psIni->sLog3.sT.project_code);
+			material3->Text = gcnew String(psIni->sLog3.sT.mix_code);
+			tic_num3->Text = psIni->sLog3.sT.ticket_num.ToString();
+			truck3->Text = gcnew String(psIni->sLog3.sT.truck_id);
+			if (psIni->bScaleInLB)	//DC 3.2.0
+				target3->Text = psIni->sLog3.sT.load_size.ToString("F00");
+			else
+				target3->Text = psIni->sLog3.sT.load_size.ToString("F02");
+			plant3->Text = psIni->sLog3.sT.plant_num.ToString();
 
-					 if(psIni->bBotScale)
-					 {
-						 switch(psIni->sLog3.nSilo)
-						 {
-						 case 7:	siloBar3_Click(nullptr, nullptr);	break;
-						 case 8:	siloBar32_Click(nullptr, nullptr); 	break;
-						 case 9:	siloBar33_Click(nullptr, nullptr);  break;
-						 }
-					 }
-					 bDone = true;
-				 }
-				 if(bDone)
-					setState3(S_NEXT);
-			 }
+			if (psIni->bBotScale)
+			{
+				switch (psIni->sLog3.nSilo)
+				{
+				case 7:	siloBar3_Click(nullptr, nullptr);	break;
+				case 8:	siloBar32_Click(nullptr, nullptr); 	break;
+				case 9:	siloBar33_Click(nullptr, nullptr);  break;
+				}
+			}
+			bDone = true;
+		}
+		if (bDone)
+			setState3(S_NEXT);
+	}
 
 			 //-------------------------------------------------------------------------
-	private: System::Void autoBt3_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bAuto3 = false;
+	private: System::Void autoBt3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bAuto3 = false;
 
-				 customer3->BackColor = COL_W;
-				 customer3->ReadOnly = false;
-				 Job3->BackColor = COL_W;
-				 Job3->ReadOnly = false;
-				 material3->BackColor = COL_W;
-				 material3->ReadOnly = false;
-				 truck3->BackColor = COL_W;
-				 target3->BackColor = COL_W;
+		customer3->BackColor = COL_W;
+		customer3->ReadOnly = false;
+		Job3->BackColor = COL_W;
+		Job3->ReadOnly = false;
+		material3->BackColor = COL_W;
+		material3->ReadOnly = false;
+		truck3->BackColor = COL_W;
+		target3->BackColor = COL_W;
 
-				 customer3->Text = nullptr;
-				 Job3->Text = nullptr;
-				 material3->Text = nullptr;
-				 truck3->Text = nullptr;
-				 target3->Text = nullptr;
-				 tic_num3->Text = psIni->sInv.nLastTicket.ToString();
-				 plant3->Text = psIni->nPlantNum1.ToString();
-					
-				 memset(&psIni->sLog3, 0, sizeof(LOG_REC));
-				 psIni->sLog3.eJobStatus = S_NEW;
-				 psIni->sLog3.sT.mix_price = psIni->fTonPrice;
-				 psIni->sLog3.fTax = psIni->fTaxRate;
-				 psIni->sLog3.sT.ticket_num = psIni->sInv.nLastTicket++;
-				 psIni->sLog3.sT.plant_num = psIni->nPlantNum1;
+		customer3->Text = nullptr;
+		Job3->Text = nullptr;
+		material3->Text = nullptr;
+		truck3->Text = nullptr;
+		target3->Text = nullptr;
+		tic_num3->Text = psIni->sInv.nLastTicket.ToString();
+		plant3->Text = psIni->nPlantNum1.ToString();
 
-				 siloBar3_Click(nullptr, nullptr);	
-				 setState3(S_NEXT);
-			 }
+		memset(&psIni->sLog3, 0, sizeof(LOG_REC));
+		psIni->sLog3.eJobStatus = S_NEW;
+		psIni->sLog3.sT.mix_price = psIni->fTonPrice;
+		psIni->sLog3.fTax = psIni->fTaxRate;
+		psIni->sLog3.sT.ticket_num = psIni->sInv.nLastTicket++;
+		psIni->sLog3.sT.plant_num = psIni->nPlantNum1;
 
-			 //================================================================
-	private: System::Void readyBt3_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if(!psIni->bBotScale)
-				 {
-					 if((psIni->sScale3.dValue < 0.0)
-						 && (MessageBox::Show("Scale under 0.0, continue ?", "Lane C", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::No))
-					 {
-						 return;
-					 }
-					 else if((psIni->sScale3.dValue > psIni->sScale3.fTolerance)
-						 && (MessageBox::Show("Scale over 0.0, continue ?", "Lane C", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::No))
-					 {
-						 return;
-					 }
-				 }
-				 
-				 try
-				 {
-					 psIni->sLog3.sT.load_size = Convert::ToDouble(target3->Text);
-					 pJob3->fLoad = Convert::ToDouble(target3->Text);				//DC 4.0.1
-				 }
-				 catch ( System::FormatException^ ) 
-				 {
-					 MessageBox::Show("Please correct numeric entry !", "Lane C", 
-						 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					 return;
-				 }
-
-				 // find truck
-				 pTruck3 = findTruck(psIni->sLog3.sT.truck_id);
-				 if(pTruck3 == nullptr)
-				 {
-					 MessageBox::Show("Truck "+gcnew String(psIni->sLog3.sT.truck_id)+" not found !", "Lane C", 
-					 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error); 
-					 return;
-				 }
-
-				 // test target versus truck capacity
-				 if(psIni->sLog3.sT.load_size > pTruck3->nCapacity)	//DC 3.2.4 && !psIni->bUseTrkMax)		//DC 3.2.0
-				 {
-					 MessageBox::Show("Target exceeds truck capacity !", "Lane C", 
-					 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error); 
-					 return;
-				 }
-
-				 if(!bAuto3)
-				 {
-					 str2arr(customer3->Text, psIni->sLog3.sT.customer_name_1);
-					 str2arr(Job3->Text, psIni->sLog3.sT.project_code);
-					 str2arr(material3->Text, psIni->sLog3.sT.mix_code);
-					 str2arr(truck3->Text, psIni->sLog3.sT.truck_id);
-
-					 pJob3 = gcnew Job();
-					 pJob3->nLogIdx = poLog->log(C_APPEND,&psIni->sLog3, 0);
-					 pJob3->nTicket = psIni->sLog3.sT.ticket_num;
-					 pJob3->nSilo = psIni->sLog3.nSilo;
-					 pJob3->stCustomer = gcnew String(psIni->sLog3.sT.customer_name_1);
-					 pJob3->eStatus = psIni->sLog3.eJobStatus;
-//					 psIni->sLog3.fTruckTare = psIni->sScale3.dValue;
-				 }
-
-				 // lock job record
-				 customer3->BackColor = COL_G;
-				 customer3->ReadOnly = true;
-				 Job3->BackColor = COL_G;
-				 Job3->ReadOnly = true;
-				 material3->BackColor = COL_G;
-				 material3->ReadOnly = true;
-				 truck3->BackColor = COL_G;
-				 target3->BackColor = COL_G;
-				 target3->ReadOnly = true;		//DC 3.2.4
-
-				 nextBt3->Enabled = true;
-				 nextBt3->BackColor = COL_TRANS;
-				 autoBt3->Enabled = true;
-				 autoBt3->BackColor = COL_TRANS;
-
-				 if(psIni->bBotScale)
-				 {
-					if(!psIni->bSendBitWise)			//DC 4.0.1
-						psIni->sLog3.fTruckTare = psIni->sScale3.dValue;
-					if(psIni->bUseTrkMax)				//DC 3.2.0
-						psIni->sLog3.sT.load_size = psIni->sLog3.sT.load_size - psIni->sLog3.fTruckTare;
-				 }
-				 fCumTarget3 = 0.0;
-				 fFall3 = 0;
-				 setDrops3(psIni->sLog3.nDrops);
-				 setState3(S_READY);		 
-			 }
-
-			 //--------------------------------------------------------------------
-	private: System::Void printOnly3_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				if(taxExempt3->Checked)
-					psIni->sLog3.fTax = 0;
-				 poLog->calcTarget(&psIni->sLog3);
-
-				 if(psIni->bScaleInLB)	//DC 3.2.0
-				 {
-					 tareC->Text = psIni->sLog3.fTruckTare.ToString("F00");
-					 grossC->Text = psIni->sLog3.fGross.ToString("F00");
-				 }
-				 else
-				 {
-					 tareC->Text = psIni->sLog3.fTruckTare.ToString("F02");
-					 grossC->Text = psIni->sLog3.fGross.ToString("F02");
-				 }
-				 groupBoxC->Visible = true;
-			 }
-
-			 //--------------------------------------------------------------------
-	private: System::Void okC_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 int nPrinter = 3;
-				 if(laneCCb1->Checked)
-					 nPrinter = 1;
-				 else if(laneCCb2->Checked)
-					 nPrinter = 2;
-				 try
-				 {
-					 psIni->sLog3.fTruckTare = Convert::ToDouble(tareC->Text);
-					 psIni->sLog3.fGross = Convert::ToDouble(grossC->Text);
-					 psIni->sLog3.fLoad = psIni->sLog3.fGross - psIni->sLog3.fTruckTare;
-				 }
-				 catch ( System::FormatException^ ) 
-				 {
-					 MessageBox::Show("Please correct numeric entry !", "Lane C", 
-						 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					 return;
-				 }
-				 groupBoxC->Visible = false;
-
-				 poLog->calcLoad(&psIni->sLog3);					 
-				 poLog->printTicket(&psIni->sLog3, nPrinter, false);					 
-				 psIni->sLog3.eJobStatus = S_PRINTED;
-				 poLog->log(C_UPDATE, &psIni->sLog3, pJob3->nLogIdx);
-
-				 // add to old job list
-				 pJob3->stStatus = pAll->lStat[pJob3->eStatus];
-				 pAll->lOld->Add(pJob3);
-
-				 setState3(S_IDLE);
-			 }
+		siloBar3_Click(nullptr, nullptr);
+		setState3(S_NEXT);
+	}
 
 			 //================================================================
-	private: System::Void setDrops3(int nDropsIn) 
-			 {
-				int	nDropsMin = (int)(psIni->sLog3.sT.load_size / psIni->fDropMaxL3) + 1;
-				int nDrops = nDropsIn > nDropsMin ? nDropsIn : nDropsMin;
+	private: System::Void readyBt3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (!psIni->bBotScale)
+		{
+			if ((psIni->sScale3.dValue < 0.0)
+				&& (MessageBox::Show("Scale under 0.0, continue ?", "Lane C",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::No))
+			{
+				return;
+			}
+			else if ((psIni->sScale3.dValue > psIni->sScale3.fTolerance)
+				&& (MessageBox::Show("Scale over 0.0, continue ?", "Lane C",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::No))
+			{
+				return;
+			}
+		}
 
-				 // test size of drop against scale capacity
-				 fTarget3 = psIni->sLog3.sT.load_size / nDrops;
-				 fTol3 = max(psIni->fTarTolAbs, psIni->fTarTolPerc * fTarget3 / 100);
-				 truckBar3->Separators = nDrops - 1;
-				 psIni->sLog3.nDrops = nDrops;
+		try
+		{
+			psIni->sLog3.sT.load_size = Convert::ToDouble(target3->Text);
+			pJob3->fLoad = Convert::ToDouble(target3->Text);				//DC 4.0.1
+		}
+		catch (System::FormatException^)
+		{
+			MessageBox::Show("Please correct numeric entry !", "Lane C",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
-				 if(psIni->bBotScale)
-				 {
-					 switch(psIni->sLog3.nSilo)
-					 {
-					 case 7:  siloBar3->Target = fTarget3;	break;
-					 case 8:  siloBar32->Target = fTarget3;	break;
-					 case 9:  siloBar33->Target = fTarget3;	break;
-					 }
-					 scaleBar3->Target = fTarget3 + psIni->sLog3.fTruckTare;
-				 }
-				 else
-				 {
-					 siloBar3->Target = fTarget3;
-					 scaleBar3->Target = fTarget3;
-				 }
-				 switch(psIni->sLog3.nDrops)
-				 {
-				 case 1: drops31->Checked = true; break;
-				 case 2: drops32->Checked = true; break;
-				 case 3: drops33->Checked = true; break;
-				 case 4: drops34->Checked = true; break;
-				 }
-			 }
+		// find truck
+		pTruck3 = findTruck(psIni->sLog3.sT.truck_id);
+		if (pTruck3 == nullptr)
+		{
+			MessageBox::Show("Truck " + gcnew String(psIni->sLog3.sT.truck_id) + " not found !", "Lane C",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		// test target versus truck capacity
+		if (psIni->sLog3.sT.load_size > pTruck3->nCapacity)	//DC 3.2.4 && !psIni->bUseTrkMax)		//DC 3.2.0
+		{
+			MessageBox::Show("Target exceeds truck capacity !", "Lane C",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		if (!bAuto3)
+		{
+			str2arr(customer3->Text, psIni->sLog3.sT.customer_name_1);
+			str2arr(Job3->Text, psIni->sLog3.sT.project_code);
+			str2arr(material3->Text, psIni->sLog3.sT.mix_code);
+			str2arr(truck3->Text, psIni->sLog3.sT.truck_id);
+
+			pJob3 = gcnew Job();
+			pJob3->nLogIdx = poLog->log(C_APPEND, &psIni->sLog3, 0);
+			pJob3->nTicket = psIni->sLog3.sT.ticket_num;
+			pJob3->nSilo = psIni->sLog3.nSilo;
+			pJob3->stCustomer = gcnew String(psIni->sLog3.sT.customer_name_1);
+			pJob3->eStatus = psIni->sLog3.eJobStatus;
+			//					 psIni->sLog3.fTruckTare = psIni->sScale3.dValue;
+		}
+
+		// lock job record
+		customer3->BackColor = COL_G;
+		customer3->ReadOnly = true;
+		Job3->BackColor = COL_G;
+		Job3->ReadOnly = true;
+		material3->BackColor = COL_G;
+		material3->ReadOnly = true;
+		truck3->BackColor = COL_G;
+		target3->BackColor = COL_G;
+		target3->ReadOnly = true;		//DC 3.2.4
+
+		nextBt3->Enabled = true;
+		nextBt3->BackColor = COL_TRANS;
+		autoBt3->Enabled = true;
+		autoBt3->BackColor = COL_TRANS;
+
+		if (psIni->bBotScale)
+		{
+			if (!psIni->bSendBitWise)			//DC 4.0.1
+				psIni->sLog3.fTruckTare = psIni->sScale3.dValue;
+			if (psIni->bUseTrkMax)				//DC 3.2.0
+				psIni->sLog3.sT.load_size = psIni->sLog3.sT.load_size - psIni->sLog3.fTruckTare;
+		}
+		fCumTarget3 = 0.0;
+		fFall3 = 0;
+		setDrops3(psIni->sLog3.nDrops);
+		setState3(S_READY);
+	}
+
+			 //--------------------------------------------------------------------
+	private: System::Void printOnly3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (taxExempt3->Checked)
+			psIni->sLog3.fTax = 0;
+		poLog->calcTarget(&psIni->sLog3);
+
+		if (psIni->bScaleInLB)	//DC 3.2.0
+		{
+			tareC->Text = psIni->sLog3.fTruckTare.ToString("F00");
+			grossC->Text = psIni->sLog3.fGross.ToString("F00");
+		}
+		else
+		{
+			tareC->Text = psIni->sLog3.fTruckTare.ToString("F02");
+			grossC->Text = psIni->sLog3.fGross.ToString("F02");
+		}
+		groupBoxC->Visible = true;
+	}
+
+			 //--------------------------------------------------------------------
+	private: System::Void okC_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		int nPrinter = 3;
+		if (laneCCb1->Checked)
+			nPrinter = 1;
+		else if (laneCCb2->Checked)
+			nPrinter = 2;
+		try
+		{
+			psIni->sLog3.fTruckTare = Convert::ToDouble(tareC->Text);
+			psIni->sLog3.fGross = Convert::ToDouble(grossC->Text);
+			psIni->sLog3.fLoad = psIni->sLog3.fGross - psIni->sLog3.fTruckTare;
+		}
+		catch (System::FormatException^)
+		{
+			MessageBox::Show("Please correct numeric entry !", "Lane C",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+		groupBoxC->Visible = false;
+
+		poLog->calcLoad(&psIni->sLog3);
+		poLog->printTicket(&psIni->sLog3, nPrinter, false);
+		psIni->sLog3.eJobStatus = S_PRINTED;
+		poLog->log(C_UPDATE, &psIni->sLog3, pJob3->nLogIdx);
+
+		// add to old job list
+		pJob3->stStatus = pAll->lStat[pJob3->eStatus];
+		pAll->lOld->Add(pJob3);
+
+		setState3(S_IDLE);
+	}
+
+			 //================================================================
+	private: System::Void setDrops3(int nDropsIn)
+	{
+		int	nDropsMin = (int)(psIni->sLog3.sT.load_size / psIni->fDropMaxL3) + 1;
+		int nDrops = nDropsIn > nDropsMin ? nDropsIn : nDropsMin;
+
+		// test size of drop against scale capacity
+		fTarget3 = psIni->sLog3.sT.load_size / nDrops;
+		fTol3 = max(psIni->fTarTolAbs, psIni->fTarTolPerc * fTarget3 / 100);
+		truckBar3->Separators = nDrops - 1;
+		psIni->sLog3.nDrops = nDrops;
+
+		if (psIni->bBotScale)
+		{
+			switch (psIni->sLog3.nSilo)
+			{
+			case 7:  siloBar3->Target = fTarget3;	break;
+			case 8:  siloBar32->Target = fTarget3;	break;
+			case 9:  siloBar33->Target = fTarget3;	break;
+			}
+			scaleBar3->Target = fTarget3 + psIni->sLog3.fTruckTare;
+		}
+		else
+		{
+			siloBar3->Target = fTarget3;
+			scaleBar3->Target = fTarget3;
+		}
+		switch (psIni->sLog3.nDrops)
+		{
+		case 1: drops31->Checked = true; break;
+		case 2: drops32->Checked = true; break;
+		case 3: drops33->Checked = true; break;
+		case 4: drops34->Checked = true; break;
+		}
+	}
 			 //-------------------------------------------------------------------------
-	private: System::Void drops31_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops3(1);
-			 }
-	private: System::Void drops32_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops3(2);
-			 }
-	private: System::Void drops33_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops3(3);
-			 }
-	private: System::Void drops34_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops3(4);
-			 }
+	private: System::Void drops31_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops3(1);
+	}
+	private: System::Void drops32_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops3(2);
+	}
+	private: System::Void drops33_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops3(3);
+	}
+	private: System::Void drops34_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops3(4);
+	}
 
 			 //----------------------------------------------------------------
-	private: double getFall3(void) 
-			 {
-				 double fFall;
-				 int nIdx = (int)fTarget3;
+	private: double getFall3(void)
+	{
+		double fFall;
+		int nIdx = (int)fTarget3;
 
-				 if(!psIni->bBotScale)
-				 {
-					 if(autoFall3->Checked)
-						 fFall = psIni->sInv.asFall3[nIdx].fFall / SAMPLE_NBR;
-					 else
-						fFall = psIni->afManFall3[nIdx];
-				 }
-				 else
-				 {
-					 switch(psIni->sLog3.nSilo)
-					 {
-					 case 7:
-						 if(autoFall3->Checked)
-							 fFall = psIni->sInv.asFall7[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall7[nIdx];
-						 break;
-					 case 8:
-						 if(autoFall3->Checked)
-							 fFall = psIni->sInv.asFall8[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall8[nIdx];
-						 break;
-					 case 9:
-						 if(autoFall3->Checked)
-							 fFall = psIni->sInv.asFall9[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall9[nIdx];
-						 break;
-					 }
-				 }
-				 return fFall;
-			 }
-
-			 //-------------------------------------------------------------------------
-	private: System::Void dropBt3_Click(System::Object^  sender, 
-				 System::EventArgs^  e) 
-			 {
-				 bool bSafe = psIni->nSafeTime > 0;
-				 readyBt3->Enabled = false;
-				 readyBt3->BackColor = COL_TRANS;
-
-				 str2arr(truck3->Text, psIni->sLog3.sT.truck_id);
-
-				 if(!psIni->bBotScale)			//#ifdef UPSCALE
-				 {
-					 fNewTarget3 = fTarget3;
-				 }
-				 else
-				 {
-					if(pAll->eAsType == A_PROD)
-						 if(!bTruck3) return;
-		
-					 if(bFirstDrop3 && !psIni->bSendBitWise)
-						 psIni->sLog3.fTruckTare = psIni->sScale3.dValue;
-					 fCumTarget3 += fTarget3;
-				 }				 		 
-				 fFall3 = getFall3();
-
-				 if(psIni->bSafeJob)
-					 bSafe = bFirstDrop3;
-
-				 if(bSafe)
-					setState3(S_SAFE);	
+		if (!psIni->bBotScale)
+		{
+			if (autoFall3->Checked)
+				fFall = psIni->sInv.asFall3[nIdx].fFall / SAMPLE_NBR;
+			else
+				fFall = psIni->afManFall3[nIdx];
+		}
+		else
+		{
+			switch (psIni->sLog3.nSilo)
+			{
+			case 7:
+				if (autoFall3->Checked)
+					fFall = psIni->sInv.asFall7[nIdx].fFall / SAMPLE_NBR;
 				else
-					setState3(S_DROP);
-				 bFirstDrop3 = false;
-			 }
+					fFall = psIni->afManFall7[nIdx];
+				break;
+			case 8:
+				if (autoFall3->Checked)
+					fFall = psIni->sInv.asFall8[nIdx].fFall / SAMPLE_NBR;
+				else
+					fFall = psIni->afManFall8[nIdx];
+				break;
+			case 9:
+				if (autoFall3->Checked)
+					fFall = psIni->sInv.asFall9[nIdx].fFall / SAMPLE_NBR;
+				else
+					fFall = psIni->afManFall9[nIdx];
+				break;
+			}
+		}
+		return fFall;
+	}
 
 			 //-------------------------------------------------------------------------
-	private: System::Void dischBt3_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 dischBt3->BackColor = COL_PGREEN;	
-				 setState3(S_DISCH);		
-			 }
+	private: System::Void dropBt3_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		bool bSafe = psIni->nSafeTime > 0;
+		readyBt3->Enabled = false;
+		readyBt3->BackColor = COL_TRANS;
+
+		str2arr(truck3->Text, psIni->sLog3.sT.truck_id);
+
+		if (!psIni->bBotScale)			//#ifdef UPSCALE
+		{
+			fNewTarget3 = fTarget3;
+		}
+		else
+		{
+			if (pAll->eAsType == A_PROD)
+				if (!bTruck3) return;
+
+			if (bFirstDrop3 && !psIni->bSendBitWise)
+				psIni->sLog3.fTruckTare = psIni->sScale3.dValue;
+			fCumTarget3 += fTarget3;
+		}
+		fFall3 = getFall3();
+
+		if (psIni->bSafeJob)
+			bSafe = bFirstDrop3;
+
+		if (bSafe)
+			setState3(S_SAFE);
+		else
+			setState3(S_DROP);
+		bFirstDrop3 = false;
+	}
 
 			 //-------------------------------------------------------------------------
-	private: System::Void pause3_Click(System::Object^  sender, 
-				 System::EventArgs^  e)
-			 {
-				 switch(psIni->sLog3.eState)
-				 {
-				 case S_DROP:			setState3(S_HOLD_DROP); //setState3(S_HOLD_SETTLE); 
-										pauseBt3->BackColor = COL_HOLD; 
-					break;
-				 case S_ASETTLE:		setState3(S_HOLD_ASETTLE); 
-										pauseBt3->BackColor = COL_HOLD; 
-					 break;
-				 case S_DISCH:			setState3(S_HOLD_DISCH); 
-										pauseBt3->BackColor = COL_HOLD; 
-					 break;
-				 case S_ADD:			setState3(S_HOLD_ADD); //DC 4.0.0
-										pauseBt3->BackColor = COL_HOLD; 
-					break;
-
-				 case S_HOLD_ADD:		setState3(S_ADD);		//DC 4.0.0
-										pauseBt3->BackColor = COL_HOLDK; 
-					 break;
-				 case S_HOLD_DROP:		setState3(S_DROP);
-										pauseBt3->BackColor = COL_HOLDK; 
-					 break;
-				 case S_HOLD_ASETTLE:	setState3(S_ASETTLE); 
-										pauseBt3->BackColor = COL_HOLDK; 
-					 break;
-				 case S_HOLD_DISCH:		setState3(S_DISCH); 
-										pauseBt3->BackColor = COL_HOLDK; 
-					 break;
-				 }
-			 }
-			 //-------------------------------------------------------------------------
-	private: System::Void stopBt3_Click(System::Object^  sender, 
-				 System::EventArgs^  e) 
-			 {
-				 switch(psIni->sLog3.eState)
-				 {
-				 case S_IDLE:	
-					 return;
-				 case S_NEXT:    
-				 case S_READY:    
-					 if(bAuto3)
-					 {
-						 resetTargetOutput();		//DC 4.0.1
-
-						 if(MessageBox::Show("Void Ticket ?", "Lane C", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::Yes)
-						 {
-							 pJob3->eStatus = S_VOIDED;
-							 psIni->sLog3.eJobStatus  = S_VOIDED;
-							 psIni->sLog3.eStop = A_VOID;
-							 psIni->sLog3.eState = S_ABORT;
-						 }
-						 else
-						 {
-							 pJob3->eStatus = S_NEW;
-							 pAll->lJob->Add(pJob3);
-							 
-							 if(!psIni->bBotScale)
-								 switch(psIni->sLog3.nSilo)
-								 {
-								 case 1: pAll->nTickets1++; break;
-								 case 2: pAll->nTickets2++; break;
-								 case 3: pAll->nTickets3++; break;
-								 case 4: psIni->nTickets4++; break;
-								 }
-							 else
-								 switch(psIni->sLog3.nSilo)
-								 {
-								 case 1: 
-								 case 2: 
-								 case 3: pAll->nTickets1++; break;
-								 case 4: 
-								 case 5: 
-								 case 6: pAll->nTickets2++; break;
-								 case 7: 
-								 case 8: 
-								 case 9: pAll->nTickets3++; break;
-								 case 10: 
-								 case 11: 
-								 case 12: psIni->nTickets4++; break;
-								 }
-							 setState3(S_IDLE); 
-						 }
-					 }
-					 else
-						setState3(S_IDLE); 
-					 return;
-
-				 case S_DROP:     setState3(S_HOLD_SETTLE); break;
-				 case S_DISCH:    setState3(S_HOLD_DISCH); break;
-				 }
-				 StopForm^ pStop = gcnew StopForm(&psIni->sLog3, pJob3);
-				 pStop->Show();
-			 }
+	private: System::Void dischBt3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		dischBt3->BackColor = COL_PGREEN;
+		setState3(S_DISCH);
+	}
 
 			 //-------------------------------------------------------------------------
-	private: System::Void addBt3_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bool bAdd = true;
-				 bool bAsk = false;
-				 addBt3->Enabled = false;
+	private: System::Void pause3_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		switch (psIni->sLog3.eState)
+		{
+		case S_DROP:			setState3(S_HOLD_DROP); //setState3(S_HOLD_SETTLE); 
+			pauseBt3->BackColor = COL_HOLD;
+			break;
+		case S_ASETTLE:		setState3(S_HOLD_ASETTLE);
+			pauseBt3->BackColor = COL_HOLD;
+			break;
+		case S_DISCH:			setState3(S_HOLD_DISCH);
+			pauseBt3->BackColor = COL_HOLD;
+			break;
+		case S_ADD:			setState3(S_HOLD_ADD); //DC 4.0.0
+			pauseBt3->BackColor = COL_HOLD;
+			break;
 
-				 if(!psIni->bBotScale)
-				 {
-					bAsk = (fLoad3 + psIni->dAddQty) > psIni->sLog3.sT.load_size;
+		case S_HOLD_ADD:		setState3(S_ADD);		//DC 4.0.0
+			pauseBt3->BackColor = COL_HOLDK;
+			break;
+		case S_HOLD_DROP:		setState3(S_DROP);
+			pauseBt3->BackColor = COL_HOLDK;
+			break;
+		case S_HOLD_ASETTLE:	setState3(S_ASETTLE);
+			pauseBt3->BackColor = COL_HOLDK;
+			break;
+		case S_HOLD_DISCH:		setState3(S_DISCH);
+			pauseBt3->BackColor = COL_HOLDK;
+			break;
+		}
+	}
+			 //-------------------------------------------------------------------------
+	private: System::Void stopBt3_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		switch (psIni->sLog3.eState)
+		{
+		case S_IDLE:
+			return;
+		case S_NEXT:
+		case S_READY:
+			if (bAuto3)
+			{
+				resetTargetOutput();		//DC 4.0.1
+
+				if (MessageBox::Show("Void Ticket ?", "Lane C",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::Yes)
+				{
+					pJob3->eStatus = S_VOIDED;
+					psIni->sLog3.eJobStatus = S_VOIDED;
+					psIni->sLog3.eStop = A_VOID;
+					psIni->sLog3.eState = S_ABORT;
 				}
 				else
 				{
-					if(!psIni->bPdmPlc)
-						bAsk = (fLoad3 + psIni->dAddQty) > fCumTarget3;
+					pJob3->eStatus = S_NEW;
+					pAll->lJob->Add(pJob3);
+
+					if (!psIni->bBotScale)
+						switch (psIni->sLog3.nSilo)
+						{
+						case 1: pAll->nTickets1++; break;
+						case 2: pAll->nTickets2++; break;
+						case 3: pAll->nTickets3++; break;
+						case 4: psIni->nTickets4++; break;
+						}
 					else
-						bAsk = (fLoad3 + psIni->asSilos[psIni->sLog3.nSilo-1].dAddTol) > fCumTarget3;		//DC 4.0.0
+						switch (psIni->sLog3.nSilo)
+						{
+						case 1:
+						case 2:
+						case 3: pAll->nTickets1++; break;
+						case 4:
+						case 5:
+						case 6: pAll->nTickets2++; break;
+						case 7:
+						case 8:
+						case 9: pAll->nTickets3++; break;
+						case 10:
+						case 11:
+						case 12: psIni->nTickets4++; break;
+						}
+					setState3(S_IDLE);
 				}
+			}
+			else
+				setState3(S_IDLE);
+			return;
 
-				 if(bAsk)
-				 {
-					 bStopAdd3 = true;		//DC 4.0.0
-					if(MessageBox::Show("TRUCK CAPACITY WARNING, continue ?", "Lane C", 
-						System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						== System::Windows::Forms::DialogResult::No)
-						bAdd = false;
-				 }
-				 if(bAdd)
-					 setState3(S_ADD);
-				 else
-					 setState3(S_UPDATE);
-			 }
+		case S_DROP:     setState3(S_HOLD_SETTLE); break;
+		case S_DISCH:    setState3(S_HOLD_DISCH); break;
+		}
+		StopForm^ pStop = gcnew StopForm(&psIni->sLog3, pJob3);
+		pStop->Show();
+	}
 
-		 private: bool testHold3(void)
-			  {
-				  if(psIni->bHold3 && psIni->sLog3.eState != S_HOLD)
-				  {
-					  ePrevHold3 = psIni->sLog3.eState;
-					  setState3(S_HOLD);
-					  pauseBt3->BackColor = COL_HOLD;
-					  return true;
-				  }
-				  return false;
-			  }
+			 //-------------------------------------------------------------------------
+	private: System::Void addBt3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bool bAdd = true;
+		bool bAsk = false;
+		addBt3->Enabled = false;
+
+		if (!psIni->bBotScale)
+		{
+			bAsk = (fLoad3 + psIni->dAddQty) > psIni->sLog3.sT.load_size;
+		}
+		else
+		{
+			if (!psIni->bPdmPlc)
+				bAsk = (fLoad3 + psIni->dAddQty) > fCumTarget3;
+			else
+				bAsk = (fLoad3 + psIni->asSilos[psIni->sLog3.nSilo - 1].dAddTol) > fCumTarget3;		//DC 4.0.0
+		}
+
+		if (bAsk)
+		{
+			bStopAdd3 = true;		//DC 4.0.0
+			if (MessageBox::Show("TRUCK CAPACITY WARNING, continue ?", "Lane C",
+				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+				== System::Windows::Forms::DialogResult::No)
+				bAdd = false;
+		}
+		if (bAdd)
+			setState3(S_ADD);
+		else
+			setState3(S_UPDATE);
+	}
+
+	private: bool testHold3(void)
+	{
+		if (psIni->bHold3 && psIni->sLog3.eState != S_HOLD)
+		{
+			ePrevHold3 = psIni->sLog3.eState;
+			setState3(S_HOLD);
+			pauseBt3->BackColor = COL_HOLD;
+			return true;
+		}
+		return false;
+	}
 
 #pragma endregion
 
 #pragma region SILO4	
 			 //DC 3.3.0 ================================================================
-	private: System::Void nextBt4_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 // if(pAll->eAsType == A_REMOTE)
-				 {	
-					/*int k = 0; 
-					pCmd = gcnew Cmd();
-					 pCmd->cId = CL_JOB;
-					 pAll->qCmd->Enqueue(pCmd);
+	private: System::Void nextBt4_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		// if(pAll->eAsType == A_REMOTE)
+		{
+			/*int k = 0;
+			pCmd = gcnew Cmd();
+			pCmd->cId = CL_JOB;
+			pAll->qCmd->Enqueue(pCmd);
 
-					 while(1 > 0 && k++ < 5)
-					Thread::Sleep(100);*/
-				 }
-				 
-				 {
-					 bool bDone = false;
-					 int nIdx = 0;
+			while(1 > 0 && k++ < 5)
+			Thread::Sleep(100);*/
+		}
 
-					 if (!pAll)
-						 return;
-					 if (!pAll->lJob)
-						 return;
+		{
+			bool bDone = false;
+			int nIdx = 0;
 
+			if (pAll->lJob->Count == 0)
+				return;
 
-					 if(pAll->lJob->Count == 0)
-						 return;
-					 
-					 if(pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
-					 {
-						 if((psIni->sScale4.bSerial == false)
-							 && (MessageBox::Show("Scale ERROR, continue ?", "Lane D", 
-							 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-							 == System::Windows::Forms::DialogResult::No))
-						 {
-							 return;
-						 }
-					 }
-					 else if(pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
-					 {
-						 if(psIni->sScale4.bSerial == false && !pAll->bRemContinue)
-						 {
-							 pAll->bRemContinue = false;
-							 return;
-						 }
-						 else
-							 pAll->bRemContinue = false;
+			if (pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
+			{
+				if ((psIni->sScale4.bSerial == false)
+					&& (MessageBox::Show("Scale ERROR, continue ?", "Lane D",
+						System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+						== System::Windows::Forms::DialogResult::No))
+				{
+					return;
+				}
+			}
+			else if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
+			{
+				if (psIni->sScale4.bSerial == false && !pAll->bRemContinue)
+				{
+					pAll->bRemContinue = false;
+					return;
+				}
+				else
+					pAll->bRemContinue = false;
 
-					 }
-					 else if(pAll->eAsType == A_REMOTE)
-					 {
-						 if((psIni->sScale4.bSerial == false)
-							 && (MessageBox::Show("Scale ERROR, continue ?", "Lane D", 
-							 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-							 == System::Windows::Forms::DialogResult::No))
-						 {
-							 nextBt4->Enabled = false;
-							int i = 0;
-							int j = 0;
-							Cmd^ pCmd = gcnew Cmd();
-
-							pCmd->cId = CL_KEY;
-							pCmd->nKey = K_NEXTCONNO4;
-							pAll->qCmd->Enqueue(pCmd);
-
-							pAll->cWaitT = 1;
-
-							while(pAll->cWaitT > 0 && i++ < 5)
-							Thread::Sleep(100);
-
-							pCmd = gcnew Cmd();
-							pCmd->cId = CL_INI;
-							pAll->qCmd->Enqueue(pCmd);
-
-							while(pAll->cWaitT > 0 && j++ < 5)
-							Thread::Sleep(100);	
-							nextBt4->Enabled = true;
-							 return;
-						 }
-						 else
-						 {
-							 nextBt4->Enabled = false;
-							int i = 0;
-							int j = 0;
-							Cmd^ pCmd = gcnew Cmd();
-
-							pCmd->cId = CL_KEY;
-							pCmd->nKey = K_NEXTCONYES4;
-							pAll->qCmd->Enqueue(pCmd);
-
-							pAll->cWaitT = 1;
-
-							while(pAll->cWaitT > 0 && i++ < 5)
-							Thread::Sleep(100);
-
-							pCmd = gcnew Cmd();
-							pCmd->cId = CL_INI;
-							pAll->qCmd->Enqueue(pCmd);
-
-							while(pAll->cWaitT > 0 && j++ < 5)
-							Thread::Sleep(100);	
-							nextBt4->Enabled = true;
-						 }
-					 }
-					 bAuto4 = true;
-
-					 customer4->BackColor = COL_G;
-					 customer4->ReadOnly = true;
-					 Job4->BackColor = COL_G;
-					 Job4->ReadOnly = true;
-					 material4->BackColor = COL_G;
-					 material4->ReadOnly = true;
-					 truck4->BackColor = COL_W;
-					 truck4->Select();
-					 target4->BackColor = COL_W;
-					 target4->ReadOnly = false;		//DC 3.2.4
-
-					 //---------------------------------------
-					 while(!bDone && (nIdx < pAll->lJob->Count))
-					 {
-						 pJob4 = pAll->lJob[nIdx++];
-
-						 if(psIni->bBotScale)
-						 {
-							 if((pJob4->eStatus != S_NEW) || (pJob4->nSilo < 10))
-								 continue;
-						 }
-						 else
-						 {
-							 if((pJob4->eStatus != S_NEW) || (pJob4->nSilo != 4))
-								 continue;
-						 }
-						 if(pAll->eAsType != A_REMOTE)							//DC 4.1.0
-							poLog->log(C_READ, &psIni->sLog4, pJob4->nLogIdx);
-						 if(gcnew String(psIni->sLog4.sT.mix_code) != "" 
-							 && (gcnew String(psIni->sLog4.sT.mix_code) != gcnew String(psIni->asSilos[psIni->sLog4.nSilo-1].acProduct))) //DC 4.0.1
-						 {
-							 if(pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
-							 {
-								return;
-							 } 
-							 else if(pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
-							 {
-								 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[psIni->sLog4.nSilo-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
-									 + " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
-									 + ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code),"Lane A",
-								System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-		//						 bWrongMet = true;	//DC 4.0.1
-								return;
-							 }
-							 else if(pAll->eAsType == A_REMOTE)
-							 {
-								 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[psIni->sLog4.nSilo-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
-									 + " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
-									 + ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code),"Lane A",
-								System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-		//						 bWrongMet = true;	//DC 4.0.1
-								return;
-							 }
-						 }
-						 pAll->lJob->Remove(pJob4);
-						 if(pAll->eAsType != A_REMOTE)
-						{							 
-							psIni->nTickets4--;
-						 }
-
-						 pTruck4 = findTruck(psIni->sLog4.sT.truck_id);
-
-						 customer4->Text = gcnew String(psIni->sLog4.sT.customer_name_1);
-						 Job4->Text = gcnew String(psIni->sLog4.sT.project_code);
-						 material4->Text = gcnew String(psIni->sLog4.sT.mix_code);
-						 tic_num4->Text = psIni->sLog4.sT.ticket_num.ToString();
-						 truck4->Text = gcnew String(psIni->sLog4.sT.truck_id);
-						 if(psIni->bScaleInLB)	//DC 3.2.0
-							 target4->Text = psIni->sLog4.sT.load_size.ToString("F00");
-						 else
-							target4->Text = psIni->sLog4.sT.load_size.ToString("F02");
-						 plant4->Text = psIni->sLog4.sT.plant_num.ToString();
-
-						 if(psIni->bBotScale)
-						 {
-							 switch(psIni->sLog4.nSilo)
-							 {
-							 case 10:	siloBar4_Click(nullptr, nullptr);	break;
-							 case 11:	siloBar42_Click(nullptr, nullptr);	break;
-							 case 12:	siloBar43_Click(nullptr, nullptr);	break;
-							 }
-						 }
-						 bDone = true;
-					 }
-					 if(bDone)
-						setState4(S_NEXT);
-
-					 pAll->bRemoteCall = false;	//DC 4.1.0
-				 }
-			 }
-
-			 //-------------------------------------------------------------------------
-	private: System::Void autoBt4_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bAuto4 = false;
-
-				 customer4->BackColor = COL_W;
-				 customer4->ReadOnly = false;
-				 Job4->BackColor = COL_W;
-				 Job4->ReadOnly = false;
-				 material4->BackColor = COL_W;
-				 material4->ReadOnly = false;
-				 truck4->BackColor = COL_W;
-				 target4->BackColor = COL_W;
-
-				 customer4->Text = nullptr;
-				 Job4->Text = nullptr;
-				 material4->Text = nullptr;
-				 truck4->Text = nullptr;
-				 target4->Text = nullptr;
-				 tic_num4->Text = psIni->sInv.nLastTicket.ToString();
-				 plant4->Text = psIni->nPlantNum1.ToString();
-					
-				 memset(&psIni->sLog4, 0, sizeof(LOG_REC));
-				 psIni->sLog4.eJobStatus = S_NEW;
-				 psIni->sLog4.sT.mix_price = psIni->fTonPrice;
-				 psIni->sLog4.fTax = psIni->fTaxRate;
-				 psIni->sLog4.sT.ticket_num = psIni->sInv.nLastTicket++;
-				 psIni->sLog4.sT.plant_num = psIni->nPlantNum1;
-
-				 siloBar4_Click(nullptr, nullptr);	
-				 setState4(S_NEXT);
-			 }
-
-			 //================================================================
-	private: System::Void readyBt4_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if(pAll->eAsType == A_REMOTE)		//DC 4.1.0
-				 {
-					 readyBt4->Enabled = false;
-					//double fLoadChg;
-					Cmd^ pCmd = gcnew Cmd();
-					
-
-					//DC 4.1.1
-					/*fLoadChg = Convert::ToDouble(target4->Text);
-					if(pJob4->fLoad != fLoadChg)
-					{
-						pJob4->fLoad = fLoadChg;
-						pAll->pJob4 = pJob4;
-						int k = 0;
-						pCmd = gcnew Cmd();
-						pCmd->cId = CL_SJOB4;
-						pAll->qCmd->Enqueue(pCmd);
-
-						pAll->cWaitT = 1;
-
-						while(pAll->cWaitT > 0 && k++ < 5)
-						Thread::Sleep(100);
-					}*/
-
+			}
+			else if (pAll->eAsType == A_REMOTE)
+			{
+				if ((psIni->sScale4.bSerial == false)
+					&& (MessageBox::Show("Scale ERROR, continue ?", "Lane D",
+						System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+						== System::Windows::Forms::DialogResult::No))
+				{
+					nextBt4->Enabled = false;
 					int i = 0;
 					int j = 0;
-					//Cmd^ pCmd = gcnew Cmd();
-					pCmd = gcnew Cmd();
+					Cmd^ pCmd = gcnew Cmd();
+
 					pCmd->cId = CL_KEY;
-					pCmd->nKey = K_READY4;
+					pCmd->nKey = K_NEXTCONNO4;
 					pAll->qCmd->Enqueue(pCmd);
 
 					pAll->cWaitT = 1;
 
-					while(pAll->cWaitT > 0 && i++ < 5)
-					Thread::Sleep(100);
+					while (pAll->cWaitT > 0 && i++ < 5)
+						Thread::Sleep(100);
 
 					pCmd = gcnew Cmd();
 					pCmd->cId = CL_INI;
 					pAll->qCmd->Enqueue(pCmd);
 
-					while(pAll->cWaitT > 0 && j++ < 5)
-					Thread::Sleep(100);
-					readyBt4->Enabled = true;
-				 }
-
-				 if(pAll->eAsType != A_REMOTE)	//DC 4.1.0
-							pAll->nKey = 0;
-
-				 if(!psIni->bBotScale)
-				 {
-					 if((psIni->sScale4.dValue < 0.0)
-						 && (MessageBox::Show("Scale under 0.0, continue ?", "Lane D", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::No))
-					 {
-						 return;
-					 }
-					 else if((psIni->sScale4.dValue > psIni->sScale4.fTolerance)
-						 && (MessageBox::Show("Scale over 0.0, continue ?", "Lane D", 
-						 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						 == System::Windows::Forms::DialogResult::No))
-					 {
-						 return;
-					 }
-				 }
-				 
-				 try
-				 {
-					 if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
-					 {
-//						 pJob4 = pAll->pJob4;
-//						 target4->Text = pJob4->fLoad.ToString("F00");
-						 /*this->groupBox4->Refresh();*/
-					 }
-					 psIni->sLog4.sT.load_size = Convert::ToDouble(target4->Text);
-					 if(pAll->eAsType != A_REMOTE)	// && !pAll->bRemoteCall)
-						pJob4->fLoad = Convert::ToDouble(target4->Text);
-					
-					 //else if(pAll->eAsType == A_REMOTE)
-					 //{
-						// /*pJob4->fLoad = Convert::ToDouble(target4->Text);
-						// pAll->pJob4 = pJob4;
-						// int i = 0;	
-						//Cmd^ pCmd = gcnew Cmd();
-						// pCmd = gcnew Cmd();
-						//pCmd->cId = CL_SJOB4;
-						//pAll->qCmd->Enqueue(pCmd);
-
-						//pAll->cWaitT = 1;
-
-						//while(pAll->cWaitT > 0 && i++ < 5)
-						//Thread::Sleep(100);*/
-					 //}
-				 }
-				 catch ( System::FormatException^ ) 
-				 {
-					 if(pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
-					 {
-						 MessageBox::Show("Please correct numeric entry !", "Lane D", 
-							 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-						 return;
-					 }
-					 else if(pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
-					 {
-						 return;
-					 }
-					 else if(pAll->eAsType == A_REMOTE)
-					 {
-						  MessageBox::Show("Please correct numeric entry !", "Lane D", 
-							 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-						 return;
-					 }
-				 }
-
-				 // find truck
-				 pTruck4 = findTruck(psIni->sLog4.sT.truck_id);
-				 if(pTruck4 == nullptr)
-				 {
-					 if(pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
-					 {
-						 MessageBox::Show("Truck "+gcnew String(psIni->sLog4.sT.truck_id)+" not found !", "Lane D", 
-						 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error); 
-						 return;
-					 }
-					 else if(pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
-					 {
-						 return;
-					 }
-					 else if(pAll->eAsType == A_REMOTE)
-					 {
-						 MessageBox::Show("Truck "+gcnew String(psIni->sLog4.sT.truck_id)+" not found !", "Lane D", 
-						 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error); 
-						 return;
-					 }
-				 }
-
-				 // test target versus truck capacity
-				 if(psIni->sLog4.sT.load_size > pTruck4->nCapacity)	//DC 3.2.4 && !psIni->bUseTrkMax)		//DC 3.2.0
-				 {
-					 if(pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
-					 {
-						 MessageBox::Show("Target exceeds truck capacity !", "Lane D", 
-						 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error); 
-						 return;
-					 }
-					 else if(pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
-					 {
-						 return;
-					 }
-					 else if(pAll->eAsType == A_REMOTE)
-					 {
-						 MessageBox::Show("Target exceeds truck capacity !", "Lane D", 
-						 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error); 
-						 return;
-					 }
-				 }
-
-				 if(!bAuto4)
-				 {
-					 str2arr(customer4->Text, psIni->sLog4.sT.customer_name_1);
-					 str2arr(Job4->Text, psIni->sLog4.sT.project_code);
-					 str2arr(material4->Text, psIni->sLog4.sT.mix_code);
-					 str2arr(truck4->Text, psIni->sLog4.sT.truck_id);
-
-					 if(pAll->eAsType != A_REMOTE)
-					 {
-						 pJob4 = gcnew Job();
-						 pJob4->nLogIdx = poLog->log(C_APPEND,&psIni->sLog4, 0);
-						 pJob4->nTicket = psIni->sLog4.sT.ticket_num;
-						 pJob4->nSilo = psIni->sLog4.nSilo;
-						 pJob4->stCustomer = gcnew String(psIni->sLog4.sT.customer_name_1);
-						 pJob4->eStatus = psIni->sLog4.eJobStatus;
-	//					 psIni->sLog4.fTruckTare = psIni->sScale4.dValue;
-					 }
-				 }
-
-				 // lock job record
-				 customer4->BackColor = COL_G;
-				 customer4->ReadOnly = true;
-				 Job4->BackColor = COL_G;
-				 Job4->ReadOnly = true;
-				 material4->BackColor = COL_G;
-				 material4->ReadOnly = true;
-				 truck4->BackColor = COL_G;
-				 target4->BackColor = COL_G;
-				 target4->ReadOnly = true;		//DC 3.2.4
-
-				 nextBt4->Enabled = true;
-				 nextBt4->BackColor = COL_TRANS;
-				 autoBt4->Enabled = true;
-				 autoBt4->BackColor = COL_TRANS;
-
-				 if(psIni->bBotScale)
-				 {
-					if(!psIni->bSendBitWise)			//DC 4.0.1
-						psIni->sLog4.fTruckTare = psIni->sScale4.dValue;
-					if(psIni->bUseTrkMax)				//DC 3.2.0
-						psIni->sLog4.sT.load_size = psIni->sLog4.sT.load_size - psIni->sLog4.fTruckTare;
-				 }
-				 fCumTarget4 = 0.0;
-				 fFall4 = 0;
-				 setDrops4(psIni->sLog4.nDrops);
-				 setState4(S_READY);		 
-			 }
-
-			 //--------------------------------------------------------------------
-	private: System::Void printOnly4_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				// if(pAll->eAsType == A_REMOTE)	//DC 4.1.0
-				// {
-				//	int i = 0;
-				//	Cmd^ pCmd = gcnew Cmd();
-				//	pCmd->cId = CL_KEY;
-				//	pCmd->nKey = K_PRINT4;
-				//	pAll->qCmd->Enqueue(pCmd);
-
-				//	pAll->cWaitT = 1;
-
-				//	while(pAll->cWaitT > 0 && i++ < 5)
-				//	Thread::Sleep(100);
-				//}
-				//else
+					while (pAll->cWaitT > 0 && j++ < 5)
+						Thread::Sleep(100);
+					nextBt4->Enabled = true;
+					return;
+				}
+				else
 				{
-					if(taxExempt4->Checked)
-						psIni->sLog4.fTax = 0;
-					 poLog->calcTarget(&psIni->sLog4);
-
-					 if(psIni->bScaleInLB)	//DC 4.2.0
-					 {
-						 tareD->Text = psIni->sLog4.fTruckTare.ToString("F00");
-						 grossD->Text = psIni->sLog4.fGross.ToString("F00");
-					 }
-					 else
-					 {
-						 tareD->Text = psIni->sLog4.fTruckTare.ToString("F02");
-						 grossD->Text = psIni->sLog4.fGross.ToString("F02");
-					 }
-					 groupBoxD->Visible = true;
-				 }
-			 }
-
-			 //--------------------------------------------------------------------
-	private: System::Void okD_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				  if(pAll->eAsType == A_REMOTE)	//DC 4.1.0
-				 {
-					 pJob4->fTare = Convert::ToDouble(tareD->Text);
-					 pJob4->fGross = Convert::ToDouble(grossD->Text);
-
-					 int j = 0;
-					 pAll->cWaitT = 1;
-					 Cmd^ pCmd = gcnew Cmd();
-					 pCmd = gcnew Cmd();
-					 pCmd->cId = CL_SJOB4;
-					 pAll->qCmd->Enqueue(pCmd);
-
-					 while(pAll->cWaitT > 0 && j++ < 5)
-					 Thread::Sleep(100);
-
+					nextBt4->Enabled = false;
 					int i = 0;
+					int j = 0;
+					Cmd^ pCmd = gcnew Cmd();
+
 					pCmd->cId = CL_KEY;
-					pCmd->nKey = K_PRINT4;
+					pCmd->nKey = K_NEXTCONYES4;
 					pAll->qCmd->Enqueue(pCmd);
 
 					pAll->cWaitT = 1;
 
-					while(pAll->cWaitT > 0 && i++ < 5)
-					Thread::Sleep(100);
+					while (pAll->cWaitT > 0 && i++ < 5)
+						Thread::Sleep(100);
 
-					groupBoxD->Visible = false;
+					pCmd = gcnew Cmd();
+					pCmd->cId = CL_INI;
+					pAll->qCmd->Enqueue(pCmd);
+
+					while (pAll->cWaitT > 0 && j++ < 5)
+						Thread::Sleep(100);
+					nextBt4->Enabled = true;
+				}
+			}
+			bAuto4 = true;
+
+			customer4->BackColor = COL_G;
+			customer4->ReadOnly = true;
+			Job4->BackColor = COL_G;
+			Job4->ReadOnly = true;
+			material4->BackColor = COL_G;
+			material4->ReadOnly = true;
+			truck4->BackColor = COL_W;
+			truck4->Select();
+			target4->BackColor = COL_W;
+			target4->ReadOnly = false;		//DC 3.2.4
+
+											//---------------------------------------
+			while (!bDone && (nIdx < pAll->lJob->Count))
+			{
+				pJob4 = pAll->lJob[nIdx++];
+
+				if (psIni->bBotScale)
+				{
+					if ((pJob4->eStatus != S_NEW) || (pJob4->nSilo < 10))
+						continue;
 				}
 				else
-				 {
-					 int nPrinter;
-					 if(pAll->bRemoteCall)
-					 {
-						 pAll->bRemoteCall = false;
-						/* Job^ pJob;
-						 pJob = pAll->pJob;*/
-						 nPrinter = 4;
-						 try
-						 {
-							 psIni->sLog4.fTruckTare = pAll->pJob4->fTare;
-							 psIni->sLog4.fGross = pAll->pJob4->fGross;
-							 psIni->sLog4.fLoad = psIni->sLog4.fGross - psIni->sLog4.fTruckTare;
-						 }
-						 catch ( System::FormatException^ ) 
-						 {
-							 MessageBox::Show("Please correct numeric entry !", "Lane D", 
-								 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-							 return;
-						 }
-					 }
-					 else
-					 {
-						 nPrinter = 4;
-						 if(laneDCb1->Checked)
-							 nPrinter = 1;
-						 else if(laneDCb2->Checked)
-							 nPrinter = 2;
-						 try
-						 {
-							 psIni->sLog4.fTruckTare = Convert::ToDouble(tareD->Text);
-							 psIni->sLog4.fGross = Convert::ToDouble(grossD->Text);
-							 psIni->sLog4.fLoad = psIni->sLog4.fGross - psIni->sLog4.fTruckTare;
-						 }
-						 catch ( System::FormatException^ ) 
-						 {
-							 MessageBox::Show("Please correct numeric entry !", "Lane D", 
-								 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-							 return;
-						 }
-						 groupBoxD->Visible = false;
-					 }
+				{
+					if ((pJob4->eStatus != S_NEW) || (pJob4->nSilo != 4))
+						continue;
+				}
+				if (pAll->eAsType != A_REMOTE)							//DC 4.1.0
+					poLog->log(C_READ, &psIni->sLog4, pJob4->nLogIdx);
+				if (gcnew String(psIni->sLog4.sT.mix_code) != ""
+					&& (gcnew String(psIni->sLog4.sT.mix_code) != gcnew String(psIni->asSilos[psIni->sLog4.nSilo - 1].acProduct))) //DC 4.0.1
+				{
+					if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
+					{
+						return;
+					}
+					else if (pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
+					{
+						MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[psIni->sLog4.nSilo - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
+							+ " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
+							+ ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code), "Lane A",
+							System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+						//						 bWrongMet = true;	//DC 4.0.1
+						return;
+					}
+					else if (pAll->eAsType == A_REMOTE)
+					{
+						MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[psIni->sLog4.nSilo - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
+							+ " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
+							+ ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code), "Lane A",
+							System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+						//						 bWrongMet = true;	//DC 4.0.1
+						return;
+					}
+				}
+				pAll->lJob->Remove(pJob4);
+				if (pAll->eAsType != A_REMOTE)
+				{
+					psIni->nTickets4--;
+				}
 
-					 poLog->calcLoad(&psIni->sLog4);					 
-					 poLog->printTicket(&psIni->sLog4, nPrinter, false);					 
-					 psIni->sLog4.eJobStatus = S_PRINTED;
-					 poLog->log(C_UPDATE, &psIni->sLog4, pJob4->nLogIdx);
+				pTruck4 = findTruck(psIni->sLog4.sT.truck_id);
 
-					 // add to old job list
-					 pJob4->stStatus = pAll->lStat[pJob4->eStatus];
-					 pAll->lOld->Add(pJob4);
+				customer4->Text = gcnew String(psIni->sLog4.sT.customer_name_1);
+				Job4->Text = gcnew String(psIni->sLog4.sT.project_code);
+				material4->Text = gcnew String(psIni->sLog4.sT.mix_code);
+				tic_num4->Text = psIni->sLog4.sT.ticket_num.ToString();
+				truck4->Text = gcnew String(psIni->sLog4.sT.truck_id);
+				if (psIni->bScaleInLB)	//DC 3.2.0
+					target4->Text = psIni->sLog4.sT.load_size.ToString("F00");
+				else
+					target4->Text = psIni->sLog4.sT.load_size.ToString("F02");
+				plant4->Text = psIni->sLog4.sT.plant_num.ToString();
 
-					 setState4(S_IDLE);
-				 }
-			 }
+				if (psIni->bBotScale)
+				{
+					switch (psIni->sLog4.nSilo)
+					{
+					case 10:	siloBar4_Click(nullptr, nullptr);	break;
+					case 11:	siloBar42_Click(nullptr, nullptr);	break;
+					case 12:	siloBar43_Click(nullptr, nullptr);	break;
+					}
+				}
+				bDone = true;
+			}
+			if (bDone)
+				setState4(S_NEXT);
+
+			pAll->bRemoteCall = false;	//DC 4.1.0
+		}
+	}
+
+			 //-------------------------------------------------------------------------
+	private: System::Void autoBt4_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bAuto4 = false;
+
+		customer4->BackColor = COL_W;
+		customer4->ReadOnly = false;
+		Job4->BackColor = COL_W;
+		Job4->ReadOnly = false;
+		material4->BackColor = COL_W;
+		material4->ReadOnly = false;
+		truck4->BackColor = COL_W;
+		target4->BackColor = COL_W;
+
+		customer4->Text = nullptr;
+		Job4->Text = nullptr;
+		material4->Text = nullptr;
+		truck4->Text = nullptr;
+		target4->Text = nullptr;
+		tic_num4->Text = psIni->sInv.nLastTicket.ToString();
+		plant4->Text = psIni->nPlantNum1.ToString();
+
+		memset(&psIni->sLog4, 0, sizeof(LOG_REC));
+		psIni->sLog4.eJobStatus = S_NEW;
+		psIni->sLog4.sT.mix_price = psIni->fTonPrice;
+		psIni->sLog4.fTax = psIni->fTaxRate;
+		psIni->sLog4.sT.ticket_num = psIni->sInv.nLastTicket++;
+		psIni->sLog4.sT.plant_num = psIni->nPlantNum1;
+
+		siloBar4_Click(nullptr, nullptr);
+		setState4(S_NEXT);
+	}
 
 			 //================================================================
-	private: System::Void setDrops4(int nDropsIn) 
-			 {
-				int	nDropsMin = (int)(psIni->sLog4.sT.load_size / psIni->fDropMaxL4) + 1;
-				int nDrops = nDropsIn > nDropsMin ? nDropsIn : nDropsMin;
+	private: System::Void readyBt4_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (pAll->eAsType == A_REMOTE)		//DC 4.1.0
+		{
+			readyBt4->Enabled = false;
+			//double fLoadChg;
+			Cmd^ pCmd = gcnew Cmd();
 
-				 // test size of drop against scale capacity
-				 fTarget4 = psIni->sLog4.sT.load_size / nDrops;
-				 fTol4 = max(psIni->fTarTolAbs, psIni->fTarTolPerc * fTarget4 / 100);
-				 truckBar4->Separators = nDrops - 1;
-				 psIni->sLog4.nDrops = nDrops;
 
-				 if(psIni->bBotScale)
-				 {
-					 switch(psIni->sLog4.nSilo)
-					 {
-					 case 10:  siloBar4->Target = fTarget4;	break;
-					 case 11:  siloBar42->Target = fTarget4;	break;
-					 case 12:  siloBar43->Target = fTarget4;	break;
-					 }
-					 scaleBar4->Target = fTarget4 + psIni->sLog4.fTruckTare;
-				 }
-				 else
-				 {
-					 siloBar4->Target = fTarget4;
-					 scaleBar4->Target = fTarget4;
-				 }
-				 switch(psIni->sLog4.nDrops)
-				 {
-				 case 1: drops41->Checked = true; break;
-				 case 2: drops42->Checked = true; break;
-				 case 3: drops43->Checked = true; break;
-				 case 4: drops44->Checked = true; break;
-				 }
-			 }
+			//DC 4.1.1
+			/*fLoadChg = Convert::ToDouble(target4->Text);
+			if(pJob4->fLoad != fLoadChg)
+			{
+			pJob4->fLoad = fLoadChg;
+			pAll->pJob4 = pJob4;
+			int k = 0;
+			pCmd = gcnew Cmd();
+			pCmd->cId = CL_SJOB4;
+			pAll->qCmd->Enqueue(pCmd);
+
+			pAll->cWaitT = 1;
+
+			while(pAll->cWaitT > 0 && k++ < 5)
+			Thread::Sleep(100);
+			}*/
+
+			int i = 0;
+			int j = 0;
+			//Cmd^ pCmd = gcnew Cmd();
+			pCmd = gcnew Cmd();
+			pCmd->cId = CL_KEY;
+			pCmd->nKey = K_READY4;
+			pAll->qCmd->Enqueue(pCmd);
+
+			pAll->cWaitT = 1;
+
+			while (pAll->cWaitT > 0 && i++ < 5)
+				Thread::Sleep(100);
+
+			pCmd = gcnew Cmd();
+			pCmd->cId = CL_INI;
+			pAll->qCmd->Enqueue(pCmd);
+
+			while (pAll->cWaitT > 0 && j++ < 5)
+				Thread::Sleep(100);
+			readyBt4->Enabled = true;
+		}
+
+		if (pAll->eAsType != A_REMOTE)	//DC 4.1.0
+			pAll->nKey = 0;
+
+		if (!psIni->bBotScale)
+		{
+			if ((psIni->sScale4.dValue < 0.0)
+				&& (MessageBox::Show("Scale under 0.0, continue ?", "Lane D",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::No))
+			{
+				return;
+			}
+			else if ((psIni->sScale4.dValue > psIni->sScale4.fTolerance)
+				&& (MessageBox::Show("Scale over 0.0, continue ?", "Lane D",
+					System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+					== System::Windows::Forms::DialogResult::No))
+			{
+				return;
+			}
+		}
+
+		try
+		{
+			if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
+			{
+				//						 pJob4 = pAll->pJob4;
+				//						 target4->Text = pJob4->fLoad.ToString("F00");
+				/*this->groupBox4->Refresh();*/
+			}
+			psIni->sLog4.sT.load_size = Convert::ToDouble(target4->Text);
+			if (pAll->eAsType != A_REMOTE)	// && !pAll->bRemoteCall)
+				pJob4->fLoad = Convert::ToDouble(target4->Text);
+
+			//else if(pAll->eAsType == A_REMOTE)
+			//{
+			// /*pJob4->fLoad = Convert::ToDouble(target4->Text);
+			// pAll->pJob4 = pJob4;
+			// int i = 0;	
+			//Cmd^ pCmd = gcnew Cmd();
+			// pCmd = gcnew Cmd();
+			//pCmd->cId = CL_SJOB4;
+			//pAll->qCmd->Enqueue(pCmd);
+
+			//pAll->cWaitT = 1;
+
+			//while(pAll->cWaitT > 0 && i++ < 5)
+			//Thread::Sleep(100);*/
+			//}
+		}
+		catch (System::FormatException^)
+		{
+			if (pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
+			{
+				MessageBox::Show("Please correct numeric entry !", "Lane D",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
+			}
+			else if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
+			{
+				return;
+			}
+			else if (pAll->eAsType == A_REMOTE)
+			{
+				MessageBox::Show("Please correct numeric entry !", "Lane D",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
+			}
+		}
+
+		// find truck
+		pTruck4 = findTruck(psIni->sLog4.sT.truck_id);
+		if (pTruck4 == nullptr)
+		{
+			if (pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
+			{
+				MessageBox::Show("Truck " + gcnew String(psIni->sLog4.sT.truck_id) + " not found !", "Lane D",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
+			}
+			else if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
+			{
+				return;
+			}
+			else if (pAll->eAsType == A_REMOTE)
+			{
+				MessageBox::Show("Truck " + gcnew String(psIni->sLog4.sT.truck_id) + " not found !", "Lane D",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
+			}
+		}
+
+		// test target versus truck capacity
+		if (psIni->sLog4.sT.load_size > pTruck4->nCapacity)	//DC 3.2.4 && !psIni->bUseTrkMax)		//DC 3.2.0
+		{
+			if (pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
+			{
+				MessageBox::Show("Target exceeds truck capacity !", "Lane D",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
+			}
+			else if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
+			{
+				return;
+			}
+			else if (pAll->eAsType == A_REMOTE)
+			{
+				MessageBox::Show("Target exceeds truck capacity !", "Lane D",
+					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
+			}
+		}
+
+		if (!bAuto4)
+		{
+			str2arr(customer4->Text, psIni->sLog4.sT.customer_name_1);
+			str2arr(Job4->Text, psIni->sLog4.sT.project_code);
+			str2arr(material4->Text, psIni->sLog4.sT.mix_code);
+			str2arr(truck4->Text, psIni->sLog4.sT.truck_id);
+
+			if (pAll->eAsType != A_REMOTE)
+			{
+				pJob4 = gcnew Job();
+				pJob4->nLogIdx = poLog->log(C_APPEND, &psIni->sLog4, 0);
+				pJob4->nTicket = psIni->sLog4.sT.ticket_num;
+				pJob4->nSilo = psIni->sLog4.nSilo;
+				pJob4->stCustomer = gcnew String(psIni->sLog4.sT.customer_name_1);
+				pJob4->eStatus = psIni->sLog4.eJobStatus;
+				//					 psIni->sLog4.fTruckTare = psIni->sScale4.dValue;
+			}
+		}
+
+		// lock job record
+		customer4->BackColor = COL_G;
+		customer4->ReadOnly = true;
+		Job4->BackColor = COL_G;
+		Job4->ReadOnly = true;
+		material4->BackColor = COL_G;
+		material4->ReadOnly = true;
+		truck4->BackColor = COL_G;
+		target4->BackColor = COL_G;
+		target4->ReadOnly = true;		//DC 3.2.4
+
+		nextBt4->Enabled = true;
+		nextBt4->BackColor = COL_TRANS;
+		autoBt4->Enabled = true;
+		autoBt4->BackColor = COL_TRANS;
+
+		if (psIni->bBotScale)
+		{
+			if (!psIni->bSendBitWise)			//DC 4.0.1
+				psIni->sLog4.fTruckTare = psIni->sScale4.dValue;
+			if (psIni->bUseTrkMax)				//DC 3.2.0
+				psIni->sLog4.sT.load_size = psIni->sLog4.sT.load_size - psIni->sLog4.fTruckTare;
+		}
+		fCumTarget4 = 0.0;
+		fFall4 = 0;
+		setDrops4(psIni->sLog4.nDrops);
+		setState4(S_READY);
+	}
+
+			 //--------------------------------------------------------------------
+	private: System::Void printOnly4_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		// if(pAll->eAsType == A_REMOTE)	//DC 4.1.0
+		// {
+		//	int i = 0;
+		//	Cmd^ pCmd = gcnew Cmd();
+		//	pCmd->cId = CL_KEY;
+		//	pCmd->nKey = K_PRINT4;
+		//	pAll->qCmd->Enqueue(pCmd);
+
+		//	pAll->cWaitT = 1;
+
+		//	while(pAll->cWaitT > 0 && i++ < 5)
+		//	Thread::Sleep(100);
+		//}
+		//else
+		{
+			if (taxExempt4->Checked)
+				psIni->sLog4.fTax = 0;
+			poLog->calcTarget(&psIni->sLog4);
+
+			if (psIni->bScaleInLB)	//DC 4.2.0
+			{
+				tareD->Text = psIni->sLog4.fTruckTare.ToString("F00");
+				grossD->Text = psIni->sLog4.fGross.ToString("F00");
+			}
+			else
+			{
+				tareD->Text = psIni->sLog4.fTruckTare.ToString("F02");
+				grossD->Text = psIni->sLog4.fGross.ToString("F02");
+			}
+			groupBoxD->Visible = true;
+		}
+	}
+
+			 //--------------------------------------------------------------------
+	private: System::Void okD_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (pAll->eAsType == A_REMOTE)	//DC 4.1.0
+		{
+			pJob4->fTare = Convert::ToDouble(tareD->Text);
+			pJob4->fGross = Convert::ToDouble(grossD->Text);
+
+			int j = 0;
+			pAll->cWaitT = 1;
+			Cmd^ pCmd = gcnew Cmd();
+			pCmd = gcnew Cmd();
+			pCmd->cId = CL_SJOB4;
+			pAll->qCmd->Enqueue(pCmd);
+
+			while (pAll->cWaitT > 0 && j++ < 5)
+				Thread::Sleep(100);
+
+			int i = 0;
+			pCmd->cId = CL_KEY;
+			pCmd->nKey = K_PRINT4;
+			pAll->qCmd->Enqueue(pCmd);
+
+			pAll->cWaitT = 1;
+
+			while (pAll->cWaitT > 0 && i++ < 5)
+				Thread::Sleep(100);
+
+			groupBoxD->Visible = false;
+		}
+		else
+		{
+			int nPrinter;
+			if (pAll->bRemoteCall)
+			{
+				pAll->bRemoteCall = false;
+				/* Job^ pJob;
+				pJob = pAll->pJob;*/
+				nPrinter = 4;
+				try
+				{
+					psIni->sLog4.fTruckTare = pAll->pJob4->fTare;
+					psIni->sLog4.fGross = pAll->pJob4->fGross;
+					psIni->sLog4.fLoad = psIni->sLog4.fGross - psIni->sLog4.fTruckTare;
+				}
+				catch (System::FormatException^)
+				{
+					MessageBox::Show("Please correct numeric entry !", "Lane D",
+						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return;
+				}
+			}
+			else
+			{
+				nPrinter = 4;
+				if (laneDCb1->Checked)
+					nPrinter = 1;
+				else if (laneDCb2->Checked)
+					nPrinter = 2;
+				try
+				{
+					psIni->sLog4.fTruckTare = Convert::ToDouble(tareD->Text);
+					psIni->sLog4.fGross = Convert::ToDouble(grossD->Text);
+					psIni->sLog4.fLoad = psIni->sLog4.fGross - psIni->sLog4.fTruckTare;
+				}
+				catch (System::FormatException^)
+				{
+					MessageBox::Show("Please correct numeric entry !", "Lane D",
+						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+					return;
+				}
+				groupBoxD->Visible = false;
+			}
+
+			poLog->calcLoad(&psIni->sLog4);
+			poLog->printTicket(&psIni->sLog4, nPrinter, false);
+			psIni->sLog4.eJobStatus = S_PRINTED;
+			poLog->log(C_UPDATE, &psIni->sLog4, pJob4->nLogIdx);
+
+			// add to old job list
+			pJob4->stStatus = pAll->lStat[pJob4->eStatus];
+			pAll->lOld->Add(pJob4);
+
+			setState4(S_IDLE);
+		}
+	}
+
+			 //================================================================
+	private: System::Void setDrops4(int nDropsIn)
+	{
+		int	nDropsMin = (int)(psIni->sLog4.sT.load_size / psIni->fDropMaxL4) + 1;
+		int nDrops = nDropsIn > nDropsMin ? nDropsIn : nDropsMin;
+
+		// test size of drop against scale capacity
+		fTarget4 = psIni->sLog4.sT.load_size / nDrops;
+		fTol4 = max(psIni->fTarTolAbs, psIni->fTarTolPerc * fTarget4 / 100);
+		truckBar4->Separators = nDrops - 1;
+		psIni->sLog4.nDrops = nDrops;
+
+		if (psIni->bBotScale)
+		{
+			switch (psIni->sLog4.nSilo)
+			{
+			case 10:  siloBar4->Target = fTarget4;	break;
+			case 11:  siloBar42->Target = fTarget4;	break;
+			case 12:  siloBar43->Target = fTarget4;	break;
+			}
+			scaleBar4->Target = fTarget4 + psIni->sLog4.fTruckTare;
+		}
+		else
+		{
+			siloBar4->Target = fTarget4;
+			scaleBar4->Target = fTarget4;
+		}
+		switch (psIni->sLog4.nDrops)
+		{
+		case 1: drops41->Checked = true; break;
+		case 2: drops42->Checked = true; break;
+		case 3: drops43->Checked = true; break;
+		case 4: drops44->Checked = true; break;
+		}
+	}
 			 //-------------------------------------------------------------------------
-	private: System::Void drops41_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops4(1);
-			 }
-	private: System::Void drops42_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops4(2);
-			 }
-	private: System::Void drops43_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops4(3);
-			 }
-	private: System::Void drops44_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 setDrops4(4);
-			 }
+	private: System::Void drops41_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops4(1);
+	}
+	private: System::Void drops42_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops4(2);
+	}
+	private: System::Void drops43_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops4(3);
+	}
+	private: System::Void drops44_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		setDrops4(4);
+	}
 
 			 //----------------------------------------------------------------
-	private: double getFall4(void) 
-			 {
-				 double fFall;
-				 int nIdx = (int)fTarget4;
+	private: double getFall4(void)
+	{
+		double fFall;
+		int nIdx = (int)fTarget4;
 
-				 if(!psIni->bBotScale)
-				 {
-					 if(autoFall4->Checked)
-						 fFall = psIni->sInv.asFall4[nIdx].fFall / SAMPLE_NBR;
-					 else
-						fFall = psIni->afManFall4[nIdx];
-				 }
-				 else
-				 {
-					 switch(psIni->sLog4.nSilo)
-					 {
-					 case 10:
-						 if(autoFall4->Checked)
-							 fFall = psIni->sInv.asFall10[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall10[nIdx];
-						 break;
-					 case 11:
-						 if(autoFall4->Checked)
-							 fFall = psIni->sInv.asFall11[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall11[nIdx];
-						 break;
-					 case 12:
-						 if(autoFall4->Checked)
-							 fFall = psIni->sInv.asFall12[nIdx].fFall / SAMPLE_NBR;
-						 else
-							fFall = psIni->afManFall12[nIdx];
-						 break;
-					 }
-				 }
-				 return fFall;
-			 }
-
-			 //-------------------------------------------------------------------------
-	private: System::Void dropBt4_Click(System::Object^  sender, 
-				 System::EventArgs^  e) 
-			 {
-				 bool bSafe = psIni->nSafeTime > 0;
-				 readyBt4->Enabled = false;
-				 readyBt4->BackColor = COL_TRANS;
-
-				 str2arr(truck4->Text, psIni->sLog4.sT.truck_id);
-
-				 if(!psIni->bBotScale)			//#ifdef UPSCALE
-				 {
-					 fNewTarget4 = fTarget4;
-				 }
-				 else
-				 {
-					if(pAll->eAsType == A_PROD)
-						 if(!bTruck4) return;
-		
-					 if(bFirstDrop4 && !psIni->bSendBitWise)
-						 psIni->sLog4.fTruckTare = psIni->sScale4.dValue;
-					 fCumTarget4 += fTarget4;
-				 }				 		 
-				 fFall4 = getFall4();
-
-				 if(psIni->bSafeJob)
-					 bSafe = bFirstDrop4;
-
-				 if(bSafe)
-					setState4(S_SAFE);	
+		if (!psIni->bBotScale)
+		{
+			if (autoFall4->Checked)
+				fFall = psIni->sInv.asFall4[nIdx].fFall / SAMPLE_NBR;
+			else
+				fFall = psIni->afManFall4[nIdx];
+		}
+		else
+		{
+			switch (psIni->sLog4.nSilo)
+			{
+			case 10:
+				if (autoFall4->Checked)
+					fFall = psIni->sInv.asFall10[nIdx].fFall / SAMPLE_NBR;
 				else
-					setState4(S_DROP);
-				 bFirstDrop4 = false;
-			 }
-
-			 //-------------------------------------------------------------------------
-	private: System::Void dischBt4_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 dischBt4->BackColor = COL_PGREEN;	
-				 setState4(S_DISCH);		
-			 }
-
-			 //-------------------------------------------------------------------------
-	private: System::Void pause4_Click(System::Object^  sender, 
-				 System::EventArgs^  e)
-			 {
-				 if(pAll->eAsType == A_REMOTE)
-				 {
-					int i = 0;
-					Cmd^ pCmd = gcnew Cmd();
-					pCmd->cId = CL_KEY;
-					pCmd->nKey = K_HOLD4;
-					pAll->qCmd->Enqueue(pCmd);
-
-					pAll->cWaitT = 1;
-
-					while(pAll->cWaitT > 0 && i++ < 2)
-					Thread::Sleep(100);
-				 }
-
-				 {
-					 switch(psIni->sLog4.eState)
-					 {
-					 case S_DROP:			setState4(S_HOLD_DROP); //setState4(S_HOLD_SETTLE); 
-											pauseBt4->BackColor = COL_HOLD; 
-						break;
-					 case S_ASETTLE:		setState4(S_HOLD_ASETTLE); 
-											pauseBt4->BackColor = COL_HOLD; 
-						 break;
-					 case S_DISCH:			setState4(S_HOLD_DISCH); 
-											pauseBt4->BackColor = COL_HOLD; 
-						 break;
-					 case S_ADD:			setState4(S_HOLD_ADD); //DC 4.0.0
-											pauseBt4->BackColor = COL_HOLD; 
-						break;
-
-					 case S_HOLD_ADD:		setState4(S_ADD);		//DC 4.0.0
-											pauseBt4->BackColor = COL_HOLDK; 
-						 break;
-					 case S_HOLD_DROP:		setState4(S_DROP);
-											pauseBt4->BackColor = COL_HOLDK; 
-						 break;
-					 case S_HOLD_ASETTLE:	setState4(S_ASETTLE); 
-											pauseBt4->BackColor = COL_HOLDK; 
-						 break;
-					 case S_HOLD_DISCH:		setState4(S_DISCH); 
-											pauseBt4->BackColor = COL_HOLDK; 
-						 break;
-					 }
-				 }
-			 }
-			 //-------------------------------------------------------------------------
-	private: System::Void stopBt4_Click(System::Object^  sender, 
-				 System::EventArgs^  e) 
-			 {
-				 switch(psIni->sLog4.eState)
-				 {
-				 case S_IDLE:	
-					 return;
-				 case S_NEXT:    
-				 case S_READY:    
-					 if(bAuto4)
-					 {
-						 if(pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
-						 {
-							 resetTargetOutput();		//DC 4.0.1
-
-							 if(MessageBox::Show("Void Ticket ?", "Lane D", 
-							 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-							 == System::Windows::Forms::DialogResult::Yes)
-							 {
-								 pJob4->eStatus = S_VOIDED;
-								 psIni->sLog4.eJobStatus  = S_VOIDED;
-								 psIni->sLog4.eStop = A_VOID;
-								 psIni->sLog4.eState = S_ABORT;
-							 }
-							 else
-							 {
-								 pJob4->eStatus = S_NEW;
-								 pAll->lJob->Add(pJob4);
-								 
-								 if(!psIni->bBotScale)
-									 switch(psIni->sLog4.nSilo)
-									 {
-									 case 1: pAll->nTickets1++; break;
-									 case 2: pAll->nTickets2++; break;
-									 case 3: pAll->nTickets3++; break;
-									 case 4: psIni->nTickets4++; break;
-									 }
-								 else
-									 switch(psIni->sLog4.nSilo)
-									 {
-									 case 1: 
-									 case 2: 
-									 case 3: pAll->nTickets1++; break;
-									 case 4: 
-									 case 5: 
-									 case 6: pAll->nTickets2++; break;
-									 case 7: 
-									 case 8: 
-									 case 9: pAll->nTickets3++; break;
-									 case 10: 
-									 case 11: 
-									 case 12: psIni->nTickets4++; break;
-									 }
-								 setState4(S_IDLE); 
-							 }
-						 }
-						 else if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
-						 {
-							 resetTargetOutput();		//DC 4.0.1
-
-							 if(pAll->bRemoteVoid)
-							 {
-								 pJob4->eStatus = S_VOIDED;
-								 psIni->sLog4.eJobStatus  = S_VOIDED;
-								 psIni->sLog4.eStop = A_VOID;
-								 psIni->sLog4.eState = S_ABORT;
-							 }
-							 else
-							 {
-								 pJob4->eStatus = S_NEW;
-								 pAll->lJob->Add(pJob4);
-								 
-								 if(!psIni->bBotScale)
-									 switch(psIni->sLog4.nSilo)
-									 {
-									 case 1: pAll->nTickets1++; break;
-									 case 2: pAll->nTickets2++; break;
-									 case 3: pAll->nTickets3++; break;
-									 case 4: psIni->nTickets4++; break;
-									 }
-								 else
-									 switch(psIni->sLog4.nSilo)
-									 {
-									 case 1: 
-									 case 2: 
-									 case 3: pAll->nTickets1++; break;
-									 case 4: 
-									 case 5: 
-									 case 6: pAll->nTickets2++; break;
-									 case 7: 
-									 case 8: 
-									 case 9: pAll->nTickets3++; break;
-									 case 10: 
-									 case 11: 
-									 case 12: psIni->nTickets4++; break;
-									 }
-								 setState4(S_IDLE); 
-							 }
-						 }
-						 else if( pAll->eAsType == A_REMOTE)
-						 {
-							 if(MessageBox::Show("Void Ticket ?", "Lane D", 
-							 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-							 == System::Windows::Forms::DialogResult::Yes)
-							 {
-								int k = 0;	
-								Cmd^ pCmd = gcnew Cmd();
-								pCmd = gcnew Cmd();
-								pCmd->cId = CL_ABORT4;
-								pCmd->nKey = K_VOIDYES4;
-								pAll->qCmd->Enqueue(pCmd);
-
-								pAll->cWaitT = 1;
-
-								while(pAll->cWaitT > 0 && k++ < 5)
-								Thread::Sleep(100);
-							 }
-							 else
-							 {
-								int k = 0;	
-								Cmd^ pCmd = gcnew Cmd();
-								pCmd = gcnew Cmd();
-								pCmd->cId = CL_ABORT4;
-								pCmd->nKey = K_VOIDNO4;
-								pAll->qCmd->Enqueue(pCmd);
-
-								pAll->cWaitT = 1;
-
-								while(pAll->cWaitT > 0 && k++ < 5)
-								Thread::Sleep(100);
-							 }
-						 }
-					 }
-					 else
-						setState4(S_IDLE); 
-					 return;
-
-				 case S_DROP:     setState4(S_HOLD_SETTLE); break;
-				 case S_DISCH:    setState4(S_HOLD_DISCH); break;
-				 }
-				 pAll->bRemoteCall = false;		//DC 4.1.0
-				 StopForm^ pStop = gcnew StopForm(&psIni->sLog4, pJob4);
-				 pStop->Show();
-			 }
-
-			 //-------------------------------------------------------------------------
-	private: System::Void addBt4_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bool bAdd = true;
-				 bool bAsk = false;
-				 addBt4->Enabled = false;
-
-				 if(!psIni->bBotScale)
-				 {
-					bAsk = (fLoad4 + psIni->dAddQty) > psIni->sLog4.sT.load_size;
-				}
+					fFall = psIni->afManFall10[nIdx];
+				break;
+			case 11:
+				if (autoFall4->Checked)
+					fFall = psIni->sInv.asFall11[nIdx].fFall / SAMPLE_NBR;
 				else
+					fFall = psIni->afManFall11[nIdx];
+				break;
+			case 12:
+				if (autoFall4->Checked)
+					fFall = psIni->sInv.asFall12[nIdx].fFall / SAMPLE_NBR;
+				else
+					fFall = psIni->afManFall12[nIdx];
+				break;
+			}
+		}
+		return fFall;
+	}
+
+			 //-------------------------------------------------------------------------
+	private: System::Void dropBt4_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		bool bSafe = psIni->nSafeTime > 0;
+		readyBt4->Enabled = false;
+		readyBt4->BackColor = COL_TRANS;
+
+		str2arr(truck4->Text, psIni->sLog4.sT.truck_id);
+
+		if (!psIni->bBotScale)			//#ifdef UPSCALE
+		{
+			fNewTarget4 = fTarget4;
+		}
+		else
+		{
+			if (pAll->eAsType == A_PROD)
+				if (!bTruck4) return;
+
+			if (bFirstDrop4 && !psIni->bSendBitWise)
+				psIni->sLog4.fTruckTare = psIni->sScale4.dValue;
+			fCumTarget4 += fTarget4;
+		}
+		fFall4 = getFall4();
+
+		if (psIni->bSafeJob)
+			bSafe = bFirstDrop4;
+
+		if (bSafe)
+			setState4(S_SAFE);
+		else
+			setState4(S_DROP);
+		bFirstDrop4 = false;
+	}
+
+			 //-------------------------------------------------------------------------
+	private: System::Void dischBt4_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		dischBt4->BackColor = COL_PGREEN;
+		setState4(S_DISCH);
+	}
+
+			 //-------------------------------------------------------------------------
+	private: System::Void pause4_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		if (pAll->eAsType == A_REMOTE)
+		{
+			int i = 0;
+			Cmd^ pCmd = gcnew Cmd();
+			pCmd->cId = CL_KEY;
+			pCmd->nKey = K_HOLD4;
+			pAll->qCmd->Enqueue(pCmd);
+
+			pAll->cWaitT = 1;
+
+			while (pAll->cWaitT > 0 && i++ < 2)
+				Thread::Sleep(100);
+		}
+
+		{
+			switch (psIni->sLog4.eState)
+			{
+			case S_DROP:			setState4(S_HOLD_DROP); //setState4(S_HOLD_SETTLE); 
+				pauseBt4->BackColor = COL_HOLD;
+				break;
+			case S_ASETTLE:		setState4(S_HOLD_ASETTLE);
+				pauseBt4->BackColor = COL_HOLD;
+				break;
+			case S_DISCH:			setState4(S_HOLD_DISCH);
+				pauseBt4->BackColor = COL_HOLD;
+				break;
+			case S_ADD:			setState4(S_HOLD_ADD); //DC 4.0.0
+				pauseBt4->BackColor = COL_HOLD;
+				break;
+
+			case S_HOLD_ADD:		setState4(S_ADD);		//DC 4.0.0
+				pauseBt4->BackColor = COL_HOLDK;
+				break;
+			case S_HOLD_DROP:		setState4(S_DROP);
+				pauseBt4->BackColor = COL_HOLDK;
+				break;
+			case S_HOLD_ASETTLE:	setState4(S_ASETTLE);
+				pauseBt4->BackColor = COL_HOLDK;
+				break;
+			case S_HOLD_DISCH:		setState4(S_DISCH);
+				pauseBt4->BackColor = COL_HOLDK;
+				break;
+			}
+		}
+	}
+			 //-------------------------------------------------------------------------
+	private: System::Void stopBt4_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		switch (psIni->sLog4.eState)
+		{
+		case S_IDLE:
+			return;
+		case S_NEXT:
+		case S_READY:
+			if (bAuto4)
+			{
+				if (pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
 				{
-					if(!psIni->bPdmPlc)
-						bAsk = (fLoad4 + psIni->dAddQty) > fCumTarget4;
+					resetTargetOutput();		//DC 4.0.1
+
+					if (MessageBox::Show("Void Ticket ?", "Lane D",
+						System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+						== System::Windows::Forms::DialogResult::Yes)
+					{
+						pJob4->eStatus = S_VOIDED;
+						psIni->sLog4.eJobStatus = S_VOIDED;
+						psIni->sLog4.eStop = A_VOID;
+						psIni->sLog4.eState = S_ABORT;
+					}
 					else
-						bAsk = (fLoad4 + psIni->asSilos[psIni->sLog4.nSilo-1].dAddTol) > fCumTarget4;		//DC 4.0.0
+					{
+						pJob4->eStatus = S_NEW;
+						pAll->lJob->Add(pJob4);
+
+						if (!psIni->bBotScale)
+							switch (psIni->sLog4.nSilo)
+							{
+							case 1: pAll->nTickets1++; break;
+							case 2: pAll->nTickets2++; break;
+							case 3: pAll->nTickets3++; break;
+							case 4: psIni->nTickets4++; break;
+							}
+						else
+							switch (psIni->sLog4.nSilo)
+							{
+							case 1:
+							case 2:
+							case 3: pAll->nTickets1++; break;
+							case 4:
+							case 5:
+							case 6: pAll->nTickets2++; break;
+							case 7:
+							case 8:
+							case 9: pAll->nTickets3++; break;
+							case 10:
+							case 11:
+							case 12: psIni->nTickets4++; break;
+							}
+						setState4(S_IDLE);
+					}
 				}
+				else if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
+				{
+					resetTargetOutput();		//DC 4.0.1
 
-				 if(bAsk)
-				 {
-					bStopAdd4 = true;		//DC 4.0.0
-					if(MessageBox::Show("TRUCK CAPACITY WARNING, continue ?", "Lane D", 
-						System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-						== System::Windows::Forms::DialogResult::No)
-						bAdd = false;
-				 }
-				 if(bAdd)
-					 setState4(S_ADD);
-				 else
-					 setState4(S_UPDATE);
-			 }
+					if (pAll->bRemoteVoid)
+					{
+						pJob4->eStatus = S_VOIDED;
+						psIni->sLog4.eJobStatus = S_VOIDED;
+						psIni->sLog4.eStop = A_VOID;
+						psIni->sLog4.eState = S_ABORT;
+					}
+					else
+					{
+						pJob4->eStatus = S_NEW;
+						pAll->lJob->Add(pJob4);
 
-		 private: bool testHold4(void)
-			  {
-				  if(psIni->bHold4 && psIni->sLog4.eState != S_HOLD)
-				  {
-					  ePrevHold4 = psIni->sLog4.eState;
-					  setState4(S_HOLD);
-					  pauseBt4->BackColor = COL_HOLD;
-					  return true;
-				  }
-				  return false;
-			  }
+						if (!psIni->bBotScale)
+							switch (psIni->sLog4.nSilo)
+							{
+							case 1: pAll->nTickets1++; break;
+							case 2: pAll->nTickets2++; break;
+							case 3: pAll->nTickets3++; break;
+							case 4: psIni->nTickets4++; break;
+							}
+						else
+							switch (psIni->sLog4.nSilo)
+							{
+							case 1:
+							case 2:
+							case 3: pAll->nTickets1++; break;
+							case 4:
+							case 5:
+							case 6: pAll->nTickets2++; break;
+							case 7:
+							case 8:
+							case 9: pAll->nTickets3++; break;
+							case 10:
+							case 11:
+							case 12: psIni->nTickets4++; break;
+							}
+						setState4(S_IDLE);
+					}
+				}
+				else if (pAll->eAsType == A_REMOTE)
+				{
+					if (MessageBox::Show("Void Ticket ?", "Lane D",
+						System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+						== System::Windows::Forms::DialogResult::Yes)
+					{
+						int k = 0;
+						Cmd^ pCmd = gcnew Cmd();
+						pCmd = gcnew Cmd();
+						pCmd->cId = CL_ABORT4;
+						pCmd->nKey = K_VOIDYES4;
+						pAll->qCmd->Enqueue(pCmd);
+
+						pAll->cWaitT = 1;
+
+						while (pAll->cWaitT > 0 && k++ < 5)
+							Thread::Sleep(100);
+					}
+					else
+					{
+						int k = 0;
+						Cmd^ pCmd = gcnew Cmd();
+						pCmd = gcnew Cmd();
+						pCmd->cId = CL_ABORT4;
+						pCmd->nKey = K_VOIDNO4;
+						pAll->qCmd->Enqueue(pCmd);
+
+						pAll->cWaitT = 1;
+
+						while (pAll->cWaitT > 0 && k++ < 5)
+							Thread::Sleep(100);
+					}
+				}
+			}
+			else
+				setState4(S_IDLE);
+			return;
+
+		case S_DROP:     setState4(S_HOLD_SETTLE); break;
+		case S_DISCH:    setState4(S_HOLD_DISCH); break;
+		}
+		pAll->bRemoteCall = false;		//DC 4.1.0
+		StopForm^ pStop = gcnew StopForm(&psIni->sLog4, pJob4);
+		pStop->Show();
+	}
+
+			 //-------------------------------------------------------------------------
+	private: System::Void addBt4_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bool bAdd = true;
+		bool bAsk = false;
+		addBt4->Enabled = false;
+
+		if (!psIni->bBotScale)
+		{
+			bAsk = (fLoad4 + psIni->dAddQty) > psIni->sLog4.sT.load_size;
+		}
+		else
+		{
+			if (!psIni->bPdmPlc)
+				bAsk = (fLoad4 + psIni->dAddQty) > fCumTarget4;
+			else
+				bAsk = (fLoad4 + psIni->asSilos[psIni->sLog4.nSilo - 1].dAddTol) > fCumTarget4;		//DC 4.0.0
+		}
+
+		if (bAsk)
+		{
+			bStopAdd4 = true;		//DC 4.0.0
+			if (MessageBox::Show("TRUCK CAPACITY WARNING, continue ?", "Lane D",
+				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+				== System::Windows::Forms::DialogResult::No)
+				bAdd = false;
+		}
+		if (bAdd)
+			setState4(S_ADD);
+		else
+			setState4(S_UPDATE);
+	}
+
+	private: bool testHold4(void)
+	{
+		if (psIni->bHold4 && psIni->sLog4.eState != S_HOLD)
+		{
+			ePrevHold4 = psIni->sLog4.eState;
+			setState4(S_HOLD);
+			pauseBt4->BackColor = COL_HOLD;
+			return true;
+		}
+		return false;
+	}
 
 #pragma endregion
 
 #pragma region MENU
 			 //-------------------------------------------------------------------------
-	private: System::Void aboutMenuItem_Click(System::Object^  sender, 
-				 System::EventArgs^  e) 
-			 {
-				 //About^ about = gcnew About(pAll);
-				 //about->Show();
-			 }
+	private: System::Void aboutMenuItem_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		//About^ about = gcnew About(pAll);
+		//about->Show();
+	}
 
 			 //----------------------------------------------------------------
 	private: System::Void printManualJobs_Click(System::Object^  sender, System::EventArgs^  e)
-			 {
-				 poLog->printManual();
-			 }
+	{
+		poLog->printManual();
+	}
 
 			 //-------------------------------------------------------------------------
-	private: System::Void exitMenuItem_Click(System::Object^  sender, 
-				 System::EventArgs^  e) 
-			 {
-				 Application::Exit();
-			 }
+	private: System::Void exitMenuItem_Click(System::Object^  sender,
+		System::EventArgs^  e)
+	{
+		Application::Exit();
+	}
 
 			 //-------------------------------------------------------------------------
-	private: System::Void inventoryMenuItem_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 InvForm^ inv = gcnew InvForm(psIni);
-				 inv->Show();
-			 }
+	private: System::Void inventoryMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		InvForm^ inv = gcnew InvForm(psIni);
+		inv->Show();
+	}
 
 			 //-------------------------------------------------------------------------
 	private: System::Void reprintToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
-			 {
-				 if(pAll->eAsType == A_REMOTE)
-				 {
-					 int i = 0;
-					 Cmd^ pCmd;
-					 pCmd = gcnew Cmd();
-					 pCmd->cId = CL_OLD;
-					 pAll->qCmd->Enqueue(pCmd);
-					 pAll->cWaitT = 1;
-					 while(pAll->cWaitT > 0 && i++ < 5)
-					 Thread::Sleep(100);
-				 }
-				 ReprintF^ rep = gcnew ReprintF(pAll, poLog);
-				 rep->Show();
-			 }
+	{
+		if (pAll->eAsType == A_REMOTE)
+		{
+			int i = 0;
+			Cmd^ pCmd;
+			pCmd = gcnew Cmd();
+			pCmd->cId = CL_OLD;
+			pAll->qCmd->Enqueue(pCmd);
+			pAll->cWaitT = 1;
+			while (pAll->cWaitT > 0 && i++ < 5)
+				Thread::Sleep(100);
+		}
+		ReprintF^ rep = gcnew ReprintF(pAll, poLog);
+		rep->Show();
+	}
 
 			 //--------------------------------------------------------------------
-	private: System::Void testToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->bTest = !psIni->bTest;
+	private: System::Void testToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->bTest = !psIni->bTest;
 
-				 rdLb->Visible = psIni->bTest;
-				 wrLb->Visible = psIni->bTest;
+		rdLb->Visible = psIni->bTest;
+		wrLb->Visible = psIni->bTest;
 
-				 optoErr->Visible = psIni->bTest;
-				 dbLb->Visible = psIni->bTest;
-				 dbLb1->Visible = psIni->bTest;
-				 dbLb2->Visible = psIni->bTest;
+		optoErr->Visible = psIni->bTest;
+		dbLb->Visible = psIni->bTest;
+		dbLb1->Visible = psIni->bTest;
+		dbLb2->Visible = psIni->bTest;
 
-				 scale1->Visible = psIni->bTest;
-				 scale2->Visible = psIni->bTest;
-				 scale3->Visible = psIni->bTest;
-				 scale4->Visible = psIni->bTest;
+		scale1->Visible = psIni->bTest;
+		scale2->Visible = psIni->bTest;
+		scale3->Visible = psIni->bTest;
+		scale4->Visible = psIni->bTest;
 
-				 cnt1->Visible = psIni->bTest;
-				 cnt2->Visible = psIni->bTest;
-				 cnt3->Visible = psIni->bTest;
-				 cnt4->Visible = psIni->bTest;
+		cnt1->Visible = psIni->bTest;
+		cnt2->Visible = psIni->bTest;
+		cnt3->Visible = psIni->bTest;
+		cnt4->Visible = psIni->bTest;
 
-				 silo1->Visible = psIni->bTest;
-				 silo2->Visible = psIni->bTest;
-				 silo3->Visible = psIni->bTest;
-				 silo4->Visible = psIni->bTest;
+		silo1->Visible = psIni->bTest;
+		silo2->Visible = psIni->bTest;
+		silo3->Visible = psIni->bTest;
+		silo4->Visible = psIni->bTest;
 
-				 flow1->Visible  = psIni->bTest;
-				 flow2->Visible  = psIni->bTest;
-				 flow3->Visible  = psIni->bTest;
-				 flow4->Visible  = psIni->bTest;
-//DC 4.0.0
-				 lane1StatLB->Visible = psIni->bTest;
-				 lane2StatLB->Visible = psIni->bTest;
-				 lane3StatLB->Visible = psIni->bTest;
-				 lane4StatLB->Visible = psIni->bTest;
-			 }
+		flow1->Visible = psIni->bTest;
+		flow2->Visible = psIni->bTest;
+		flow3->Visible = psIni->bTest;
+		flow4->Visible = psIni->bTest;
+		//DC 4.0.0
+		lane1StatLB->Visible = psIni->bTest;
+		lane2StatLB->Visible = psIni->bTest;
+		lane3StatLB->Visible = psIni->bTest;
+		lane4StatLB->Visible = psIni->bTest;
+	}
 			 //-------------------------------------------------------------------------
-private: System::Void ulinkMsgToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-				 pAll->bUlink = !pAll->bUlink;
-				 testBox->BackColor = Color::Honeydew;
-				 testBox->Visible = pAll->bUlink;
-		 }
+	private: System::Void ulinkMsgToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		pAll->bUlink = !pAll->bUlink;
+		testBox->BackColor = Color::Honeydew;
+		testBox->Visible = pAll->bUlink;
+	}
 
 			 //-------------------------------------------------------------------------
-private: System::Void exceptionsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
-		 {
-				 pAll->bExcept = !pAll->bExcept;
-				 testBox->BackColor = Color::Khaki;
-				 testBox->Visible = pAll->bExcept;
-		 }
+	private: System::Void exceptionsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		pAll->bExcept = !pAll->bExcept;
+		testBox->BackColor = Color::Khaki;
+		testBox->Visible = pAll->bExcept;
+	}
 			 //-------------------------------------------------------------------------
-private: System::Void testBox_DoubleClick(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 pAll->pTestBox = "";
-		 }
+	private: System::Void testBox_DoubleClick(System::Object^  sender, System::EventArgs^  e)
+	{
+		pAll->pTestBox = "";
+	}
 #pragma endregion
 
 #pragma region RS485
@@ -16814,1822 +16818,1822 @@ private: System::Void testBox_DoubleClick(System::Object^  sender, System::Event
 			 //-------------------------------------------------------------------------
 			 // stop/start RS485 transmission
 			 //-------------------------------------------------------------------------
-	private: System::Void optoLb_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
+	private: System::Void optoLb_Click(System::Object^  sender, System::EventArgs^  e)
+	{
 #ifdef SIM
-//				 b485Ok = !b485Ok;
+		//				 b485Ok = !b485Ok;
 #endif
-			 }
+	}
 
-	private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if(pAll->eAsType != A_REMOTE)
-				 {
-					 pictureSplash->Enabled = false;
-					 pictureSplash->Visible = false;			
-				 }
-			 }
+	private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (pAll->eAsType != A_REMOTE)
+		{
+			pictureSplash->Enabled = false;
+			pictureSplash->Visible = false;
+		}
+	}
 #pragma endregion
 
 #pragma region PRINTER
 #ifdef PRINT_SER
 			 //-------------------------------------------------------------------------
-	private: System::Void printerThread_DoWork(System::Object^  sender, 
-				 System::ComponentModel::DoWorkEventArgs^  e)
-			 {
-				 while(true)
-				 {
-					 // Create a SerialPort.
-					 SerialPort port(e->Argument->ToString(), psIni->nPrinterBaud);
+	private: System::Void printerThread_DoWork(System::Object^  sender,
+		System::ComponentModel::DoWorkEventArgs^  e)
+	{
+		while (true)
+		{
+			// Create a SerialPort.
+			SerialPort port(e->Argument->ToString(), psIni->nPrinterBaud);
 
-					 try
-					 {
-						 port.Open();
+			try
+			{
+				port.Open();
 
-						 while(true)
-						 {
-							 if(qPrint->Count > 0)
-							 {
-								 //printerLb->BackColor = COL_PGREEN;
-								 port.Write((String^)qPrint->Dequeue());
-							 }
-							 else
-							 {
-								 Thread::Sleep(500);
-								 printerLb->BackColor = Color::WhiteSmoke;
-							 }
-						 }
-					 }
-					 catch ( System::UnauthorizedAccessException^ e ) 
-					 {
-						 Console::WriteLine( "UnauthorizedAccessException: {0}", e );
-					 }
-					 catch ( IO::IOException^ e ) 
-					 {
-						 Console::WriteLine( "IO Exception: {0}", e );
-					 }
-					 // Close everything.
-					 port.Close();
-					 psIni->nPrinterOk = false;
+				while (true)
+				{
+					if (qPrint->Count > 0)
+					{
+						//printerLb->BackColor = COL_PGREEN;
+						port.Write((String^)qPrint->Dequeue());
+					}
+					else
+					{
+						Thread::Sleep(500);
+						printerLb->BackColor = Color::WhiteSmoke;
+					}
+				}
+			}
+			catch (System::UnauthorizedAccessException^ e)
+			{
+				Console::WriteLine("UnauthorizedAccessException: {0}", e);
+			}
+			catch (IO::IOException^ e)
+			{
+				Console::WriteLine("IO Exception: {0}", e);
+			}
+			// Close everything.
+			port.Close();
+			psIni->nPrinterOk = false;
 
-					 Thread::Sleep(9000);
-					 psIni->nPrinterOk = true;
-					 Thread::Sleep(1000);
-				 }
-			 }
+			Thread::Sleep(9000);
+			psIni->nPrinterOk = true;
+			Thread::Sleep(1000);
+		}
+	}
 #endif			
 
 #pragma endregion
 
 #pragma region FALL
 			 //================================================================
-	private: System::Void flow1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall = gcnew FallFm(psIni->afManFall1, psIni->sInv.asFall1, psIni->sInv.asAdapt1, 1, psIni->bBotScale);
-				 Fall->Show();
-			 }
-	private: System::Void flow2_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall = gcnew FallFm(psIni->afManFall2, psIni->sInv.asFall2, psIni->sInv.asAdapt2, 2, psIni->bBotScale);
-				 Fall->Show();
-			 }
-	private: System::Void flow3_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall = gcnew FallFm(psIni->afManFall3, psIni->sInv.asFall3, psIni->sInv.asAdapt3, 3, psIni->bBotScale);
-				 Fall->Show();
-			 }
+	private: System::Void flow1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall = gcnew FallFm(psIni->afManFall1, psIni->sInv.asFall1, psIni->sInv.asAdapt1, 1, psIni->bBotScale);
+		Fall->Show();
+	}
+	private: System::Void flow2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall = gcnew FallFm(psIni->afManFall2, psIni->sInv.asFall2, psIni->sInv.asAdapt2, 2, psIni->bBotScale);
+		Fall->Show();
+	}
+	private: System::Void flow3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall = gcnew FallFm(psIni->afManFall3, psIni->sInv.asFall3, psIni->sInv.asAdapt3, 3, psIni->bBotScale);
+		Fall->Show();
+	}
 
 			 //----------------------------------------------------------------
-	private: System::Void flow4_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall;
+	private: System::Void flow4_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall;
 
-				 if(psIni->bBotScale)
-					 Fall = gcnew FallFm(psIni->afManFall4, psIni->sInv.asFall4, psIni->sInv.asAdapt4, 4, psIni->bBotScale);
-				 else
-					 Fall = gcnew FallFm(psIni->afManFall2, psIni->sInv.asFall2, psIni->sInv.asAdapt2, 2, psIni->bBotScale);
-				 Fall->Show();
-			 }
-	private: System::Void flow5_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall = gcnew FallFm(psIni->afManFall5, psIni->sInv.asFall5, psIni->sInv.asAdapt5, 5, psIni->bBotScale);
-				 Fall->Show();
-			 }
-	private: System::Void flow6_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall = gcnew FallFm(psIni->afManFall6, psIni->sInv.asFall6, psIni->sInv.asAdapt6, 6, psIni->bBotScale);
-				 Fall->Show();
-			 }
+		if (psIni->bBotScale)
+			Fall = gcnew FallFm(psIni->afManFall4, psIni->sInv.asFall4, psIni->sInv.asAdapt4, 4, psIni->bBotScale);
+		else
+			Fall = gcnew FallFm(psIni->afManFall2, psIni->sInv.asFall2, psIni->sInv.asAdapt2, 2, psIni->bBotScale);
+		Fall->Show();
+	}
+	private: System::Void flow5_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall = gcnew FallFm(psIni->afManFall5, psIni->sInv.asFall5, psIni->sInv.asAdapt5, 5, psIni->bBotScale);
+		Fall->Show();
+	}
+	private: System::Void flow6_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall = gcnew FallFm(psIni->afManFall6, psIni->sInv.asFall6, psIni->sInv.asAdapt6, 6, psIni->bBotScale);
+		Fall->Show();
+	}
 			 //----------------------------------------------------------------
-	private: System::Void flow7_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall;
+	private: System::Void flow7_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall;
 
-				 if(psIni->bBotScale)
-					 Fall = gcnew FallFm(psIni->afManFall7, psIni->sInv.asFall7, psIni->sInv.asAdapt7, 7, psIni->bBotScale);
-				 else
-					 Fall = gcnew FallFm(psIni->afManFall3, psIni->sInv.asFall3, psIni->sInv.asAdapt3, 3, psIni->bBotScale);
-				 Fall->Show();
-			 }
-	private: System::Void flow8_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall = gcnew FallFm(psIni->afManFall8, psIni->sInv.asFall8, psIni->sInv.asAdapt8, 8, psIni->bBotScale);
-				 Fall->Show();
-			 }
-	private: System::Void flow9_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall = gcnew FallFm(psIni->afManFall9, psIni->sInv.asFall9, psIni->sInv.asAdapt9, 9, psIni->bBotScale);
-				 Fall->Show();
-			 }
+		if (psIni->bBotScale)
+			Fall = gcnew FallFm(psIni->afManFall7, psIni->sInv.asFall7, psIni->sInv.asAdapt7, 7, psIni->bBotScale);
+		else
+			Fall = gcnew FallFm(psIni->afManFall3, psIni->sInv.asFall3, psIni->sInv.asAdapt3, 3, psIni->bBotScale);
+		Fall->Show();
+	}
+	private: System::Void flow8_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall = gcnew FallFm(psIni->afManFall8, psIni->sInv.asFall8, psIni->sInv.asAdapt8, 8, psIni->bBotScale);
+		Fall->Show();
+	}
+	private: System::Void flow9_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall = gcnew FallFm(psIni->afManFall9, psIni->sInv.asFall9, psIni->sInv.asAdapt9, 9, psIni->bBotScale);
+		Fall->Show();
+	}
 			 //DC 3.3.0 ----------------------------------------------------------------
-	private: System::Void flow10_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall;
+	private: System::Void flow10_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall;
 
-				 if(psIni->bBotScale)
-					 Fall = gcnew FallFm(psIni->afManFall10, psIni->sInv.asFall10, psIni->sInv.asAdapt10, 10, psIni->bBotScale);
-				 else
-					 Fall = gcnew FallFm(psIni->afManFall4, psIni->sInv.asFall4, psIni->sInv.asAdapt4, 4, psIni->bBotScale);
-				 Fall->Show();
-			 }
-	private: System::Void flow11_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall = gcnew FallFm(psIni->afManFall11, psIni->sInv.asFall11, psIni->sInv.asAdapt11, 11, psIni->bBotScale);
-				 Fall->Show();
-			 }
-	private: System::Void flow12_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 FallFm^ Fall = gcnew FallFm(psIni->afManFall12, psIni->sInv.asFall12, psIni->sInv.asAdapt12, 12, psIni->bBotScale);
-				 Fall->Show();
-			 }
+		if (psIni->bBotScale)
+			Fall = gcnew FallFm(psIni->afManFall10, psIni->sInv.asFall10, psIni->sInv.asAdapt10, 10, psIni->bBotScale);
+		else
+			Fall = gcnew FallFm(psIni->afManFall4, psIni->sInv.asFall4, psIni->sInv.asAdapt4, 4, psIni->bBotScale);
+		Fall->Show();
+	}
+	private: System::Void flow11_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall = gcnew FallFm(psIni->afManFall11, psIni->sInv.asFall11, psIni->sInv.asAdapt11, 11, psIni->bBotScale);
+		Fall->Show();
+	}
+	private: System::Void flow12_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		FallFm^ Fall = gcnew FallFm(psIni->afManFall12, psIni->sInv.asFall12, psIni->sInv.asAdapt12, 12, psIni->bBotScale);
+		Fall->Show();
+	}
 #pragma endregion
 
 #pragma region SELECT_SILO
 			 //-------------------------------------------------------------------------
-	private: bool clickOk(LOG_REC *psLog, int nLane, int nSilo) 
-			 {
-				 if(!psIni->bBotScale)
-					return false;
+	private: bool clickOk(LOG_REC *psLog, int nLane, int nSilo)
+	{
+		if (!psIni->bBotScale)
+			return false;
 
-				 switch(psLog->eState)
-				 {
-					case S_IDLE:
-					case S_NEXT:
-					case S_READY:
-//					case S_DROP:
-//					case S_SETTLE:
-//					case S_ADD:
-//					case S_ASETTLE:
-//					case S_DISCH_WAIT:
-//					case S_DISCH:
-//					case S_DSETTLE:
-//					case S_HOLD_DISCH:
-//					case S_ABORT:
-//					case S_UPDATE:
-//					case S_HORN:
-						return true;
+		switch (psLog->eState)
+		{
+		case S_IDLE:
+		case S_NEXT:
+		case S_READY:
+			//					case S_DROP:
+			//					case S_SETTLE:
+			//					case S_ADD:
+			//					case S_ASETTLE:
+			//					case S_DISCH_WAIT:
+			//					case S_DISCH:
+			//					case S_DSETTLE:
+			//					case S_HOLD_DISCH:
+			//					case S_ABORT:
+			//					case S_UPDATE:
+			//					case S_HORN:
+			return true;
 
-					case S_HOLD_DROP: 
-						if(psLog->nSilo != nSilo)
-						{
-							 switch(nSilo)
-							 {
-							 case 1: siloBar1->BarColor = COL_HOLD;	break;
-							 case 2: siloBar12->BarColor = COL_HOLD; break;
-							 case 3: siloBar13->BarColor = COL_HOLD; break;
-							 case 4: siloBar2->BarColor = COL_HOLD;	break;
-							 case 5: siloBar22->BarColor = COL_HOLD; break;
-							 case 6: siloBar23->BarColor = COL_HOLD; break;
-							 case 7: siloBar3->BarColor = COL_HOLD;	break;
-							 case 8: siloBar32->BarColor = COL_HOLD; break;
-							 case 9: siloBar33->BarColor = COL_HOLD; break;
-							 case 10: siloBar4->BarColor = COL_HOLD;	break;
-							 case 11: siloBar42->BarColor = COL_HOLD; break;
-							 case 12: siloBar43->BarColor = COL_HOLD; break;
-							 }
-						}
-						return true;
-					 
-					default:
-						return false;
-				 }
-			 }
-
-			 //-------------------------------------------------------------------------
-	private: System::Void siloBar1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog1.sT.mix_code) != "") && (material1->Text != "") 
-					 && (gcnew String(psIni->sLog1.sT.mix_code) != gcnew String(psIni->asSilos[0].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[1-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog1.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog1.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog1.sT.mix_code),"Lane A", 
-					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
-
-				 if(!clickOk(&psIni->sLog1, 1, 1))
-					return;
-
-				 idleBar(siloBar12);
-				 idleBar(siloBar13);
-
-				 if(!psIni->bPdmPlc)
-					nJogA = psIni->nSiloJog1;
-				 else
-					nJogA = psIni->asSilos[0].nSiloJog;	//DC 4.0.0
-				 psIni->sLog1.nSilo = 1;
-				 siloBar1->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar1->Inventory = psIni->sInv.fInv1;
-				 siloBar1->Value = psIni->sInv.fInv1;
-				 siloBar1->BorderColor = Color::Black;
-				 siloBar1->Target = fTarget1;
-				 siloBar1->Idle = false;
-
-//				 setState1(psIni->sLog1.eState);
-				 this->truckBar1->Location = System::Drawing::Point(nOffs1, BAR);
-				 this->truckPic1->Location = System::Drawing::Point(nOffs1, PIC);
-
-			     if(pAll->pCam1 != nullptr)
-				 {
-					webBrowser1->Navigate(pAll->pCam1);
-				 }
-				 if(pJob1) pJob1->nSilo = psIni->sLog1.nSilo;
-			 }
-
-	private: System::Void siloBar12_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog1.sT.mix_code) != "") && (material1->Text != "") 
-					 && (gcnew String(psIni->sLog1.sT.mix_code) != gcnew String(psIni->asSilos[1].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[2-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog1.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog1.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog1.sT.mix_code),"Lane A", 
-					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
-
-				 if(!clickOk(&psIni->sLog1, 1, 2))
-					return;
-
-				 idleBar(siloBar1);
-				 idleBar(siloBar13);
-
-				 if(!psIni->bPdmPlc)
-					nJogA = psIni->nSiloJog2;
-				 else
-					nJogA = psIni->asSilos[1].nSiloJog;	//DC 4.0.0
-				 psIni->sLog1.nSilo = 2;
-				 siloBar12->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar12->Inventory = psIni->sInv.fInv2;
-				 siloBar12->Value = psIni->sInv.fInv2;
-				 siloBar12->BorderColor = Color::Black;
-				 siloBar12->Target = fTarget1;
-				 siloBar12->Idle = false;
-
-				 this->truckBar1->Location = System::Drawing::Point(nOffs2, BAR);
-				 this->truckPic1->Location = System::Drawing::Point(nOffs2, PIC);
-
-			     if(pAll->pCam2 != nullptr)
-				 {
-					webBrowser1->Navigate(pAll->pCam2);
-				 }
-				 if(pJob1) pJob1->nSilo = psIni->sLog1.nSilo;
-			 }
-	private: System::Void siloBar13_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog1.sT.mix_code) != "") && (material1->Text != "") 
-					 && (gcnew String(psIni->sLog1.sT.mix_code) != gcnew String(psIni->asSilos[2].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[3-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog1.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog1.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog1.sT.mix_code),"Lane A", 
-					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
-
-				 if(!clickOk(&psIni->sLog1, 1, 3))
-					return;
-
-				 idleBar(siloBar1);
-				 idleBar(siloBar12);
-
-				 if(!psIni->bPdmPlc)
-					nJogA = psIni->nSiloJog3;
-				 else
-					nJogA = psIni->asSilos[2].nSiloJog;	//DC 4.0.0
-				 psIni->sLog1.nSilo = 3;
-				 siloBar13->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar13->Inventory = psIni->sInv.fInv3;
-				 siloBar13->Value = psIni->sInv.fInv3;
-				 siloBar13->BorderColor = Color::Black;
-				 siloBar13->Target = fTarget1;
-				 siloBar13->Idle = false;
-
-				 this->truckBar1->Location = System::Drawing::Point(nOffs3, BAR);
-				 this->truckPic1->Location = System::Drawing::Point(nOffs3, PIC);
-				 			     
-				 if(pAll->pCam3 != nullptr)
-				 {
-					webBrowser1->Navigate(pAll->pCam3);
+		case S_HOLD_DROP:
+			if (psLog->nSilo != nSilo)
+			{
+				switch (nSilo)
+				{
+				case 1: siloBar1->BarColor = COL_HOLD;	break;
+				case 2: siloBar12->BarColor = COL_HOLD; break;
+				case 3: siloBar13->BarColor = COL_HOLD; break;
+				case 4: siloBar2->BarColor = COL_HOLD;	break;
+				case 5: siloBar22->BarColor = COL_HOLD; break;
+				case 6: siloBar23->BarColor = COL_HOLD; break;
+				case 7: siloBar3->BarColor = COL_HOLD;	break;
+				case 8: siloBar32->BarColor = COL_HOLD; break;
+				case 9: siloBar33->BarColor = COL_HOLD; break;
+				case 10: siloBar4->BarColor = COL_HOLD;	break;
+				case 11: siloBar42->BarColor = COL_HOLD; break;
+				case 12: siloBar43->BarColor = COL_HOLD; break;
 				}
-				 if(pJob1) pJob1->nSilo = psIni->sLog1.nSilo;
-			 }	
+			}
+			return true;
+
+		default:
+			return false;
+		}
+	}
 
 			 //-------------------------------------------------------------------------
-	private: System::Void siloBar2_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog2.sT.mix_code) != "") && (material2->Text != "") 
-					 && (gcnew String(psIni->sLog2.sT.mix_code) != gcnew String(psIni->asSilos[3].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[4-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog2.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog2.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog2.sT.mix_code),"Lane B", 
-					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
+	private: System::Void siloBar1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog1.sT.mix_code) != "") && (material1->Text != "")
+			&& (gcnew String(psIni->sLog1.sT.mix_code) != gcnew String(psIni->asSilos[0].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[1 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog1.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog1.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog1.sT.mix_code), "Lane A",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
-				 if(!clickOk(&psIni->sLog2, 2, 4))
-					return;
+		if (!clickOk(&psIni->sLog1, 1, 1))
+			return;
 
-				 idleBar(siloBar22);
-				 idleBar(siloBar23);
+		idleBar(siloBar12);
+		idleBar(siloBar13);
 
-				 if(!psIni->bPdmPlc)
-					nJogB = psIni->bBotScale ? psIni->nSiloJog4 : psIni->nSiloJog2;
-				 else
-					nJogB = psIni->asSilos[3].nSiloJog;	//DC 4.0.0
-				 psIni->sLog2.nSilo = 4;
-				 siloBar2->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar2->Inventory = psIni->sInv.fInv4;
-				 siloBar2->Value = psIni->sInv.fInv4;
-				 siloBar2->BorderColor = Color::Black;
-				 siloBar2->Target = fTarget2;
-				 siloBar2->Idle = false;
+		if (!psIni->bPdmPlc)
+			nJogA = psIni->nSiloJog1;
+		else
+			nJogA = psIni->asSilos[0].nSiloJog;	//DC 4.0.0
+		psIni->sLog1.nSilo = 1;
+		siloBar1->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar1->Inventory = psIni->sInv.fInv1;
+		siloBar1->Value = psIni->sInv.fInv1;
+		siloBar1->BorderColor = Color::Black;
+		siloBar1->Target = fTarget1;
+		siloBar1->Idle = false;
 
-				 this->truckBar2->Location = System::Drawing::Point(nOffs1, BAR);
-				 this->truckPic2->Location = System::Drawing::Point(nOffs1, PIC);
+		//				 setState1(psIni->sLog1.eState);
+		this->truckBar1->Location = System::Drawing::Point(nOffs1, BAR);
+		this->truckPic1->Location = System::Drawing::Point(nOffs1, PIC);
 
-				 if(pAll->pCam4 != nullptr)
-					webBrowser2->Navigate(pAll->pCam4);
+		if (pAll->pCam1 != nullptr)
+		{
+			webBrowser1->Navigate(pAll->pCam1);
+		}
+		if (pJob1) pJob1->nSilo = psIni->sLog1.nSilo;
+	}
 
-				 if(pJob2) pJob2->nSilo = psIni->sLog2.nSilo;
-			 }
+	private: System::Void siloBar12_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog1.sT.mix_code) != "") && (material1->Text != "")
+			&& (gcnew String(psIni->sLog1.sT.mix_code) != gcnew String(psIni->asSilos[1].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[2 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog1.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog1.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog1.sT.mix_code), "Lane A",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
-	private: System::Void siloBar22_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog2.sT.mix_code) != "") && (material2->Text != "") 
-					 && (gcnew String(psIni->sLog2.sT.mix_code) != gcnew String(psIni->asSilos[4].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[5-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog2.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog2.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog2.sT.mix_code),"Lane B", 
-					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
+		if (!clickOk(&psIni->sLog1, 1, 2))
+			return;
 
-				 if(!clickOk(&psIni->sLog2, 2, 5))
-					return;
+		idleBar(siloBar1);
+		idleBar(siloBar13);
 
-				 idleBar(siloBar2);
-				 idleBar(siloBar23);
+		if (!psIni->bPdmPlc)
+			nJogA = psIni->nSiloJog2;
+		else
+			nJogA = psIni->asSilos[1].nSiloJog;	//DC 4.0.0
+		psIni->sLog1.nSilo = 2;
+		siloBar12->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar12->Inventory = psIni->sInv.fInv2;
+		siloBar12->Value = psIni->sInv.fInv2;
+		siloBar12->BorderColor = Color::Black;
+		siloBar12->Target = fTarget1;
+		siloBar12->Idle = false;
 
-				 if(!psIni->bPdmPlc)
-					nJogB = psIni->nSiloJog5;
-				 else
-					nJogB = psIni->asSilos[4].nSiloJog;	//DC 4.0.0
-				 psIni->sLog2.nSilo = 5;
-				 siloBar22->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar22->Inventory = psIni->sInv.fInv5;
-				 siloBar22->Value = psIni->sInv.fInv5;
-				 siloBar22->BorderColor = Color::Black;
-				 siloBar22->Target = fTarget2;
-				 siloBar22->Idle = false;
-				 this->truckBar2->Location = System::Drawing::Point(nOffs2, BAR);
-				 this->truckPic2->Location = System::Drawing::Point(nOffs2, PIC);
-				 					
-				 if(pAll->pCam5 != nullptr)
-					webBrowser2->Navigate(pAll->pCam5);
+		this->truckBar1->Location = System::Drawing::Point(nOffs2, BAR);
+		this->truckPic1->Location = System::Drawing::Point(nOffs2, PIC);
 
-				 if(pJob2) pJob2->nSilo = psIni->sLog2.nSilo;
-			 }
+		if (pAll->pCam2 != nullptr)
+		{
+			webBrowser1->Navigate(pAll->pCam2);
+		}
+		if (pJob1) pJob1->nSilo = psIni->sLog1.nSilo;
+	}
+	private: System::Void siloBar13_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog1.sT.mix_code) != "") && (material1->Text != "")
+			&& (gcnew String(psIni->sLog1.sT.mix_code) != gcnew String(psIni->asSilos[2].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[3 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog1.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog1.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog1.sT.mix_code), "Lane A",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
-	private: System::Void siloBar23_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog2.sT.mix_code) != "") && (material2->Text != "") 
-					 && (gcnew String(psIni->sLog2.sT.mix_code) != gcnew String(psIni->asSilos[5].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[6-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog2.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog2.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog2.sT.mix_code),"Lane B", 
-					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
+		if (!clickOk(&psIni->sLog1, 1, 3))
+			return;
 
-				 if(!clickOk(&psIni->sLog2, 2, 6))
-					return;
+		idleBar(siloBar1);
+		idleBar(siloBar12);
 
-				 idleBar(siloBar2);
-				 idleBar(siloBar22);
+		if (!psIni->bPdmPlc)
+			nJogA = psIni->nSiloJog3;
+		else
+			nJogA = psIni->asSilos[2].nSiloJog;	//DC 4.0.0
+		psIni->sLog1.nSilo = 3;
+		siloBar13->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar13->Inventory = psIni->sInv.fInv3;
+		siloBar13->Value = psIni->sInv.fInv3;
+		siloBar13->BorderColor = Color::Black;
+		siloBar13->Target = fTarget1;
+		siloBar13->Idle = false;
 
-				 if(!psIni->bPdmPlc)
-					nJogB = psIni->nSiloJog6;
-				 else
-					nJogB = psIni->asSilos[5].nSiloJog;	//DC 4.0.0
-				 psIni->sLog2.nSilo = 6;
-				 siloBar23->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar23->Inventory = psIni->sInv.fInv6;
-				 siloBar23->Value = psIni->sInv.fInv6;
-				 siloBar23->BorderColor = Color::Black;
-				 siloBar23->Target = fTarget2;
-				 siloBar23->Idle = false;
+		this->truckBar1->Location = System::Drawing::Point(nOffs3, BAR);
+		this->truckPic1->Location = System::Drawing::Point(nOffs3, PIC);
 
-				 this->truckBar2->Location = System::Drawing::Point(nOffs3, BAR);
-				 this->truckPic2->Location = System::Drawing::Point(nOffs3, PIC);
-
-				 if(pAll->pCam6 != nullptr)
-					webBrowser2->Navigate(pAll->pCam6);
-
-				 if(pJob2) pJob2->nSilo = psIni->sLog2.nSilo;
-			 }
+		if (pAll->pCam3 != nullptr)
+		{
+			webBrowser1->Navigate(pAll->pCam3);
+		}
+		if (pJob1) pJob1->nSilo = psIni->sLog1.nSilo;
+	}
 
 			 //-------------------------------------------------------------------------
-	private: System::Void siloBar3_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog3.sT.mix_code) != "") && (material3->Text != "") 
-					 && (gcnew String(psIni->sLog3.sT.mix_code) != gcnew String(psIni->asSilos[6].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[7-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog3.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog3.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog3.sT.mix_code),"Lane C", 
-					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
+	private: System::Void siloBar2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog2.sT.mix_code) != "") && (material2->Text != "")
+			&& (gcnew String(psIni->sLog2.sT.mix_code) != gcnew String(psIni->asSilos[3].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[4 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog2.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog2.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog2.sT.mix_code), "Lane B",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
-				 if(!clickOk(&psIni->sLog3, 3, 7))
-					return;
+		if (!clickOk(&psIni->sLog2, 2, 4))
+			return;
 
-				 idleBar(siloBar32);
-				 idleBar(siloBar33);
+		idleBar(siloBar22);
+		idleBar(siloBar23);
 
-				 if(!psIni->bPdmPlc)
-					nJogC = psIni->bBotScale ? psIni->nSiloJog7 : psIni->nSiloJog3;
-				 else
-					nJogC = psIni->asSilos[6].nSiloJog;	//DC 4.0.0
-				 psIni->sLog3.nSilo = 7;
-				 siloBar3->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar3->Inventory = psIni->sInv.fInv7;
-				 siloBar3->Value = psIni->sInv.fInv7;
-				 siloBar3->BorderColor = Color::Black;
-				 siloBar3->Target = fTarget3;
-				 siloBar3->Idle = false;
+		if (!psIni->bPdmPlc)
+			nJogB = psIni->bBotScale ? psIni->nSiloJog4 : psIni->nSiloJog2;
+		else
+			nJogB = psIni->asSilos[3].nSiloJog;	//DC 4.0.0
+		psIni->sLog2.nSilo = 4;
+		siloBar2->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar2->Inventory = psIni->sInv.fInv4;
+		siloBar2->Value = psIni->sInv.fInv4;
+		siloBar2->BorderColor = Color::Black;
+		siloBar2->Target = fTarget2;
+		siloBar2->Idle = false;
 
-				 this->truckBar3->Location = System::Drawing::Point(nOffs1, BAR);
-				 this->truckPic3->Location = System::Drawing::Point(nOffs1, PIC);
-				 if(pJob3) pJob3->nSilo = psIni->sLog3.nSilo;
-			 }
+		this->truckBar2->Location = System::Drawing::Point(nOffs1, BAR);
+		this->truckPic2->Location = System::Drawing::Point(nOffs1, PIC);
 
-	private: System::Void siloBar32_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog3.sT.mix_code) != "") && (material3->Text != "") 
-					 && (gcnew String(psIni->sLog3.sT.mix_code) != gcnew String(psIni->asSilos[7].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[8-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog3.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog3.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog3.sT.mix_code),"Lane C", 
-					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
+		if (pAll->pCam4 != nullptr)
+			webBrowser2->Navigate(pAll->pCam4);
 
-				 if(!clickOk(&psIni->sLog3, 3, 8))
-					return;
+		if (pJob2) pJob2->nSilo = psIni->sLog2.nSilo;
+	}
 
-				 idleBar(siloBar3);
-				 idleBar(siloBar33);
+	private: System::Void siloBar22_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog2.sT.mix_code) != "") && (material2->Text != "")
+			&& (gcnew String(psIni->sLog2.sT.mix_code) != gcnew String(psIni->asSilos[4].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[5 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog2.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog2.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog2.sT.mix_code), "Lane B",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
-				 if(!psIni->bPdmPlc)
-					nJogC = psIni->nSiloJog8;
-				 else
-					nJogC = psIni->asSilos[7].nSiloJog;	//DC 4.0.0
-				 psIni->sLog3.nSilo = 8;
-				 siloBar32->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar32->Inventory = psIni->sInv.fInv8;
-				 siloBar32->Value = psIni->sInv.fInv8;
-				 siloBar32->BorderColor = Color::Black;
-				 siloBar32->Target = fTarget3;
-				 siloBar32->Idle = false;
+		if (!clickOk(&psIni->sLog2, 2, 5))
+			return;
 
-				 this->truckBar3->Location = System::Drawing::Point(nOffs2, BAR);
-				 this->truckPic3->Location = System::Drawing::Point(nOffs2, PIC);
-				 if(pJob3) pJob3->nSilo = psIni->sLog3.nSilo;
-			 }
+		idleBar(siloBar2);
+		idleBar(siloBar23);
 
-	private: System::Void siloBar33_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog3.sT.mix_code) != "") && (material3->Text != "") 
-					 && (gcnew String(psIni->sLog3.sT.mix_code) != gcnew String(psIni->asSilos[8].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[9-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog3.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog3.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog3.sT.mix_code),"Lane C", 
-					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
+		if (!psIni->bPdmPlc)
+			nJogB = psIni->nSiloJog5;
+		else
+			nJogB = psIni->asSilos[4].nSiloJog;	//DC 4.0.0
+		psIni->sLog2.nSilo = 5;
+		siloBar22->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar22->Inventory = psIni->sInv.fInv5;
+		siloBar22->Value = psIni->sInv.fInv5;
+		siloBar22->BorderColor = Color::Black;
+		siloBar22->Target = fTarget2;
+		siloBar22->Idle = false;
+		this->truckBar2->Location = System::Drawing::Point(nOffs2, BAR);
+		this->truckPic2->Location = System::Drawing::Point(nOffs2, PIC);
 
-				 if(!clickOk(&psIni->sLog3, 3, 9))
-					return;
+		if (pAll->pCam5 != nullptr)
+			webBrowser2->Navigate(pAll->pCam5);
 
-				 idleBar(siloBar3);
-				 idleBar(siloBar32);
+		if (pJob2) pJob2->nSilo = psIni->sLog2.nSilo;
+	}
 
-				 if(!psIni->bPdmPlc)
-					nJogC = psIni->nSiloJog9;
-				 else
-					nJogC = psIni->asSilos[8].nSiloJog;	//DC 4.0.0
-				 psIni->sLog3.nSilo = 9;
-				 siloBar33->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar33->Inventory = psIni->sInv.fInv9;
-				 siloBar33->Value = psIni->sInv.fInv9;
-				 siloBar33->BorderColor = Color::Black;
-				 siloBar33->Target = fTarget3;
-				 siloBar33->Idle = false;
+	private: System::Void siloBar23_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog2.sT.mix_code) != "") && (material2->Text != "")
+			&& (gcnew String(psIni->sLog2.sT.mix_code) != gcnew String(psIni->asSilos[5].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[6 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog2.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog2.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog2.sT.mix_code), "Lane B",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
 
-				 this->truckBar3->Location = System::Drawing::Point(nOffs3, BAR);
-				 this->truckPic3->Location = System::Drawing::Point(nOffs3, PIC);
-				 if(pJob3) pJob3->nSilo = psIni->sLog3.nSilo;
-			 }
+		if (!clickOk(&psIni->sLog2, 2, 6))
+			return;
+
+		idleBar(siloBar2);
+		idleBar(siloBar22);
+
+		if (!psIni->bPdmPlc)
+			nJogB = psIni->nSiloJog6;
+		else
+			nJogB = psIni->asSilos[5].nSiloJog;	//DC 4.0.0
+		psIni->sLog2.nSilo = 6;
+		siloBar23->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar23->Inventory = psIni->sInv.fInv6;
+		siloBar23->Value = psIni->sInv.fInv6;
+		siloBar23->BorderColor = Color::Black;
+		siloBar23->Target = fTarget2;
+		siloBar23->Idle = false;
+
+		this->truckBar2->Location = System::Drawing::Point(nOffs3, BAR);
+		this->truckPic2->Location = System::Drawing::Point(nOffs3, PIC);
+
+		if (pAll->pCam6 != nullptr)
+			webBrowser2->Navigate(pAll->pCam6);
+
+		if (pJob2) pJob2->nSilo = psIni->sLog2.nSilo;
+	}
+
+			 //-------------------------------------------------------------------------
+	private: System::Void siloBar3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog3.sT.mix_code) != "") && (material3->Text != "")
+			&& (gcnew String(psIni->sLog3.sT.mix_code) != gcnew String(psIni->asSilos[6].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[7 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog3.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog3.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog3.sT.mix_code), "Lane C",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		if (!clickOk(&psIni->sLog3, 3, 7))
+			return;
+
+		idleBar(siloBar32);
+		idleBar(siloBar33);
+
+		if (!psIni->bPdmPlc)
+			nJogC = psIni->bBotScale ? psIni->nSiloJog7 : psIni->nSiloJog3;
+		else
+			nJogC = psIni->asSilos[6].nSiloJog;	//DC 4.0.0
+		psIni->sLog3.nSilo = 7;
+		siloBar3->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar3->Inventory = psIni->sInv.fInv7;
+		siloBar3->Value = psIni->sInv.fInv7;
+		siloBar3->BorderColor = Color::Black;
+		siloBar3->Target = fTarget3;
+		siloBar3->Idle = false;
+
+		this->truckBar3->Location = System::Drawing::Point(nOffs1, BAR);
+		this->truckPic3->Location = System::Drawing::Point(nOffs1, PIC);
+		if (pJob3) pJob3->nSilo = psIni->sLog3.nSilo;
+	}
+
+	private: System::Void siloBar32_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog3.sT.mix_code) != "") && (material3->Text != "")
+			&& (gcnew String(psIni->sLog3.sT.mix_code) != gcnew String(psIni->asSilos[7].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[8 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog3.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog3.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog3.sT.mix_code), "Lane C",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		if (!clickOk(&psIni->sLog3, 3, 8))
+			return;
+
+		idleBar(siloBar3);
+		idleBar(siloBar33);
+
+		if (!psIni->bPdmPlc)
+			nJogC = psIni->nSiloJog8;
+		else
+			nJogC = psIni->asSilos[7].nSiloJog;	//DC 4.0.0
+		psIni->sLog3.nSilo = 8;
+		siloBar32->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar32->Inventory = psIni->sInv.fInv8;
+		siloBar32->Value = psIni->sInv.fInv8;
+		siloBar32->BorderColor = Color::Black;
+		siloBar32->Target = fTarget3;
+		siloBar32->Idle = false;
+
+		this->truckBar3->Location = System::Drawing::Point(nOffs2, BAR);
+		this->truckPic3->Location = System::Drawing::Point(nOffs2, PIC);
+		if (pJob3) pJob3->nSilo = psIni->sLog3.nSilo;
+	}
+
+	private: System::Void siloBar33_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog3.sT.mix_code) != "") && (material3->Text != "")
+			&& (gcnew String(psIni->sLog3.sT.mix_code) != gcnew String(psIni->asSilos[8].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[9 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog3.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog3.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog3.sT.mix_code), "Lane C",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+
+		if (!clickOk(&psIni->sLog3, 3, 9))
+			return;
+
+		idleBar(siloBar3);
+		idleBar(siloBar32);
+
+		if (!psIni->bPdmPlc)
+			nJogC = psIni->nSiloJog9;
+		else
+			nJogC = psIni->asSilos[8].nSiloJog;	//DC 4.0.0
+		psIni->sLog3.nSilo = 9;
+		siloBar33->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar33->Inventory = psIni->sInv.fInv9;
+		siloBar33->Value = psIni->sInv.fInv9;
+		siloBar33->BorderColor = Color::Black;
+		siloBar33->Target = fTarget3;
+		siloBar33->Idle = false;
+
+		this->truckBar3->Location = System::Drawing::Point(nOffs3, BAR);
+		this->truckPic3->Location = System::Drawing::Point(nOffs3, PIC);
+		if (pJob3) pJob3->nSilo = psIni->sLog3.nSilo;
+	}
 
 			 //DC 3.3.0 -------------------------------------------------------------------------
-	private: System::Void siloBar4_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if(pAll->eAsType == A_REMOTE)
-				 {
-					Cmd^ pCmd = gcnew Cmd();
-					pCmd->cId = CL_KEY;
-					pCmd->nKey = K_SBAR4;
-					pAll->qCmd->Enqueue(pCmd);
-				 }
-				 else
-				 {
-					 if((gcnew String(psIni->sLog4.sT.mix_code) != "") && (material4->Text != "") 
-						 && (gcnew String(psIni->sLog4.sT.mix_code) != gcnew String(psIni->asSilos[9].acProduct))) //DC 4.0.1
-					 {
-						 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[10-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
-							 + " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
-							 + ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code),"Lane R", 
-						System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-						return;
-					 }
-
-					 if(!clickOk(&psIni->sLog4, 4, 10))
-						return;
-
-					 idleBar(siloBar42);
-					 idleBar(siloBar43);
-					 
-					 if(!psIni->bPdmPlc)
-						nJogD = psIni->bBotScale ? psIni->nSiloJog10 : psIni->nSiloJog4;
-					 else
-						nJogD = psIni->asSilos[9].nSiloJog;	//DC 4.0.0
-					 psIni->sLog4.nSilo = 10;
-					 siloBar4->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-					 siloBar4->Inventory = psIni->sInv.fInv10;
-					 siloBar4->Value = psIni->sInv.fInv10;
-					 siloBar4->BorderColor = Color::Black;
-					 siloBar4->Target = fTarget4;
-					 siloBar4->Idle = false;
-
-					 this->truckBar4->Location = System::Drawing::Point(nOffs1, BAR);
-					 this->truckPic4->Location = System::Drawing::Point(nOffs1, PIC);
-					 if(pJob4) pJob4->nSilo = psIni->sLog4.nSilo;
-				 }
-			 }
-
-	private: System::Void siloBar42_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog4.sT.mix_code) != "") && (material4->Text != "") 
-					 && (gcnew String(psIni->sLog4.sT.mix_code) != gcnew String(psIni->asSilos[10].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[11-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code),"Lane R", 
+	private: System::Void siloBar4_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (pAll->eAsType == A_REMOTE)
+		{
+			Cmd^ pCmd = gcnew Cmd();
+			pCmd->cId = CL_KEY;
+			pCmd->nKey = K_SBAR4;
+			pAll->qCmd->Enqueue(pCmd);
+		}
+		else
+		{
+			if ((gcnew String(psIni->sLog4.sT.mix_code) != "") && (material4->Text != "")
+				&& (gcnew String(psIni->sLog4.sT.mix_code) != gcnew String(psIni->asSilos[9].acProduct))) //DC 4.0.1
+			{
+				MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[10 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
+					+ " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
+					+ ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code), "Lane R",
 					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
-				 if(!clickOk(&psIni->sLog4, 4, 11))
-					return;
+				return;
+			}
 
-				 idleBar(siloBar4);
-				 idleBar(siloBar43);
+			if (!clickOk(&psIni->sLog4, 4, 10))
+				return;
 
-				 if(!psIni->bPdmPlc)
-					nJogD = psIni->nSiloJog11;
-				 else
-					nJogD = psIni->asSilos[10].nSiloJog;	//DC 4.0.0
-				 psIni->sLog4.nSilo = 11;
-				 siloBar42->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar42->Inventory = psIni->sInv.fInv11;
-				 siloBar42->Value = psIni->sInv.fInv11;
-				 siloBar42->BorderColor = Color::Black;
-				 siloBar42->Target = fTarget4;
-				 siloBar42->Idle = false;
+			idleBar(siloBar42);
+			idleBar(siloBar43);
 
-				 this->truckBar4->Location = System::Drawing::Point(nOffs2, BAR);
-				 this->truckPic4->Location = System::Drawing::Point(nOffs2, PIC);
-				 if(pJob4) pJob4->nSilo = psIni->sLog4.nSilo;
-			 }
+			if (!psIni->bPdmPlc)
+				nJogD = psIni->bBotScale ? psIni->nSiloJog10 : psIni->nSiloJog4;
+			else
+				nJogD = psIni->asSilos[9].nSiloJog;	//DC 4.0.0
+			psIni->sLog4.nSilo = 10;
+			siloBar4->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+			siloBar4->Inventory = psIni->sInv.fInv10;
+			siloBar4->Value = psIni->sInv.fInv10;
+			siloBar4->BorderColor = Color::Black;
+			siloBar4->Target = fTarget4;
+			siloBar4->Idle = false;
 
-	private: System::Void siloBar43_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 if((gcnew String(psIni->sLog4.sT.mix_code) != "") && (material4->Text != "") 
-					 && (gcnew String(psIni->sLog4.sT.mix_code) != gcnew String(psIni->asSilos[11].acProduct))) //DC 4.0.1
-				 {
-					 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[12-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
-						 + " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
-						 + ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code),"Lane R", 
-					System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-					return;
-				 }
-				 if(!clickOk(&psIni->sLog4, 4, 12))
-					return;
+			this->truckBar4->Location = System::Drawing::Point(nOffs1, BAR);
+			this->truckPic4->Location = System::Drawing::Point(nOffs1, PIC);
+			if (pJob4) pJob4->nSilo = psIni->sLog4.nSilo;
+		}
+	}
 
-				 idleBar(siloBar4);
-				 idleBar(siloBar42);
+	private: System::Void siloBar42_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog4.sT.mix_code) != "") && (material4->Text != "")
+			&& (gcnew String(psIni->sLog4.sT.mix_code) != gcnew String(psIni->asSilos[10].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[11 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code), "Lane R",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+		if (!clickOk(&psIni->sLog4, 4, 11))
+			return;
 
-				 if(!psIni->bPdmPlc)
-					nJogD = psIni->nSiloJog12;
-				 else
-					nJogD = psIni->asSilos[11].nSiloJog;	//DC 4.0.0
-				 psIni->sLog4.nSilo = 12;
-				 siloBar43->DisableInv = psIni->bDisableInv;		//DC 4.0.1
-				 siloBar43->Inventory = psIni->sInv.fInv12;
-				 siloBar43->Value = psIni->sInv.fInv12;
-				 siloBar43->BorderColor = Color::Black;
-				 siloBar43->Target = fTarget4;
-				 siloBar43->Idle = false;
+		idleBar(siloBar4);
+		idleBar(siloBar43);
 
-				 this->truckBar4->Location = System::Drawing::Point(nOffs3, BAR);
-				 this->truckPic4->Location = System::Drawing::Point(nOffs3, PIC);
-				 if(pJob4) pJob4->nSilo = psIni->sLog4.nSilo;
-			 }
+		if (!psIni->bPdmPlc)
+			nJogD = psIni->nSiloJog11;
+		else
+			nJogD = psIni->asSilos[10].nSiloJog;	//DC 4.0.0
+		psIni->sLog4.nSilo = 11;
+		siloBar42->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar42->Inventory = psIni->sInv.fInv11;
+		siloBar42->Value = psIni->sInv.fInv11;
+		siloBar42->BorderColor = Color::Black;
+		siloBar42->Target = fTarget4;
+		siloBar42->Idle = false;
+
+		this->truckBar4->Location = System::Drawing::Point(nOffs2, BAR);
+		this->truckPic4->Location = System::Drawing::Point(nOffs2, PIC);
+		if (pJob4) pJob4->nSilo = psIni->sLog4.nSilo;
+	}
+
+	private: System::Void siloBar43_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if ((gcnew String(psIni->sLog4.sT.mix_code) != "") && (material4->Text != "")
+			&& (gcnew String(psIni->sLog4.sT.mix_code) != gcnew String(psIni->asSilos[11].acProduct))) //DC 4.0.1
+		{
+			MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[12 - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
+				+ " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
+				+ ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code), "Lane R",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+			return;
+		}
+		if (!clickOk(&psIni->sLog4, 4, 12))
+			return;
+
+		idleBar(siloBar4);
+		idleBar(siloBar42);
+
+		if (!psIni->bPdmPlc)
+			nJogD = psIni->nSiloJog12;
+		else
+			nJogD = psIni->asSilos[11].nSiloJog;	//DC 4.0.0
+		psIni->sLog4.nSilo = 12;
+		siloBar43->DisableInv = psIni->bDisableInv;		//DC 4.0.1
+		siloBar43->Inventory = psIni->sInv.fInv12;
+		siloBar43->Value = psIni->sInv.fInv12;
+		siloBar43->BorderColor = Color::Black;
+		siloBar43->Target = fTarget4;
+		siloBar43->Idle = false;
+
+		this->truckBar4->Location = System::Drawing::Point(nOffs3, BAR);
+		this->truckPic4->Location = System::Drawing::Point(nOffs3, PIC);
+		if (pJob4) pJob4->nSilo = psIni->sLog4.nSilo;
+	}
 #pragma endregion
 
 #pragma region KEYS
 			 //--------------------------------------------------------------------
-	private: System::Void printTarget1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 //			 psIni->sInv.bPrintTarget1 = printTarget1->Checked;
-			 }
-	private: System::Void autoFall1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAutoFall1 = autoFall1->Checked;
-			 }
+	private: System::Void printTarget1_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		//			 psIni->sInv.bPrintTarget1 = printTarget1->Checked;
+	}
+	private: System::Void autoFall1_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAutoFall1 = autoFall1->Checked;
+	}
 			 //--------------------------------------------------------------------
-	private: System::Void adapt1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAdapt1 = adapt1->Checked;
-			 }
+	private: System::Void adapt1_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAdapt1 = adapt1->Checked;
+	}
 
-	private: System::Void jog1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bJog1 = jog1->Checked;
-				 addBt1->Visible = !psIni->sInv.bJog1;
-			 }
-	private: System::Void autoDisch1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAutoDisch1 = autoDisch1->Checked;
-				 dischBt1->Visible = !psIni->sInv.bAutoDisch1;
-			 }
+	private: System::Void jog1_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bJog1 = jog1->Checked;
+		addBt1->Visible = !psIni->sInv.bJog1;
+	}
+	private: System::Void autoDisch1_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAutoDisch1 = autoDisch1->Checked;
+		dischBt1->Visible = !psIni->sInv.bAutoDisch1;
+	}
 
 			 //--------------------------------------------------------------------
-	private: System::Void printTarget2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 //			 psIni->sInv.bPrintTarget2 = printTarget2->Checked;
-			 }
-	private: System::Void autoFall2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAutoFall2 = autoFall2->Checked;
-			 }
+	private: System::Void printTarget2_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		//			 psIni->sInv.bPrintTarget2 = printTarget2->Checked;
+	}
+	private: System::Void autoFall2_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAutoFall2 = autoFall2->Checked;
+	}
 	private: System::Void adapt2_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
-			 {
-				 psIni->sInv.bAdapt2 = adapt2->Checked;
-			 }
-	private: System::Void jog2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bJog2 = jog2->Checked;
-				 addBt2->Visible = !psIni->sInv.bJog2;
-			 }
-	private: System::Void autoDisch2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAutoDisch2 = autoDisch2->Checked;
-				 dischBt2->Visible = !psIni->sInv.bAutoDisch2;
-			 }
+	{
+		psIni->sInv.bAdapt2 = adapt2->Checked;
+	}
+	private: System::Void jog2_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bJog2 = jog2->Checked;
+		addBt2->Visible = !psIni->sInv.bJog2;
+	}
+	private: System::Void autoDisch2_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAutoDisch2 = autoDisch2->Checked;
+		dischBt2->Visible = !psIni->sInv.bAutoDisch2;
+	}
 
 			 //--------------------------------------------------------------------
-	private: System::Void printTarget3_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 //			 psIni->sInv.bPrintTarget3 = printTarget3->Checked;
-			 }
-	private: System::Void autoFall3_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAutoFall3 = autoFall3->Checked;
-			 }
-	private: System::Void adapt3_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAdapt3 = adapt3->Checked;
-			 }
-	private: System::Void jog3_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bJog3 = jog3->Checked;
-				 addBt3->Visible = !psIni->sInv.bJog3;
-			 }
-	private: System::Void autoDisch3_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAutoDisch3 = autoDisch3->Checked;
-				 dischBt3->Visible = !psIni->sInv.bAutoDisch3;
-			 }
+	private: System::Void printTarget3_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		//			 psIni->sInv.bPrintTarget3 = printTarget3->Checked;
+	}
+	private: System::Void autoFall3_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAutoFall3 = autoFall3->Checked;
+	}
+	private: System::Void adapt3_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAdapt3 = adapt3->Checked;
+	}
+	private: System::Void jog3_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bJog3 = jog3->Checked;
+		addBt3->Visible = !psIni->sInv.bJog3;
+	}
+	private: System::Void autoDisch3_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAutoDisch3 = autoDisch3->Checked;
+		dischBt3->Visible = !psIni->sInv.bAutoDisch3;
+	}
 
 			 //DC 3.3.0 --------------------------------------------------------------------
-	private: System::Void printTarget4_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 //			 psIni->sInv.bPrintTarget4 = printTarget4->Checked;
-			 }
-	private: System::Void autoFall4_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAutoFall4 = autoFall4->Checked;
-			 }
-	private: System::Void adapt4_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAdapt4 = adapt4->Checked;
-			 }
-	private: System::Void jog4_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bJog4 = jog4->Checked;
-				 addBt4->Visible = !psIni->sInv.bJog4;
-			 }
-	private: System::Void autoDisch4_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 psIni->sInv.bAutoDisch4 = autoDisch4->Checked;
-				 dischBt4->Visible = !psIni->sInv.bAutoDisch4;
-			 }
+	private: System::Void printTarget4_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		//			 psIni->sInv.bPrintTarget4 = printTarget4->Checked;
+	}
+	private: System::Void autoFall4_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAutoFall4 = autoFall4->Checked;
+	}
+	private: System::Void adapt4_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAdapt4 = adapt4->Checked;
+	}
+	private: System::Void jog4_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bJog4 = jog4->Checked;
+		addBt4->Visible = !psIni->sInv.bJog4;
+	}
+	private: System::Void autoDisch4_CheckedChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+		psIni->sInv.bAutoDisch4 = autoDisch4->Checked;
+		dischBt4->Visible = !psIni->sInv.bAutoDisch4;
+	}
 
 			 //--------------------------------------------------------------------
-	private: System::Void zoom1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bZoom1 = !bZoom1;
+	private: System::Void zoom1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bZoom1 = !bZoom1;
 
-				 if(bZoom1)
-				 {
-					 this->webBrowser1->Location = System::Drawing::Point(10, 220);
-					 this->webBrowser1->Size = System::Drawing::Size(800, 600);
-				 }
-				 else
-				 {
-					 this->webBrowser1->Location = System::Drawing::Point(65, 620);
-					 this->webBrowser1->Size = System::Drawing::Size(340, 240);
-				 }
-			 }
-	private: System::Void zoom2_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bZoom2 = !bZoom2;
+		if (bZoom1)
+		{
+			this->webBrowser1->Location = System::Drawing::Point(10, 220);
+			this->webBrowser1->Size = System::Drawing::Size(800, 600);
+		}
+		else
+		{
+			this->webBrowser1->Location = System::Drawing::Point(65, 620);
+			this->webBrowser1->Size = System::Drawing::Size(340, 240);
+		}
+	}
+	private: System::Void zoom2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bZoom2 = !bZoom2;
 
-				 if(bZoom2)
-				 {
-					 this->webBrowser2->Location = System::Drawing::Point(200, 220);
-					 this->webBrowser2->Size = System::Drawing::Size(800, 600);
-				 }
-				 else
-				 {
-					 this->webBrowser2->Location = System::Drawing::Point(495, 620);
-					 this->webBrowser2->Size = System::Drawing::Size(340, 240);
-				 }
-			 }
-	private: System::Void zoom3_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 bZoom3 = !bZoom3;
+		if (bZoom2)
+		{
+			this->webBrowser2->Location = System::Drawing::Point(200, 220);
+			this->webBrowser2->Size = System::Drawing::Size(800, 600);
+		}
+		else
+		{
+			this->webBrowser2->Location = System::Drawing::Point(495, 620);
+			this->webBrowser2->Size = System::Drawing::Size(340, 240);
+		}
+	}
+	private: System::Void zoom3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		bZoom3 = !bZoom3;
 
-				 if(bZoom3)
-				 {
-					 this->webBrowser3->Location = System::Drawing::Point(460, 220);
-					 this->webBrowser3->Size = System::Drawing::Size(800, 600);
-				 }
-				 else
-				 {
-					 this->webBrowser3->Location = System::Drawing::Point(920, 620);
-					 this->webBrowser3->Size = System::Drawing::Size(340, 240);
-				 }
-			 }
-	 private: System::Void zoom4_Click(System::Object^  sender, System::EventArgs^  e)	//DC 3.3.0
-			 {
-				 bZoom4 = !bZoom4;
+		if (bZoom3)
+		{
+			this->webBrowser3->Location = System::Drawing::Point(460, 220);
+			this->webBrowser3->Size = System::Drawing::Size(800, 600);
+		}
+		else
+		{
+			this->webBrowser3->Location = System::Drawing::Point(920, 620);
+			this->webBrowser3->Size = System::Drawing::Size(340, 240);
+		}
+	}
+	private: System::Void zoom4_Click(System::Object^  sender, System::EventArgs^  e)	//DC 3.3.0
+	{
+		bZoom4 = !bZoom4;
 
-				 if(bZoom4)
-				 {
-					 this->webBrowser4->Location = System::Drawing::Point(460, 220);
-					 this->webBrowser4->Size = System::Drawing::Size(800, 600);
-				 }
-				 else
-				 {
-					 this->webBrowser4->Location = System::Drawing::Point(920, 620);
-					 this->webBrowser4->Size = System::Drawing::Size(340, 240);
-				 }
-			 }
+		if (bZoom4)
+		{
+			this->webBrowser4->Location = System::Drawing::Point(460, 220);
+			this->webBrowser4->Size = System::Drawing::Size(800, 600);
+		}
+		else
+		{
+			this->webBrowser4->Location = System::Drawing::Point(920, 620);
+			this->webBrowser4->Size = System::Drawing::Size(340, 240);
+		}
+	}
 #pragma endregion
 
 #pragma region SELECT_TRUCK
 			 ///////////////////////////////////////////////////////////////////////
-	private: System::Void trucksToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 TruckFm^ truck = gcnew TruckFm(pAll);
-				 truck->Show();
-			 }
+	private: System::Void trucksToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		TruckFm^ truck = gcnew TruckFm(pAll);
+		truck->Show();
+	}
 			 //--------------------------------------------------------------------
 	private: System::Void dataGridTruck_RowHeaderMouseDoubleClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^  e)
-			 {
-				 if(pAll->lTruck->Count == 0) return;
+	{
+		if (pAll->lTruck->Count == 0) return;
 
-				 DataGridViewRow^ row = dataGridTruck->SelectedRows[0];
-				 Truck^ pTruck = (Truck^)row->DataBoundItem;
+		DataGridViewRow^ row = dataGridTruck->SelectedRows[0];
+		Truck^ pTruck = (Truck^)row->DataBoundItem;
 
-				 switch(nLane)
-				 {
-				 case 0: 
-					 truck1->Text = pTruck->stName;
-					 pTruck1 = pTruck;
-					 str2arr(truck1->Text, psIni->sLog1.sT.truck_id);
-					 break;
-				 case 1: 
-					 truck2->Text = pTruck->stName;
-					 pTruck2 = pTruck;
-					 str2arr(truck2->Text, psIni->sLog2.sT.truck_id);
-					 break;
-				 case 2: 
-					 truck3->Text = pTruck->stName;
-					 pTruck3 = pTruck;
-					 str2arr(truck3->Text, psIni->sLog3.sT.truck_id);
-					 break;
-				 case 3:		//DC 3.3.0
-					 truck4->Text = pTruck->stName;
-					 pTruck4 = pTruck;
-					 str2arr(truck4->Text, psIni->sLog4.sT.truck_id);
-					 break;
-				 }
-				 dataGridTruck->Visible = false;
-			 }
+		switch (nLane)
+		{
+		case 0:
+			truck1->Text = pTruck->stName;
+			pTruck1 = pTruck;
+			str2arr(truck1->Text, psIni->sLog1.sT.truck_id);
+			break;
+		case 1:
+			truck2->Text = pTruck->stName;
+			pTruck2 = pTruck;
+			str2arr(truck2->Text, psIni->sLog2.sT.truck_id);
+			break;
+		case 2:
+			truck3->Text = pTruck->stName;
+			pTruck3 = pTruck;
+			str2arr(truck3->Text, psIni->sLog3.sT.truck_id);
+			break;
+		case 3:		//DC 3.3.0
+			truck4->Text = pTruck->stName;
+			pTruck4 = pTruck;
+			str2arr(truck4->Text, psIni->sLog4.sT.truck_id);
+			break;
+		}
+		dataGridTruck->Visible = false;
+	}
 
-	private: System::Void dataGridTruck_ColumnHeaderMouseClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^  e) 
-			 {
-				 dataGridTruck->Visible = false;
-			 }
+	private: System::Void dataGridTruck_ColumnHeaderMouseClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^  e)
+	{
+		dataGridTruck->Visible = false;
+	}
 
 			 //--------------------------------------------------------------------
-	private: System::Void truckNum1_MouseDoubleClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) 
-			 {
-				 nLane = 0;
-				 dataGridTruck->DataSource = nullptr;
-				 dataGridTruck->DataSource = this->truckBindingSource;
-				 dataGridTruck->Visible = true;
-			 }
-	private: System::Void truckNum2_MouseDoubleClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) 
-			 {
-				 nLane = 1;
-				 dataGridTruck->DataSource = nullptr;
-				 dataGridTruck->DataSource = this->truckBindingSource;
-				 dataGridTruck->Visible = true;
-			 }
-	private: System::Void truckNum3_MouseDoubleClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) 
-			 {
-				 nLane = 2;
-				 dataGridTruck->DataSource = nullptr;
-				 dataGridTruck->DataSource = this->truckBindingSource;
-				 dataGridTruck->Visible = true;
-			 }
-	 private: System::Void truckNum4_MouseDoubleClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) 
-			 {
-				 nLane = 3;
-				 dataGridTruck->DataSource = nullptr;
-				 dataGridTruck->DataSource = this->truckBindingSource;
-				 dataGridTruck->Visible = true;
-			 }
+	private: System::Void truckNum1_MouseDoubleClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e)
+	{
+		nLane = 0;
+		dataGridTruck->DataSource = nullptr;
+		dataGridTruck->DataSource = this->truckBindingSource;
+		dataGridTruck->Visible = true;
+	}
+	private: System::Void truckNum2_MouseDoubleClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e)
+	{
+		nLane = 1;
+		dataGridTruck->DataSource = nullptr;
+		dataGridTruck->DataSource = this->truckBindingSource;
+		dataGridTruck->Visible = true;
+	}
+	private: System::Void truckNum3_MouseDoubleClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e)
+	{
+		nLane = 2;
+		dataGridTruck->DataSource = nullptr;
+		dataGridTruck->DataSource = this->truckBindingSource;
+		dataGridTruck->Visible = true;
+	}
+	private: System::Void truckNum4_MouseDoubleClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e)
+	{
+		nLane = 3;
+		dataGridTruck->DataSource = nullptr;
+		dataGridTruck->DataSource = this->truckBindingSource;
+		dataGridTruck->Visible = true;
+	}
 #pragma endregion
 
 #pragma region JOB
 			 //--------------------------------------------------------------------
 	private: System::Void dataGridJob_RowHeaderMouseDoubleClick(System::Object^  sender
-				 , System::Windows::Forms::DataGridViewCellMouseEventArgs^  e) 
-			 {
+		, System::Windows::Forms::DataGridViewCellMouseEventArgs^  e)
+	{
 
-				 if(pAll->eAsType == A_REMOTE)	//DC 4.1.0
-				 {
-					 DataGridViewRow^ row = dataGridJob->SelectedRows[0];
-					 Job^ pJob = (Job^)row->DataBoundItem;
+		if (pAll->eAsType == A_REMOTE)	//DC 4.1.0
+		{
+			DataGridViewRow^ row = dataGridJob->SelectedRows[0];
+			Job^ pJob = (Job^)row->DataBoundItem;
 
-					 pAll->pJob = pJob;
-					 int k = 0;	
-					 Cmd^ pCmd = gcnew Cmd();
-					 pCmd = gcnew Cmd();
-					 pCmd->cId = CL_SJOB;
-					 pAll->qCmd->Enqueue(pCmd);
+			pAll->pJob = pJob;
+			int k = 0;
+			Cmd^ pCmd = gcnew Cmd();
+			pCmd = gcnew Cmd();
+			pCmd->cId = CL_SJOB;
+			pAll->qCmd->Enqueue(pCmd);
 
-					pAll->cWaitT = 1;
+			pAll->cWaitT = 1;
 
-					while(pAll->cWaitT > 0 && k++ < 5)
-					Thread::Sleep(100);
+			while (pAll->cWaitT > 0 && k++ < 5)
+				Thread::Sleep(100);
 
-					int i = 0;
-					pCmd->cId = CL_KEY;
-					pCmd->nKey = K_SJOB4;
-					pAll->qCmd->Enqueue(pCmd);
+			int i = 0;
+			pCmd->cId = CL_KEY;
+			pCmd->nKey = K_SJOB4;
+			pAll->qCmd->Enqueue(pCmd);
 
-					pAll->cWaitT = 1;
+			pAll->cWaitT = 1;
 
-					while(pAll->cWaitT > 0 && i++ < 5)
-					Thread::Sleep(100);
+			while (pAll->cWaitT > 0 && i++ < 5)
+				Thread::Sleep(100);
 
-					dataGridJob->Visible = false;
-				 }
-				 else
-				 {
-					 Job^ pJob;
+			dataGridJob->Visible = false;
+		}
+		else
+		{
+			Job^ pJob;
 
-					 if(pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
-					 {
-						 pJob = pAll->pJob;
-						 pAll->bRemoteCall = false;
-						 nLane = 3;
-					 }
-					 else
-					 {
-						 DataGridViewRow^ row = dataGridJob->SelectedRows[0];
-						 pJob = (Job^)row->DataBoundItem;
-					 }
+			if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
+			{
+				pJob = pAll->pJob;
+				pAll->bRemoteCall = false;
+				nLane = 3;
+			}
+			else
+			{
+				DataGridViewRow^ row = dataGridJob->SelectedRows[0];
+				pJob = (Job^)row->DataBoundItem;
+			}
 
-					 bWrongMet = false;		//DC 4.0.2
-					 int	nSilo;			//DC 4.0.2
-					 int i = 0;				//Dc 4.1.0
+			bWrongMet = false;		//DC 4.0.2
+			int	nSilo;			//DC 4.0.2
+			int i = 0;				//Dc 4.1.0
 
-					 switch(nLane)
-					 {
-						 //--------------------------------------------------------
-					 case 0: 
+			switch (nLane)
+			{
+				//--------------------------------------------------------
+			case 0:
 
-						 poLog->log(C_READ, &psIni->sLog1, pJob->nLogIdx);
+				poLog->log(C_READ, &psIni->sLog1, pJob->nLogIdx);
 
-						 if(psIni->bBotScale)
-						 {
-	//DC 4.0.1						 siloBar1_Click(nullptr, nullptr);
-							 if(!siloBar1->Idle)
-							 {
-								nSilo = 1;
-							 }
-							 else if(!siloBar12->Idle)
-							 {
-								 nSilo = 2;
-							 }
-							 else if(!siloBar13->Idle)
-							 {
-								 nSilo = 3;
-							 }
+				if (psIni->bBotScale)
+				{
+					//DC 4.0.1						 siloBar1_Click(nullptr, nullptr);
+					if (!siloBar1->Idle)
+					{
+						nSilo = 1;
+					}
+					else if (!siloBar12->Idle)
+					{
+						nSilo = 2;
+					}
+					else if (!siloBar13->Idle)
+					{
+						nSilo = 3;
+					}
 
-							 if(gcnew String(psIni->sLog1.sT.mix_code) != "" 
-							 && (gcnew String(psIni->sLog1.sT.mix_code) != gcnew String(psIni->asSilos[nSilo-1].acProduct))) //DC 4.0.1
-							 {
-								 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[nSilo-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog1.sT.ticket_num
-									 + " for Truck: " + gcnew String(psIni->sLog1.sT.truck_id)
-									 + ", NEED Material: " + gcnew String(psIni->sLog1.sT.mix_code),"Lane A",
-								System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-								 bWrongMet = true;	//DC 4.0.1
-								return;
-							 }
-							 else
-							 {
-								 //DC 4.0.1
-								 customer1->Text = pJob->stCustomer;
-								 tic_num1->Text = pJob->nTicket.ToString();
+					if (gcnew String(psIni->sLog1.sT.mix_code) != ""
+						&& (gcnew String(psIni->sLog1.sT.mix_code) != gcnew String(psIni->asSilos[nSilo - 1].acProduct))) //DC 4.0.1
+					{
+						MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[nSilo - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog1.sT.ticket_num
+							+ " for Truck: " + gcnew String(psIni->sLog1.sT.truck_id)
+							+ ", NEED Material: " + gcnew String(psIni->sLog1.sT.mix_code), "Lane A",
+							System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+						bWrongMet = true;	//DC 4.0.1
+						return;
+					}
+					else
+					{
+						//DC 4.0.1
+						customer1->Text = pJob->stCustomer;
+						tic_num1->Text = pJob->nTicket.ToString();
 
-								 Job1->Text = gcnew String(psIni->sLog1.sT.project_code);
-								 material1->Text = gcnew String(psIni->sLog1.sT.mix_code);
-								 truck1->Text = gcnew String(psIni->sLog1.sT.truck_id);
-								 if(psIni->bScaleInLB)	//DC 3.2.0
-									 target1->Text = psIni->sLog1.sT.load_size.ToString("F00");
-								 else
-									target1->Text = psIni->sLog1.sT.load_size.ToString("F02");
-								 plant1->Text = psIni->sLog1.sT.plant_num.ToString("F00");
-							 }
+						Job1->Text = gcnew String(psIni->sLog1.sT.project_code);
+						material1->Text = gcnew String(psIni->sLog1.sT.mix_code);
+						truck1->Text = gcnew String(psIni->sLog1.sT.truck_id);
+						if (psIni->bScaleInLB)	//DC 3.2.0
+							target1->Text = psIni->sLog1.sT.load_size.ToString("F00");
+						else
+							target1->Text = psIni->sLog1.sT.load_size.ToString("F02");
+						plant1->Text = psIni->sLog1.sT.plant_num.ToString("F00");
+					}
 
-							 if(!bWrongMet)
-							 {
-								 switch(psIni->sLog1.nSilo)
-								 {
-								 case 1:	pAll->nTickets1--; break;// siloBar1_Click(nullptr, nullptr);	break;
-								 case 2:	pAll->nTickets1--; break;//siloBar12_Click(nullptr, nullptr);	break;
-								 case 3:	pAll->nTickets1--; break;//siloBar13_Click(nullptr, nullptr);	break;
+					if (!bWrongMet)
+					{
+						switch (psIni->sLog1.nSilo)
+						{
+						case 1:	pAll->nTickets1--; break;// siloBar1_Click(nullptr, nullptr);	break;
+						case 2:	pAll->nTickets1--; break;//siloBar12_Click(nullptr, nullptr);	break;
+						case 3:	pAll->nTickets1--; break;//siloBar13_Click(nullptr, nullptr);	break;
 
-								 case 4:	pAll->nTickets2--; break;//siloBar1_Click(nullptr, nullptr);	break;
-								 case 5:	pAll->nTickets2--; break;//siloBar12_Click(nullptr, nullptr);	break;
-								 case 6:	pAll->nTickets2--; break;//siloBar13_Click(nullptr, nullptr);	break;
+						case 4:	pAll->nTickets2--; break;//siloBar1_Click(nullptr, nullptr);	break;
+						case 5:	pAll->nTickets2--; break;//siloBar12_Click(nullptr, nullptr);	break;
+						case 6:	pAll->nTickets2--; break;//siloBar13_Click(nullptr, nullptr);	break;
 
-								 case 7:	pAll->nTickets3--; break;//siloBar1_Click(nullptr, nullptr);	break;
-								 case 8:	pAll->nTickets3--; break;//siloBar12_Click(nullptr, nullptr);	break;
-								 case 9:	pAll->nTickets3--; break;//siloBar13_Click(nullptr, nullptr);	break;
+						case 7:	pAll->nTickets3--; break;//siloBar1_Click(nullptr, nullptr);	break;
+						case 8:	pAll->nTickets3--; break;//siloBar12_Click(nullptr, nullptr);	break;
+						case 9:	pAll->nTickets3--; break;//siloBar13_Click(nullptr, nullptr);	break;
 
-								 case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
-								 default:	siloBar1_Click(nullptr, nullptr);	break;
-								 }
-							 }
-						 }
-						 else
-							 switch(psIni->sLog1.nSilo)
-							 {
-							 case 1:	pAll->nTickets1--;	break;
-							 case 2:	pAll->nTickets2--;	break;
-							 case 3:	pAll->nTickets3--;	break;
-							 case 4:	psIni->nTickets4--;	break;
-							 }
-	//DC 4.0.1					 psIni->sLog1.nSilo = 1;
-						 if(!bWrongMet)	//DC 4.0.2
-						 {
-							 psIni->sLog1.nSilo = nSilo;
-							 pJob1 = pJob;
-							 pJob1->nSilo = psIni->sLog1.nSilo;
-							 pTruck1 = findTruck(psIni->sLog1.sT.truck_id);
-							 bAuto1 = true;
-							 setState1(S_NEXT);
-							 poLog->log(C_UPDATE, &psIni->sLog1, pJob->nLogIdx);
-						 }
-						 break;
-
-						 //--------------------------------------------------------
-					 case 1: 
-						 poLog->log(C_READ, &psIni->sLog2, pJob->nLogIdx);
-
-						 if(psIni->bBotScale)
-						 {
-	//DC 4.0.1						 siloBar2_Click(nullptr, nullptr);	
-							 if(!siloBar2->Idle)
-							 {
-								nSilo = 4;
-							 }
-							 else if(!siloBar22->Idle)
-							 {
-								nSilo = 5;
-							 }
-							 else if(!siloBar23->Idle)
-							 {
-								 nSilo = 6;
-							 }
-
-							 if(gcnew String(psIni->sLog2.sT.mix_code) != "" 
-							 && (gcnew String(psIni->sLog2.sT.mix_code) != gcnew String(psIni->asSilos[nSilo-1].acProduct))) //DC 4.0.1
-							 {
-								 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[nSilo-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog2.sT.ticket_num
-									 + " for Truck: " + gcnew String(psIni->sLog2.sT.truck_id)
-									 + ", NEED Material: " + gcnew String(psIni->sLog2.sT.mix_code),"Lane B",
-								System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-								 bWrongMet = true;	//DC 4.0.1
-								return;
-							 }
-							 else
-							 {
-								 //DC 4.0.1
-								 customer2->Text = pJob->stCustomer;
-								 tic_num2->Text = pJob->nTicket.ToString();
-
-								 Job2->Text = gcnew String(psIni->sLog2.sT.project_code);
-								 material2->Text = gcnew String(psIni->sLog2.sT.mix_code);
-								 truck2->Text = gcnew String(psIni->sLog2.sT.truck_id);
-								 if(psIni->bScaleInLB)	//DC 3.2.0
-									target2->Text = psIni->sLog2.sT.load_size.ToString("F00");
-								 else
-									target2->Text = psIni->sLog2.sT.load_size.ToString("F02");
-								 plant2->Text = psIni->sLog2.sT.plant_num.ToString();
-							 }
-
-							 if(!bWrongMet)
-							 {
-								 switch(psIni->sLog2.nSilo)
-								 {
-								 case 1:	pAll->nTickets1--; break;// siloBar2_Click(nullptr, nullptr);	break;
-								 case 2:	pAll->nTickets1--; break;// siloBar22_Click(nullptr, nullptr);	break;
-								 case 3:	pAll->nTickets1--; break;// siloBar23_Click(nullptr, nullptr);	break;
-
-								 case 4:	pAll->nTickets2--; break;// siloBar2_Click(nullptr, nullptr);	break;
-								 case 5:	pAll->nTickets2--; break;// siloBar22_Click(nullptr, nullptr);	break;
-								 case 6:	pAll->nTickets2--; break;// siloBar23_Click(nullptr, nullptr);	break;
-
-								 case 7:	pAll->nTickets3--; break;// siloBar2_Click(nullptr, nullptr);	break;
-								 case 8:	pAll->nTickets3--; break;// siloBar22_Click(nullptr, nullptr);	break;
-								 case 9:	pAll->nTickets3--; break;// siloBar23_Click(nullptr, nullptr);	break;
-
-								 case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
-								 default:	siloBar2_Click(nullptr, nullptr);	break;
-								 }
-							 }
-						 }
-						 else
-						 {
-							 switch(psIni->sLog2.nSilo)
-							 {
-							 case 1:	pAll->nTickets1--;	break;
-							 case 2:	pAll->nTickets2--;	break;
-							 case 3:	pAll->nTickets3--;	break;
-							 case 4:	psIni->nTickets4--;	break;
-							 }
-	//DC 4.0.1						 psIni->sLog2.nSilo = 2;
-						 }
-						 if(!bWrongMet)	//DC 4.0.2
-						 {
-							 psIni->sLog2.nSilo = nSilo;
-							 pJob2 = pJob;
-							 pJob2->nSilo = psIni->sLog2.nSilo;
-							 pTruck2 = findTruck(psIni->sLog2.sT.truck_id);
-							 bAuto2 = true;
-							 setState2(S_NEXT);
-							 poLog->log(C_UPDATE, &psIni->sLog2, pJob->nLogIdx);
-						 }
-						 break;
-
-						 //--------------------------------------------------------
-					 case 2: 
-						 poLog->log(C_READ, &psIni->sLog3, pJob->nLogIdx);
-
-						 if(psIni->bBotScale)
-						 {
-
-	//DC 4.0.1						 siloBar3_Click(nullptr, nullptr);
-							 if(!siloBar3->Idle)
-							 {
-								nSilo = 7;
-							 }
-							 else if(!siloBar32->Idle)
-							 {
-								 nSilo = 8;
-							 }
-							 else if(!siloBar33->Idle)
-							 {
-								 nSilo = 9;
-							 }
-							 if(gcnew String(psIni->sLog3.sT.mix_code) != "" 
-							 && (gcnew String(psIni->sLog3.sT.mix_code) != gcnew String(psIni->asSilos[nSilo-1].acProduct))) //DC 4.0.1
-							 {
-								 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[nSilo-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog3.sT.ticket_num
-									 + " for Truck: " + gcnew String(psIni->sLog3.sT.truck_id)
-									 + ", NEED Material: " + gcnew String(psIni->sLog3.sT.mix_code),"Lane C",
-								System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-								 bWrongMet = true;	//DC 4.0.1
-								return;
-							 }
-							 else
-							 {
-								 //DC 4.0.1
-								 customer3->Text = pJob->stCustomer;
-								 tic_num3->Text = pJob->nTicket.ToString();
-
-								 Job3->Text = gcnew String(psIni->sLog3.sT.project_code);
-								 material3->Text = gcnew String(psIni->sLog3.sT.mix_code);
-								 truck3->Text = gcnew String(psIni->sLog3.sT.truck_id);
-								 if(psIni->bScaleInLB)	//DC 3.2.0
-									target3->Text = psIni->sLog3.sT.load_size.ToString("F00");
-								 else
-									target3->Text = psIni->sLog3.sT.load_size.ToString("F02");
-								 plant3->Text = psIni->sLog3.sT.plant_num.ToString();
-							 }
-
-							 if(!bWrongMet)
-							 {
-								 switch(psIni->sLog3.nSilo)
-								 {
-								 case 1:	pAll->nTickets1--; break;// siloBar3_Click(nullptr, nullptr);	break;
-								 case 2:	pAll->nTickets1--; break;// siloBar32_Click(nullptr, nullptr);	break;
-								 case 3:	pAll->nTickets1--; break;// siloBar33_Click(nullptr, nullptr);	break;
-
-								 case 4:	pAll->nTickets2--; break;// siloBar3_Click(nullptr, nullptr);	break;
-								 case 5:	pAll->nTickets2--; break;// siloBar32_Click(nullptr, nullptr);	break;
-								 case 6:	pAll->nTickets2--; break;// siloBar33_Click(nullptr, nullptr);	break;
-
-								 case 7:	pAll->nTickets3--; break;// siloBar3_Click(nullptr, nullptr);	break;
-								 case 8:	pAll->nTickets3--; break;// siloBar32_Click(nullptr, nullptr);	break;
-								 case 9:	pAll->nTickets3--; break;// siloBar33_Click(nullptr, nullptr);	break;
-									 
-								 case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
-								 default:	siloBar3_Click(nullptr, nullptr);	break;
-								}
-							 }
-						 }
-						 else
-						 {
-							 switch(psIni->sLog3.nSilo)
-							 {
-							 case 1:	pAll->nTickets1--;	break;
-							 case 2:	pAll->nTickets2--;	break;
-							 case 3:	pAll->nTickets3--;	break;
-							 case 4:	psIni->nTickets4--;	break;
-							 }
-	//DC 4.0.1						 psIni->sLog3.nSilo = 3;
-						 }
-						 if(!bWrongMet)	//DC 4.0.2
-						 {
-							 psIni->sLog3.nSilo = nSilo;
-							 pJob3 = pJob;
-							 pJob3->nSilo = psIni->sLog3.nSilo;
-							 pTruck3 = findTruck(psIni->sLog3.sT.truck_id);
-							 bAuto3 = true;
-							 setState3(S_NEXT);
-							 poLog->log(C_UPDATE, &psIni->sLog3, pJob->nLogIdx);
-						 }
-						 break;
-
-					 //DC 3.3.0 --------------------------------------------------------
-					 case 3: 
-						 /*if(pAll->eAsType == A_REMOTE)
-						 {
-							 Cmd^ pCmd = gcnew Cmd();
-							 pCmd->cId = CL_LOG4;
-							 pCmd->nKey = C_READ;
-							 pCmd->nIdx = pJob->nLogIdx;
-							 pAll->qCmd->Enqueue(pCmd);
-							 pAll->cWaitT = 1;
-
-							 while(pAll->cWaitT > 0 && i++ < REM_CNT)
-								 Thread::Sleep(100);
-						 }
-						 else*/
-							poLog->log(C_READ, &psIni->sLog4, pJob->nLogIdx);
-						 
-						 if(psIni->bBotScale)
-						 {
-
-	//DC 4.0.1						 siloBar4_Click(nullptr, nullptr);
-							 if(!siloBar4->Idle)
-							 {
-								nSilo = 10;
-							 }
-							 else if(!siloBar42->Idle)
-							 {
-								nSilo = 11;
-							 }
-							 else if(!siloBar43->Idle)
-							 {
-								 nSilo = 12;
-							 }
-							 if(gcnew String(psIni->sLog4.sT.mix_code) != "" 
-							 && (gcnew String(psIni->sLog4.sT.mix_code) != gcnew String(psIni->asSilos[nSilo-1].acProduct))) //DC 4.0.1
-							 {
-								 MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[nSilo-1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
-									 + " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
-									 + ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code),"Lane R",
-								System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-								 bWrongMet = true;	//DC 4.0.1
-								return;
-							 }
-							 else
-							 {
-								//DC 4.0.1
-								 customer4->Text = pJob->stCustomer;
-								 tic_num4->Text = pJob->nTicket.ToString();
-
-								 Job4->Text = gcnew String(psIni->sLog4.sT.project_code);
-								 material4->Text = gcnew String(psIni->sLog4.sT.mix_code);
-								 truck4->Text = gcnew String(psIni->sLog4.sT.truck_id);
-								 if(psIni->bScaleInLB)	//DC 3.2.0
-									target4->Text = psIni->sLog4.sT.load_size.ToString("F00");
-								 else
-									target4->Text = psIni->sLog4.sT.load_size.ToString("F02");
-								 plant4->Text = psIni->sLog4.sT.plant_num.ToString();
-							 }
-
-							
-							 if(!bWrongMet)
-							 {
-								  switch(psIni->sLog4.nSilo)
-								 {
-								 case 1:	pAll->nTickets1--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 2:	pAll->nTickets1--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 3:	pAll->nTickets1--; break;// siloBar43_Click(nullptr, nullptr);	break;
-
-								 case 4:	pAll->nTickets2--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 5:	pAll->nTickets2--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 6:	pAll->nTickets2--; break;// siloBar43_Click(nullptr, nullptr);	break;
-
-								 case 7:	pAll->nTickets3--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 8:	pAll->nTickets3--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 9:	pAll->nTickets3--; break;// siloBar43_Click(nullptr, nullptr);	break;
-
-								 case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
-								 default:	siloBar4_Click(nullptr, nullptr);	break;
-								 }
-							 }
-						 }
-						 else
-						 {
-							 switch(psIni->sLog4.nSilo)
-							 {
-							 case 1:	pAll->nTickets1--;	break;
-							 case 2:	pAll->nTickets2--;	break;
-							 case 3:	pAll->nTickets3--;	break;
-							 case 4:	psIni->nTickets4--;	break;
-							 }
-	//DC 4.0.1						 psIni->sLog4.nSilo = 4;
-						 }
-						  if(!bWrongMet)	//DC 4.0.2
-						 {
-							 psIni->sLog4.nSilo = nSilo;
-							 pJob4 = pJob;
-							 pJob4->nSilo = psIni->sLog4.nSilo;
-							 pTruck4 = findTruck(psIni->sLog4.sT.truck_id);
-							 bAuto4 = true;
-							 setState4(S_NEXT);
-							 poLog->log(C_UPDATE, &psIni->sLog4, pJob->nLogIdx);
-						  }
-						 break;
-					 }
-					 if(!bWrongMet)
-					 {
-						 pAll->lJob->Remove(pJob);
-						 pJob->eStatus = S_OK1;
-						 dataGridJob->Visible = false;
-					 }
-					 else
-						 bWrongMet = false;
+						case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
+						case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
+						case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
+						default:	siloBar1_Click(nullptr, nullptr);	break;
+						}
+					}
 				}
-			 }
+				else
+					switch (psIni->sLog1.nSilo)
+					{
+					case 1:	pAll->nTickets1--;	break;
+					case 2:	pAll->nTickets2--;	break;
+					case 3:	pAll->nTickets3--;	break;
+					case 4:	psIni->nTickets4--;	break;
+					}
+				//DC 4.0.1					 psIni->sLog1.nSilo = 1;
+				if (!bWrongMet)	//DC 4.0.2
+				{
+					psIni->sLog1.nSilo = nSilo;
+					pJob1 = pJob;
+					pJob1->nSilo = psIni->sLog1.nSilo;
+					pTruck1 = findTruck(psIni->sLog1.sT.truck_id);
+					bAuto1 = true;
+					setState1(S_NEXT);
+					poLog->log(C_UPDATE, &psIni->sLog1, pJob->nLogIdx);
+				}
+				break;
+
+				//--------------------------------------------------------
+			case 1:
+				poLog->log(C_READ, &psIni->sLog2, pJob->nLogIdx);
+
+				if (psIni->bBotScale)
+				{
+					//DC 4.0.1						 siloBar2_Click(nullptr, nullptr);	
+					if (!siloBar2->Idle)
+					{
+						nSilo = 4;
+					}
+					else if (!siloBar22->Idle)
+					{
+						nSilo = 5;
+					}
+					else if (!siloBar23->Idle)
+					{
+						nSilo = 6;
+					}
+
+					if (gcnew String(psIni->sLog2.sT.mix_code) != ""
+						&& (gcnew String(psIni->sLog2.sT.mix_code) != gcnew String(psIni->asSilos[nSilo - 1].acProduct))) //DC 4.0.1
+					{
+						MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[nSilo - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog2.sT.ticket_num
+							+ " for Truck: " + gcnew String(psIni->sLog2.sT.truck_id)
+							+ ", NEED Material: " + gcnew String(psIni->sLog2.sT.mix_code), "Lane B",
+							System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+						bWrongMet = true;	//DC 4.0.1
+						return;
+					}
+					else
+					{
+						//DC 4.0.1
+						customer2->Text = pJob->stCustomer;
+						tic_num2->Text = pJob->nTicket.ToString();
+
+						Job2->Text = gcnew String(psIni->sLog2.sT.project_code);
+						material2->Text = gcnew String(psIni->sLog2.sT.mix_code);
+						truck2->Text = gcnew String(psIni->sLog2.sT.truck_id);
+						if (psIni->bScaleInLB)	//DC 3.2.0
+							target2->Text = psIni->sLog2.sT.load_size.ToString("F00");
+						else
+							target2->Text = psIni->sLog2.sT.load_size.ToString("F02");
+						plant2->Text = psIni->sLog2.sT.plant_num.ToString();
+					}
+
+					if (!bWrongMet)
+					{
+						switch (psIni->sLog2.nSilo)
+						{
+						case 1:	pAll->nTickets1--; break;// siloBar2_Click(nullptr, nullptr);	break;
+						case 2:	pAll->nTickets1--; break;// siloBar22_Click(nullptr, nullptr);	break;
+						case 3:	pAll->nTickets1--; break;// siloBar23_Click(nullptr, nullptr);	break;
+
+						case 4:	pAll->nTickets2--; break;// siloBar2_Click(nullptr, nullptr);	break;
+						case 5:	pAll->nTickets2--; break;// siloBar22_Click(nullptr, nullptr);	break;
+						case 6:	pAll->nTickets2--; break;// siloBar23_Click(nullptr, nullptr);	break;
+
+						case 7:	pAll->nTickets3--; break;// siloBar2_Click(nullptr, nullptr);	break;
+						case 8:	pAll->nTickets3--; break;// siloBar22_Click(nullptr, nullptr);	break;
+						case 9:	pAll->nTickets3--; break;// siloBar23_Click(nullptr, nullptr);	break;
+
+						case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
+						case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
+						case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
+						default:	siloBar2_Click(nullptr, nullptr);	break;
+						}
+					}
+				}
+				else
+				{
+					switch (psIni->sLog2.nSilo)
+					{
+					case 1:	pAll->nTickets1--;	break;
+					case 2:	pAll->nTickets2--;	break;
+					case 3:	pAll->nTickets3--;	break;
+					case 4:	psIni->nTickets4--;	break;
+					}
+					//DC 4.0.1						 psIni->sLog2.nSilo = 2;
+				}
+				if (!bWrongMet)	//DC 4.0.2
+				{
+					psIni->sLog2.nSilo = nSilo;
+					pJob2 = pJob;
+					pJob2->nSilo = psIni->sLog2.nSilo;
+					pTruck2 = findTruck(psIni->sLog2.sT.truck_id);
+					bAuto2 = true;
+					setState2(S_NEXT);
+					poLog->log(C_UPDATE, &psIni->sLog2, pJob->nLogIdx);
+				}
+				break;
+
+				//--------------------------------------------------------
+			case 2:
+				poLog->log(C_READ, &psIni->sLog3, pJob->nLogIdx);
+
+				if (psIni->bBotScale)
+				{
+
+					//DC 4.0.1						 siloBar3_Click(nullptr, nullptr);
+					if (!siloBar3->Idle)
+					{
+						nSilo = 7;
+					}
+					else if (!siloBar32->Idle)
+					{
+						nSilo = 8;
+					}
+					else if (!siloBar33->Idle)
+					{
+						nSilo = 9;
+					}
+					if (gcnew String(psIni->sLog3.sT.mix_code) != ""
+						&& (gcnew String(psIni->sLog3.sT.mix_code) != gcnew String(psIni->asSilos[nSilo - 1].acProduct))) //DC 4.0.1
+					{
+						MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[nSilo - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog3.sT.ticket_num
+							+ " for Truck: " + gcnew String(psIni->sLog3.sT.truck_id)
+							+ ", NEED Material: " + gcnew String(psIni->sLog3.sT.mix_code), "Lane C",
+							System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+						bWrongMet = true;	//DC 4.0.1
+						return;
+					}
+					else
+					{
+						//DC 4.0.1
+						customer3->Text = pJob->stCustomer;
+						tic_num3->Text = pJob->nTicket.ToString();
+
+						Job3->Text = gcnew String(psIni->sLog3.sT.project_code);
+						material3->Text = gcnew String(psIni->sLog3.sT.mix_code);
+						truck3->Text = gcnew String(psIni->sLog3.sT.truck_id);
+						if (psIni->bScaleInLB)	//DC 3.2.0
+							target3->Text = psIni->sLog3.sT.load_size.ToString("F00");
+						else
+							target3->Text = psIni->sLog3.sT.load_size.ToString("F02");
+						plant3->Text = psIni->sLog3.sT.plant_num.ToString();
+					}
+
+					if (!bWrongMet)
+					{
+						switch (psIni->sLog3.nSilo)
+						{
+						case 1:	pAll->nTickets1--; break;// siloBar3_Click(nullptr, nullptr);	break;
+						case 2:	pAll->nTickets1--; break;// siloBar32_Click(nullptr, nullptr);	break;
+						case 3:	pAll->nTickets1--; break;// siloBar33_Click(nullptr, nullptr);	break;
+
+						case 4:	pAll->nTickets2--; break;// siloBar3_Click(nullptr, nullptr);	break;
+						case 5:	pAll->nTickets2--; break;// siloBar32_Click(nullptr, nullptr);	break;
+						case 6:	pAll->nTickets2--; break;// siloBar33_Click(nullptr, nullptr);	break;
+
+						case 7:	pAll->nTickets3--; break;// siloBar3_Click(nullptr, nullptr);	break;
+						case 8:	pAll->nTickets3--; break;// siloBar32_Click(nullptr, nullptr);	break;
+						case 9:	pAll->nTickets3--; break;// siloBar33_Click(nullptr, nullptr);	break;
+
+						case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
+						case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
+						case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
+						default:	siloBar3_Click(nullptr, nullptr);	break;
+						}
+					}
+				}
+				else
+				{
+					switch (psIni->sLog3.nSilo)
+					{
+					case 1:	pAll->nTickets1--;	break;
+					case 2:	pAll->nTickets2--;	break;
+					case 3:	pAll->nTickets3--;	break;
+					case 4:	psIni->nTickets4--;	break;
+					}
+					//DC 4.0.1						 psIni->sLog3.nSilo = 3;
+				}
+				if (!bWrongMet)	//DC 4.0.2
+				{
+					psIni->sLog3.nSilo = nSilo;
+					pJob3 = pJob;
+					pJob3->nSilo = psIni->sLog3.nSilo;
+					pTruck3 = findTruck(psIni->sLog3.sT.truck_id);
+					bAuto3 = true;
+					setState3(S_NEXT);
+					poLog->log(C_UPDATE, &psIni->sLog3, pJob->nLogIdx);
+				}
+				break;
+
+				//DC 3.3.0 --------------------------------------------------------
+			case 3:
+				/*if(pAll->eAsType == A_REMOTE)
+				{
+				Cmd^ pCmd = gcnew Cmd();
+				pCmd->cId = CL_LOG4;
+				pCmd->nKey = C_READ;
+				pCmd->nIdx = pJob->nLogIdx;
+				pAll->qCmd->Enqueue(pCmd);
+				pAll->cWaitT = 1;
+
+				while(pAll->cWaitT > 0 && i++ < REM_CNT)
+				Thread::Sleep(100);
+				}
+				else*/
+				poLog->log(C_READ, &psIni->sLog4, pJob->nLogIdx);
+
+				if (psIni->bBotScale)
+				{
+
+					//DC 4.0.1						 siloBar4_Click(nullptr, nullptr);
+					if (!siloBar4->Idle)
+					{
+						nSilo = 10;
+					}
+					else if (!siloBar42->Idle)
+					{
+						nSilo = 11;
+					}
+					else if (!siloBar43->Idle)
+					{
+						nSilo = 12;
+					}
+					if (gcnew String(psIni->sLog4.sT.mix_code) != ""
+						&& (gcnew String(psIni->sLog4.sT.mix_code) != gcnew String(psIni->asSilos[nSilo - 1].acProduct))) //DC 4.0.1
+					{
+						MessageBox::Show("Wrong Material on Silo" + psIni->asSilos[nSilo - 1].nSiloNum.ToString() + ", Ticket# " + psIni->sLog4.sT.ticket_num
+							+ " for Truck: " + gcnew String(psIni->sLog4.sT.truck_id)
+							+ ", NEED Material: " + gcnew String(psIni->sLog4.sT.mix_code), "Lane R",
+							System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+						bWrongMet = true;	//DC 4.0.1
+						return;
+					}
+					else
+					{
+						//DC 4.0.1
+						customer4->Text = pJob->stCustomer;
+						tic_num4->Text = pJob->nTicket.ToString();
+
+						Job4->Text = gcnew String(psIni->sLog4.sT.project_code);
+						material4->Text = gcnew String(psIni->sLog4.sT.mix_code);
+						truck4->Text = gcnew String(psIni->sLog4.sT.truck_id);
+						if (psIni->bScaleInLB)	//DC 3.2.0
+							target4->Text = psIni->sLog4.sT.load_size.ToString("F00");
+						else
+							target4->Text = psIni->sLog4.sT.load_size.ToString("F02");
+						plant4->Text = psIni->sLog4.sT.plant_num.ToString();
+					}
+
+
+					if (!bWrongMet)
+					{
+						switch (psIni->sLog4.nSilo)
+						{
+						case 1:	pAll->nTickets1--; break;// siloBar4_Click(nullptr, nullptr);	break;
+						case 2:	pAll->nTickets1--; break;// siloBar42_Click(nullptr, nullptr);	break;
+						case 3:	pAll->nTickets1--; break;// siloBar43_Click(nullptr, nullptr);	break;
+
+						case 4:	pAll->nTickets2--; break;// siloBar4_Click(nullptr, nullptr);	break;
+						case 5:	pAll->nTickets2--; break;// siloBar42_Click(nullptr, nullptr);	break;
+						case 6:	pAll->nTickets2--; break;// siloBar43_Click(nullptr, nullptr);	break;
+
+						case 7:	pAll->nTickets3--; break;// siloBar4_Click(nullptr, nullptr);	break;
+						case 8:	pAll->nTickets3--; break;// siloBar42_Click(nullptr, nullptr);	break;
+						case 9:	pAll->nTickets3--; break;// siloBar43_Click(nullptr, nullptr);	break;
+
+						case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
+						case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
+						case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
+						default:	siloBar4_Click(nullptr, nullptr);	break;
+						}
+					}
+				}
+				else
+				{
+					switch (psIni->sLog4.nSilo)
+					{
+					case 1:	pAll->nTickets1--;	break;
+					case 2:	pAll->nTickets2--;	break;
+					case 3:	pAll->nTickets3--;	break;
+					case 4:	psIni->nTickets4--;	break;
+					}
+					//DC 4.0.1						 psIni->sLog4.nSilo = 4;
+				}
+				if (!bWrongMet)	//DC 4.0.2
+				{
+					psIni->sLog4.nSilo = nSilo;
+					pJob4 = pJob;
+					pJob4->nSilo = psIni->sLog4.nSilo;
+					pTruck4 = findTruck(psIni->sLog4.sT.truck_id);
+					bAuto4 = true;
+					setState4(S_NEXT);
+					poLog->log(C_UPDATE, &psIni->sLog4, pJob->nLogIdx);
+				}
+				break;
+			}
+			if (!bWrongMet)
+			{
+				pAll->lJob->Remove(pJob);
+				pJob->eStatus = S_OK1;
+				dataGridJob->Visible = false;
+			}
+			else
+				bWrongMet = false;
+		}
+	}
 
 			 //--------------------------------------------------------------------
 	private: System::Void dataGridJob_ColumnHeaderMouseClick(System::Object^  sender
-				 , System::Windows::Forms::DataGridViewCellMouseEventArgs^  e) 
-			 {
-				 dataGridJob->Visible = false;
-			 }
+		, System::Windows::Forms::DataGridViewCellMouseEventArgs^  e)
+	{
+		dataGridJob->Visible = false;
+	}
 
 			 //--------------------------------------------------------------------
-	private: System::Void all1_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 jobBindingSource->DataSource = nullptr;
-				 jobBindingSource->DataSource = pAll->lJob;
-				 nLane = 0;
-				 dataGridJob->Visible = !dataGridJob->Visible;
-				 this->dataGridJob->DefaultCellStyle->ForeColor = System::Drawing::Color::MediumBlue;	//DC 4.0.2
-			 }
-	private: System::Void all2_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 jobBindingSource->DataSource = nullptr;
-				 jobBindingSource->DataSource = pAll->lJob;
-				 nLane = 1;
-				 dataGridJob->Visible = !dataGridJob->Visible;
-				 this->dataGridJob->DefaultCellStyle->ForeColor = System::Drawing::Color::DarkGreen;	//DC 4.0.2
-			 }
-	private: System::Void all3_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 jobBindingSource->DataSource = nullptr;
-				 jobBindingSource->DataSource = pAll->lJob;
-				 nLane = 2;
-				 dataGridJob->Visible = !dataGridJob->Visible;
-				 this->dataGridJob->DefaultCellStyle->ForeColor = System::Drawing::Color::DarkRed;	//DC 4.0.2
-			 }
-    private: System::Void all4_Click(System::Object^  sender, System::EventArgs^  e)	//DC 3.3.0
-			 {
-				 if(pAll->eAsType == A_REMOTE)
-				 {
-					 int j = 0;
-					 pAll->cWaitT = 1;
-					 Cmd^ pCmd = gcnew Cmd();
-					 pCmd = gcnew Cmd();
-					 pCmd->cId = CL_JOB;
-					 pAll->qCmd->Enqueue(pCmd);
+	private: System::Void all1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		jobBindingSource->DataSource = nullptr;
+		jobBindingSource->DataSource = pAll->lJob;
+		nLane = 0;
+		dataGridJob->Visible = !dataGridJob->Visible;
+		this->dataGridJob->DefaultCellStyle->ForeColor = System::Drawing::Color::MediumBlue;	//DC 4.0.2
+	}
+	private: System::Void all2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		jobBindingSource->DataSource = nullptr;
+		jobBindingSource->DataSource = pAll->lJob;
+		nLane = 1;
+		dataGridJob->Visible = !dataGridJob->Visible;
+		this->dataGridJob->DefaultCellStyle->ForeColor = System::Drawing::Color::DarkGreen;	//DC 4.0.2
+	}
+	private: System::Void all3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		jobBindingSource->DataSource = nullptr;
+		jobBindingSource->DataSource = pAll->lJob;
+		nLane = 2;
+		dataGridJob->Visible = !dataGridJob->Visible;
+		this->dataGridJob->DefaultCellStyle->ForeColor = System::Drawing::Color::DarkRed;	//DC 4.0.2
+	}
+	private: System::Void all4_Click(System::Object^  sender, System::EventArgs^  e)	//DC 3.3.0
+	{
+		if (pAll->eAsType == A_REMOTE)
+		{
+			int j = 0;
+			pAll->cWaitT = 1;
+			Cmd^ pCmd = gcnew Cmd();
+			pCmd = gcnew Cmd();
+			pCmd->cId = CL_JOB;
+			pAll->qCmd->Enqueue(pCmd);
 
-					 while(pAll->cWaitT > 0 && j++ < 5)
-					 Thread::Sleep(100);
-				 }
-				 jobBindingSource->DataSource = nullptr;
-				 jobBindingSource->DataSource = pAll->lJob;
-				 nLane = 3;
-				 dataGridJob->Visible = !dataGridJob->Visible;
-				 this->dataGridJob->DefaultCellStyle->ForeColor = System::Drawing::Color::MidnightBlue;	//DC 4.0.2
-			 }
+			while (pAll->cWaitT > 0 && j++ < 5)
+				Thread::Sleep(100);
+		}
+		jobBindingSource->DataSource = nullptr;
+		jobBindingSource->DataSource = pAll->lJob;
+		nLane = 3;
+		dataGridJob->Visible = !dataGridJob->Visible;
+		this->dataGridJob->DefaultCellStyle->ForeColor = System::Drawing::Color::MidnightBlue;	//DC 4.0.2
+	}
 #pragma endregion
 
-private: System::Void tonnage1_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
- 			if(MessageBox::Show("Reset Tonnage ?", "Lane A", 
-			 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-			 == System::Windows::Forms::DialogResult::Yes)
-					{
-						psIni->sInv.fTon1 = 0;
-						tonnage1->Text = psIni->sInv.fTon1.ToString("F01");
-					}
-		 }
-private: System::Void tonnage2_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
- 			if(MessageBox::Show("Reset Tonnage ?", "Lane B", 
-			 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-			 == System::Windows::Forms::DialogResult::Yes)
-					{
-						psIni->sInv.fTon2 = 0;
-						tonnage2->Text = psIni->sInv.fTon2.ToString("F01");
-					}
-		 }
-private: System::Void tonnage3_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
- 			if(MessageBox::Show("Reset Tonnage ?", "Lane C", 
-			 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-			 == System::Windows::Forms::DialogResult::Yes)
-					{
-						psIni->sInv.fTon3 = 0;
-						tonnage3->Text = psIni->sInv.fTon3.ToString("F01");
-					}
-		 }
-private: System::Void tonnage4_Click(System::Object^  sender, System::EventArgs^  e)	//DC 3.3.0 
-		 {
-			if(pAll->eAsType == A_REMOTE)
-			{
-				if(MessageBox::Show("Reset Tonnage ?", "Lane D", 
-				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
+	private: System::Void tonnage1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (MessageBox::Show("Reset Tonnage ?", "Lane A",
+			System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+			== System::Windows::Forms::DialogResult::Yes)
+		{
+			psIni->sInv.fTon1 = 0;
+			tonnage1->Text = psIni->sInv.fTon1.ToString("F01");
+		}
+	}
+	private: System::Void tonnage2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (MessageBox::Show("Reset Tonnage ?", "Lane B",
+			System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+			== System::Windows::Forms::DialogResult::Yes)
+		{
+			psIni->sInv.fTon2 = 0;
+			tonnage2->Text = psIni->sInv.fTon2.ToString("F01");
+		}
+	}
+	private: System::Void tonnage3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (MessageBox::Show("Reset Tonnage ?", "Lane C",
+			System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+			== System::Windows::Forms::DialogResult::Yes)
+		{
+			psIni->sInv.fTon3 = 0;
+			tonnage3->Text = psIni->sInv.fTon3.ToString("F01");
+		}
+	}
+	private: System::Void tonnage4_Click(System::Object^  sender, System::EventArgs^  e)	//DC 3.3.0 
+	{
+		if (pAll->eAsType == A_REMOTE)
+		{
+			if (MessageBox::Show("Reset Tonnage ?", "Lane D",
+				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
 				== System::Windows::Forms::DialogResult::Yes)
-				{
-					int i = 0;
-					Cmd^ pCmd = gcnew Cmd();
-
-					pCmd->cId = CL_KEY;
-					pCmd->nKey = K_RESETTON4;
-					pAll->qCmd->Enqueue(pCmd);
-
-					pAll->cWaitT = 1;
-
-					while(pAll->cWaitT > 0 && i++ < 5)
-					Thread::Sleep(100);
-				}
-			}
-			else if(pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
 			{
- 				if(MessageBox::Show("Reset Tonnage ?", "Lane D", 
-				 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-				 == System::Windows::Forms::DialogResult::Yes)
-				{
-					psIni->sInv.fTon4 = 0;
-					tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
-				}
-			}
-			else if(pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
-			{
-				psIni->sInv.fTon4 = 0;
-				tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
-				pAll->bRemoteCall = false;
-			}
-		 }
-
-private: System::Void iOTestToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			IOForm^ ioForm = gcnew IOForm(pAll);
-			ioForm->Show(this);
-		 }
-private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void customer3_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void material3_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void label7_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void label11_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void grossC_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void webBrowser3_DocumentCompleted(System::Object^  sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^  e) {
-		 }
-private: System::Void webBrowser4_DocumentCompleted(System::Object^  sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^  e) {
-		 }
-private: System::Void radioButton1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void taxExempt3_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void configToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 CfgForm^ cfgForm = gcnew CfgForm(pAll);
-			 cfgForm->Show(this);
-		 }
-private: System::Void fill12_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void groupBox4_Enter(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void numericUpDown2_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void numericUpDown3_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void resetBt1_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 resetTargetOutput();		//DC 4.0.1
-
-			 if(MessageBox::Show("Reset Ticket ?", "Lane A", 
-			 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-			 == System::Windows::Forms::DialogResult::Yes)
-			 {
-				pJob1->eStatus = S_NEW;
-				pAll->lJob->Add(pJob1);
-
-				if(!psIni->bBotScale)
-				switch(psIni->sLog1.nSilo)
-				{
-					case 1: pAll->nTickets1++; break;
-					case 2: pAll->nTickets2++; break;
-					case 3: pAll->nTickets3++; break;
-					case 4: psIni->nTickets4++; break;
-				}
-				else
-				switch(psIni->sLog1.nSilo)
-				{
-					case 1: 
-					case 2: 
-					case 3: pAll->nTickets1++; break;
-					case 4: 
-					case 5: 
-					case 6: pAll->nTickets2++; break;
-					case 7: 
-					case 8: 
-					case 9: pAll->nTickets3++; break;
-					case 10: 
-					case 11: 
-					case 12: psIni->nTickets4++; break;
-				 }
-				 setState1(S_IDLE); 
-			 } 
-			 return;
-		 }
-private: System::Void resetBt2_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 resetTargetOutput();		//DC 4.0.1
-
-			 if(MessageBox::Show("Reset Ticket ?", "Lane B", 
-			 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-			 == System::Windows::Forms::DialogResult::Yes)
-			 {
-				pJob2->eStatus = S_NEW;
-				pAll->lJob->Add(pJob2);
-
-				if(!psIni->bBotScale)
-				switch(psIni->sLog2.nSilo)
-				{
-					case 1: pAll->nTickets1++; break;
-					case 2: pAll->nTickets2++; break;
-					case 3: pAll->nTickets3++; break;
-					case 4: psIni->nTickets4++; break;
-				}
-				else
-				switch(psIni->sLog2.nSilo)
-				{
-					case 1: 
-					case 2: 
-					case 3: pAll->nTickets1++; break;
-					case 4: 
-					case 5: 
-					case 6: pAll->nTickets2++; break;
-					case 7: 
-					case 8: 
-					case 9: pAll->nTickets3++; break;
-					case 10: 
-					case 11: 
-					case 12: psIni->nTickets4++; break;
-				 }
-				 setState2(S_IDLE); 
-			 } 
-			 return;
-		 }
-private: System::Void resetBt3_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 resetTargetOutput();		//DC 4.0.1
-
-			 if(MessageBox::Show("Reset Ticket ?", "Lane C", 
-			 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-			 == System::Windows::Forms::DialogResult::Yes)
-			 {
-				pJob3->eStatus = S_NEW;
-				pAll->lJob->Add(pJob3);
-
-				if(!psIni->bBotScale)
-				switch(psIni->sLog3.nSilo)
-				{
-					case 1: pAll->nTickets1++; break;
-					case 2: pAll->nTickets2++; break;
-					case 3: pAll->nTickets3++; break;
-					case 4: psIni->nTickets4++; break;
-				}
-				else
-				switch(psIni->sLog3.nSilo)
-				{
-					case 1: 
-					case 2: 
-					case 3: pAll->nTickets1++; break;
-					case 4: 
-					case 5: 
-					case 6: pAll->nTickets2++; break;
-					case 7: 
-					case 8: 
-					case 9: pAll->nTickets3++; break;
-					case 10: 
-					case 11: 
-					case 12: psIni->nTickets4++; break;
-				 }
-				 setState3(S_IDLE); 
-			 } 
-			 return;
-		 }
-private: System::Void resetBt4_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 if(pAll->eAsType != A_REMOTE)
-				resetTargetOutput();		//DC 4.0.1
-
-			 if(pAll->bRemoteCall && pAll->eAsType != A_REMOTE)
-			 {
-				 pAll->bRemoteCall = false;
-				 pJob4->eStatus = S_NEW;
-				 pAll->lJob->Add(pJob4);
-
-					if(!psIni->bBotScale)
-					switch(psIni->sLog4.nSilo)
-					{
-						case 1: pAll->nTickets1++; break;
-						case 2: pAll->nTickets2++; break;
-						case 3: pAll->nTickets3++; break;
-						case 4: psIni->nTickets4++; break;
-					}
-					else
-					switch(psIni->sLog4.nSilo)
-					{
-						case 1: 
-						case 2: 
-						case 3: pAll->nTickets1++; break;
-						case 4: 
-						case 5: 
-						case 6: pAll->nTickets2++; break;
-						case 7: 
-						case 8: 
-						case 9: pAll->nTickets3++; break;
-						case 10: 
-						case 11: 
-						case 12: psIni->nTickets4++; break;
-					 }
-					 setState4(S_IDLE); 
-				 
-			 }
-			 else
-			 {
-				 if(MessageBox::Show("Reset Ticket ?", "Lane A", 
-				 System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question) 
-				 == System::Windows::Forms::DialogResult::Yes)
-				 {
-					 if(pAll->eAsType == A_REMOTE)
-					 {
-						int i = 0;
-						int j = 0;
-						Cmd^ pCmd = gcnew Cmd();
-						pCmd->cId = CL_KEY;
-						pCmd->nKey = K_RESET4;
-						pAll->qCmd->Enqueue(pCmd);
-
-						pAll->cWaitT = 1;
-
-						while(pAll->cWaitT > 0 && i++ < 5)
-						Thread::Sleep(100);
-
-						pCmd = gcnew Cmd();
-						pCmd->cId = CL_JOB;
-						pAll->qCmd->Enqueue(pCmd);
-
-						while(pAll->cWaitT > 0 && j++ < 5)
-						Thread::Sleep(100);
-					 }
-					
-				    if(pAll->eAsType != A_REMOTE)
-					{
-						pJob4->eStatus = S_NEW;
-						pAll->lJob->Add(pJob4);
-					}
-
-					if(!psIni->bBotScale)
-					switch(psIni->sLog4.nSilo)
-					{
-						case 1: pAll->nTickets1++; break;
-						case 2: pAll->nTickets2++; break;
-						case 3: pAll->nTickets3++; break;
-						case 4: psIni->nTickets4++; break;
-					}
-					else if (pAll->eAsType != A_REMOTE)
-					switch(psIni->sLog4.nSilo)
-					{
-						case 1: 
-						case 2: 
-						case 3: pAll->nTickets1++; break;
-						case 4: 
-						case 5: 
-						case 6: pAll->nTickets2++; break;
-						case 7: 
-						case 8: 
-						case 9: pAll->nTickets3++; break;
-						case 10: 
-						case 11: 
-						case 12: psIni->nTickets4++; break;
-					 }
-					 setState4(S_IDLE); 
-				 }
-			 }
-			 return;
-		 }
-private: System::Void remLoginBt_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 Cmd^ pCmd;
-			 int i=0;
-			 int nTime;
-
-			 this->remLoginBt->Enabled = false;
-			  this->loginErrLb->Visible = true;
-			  this->loginErrLb->Refresh();
-
-			 oClinkThread = gcnew Thread( gcnew ParameterizedThreadStart( &CClink::ThreadProc ) );
-			 oClinkThread->IsBackground = true;
-			 oClinkThread->Start(pAll);	
-			 Thread::Sleep(5000);
-
-			 pCmd = gcnew Cmd();
-			 pCmd->cId = CL_LOGIN;
-			 pCmd->nKey = 1;
-
-			 pAll->qCmd->Enqueue(pCmd);
-			 pAll->nKey = 1;
-
-			 while(pAll->nKey > 0 && i++ < 5)
-				Thread::Sleep(500);				//DC
-
-			 if(pAll->cLogin != 1)
-			 {
-				 oClinkThread->Abort();
-				 MessageBox::Show("Please Check Remote Server", "Remote Server is not running", 
-						 System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
-
-				 this->loginErrLb->Visible = false;
-				 this->loginErrLb->Refresh();
-				 this->remLoginBt->Enabled = true;
-				 return;
-			 }
-
-			 pAll->nCmd = 0;
-
-			 pCmd = gcnew Cmd();
-			 pCmd->cId = CL_INI;
-			 pAll->qCmd->Enqueue(pCmd);
-
-			 pCmd = gcnew Cmd();
-			 pCmd->cId = CL_TRUCKS;
-			 pAll->qCmd->Enqueue(pCmd);
-
-			 pCmd = gcnew Cmd();
-			 pCmd->cId = CL_JOB;
-			 pAll->qCmd->Enqueue(pCmd);
-
-			 nTime = 0;
-		 //loop:			 nTime = 0;
-			 while((pAll->nCmd < 3) && (nTime < 2))
-			 {
-//		 			testLb->Text = pAll->nCmd.ToString();
-				 Thread::Sleep(500);					//DC
-				 nTime++;
-			 }
-
-			 init();
-			 bRemLogin = true;
-			 this->remLoginBt->Enabled = false;
-			 this->remLoginBt->Visible = false;
-			 this->loginErrLb->Visible = false;
-			 this->ipAddressLb->Visible = false;
-		 }
-private: System::Void target4_TextChanged(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			  
-			  if(pAll->eAsType == A_REMOTE && target4->Text != "")
-			  {
-				 double fLoadChg;
-				fLoadChg = Convert::ToDouble(target4->Text);
+				int i = 0;
 				Cmd^ pCmd = gcnew Cmd();
-				pJob4->fLoad = fLoadChg;
-				pAll->pJob4 = pJob4;
-				int k = 0;
-				pCmd = gcnew Cmd();
-				pCmd->cId = CL_SJOB4;
+
+				pCmd->cId = CL_KEY;
+				pCmd->nKey = K_RESETTON4;
 				pAll->qCmd->Enqueue(pCmd);
 
 				pAll->cWaitT = 1;
 
-				while(pAll->cWaitT > 0 && k++ < 5)
+				while (pAll->cWaitT > 0 && i++ < 5)
+					Thread::Sleep(100);
+			}
+		}
+		else if (pAll->eAsType != A_REMOTE && !pAll->bRemoteCall)
+		{
+			if (MessageBox::Show("Reset Tonnage ?", "Lane D",
+				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+				== System::Windows::Forms::DialogResult::Yes)
+			{
+				psIni->sInv.fTon4 = 0;
+				tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
+			}
+		}
+		else if (pAll->eAsType != A_REMOTE && pAll->bRemoteCall)
+		{
+			psIni->sInv.fTon4 = 0;
+			tonnage4->Text = psIni->sInv.fTon4.ToString("F01");
+			pAll->bRemoteCall = false;
+		}
+	}
+
+	private: System::Void iOTestToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		IOForm^ ioForm = gcnew IOForm(pAll);
+		ioForm->Show(this);
+	}
+	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void customer3_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void material3_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void label7_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void label11_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void grossC_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void webBrowser3_DocumentCompleted(System::Object^  sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^  e) {
+	}
+	private: System::Void webBrowser4_DocumentCompleted(System::Object^  sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^  e) {
+	}
+	private: System::Void radioButton1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void taxExempt3_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void configToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		CfgForm^ cfgForm = gcnew CfgForm(pAll);
+		cfgForm->Show(this);
+	}
+	private: System::Void fill12_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void groupBox4_Enter(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void numericUpDown2_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void numericUpDown3_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void resetBt1_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		resetTargetOutput();		//DC 4.0.1
+
+		if (MessageBox::Show("Reset Ticket ?", "Lane A",
+			System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+			== System::Windows::Forms::DialogResult::Yes)
+		{
+			pJob1->eStatus = S_NEW;
+			pAll->lJob->Add(pJob1);
+
+			if (!psIni->bBotScale)
+				switch (psIni->sLog1.nSilo)
+				{
+				case 1: pAll->nTickets1++; break;
+				case 2: pAll->nTickets2++; break;
+				case 3: pAll->nTickets3++; break;
+				case 4: psIni->nTickets4++; break;
+				}
+			else
+				switch (psIni->sLog1.nSilo)
+				{
+				case 1:
+				case 2:
+				case 3: pAll->nTickets1++; break;
+				case 4:
+				case 5:
+				case 6: pAll->nTickets2++; break;
+				case 7:
+				case 8:
+				case 9: pAll->nTickets3++; break;
+				case 10:
+				case 11:
+				case 12: psIni->nTickets4++; break;
+				}
+			setState1(S_IDLE);
+		}
+		return;
+	}
+	private: System::Void resetBt2_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		resetTargetOutput();		//DC 4.0.1
+
+		if (MessageBox::Show("Reset Ticket ?", "Lane B",
+			System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+			== System::Windows::Forms::DialogResult::Yes)
+		{
+			pJob2->eStatus = S_NEW;
+			pAll->lJob->Add(pJob2);
+
+			if (!psIni->bBotScale)
+				switch (psIni->sLog2.nSilo)
+				{
+				case 1: pAll->nTickets1++; break;
+				case 2: pAll->nTickets2++; break;
+				case 3: pAll->nTickets3++; break;
+				case 4: psIni->nTickets4++; break;
+				}
+			else
+				switch (psIni->sLog2.nSilo)
+				{
+				case 1:
+				case 2:
+				case 3: pAll->nTickets1++; break;
+				case 4:
+				case 5:
+				case 6: pAll->nTickets2++; break;
+				case 7:
+				case 8:
+				case 9: pAll->nTickets3++; break;
+				case 10:
+				case 11:
+				case 12: psIni->nTickets4++; break;
+				}
+			setState2(S_IDLE);
+		}
+		return;
+	}
+	private: System::Void resetBt3_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		resetTargetOutput();		//DC 4.0.1
+
+		if (MessageBox::Show("Reset Ticket ?", "Lane C",
+			System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+			== System::Windows::Forms::DialogResult::Yes)
+		{
+			pJob3->eStatus = S_NEW;
+			pAll->lJob->Add(pJob3);
+
+			if (!psIni->bBotScale)
+				switch (psIni->sLog3.nSilo)
+				{
+				case 1: pAll->nTickets1++; break;
+				case 2: pAll->nTickets2++; break;
+				case 3: pAll->nTickets3++; break;
+				case 4: psIni->nTickets4++; break;
+				}
+			else
+				switch (psIni->sLog3.nSilo)
+				{
+				case 1:
+				case 2:
+				case 3: pAll->nTickets1++; break;
+				case 4:
+				case 5:
+				case 6: pAll->nTickets2++; break;
+				case 7:
+				case 8:
+				case 9: pAll->nTickets3++; break;
+				case 10:
+				case 11:
+				case 12: psIni->nTickets4++; break;
+				}
+			setState3(S_IDLE);
+		}
+		return;
+	}
+	private: System::Void resetBt4_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		if (pAll->eAsType != A_REMOTE)
+			resetTargetOutput();		//DC 4.0.1
+
+		if (pAll->bRemoteCall && pAll->eAsType != A_REMOTE)
+		{
+			pAll->bRemoteCall = false;
+			pJob4->eStatus = S_NEW;
+			pAll->lJob->Add(pJob4);
+
+			if (!psIni->bBotScale)
+				switch (psIni->sLog4.nSilo)
+				{
+				case 1: pAll->nTickets1++; break;
+				case 2: pAll->nTickets2++; break;
+				case 3: pAll->nTickets3++; break;
+				case 4: psIni->nTickets4++; break;
+				}
+			else
+				switch (psIni->sLog4.nSilo)
+				{
+				case 1:
+				case 2:
+				case 3: pAll->nTickets1++; break;
+				case 4:
+				case 5:
+				case 6: pAll->nTickets2++; break;
+				case 7:
+				case 8:
+				case 9: pAll->nTickets3++; break;
+				case 10:
+				case 11:
+				case 12: psIni->nTickets4++; break;
+				}
+			setState4(S_IDLE);
+
+		}
+		else
+		{
+			if (MessageBox::Show("Reset Ticket ?", "Lane A",
+				System::Windows::Forms::MessageBoxButtons::YesNo, MessageBoxIcon::Question)
+				== System::Windows::Forms::DialogResult::Yes)
+			{
+				if (pAll->eAsType == A_REMOTE)
+				{
+					int i = 0;
+					int j = 0;
+					Cmd^ pCmd = gcnew Cmd();
+					pCmd->cId = CL_KEY;
+					pCmd->nKey = K_RESET4;
+					pAll->qCmd->Enqueue(pCmd);
+
+					pAll->cWaitT = 1;
+
+					while (pAll->cWaitT > 0 && i++ < 5)
+						Thread::Sleep(100);
+
+					pCmd = gcnew Cmd();
+					pCmd->cId = CL_JOB;
+					pAll->qCmd->Enqueue(pCmd);
+
+					while (pAll->cWaitT > 0 && j++ < 5)
+						Thread::Sleep(100);
+				}
+
+				if (pAll->eAsType != A_REMOTE)
+				{
+					pJob4->eStatus = S_NEW;
+					pAll->lJob->Add(pJob4);
+				}
+
+				if (!psIni->bBotScale)
+					switch (psIni->sLog4.nSilo)
+					{
+					case 1: pAll->nTickets1++; break;
+					case 2: pAll->nTickets2++; break;
+					case 3: pAll->nTickets3++; break;
+					case 4: psIni->nTickets4++; break;
+					}
+				else if (pAll->eAsType != A_REMOTE)
+					switch (psIni->sLog4.nSilo)
+					{
+					case 1:
+					case 2:
+					case 3: pAll->nTickets1++; break;
+					case 4:
+					case 5:
+					case 6: pAll->nTickets2++; break;
+					case 7:
+					case 8:
+					case 9: pAll->nTickets3++; break;
+					case 10:
+					case 11:
+					case 12: psIni->nTickets4++; break;
+					}
+				setState4(S_IDLE);
+			}
+		}
+		return;
+	}
+	private: System::Void remLoginBt_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		Cmd^ pCmd;
+		int i = 0;
+		int nTime;
+
+		this->remLoginBt->Enabled = false;
+		this->loginErrLb->Visible = true;
+		this->loginErrLb->Refresh();
+
+		oClinkThread = gcnew Thread(gcnew ParameterizedThreadStart(&CClink::ThreadProc));
+		oClinkThread->IsBackground = true;
+		oClinkThread->Start(pAll);
+		Thread::Sleep(5000);
+
+		pCmd = gcnew Cmd();
+		pCmd->cId = CL_LOGIN;
+		pCmd->nKey = 1;
+
+		pAll->qCmd->Enqueue(pCmd);
+		pAll->nKey = 1;
+
+		while (pAll->nKey > 0 && i++ < 5)
+			Thread::Sleep(500);				//DC
+
+		if (pAll->cLogin != 1)
+		{
+			oClinkThread->Abort();
+			MessageBox::Show("Please Check Remote Server", "Remote Server is not running",
+				System::Windows::Forms::MessageBoxButtons::OK, MessageBoxIcon::Error);
+
+			this->loginErrLb->Visible = false;
+			this->loginErrLb->Refresh();
+			this->remLoginBt->Enabled = true;
+			return;
+		}
+
+		pAll->nCmd = 0;
+
+		pCmd = gcnew Cmd();
+		pCmd->cId = CL_INI;
+		pAll->qCmd->Enqueue(pCmd);
+
+		pCmd = gcnew Cmd();
+		pCmd->cId = CL_TRUCKS;
+		pAll->qCmd->Enqueue(pCmd);
+
+		pCmd = gcnew Cmd();
+		pCmd->cId = CL_JOB;
+		pAll->qCmd->Enqueue(pCmd);
+
+		nTime = 0;
+		//loop:			 nTime = 0;
+		while ((pAll->nCmd < 3) && (nTime < 2))
+		{
+			//		 			testLb->Text = pAll->nCmd.ToString();
+			Thread::Sleep(500);					//DC
+			nTime++;
+		}
+
+		init();
+		bRemLogin = true;
+		this->remLoginBt->Enabled = false;
+		this->remLoginBt->Visible = false;
+		this->loginErrLb->Visible = false;
+		this->ipAddressLb->Visible = false;
+	}
+	private: System::Void target4_TextChanged(System::Object^  sender, System::EventArgs^  e)
+	{
+
+		if (pAll->eAsType == A_REMOTE && target4->Text != "")
+		{
+			double fLoadChg;
+			fLoadChg = Convert::ToDouble(target4->Text);
+			Cmd^ pCmd = gcnew Cmd();
+			pJob4->fLoad = fLoadChg;
+			pAll->pJob4 = pJob4;
+			int k = 0;
+			pCmd = gcnew Cmd();
+			pCmd->cId = CL_SJOB4;
+			pAll->qCmd->Enqueue(pCmd);
+
+			pAll->cWaitT = 1;
+
+			while (pAll->cWaitT > 0 && k++ < 5)
 				Thread::Sleep(100);
-			  }
-		 }
-};		// Form1 class
+		}
+	}
+	};		// Form1 class
 }		// namespace as
 
 

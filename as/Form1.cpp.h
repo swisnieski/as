@@ -15782,12 +15782,6 @@ private: System::Void okB_Click(System::Object^  sender, System::EventArgs^  e)
 					 bool bDone = false;
 					 int nIdx = 0;
 
-					 if (!pAll)
-						 return;
-					 if (!pAll->lJob)
-						 return;
-
-
 					 if(pAll->lJob->Count == 0)
 						 return;
 					 

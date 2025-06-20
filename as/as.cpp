@@ -90,7 +90,6 @@ namespace As
 			pAll->qPrint1 = gcnew System::Collections::Generic::Queue<String^>();
 			pAll->qPrint2 = gcnew System::Collections::Generic::Queue<String^>();
 			pAll->qPrint3 = gcnew System::Collections::Generic::Queue<String^>();
-			//pAll->qPrint4 = gcnew System::Collections::Generic::Queue<PrintQ^>();
 			pAll->qPrint4 = gcnew System::Collections::Generic::Queue<String^>();
 			pAll->q2ndPrint1 = gcnew System::Collections::Generic::Queue<PrintQ^>();			//DC 4.0.2
 			pAll->q2ndPrint2 = gcnew System::Collections::Generic::Queue<PrintQ^>();			//DC 4.0.2
@@ -100,7 +99,7 @@ namespace As
 			pAll->qDbase = gcnew System::Collections::Generic::Queue<Dbase^>();
 			pAll->qDbaseBad = gcnew System::Collections::Generic::Queue<Dbase^>();
 
-			pAll->lJobs = gcnew List<Job^>(0);
+			pAll->lJob = gcnew List<Job^>(0);
 			pAll->lOld = gcnew List<Job^>(0);
 			pAll->lTruck = gcnew List<Truck^>(0);
 
