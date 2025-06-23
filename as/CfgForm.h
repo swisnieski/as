@@ -115,525 +115,112 @@ namespace As {
 	private: System::Windows::Forms::Label^  lineLB1;
 
 	private: System::Windows::Forms::Label^  lineLB4;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Label^  truckMaxLB;
-private: System::Windows::Forms::Label^  truckMaxLB4;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::Label^  truckMaxLB4;
 	private: System::Windows::Forms::TextBox^  truckScaledMinTB;
-
 	private: System::Windows::Forms::Label^  trkScaledMinLB;
 	private: System::Windows::Forms::Label^  trkScaledMaxLB;
 	private: System::Windows::Forms::TextBox^  truckScaledMaxTB;
-
-
-
-
-
-
 	private: System::Windows::Forms::Label^  cartScaledMinLB;
-private: System::Windows::Forms::TextBox^  cartScaledMinTB;
-
-
-
-
-
-private: System::Windows::Forms::Label^  cartScaledMaxLB;
-private: System::Windows::Forms::TextBox^  cartScaledMaxTB;
-
-
-
-
-private: System::Windows::Forms::GroupBox^  analogOutputGB;
-private: System::Windows::Forms::DataGridView^  dataGridView2;
-
-private: System::Windows::Forms::CheckBox^  bitWiseCB;
-
-private: System::Windows::Forms::BindingSource^  bitWiseBindingSource;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nBitWise;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nBitCheckI;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nBitWiseDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dAddTolDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nSiloJogDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nSiloNumDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  fFallDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nHoldIDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDropReadyIDataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nAddODataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nHoldODataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDoneODataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDropODataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nReadyODataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDoneIDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate4ODataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate3ODataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate2ODataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate1ODataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDelayTimeDataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDelayPctDataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct4DataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct3DataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct2DataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct1DataGridViewTextBoxColumn1;
-private: System::Windows::Forms::DataGridViewCheckBoxColumn^  bUsedDataGridViewCheckBoxColumn1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  stLblDataGridViewTextBoxColumn1;
-private: System::Windows::Forms::TextBox^  sendTargetOTb;
-
-private: System::Windows::Forms::Label^  sendTargetLb;
-private: System::Windows::Forms::Label^  receivedTargetLb;
-private: System::Windows::Forms::TextBox^  receivedTargetITb;
-private: System::Windows::Forms::Label^  keepAliveOLb;
-
-
-
-private: System::Windows::Forms::TextBox^  keepAliveOTb;
-private: System::Windows::Forms::Label^  keepAliveILb;
-private: System::Windows::Forms::TextBox^  keepAliveITb;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-private: System::Windows::Forms::Label^  siloBit1Lb;
-
-private: System::Windows::Forms::TextBox^  siloBit1Tb;
-private: System::Windows::Forms::TextBox^  siloBit2Tb;
-private: System::Windows::Forms::Label^  siloBit2Lb;
-
-private: System::Windows::Forms::TextBox^  siloBit3Tb;
-private: System::Windows::Forms::Label^  siloBit3Lb;
-
-
-private: System::Windows::Forms::TextBox^  siloBit4Tb;
-private: System::Windows::Forms::Label^  siloBit4Lb;
-private: System::Windows::Forms::Label^  siloOutputLb;
-private: System::Windows::Forms::Label^  siloCheckLb;
-private: System::Windows::Forms::TextBox^  siloBitCheck1Tb;
-private: System::Windows::Forms::TextBox^  siloBitCheck2Tb;
-private: System::Windows::Forms::TextBox^  siloBitCheck3Tb;
-private: System::Windows::Forms::TextBox^  siloBitCheck4Tb;
-private: System::Windows::Forms::TextBox^  keepOnTimeTb;
-private: System::Windows::Forms::TextBox^  keepOffTimeTb;
-
-
-private: System::Windows::Forms::Label^  keepOnTimeLb;
-private: System::Windows::Forms::Label^  keepOffTimeLb;
-private: System::Windows::Forms::Label^  keepTimeLb;
-private: System::Windows::Forms::TextBox^  laneTare4Tb;
-
-private: System::Windows::Forms::TextBox^  laneTare3Tb;
-
-private: System::Windows::Forms::TextBox^  laneTare2Tb;
-
-private: System::Windows::Forms::TextBox^  laneTare1Tb;
-
-private: System::Windows::Forms::Label^  label4;
-private: System::Windows::Forms::Label^  label5;
-private: System::Windows::Forms::Label^  label6;
-private: System::Windows::Forms::Label^  label7;
-private: System::Windows::Forms::Label^  label8;
-private: System::Windows::Forms::DataGridViewCheckBoxColumn^  bUsedDataGridViewCheckBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nSiloNum;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  stLblDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  stProduct;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDropODataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nHoldODataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDoneODataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDoneI;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nHoldI;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nReadyODataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct1DataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate1ODataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct2DataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate2ODataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct3DataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate3ODataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDropReadyIDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nSiloJog;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  dAddTol;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDelayPctDataGridViewTextBoxColumn;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDelayTimeDataGridViewTextBoxColumn;
-private: System::Windows::Forms::Label^  truckMaxLB2;
-private: System::Windows::Forms::Label^  lineLB2;
-
-private: System::Windows::Forms::Label^  truckMaxLB3;
-private: System::Windows::Forms::Label^  lineLB3;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::TextBox^  cartScaledMinTB;
+	private: System::Windows::Forms::Label^  cartScaledMaxLB;
+	private: System::Windows::Forms::TextBox^  cartScaledMaxTB;
+	private: System::Windows::Forms::GroupBox^  analogOutputGB;
+	private: System::Windows::Forms::DataGridView^  dataGridView2;
+	private: System::Windows::Forms::CheckBox^  bitWiseCB;
+	private: System::Windows::Forms::BindingSource^  bitWiseBindingSource;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nBitWise;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nBitCheckI;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nBitWiseDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dAddTolDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nSiloJogDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nSiloNumDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  fFallDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nHoldIDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDropReadyIDataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nAddODataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nHoldODataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDoneODataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDropODataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nReadyODataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDoneIDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate4ODataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate3ODataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate2ODataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate1ODataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDelayTimeDataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDelayPctDataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct4DataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct3DataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct2DataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct1DataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewCheckBoxColumn^  bUsedDataGridViewCheckBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  stLblDataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::TextBox^  sendTargetOTb;
+	private: System::Windows::Forms::Label^  sendTargetLb;
+	private: System::Windows::Forms::Label^  receivedTargetLb;
+	private: System::Windows::Forms::TextBox^  receivedTargetITb;
+	private: System::Windows::Forms::Label^  keepAliveOLb;
+	private: System::Windows::Forms::TextBox^  keepAliveOTb;
+	private: System::Windows::Forms::Label^  keepAliveILb;
+	private: System::Windows::Forms::TextBox^  keepAliveITb;
+	private: System::Windows::Forms::Label^  siloBit1Lb;
+	private: System::Windows::Forms::TextBox^  siloBit1Tb;
+	private: System::Windows::Forms::TextBox^  siloBit2Tb;
+	private: System::Windows::Forms::Label^  siloBit2Lb;
+	private: System::Windows::Forms::TextBox^  siloBit3Tb;
+	private: System::Windows::Forms::Label^  siloBit3Lb;
+	private: System::Windows::Forms::TextBox^  siloBit4Tb;
+	private: System::Windows::Forms::Label^  siloBit4Lb;
+	private: System::Windows::Forms::Label^  siloOutputLb;
+	private: System::Windows::Forms::Label^  siloCheckLb;
+	private: System::Windows::Forms::TextBox^  siloBitCheck1Tb;
+	private: System::Windows::Forms::TextBox^  siloBitCheck2Tb;
+	private: System::Windows::Forms::TextBox^  siloBitCheck3Tb;
+	private: System::Windows::Forms::TextBox^  siloBitCheck4Tb;
+	private: System::Windows::Forms::TextBox^  keepOnTimeTb;
+	private: System::Windows::Forms::TextBox^  keepOffTimeTb;
+	private: System::Windows::Forms::Label^  keepOnTimeLb;
+	private: System::Windows::Forms::Label^  keepOffTimeLb;
+	private: System::Windows::Forms::Label^  keepTimeLb;
+	private: System::Windows::Forms::TextBox^  laneTare4Tb;
+	private: System::Windows::Forms::TextBox^  laneTare3Tb;
+
+	private: System::Windows::Forms::TextBox^  laneTare2Tb;
+
+	private: System::Windows::Forms::TextBox^  laneTare1Tb;
+
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::DataGridViewCheckBoxColumn^  bUsedDataGridViewCheckBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nSiloNum;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  stLblDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  stProduct;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDropODataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nHoldODataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDoneODataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDoneI;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nHoldI;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nReadyODataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct1DataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate1ODataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct2DataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate2ODataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRatePct3DataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nFlowRate3ODataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDropReadyIDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nSiloJog;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dAddTol;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDelayPctDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^  nDelayTimeDataGridViewTextBoxColumn;
+	private: System::Windows::Forms::Label^  truckMaxLB2;
+	private: System::Windows::Forms::Label^  lineLB2;
+	private: System::Windows::Forms::Label^  truckMaxLB3;
+	private: System::Windows::Forms::Label^  lineLB3;
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
