@@ -16,10 +16,8 @@ namespace As
 {
 #define PUC_ADDR 0xf0380000
 #define DOG_ADDR 0xf0380010
-
 #define CFG_ADDR 0xf0100004
 #define DOG_ENA  0xf0100028
-
 #define BLK_ADDR  0xf0500000
 #define READ_ADDR 0xf1808004
 #define READ_4_1  0xf0800f00
@@ -39,6 +37,12 @@ namespace As
 #define READ_BLOCK_REQUEST   5
 #define READ_QUAD_RESPONSE   6
 #define READ_BLOCK_RESPONSE  7
+
+	union
+	{
+		float input;   // assumes sizeof(float) == sizeof(int)
+		int   output;
+	} data;
 
 
 	// THREAD class for OPTO TCPIP communication =================================
@@ -230,20 +234,17 @@ namespace As
 		// Get 32-bit IEEE 754 format of the decimal value
 		static std::string GetBinary32( float value )
 		{
-			union
-			{
-				 float input;   // assumes sizeof(float) == sizeof(int)
-				 int   output;
-			}    data;
+			//union   moved this to the top of the named space becuase of compile error  SRW
+			//{
+			//	 float input;   // assumes sizeof(float) == sizeof(int)
+			//	 int   output;
+			//}    data;
 		 
 			data.input = value;
 		 
-			std::bitset<sizeof(float) * CHAR_BIT>   bits(data.output);
+			std::bitset<sizeof(float) * CHAR_BIT>bits(data.output);
 		 
-			std::string mystring = bits.to_string<char, 
-												  std::char_traits<char>,
-												  std::allocator<char> >();
-		 
+			std::string mystring = bits.to_string<char, std::char_traits<char>,std::allocator<char> >();
 			return mystring;
 		}
 	private:

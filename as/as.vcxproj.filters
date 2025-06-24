@@ -108,6 +108,9 @@
     <ClInclude Include="Form1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="About.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="as.cpp">
@@ -155,7 +158,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="as.truck">
-      <Filter>Header Files</Filter>
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="as.inv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="as.cfg">
+      <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
 </Project>

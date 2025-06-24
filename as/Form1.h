@@ -1,7 +1,7 @@
 #pragma once
 
 #include "stdafx.h"
-//#include "About.h"
+#include "About.h"
 #include "InvForm.h"
 #include "StopForm.h"
 #include "TruckFm.h"
@@ -15,7 +15,7 @@
 #include <string.h>			//DC 4.0.8
 #include "ClinkT.h"			//DC 4.1.0
 #include <time.h>			//Dc 4.1.1
-#include "DbaseT.h"
+//#include "DbaseT.h"
 
 namespace As
 {
@@ -23,8 +23,8 @@ namespace As
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
-	//using namespace System::Data;
-	//using namespace System::Data::Odbc;
+	using namespace System::Data;
+	using namespace System::Data::Odbc;
 	using namespace System::Drawing;
 	using namespace System::Net;
 	using namespace System::Net::Sockets;
@@ -109,8 +109,8 @@ namespace As
 			qDbase = pAll->qDbase;
 			qDbaseBad = pAll->qDbaseBad;
 
-//			autoEvent = gcnew AutoResetEvent( false );
-//			b485Ok = true;
+			//autoEvent = gcnew AutoResetEvent( false );
+			//b485Ok = true;
 			nSplash = SPLASH;
 
 			nOffs1 = 12;
@@ -1482,16 +1482,12 @@ private: As::BinCtl^  siloBar24;
 			 void InitializeComponent(void)
 			 {
 				 this->components = (gcnew System::ComponentModel::Container());
-				 System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-				 System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
+				 System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+				 System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 				 this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 				 this->laneC2ndCB = (gcnew System::Windows::Forms::CheckBox());
 				 this->testBox = (gcnew System::Windows::Forms::RichTextBox());
@@ -1650,9 +1646,6 @@ private: As::BinCtl^  siloBar24;
 				 this->laneACb2 = (gcnew System::Windows::Forms::CheckBox());
 				 this->adapt1 = (gcnew System::Windows::Forms::CheckBox());
 				 this->dataGridTruck = (gcnew System::Windows::Forms::DataGridView());
-				 this->stNameDataGridViewTextBoxColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-				 this->nRateDataGridViewTextBoxColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-				 this->nCapacityDataGridViewTextBoxColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 				 this->truckBindingSource = (gcnew System::Windows::Forms::BindingSource(this->components));
 				 this->zoom1 = (gcnew System::Windows::Forms::Button());
 				 this->ulinkLb = (gcnew System::Windows::Forms::Label());
@@ -1760,7 +1753,6 @@ private: As::BinCtl^  siloBar24;
 				 this->stTime = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 				 this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 				 this->nSilo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-				 this->nTicketDataGridViewTextBoxColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 				 this->stTruck = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 				 this->stMaterial = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 				 this->stCustomer = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -1859,34 +1851,34 @@ private: As::BinCtl^  siloBar24;
 				 this->ipAddressLb = (gcnew System::Windows::Forms::Label());
 				 this->oldBindingSource = (gcnew System::Windows::Forms::BindingSource(this->components));
 				 this->groupBox3->SuspendLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numCopy3))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numCopy3))->BeginInit();
 				 this->groupBoxC->SuspendLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox3))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->truckPic3))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->truckPic3))->BeginInit();
 				 this->groupBox1->SuspendLayout();
 				 this->groupBoxA->SuspendLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->truckPic1))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->truckPic1))->BeginInit();
 				 this->gBoxLine1->SuspendLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numCopy1))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridTruck))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->truckBindingSource))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->truckPic2))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numCopy1))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridTruck))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->truckBindingSource))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->truckPic2))->BeginInit();
 				 this->groupBox2->SuspendLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numCopy2))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numCopy2))->BeginInit();
 				 this->groupBoxB->SuspendLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox2))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->timer1))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->timer1))->BeginInit();
 				 this->menu->SuspendLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridJob))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jobBindingSource))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureSplash))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridJob))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->jobBindingSource))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureSplash))->BeginInit();
 				 this->groupBox4->SuspendLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numCopy4))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numCopy4))->BeginInit();
 				 this->groupBoxD->SuspendLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox4))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->truckPic4))->BeginInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->oldBindingSource))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->truckPic4))->BeginInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->oldBindingSource))->BeginInit();
 				 this->SuspendLayout();
 				 // 
 				 // groupBox3
@@ -1967,7 +1959,7 @@ private: As::BinCtl^  siloBar24;
 				 this->groupBox3->Controls->Add(this->autoBt3);
 				 this->groupBox3->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->groupBox3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->groupBox3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->groupBox3->Location = System::Drawing::Point(860, 27);
@@ -1981,7 +1973,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneC2ndCB->AutoSize = true;
 				 this->laneC2ndCB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneC2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneC2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneC2ndCB->Location = System::Drawing::Point(304, 232);
 				 this->laneC2ndCB->Name = L"laneC2ndCB";
@@ -2004,7 +1996,7 @@ private: As::BinCtl^  siloBar24;
 				 // copyLb3
 				 // 
 				 this->copyLb3->AutoSize = true;
-				 this->copyLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->copyLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->copyLb3->Location = System::Drawing::Point(338, 202);
 				 this->copyLb3->Name = L"copyLb3";
@@ -2015,18 +2007,18 @@ private: As::BinCtl^  siloBar24;
 				 // numCopy3
 				 // 
 				 this->numCopy3->Location = System::Drawing::Point(304, 197);
-				 this->numCopy3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+				 this->numCopy3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 				 this->numCopy3->Name = L"numCopy3";
 				 this->numCopy3->Size = System::Drawing::Size(30, 23);
 				 this->numCopy3->TabIndex = 59;
-				 this->numCopy3->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {1, 0, 0, 0});
+				 this->numCopy3->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 				 this->numCopy3->ValueChanged += gcnew System::EventHandler(this, &Form1::numericUpDown2_ValueChanged);
 				 // 
 				 // prod08Lb
 				 // 
 				 this->prod08Lb->AutoSize = true;
 				 this->prod08Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod08Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod08Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod08Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod08Lb->Location = System::Drawing::Point(113, 225);
@@ -2040,7 +2032,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod07Lb->AutoSize = true;
 				 this->prod07Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod07Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod07Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod07Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod07Lb->Location = System::Drawing::Point(11, 225);
@@ -2053,7 +2045,7 @@ private: As::BinCtl^  siloBar24;
 				 // lane3StatLB
 				 // 
 				 this->lane3StatLB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->lane3StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->lane3StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->lane3StatLB->ForeColor = System::Drawing::Color::Black;
 				 this->lane3StatLB->Location = System::Drawing::Point(68, 1);
@@ -2070,7 +2062,7 @@ private: As::BinCtl^  siloBar24;
 				 this->lite3->Cursor = System::Windows::Forms::Cursors::No;
 				 this->lite3->Enabled = false;
 				 this->lite3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->lite3->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"lite3.Image")));
+				 this->lite3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"lite3.Image")));
 				 this->lite3->Location = System::Drawing::Point(6, 592);
 				 this->lite3->Name = L"lite3";
 				 this->lite3->Size = System::Drawing::Size(48, 48);
@@ -2094,7 +2086,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe9
 				 // 
-				 this->safe9->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe9.Image")));
+				 this->safe9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe9.Image")));
 				 this->safe9->Location = System::Drawing::Point(250, 190);
 				 this->safe9->Name = L"safe9";
 				 this->safe9->Size = System::Drawing::Size(24, 24);
@@ -2103,7 +2095,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe8
 				 // 
-				 this->safe8->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe8.Image")));
+				 this->safe8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe8.Image")));
 				 this->safe8->Location = System::Drawing::Point(150, 190);
 				 this->safe8->Name = L"safe8";
 				 this->safe8->Size = System::Drawing::Size(24, 24);
@@ -2112,7 +2104,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe7
 				 // 
-				 this->safe7->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe7.Image")));
+				 this->safe7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe7.Image")));
 				 this->safe7->Location = System::Drawing::Point(50, 190);
 				 this->safe7->Name = L"safe7";
 				 this->safe7->Size = System::Drawing::Size(24, 24);
@@ -2123,7 +2115,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneCCb1->AutoSize = true;
 				 this->laneCCb1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneCCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneCCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneCCb1->Location = System::Drawing::Point(303, 170);
 				 this->laneCCb1->Name = L"laneCCb1";
@@ -2136,7 +2128,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneCCb2->AutoSize = true;
 				 this->laneCCb2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneCCb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneCCb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneCCb2->Location = System::Drawing::Point(351, 170);
 				 this->laneCCb2->Name = L"laneCCb2";
@@ -2149,7 +2141,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->taxExempt3->AutoSize = true;
 				 this->taxExempt3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->taxExempt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->taxExempt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->taxExempt3->Location = System::Drawing::Point(304, 150);
 				 this->taxExempt3->Name = L"taxExempt3";
@@ -2179,7 +2171,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->okC->BackColor = System::Drawing::Color::PaleGreen;
 				 this->okC->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->okC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->okC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->okC->Location = System::Drawing::Point(137, 22);
 				 this->okC->Name = L"okC";
@@ -2191,7 +2183,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // grossC
 				 // 
-				 this->grossC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->grossC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->grossC->Location = System::Drawing::Point(74, 22);
 				 this->grossC->Name = L"grossC";
@@ -2203,7 +2195,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // tareC
 				 // 
-				 this->tareC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tareC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tareC->Location = System::Drawing::Point(6, 22);
 				 this->tareC->Name = L"tareC";
@@ -2214,7 +2206,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // pictureBox3
 				 // 
-				 this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox3.Image")));
+				 this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
 				 this->pictureBox3->Location = System::Drawing::Point(66, 591);
 				 this->pictureBox3->Name = L"pictureBox3";
 				 this->pictureBox3->Size = System::Drawing::Size(320, 240);
@@ -2226,7 +2218,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label7->AutoSize = true;
 				 this->label7->BackColor = System::Drawing::Color::Transparent;
 				 this->label7->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label7->ForeColor = System::Drawing::Color::DarkRed;
 				 this->label7->Location = System::Drawing::Point(142, 104);
@@ -2242,7 +2234,7 @@ private: As::BinCtl^  siloBar24;
 				 this->plant3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->plant3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 				 this->plant3->Cursor = System::Windows::Forms::Cursors::No;
-				 this->plant3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->plant3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->plant3->ForeColor = System::Drawing::Color::Black;
 				 this->plant3->Location = System::Drawing::Point(178, 100);
@@ -2256,7 +2248,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->adapt3->AutoSize = true;
 				 this->adapt3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->adapt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->adapt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->adapt3->Location = System::Drawing::Point(304, 230);
 				 this->adapt3->Name = L"adapt3";
@@ -2272,7 +2264,7 @@ private: As::BinCtl^  siloBar24;
 				 this->all3->Enabled = false;
 				 this->all3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->all3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->all3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->all3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->all3->ForeColor = System::Drawing::Color::Black;
 				 this->all3->Location = System::Drawing::Point(339, 16);
@@ -2287,7 +2279,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoDisch3->AutoSize = true;
 				 this->autoDisch3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoDisch3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoDisch3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoDisch3->Location = System::Drawing::Point(304, 190);
 				 this->autoDisch3->Name = L"autoDisch3";
@@ -2301,7 +2293,7 @@ private: As::BinCtl^  siloBar24;
 				 // silo3
 				 // 
 				 this->silo3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->silo3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->silo3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->silo3->ForeColor = System::Drawing::Color::Black;
 				 this->silo3->Location = System::Drawing::Point(116, 476);
@@ -2314,7 +2306,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill33
 				 // 
-				 this->fill33->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill33.Image")));
+				 this->fill33->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill33.Image")));
 				 this->fill33->Location = System::Drawing::Point(270, 190);
 				 this->fill33->Name = L"fill33";
 				 this->fill33->Size = System::Drawing::Size(24, 24);
@@ -2323,7 +2315,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill32
 				 // 
-				 this->fill32->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill32.Image")));
+				 this->fill32->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill32.Image")));
 				 this->fill32->Location = System::Drawing::Point(170, 190);
 				 this->fill32->Name = L"fill32";
 				 this->fill32->Size = System::Drawing::Size(24, 24);
@@ -2332,7 +2324,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill3
 				 // 
-				 this->fill3->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill3.Image")));
+				 this->fill3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill3.Image")));
 				 this->fill3->Location = System::Drawing::Point(70, 190);
 				 this->fill3->Name = L"fill3";
 				 this->fill3->Size = System::Drawing::Size(24, 24);
@@ -2406,8 +2398,8 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar33->ValMan = 0;
 				 this->siloBar33->Value = 0;
 				 this->siloBar33->Visible = false;
-				 this->siloBar33->DoubleClick += gcnew System::EventHandler(this, &Form1::flow9_Click);
 				 this->siloBar33->Click += gcnew System::EventHandler(this, &Form1::siloBar33_Click);
+				 this->siloBar33->DoubleClick += gcnew System::EventHandler(this, &Form1::flow9_Click);
 				 // 
 				 // siloBar32
 				 // 
@@ -2437,8 +2429,8 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar32->ValMan = 0;
 				 this->siloBar32->Value = 0;
 				 this->siloBar32->Visible = false;
-				 this->siloBar32->DoubleClick += gcnew System::EventHandler(this, &Form1::flow8_Click);
 				 this->siloBar32->Click += gcnew System::EventHandler(this, &Form1::siloBar32_Click);
+				 this->siloBar32->DoubleClick += gcnew System::EventHandler(this, &Form1::flow8_Click);
 				 // 
 				 // siloBar3
 				 // 
@@ -2467,14 +2459,14 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar3->Tol = false;
 				 this->siloBar3->ValMan = 0;
 				 this->siloBar3->Value = 0;
-				 this->siloBar3->DoubleClick += gcnew System::EventHandler(this, &Form1::flow7_Click);
 				 this->siloBar3->Click += gcnew System::EventHandler(this, &Form1::siloBar3_Click);
+				 this->siloBar3->DoubleClick += gcnew System::EventHandler(this, &Form1::flow7_Click);
 				 // 
 				 // jog3
 				 // 
 				 this->jog3->AutoSize = true;
 				 this->jog3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->jog3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->jog3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->jog3->Location = System::Drawing::Point(304, 250);
 				 this->jog3->Name = L"jog3";
@@ -2491,7 +2483,7 @@ private: As::BinCtl^  siloBar24;
 				 this->readyBt3->Enabled = false;
 				 this->readyBt3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->readyBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->readyBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->readyBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->readyBt3->ForeColor = System::Drawing::Color::Black;
 				 this->readyBt3->Location = System::Drawing::Point(310, 270);
@@ -2506,7 +2498,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoFall3->AutoSize = true;
 				 this->autoFall3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoFall3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoFall3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoFall3->Location = System::Drawing::Point(304, 210);
 				 this->autoFall3->Name = L"autoFall3";
@@ -2519,7 +2511,7 @@ private: As::BinCtl^  siloBar24;
 				 // flow3
 				 // 
 				 this->flow3->BackColor = System::Drawing::Color::PaleGreen;
-				 this->flow3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->flow3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->flow3->ForeColor = System::Drawing::Color::Black;
 				 this->flow3->Location = System::Drawing::Point(157, 476);
@@ -2537,7 +2529,7 @@ private: As::BinCtl^  siloBar24;
 				 this->printOnly3->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->printOnly3->Enabled = false;
 				 this->printOnly3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->printOnly3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printOnly3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printOnly3->ForeColor = System::Drawing::Color::Black;
 				 this->printOnly3->Location = System::Drawing::Point(310, 308);
@@ -2552,7 +2544,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->printTarget3->AutoSize = true;
 				 this->printTarget3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->printTarget3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printTarget3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printTarget3->Location = System::Drawing::Point(304, 130);
 				 this->printTarget3->Name = L"printTarget3";
@@ -2566,7 +2558,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tonnage3->BackColor = System::Drawing::Color::MistyRose;
 				 this->tonnage3->Cursor = System::Windows::Forms::Cursors::No;
-				 this->tonnage3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tonnage3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tonnage3->ForeColor = System::Drawing::Color::Black;
 				 this->tonnage3->Location = System::Drawing::Point(206, 147);
@@ -2582,7 +2574,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label11->AutoEllipsis = true;
 				 this->label11->AutoSize = true;
 				 this->label11->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label11->Location = System::Drawing::Point(148, 150);
 				 this->label11->Name = L"label11";
@@ -2596,7 +2588,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label5->AutoSize = true;
 				 this->label5->BackColor = System::Drawing::Color::Transparent;
 				 this->label5->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label5->ForeColor = System::Drawing::Color::DarkRed;
 				 this->label5->Location = System::Drawing::Point(216, 88);
@@ -2609,7 +2601,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->man3->BackColor = System::Drawing::Color::MistyRose;
 				 this->man3->Cursor = System::Windows::Forms::Cursors::No;
-				 this->man3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->man3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->man3->ForeColor = System::Drawing::Color::Black;
 				 this->man3->Location = System::Drawing::Point(220, 104);
@@ -2623,7 +2615,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->material3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->material3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->material3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->material3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->material3->Location = System::Drawing::Point(68, 72);
 				 this->material3->MaxLength = 10;
@@ -2638,7 +2630,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tic_num3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->tic_num3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->tic_num3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tic_num3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tic_num3->Location = System::Drawing::Point(68, 100);
 				 this->tic_num3->MaxLength = 8;
@@ -2653,7 +2645,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->target3->BackColor = System::Drawing::Color::White;
 				 this->target3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->target3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->target3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->target3->Location = System::Drawing::Point(82, 156);
 				 this->target3->MaxLength = 6;
@@ -2667,7 +2659,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->truck3->BackColor = System::Drawing::Color::White;
 				 this->truck3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->truck3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truck3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truck3->Location = System::Drawing::Point(68, 128);
 				 this->truck3->MaxLength = 9;
@@ -2681,7 +2673,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->Job3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->Job3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->Job3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->Job3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->Job3->Location = System::Drawing::Point(68, 44);
 				 this->Job3->MaxLength = 16;
@@ -2695,7 +2687,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->customer3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->customer3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->customer3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->customer3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->customer3->Location = System::Drawing::Point(68, 16);
 				 this->customer3->MaxLength = 32;
@@ -2712,7 +2704,7 @@ private: As::BinCtl^  siloBar24;
 				 this->addBt3->Enabled = false;
 				 this->addBt3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->addBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->addBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->addBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->addBt3->ForeColor = System::Drawing::Color::Black;
 				 this->addBt3->Location = System::Drawing::Point(310, 474);
@@ -2730,7 +2722,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dischBt3->Enabled = false;
 				 this->dischBt3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dischBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dischBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dischBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dischBt3->ForeColor = System::Drawing::Color::Black;
 				 this->dischBt3->Location = System::Drawing::Point(226, 438);
@@ -2745,7 +2737,7 @@ private: As::BinCtl^  siloBar24;
 				 // truckLb3
 				 // 
 				 this->truckLb3->AutoSize = true;
-				 this->truckLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truckLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truckLb3->Location = System::Drawing::Point(6, 133);
 				 this->truckLb3->Name = L"truckLb3";
@@ -2758,10 +2750,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops34->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops34->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops34->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops34->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops34->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops34->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops34->ForeColor = System::Drawing::Color::Black;
 				 this->drops34->Location = System::Drawing::Point(351, 397);
@@ -2778,10 +2770,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops33->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops33->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops33->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops33->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops33->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops33->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops33->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops33->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops33->ForeColor = System::Drawing::Color::Black;
 				 this->drops33->Location = System::Drawing::Point(315, 397);
@@ -2798,10 +2790,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops32->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops32->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops32->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops32->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops32->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops32->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops32->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops32->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops32->ForeColor = System::Drawing::Color::Black;
 				 this->drops32->Location = System::Drawing::Point(351, 362);
@@ -2818,10 +2810,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops31->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops31->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops31->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops31->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops31->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops31->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops31->ForeColor = System::Drawing::Color::Black;
 				 this->drops31->Location = System::Drawing::Point(315, 362);
@@ -2836,7 +2828,7 @@ private: As::BinCtl^  siloBar24;
 				 // JobLb3
 				 // 
 				 this->JobLb3->AutoSize = true;
-				 this->JobLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->JobLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->JobLb3->Location = System::Drawing::Point(6, 48);
 				 this->JobLb3->Name = L"JobLb3";
@@ -2847,7 +2839,7 @@ private: As::BinCtl^  siloBar24;
 				 // cnt3
 				 // 
 				 this->cnt3->BackColor = System::Drawing::Color::Aquamarine;
-				 this->cnt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->cnt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->cnt3->ForeColor = System::Drawing::Color::Black;
 				 this->cnt3->Location = System::Drawing::Point(199, 476);
@@ -2861,7 +2853,7 @@ private: As::BinCtl^  siloBar24;
 				 // ticLb3
 				 // 
 				 this->ticLb3->AutoSize = true;
-				 this->ticLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticLb3->Location = System::Drawing::Point(6, 104);
 				 this->ticLb3->Name = L"ticLb3";
@@ -2871,7 +2863,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // truckPic3
 				 // 
-				 this->truckPic3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"truckPic3.BackgroundImage")));
+				 this->truckPic3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"truckPic3.BackgroundImage")));
 				 this->truckPic3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 				 this->truckPic3->Location = System::Drawing::Point(23, 528);
 				 this->truckPic3->Name = L"truckPic3";
@@ -2883,7 +2875,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->ticketNum3->BackColor = System::Drawing::Color::MistyRose;
 				 this->ticketNum3->Cursor = System::Windows::Forms::Cursors::No;
-				 this->ticketNum3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticketNum3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticketNum3->ForeColor = System::Drawing::Color::Black;
 				 this->ticketNum3->Location = System::Drawing::Point(249, 55);
@@ -2898,7 +2890,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label13->AutoSize = true;
 				 this->label13->BackColor = System::Drawing::Color::Transparent;
 				 this->label13->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label13->ForeColor = System::Drawing::Color::DarkRed;
 				 this->label13->Location = System::Drawing::Point(215, 59);
@@ -2912,7 +2904,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->targetLb3->AutoSize = true;
 				 this->targetLb3->BackColor = System::Drawing::Color::Transparent;
-				 this->targetLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->targetLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->targetLb3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->targetLb3->Location = System::Drawing::Point(6, 160);
@@ -2925,7 +2917,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->matLb3->AutoSize = true;
 				 this->matLb3->BackColor = System::Drawing::Color::Transparent;
-				 this->matLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->matLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->matLb3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->matLb3->Location = System::Drawing::Point(6, 76);
@@ -2940,7 +2932,7 @@ private: As::BinCtl^  siloBar24;
 				 this->nextBt3->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->nextBt3->Enabled = false;
 				 this->nextBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->nextBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->nextBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->nextBt3->ForeColor = System::Drawing::Color::Black;
 				 this->nextBt3->Location = System::Drawing::Point(303, 55);
@@ -2955,7 +2947,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dropsLb3->AutoSize = true;
 				 this->dropsLb3->BackColor = System::Drawing::Color::Transparent;
-				 this->dropsLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropsLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropsLb3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->dropsLb3->Location = System::Drawing::Point(325, 344);
@@ -2967,7 +2959,7 @@ private: As::BinCtl^  siloBar24;
 				 // scale3
 				 // 
 				 this->scale3->BackColor = System::Drawing::Color::PaleGreen;
-				 this->scale3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->scale3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->scale3->ForeColor = System::Drawing::Color::Black;
 				 this->scale3->Location = System::Drawing::Point(116, 440);
@@ -2982,7 +2974,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->custLb3->AutoSize = true;
 				 this->custLb3->BackColor = System::Drawing::Color::Transparent;
-				 this->custLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->custLb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->custLb3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->custLb3->Location = System::Drawing::Point(6, 23);
@@ -2995,7 +2987,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->pauseBt3->BackColor = System::Drawing::Color::Gold;
 				 this->pauseBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->pauseBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->pauseBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->pauseBt3->ForeColor = System::Drawing::Color::Black;
 				 this->pauseBt3->Location = System::Drawing::Point(310, 511);
@@ -3010,7 +3002,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->stopBt3->BackColor = System::Drawing::Color::Red;
 				 this->stopBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->stopBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->stopBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->stopBt3->ForeColor = System::Drawing::Color::Black;
 				 this->stopBt3->Location = System::Drawing::Point(310, 547);
@@ -3027,7 +3019,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dropBt3->Enabled = false;
 				 this->dropBt3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dropBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dropBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropBt3->ForeColor = System::Drawing::Color::Black;
 				 this->dropBt3->Location = System::Drawing::Point(310, 438);
@@ -3042,7 +3034,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod09Lb->AutoSize = true;
 				 this->prod09Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod09Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod09Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod09Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod09Lb->Location = System::Drawing::Point(213, 225);
@@ -3056,7 +3048,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->resetBt3->BackColor = System::Drawing::Color::Red;
 				 this->resetBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->resetBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->resetBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->resetBt3->ForeColor = System::Drawing::Color::Black;
 				 this->resetBt3->Location = System::Drawing::Point(306, 94);
@@ -3073,7 +3065,7 @@ private: As::BinCtl^  siloBar24;
 				 this->autoBt3->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->autoBt3->Enabled = false;
 				 this->autoBt3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->autoBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoBt3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoBt3->ForeColor = System::Drawing::Color::DarkRed;
 				 this->autoBt3->Location = System::Drawing::Point(303, 94);
@@ -3089,7 +3081,7 @@ private: As::BinCtl^  siloBar24;
 				 this->zoom3->BackColor = System::Drawing::Color::Gainsboro;
 				 this->zoom3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->zoom3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->zoom3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->zoom3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->zoom3->ForeColor = System::Drawing::Color::Black;
 				 this->zoom3->Location = System::Drawing::Point(866, 828);
@@ -3106,7 +3098,7 @@ private: As::BinCtl^  siloBar24;
 				 this->ticketNum1->BackColor = System::Drawing::Color::LightBlue;
 				 this->ticketNum1->Cursor = System::Windows::Forms::Cursors::No;
 				 this->ticketNum1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->ticketNum1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticketNum1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticketNum1->ForeColor = System::Drawing::Color::Black;
 				 this->ticketNum1->Location = System::Drawing::Point(249, 55);
@@ -3122,7 +3114,7 @@ private: As::BinCtl^  siloBar24;
 				 this->nextBt1->Enabled = false;
 				 this->nextBt1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->nextBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->nextBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->nextBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->nextBt1->ForeColor = System::Drawing::Color::Black;
 				 this->nextBt1->Location = System::Drawing::Point(6, 51);
@@ -3137,7 +3129,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dropsLb1->AutoSize = true;
 				 this->dropsLb1->BackColor = System::Drawing::Color::Transparent;
-				 this->dropsLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropsLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropsLb1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->dropsLb1->Location = System::Drawing::Point(28, 340);
@@ -3151,7 +3143,7 @@ private: As::BinCtl^  siloBar24;
 				 this->pauseBt1->BackColor = System::Drawing::Color::Transparent;
 				 this->pauseBt1->Enabled = false;
 				 this->pauseBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->pauseBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->pauseBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->pauseBt1->ForeColor = System::Drawing::Color::Black;
 				 this->pauseBt1->Location = System::Drawing::Point(13, 507);
@@ -3166,7 +3158,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->stopBt1->BackColor = System::Drawing::Color::Red;
 				 this->stopBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->stopBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->stopBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->stopBt1->ForeColor = System::Drawing::Color::Black;
 				 this->stopBt1->Location = System::Drawing::Point(13, 543);
@@ -3183,7 +3175,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dropBt1->Enabled = false;
 				 this->dropBt1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dropBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dropBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropBt1->ForeColor = System::Drawing::Color::Black;
 				 this->dropBt1->Location = System::Drawing::Point(13, 434);
@@ -3250,7 +3242,7 @@ private: As::BinCtl^  siloBar24;
 				 this->groupBox1->Controls->Add(this->gBoxLine1);
 				 this->groupBox1->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->groupBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->groupBox1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->groupBox1->Location = System::Drawing::Point(8, 27);
@@ -3294,7 +3286,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod03Lb->AutoSize = true;
 				 this->prod03Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod03Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod03Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod03Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod03Lb->Location = System::Drawing::Point(215, 225);
@@ -3308,7 +3300,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod02Lb->AutoSize = true;
 				 this->prod02Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod02Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod02Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod02Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod02Lb->Location = System::Drawing::Point(113, 225);
@@ -3322,7 +3314,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod01Lb->AutoSize = true;
 				 this->prod01Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod01Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod01Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod01Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod01Lb->Location = System::Drawing::Point(14, 225);
@@ -3335,7 +3327,7 @@ private: As::BinCtl^  siloBar24;
 				 // lane1StatLB
 				 // 
 				 this->lane1StatLB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->lane1StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->lane1StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->lane1StatLB->ForeColor = System::Drawing::Color::Black;
 				 this->lane1StatLB->Location = System::Drawing::Point(71, 1);
@@ -3352,7 +3344,7 @@ private: As::BinCtl^  siloBar24;
 				 this->lite1->Cursor = System::Windows::Forms::Cursors::No;
 				 this->lite1->Enabled = false;
 				 this->lite1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->lite1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"lite1.Image")));
+				 this->lite1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"lite1.Image")));
 				 this->lite1->Location = System::Drawing::Point(6, 592);
 				 this->lite1->Name = L"lite1";
 				 this->lite1->Size = System::Drawing::Size(48, 48);
@@ -3360,7 +3352,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe3
 				 // 
-				 this->safe3->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe3.Image")));
+				 this->safe3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe3.Image")));
 				 this->safe3->Location = System::Drawing::Point(250, 190);
 				 this->safe3->Name = L"safe3";
 				 this->safe3->Size = System::Drawing::Size(24, 24);
@@ -3369,7 +3361,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe2
 				 // 
-				 this->safe2->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe2.Image")));
+				 this->safe2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe2.Image")));
 				 this->safe2->Location = System::Drawing::Point(150, 190);
 				 this->safe2->Name = L"safe2";
 				 this->safe2->Size = System::Drawing::Size(24, 24);
@@ -3378,7 +3370,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe1
 				 // 
-				 this->safe1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe1.Image")));
+				 this->safe1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe1.Image")));
 				 this->safe1->Location = System::Drawing::Point(50, 190);
 				 this->safe1->Name = L"safe1";
 				 this->safe1->Size = System::Drawing::Size(24, 24);
@@ -3389,7 +3381,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dbLb2->AutoSize = true;
 				 this->dbLb2->BackColor = System::Drawing::Color::Yellow;
-				 this->dbLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dbLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dbLb2->Location = System::Drawing::Point(233, 547);
 				 this->dbLb2->Name = L"dbLb2";
@@ -3402,7 +3394,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dbLb1->AutoSize = true;
 				 this->dbLb1->BackColor = System::Drawing::Color::White;
-				 this->dbLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dbLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dbLb1->Location = System::Drawing::Point(232, 528);
 				 this->dbLb1->Name = L"dbLb1";
@@ -3430,7 +3422,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->okA->BackColor = System::Drawing::Color::PaleGreen;
 				 this->okA->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->okA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->okA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->okA->Location = System::Drawing::Point(137, 22);
 				 this->okA->Name = L"okA";
@@ -3442,7 +3434,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // grossA
 				 // 
-				 this->grossA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->grossA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->grossA->Location = System::Drawing::Point(74, 22);
 				 this->grossA->Name = L"grossA";
@@ -3453,7 +3445,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // tareA
 				 // 
-				 this->tareA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tareA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tareA->Location = System::Drawing::Point(6, 22);
 				 this->tareA->Name = L"tareA";
@@ -3465,7 +3457,7 @@ private: As::BinCtl^  siloBar24;
 				 // dbLb
 				 // 
 				 this->dbLb->BackColor = System::Drawing::Color::WhiteSmoke;
-				 this->dbLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dbLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dbLb->ForeColor = System::Drawing::Color::Black;
 				 this->dbLb->Location = System::Drawing::Point(1, 496);
@@ -3479,7 +3471,7 @@ private: As::BinCtl^  siloBar24;
 				 // label1
 				 // 
 				 this->label1->AutoSize = true;
-				 this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label1->Location = System::Drawing::Point(142, 104);
 				 this->label1->Name = L"label1";
@@ -3507,7 +3499,7 @@ private: As::BinCtl^  siloBar24;
 				 this->plant1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->plant1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 				 this->plant1->Cursor = System::Windows::Forms::Cursors::No;
-				 this->plant1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->plant1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->plant1->ForeColor = System::Drawing::Color::Black;
 				 this->plant1->Location = System::Drawing::Point(178, 100);
@@ -3520,7 +3512,7 @@ private: As::BinCtl^  siloBar24;
 				 // silo1
 				 // 
 				 this->silo1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->silo1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->silo1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->silo1->ForeColor = System::Drawing::Color::Black;
 				 this->silo1->Location = System::Drawing::Point(114, 471);
@@ -3533,7 +3525,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill13
 				 // 
-				 this->fill13->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill13.Image")));
+				 this->fill13->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill13.Image")));
 				 this->fill13->Location = System::Drawing::Point(270, 190);
 				 this->fill13->Name = L"fill13";
 				 this->fill13->Size = System::Drawing::Size(24, 24);
@@ -3542,7 +3534,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // pictureBox1
 				 // 
-				 this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox1.Image")));
+				 this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 				 this->pictureBox1->Location = System::Drawing::Point(67, 592);
 				 this->pictureBox1->Name = L"pictureBox1";
 				 this->pictureBox1->Size = System::Drawing::Size(320, 240);
@@ -3551,7 +3543,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill12
 				 // 
-				 this->fill12->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill12.Image")));
+				 this->fill12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill12.Image")));
 				 this->fill12->Location = System::Drawing::Point(170, 190);
 				 this->fill12->Name = L"fill12";
 				 this->fill12->Size = System::Drawing::Size(24, 24);
@@ -3561,7 +3553,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill1
 				 // 
-				 this->fill1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill1.Image")));
+				 this->fill1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill1.Image")));
 				 this->fill1->Location = System::Drawing::Point(70, 190);
 				 this->fill1->Name = L"fill1";
 				 this->fill1->Size = System::Drawing::Size(24, 24);
@@ -3617,7 +3609,7 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar1->Delay = false;
 				 this->siloBar1->DisableInv = false;
 				 this->siloBar1->Empty = false;
-				 this->siloBar1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->siloBar1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->siloBar1->ForeColor = System::Drawing::Color::Blue;
 				 this->siloBar1->Idle = false;
@@ -3637,8 +3629,8 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar1->Tol = false;
 				 this->siloBar1->ValMan = 0;
 				 this->siloBar1->Value = 0;
-				 this->siloBar1->DoubleClick += gcnew System::EventHandler(this, &Form1::flow1_Click);
 				 this->siloBar1->Click += gcnew System::EventHandler(this, &Form1::siloBar1_Click);
+				 this->siloBar1->DoubleClick += gcnew System::EventHandler(this, &Form1::flow1_Click);
 				 // 
 				 // siloBar13
 				 // 
@@ -3669,8 +3661,8 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar13->ValMan = 0;
 				 this->siloBar13->Value = 0;
 				 this->siloBar13->Visible = false;
-				 this->siloBar13->DoubleClick += gcnew System::EventHandler(this, &Form1::flow3_Click);
 				 this->siloBar13->Click += gcnew System::EventHandler(this, &Form1::siloBar13_Click);
+				 this->siloBar13->DoubleClick += gcnew System::EventHandler(this, &Form1::flow3_Click);
 				 // 
 				 // siloBar12
 				 // 
@@ -3701,13 +3693,13 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar12->ValMan = 0;
 				 this->siloBar12->Value = 0;
 				 this->siloBar12->Visible = false;
-				 this->siloBar12->DoubleClick += gcnew System::EventHandler(this, &Form1::flow2_Click);
 				 this->siloBar12->Click += gcnew System::EventHandler(this, &Form1::siloBar12_Click);
+				 this->siloBar12->DoubleClick += gcnew System::EventHandler(this, &Form1::flow2_Click);
 				 // 
 				 // flow1
 				 // 
 				 this->flow1->BackColor = System::Drawing::Color::PaleGreen;
-				 this->flow1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->flow1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->flow1->ForeColor = System::Drawing::Color::Black;
 				 this->flow1->Location = System::Drawing::Point(181, 471);
@@ -3724,7 +3716,7 @@ private: As::BinCtl^  siloBar24;
 				 this->tonnage1->BackColor = System::Drawing::Color::LightBlue;
 				 this->tonnage1->Cursor = System::Windows::Forms::Cursors::No;
 				 this->tonnage1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->tonnage1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tonnage1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tonnage1->ForeColor = System::Drawing::Color::Black;
 				 this->tonnage1->Location = System::Drawing::Point(206, 147);
@@ -3740,7 +3732,7 @@ private: As::BinCtl^  siloBar24;
 				 this->tonLb1->AutoEllipsis = true;
 				 this->tonLb1->AutoSize = true;
 				 this->tonLb1->Cursor = System::Windows::Forms::Cursors::No;
-				 this->tonLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tonLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tonLb1->Location = System::Drawing::Point(148, 150);
 				 this->tonLb1->Name = L"tonLb1";
@@ -3753,7 +3745,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label3->AutoSize = true;
 				 this->label3->BackColor = System::Drawing::Color::Transparent;
 				 this->label3->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label3->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->label3->Location = System::Drawing::Point(216, 88);
@@ -3766,7 +3758,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->man1->BackColor = System::Drawing::Color::LightBlue;
 				 this->man1->Cursor = System::Windows::Forms::Cursors::No;
-				 this->man1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->man1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->man1->ForeColor = System::Drawing::Color::Black;
 				 this->man1->Location = System::Drawing::Point(220, 104);
@@ -3780,7 +3772,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->material1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->material1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->material1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->material1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->material1->Location = System::Drawing::Point(68, 72);
 				 this->material1->MaxLength = 8;
@@ -3794,7 +3786,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tic_num1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->tic_num1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->tic_num1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tic_num1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tic_num1->Location = System::Drawing::Point(68, 100);
 				 this->tic_num1->MaxLength = 8;
@@ -3810,7 +3802,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->target1->BackColor = System::Drawing::Color::White;
 				 this->target1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->target1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->target1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->target1->Location = System::Drawing::Point(82, 156);
 				 this->target1->MaxLength = 6;
@@ -3825,7 +3817,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->truck1->BackColor = System::Drawing::Color::White;
 				 this->truck1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->truck1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truck1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truck1->Location = System::Drawing::Point(68, 128);
 				 this->truck1->MaxLength = 9;
@@ -3840,7 +3832,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->Job1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->Job1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->Job1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->Job1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->Job1->Location = System::Drawing::Point(68, 44);
 				 this->Job1->MaxLength = 16;
@@ -3854,7 +3846,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->customer1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->customer1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->customer1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->customer1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->customer1->Location = System::Drawing::Point(68, 16);
 				 this->customer1->MaxLength = 32;
@@ -3870,7 +3862,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dischBt1->Enabled = false;
 				 this->dischBt1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dischBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dischBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dischBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dischBt1->ForeColor = System::Drawing::Color::Black;
 				 this->dischBt1->Location = System::Drawing::Point(226, 438);
@@ -3885,7 +3877,7 @@ private: As::BinCtl^  siloBar24;
 				 // trackLb1
 				 // 
 				 this->trackLb1->AutoSize = true;
-				 this->trackLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->trackLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->trackLb1->Location = System::Drawing::Point(6, 133);
 				 this->trackLb1->Name = L"trackLb1";
@@ -3896,7 +3888,7 @@ private: As::BinCtl^  siloBar24;
 				 // JobLb1
 				 // 
 				 this->JobLb1->AutoSize = true;
-				 this->JobLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->JobLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->JobLb1->Location = System::Drawing::Point(6, 48);
 				 this->JobLb1->Name = L"JobLb1";
@@ -3907,7 +3899,7 @@ private: As::BinCtl^  siloBar24;
 				 // cnt1
 				 // 
 				 this->cnt1->BackColor = System::Drawing::Color::Aquamarine;
-				 this->cnt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->cnt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->cnt1->ForeColor = System::Drawing::Color::Black;
 				 this->cnt1->Location = System::Drawing::Point(246, 471);
@@ -3921,7 +3913,7 @@ private: As::BinCtl^  siloBar24;
 				 // ticLb1
 				 // 
 				 this->ticLb1->AutoSize = true;
-				 this->ticLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticLb1->Location = System::Drawing::Point(6, 104);
 				 this->ticLb1->Name = L"ticLb1";
@@ -3934,7 +3926,7 @@ private: As::BinCtl^  siloBar24;
 				 this->of1->AutoSize = true;
 				 this->of1->BackColor = System::Drawing::Color::Transparent;
 				 this->of1->Cursor = System::Windows::Forms::Cursors::No;
-				 this->of1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->of1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->of1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->of1->Location = System::Drawing::Point(215, 59);
@@ -3948,7 +3940,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->targetLb1->AutoSize = true;
 				 this->targetLb1->BackColor = System::Drawing::Color::Transparent;
-				 this->targetLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->targetLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->targetLb1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->targetLb1->Location = System::Drawing::Point(6, 160);
@@ -3961,7 +3953,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->matLb1->AutoSize = true;
 				 this->matLb1->BackColor = System::Drawing::Color::Transparent;
-				 this->matLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->matLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->matLb1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->matLb1->Location = System::Drawing::Point(6, 76);
@@ -3973,7 +3965,7 @@ private: As::BinCtl^  siloBar24;
 				 // scale1
 				 // 
 				 this->scale1->BackColor = System::Drawing::Color::PaleGreen;
-				 this->scale1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->scale1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->scale1->ForeColor = System::Drawing::Color::Black;
 				 this->scale1->Location = System::Drawing::Point(117, 440);
@@ -3988,7 +3980,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->custLb1->AutoSize = true;
 				 this->custLb1->BackColor = System::Drawing::Color::Transparent;
-				 this->custLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->custLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->custLb1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->custLb1->Location = System::Drawing::Point(6, 23);
@@ -3999,7 +3991,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // truckPic1
 				 // 
-				 this->truckPic1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"truckPic1.BackgroundImage")));
+				 this->truckPic1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"truckPic1.BackgroundImage")));
 				 this->truckPic1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 				 this->truckPic1->Location = System::Drawing::Point(23, 528);
 				 this->truckPic1->Name = L"truckPic1";
@@ -4045,7 +4037,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->resetBt1->BackColor = System::Drawing::Color::Red;
 				 this->resetBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->resetBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->resetBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->resetBt1->ForeColor = System::Drawing::Color::Black;
 				 this->resetBt1->Location = System::Drawing::Point(9, 90);
@@ -4060,7 +4052,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneA2ndCB->AutoSize = true;
 				 this->laneA2ndCB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneA2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneA2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneA2ndCB->Location = System::Drawing::Point(7, 228);
 				 this->laneA2ndCB->Name = L"laneA2ndCB";
@@ -4072,7 +4064,7 @@ private: As::BinCtl^  siloBar24;
 				 // copyLb1
 				 // 
 				 this->copyLb1->AutoSize = true;
-				 this->copyLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->copyLb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->copyLb1->Location = System::Drawing::Point(41, 198);
 				 this->copyLb1->Name = L"copyLb1";
@@ -4083,11 +4075,11 @@ private: As::BinCtl^  siloBar24;
 				 // numCopy1
 				 // 
 				 this->numCopy1->Location = System::Drawing::Point(7, 193);
-				 this->numCopy1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+				 this->numCopy1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 				 this->numCopy1->Name = L"numCopy1";
 				 this->numCopy1->Size = System::Drawing::Size(30, 23);
 				 this->numCopy1->TabIndex = 56;
-				 this->numCopy1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {1, 0, 0, 0});
+				 this->numCopy1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 				 // 
 				 // drops11
 				 // 
@@ -4095,10 +4087,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops11->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops11->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops11->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops11->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops11->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops11->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops11->ForeColor = System::Drawing::Color::Black;
 				 this->drops11->Location = System::Drawing::Point(18, 358);
@@ -4116,10 +4108,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops12->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops12->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops12->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops12->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops12->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops12->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops12->ForeColor = System::Drawing::Color::Black;
 				 this->drops12->Location = System::Drawing::Point(54, 358);
@@ -4137,10 +4129,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops13->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops13->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops13->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops13->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops13->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops13->ForeColor = System::Drawing::Color::Black;
 				 this->drops13->Location = System::Drawing::Point(18, 393);
@@ -4158,10 +4150,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops14->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops14->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops14->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops14->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops14->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops14->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops14->ForeColor = System::Drawing::Color::Black;
 				 this->drops14->Location = System::Drawing::Point(54, 393);
@@ -4179,7 +4171,7 @@ private: As::BinCtl^  siloBar24;
 				 this->addBt1->Enabled = false;
 				 this->addBt1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->addBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->addBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->addBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->addBt1->ForeColor = System::Drawing::Color::Black;
 				 this->addBt1->Location = System::Drawing::Point(13, 470);
@@ -4196,7 +4188,7 @@ private: As::BinCtl^  siloBar24;
 				 this->autoBt1->BackColor = System::Drawing::Color::Transparent;
 				 this->autoBt1->Enabled = false;
 				 this->autoBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->autoBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoBt1->ForeColor = System::Drawing::Color::MediumBlue;
 				 this->autoBt1->Location = System::Drawing::Point(6, 90);
@@ -4211,7 +4203,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->printTarget1->AutoSize = true;
 				 this->printTarget1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->printTarget1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printTarget1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printTarget1->Location = System::Drawing::Point(7, 126);
 				 this->printTarget1->Name = L"printTarget1";
@@ -4227,7 +4219,7 @@ private: As::BinCtl^  siloBar24;
 				 this->printOnly1->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->printOnly1->Enabled = false;
 				 this->printOnly1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->printOnly1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printOnly1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printOnly1->ForeColor = System::Drawing::Color::Black;
 				 this->printOnly1->Location = System::Drawing::Point(13, 304);
@@ -4242,7 +4234,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoFall1->AutoSize = true;
 				 this->autoFall1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoFall1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoFall1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoFall1->Location = System::Drawing::Point(7, 206);
 				 this->autoFall1->Name = L"autoFall1";
@@ -4259,7 +4251,7 @@ private: As::BinCtl^  siloBar24;
 				 this->readyBt1->Enabled = false;
 				 this->readyBt1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->readyBt1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->readyBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->readyBt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->readyBt1->ForeColor = System::Drawing::Color::Black;
 				 this->readyBt1->Location = System::Drawing::Point(13, 266);
@@ -4274,7 +4266,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneACb3->AutoSize = true;
 				 this->laneACb3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneACb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneACb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneACb3->Location = System::Drawing::Point(53, 166);
 				 this->laneACb3->Name = L"laneACb3";
@@ -4287,7 +4279,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->jog1->AutoSize = true;
 				 this->jog1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->jog1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->jog1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->jog1->Location = System::Drawing::Point(7, 246);
 				 this->jog1->Name = L"jog1";
@@ -4301,7 +4293,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->taxExempt1->AutoSize = true;
 				 this->taxExempt1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->taxExempt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->taxExempt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->taxExempt1->Location = System::Drawing::Point(7, 146);
 				 this->taxExempt1->Name = L"taxExempt1";
@@ -4314,7 +4306,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoDisch1->AutoSize = true;
 				 this->autoDisch1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoDisch1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoDisch1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoDisch1->Location = System::Drawing::Point(7, 186);
 				 this->autoDisch1->Name = L"autoDisch1";
@@ -4331,7 +4323,7 @@ private: As::BinCtl^  siloBar24;
 				 this->all1->Enabled = false;
 				 this->all1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->all1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->all1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->all1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->all1->ForeColor = System::Drawing::Color::Black;
 				 this->all1->Location = System::Drawing::Point(42, 12);
@@ -4346,7 +4338,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneACb2->AutoSize = true;
 				 this->laneACb2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneACb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneACb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneACb2->Location = System::Drawing::Point(7, 166);
 				 this->laneACb2->Name = L"laneACb2";
@@ -4359,7 +4351,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->adapt1->AutoSize = true;
 				 this->adapt1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->adapt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->adapt1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->adapt1->Location = System::Drawing::Point(7, 226);
 				 this->adapt1->Name = L"adapt1";
@@ -4376,8 +4368,6 @@ private: As::BinCtl^  siloBar24;
 				 this->dataGridTruck->AutoGenerateColumns = false;
 				 this->dataGridTruck->BackgroundColor = System::Drawing::Color::Gainsboro;
 				 this->dataGridTruck->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-				 this->dataGridTruck->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {this->stNameDataGridViewTextBoxColumn, 
-					 this->nRateDataGridViewTextBoxColumn, this->nCapacityDataGridViewTextBoxColumn});
 				 this->dataGridTruck->DataSource = this->truckBindingSource;
 				 this->dataGridTruck->Location = System::Drawing::Point(66, 620);
 				 this->dataGridTruck->MultiSelect = false;
@@ -4393,48 +4383,12 @@ private: As::BinCtl^  siloBar24;
 				 this->dataGridTruck->CellMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &Form1::dataGridTruck_RowHeaderMouseDoubleClick);
 				 this->dataGridTruck->ColumnHeaderMouseClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &Form1::dataGridTruck_ColumnHeaderMouseClick);
 				 // 
-				 // stNameDataGridViewTextBoxColumn
-				 // 
-				 this->stNameDataGridViewTextBoxColumn->DataPropertyName = L"stName";
-				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
-					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->stNameDataGridViewTextBoxColumn->DefaultCellStyle = dataGridViewCellStyle1;
-				 this->stNameDataGridViewTextBoxColumn->HeaderText = L"Name";
-				 this->stNameDataGridViewTextBoxColumn->Name = L"stNameDataGridViewTextBoxColumn";
-				 this->stNameDataGridViewTextBoxColumn->ReadOnly = true;
-				 // 
-				 // nRateDataGridViewTextBoxColumn
-				 // 
-				 this->nRateDataGridViewTextBoxColumn->DataPropertyName = L"nRate";
-				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
-					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->nRateDataGridViewTextBoxColumn->DefaultCellStyle = dataGridViewCellStyle2;
-				 this->nRateDataGridViewTextBoxColumn->HeaderText = L"Rate";
-				 this->nRateDataGridViewTextBoxColumn->Name = L"nRateDataGridViewTextBoxColumn";
-				 this->nRateDataGridViewTextBoxColumn->ReadOnly = true;
-				 this->nRateDataGridViewTextBoxColumn->Width = 70;
-				 // 
-				 // nCapacityDataGridViewTextBoxColumn
-				 // 
-				 this->nCapacityDataGridViewTextBoxColumn->DataPropertyName = L"nCapacity";
-				 dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
-					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->nCapacityDataGridViewTextBoxColumn->DefaultCellStyle = dataGridViewCellStyle3;
-				 this->nCapacityDataGridViewTextBoxColumn->HeaderText = L"Capacity";
-				 this->nCapacityDataGridViewTextBoxColumn->Name = L"nCapacityDataGridViewTextBoxColumn";
-				 this->nCapacityDataGridViewTextBoxColumn->ReadOnly = true;
-				 this->nCapacityDataGridViewTextBoxColumn->Width = 70;
-				 // 
-				 // truckBindingSource
-				 // 
-				 this->truckBindingSource->DataSource = As::Truck::typeid;
-				 // 
 				 // zoom1
 				 // 
 				 this->zoom1->BackColor = System::Drawing::Color::Gainsboro;
 				 this->zoom1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->zoom1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->zoom1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->zoom1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->zoom1->ForeColor = System::Drawing::Color::Black;
 				 this->zoom1->Location = System::Drawing::Point(14, 828);
@@ -4479,7 +4433,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->pauseBt2->BackColor = System::Drawing::Color::Gold;
 				 this->pauseBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->pauseBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->pauseBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->pauseBt2->ForeColor = System::Drawing::Color::Black;
 				 this->pauseBt2->Location = System::Drawing::Point(310, 511);
@@ -4494,7 +4448,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->stopBt2->BackColor = System::Drawing::Color::Red;
 				 this->stopBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->stopBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->stopBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->stopBt2->ForeColor = System::Drawing::Color::Black;
 				 this->stopBt2->Location = System::Drawing::Point(310, 547);
@@ -4511,7 +4465,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dropBt2->Enabled = false;
 				 this->dropBt2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dropBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dropBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropBt2->ForeColor = System::Drawing::Color::Black;
 				 this->dropBt2->Location = System::Drawing::Point(310, 438);
@@ -4526,7 +4480,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->custLb2->AutoSize = true;
 				 this->custLb2->BackColor = System::Drawing::Color::Transparent;
-				 this->custLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->custLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->custLb2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->custLb2->Location = System::Drawing::Point(6, 23);
@@ -4539,7 +4493,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dropsLb2->AutoSize = true;
 				 this->dropsLb2->BackColor = System::Drawing::Color::Transparent;
-				 this->dropsLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropsLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropsLb2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->dropsLb2->Location = System::Drawing::Point(325, 344);
@@ -4551,7 +4505,7 @@ private: As::BinCtl^  siloBar24;
 				 // scale2
 				 // 
 				 this->scale2->BackColor = System::Drawing::Color::PaleGreen;
-				 this->scale2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->scale2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->scale2->ForeColor = System::Drawing::Color::Black;
 				 this->scale2->Location = System::Drawing::Point(120, 440);
@@ -4568,7 +4522,7 @@ private: As::BinCtl^  siloBar24;
 				 this->nextBt2->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->nextBt2->Enabled = false;
 				 this->nextBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->nextBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->nextBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->nextBt2->ForeColor = System::Drawing::Color::Black;
 				 this->nextBt2->Location = System::Drawing::Point(303, 55);
@@ -4583,7 +4537,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->matLb2->AutoSize = true;
 				 this->matLb2->BackColor = System::Drawing::Color::Transparent;
-				 this->matLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->matLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->matLb2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->matLb2->Location = System::Drawing::Point(6, 76);
@@ -4596,7 +4550,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->targetLb2->AutoSize = true;
 				 this->targetLb2->BackColor = System::Drawing::Color::Transparent;
-				 this->targetLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->targetLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->targetLb2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->targetLb2->Location = System::Drawing::Point(6, 160);
@@ -4609,7 +4563,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->label6->AutoSize = true;
 				 this->label6->BackColor = System::Drawing::Color::Transparent;
-				 this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label6->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->label6->Location = System::Drawing::Point(215, 59);
@@ -4623,7 +4577,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->ticketNum2->BackColor = System::Drawing::Color::PaleGreen;
 				 this->ticketNum2->Cursor = System::Windows::Forms::Cursors::No;
-				 this->ticketNum2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticketNum2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticketNum2->ForeColor = System::Drawing::Color::Black;
 				 this->ticketNum2->Location = System::Drawing::Point(249, 55);
@@ -4635,7 +4589,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // truckPic2
 				 // 
-				 this->truckPic2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"truckPic2.BackgroundImage")));
+				 this->truckPic2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"truckPic2.BackgroundImage")));
 				 this->truckPic2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 				 this->truckPic2->Location = System::Drawing::Point(23, 528);
 				 this->truckPic2->Name = L"truckPic2";
@@ -4646,7 +4600,7 @@ private: As::BinCtl^  siloBar24;
 				 // ticLb2
 				 // 
 				 this->ticLb2->AutoSize = true;
-				 this->ticLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticLb2->Location = System::Drawing::Point(6, 104);
 				 this->ticLb2->Name = L"ticLb2";
@@ -4657,7 +4611,7 @@ private: As::BinCtl^  siloBar24;
 				 // JobLb2
 				 // 
 				 this->JobLb2->AutoSize = true;
-				 this->JobLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->JobLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->JobLb2->Location = System::Drawing::Point(6, 48);
 				 this->JobLb2->Name = L"JobLb2";
@@ -4745,7 +4699,7 @@ private: As::BinCtl^  siloBar24;
 				 this->groupBox2->Controls->Add(this->pauseBt2);
 				 this->groupBox2->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->groupBox2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->groupBox2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->groupBox2->Location = System::Drawing::Point(435, 27);
@@ -4788,7 +4742,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->resetBt2->BackColor = System::Drawing::Color::Red;
 				 this->resetBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->resetBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->resetBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->resetBt2->ForeColor = System::Drawing::Color::Black;
 				 this->resetBt2->Location = System::Drawing::Point(307, 94);
@@ -4803,7 +4757,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneB2ndCB->AutoSize = true;
 				 this->laneB2ndCB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneB2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneB2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneB2ndCB->Location = System::Drawing::Point(304, 232);
 				 this->laneB2ndCB->Name = L"laneB2ndCB";
@@ -4816,7 +4770,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod06Lb->AutoSize = true;
 				 this->prod06Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod06Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod06Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod06Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod06Lb->Location = System::Drawing::Point(213, 225);
@@ -4829,7 +4783,7 @@ private: As::BinCtl^  siloBar24;
 				 // copyLb2
 				 // 
 				 this->copyLb2->AutoSize = true;
-				 this->copyLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->copyLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->copyLb2->Location = System::Drawing::Point(338, 202);
 				 this->copyLb2->Name = L"copyLb2";
@@ -4840,17 +4794,17 @@ private: As::BinCtl^  siloBar24;
 				 // numCopy2
 				 // 
 				 this->numCopy2->Location = System::Drawing::Point(304, 197);
-				 this->numCopy2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+				 this->numCopy2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 				 this->numCopy2->Name = L"numCopy2";
 				 this->numCopy2->Size = System::Drawing::Size(30, 23);
 				 this->numCopy2->TabIndex = 59;
-				 this->numCopy2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {1, 0, 0, 0});
+				 this->numCopy2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 				 // 
 				 // prod05Lb
 				 // 
 				 this->prod05Lb->AutoSize = true;
 				 this->prod05Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod05Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod05Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod05Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod05Lb->Location = System::Drawing::Point(114, 225);
@@ -4864,7 +4818,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod04Lb->AutoSize = true;
 				 this->prod04Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod04Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod04Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod04Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod04Lb->Location = System::Drawing::Point(14, 225);
@@ -4877,7 +4831,7 @@ private: As::BinCtl^  siloBar24;
 				 // lane2StatLB
 				 // 
 				 this->lane2StatLB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->lane2StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->lane2StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->lane2StatLB->ForeColor = System::Drawing::Color::Black;
 				 this->lane2StatLB->Location = System::Drawing::Point(69, 1);
@@ -4894,7 +4848,7 @@ private: As::BinCtl^  siloBar24;
 				 this->lite2->Cursor = System::Windows::Forms::Cursors::No;
 				 this->lite2->Enabled = false;
 				 this->lite2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->lite2->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"lite2.Image")));
+				 this->lite2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"lite2.Image")));
 				 this->lite2->Location = System::Drawing::Point(6, 592);
 				 this->lite2->Name = L"lite2";
 				 this->lite2->Size = System::Drawing::Size(48, 48);
@@ -4903,7 +4857,7 @@ private: As::BinCtl^  siloBar24;
 				 // wrLb
 				 // 
 				 this->wrLb->BackColor = System::Drawing::Color::PaleGreen;
-				 this->wrLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->wrLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->wrLb->ForeColor = System::Drawing::Color::Black;
 				 this->wrLb->Location = System::Drawing::Point(148, 542);
@@ -4917,7 +4871,7 @@ private: As::BinCtl^  siloBar24;
 				 // rdLb
 				 // 
 				 this->rdLb->BackColor = System::Drawing::Color::MediumTurquoise;
-				 this->rdLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->rdLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->rdLb->ForeColor = System::Drawing::Color::Black;
 				 this->rdLb->Location = System::Drawing::Point(150, 511);
@@ -4930,7 +4884,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe6
 				 // 
-				 this->safe6->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe6.Image")));
+				 this->safe6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe6.Image")));
 				 this->safe6->Location = System::Drawing::Point(250, 190);
 				 this->safe6->Name = L"safe6";
 				 this->safe6->Size = System::Drawing::Size(24, 24);
@@ -4939,7 +4893,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe5
 				 // 
-				 this->safe5->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe5.Image")));
+				 this->safe5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe5.Image")));
 				 this->safe5->Location = System::Drawing::Point(150, 190);
 				 this->safe5->Name = L"safe5";
 				 this->safe5->Size = System::Drawing::Size(24, 24);
@@ -4948,7 +4902,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe4
 				 // 
-				 this->safe4->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe4.Image")));
+				 this->safe4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe4.Image")));
 				 this->safe4->Location = System::Drawing::Point(50, 190);
 				 this->safe4->Name = L"safe4";
 				 this->safe4->Size = System::Drawing::Size(24, 24);
@@ -4959,7 +4913,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneBCb1->AutoSize = true;
 				 this->laneBCb1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneBCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneBCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneBCb1->Location = System::Drawing::Point(303, 170);
 				 this->laneBCb1->Name = L"laneBCb1";
@@ -4987,7 +4941,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->taxExempt2->AutoSize = true;
 				 this->taxExempt2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->taxExempt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->taxExempt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->taxExempt2->Location = System::Drawing::Point(304, 150);
 				 this->taxExempt2->Name = L"taxExempt2";
@@ -5017,7 +4971,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->okB->BackColor = System::Drawing::Color::PaleGreen;
 				 this->okB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->okB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->okB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->okB->Location = System::Drawing::Point(137, 22);
 				 this->okB->Name = L"okB";
@@ -5029,7 +4983,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // grossB
 				 // 
-				 this->grossB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->grossB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->grossB->Location = System::Drawing::Point(74, 22);
 				 this->grossB->Name = L"grossB";
@@ -5040,7 +4994,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // tareB
 				 // 
-				 this->tareB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tareB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tareB->Location = System::Drawing::Point(6, 22);
 				 this->tareB->Name = L"tareB";
@@ -5053,7 +5007,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->label2->AutoSize = true;
 				 this->label2->BackColor = System::Drawing::Color::Transparent;
-				 this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->label2->Location = System::Drawing::Point(142, 104);
@@ -5068,7 +5022,7 @@ private: As::BinCtl^  siloBar24;
 				 this->plant2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->plant2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 				 this->plant2->Cursor = System::Windows::Forms::Cursors::No;
-				 this->plant2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->plant2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->plant2->ForeColor = System::Drawing::Color::Black;
 				 this->plant2->Location = System::Drawing::Point(178, 100);
@@ -5082,7 +5036,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneBCb3->AutoSize = true;
 				 this->laneBCb3->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneBCb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneBCb3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneBCb3->Location = System::Drawing::Point(351, 170);
 				 this->laneBCb3->Name = L"laneBCb3";
@@ -5095,7 +5049,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->adapt2->AutoSize = true;
 				 this->adapt2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->adapt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->adapt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->adapt2->Location = System::Drawing::Point(304, 230);
 				 this->adapt2->Name = L"adapt2";
@@ -5111,7 +5065,7 @@ private: As::BinCtl^  siloBar24;
 				 this->all2->Enabled = false;
 				 this->all2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->all2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->all2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->all2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->all2->ForeColor = System::Drawing::Color::Black;
 				 this->all2->Location = System::Drawing::Point(339, 16);
@@ -5126,7 +5080,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoDisch2->AutoSize = true;
 				 this->autoDisch2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoDisch2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoDisch2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoDisch2->Location = System::Drawing::Point(304, 190);
 				 this->autoDisch2->Name = L"autoDisch2";
@@ -5140,7 +5094,7 @@ private: As::BinCtl^  siloBar24;
 				 // silo2
 				 // 
 				 this->silo2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->silo2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->silo2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->silo2->ForeColor = System::Drawing::Color::Black;
 				 this->silo2->Location = System::Drawing::Point(119, 476);
@@ -5153,7 +5107,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill23
 				 // 
-				 this->fill23->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill23.Image")));
+				 this->fill23->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill23.Image")));
 				 this->fill23->Location = System::Drawing::Point(270, 190);
 				 this->fill23->Name = L"fill23";
 				 this->fill23->Size = System::Drawing::Size(24, 24);
@@ -5162,7 +5116,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // pictureBox2
 				 // 
-				 this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox2.Image")));
+				 this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 				 this->pictureBox2->Location = System::Drawing::Point(65, 592);
 				 this->pictureBox2->Name = L"pictureBox2";
 				 this->pictureBox2->Size = System::Drawing::Size(320, 240);
@@ -5171,7 +5125,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill22
 				 // 
-				 this->fill22->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill22.Image")));
+				 this->fill22->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill22.Image")));
 				 this->fill22->Location = System::Drawing::Point(171, 190);
 				 this->fill22->Name = L"fill22";
 				 this->fill22->Size = System::Drawing::Size(24, 24);
@@ -5180,7 +5134,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill2
 				 // 
-				 this->fill2->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill2.Image")));
+				 this->fill2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill2.Image")));
 				 this->fill2->Location = System::Drawing::Point(70, 190);
 				 this->fill2->Name = L"fill2";
 				 this->fill2->Size = System::Drawing::Size(24, 24);
@@ -5254,8 +5208,8 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar23->ValMan = 0;
 				 this->siloBar23->Value = 0;
 				 this->siloBar23->Visible = false;
-				 this->siloBar23->DoubleClick += gcnew System::EventHandler(this, &Form1::flow6_Click);
 				 this->siloBar23->Click += gcnew System::EventHandler(this, &Form1::siloBar23_Click);
+				 this->siloBar23->DoubleClick += gcnew System::EventHandler(this, &Form1::flow6_Click);
 				 // 
 				 // siloBar22
 				 // 
@@ -5285,8 +5239,8 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar22->ValMan = 0;
 				 this->siloBar22->Value = 0;
 				 this->siloBar22->Visible = false;
-				 this->siloBar22->DoubleClick += gcnew System::EventHandler(this, &Form1::flow5_Click);
 				 this->siloBar22->Click += gcnew System::EventHandler(this, &Form1::siloBar22_Click);
+				 this->siloBar22->DoubleClick += gcnew System::EventHandler(this, &Form1::flow5_Click);
 				 // 
 				 // siloBar2
 				 // 
@@ -5315,14 +5269,14 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar2->Tol = false;
 				 this->siloBar2->ValMan = 0;
 				 this->siloBar2->Value = 0;
-				 this->siloBar2->DoubleClick += gcnew System::EventHandler(this, &Form1::flow4_Click);
 				 this->siloBar2->Click += gcnew System::EventHandler(this, &Form1::siloBar2_Click);
+				 this->siloBar2->DoubleClick += gcnew System::EventHandler(this, &Form1::flow4_Click);
 				 // 
 				 // jog2
 				 // 
 				 this->jog2->AutoSize = true;
 				 this->jog2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->jog2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->jog2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->jog2->Location = System::Drawing::Point(304, 250);
 				 this->jog2->Name = L"jog2";
@@ -5338,7 +5292,7 @@ private: As::BinCtl^  siloBar24;
 				 this->readyBt2->Enabled = false;
 				 this->readyBt2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->readyBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->readyBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->readyBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->readyBt2->ForeColor = System::Drawing::Color::Black;
 				 this->readyBt2->Location = System::Drawing::Point(310, 270);
@@ -5353,7 +5307,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoFall2->AutoSize = true;
 				 this->autoFall2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoFall2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoFall2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoFall2->Location = System::Drawing::Point(304, 210);
 				 this->autoFall2->Name = L"autoFall2";
@@ -5366,7 +5320,7 @@ private: As::BinCtl^  siloBar24;
 				 // flow2
 				 // 
 				 this->flow2->BackColor = System::Drawing::Color::PaleGreen;
-				 this->flow2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->flow2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->flow2->ForeColor = System::Drawing::Color::Black;
 				 this->flow2->Location = System::Drawing::Point(158, 476);
@@ -5383,7 +5337,7 @@ private: As::BinCtl^  siloBar24;
 				 this->printOnly2->BackColor = System::Drawing::Color::Transparent;
 				 this->printOnly2->Enabled = false;
 				 this->printOnly2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->printOnly2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printOnly2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printOnly2->ForeColor = System::Drawing::Color::Black;
 				 this->printOnly2->Location = System::Drawing::Point(310, 308);
@@ -5398,7 +5352,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->printTarget2->AutoSize = true;
 				 this->printTarget2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->printTarget2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printTarget2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printTarget2->Location = System::Drawing::Point(304, 130);
 				 this->printTarget2->Name = L"printTarget2";
@@ -5412,7 +5366,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tonnage2->BackColor = System::Drawing::Color::PaleGreen;
 				 this->tonnage2->Cursor = System::Windows::Forms::Cursors::No;
-				 this->tonnage2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tonnage2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tonnage2->ForeColor = System::Drawing::Color::Black;
 				 this->tonnage2->Location = System::Drawing::Point(206, 147);
@@ -5428,7 +5382,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label9->AutoEllipsis = true;
 				 this->label9->AutoSize = true;
 				 this->label9->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label9->Location = System::Drawing::Point(148, 150);
 				 this->label9->Name = L"label9";
@@ -5441,7 +5395,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label4->AutoSize = true;
 				 this->label4->BackColor = System::Drawing::Color::Transparent;
 				 this->label4->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label4->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->label4->Location = System::Drawing::Point(216, 88);
@@ -5454,7 +5408,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->man2->BackColor = System::Drawing::Color::PaleGreen;
 				 this->man2->Cursor = System::Windows::Forms::Cursors::No;
-				 this->man2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->man2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->man2->ForeColor = System::Drawing::Color::Black;
 				 this->man2->Location = System::Drawing::Point(220, 104);
@@ -5470,7 +5424,7 @@ private: As::BinCtl^  siloBar24;
 				 this->autoBt2->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->autoBt2->Enabled = false;
 				 this->autoBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->autoBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoBt2->ForeColor = System::Drawing::Color::DarkGreen;
 				 this->autoBt2->Location = System::Drawing::Point(303, 94);
@@ -5485,7 +5439,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->material2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->material2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->material2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->material2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->material2->Location = System::Drawing::Point(68, 72);
 				 this->material2->MaxLength = 8;
@@ -5499,7 +5453,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tic_num2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->tic_num2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->tic_num2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tic_num2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tic_num2->Location = System::Drawing::Point(68, 100);
 				 this->tic_num2->MaxLength = 8;
@@ -5514,7 +5468,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->target2->BackColor = System::Drawing::Color::White;
 				 this->target2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->target2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->target2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->target2->Location = System::Drawing::Point(82, 156);
 				 this->target2->MaxLength = 6;
@@ -5528,7 +5482,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->truck2->BackColor = System::Drawing::Color::White;
 				 this->truck2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->truck2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truck2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truck2->Location = System::Drawing::Point(68, 128);
 				 this->truck2->MaxLength = 9;
@@ -5542,7 +5496,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->Job2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->Job2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->Job2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->Job2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->Job2->Location = System::Drawing::Point(68, 44);
 				 this->Job2->MaxLength = 16;
@@ -5556,7 +5510,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->customer2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->customer2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->customer2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->customer2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->customer2->Location = System::Drawing::Point(68, 16);
 				 this->customer2->MaxLength = 32;
@@ -5572,7 +5526,7 @@ private: As::BinCtl^  siloBar24;
 				 this->addBt2->Enabled = false;
 				 this->addBt2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->addBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->addBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->addBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->addBt2->ForeColor = System::Drawing::Color::Black;
 				 this->addBt2->Location = System::Drawing::Point(310, 474);
@@ -5590,7 +5544,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dischBt2->Enabled = false;
 				 this->dischBt2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dischBt2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dischBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dischBt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dischBt2->ForeColor = System::Drawing::Color::Black;
 				 this->dischBt2->Location = System::Drawing::Point(226, 438);
@@ -5605,7 +5559,7 @@ private: As::BinCtl^  siloBar24;
 				 // truckLb2
 				 // 
 				 this->truckLb2->AutoSize = true;
-				 this->truckLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truckLb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truckLb2->Location = System::Drawing::Point(6, 133);
 				 this->truckLb2->Name = L"truckLb2";
@@ -5619,10 +5573,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops24->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops24->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops24->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops24->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops24->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops24->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops24->ForeColor = System::Drawing::Color::Black;
 				 this->drops24->Location = System::Drawing::Point(351, 397);
@@ -5640,10 +5594,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops23->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops23->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops23->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops23->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops23->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops23->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops23->ForeColor = System::Drawing::Color::Black;
 				 this->drops23->Location = System::Drawing::Point(315, 397);
@@ -5661,10 +5615,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops22->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops22->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops22->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops22->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops22->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops22->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops22->ForeColor = System::Drawing::Color::Black;
 				 this->drops22->Location = System::Drawing::Point(351, 362);
@@ -5682,10 +5636,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops21->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops21->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops21->Cursor = System::Windows::Forms::Cursors::Arrow;
-				 this->drops21->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops21->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops21->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops21->ForeColor = System::Drawing::Color::Black;
 				 this->drops21->Location = System::Drawing::Point(315, 362);
@@ -5700,7 +5654,7 @@ private: As::BinCtl^  siloBar24;
 				 // cnt2
 				 // 
 				 this->cnt2->BackColor = System::Drawing::Color::Aquamarine;
-				 this->cnt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->cnt2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->cnt2->ForeColor = System::Drawing::Color::Black;
 				 this->cnt2->Location = System::Drawing::Point(202, 476);
@@ -5716,7 +5670,7 @@ private: As::BinCtl^  siloBar24;
 				 this->zoom2->BackColor = System::Drawing::Color::Gainsboro;
 				 this->zoom2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->zoom2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->zoom2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->zoom2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->zoom2->ForeColor = System::Drawing::Color::Black;
 				 this->zoom2->Location = System::Drawing::Point(441, 828);
@@ -5749,8 +5703,10 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fileMenuItem
 				 // 
-				 this->fileMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {this->toolStripSeparator1, 
-					 this->printManualJobs, this->configToolStripMenuItem, this->exitMenuItem});
+				 this->fileMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+					 this->toolStripSeparator1,
+						 this->printManualJobs, this->configToolStripMenuItem, this->exitMenuItem
+				 });
 				 this->fileMenuItem->Name = L"fileMenuItem";
 				 this->fileMenuItem->Size = System::Drawing::Size(35, 20);
 				 this->fileMenuItem->Text = L"File";
@@ -5783,8 +5739,10 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // helpMenuItem
 				 // 
-				 this->helpMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {this->aboutMenuItem, 
-					 this->testStripMenuItem, this->ulinkMsgToolStripMenuItem, this->exceptionsToolStripMenuItem, this->iOTestToolStripMenuItem});
+				 this->helpMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+					 this->aboutMenuItem,
+						 this->testStripMenuItem, this->ulinkMsgToolStripMenuItem, this->exceptionsToolStripMenuItem, this->iOTestToolStripMenuItem
+				 });
 				 this->helpMenuItem->Name = L"helpMenuItem";
 				 this->helpMenuItem->Size = System::Drawing::Size(40, 20);
 				 this->helpMenuItem->Text = L"Help";
@@ -5828,8 +5786,10 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->menu->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 				 this->menu->Font = (gcnew System::Drawing::Font(L"Tahoma", 8.25F));
-				 this->menu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {this->fileMenuItem, this->inventoryMenuItem, 
-					 this->trucksToolStripMenuItem, this->reprintToolStripMenuItem, this->helpMenuItem});
+				 this->menu->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+					 this->fileMenuItem, this->inventoryMenuItem,
+						 this->trucksToolStripMenuItem, this->reprintToolStripMenuItem, this->helpMenuItem
+				 });
 				 this->menu->Location = System::Drawing::Point(0, 0);
 				 this->menu->Name = L"menu";
 				 this->menu->Size = System::Drawing::Size(1701, 24);
@@ -5876,7 +5836,7 @@ private: As::BinCtl^  siloBar24;
 				 this->versionLb->AutoSize = true;
 				 this->versionLb->BackColor = System::Drawing::Color::White;
 				 this->versionLb->Cursor = System::Windows::Forms::Cursors::No;
-				 this->versionLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->versionLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->versionLb->ForeColor = System::Drawing::Color::RoyalBlue;
 				 this->versionLb->Location = System::Drawing::Point(392, 3);
@@ -5890,7 +5850,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dbaseBadLb->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 				 this->dbaseBadLb->BackColor = System::Drawing::Color::White;
 				 this->dbaseBadLb->Cursor = System::Windows::Forms::Cursors::No;
-				 this->dbaseBadLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dbaseBadLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dbaseBadLb->ForeColor = System::Drawing::Color::Red;
 				 this->dbaseBadLb->Location = System::Drawing::Point(1020, 4);
@@ -5907,8 +5867,10 @@ private: As::BinCtl^  siloBar24;
 				 this->dataGridJob->AutoGenerateColumns = false;
 				 this->dataGridJob->BackgroundColor = System::Drawing::Color::Gainsboro;
 				 this->dataGridJob->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-				 this->dataGridJob->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {this->stTime, this->Column1, 
-					 this->nSilo, this->nTicketDataGridViewTextBoxColumn, this->stTruck, this->stMaterial, this->stCustomer, this->fLoad});
+				 this->dataGridJob->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
+					 this->stTime, this->Column1,
+						 this->nSilo, this->stTruck, this->stMaterial, this->stCustomer, this->fLoad
+				 });
 				 this->dataGridJob->DataSource = this->jobBindingSource;
 				 this->dataGridJob->Location = System::Drawing::Point(334, 618);
 				 this->dataGridJob->MultiSelect = false;
@@ -5927,9 +5889,9 @@ private: As::BinCtl^  siloBar24;
 				 // stTime
 				 // 
 				 this->stTime->DataPropertyName = L"stTime";
-				 dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->stTime->DefaultCellStyle = dataGridViewCellStyle4;
+				 this->stTime->DefaultCellStyle = dataGridViewCellStyle1;
 				 this->stTime->HeaderText = L"Time Sent";
 				 this->stTime->Name = L"stTime";
 				 this->stTime->ReadOnly = true;
@@ -5939,9 +5901,9 @@ private: As::BinCtl^  siloBar24;
 				 // Column1
 				 // 
 				 this->Column1->DataPropertyName = L"nPlant";
-				 dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->Column1->DefaultCellStyle = dataGridViewCellStyle5;
+				 this->Column1->DefaultCellStyle = dataGridViewCellStyle2;
 				 this->Column1->HeaderText = L"Plant";
 				 this->Column1->Name = L"Column1";
 				 this->Column1->ReadOnly = true;
@@ -5951,26 +5913,14 @@ private: As::BinCtl^  siloBar24;
 				 // nSilo
 				 // 
 				 this->nSilo->DataPropertyName = L"nSilo";
-				 dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->nSilo->DefaultCellStyle = dataGridViewCellStyle6;
+				 this->nSilo->DefaultCellStyle = dataGridViewCellStyle3;
 				 this->nSilo->HeaderText = L"Silo";
 				 this->nSilo->Name = L"nSilo";
 				 this->nSilo->ReadOnly = true;
 				 this->nSilo->Resizable = System::Windows::Forms::DataGridViewTriState::False;
 				 this->nSilo->Width = 50;
-				 // 
-				 // nTicketDataGridViewTextBoxColumn
-				 // 
-				 this->nTicketDataGridViewTextBoxColumn->DataPropertyName = L"nTicket";
-				 dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
-					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->nTicketDataGridViewTextBoxColumn->DefaultCellStyle = dataGridViewCellStyle7;
-				 this->nTicketDataGridViewTextBoxColumn->HeaderText = L"Ticket #";
-				 this->nTicketDataGridViewTextBoxColumn->Name = L"nTicketDataGridViewTextBoxColumn";
-				 this->nTicketDataGridViewTextBoxColumn->ReadOnly = true;
-				 this->nTicketDataGridViewTextBoxColumn->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-				 this->nTicketDataGridViewTextBoxColumn->Width = 80;
 				 // 
 				 // stTruck
 				 // 
@@ -5990,9 +5940,9 @@ private: As::BinCtl^  siloBar24;
 				 // stCustomer
 				 // 
 				 this->stCustomer->DataPropertyName = L"stCustomer";
-				 dataGridViewCellStyle8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 this->stCustomer->DefaultCellStyle = dataGridViewCellStyle8;
+				 this->stCustomer->DefaultCellStyle = dataGridViewCellStyle4;
 				 this->stCustomer->HeaderText = L"Customer";
 				 this->stCustomer->Name = L"stCustomer";
 				 this->stCustomer->ReadOnly = true;
@@ -6002,11 +5952,11 @@ private: As::BinCtl^  siloBar24;
 				 // fLoad
 				 // 
 				 this->fLoad->DataPropertyName = L"fLoad";
-				 dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleRight;
-				 dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, 
+				 dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleRight;
+				 dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 					 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				 dataGridViewCellStyle9->Format = L"n2";
-				 this->fLoad->DefaultCellStyle = dataGridViewCellStyle9;
+				 dataGridViewCellStyle5->Format = L"n2";
+				 this->fLoad->DefaultCellStyle = dataGridViewCellStyle5;
 				 this->fLoad->HeaderText = L"Load";
 				 this->fLoad->Name = L"fLoad";
 				 this->fLoad->ReadOnly = true;
@@ -6015,14 +5965,14 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // jobBindingSource
 				 // 
-				 this->jobBindingSource->DataSource = As::Job::typeid;
+				 this->jobBindingSource->CurrentChanged += gcnew System::EventHandler(this, &Form1::jobBindingSource_CurrentChanged);
 				 // 
 				 // optoErr
 				 // 
 				 this->optoErr->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 				 this->optoErr->BackColor = System::Drawing::Color::White;
 				 this->optoErr->Cursor = System::Windows::Forms::Cursors::No;
-				 this->optoErr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->optoErr->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->optoErr->ForeColor = System::Drawing::Color::Red;
 				 this->optoErr->Location = System::Drawing::Point(982, 4);
@@ -6064,7 +6014,7 @@ private: As::BinCtl^  siloBar24;
 				 // pictureSplash
 				 // 
 				 this->pictureSplash->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->pictureSplash->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureSplash.Image")));
+				 this->pictureSplash->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureSplash.Image")));
 				 this->pictureSplash->Location = System::Drawing::Point(415, 183);
 				 this->pictureSplash->Name = L"pictureSplash";
 				 this->pictureSplash->Size = System::Drawing::Size(798, 475);
@@ -6151,7 +6101,7 @@ private: As::BinCtl^  siloBar24;
 				 this->groupBox4->Controls->Add(this->dropBt4);
 				 this->groupBox4->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->groupBox4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->groupBox4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->groupBox4->Location = System::Drawing::Point(1284, 27);
@@ -6166,7 +6116,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->remoteLb->AutoSize = true;
 				 this->remoteLb->BackColor = System::Drawing::Color::DarkGray;
-				 this->remoteLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->remoteLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->remoteLb->ForeColor = System::Drawing::Color::Red;
 				 this->remoteLb->Location = System::Drawing::Point(102, 301);
@@ -6180,7 +6130,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->resetBt4->BackColor = System::Drawing::Color::Red;
 				 this->resetBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->resetBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->resetBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->resetBt4->ForeColor = System::Drawing::Color::Black;
 				 this->resetBt4->Location = System::Drawing::Point(307, 94);
@@ -6195,7 +6145,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneD2ndCB->AutoSize = true;
 				 this->laneD2ndCB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneD2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneD2ndCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneD2ndCB->Location = System::Drawing::Point(304, 232);
 				 this->laneD2ndCB->Name = L"laneD2ndCB";
@@ -6207,7 +6157,7 @@ private: As::BinCtl^  siloBar24;
 				 // copyLb4
 				 // 
 				 this->copyLb4->AutoSize = true;
-				 this->copyLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->copyLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->copyLb4->Location = System::Drawing::Point(338, 202);
 				 this->copyLb4->Name = L"copyLb4";
@@ -6218,18 +6168,18 @@ private: As::BinCtl^  siloBar24;
 				 // numCopy4
 				 // 
 				 this->numCopy4->Location = System::Drawing::Point(304, 197);
-				 this->numCopy4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {5, 0, 0, 0});
+				 this->numCopy4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 				 this->numCopy4->Name = L"numCopy4";
 				 this->numCopy4->Size = System::Drawing::Size(30, 23);
 				 this->numCopy4->TabIndex = 59;
-				 this->numCopy4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {1, 0, 0, 0});
+				 this->numCopy4->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 				 this->numCopy4->ValueChanged += gcnew System::EventHandler(this, &Form1::numericUpDown3_ValueChanged);
 				 // 
 				 // prod12Lb
 				 // 
 				 this->prod12Lb->AutoSize = true;
 				 this->prod12Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod12Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod12Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod12Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod12Lb->Location = System::Drawing::Point(213, 225);
@@ -6243,7 +6193,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod11Lb->AutoSize = true;
 				 this->prod11Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod11Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod11Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod11Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod11Lb->Location = System::Drawing::Point(113, 225);
@@ -6257,7 +6207,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->prod10Lb->AutoSize = true;
 				 this->prod10Lb->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-				 this->prod10Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->prod10Lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->prod10Lb->ForeColor = System::Drawing::Color::White;
 				 this->prod10Lb->Location = System::Drawing::Point(14, 225);
@@ -6270,7 +6220,7 @@ private: As::BinCtl^  siloBar24;
 				 // lane4StatLB
 				 // 
 				 this->lane4StatLB->BackColor = System::Drawing::Color::Gainsboro;
-				 this->lane4StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->lane4StatLB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->lane4StatLB->ForeColor = System::Drawing::Color::Black;
 				 this->lane4StatLB->Location = System::Drawing::Point(70, 1);
@@ -6286,7 +6236,7 @@ private: As::BinCtl^  siloBar24;
 				 this->zoom4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->zoom4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->zoom4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->zoom4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->zoom4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->zoom4->ForeColor = System::Drawing::Color::Black;
 				 this->zoom4->Location = System::Drawing::Point(0, 801);
@@ -6304,7 +6254,7 @@ private: As::BinCtl^  siloBar24;
 				 this->lite4->Cursor = System::Windows::Forms::Cursors::No;
 				 this->lite4->Enabled = false;
 				 this->lite4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->lite4->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"lite4.Image")));
+				 this->lite4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"lite4.Image")));
 				 this->lite4->Location = System::Drawing::Point(6, 592);
 				 this->lite4->Name = L"lite4";
 				 this->lite4->Size = System::Drawing::Size(48, 48);
@@ -6328,7 +6278,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe12
 				 // 
-				 this->safe12->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe12.Image")));
+				 this->safe12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe12.Image")));
 				 this->safe12->Location = System::Drawing::Point(250, 190);
 				 this->safe12->Name = L"safe12";
 				 this->safe12->Size = System::Drawing::Size(24, 24);
@@ -6337,7 +6287,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe11
 				 // 
-				 this->safe11->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe11.Image")));
+				 this->safe11->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe11.Image")));
 				 this->safe11->Location = System::Drawing::Point(150, 190);
 				 this->safe11->Name = L"safe11";
 				 this->safe11->Size = System::Drawing::Size(24, 24);
@@ -6346,7 +6296,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // safe10
 				 // 
-				 this->safe10->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"safe10.Image")));
+				 this->safe10->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"safe10.Image")));
 				 this->safe10->Location = System::Drawing::Point(50, 190);
 				 this->safe10->Name = L"safe10";
 				 this->safe10->Size = System::Drawing::Size(24, 24);
@@ -6357,7 +6307,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneDCb1->AutoSize = true;
 				 this->laneDCb1->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneDCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneDCb1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneDCb1->Location = System::Drawing::Point(303, 170);
 				 this->laneDCb1->Name = L"laneDCb1";
@@ -6370,7 +6320,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->laneDCb2->AutoSize = true;
 				 this->laneDCb2->BackColor = System::Drawing::Color::Gainsboro;
-				 this->laneDCb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->laneDCb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->laneDCb2->Location = System::Drawing::Point(351, 170);
 				 this->laneDCb2->Name = L"laneDCb2";
@@ -6383,7 +6333,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->taxExempt4->AutoSize = true;
 				 this->taxExempt4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->taxExempt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->taxExempt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->taxExempt4->Location = System::Drawing::Point(304, 150);
 				 this->taxExempt4->Name = L"taxExempt4";
@@ -6412,7 +6362,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->okD->BackColor = System::Drawing::Color::PaleGreen;
 				 this->okD->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->okD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->okD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->okD->Location = System::Drawing::Point(147, 22);
 				 this->okD->Name = L"okD";
@@ -6424,7 +6374,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // grossD
 				 // 
-				 this->grossD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->grossD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->grossD->Location = System::Drawing::Point(74, 22);
 				 this->grossD->Name = L"grossD";
@@ -6435,7 +6385,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // tareD
 				 // 
-				 this->tareD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tareD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tareD->Location = System::Drawing::Point(6, 22);
 				 this->tareD->Name = L"tareD";
@@ -6446,7 +6396,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // pictureBox4
 				 // 
-				 this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox4.Image")));
+				 this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
 				 this->pictureBox4->Location = System::Drawing::Point(66, 591);
 				 this->pictureBox4->Name = L"pictureBox4";
 				 this->pictureBox4->Size = System::Drawing::Size(320, 240);
@@ -6458,7 +6408,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label15->AutoSize = true;
 				 this->label15->BackColor = System::Drawing::Color::Transparent;
 				 this->label15->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label15->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->label15->Location = System::Drawing::Point(142, 104);
@@ -6473,7 +6423,7 @@ private: As::BinCtl^  siloBar24;
 				 this->plant4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->plant4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 				 this->plant4->Cursor = System::Windows::Forms::Cursors::No;
-				 this->plant4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->plant4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->plant4->ForeColor = System::Drawing::Color::Black;
 				 this->plant4->Location = System::Drawing::Point(178, 100);
@@ -6487,7 +6437,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->adapt4->AutoSize = true;
 				 this->adapt4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->adapt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->adapt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->adapt4->Location = System::Drawing::Point(304, 230);
 				 this->adapt4->Name = L"adapt4";
@@ -6503,7 +6453,7 @@ private: As::BinCtl^  siloBar24;
 				 this->all4->Enabled = false;
 				 this->all4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->all4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->all4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->all4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->all4->ForeColor = System::Drawing::Color::Black;
 				 this->all4->Location = System::Drawing::Point(339, 16);
@@ -6518,7 +6468,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoDisch4->AutoSize = true;
 				 this->autoDisch4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoDisch4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoDisch4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoDisch4->Location = System::Drawing::Point(304, 190);
 				 this->autoDisch4->Name = L"autoDisch4";
@@ -6532,7 +6482,7 @@ private: As::BinCtl^  siloBar24;
 				 // silo4
 				 // 
 				 this->silo4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->silo4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->silo4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->silo4->ForeColor = System::Drawing::Color::Black;
 				 this->silo4->Location = System::Drawing::Point(116, 476);
@@ -6545,7 +6495,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill43
 				 // 
-				 this->fill43->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill43.Image")));
+				 this->fill43->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill43.Image")));
 				 this->fill43->Location = System::Drawing::Point(270, 190);
 				 this->fill43->Name = L"fill43";
 				 this->fill43->Size = System::Drawing::Size(24, 24);
@@ -6554,7 +6504,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill42
 				 // 
-				 this->fill42->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill42.Image")));
+				 this->fill42->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill42.Image")));
 				 this->fill42->Location = System::Drawing::Point(170, 190);
 				 this->fill42->Name = L"fill42";
 				 this->fill42->Size = System::Drawing::Size(24, 24);
@@ -6563,7 +6513,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // fill4
 				 // 
-				 this->fill4->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"fill4.Image")));
+				 this->fill4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"fill4.Image")));
 				 this->fill4->Location = System::Drawing::Point(70, 190);
 				 this->fill4->Name = L"fill4";
 				 this->fill4->Size = System::Drawing::Size(24, 24);
@@ -6637,8 +6587,8 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar43->ValMan = 0;
 				 this->siloBar43->Value = 0;
 				 this->siloBar43->Visible = false;
-				 this->siloBar43->DoubleClick += gcnew System::EventHandler(this, &Form1::flow12_Click);
 				 this->siloBar43->Click += gcnew System::EventHandler(this, &Form1::siloBar43_Click);
+				 this->siloBar43->DoubleClick += gcnew System::EventHandler(this, &Form1::flow12_Click);
 				 // 
 				 // siloBar42
 				 // 
@@ -6668,8 +6618,8 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar42->ValMan = 0;
 				 this->siloBar42->Value = 0;
 				 this->siloBar42->Visible = false;
-				 this->siloBar42->DoubleClick += gcnew System::EventHandler(this, &Form1::flow11_Click);
 				 this->siloBar42->Click += gcnew System::EventHandler(this, &Form1::siloBar42_Click);
+				 this->siloBar42->DoubleClick += gcnew System::EventHandler(this, &Form1::flow11_Click);
 				 // 
 				 // siloBar4
 				 // 
@@ -6698,14 +6648,14 @@ private: As::BinCtl^  siloBar24;
 				 this->siloBar4->Tol = false;
 				 this->siloBar4->ValMan = 0;
 				 this->siloBar4->Value = 30;
-				 this->siloBar4->DoubleClick += gcnew System::EventHandler(this, &Form1::flow10_Click);
 				 this->siloBar4->Click += gcnew System::EventHandler(this, &Form1::siloBar4_Click);
+				 this->siloBar4->DoubleClick += gcnew System::EventHandler(this, &Form1::flow10_Click);
 				 // 
 				 // jog4
 				 // 
 				 this->jog4->AutoSize = true;
 				 this->jog4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->jog4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->jog4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->jog4->Location = System::Drawing::Point(304, 250);
 				 this->jog4->Name = L"jog4";
@@ -6722,7 +6672,7 @@ private: As::BinCtl^  siloBar24;
 				 this->readyBt4->Enabled = false;
 				 this->readyBt4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Blue;
 				 this->readyBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->readyBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->readyBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->readyBt4->ForeColor = System::Drawing::Color::Black;
 				 this->readyBt4->Location = System::Drawing::Point(310, 270);
@@ -6737,7 +6687,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->autoFall4->AutoSize = true;
 				 this->autoFall4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->autoFall4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoFall4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoFall4->Location = System::Drawing::Point(304, 210);
 				 this->autoFall4->Name = L"autoFall4";
@@ -6750,7 +6700,7 @@ private: As::BinCtl^  siloBar24;
 				 // flow4
 				 // 
 				 this->flow4->BackColor = System::Drawing::Color::PaleGreen;
-				 this->flow4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->flow4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->flow4->ForeColor = System::Drawing::Color::Black;
 				 this->flow4->Location = System::Drawing::Point(157, 476);
@@ -6768,7 +6718,7 @@ private: As::BinCtl^  siloBar24;
 				 this->printOnly4->Cursor = System::Windows::Forms::Cursors::Default;
 				 this->printOnly4->Enabled = false;
 				 this->printOnly4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->printOnly4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printOnly4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printOnly4->ForeColor = System::Drawing::Color::Black;
 				 this->printOnly4->Location = System::Drawing::Point(310, 308);
@@ -6783,7 +6733,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->printTarget4->AutoSize = true;
 				 this->printTarget4->BackColor = System::Drawing::Color::Gainsboro;
-				 this->printTarget4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->printTarget4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->printTarget4->Location = System::Drawing::Point(304, 130);
 				 this->printTarget4->Name = L"printTarget4";
@@ -6797,7 +6747,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tonnage4->BackColor = System::Drawing::Color::MistyRose;
 				 this->tonnage4->Cursor = System::Windows::Forms::Cursors::No;
-				 this->tonnage4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tonnage4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tonnage4->ForeColor = System::Drawing::Color::Black;
 				 this->tonnage4->Location = System::Drawing::Point(206, 147);
@@ -6813,7 +6763,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label23->AutoEllipsis = true;
 				 this->label23->AutoSize = true;
 				 this->label23->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label23->Location = System::Drawing::Point(148, 150);
 				 this->label23->Name = L"label23";
@@ -6826,7 +6776,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label24->AutoSize = true;
 				 this->label24->BackColor = System::Drawing::Color::Transparent;
 				 this->label24->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label24->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label24->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->label24->Location = System::Drawing::Point(216, 88);
@@ -6839,7 +6789,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->man4->BackColor = System::Drawing::Color::MistyRose;
 				 this->man4->Cursor = System::Windows::Forms::Cursors::No;
-				 this->man4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->man4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->man4->ForeColor = System::Drawing::Color::Black;
 				 this->man4->Location = System::Drawing::Point(220, 104);
@@ -6855,7 +6805,7 @@ private: As::BinCtl^  siloBar24;
 				 this->autoBt4->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->autoBt4->Enabled = false;
 				 this->autoBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->autoBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->autoBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->autoBt4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->autoBt4->Location = System::Drawing::Point(303, 94);
@@ -6870,7 +6820,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->material4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->material4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->material4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->material4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->material4->Location = System::Drawing::Point(68, 72);
 				 this->material4->MaxLength = 10;
@@ -6884,7 +6834,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->tic_num4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->tic_num4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->tic_num4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->tic_num4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->tic_num4->Location = System::Drawing::Point(68, 100);
 				 this->tic_num4->MaxLength = 8;
@@ -6899,7 +6849,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->target4->BackColor = System::Drawing::Color::White;
 				 this->target4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->target4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->target4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->target4->Location = System::Drawing::Point(82, 156);
 				 this->target4->MaxLength = 6;
@@ -6914,7 +6864,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->truck4->BackColor = System::Drawing::Color::White;
 				 this->truck4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->truck4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truck4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truck4->Location = System::Drawing::Point(68, 128);
 				 this->truck4->MaxLength = 9;
@@ -6928,7 +6878,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->Job4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->Job4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->Job4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->Job4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->Job4->Location = System::Drawing::Point(68, 44);
 				 this->Job4->MaxLength = 16;
@@ -6942,7 +6892,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->customer4->BackColor = System::Drawing::Color::Gainsboro;
 				 this->customer4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-				 this->customer4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->customer4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->customer4->Location = System::Drawing::Point(68, 16);
 				 this->customer4->MaxLength = 32;
@@ -6958,7 +6908,7 @@ private: As::BinCtl^  siloBar24;
 				 this->addBt4->Enabled = false;
 				 this->addBt4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->addBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->addBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->addBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->addBt4->ForeColor = System::Drawing::Color::Black;
 				 this->addBt4->Location = System::Drawing::Point(310, 474);
@@ -6976,7 +6926,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dischBt4->Enabled = false;
 				 this->dischBt4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dischBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dischBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dischBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dischBt4->ForeColor = System::Drawing::Color::Black;
 				 this->dischBt4->Location = System::Drawing::Point(226, 438);
@@ -6991,7 +6941,7 @@ private: As::BinCtl^  siloBar24;
 				 // truckLb4
 				 // 
 				 this->truckLb4->AutoSize = true;
-				 this->truckLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->truckLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->truckLb4->Location = System::Drawing::Point(6, 133);
 				 this->truckLb4->Name = L"truckLb4";
@@ -7004,10 +6954,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops44->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops44->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops44->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops44->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops44->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops44->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops44->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops44->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops44->ForeColor = System::Drawing::Color::Black;
 				 this->drops44->Location = System::Drawing::Point(351, 397);
@@ -7017,18 +6967,18 @@ private: As::BinCtl^  siloBar24;
 				 this->drops44->Text = L"4";
 				 this->drops44->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->drops44->UseVisualStyleBackColor = true;
-				 this->drops44->Click += gcnew System::EventHandler(this, &Form1::drops44_Click);
 				 this->drops44->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton1_CheckedChanged);
+				 this->drops44->Click += gcnew System::EventHandler(this, &Form1::drops44_Click);
 				 // 
 				 // drops43
 				 // 
 				 this->drops43->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops43->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops43->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops43->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops43->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops43->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops43->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops43->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops43->ForeColor = System::Drawing::Color::Black;
 				 this->drops43->Location = System::Drawing::Point(315, 397);
@@ -7045,10 +6995,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops42->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops42->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops42->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops42->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops42->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops42->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops42->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops42->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops42->ForeColor = System::Drawing::Color::Black;
 				 this->drops42->Location = System::Drawing::Point(351, 362);
@@ -7065,10 +7015,10 @@ private: As::BinCtl^  siloBar24;
 				 this->drops41->Appearance = System::Windows::Forms::Appearance::Button;
 				 this->drops41->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 				 this->drops41->CheckAlign = System::Drawing::ContentAlignment::MiddleCenter;
-				 this->drops41->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), 
+				 this->drops41->FlatAppearance->CheckedBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 				 this->drops41->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->drops41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->drops41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->drops41->ForeColor = System::Drawing::Color::Black;
 				 this->drops41->Location = System::Drawing::Point(315, 362);
@@ -7083,7 +7033,7 @@ private: As::BinCtl^  siloBar24;
 				 // JobLb4
 				 // 
 				 this->JobLb4->AutoSize = true;
-				 this->JobLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->JobLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->JobLb4->Location = System::Drawing::Point(6, 48);
 				 this->JobLb4->Name = L"JobLb4";
@@ -7094,7 +7044,7 @@ private: As::BinCtl^  siloBar24;
 				 // cnt4
 				 // 
 				 this->cnt4->BackColor = System::Drawing::Color::Aquamarine;
-				 this->cnt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->cnt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->cnt4->ForeColor = System::Drawing::Color::Black;
 				 this->cnt4->Location = System::Drawing::Point(199, 476);
@@ -7108,7 +7058,7 @@ private: As::BinCtl^  siloBar24;
 				 // ticLb4
 				 // 
 				 this->ticLb4->AutoSize = true;
-				 this->ticLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticLb4->Location = System::Drawing::Point(6, 104);
 				 this->ticLb4->Name = L"ticLb4";
@@ -7118,7 +7068,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 // truckPic4
 				 // 
-				 this->truckPic4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"truckPic4.BackgroundImage")));
+				 this->truckPic4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"truckPic4.BackgroundImage")));
 				 this->truckPic4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 				 this->truckPic4->Location = System::Drawing::Point(23, 528);
 				 this->truckPic4->Name = L"truckPic4";
@@ -7130,7 +7080,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->ticketNum4->BackColor = System::Drawing::Color::MistyRose;
 				 this->ticketNum4->Cursor = System::Windows::Forms::Cursors::No;
-				 this->ticketNum4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ticketNum4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ticketNum4->ForeColor = System::Drawing::Color::Black;
 				 this->ticketNum4->Location = System::Drawing::Point(249, 55);
@@ -7145,7 +7095,7 @@ private: As::BinCtl^  siloBar24;
 				 this->label31->AutoSize = true;
 				 this->label31->BackColor = System::Drawing::Color::Transparent;
 				 this->label31->Cursor = System::Windows::Forms::Cursors::No;
-				 this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->label31->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->label31->Location = System::Drawing::Point(215, 59);
@@ -7159,7 +7109,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->targetLb4->AutoSize = true;
 				 this->targetLb4->BackColor = System::Drawing::Color::Transparent;
-				 this->targetLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->targetLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->targetLb4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->targetLb4->Location = System::Drawing::Point(6, 160);
@@ -7172,7 +7122,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->matLb4->AutoSize = true;
 				 this->matLb4->BackColor = System::Drawing::Color::Transparent;
-				 this->matLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->matLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->matLb4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->matLb4->Location = System::Drawing::Point(6, 76);
@@ -7187,7 +7137,7 @@ private: As::BinCtl^  siloBar24;
 				 this->nextBt4->Cursor = System::Windows::Forms::Cursors::Arrow;
 				 this->nextBt4->Enabled = false;
 				 this->nextBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->nextBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->nextBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->nextBt4->ForeColor = System::Drawing::Color::Black;
 				 this->nextBt4->Location = System::Drawing::Point(303, 55);
@@ -7202,7 +7152,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->dropsLb4->AutoSize = true;
 				 this->dropsLb4->BackColor = System::Drawing::Color::Transparent;
-				 this->dropsLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropsLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropsLb4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->dropsLb4->Location = System::Drawing::Point(325, 344);
@@ -7214,7 +7164,7 @@ private: As::BinCtl^  siloBar24;
 				 // scale4
 				 // 
 				 this->scale4->BackColor = System::Drawing::Color::PaleGreen;
-				 this->scale4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->scale4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->scale4->ForeColor = System::Drawing::Color::Black;
 				 this->scale4->Location = System::Drawing::Point(116, 440);
@@ -7229,7 +7179,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->custLb4->AutoSize = true;
 				 this->custLb4->BackColor = System::Drawing::Color::Transparent;
-				 this->custLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->custLb4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->custLb4->ForeColor = System::Drawing::Color::MidnightBlue;
 				 this->custLb4->Location = System::Drawing::Point(6, 23);
@@ -7242,7 +7192,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->pauseBt4->BackColor = System::Drawing::Color::Gold;
 				 this->pauseBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->pauseBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->pauseBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->pauseBt4->ForeColor = System::Drawing::Color::Black;
 				 this->pauseBt4->Location = System::Drawing::Point(310, 511);
@@ -7257,7 +7207,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->stopBt4->BackColor = System::Drawing::Color::Red;
 				 this->stopBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->stopBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->stopBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->stopBt4->ForeColor = System::Drawing::Color::Black;
 				 this->stopBt4->Location = System::Drawing::Point(310, 547);
@@ -7274,7 +7224,7 @@ private: As::BinCtl^  siloBar24;
 				 this->dropBt4->Enabled = false;
 				 this->dropBt4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 				 this->dropBt4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				 this->dropBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->dropBt4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->dropBt4->ForeColor = System::Drawing::Color::Black;
 				 this->dropBt4->Location = System::Drawing::Point(310, 438);
@@ -7372,7 +7322,7 @@ private: As::BinCtl^  siloBar24;
 				 // remLoginBt
 				 // 
 				 this->remLoginBt->Enabled = false;
-				 this->remLoginBt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->remLoginBt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->remLoginBt->Location = System::Drawing::Point(599, 585);
 				 this->remLoginBt->Name = L"remLoginBt";
@@ -7387,7 +7337,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->loginErrLb->AutoSize = true;
 				 this->loginErrLb->BackColor = System::Drawing::Color::Yellow;
-				 this->loginErrLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->loginErrLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->loginErrLb->Location = System::Drawing::Point(599, 630);
 				 this->loginErrLb->Name = L"loginErrLb";
@@ -7415,7 +7365,7 @@ private: As::BinCtl^  siloBar24;
 				 // 
 				 this->ipAddressLb->BackColor = System::Drawing::Color::Gray;
 				 this->ipAddressLb->Enabled = false;
-				 this->ipAddressLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->ipAddressLb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
 				 this->ipAddressLb->Location = System::Drawing::Point(594, 562);
 				 this->ipAddressLb->Name = L"ipAddressLb";
@@ -7424,10 +7374,6 @@ private: As::BinCtl^  siloBar24;
 				 this->ipAddressLb->Text = L"192.192.192.192:7010";
 				 this->ipAddressLb->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 				 this->ipAddressLb->Visible = false;
-				 // 
-				 // oldBindingSource
-				 // 
-				 this->oldBindingSource->DataSource = As::Job::typeid;
 				 // 
 				 // Form1
 				 // 
@@ -7466,9 +7412,9 @@ private: As::BinCtl^  siloBar24;
 				 this->Controls->Add(this->groupBox3);
 				 this->Controls->Add(this->groupBox1);
 				 this->Controls->Add(this->groupBox2);
-				 this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				 this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
+				 this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 				 this->MainMenuStrip = this->menu;
 				 this->Name = L"Form1";
 				 this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -7476,43 +7422,43 @@ private: As::BinCtl^  siloBar24;
 				 this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 				 this->groupBox3->ResumeLayout(false);
 				 this->groupBox3->PerformLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numCopy3))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numCopy3))->EndInit();
 				 this->groupBoxC->ResumeLayout(false);
 				 this->groupBoxC->PerformLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox3))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->truckPic3))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->truckPic3))->EndInit();
 				 this->groupBox1->ResumeLayout(false);
 				 this->groupBox1->PerformLayout();
 				 this->groupBoxA->ResumeLayout(false);
 				 this->groupBoxA->PerformLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->truckPic1))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->truckPic1))->EndInit();
 				 this->gBoxLine1->ResumeLayout(false);
 				 this->gBoxLine1->PerformLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numCopy1))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridTruck))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->truckBindingSource))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->truckPic2))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numCopy1))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridTruck))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->truckBindingSource))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->truckPic2))->EndInit();
 				 this->groupBox2->ResumeLayout(false);
 				 this->groupBox2->PerformLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numCopy2))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numCopy2))->EndInit();
 				 this->groupBoxB->ResumeLayout(false);
 				 this->groupBoxB->PerformLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox2))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->timer1))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->timer1))->EndInit();
 				 this->menu->ResumeLayout(false);
 				 this->menu->PerformLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridJob))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->jobBindingSource))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureSplash))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridJob))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->jobBindingSource))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureSplash))->EndInit();
 				 this->groupBox4->ResumeLayout(false);
 				 this->groupBox4->PerformLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numCopy4))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numCopy4))->EndInit();
 				 this->groupBoxD->ResumeLayout(false);
 				 this->groupBoxD->PerformLayout();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox4))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->truckPic4))->EndInit();
-				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->oldBindingSource))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->truckPic4))->EndInit();
+				 (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->oldBindingSource))->EndInit();
 				 this->ResumeLayout(false);
 				 this->PerformLayout();
 
@@ -16707,8 +16653,8 @@ private: System::Void okB_Click(System::Object^  sender, System::EventArgs^  e)
 	private: System::Void aboutMenuItem_Click(System::Object^  sender, 
 				 System::EventArgs^  e) 
 			 {
-				 //About^ about = gcnew About(pAll);
-				 //about->Show();
+				 About^ about = gcnew About(pAll);
+				 about->Show();
 			 }
 
 			 //----------------------------------------------------------------
@@ -17765,7 +17711,7 @@ private: System::Void testBox_DoubleClick(System::Object^  sender, System::Event
 					 }
 
 					 bWrongMet = false;		//DC 4.0.2
-					 int	nSilo;			//DC 4.0.2
+					 int	nSilo = 0;			//DC 4.0.2
 					 int i = 0;				//Dc 4.1.0
 
 					 switch(nLane)
@@ -17821,32 +17767,68 @@ private: System::Void testBox_DoubleClick(System::Object^  sender, System::Event
 							 {
 								 switch(psIni->sLog1.nSilo)
 								 {
-								 case 1:	pAll->nTickets1--; break;// siloBar1_Click(nullptr, nullptr);	break;
-								 case 2:	pAll->nTickets1--; break;//siloBar12_Click(nullptr, nullptr);	break;
-								 case 3:	pAll->nTickets1--; break;//siloBar13_Click(nullptr, nullptr);	break;
+								 case 1:	
+									 pAll->nTickets1--; 
+									 break;// siloBar1_Click(nullptr, nullptr);	break;
+								 case 2:	
+									 pAll->nTickets1--; 
+									 break;//siloBar12_Click(nullptr, nullptr);	break;
+								 case 3:	
+									 pAll->nTickets1--; 
+									 break;//siloBar13_Click(nullptr, nullptr);	break;
 
-								 case 4:	pAll->nTickets2--; break;//siloBar1_Click(nullptr, nullptr);	break;
-								 case 5:	pAll->nTickets2--; break;//siloBar12_Click(nullptr, nullptr);	break;
-								 case 6:	pAll->nTickets2--; break;//siloBar13_Click(nullptr, nullptr);	break;
+								 case 4:	
+									 pAll->nTickets2--; 
+									 break;//siloBar1_Click(nullptr, nullptr);	break;
+								 case 5:	
+									 pAll->nTickets2--; 
+									 break;//siloBar12_Click(nullptr, nullptr);	break;
+								 case 6:	
+									 pAll->nTickets2--; 
+									 break;//siloBar13_Click(nullptr, nullptr);	break;
 
-								 case 7:	pAll->nTickets3--; break;//siloBar1_Click(nullptr, nullptr);	break;
-								 case 8:	pAll->nTickets3--; break;//siloBar12_Click(nullptr, nullptr);	break;
-								 case 9:	pAll->nTickets3--; break;//siloBar13_Click(nullptr, nullptr);	break;
+								 case 7:	
+									 pAll->nTickets3--;
+									 break;//siloBar1_Click(nullptr, nullptr);	break;
+								 case 8:	
+									 pAll->nTickets3--; 
+									 break;//siloBar12_Click(nullptr, nullptr);	break;
+								 case 9:	
+									 pAll->nTickets3--; 
+									 break;//siloBar13_Click(nullptr, nullptr);	break;
 
-								 case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
-								 default:	siloBar1_Click(nullptr, nullptr);	break;
+								 case 10:	
+									 psIni->nTickets4--; 
+									 break;// siloBar4_Click(nullptr, nullptr);	break;
+								 case 11:	
+									 psIni->nTickets4--; 
+									 break;// siloBar42_Click(nullptr, nullptr);	break;
+								 case 12:	
+									 psIni->nTickets4--; 
+									 break;// siloBar43_Click(nullptr, nullptr);	break;
+								 default:	
+									 siloBar1_Click(nullptr, nullptr);	
+									 break;
 								 }
 							 }
 						 }
 						 else
 							 switch(psIni->sLog1.nSilo)
 							 {
-							 case 1:	pAll->nTickets1--;	break;
-							 case 2:	pAll->nTickets2--;	break;
-							 case 3:	pAll->nTickets3--;	break;
-							 case 4:	psIni->nTickets4--;	break;
+							 case 1:	
+								 pAll->nTickets1--;	
+								 break;
+							 case 2:	
+								 pAll->nTickets2--;	
+								 break;
+							 case 3:	
+								 pAll->nTickets3--;	
+								 break;
+							 case 4:	
+								 psIni->nTickets4--;	
+								 break;
+							 default:
+								 break;
 							 }
 	//DC 4.0.1					 psIni->sLog1.nSilo = 1;
 						 if(!bWrongMet)	//DC 4.0.2
@@ -17911,22 +17893,48 @@ private: System::Void testBox_DoubleClick(System::Object^  sender, System::Event
 							 {
 								 switch(psIni->sLog2.nSilo)
 								 {
-								 case 1:	pAll->nTickets1--; break;// siloBar2_Click(nullptr, nullptr);	break;
-								 case 2:	pAll->nTickets1--; break;// siloBar22_Click(nullptr, nullptr);	break;
-								 case 3:	pAll->nTickets1--; break;// siloBar23_Click(nullptr, nullptr);	break;
+								 case 1:	
+									 pAll->nTickets1--; 
+									 break;// siloBar2_Click(nullptr, nullptr);	break;
+								 case 2:	
+									 pAll->nTickets1--; 
+									 break;// siloBar22_Click(nullptr, nullptr);	break;
+								 case 3:	
+									 pAll->nTickets1--; 
+									 break;// siloBar23_Click(nullptr, nullptr);	break;
 
-								 case 4:	pAll->nTickets2--; break;// siloBar2_Click(nullptr, nullptr);	break;
-								 case 5:	pAll->nTickets2--; break;// siloBar22_Click(nullptr, nullptr);	break;
-								 case 6:	pAll->nTickets2--; break;// siloBar23_Click(nullptr, nullptr);	break;
+								 case 4:	
+									 pAll->nTickets2--; 
+									 break;// siloBar2_Click(nullptr, nullptr);	break;
+								 case 5:	
+									 pAll->nTickets2--; 
+									 break;// siloBar22_Click(nullptr, nullptr);	break;
+								 case 6:	
+									 pAll->nTickets2--; 
+									 break;// siloBar23_Click(nullptr, nullptr);	break;
 
-								 case 7:	pAll->nTickets3--; break;// siloBar2_Click(nullptr, nullptr);	break;
-								 case 8:	pAll->nTickets3--; break;// siloBar22_Click(nullptr, nullptr);	break;
-								 case 9:	pAll->nTickets3--; break;// siloBar23_Click(nullptr, nullptr);	break;
+								 case 7:	
+									 pAll->nTickets3--; 
+									 break;// siloBar2_Click(nullptr, nullptr);	break;
+								 case 8:	
+									 pAll->nTickets3--; 
+									 break;// siloBar22_Click(nullptr, nullptr);	break;
+								 case 9:	
+									 pAll->nTickets3--; 
+									 break;// siloBar23_Click(nullptr, nullptr);	break;
 
-								 case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
-								 default:	siloBar2_Click(nullptr, nullptr);	break;
+								 case 10:	
+									 psIni->nTickets4--; 
+									 break;// siloBar4_Click(nullptr, nullptr);	break;
+								 case 11:	
+									 psIni->nTickets4--;
+									 break;// siloBar42_Click(nullptr, nullptr);	break;
+								 case 12:	
+									 psIni->nTickets4--; 
+									 break;// siloBar43_Click(nullptr, nullptr);	break;
+								 default:	
+									 siloBar2_Click(nullptr, nullptr);	
+									 break;
 								 }
 							 }
 						 }
@@ -17934,12 +17942,22 @@ private: System::Void testBox_DoubleClick(System::Object^  sender, System::Event
 						 {
 							 switch(psIni->sLog2.nSilo)
 							 {
-							 case 1:	pAll->nTickets1--;	break;
-							 case 2:	pAll->nTickets2--;	break;
-							 case 3:	pAll->nTickets3--;	break;
-							 case 4:	psIni->nTickets4--;	break;
+							 case 1:	
+								 pAll->nTickets1--;	
+								 break;
+							 case 2:	
+								 pAll->nTickets2--;	
+								 break;
+							 case 3:	
+								 pAll->nTickets3--;	
+								 break;
+							 case 4:	
+								 psIni->nTickets4--;	
+								 break;
+							 default:
+								 break;
 							 }
-	//DC 4.0.1						 psIni->sLog2.nSilo = 2;
+	//DC 4.0.1				psIni->sLog2.nSilo = 2;
 						 }
 						 if(!bWrongMet)	//DC 4.0.2
 						 {
@@ -18003,22 +18021,47 @@ private: System::Void testBox_DoubleClick(System::Object^  sender, System::Event
 							 {
 								 switch(psIni->sLog3.nSilo)
 								 {
-								 case 1:	pAll->nTickets1--; break;// siloBar3_Click(nullptr, nullptr);	break;
-								 case 2:	pAll->nTickets1--; break;// siloBar32_Click(nullptr, nullptr);	break;
-								 case 3:	pAll->nTickets1--; break;// siloBar33_Click(nullptr, nullptr);	break;
+								 case 1:	
+									 pAll->nTickets1--; 
+									 break;// siloBar3_Click(nullptr, nullptr);	break;
+								 case 2:	
+									 pAll->nTickets1--; 
+									 break;// siloBar32_Click(nullptr, nullptr);	break;
+								 case 3:	
+									 pAll->nTickets1--; 
+									 break;// siloBar33_Click(nullptr, nullptr);	break
+								 case 4:	
+									 pAll->nTickets2--; 
+									 break;// siloBar3_Click(nullptr, nullptr);	break;
+								 case 5:	
+									 pAll->nTickets2--; 
+									 break;// siloBar32_Click(nullptr, nullptr);	break;
+								 case 6:	
+									 pAll->nTickets2--; 
+									 break;// siloBar33_Click(nullptr, nullptr);	break;
 
-								 case 4:	pAll->nTickets2--; break;// siloBar3_Click(nullptr, nullptr);	break;
-								 case 5:	pAll->nTickets2--; break;// siloBar32_Click(nullptr, nullptr);	break;
-								 case 6:	pAll->nTickets2--; break;// siloBar33_Click(nullptr, nullptr);	break;
-
-								 case 7:	pAll->nTickets3--; break;// siloBar3_Click(nullptr, nullptr);	break;
-								 case 8:	pAll->nTickets3--; break;// siloBar32_Click(nullptr, nullptr);	break;
-								 case 9:	pAll->nTickets3--; break;// siloBar33_Click(nullptr, nullptr);	break;
+								 case 7:	
+									 pAll->nTickets3--; 
+									 break;// siloBar3_Click(nullptr, nullptr);	break;
+								 case 8:	
+									 pAll->nTickets3--; 
+									 break;// siloBar32_Click(nullptr, nullptr);	break;
+								 case 9:	
+									 pAll->nTickets3--;
+									 break;// siloBar33_Click(nullptr, nullptr);	break;
 									 
-								 case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
-								 default:	siloBar3_Click(nullptr, nullptr);	break;
+								 case 10:	
+									 psIni->nTickets4--; 
+									 break;// siloBar4_Click(nullptr, nullptr);	break;
+								 case 11:	
+									 psIni->nTickets4--; 
+									 break;// siloBar42_Click(nullptr, nullptr);	break;
+								 case 12:	
+									 psIni->nTickets4--; 
+									 break;// siloBar43_Click(nullptr, nullptr);	break;
+								 default:	
+									 siloBar3_Click(nullptr, nullptr);	
+									 break;
 								}
 							 }
 						 }
@@ -18026,12 +18069,22 @@ private: System::Void testBox_DoubleClick(System::Object^  sender, System::Event
 						 {
 							 switch(psIni->sLog3.nSilo)
 							 {
-							 case 1:	pAll->nTickets1--;	break;
-							 case 2:	pAll->nTickets2--;	break;
-							 case 3:	pAll->nTickets3--;	break;
-							 case 4:	psIni->nTickets4--;	break;
+							 case 1:	
+								 pAll->nTickets1--;	
+								 break;
+							 case 2:	
+								 pAll->nTickets2--;	
+								 break;
+							 case 3:	
+								 pAll->nTickets3--;	
+								 break;
+							 case 4:	
+								 psIni->nTickets4--;	
+								 break;
+							 default:
+								 break;
 							 }
-	//DC 4.0.1						 psIni->sLog3.nSilo = 3;
+	//DC 4.0.1				 psIni->sLog3.nSilo = 3;
 						 }
 						 if(!bWrongMet)	//DC 4.0.2
 						 {
@@ -18109,22 +18162,44 @@ private: System::Void testBox_DoubleClick(System::Object^  sender, System::Event
 							 {
 								  switch(psIni->sLog4.nSilo)
 								 {
-								 case 1:	pAll->nTickets1--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 2:	pAll->nTickets1--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 3:	pAll->nTickets1--; break;// siloBar43_Click(nullptr, nullptr);	break;
-
-								 case 4:	pAll->nTickets2--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 5:	pAll->nTickets2--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 6:	pAll->nTickets2--; break;// siloBar43_Click(nullptr, nullptr);	break;
-
-								 case 7:	pAll->nTickets3--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 8:	pAll->nTickets3--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 9:	pAll->nTickets3--; break;// siloBar43_Click(nullptr, nullptr);	break;
-
-								 case 10:	psIni->nTickets4--; break;// siloBar4_Click(nullptr, nullptr);	break;
-								 case 11:	psIni->nTickets4--; break;// siloBar42_Click(nullptr, nullptr);	break;
-								 case 12:	psIni->nTickets4--; break;// siloBar43_Click(nullptr, nullptr);	break;
-								 default:	siloBar4_Click(nullptr, nullptr);	break;
+								 case 1:	
+									 pAll->nTickets1--; 
+									 break;// siloBar4_Click(nullptr, nullptr);	break;
+								 case 2:	
+									 pAll->nTickets1--; 
+									 break;// siloBar42_Click(nullptr, nullptr);	break;
+								 case 3:	
+									 pAll->nTickets1--; 
+									 break;// siloBar43_Click(nullptr, nullptr);	break;
+								 case 4:	
+									 pAll->nTickets2--; 
+									 break;// siloBar4_Click(nullptr, nullptr);	break;
+								 case 5:	
+									 pAll->nTickets2--; 
+									 break;// siloBar42_Click(nullptr, nullptr);	break;
+								 case 6:	
+									 pAll->nTickets2--; 
+									 break;// siloBar43_Click(nullptr, nullptr);	break;
+								 case 7:	
+									 pAll->nTickets3--; 
+									 break;// siloBar4_Click(nullptr, nullptr);	break;
+								 case 8:	
+									 pAll->nTickets3--; 
+									 break;// siloBar42_Click(nullptr, nullptr);	break;
+								 case 9:	
+									 pAll->nTickets3--; 
+									 break;// siloBar43_Click(nullptr, nullptr);	break;
+								 case 10:	
+									 psIni->nTickets4--; 
+									 break;// siloBar4_Click(nullptr, nullptr);	break;
+								 case 11:	
+									 psIni->nTickets4--; 
+									 break;// siloBar42_Click(nullptr, nullptr);	break;
+								 case 12:	
+									 psIni->nTickets4--; 
+									 break;// siloBar43_Click(nullptr, nullptr);	break;
+								 default:	siloBar4_Click(nullptr, nullptr);	
+									 break;
 								 }
 							 }
 						 }
@@ -18132,10 +18207,20 @@ private: System::Void testBox_DoubleClick(System::Object^  sender, System::Event
 						 {
 							 switch(psIni->sLog4.nSilo)
 							 {
-							 case 1:	pAll->nTickets1--;	break;
-							 case 2:	pAll->nTickets2--;	break;
-							 case 3:	pAll->nTickets3--;	break;
-							 case 4:	psIni->nTickets4--;	break;
+							 case 1:	
+								 pAll->nTickets1--;	
+								 break;
+							 case 2:	
+								 pAll->nTickets2--;	
+								 break;
+							 case 3:	
+								 pAll->nTickets3--;	
+								 break;
+							 case 4:	
+								 psIni->nTickets4--;	
+								 break;
+							 default:
+								 break;
 							 }
 	//DC 4.0.1						 psIni->sLog4.nSilo = 4;
 						 }
@@ -18337,26 +18422,50 @@ private: System::Void resetBt1_Click(System::Object^  sender, System::EventArgs^
 				if(!psIni->bBotScale)
 				switch(psIni->sLog1.nSilo)
 				{
-					case 1: pAll->nTickets1++; break;
-					case 2: pAll->nTickets2++; break;
-					case 3: pAll->nTickets3++; break;
-					case 4: psIni->nTickets4++; break;
+					case 1: 
+						pAll->nTickets1++;
+						break;
+					case 2: 
+						pAll->nTickets2++; 
+						break;
+					case 3: 
+						pAll->nTickets3++; 
+						break;
+					case 4: 
+						psIni->nTickets4++; 
+						break;
+					default:
+						break;
 				}
 				else
 				switch(psIni->sLog1.nSilo)
 				{
 					case 1: 
 					case 2: 
-					case 3: pAll->nTickets1++; break;
+						break;
+					case 3:
+						pAll->nTickets1++; 
+						break;
 					case 4: 
 					case 5: 
-					case 6: pAll->nTickets2++; break;
+						break;
+					case 6:
+						pAll->nTickets2++; 
+						break;
 					case 7: 
 					case 8: 
-					case 9: pAll->nTickets3++; break;
+						break;
+					case 9:
+						pAll->nTickets3++; 
+						break;
 					case 10: 
 					case 11: 
-					case 12: psIni->nTickets4++; break;
+						break;
+					case 12:
+						psIni->nTickets4++; 
+						break;
+					default:						
+						break;
 				 }
 				 setState1(S_IDLE); 
 			 } 
@@ -18376,26 +18485,44 @@ private: System::Void resetBt2_Click(System::Object^  sender, System::EventArgs^
 				if(!psIni->bBotScale)
 				switch(psIni->sLog2.nSilo)
 				{
-					case 1: pAll->nTickets1++; break;
-					case 2: pAll->nTickets2++; break;
-					case 3: pAll->nTickets3++; break;
-					case 4: psIni->nTickets4++; break;
+					case 1: 
+						pAll->nTickets1++; 
+						break;
+					case 2: 
+						pAll->nTickets2++; 
+						break;
+					case 3: 
+						pAll->nTickets3++; 
+						break;
+					case 4: 
+						psIni->nTickets4++; 
+						break;
+					default:
+						break;
 				}
 				else
 				switch(psIni->sLog2.nSilo)
 				{
 					case 1: 
 					case 2: 
-					case 3: pAll->nTickets1++; break;
+					case 3: 
+						pAll->nTickets1++; 
+						break;
 					case 4: 
 					case 5: 
-					case 6: pAll->nTickets2++; break;
+					case 6: 
+						pAll->nTickets2++; 
+						break;
 					case 7: 
 					case 8: 
-					case 9: pAll->nTickets3++; break;
+					case 9: 
+						pAll->nTickets3++; 
+						break;
 					case 10: 
 					case 11: 
-					case 12: psIni->nTickets4++; break;
+					case 12: 
+						psIni->nTickets4++; 
+						break;
 				 }
 				 setState2(S_IDLE); 
 			 } 
@@ -18415,26 +18542,44 @@ private: System::Void resetBt3_Click(System::Object^  sender, System::EventArgs^
 				if(!psIni->bBotScale)
 				switch(psIni->sLog3.nSilo)
 				{
-					case 1: pAll->nTickets1++; break;
-					case 2: pAll->nTickets2++; break;
-					case 3: pAll->nTickets3++; break;
-					case 4: psIni->nTickets4++; break;
+					case 1: 
+						pAll->nTickets1++; 
+						break;
+					case 2: 
+						pAll->nTickets2++; 
+						break;
+					case 3: 
+						pAll->nTickets3++; 
+						break;
+					case 4: 
+						psIni->nTickets4++; 
+						break;
+					default:
+						break;
 				}
 				else
 				switch(psIni->sLog3.nSilo)
 				{
 					case 1: 
 					case 2: 
-					case 3: pAll->nTickets1++; break;
+					case 3: 
+						pAll->nTickets1++; 
+						break;
 					case 4: 
 					case 5: 
-					case 6: pAll->nTickets2++; break;
+					case 6: 
+						pAll->nTickets2++; 
+						break;
 					case 7: 
 					case 8: 
-					case 9: pAll->nTickets3++; break;
+					case 9: 
+						pAll->nTickets3++; 
+						break;
 					case 10: 
 					case 11: 
-					case 12: psIni->nTickets4++; break;
+					case 12: 
+						psIni->nTickets4++; 
+						break;
 				 }
 				 setState3(S_IDLE); 
 			 } 
@@ -18454,27 +18599,47 @@ private: System::Void resetBt4_Click(System::Object^  sender, System::EventArgs^
 					if(!psIni->bBotScale)
 					switch(psIni->sLog4.nSilo)
 					{
-						case 1: pAll->nTickets1++; break;
-						case 2: pAll->nTickets2++; break;
-						case 3: pAll->nTickets3++; break;
-						case 4: psIni->nTickets4++; break;
+						case 1: 
+							pAll->nTickets1++; 
+							break;
+						case 2: 
+							pAll->nTickets2++; 
+							break;
+						case 3: 
+							pAll->nTickets3++; 
+							break;
+						case 4: 
+							psIni->nTickets4++; 
+							break;
+						default:
+							break;
 					}
 					else
 					switch(psIni->sLog4.nSilo)
 					{
 						case 1: 
 						case 2: 
-						case 3: pAll->nTickets1++; break;
+						case 3: 
+							pAll->nTickets1++; 
+							break;
 						case 4: 
 						case 5: 
-						case 6: pAll->nTickets2++; break;
+						case 6: 
+							pAll->nTickets2++; 
+							break;
 						case 7: 
 						case 8: 
-						case 9: pAll->nTickets3++; break;
+						case 9: 
+							pAll->nTickets3++; 
+							break;
 						case 10: 
 						case 11: 
-						case 12: psIni->nTickets4++; break;
-					 }
+						case 12: 
+							psIni->nTickets4++;
+							break;
+						default:
+							break;
+					}
 					 setState4(S_IDLE); 
 				 
 			 }
@@ -18515,10 +18680,20 @@ private: System::Void resetBt4_Click(System::Object^  sender, System::EventArgs^
 					if(!psIni->bBotScale)
 					switch(psIni->sLog4.nSilo)
 					{
-						case 1: pAll->nTickets1++; break;
-						case 2: pAll->nTickets2++; break;
-						case 3: pAll->nTickets3++; break;
-						case 4: psIni->nTickets4++; break;
+						case 1: 
+							pAll->nTickets1++; 
+							break;
+						case 2: 
+							pAll->nTickets2++;
+							break;
+						case 3:
+							pAll->nTickets3++;
+							break;
+						case 4: 
+							psIni->nTickets4++; 
+							break;
+						default:
+							break;
 					}
 					else if (pAll->eAsType != A_REMOTE)
 					switch(psIni->sLog4.nSilo)
@@ -18535,7 +18710,9 @@ private: System::Void resetBt4_Click(System::Object^  sender, System::EventArgs^
 						case 10: 
 						case 11: 
 						case 12: psIni->nTickets4++; break;
-					 }
+						default:
+							break;
+					}
 					 setState4(S_IDLE); 
 				 }
 			 }
@@ -18629,6 +18806,8 @@ private: System::Void target4_TextChanged(System::Object^  sender, System::Event
 				Thread::Sleep(100);
 			  }
 		 }
+private: System::Void jobBindingSource_CurrentChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };		// Form1 class
 }		// namespace as
 
