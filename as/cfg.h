@@ -1,6 +1,8 @@
 #pragma once
 #include "stdafx.h"
 
+using namespace System::IO;
+
 namespace As 
 {
 
@@ -29,7 +31,14 @@ ulong nBit = 0;
 ulong nBit64 = 0;		
 
 	sprintf_s(acCfgFile, 64, "%sas.cfg", pAll->pcPath);
-	
+	String^ invName = gcnew String(acCfgFile);
+
+	if (!File::Exists(invName))
+	{
+		System::Windows::Forms::MessageBox::Show(invName + " file not found", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+		return(-1);
+	}
+
 	err = fopen_s(&pfCfg, acCfgFile, "r");
 	if(err != 0)
 	{
@@ -3690,13 +3699,20 @@ ulong nBit64 = 0;
 		char *pcTmp1, *pcTmp2, *pcTmp3, *pcTmp4, *pcTmp5, *pcTmp6, *pcTmp7, *pcTmp8, *pcTmp9, *pcTmp10, *pcTmp11;
 		char *pcTmp12, *pcTmp13, *pcTmp14, *pcTmp15, *pcTmp16, *pcTmp17, *pcTmp18, *pcTmp19, *pcTmp20, *pcTmp21;
 		char* pcTmp22, * pcTmp23, * pcTmp24, * pcTmp25, * pcTmp26;// , * pcTmp27;
-		//double dTmp;
 		bool bRet = true;
 		ulong64 nBit = 0;
 		ulong64 nInp = 0;
 
 		sprintf_s(acCfgFile, "%sas.cfx", pAll->pcPath);
 		
+		String^ invName = gcnew String(acCfgFile);
+
+		if (!File::Exists(invName))
+		{
+			System::Windows::Forms::MessageBox::Show(invName + " file not found", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+			return(false);
+		}
+
 		try
 		{
 			err = fopen_s(&pfCfg, acCfgFile, "r");
@@ -3721,28 +3737,6 @@ ulong nBit64 = 0;
 				return false;
 			}
 
-		/*try
-		{
-		if(fopen_s(&pfCfg, pcFile, "r") != 0)
-		{
-			pAll->stExc += "CFX file open error. exit ...";
-			return false;   
-		}
-		size = _filelength(_fileno(pfCfg));
-
-		pcCfg = (char *)malloc(size);
-		if(pcCfg == NULL)
-		{
-			pAll->stExc += "CFX file memory error. exit ...";
-			return false;   
-		}
-		len = (int)fread(pcCfg, 1, size, pfCfg);
-		if(len == 0)
-		{
-			pAll->stExc += "CFX file read error. exit ...";
-			free(pcCfg);
-			return false;  
-		}*/
 		//------------------------------------ Silos
 		if(((pcTmp1 = strstr(pcCfg, "silo1=")) != NULL)
 			&& ((pcTmp2 = strchr(pcTmp1+1, ',')) != NULL)

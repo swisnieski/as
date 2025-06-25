@@ -190,31 +190,94 @@ namespace As
 					 {
 						 switch(nFillCnt/10)
 						 {
-						 case  0: psIni->nRpoints |=  J_FILL1; break; 
-						 case  1: psIni->nRpoints &= ~J_FILL1; break;
-						 case  2: if(psIni->fSiloMax2 > 0 && psIni->nL1SilosNum > 1) psIni->nRpoints |=  J_FILL2; break;
-						 case  3: if(psIni->fSiloMax2 > 0 && psIni->nL1SilosNum > 1) psIni->nRpoints &= ~J_FILL2; break;
-						 case  4: if(psIni->fSiloMax3 > 0 && psIni->nL1SilosNum > 2)psIni->nRpoints |=  J_FILL3; break;
-						 case  5: if(psIni->fSiloMax3 > 0 && psIni->nL1SilosNum > 2)psIni->nRpoints &= ~J_FILL3; break;
-						 case  6: psIni->nRpoints |=  J_FILL4; break; 
-						 case  7: psIni->nRpoints &= ~J_FILL4; break;
-						 case  8: if(psIni->fSiloMax5 > 0 && psIni->nL2SilosNum > 1)psIni->nRpoints |=  J_FILL5; break;
-						 case  9: if(psIni->fSiloMax5 > 0 && psIni->nL2SilosNum > 1)psIni->nRpoints &= ~J_FILL5; break;
-						 case 10: if(psIni->fSiloMax6 > 0 && psIni->nL2SilosNum > 2)psIni->nRpoints |=  J_FILL6; break;
-						 case 11: if(psIni->fSiloMax6 > 0 && psIni->nL2SilosNum > 2)psIni->nRpoints &= ~J_FILL6; break;
-						 case 12: psIni->nRpoints |=  J_FILL7; break; 
-						 case 13: psIni->nRpoints &= ~J_FILL7; break;
-						 case 14: if(psIni->fSiloMax8 > 0 && psIni->nL3SilosNum > 1)psIni->nRpoints |=  J_FILL8; break;
-						 case 15: if(psIni->fSiloMax8 > 0 && psIni->nL3SilosNum > 1)psIni->nRpoints &= ~J_FILL8; break;
-						 case 16: if(psIni->fSiloMax9 > 0 && psIni->nL3SilosNum > 2)psIni->nRpoints |=  J_FILL9; break;
-						 case 17: if(psIni->fSiloMax9 > 0 && psIni->nL3SilosNum > 2)psIni->nRpoints &= ~J_FILL9; break;
-						 case 18: psIni->nRpoints |=  J_FILL10; break; 
-						 case 19: psIni->nRpoints &= ~J_FILL10; break;
-						 case 20: if(psIni->fSiloMax11 > 0 && psIni->nL4SilosNum > 1)psIni->nRpoints |=  J_FILL11; break;
-						 case 21: if(psIni->fSiloMax11 > 0 && psIni->nL4SilosNum > 1)psIni->nRpoints &= ~J_FILL11; break;
-						 case 22: if(psIni->fSiloMax12 > 0 && psIni->nL4SilosNum > 2)psIni->nRpoints |=  J_FILL12; break;
-						 case 23: if(psIni->fSiloMax12 > 0 && psIni->nL4SilosNum > 2)psIni->nRpoints &= ~J_FILL12; break;
-						 default: nFillCnt = -1; break;
+						 case  0: 
+							 psIni->nRpoints |=  J_FILL1; 
+							 break; 
+						 case  1: 
+							 psIni->nRpoints &= ~J_FILL1; 
+							 break;
+						 case  2: 
+							 if(psIni->fSiloMax2 > 0 && psIni->nL1SilosNum > 1) 
+								 psIni->nRpoints |=  J_FILL2;
+							 break;
+						 case  3: 
+							 if(psIni->fSiloMax2 > 0 && psIni->nL1SilosNum > 1) 
+								 psIni->nRpoints &= ~J_FILL2; 
+							 break;
+						 case  4: 
+							 if(psIni->fSiloMax3 > 0 && psIni->nL1SilosNum > 2)
+								 psIni->nRpoints |=  J_FILL3; 
+							 break;
+						 case  5: 
+							 if(psIni->fSiloMax3 > 0 && psIni->nL1SilosNum > 2)
+								 psIni->nRpoints &= ~J_FILL3; 
+							 break;
+						 case  6: 
+							 psIni->nRpoints |=  J_FILL4; 
+							 break; 
+						 case  7: 
+							 psIni->nRpoints &= ~J_FILL4; break;
+						 case  8: 
+							 if(psIni->fSiloMax5 > 0 && psIni->nL2SilosNum > 1)
+								 psIni->nRpoints |=  J_FILL5; 
+							 break;
+						 case  9: 
+							 if(psIni->fSiloMax5 > 0 && psIni->nL2SilosNum > 1)
+								 psIni->nRpoints &= ~J_FILL5;
+							 break;
+						 case 10: 
+							 if(psIni->fSiloMax6 > 0 && psIni->nL2SilosNum > 2)
+								 psIni->nRpoints |=  J_FILL6; 
+							 break;
+						 case 11:
+							 if(psIni->fSiloMax6 > 0 && psIni->nL2SilosNum > 2)
+								 psIni->nRpoints &= ~J_FILL6; 
+							 break;
+						 case 12: 
+							 psIni->nRpoints |=  J_FILL7; break; 
+						 case 13: 
+							 psIni->nRpoints &= ~J_FILL7; break;
+						 case 14: 
+							 if(psIni->fSiloMax8 > 0 && psIni->nL3SilosNum > 1)
+								 psIni->nRpoints |=  J_FILL8; 
+							 break;
+						 case 15: 
+							 if(psIni->fSiloMax8 > 0 && psIni->nL3SilosNum > 1)
+								 psIni->nRpoints &= ~J_FILL8; 
+							 break;
+						 case 16: 
+							 if(psIni->fSiloMax9 > 0 && psIni->nL3SilosNum > 2)
+								 psIni->nRpoints |=  J_FILL9; 
+							 break;
+						 case 17: 
+							 if(psIni->fSiloMax9 > 0 && psIni->nL3SilosNum > 2)
+								 psIni->nRpoints &= ~J_FILL9; 
+							 break;
+						 case 18: 
+							 psIni->nRpoints |=  J_FILL10; 
+							 break; 
+						 case 19: 
+							 psIni->nRpoints &= ~J_FILL10; 
+							 break;
+						 case 20: 
+							 if(psIni->fSiloMax11 > 0 && psIni->nL4SilosNum > 1)
+								 psIni->nRpoints |=  J_FILL11; 
+							 break;
+						 case 21: 
+							 if(psIni->fSiloMax11 > 0 && psIni->nL4SilosNum > 1)
+								 psIni->nRpoints &= ~J_FILL11; 
+							 break;
+						 case 22: 
+							 if(psIni->fSiloMax12 > 0 && psIni->nL4SilosNum > 2)
+								 psIni->nRpoints |=  J_FILL12; 
+							 break;
+						 case 23: 
+							 if(psIni->fSiloMax12 > 0 && psIni->nL4SilosNum > 2)
+								 psIni->nRpoints &= ~J_FILL12; 
+							 break;
+						 default:
+							 nFillCnt = -1; 
+							 break;
 						 }
 					}
 
@@ -391,15 +454,33 @@ namespace As
 				 {
 					 switch(nFillCnt/10)
 					 {
-					 case 0: psIni->nRpoints |=  I_FILL1; break; 
-					 case 1: psIni->nRpoints &= ~I_FILL1; break;
-					 case 2: psIni->nRpoints |=  I_FILL2; break;
-					 case 3: psIni->nRpoints &= ~I_FILL2; break;
-					 case 4: psIni->nRpoints |=  I_FILL3; break;
-					 case 5: psIni->nRpoints &= ~I_FILL3; break;
-					 case 6: psIni->nRpoints |=  I_FILL4; break;
-					 case 7: psIni->nRpoints &= ~I_FILL4; break;
-					 default: nFillCnt = -1; break;
+					 case 0: 
+						 psIni->nRpoints |=  I_FILL1; 
+						 break; 
+					 case 1: 
+						 psIni->nRpoints &= ~I_FILL1; 
+						 break;
+					 case 2:
+						 psIni->nRpoints |=  I_FILL2; 
+						 break;
+					 case 3:
+						 psIni->nRpoints &= ~I_FILL2; 
+						 break;
+					 case 4: 
+						 psIni->nRpoints |=  I_FILL3; 
+						 break;
+					 case 5: 
+						 psIni->nRpoints &= ~I_FILL3; 
+						 break;
+					 case 6: 
+						 psIni->nRpoints |=  I_FILL4; 
+						 break;
+					 case 7: 
+						 psIni->nRpoints &= ~I_FILL4; 
+						 break;
+					 default: 
+						 nFillCnt = -1; 
+						 break;
 					 }
 					if(pAll->eAsType == A_DEMO)
 					{

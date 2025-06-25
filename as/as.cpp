@@ -90,7 +90,6 @@ namespace As
 			pAll->qPrint1 = gcnew System::Collections::Generic::Queue<String^>();
 			pAll->qPrint2 = gcnew System::Collections::Generic::Queue<String^>();
 			pAll->qPrint3 = gcnew System::Collections::Generic::Queue<String^>();
-			//pAll->qPrint4 = gcnew System::Collections::Generic::Queue<PrintQ^>();
 			pAll->qPrint4 = gcnew System::Collections::Generic::Queue<String^>();
 			pAll->q2ndPrint1 = gcnew System::Collections::Generic::Queue<PrintQ^>();			//DC 4.0.2
 			pAll->q2ndPrint2 = gcnew System::Collections::Generic::Queue<PrintQ^>();			//DC 4.0.2
@@ -100,7 +99,7 @@ namespace As
 			pAll->qDbase = gcnew System::Collections::Generic::Queue<Dbase^>();
 			pAll->qDbaseBad = gcnew System::Collections::Generic::Queue<Dbase^>();
 
-			pAll->lJobs = gcnew List<Job^>(0);
+			pAll->lJob = gcnew List<Job^>(0);
 			pAll->lOld = gcnew List<Job^>(0);
 			pAll->lTruck = gcnew List<Truck^>(0);
 
@@ -167,16 +166,12 @@ namespace As
 			}
 
 			pAll->stRemVersion = gcnew String(VERSION);	//DC 4.1.0
-			//int ast = (int)pAll->eAsType;
-			//int sst = (int)A_REMOTE;
-
-			//bool bSame = (int)pAll->eAsType == (int)A_REMOTE;
 
 			if (pAll->eAsType != A_REMOTE)//DC 4.1.0 if not remote
 			{
 				if (readConfig(pAll) != 0)
 				{
-					MessageBox::Show("as.cfg not found", "ERROR",
+					MessageBox::Show("as.cfg access error", "ERROR",
 						System::Windows::Forms::MessageBoxButtons::OK);
 					return -1;
 				}
@@ -275,6 +270,15 @@ namespace As
 					i++;
 				}
 				sprintf_s(acDbe, "%sas-%s.dbe", acPath, acTmp);
+
+				String^ invName = gcnew String(acDbe);
+
+				if (!File::Exists(invName))
+				{
+					System::Windows::Forms::MessageBox::Show(invName + " file not found", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+					return(-1);
+				}
+
 				if ((err = _access_s(acDbe, 0)) == 0)
 					err = fopen_s(&sIni.pfDbe, acDbe, "a+");
 				else
@@ -285,7 +289,17 @@ namespace As
 				}
 
 				//DC 4.1.1
+				
 				sprintf_s(acDbs, "%sas-%s.dbs", acPath, acTmp);
+
+				invName = gcnew String(acDbs);
+
+				if (!File::Exists(invName))
+				{
+					System::Windows::Forms::MessageBox::Show(invName + " file not found", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+					return(-1);
+				}
+
 				if ((err = _access_s(acDbs, 0)) == 0)
 					err = fopen_s(&sIni.pfDbs, acDbs, "a+");
 				else
@@ -306,7 +320,6 @@ namespace As
 					oOptoThread = gcnew Thread(gcnew ParameterizedThreadStart(&COptoT::ThreadProc));
 				oOptoThread->IsBackground = true;
 				oOptoThread->Start(pAll);
-				//oOptoThread->Join();
 
 				if (sIni.nL2SilosNum > 0)	//DC 4.1.2
 				{
@@ -381,27 +394,27 @@ namespace As
 				oSimThread->IsBackground = true;
 				oSimThread->Start(pAll);
 			}
-			//if (pAll->pPrinter1 != nullptr && pAll->eAsType != A_REMOTE)
-			//{
-			//	CPrint^ oPrint1 = gcnew CPrint(pAll, pAll->pPrinter1, &sIni.bPrinterOk1, 1);
-			//	Thread^ oPrintThread1 = gcnew Thread(gcnew ParameterizedThreadStart(oPrint1, &CPrint::ThreadProc));
-			//	oPrintThread1->IsBackground = true;
-			//	oPrintThread1->Start(pAll->qPrint1);
-			//}
-			//if (pAll->pPrinter2 != nullptr && pAll->eAsType != A_REMOTE)
-			//{
-			//	CPrint^ oPrint2 = gcnew CPrint(pAll, pAll->pPrinter2, &sIni.bPrinterOk2, 2);
-			//	Thread^ oPrintThread2 = gcnew Thread(gcnew ParameterizedThreadStart(oPrint2, &CPrint::ThreadProc));
-			//	oPrintThread2->IsBackground = true;
-			//	oPrintThread2->Start(pAll->qPrint2);
-			//}
-			//if (pAll->pPrinter3 != nullptr && pAll->eAsType != A_REMOTE)
-			//{
-			//	CPrint^ oPrint3 = gcnew CPrint(pAll, pAll->pPrinter3, &sIni.bPrinterOk3, 3);
-			//	Thread^ oPrintThread3 = gcnew Thread(gcnew ParameterizedThreadStart(oPrint3, &CPrint::ThreadProc));
-			//	oPrintThread3->IsBackground = true;
-			//	oPrintThread3->Start(pAll->qPrint3);
-			//}
+			if (pAll->pPrinter1 != nullptr && pAll->eAsType != A_REMOTE)
+			{
+				CPrint^ oPrint1 = gcnew CPrint(pAll, pAll->pPrinter1, &sIni.bPrinterOk1, 1);
+				Thread^ oPrintThread1 = gcnew Thread(gcnew ParameterizedThreadStart(oPrint1, &CPrint::ThreadProc));
+				oPrintThread1->IsBackground = true;
+				oPrintThread1->Start(pAll->qPrint1);
+			}
+			if (pAll->pPrinter2 != nullptr && pAll->eAsType != A_REMOTE)
+			{
+				CPrint^ oPrint2 = gcnew CPrint(pAll, pAll->pPrinter2, &sIni.bPrinterOk2, 2);
+				Thread^ oPrintThread2 = gcnew Thread(gcnew ParameterizedThreadStart(oPrint2, &CPrint::ThreadProc));
+				oPrintThread2->IsBackground = true;
+				oPrintThread2->Start(pAll->qPrint2);
+			}
+			if (pAll->pPrinter3 != nullptr && pAll->eAsType != A_REMOTE)
+			{
+				CPrint^ oPrint3 = gcnew CPrint(pAll, pAll->pPrinter3, &sIni.bPrinterOk3, 3);
+				Thread^ oPrintThread3 = gcnew Thread(gcnew ParameterizedThreadStart(oPrint3, &CPrint::ThreadProc));
+				oPrintThread3->IsBackground = true;
+				oPrintThread3->Start(pAll->qPrint3);
+			}
 
 			if (pAll->pPrinter4 != nullptr && pAll->eAsType != A_REMOTE)
 			{
@@ -483,7 +496,8 @@ namespace As
 
 				struct __stat64 fileStat;
 				err = _stat64(acDbe, &fileStat);
-				if (0 != err) return 0;
+				if (0 != err) 
+					return 0;
 
 				if (fileStat.st_size > (int)strlen(cpcDbHeader) + 5)
 				{
@@ -553,7 +567,6 @@ namespace As
 	int readLog(All^ pAll)
 	{
 		errno_t err;
-		//	char pAll->pcLog[80];
 		char acErrFile[80];
 		FILE* pfLog = NULL;
 		FILE* pfErr;
@@ -565,6 +578,16 @@ namespace As
 		int nRet;
 
 	start:
+
+		String^ invName = gcnew String(pAll->pcLog);
+
+		if (!File::Exists(invName))
+		{
+			System::Windows::Forms::MessageBox::Show(invName + " file not found", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+			return(-1);
+		}
+
+
 		if ((err = _access_s(pAll->pcLog, 0)) == 0)
 			err = fopen_s(&pfLog, pAll->pcLog, "r+b");
 		else
@@ -767,6 +790,15 @@ namespace As
 			strcpy_s(acErrFile, 80, pAll->pcLog);
 			strcat_s(acErrFile, 80, "-err");
 
+
+			String^ invName = gcnew String(acErrFile);
+
+			if (!File::Exists(invName))
+			{
+				System::Windows::Forms::MessageBox::Show(invName + " file not found", "ERROR", System::Windows::Forms::MessageBoxButtons::OK);
+				return(-1);
+			}
+
 			if ((err = _access_s(acErrFile, 0)) == 0)
 				remove(acErrFile);
 
@@ -842,8 +874,15 @@ namespace As
 		//double fAdapt11;
 		//double fAdapt12;
 
-		sprintf_s(acInvFile, "%s/as.inv", pAll->pcPath);
+		sprintf_s(acInvFile, "%sas.inv", pAll->pcPath);
+		String^ invName = gcnew String(acInvFile);
 
+		if (!File::Exists(invName))
+		{
+			MessageBox::Show(invName + " file not found", "ERROR", MessageBoxButtons::OK);
+			return(NULL);
+		}
+			
 		if ((err = _access_s(acInvFile, 0)) == 0)
 		{
 			err = fopen_s(&pfInv, acInvFile, "r+b");

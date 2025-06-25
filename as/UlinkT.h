@@ -128,7 +128,7 @@ public:
 	{
 		All^ pAll = (All^) pAllIn;
 		INI *psIni = pAll->psIni;
-		 bool	bAwake;
+		bool	bAwake = false;
 		 LOG_REC sLog;
 		 Job^	pJob;
 		 DateTime^ pDate; 
@@ -136,8 +136,8 @@ public:
 		 TcpListener^ server;
 		 Socket^ client = nullptr;
 		 Int32 len;
-//		 char cId0, cId1, cId2;
 		 TICKET_STATUS eStatus;
+		 
 		 // Buffers for ulink messages.
 		 cli::array<Byte>^data = gcnew cli::array<Byte>(2500);
 
@@ -287,36 +287,77 @@ public:
 											 {
 											 case 1:
 											 case 2:  
-											 case 3:  pAll->nTickets1++; break;
+											 case 3:  pAll->nTickets1++; 
+												 break;
 											 case 4:  
 											 case 5:  
-											 case 6:  pAll->nTickets2++; break;
+											 case 6:  pAll->nTickets2++; 
+												 break;
 											 case 7:  
 											 case 8:  
-											 case 9:  pAll->nTickets3++; break;
+											 case 9:  pAll->nTickets3++; 
+												 break;
 											 case 10:  
 											 case 11:  
-											 case 12:  psIni->nTickets4++; break;
-											 default:  pAll->nTickets1++; break;
+											 case 12:  psIni->nTickets4++; 
+												 break;
+											 default:  pAll->nTickets1++; 
+												 break;
 											 }	
 										 }
 										 else
 										 {
 											 switch(sLog.nSilo)
 											 {
-											 case 1:  pAll->nTickets1++; break;
-											 case 2:  pAll->nTickets2++; break;
-											 case 3:  pAll->nTickets3++; break;
-											 case 4:  pJob->nSilo = 1; pAll->nTickets1++; break;
-											 case 5:  pJob->nSilo = 2; pAll->nTickets2++; break;
-											 case 6:  pJob->nSilo = 3; pAll->nTickets3++; break;
-											 case 7:  pJob->nSilo = 1; pAll->nTickets1++; break;
-											 case 8:  pJob->nSilo = 2; pAll->nTickets2++; break;
-											 case 9:  pJob->nSilo = 3; pAll->nTickets3++; break;
-											 case 10:  pJob->nSilo = 1; pAll->nTickets1++; break;
-											 case 11:  pJob->nSilo = 2; pAll->nTickets2++; break;
-											 case 12:  pJob->nSilo = 3; pAll->nTickets3++; break;
-											 default:  pJob->nSilo = 1; pAll->nTickets1++; break;
+											 case 1:  
+												 pAll->nTickets1++; 
+												 break;
+											 case 2:  
+												 pAll->nTickets2++; 
+												 break;
+											 case 3:  
+												 pAll->nTickets3++; 
+												 break;
+											 case 4: 
+												 pJob->nSilo = 1;
+												 pAll->nTickets1++; 
+												 break;
+											 case 5:  
+												 pJob->nSilo = 2; 
+												 pAll->nTickets2++; 
+												 break;
+											 case 6:  
+												 pJob->nSilo = 3; 
+												 pAll->nTickets3++; 
+												 break;
+											 case 7:  
+												 pJob->nSilo = 1; 
+												 pAll->nTickets1++; 
+												 break;
+											 case 8: 
+												 pJob->nSilo = 2; 
+												 pAll->nTickets2++; 
+												 break;
+											 case 9:  
+												 pJob->nSilo = 3; 
+												 pAll->nTickets3++; 
+												 break;
+											 case 10:  
+												 pJob->nSilo = 1; 
+												 pAll->nTickets1++; 
+												 break;
+											 case 11:  
+												 pJob->nSilo = 2; 
+												 pAll->nTickets2++; 
+												 break;
+											 case 12:  
+												 pJob->nSilo = 3; 
+												 pAll->nTickets3++; 
+												 break;
+											 default:  
+												 pJob->nSilo = 1; 
+												 pAll->nTickets1++; 
+												 break;
 											 }	
 										 }
 										 respL[7] = 'A';
@@ -367,36 +408,90 @@ public:
 													 {
 													 case 1:
 													 case 2:  
-													 case 3:  pAll->nTickets1--; pAll->nDone1++; break;
+													 case 3:  
+														 pAll->nTickets1--; 
+														 pAll->nDone1++; 
+														 break;
 													 case 4:  
 													 case 5:  
-													 case 6:  pAll->nTickets2--; pAll->nDone2++; break;
+													 case 6:  
+														 pAll->nTickets2--; 
+														 pAll->nDone2++; 
+														 break;
 													 case 7:  
 													 case 8:  
-													 case 9:  pAll->nTickets3--; pAll->nDone3++; break;
+													 case 9:  
+														 pAll->nTickets3--; 
+														 pAll->nDone3++; 
+														 break;
 													 case 10:  
 													 case 11:  
-													 case 12:  psIni->nTickets4--; psIni->nOldDone4++; break;
-													 default:  pAll->nTickets1--; pAll->nDone1++; break;
+													 case 12:  
+														 psIni->nTickets4--;
+														 psIni->nOldDone4++; 
+														 break;
+													 default:  
+														 pAll->nTickets1--; 
+														 pAll->nDone1++; 
+														 break;
 													 }	
 												 }
 												 else
 												 {
 													 switch(sLog.nSilo)
 													 {
-													 case 1:  pAll->nTickets1--; pAll->nDone1++; break;
-													 case 2:  pAll->nTickets2--; pAll->nDone2++; break;
-													 case 3:  pAll->nTickets3--; pAll->nDone3++; break;
-													 case 4:  pAll->nTickets1--; pAll->nDone1++; break;
-													 case 5:  pAll->nTickets2--; pAll->nDone2++; break;
-													 case 6:  pAll->nTickets3--; pAll->nDone3++; break;
-													 case 7:  pAll->nTickets1--; pAll->nDone1++; break;
-													 case 8:  pAll->nTickets2--; pAll->nDone2++; break;
-													 case 9:  pAll->nTickets3--; pAll->nDone3++; break;
-													 case 10:  pAll->nTickets1--; pAll->nDone1++; break;
-													 case 11:  pAll->nTickets2--; pAll->nDone2++; break;
-													 case 12:  pAll->nTickets3--; pAll->nDone3++; break;
-													 default: pAll->nTickets1--; pAll->nDone1++; break;
+													 case 1:  
+														 pAll->nTickets1--; 
+														 pAll->nDone1++; 
+														 break;
+													 case 2:  
+														 pAll->nTickets2--; 
+														 pAll->nDone2++; 
+														 break;
+													 case 3:  
+														 pAll->nTickets3--; 
+														 pAll->nDone3++; 
+														 break;
+													 case 4:  
+														 pAll->nTickets1--; 
+														 pAll->nDone1++; 
+														 break;
+													 case 5: 
+														 pAll->nTickets2--; 
+														 pAll->nDone2++; 
+														 break;
+													 case 6:  
+														 pAll->nTickets3--; 
+														 pAll->nDone3++; 
+														 break;
+													 case 7:  
+														 pAll->nTickets1--; 
+														 pAll->nDone1++; 
+														 break;
+													 case 8:  
+														 pAll->nTickets2--; 
+														 pAll->nDone2++; 
+														 break;
+													 case 9:  
+														 pAll->nTickets3--; 
+														 pAll->nDone3++; 
+														 break;
+													 case 10:  
+														 pAll->nTickets1--; 
+														 pAll->nDone1++; 
+														 break;
+													 case 11:  
+														 pAll->nTickets2--; 
+														 pAll->nDone2++; 
+														 break;
+													 case 12:  
+														 pAll->nTickets3--; 
+														 pAll->nDone3++; 
+														 break;
+													 default: 
+														 pAll->nTickets1--; 
+														 pAll->nDone1++; 
+														 break;
 													 }	
 												 }
 												break;
@@ -428,7 +523,8 @@ public:
 						 }
 					 }
 					 // Shutdown and end connection
-					 if(client)client->Close();
+					 if(client)
+						 client->Close();
 					 psIni->nUlinkOk = 2;
 				 }
 			 }
@@ -446,7 +542,8 @@ public:
 				  pAll->pExc += "\nULINK IO Exception: " + ex->Message;
 			 }
 			 // Shutdown and end connection
-			 if(client)client->Close();
+			 if(client)
+				 client->Close();
 			 server->Stop();
 			 psIni->nUlinkOk = 0;
 			 Thread::Sleep(1000);

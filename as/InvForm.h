@@ -156,19 +156,13 @@ namespace As
 	private: System::Windows::Forms::Label^  silo7;
 	private: System::Windows::Forms::Label^  silo9;
 	private: System::Windows::Forms::Label^  silo8;
-private: System::Windows::Forms::GroupBox^  groupBox4;
-private: System::Windows::Forms::Label^  silo10;
-private: System::Windows::Forms::Label^  silo12;
-
-
-private: System::Windows::Forms::Label^  silo11;
-private: System::Windows::Forms::TextBox^  inv12;
-
-
-private: System::Windows::Forms::TextBox^  inv10;
-private: System::Windows::Forms::TextBox^  inv11;
-
-
+	private: System::Windows::Forms::GroupBox^  groupBox4;
+	private: System::Windows::Forms::Label^  silo10;
+	private: System::Windows::Forms::Label^  silo12;
+	private: System::Windows::Forms::Label^  silo11;
+	private: System::Windows::Forms::TextBox^  inv12;
+	private: System::Windows::Forms::TextBox^  inv10;
+	private: System::Windows::Forms::TextBox^  inv11;
 
 			 /// <summary>
 			 /// Required designer variable.

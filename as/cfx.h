@@ -501,7 +501,5 @@ laneTareI3=%d,\n\
 			MessageBox::Show(gcnew String(acFile), "Write ERROR"
 			, MessageBoxButtons::OK
 			, MessageBoxIcon::Error);
-
 	}
-
 }

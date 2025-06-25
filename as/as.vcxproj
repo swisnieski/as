@@ -81,8 +81,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard>Default</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -131,25 +131,134 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Form1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TruckFm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TruckFm.resx">
+      <DependentUpon>Form1.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CfgForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CfgForm.resx">
+      <DependentUpon>CfgForm.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IOForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IOForm.resx">
+      <DependentUpon>IOForm.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="InvForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InvForm.resx">
+      <DependentUpon>InvForm.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PreView.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PreView.resx">
+      <DependentUpon>PreView.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ReprintF.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReprintF.resx">
+      <DependentUpon>ReprintF.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StopForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StopForm.resx">
+      <DependentUpon>StopForm.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FallFm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FallFm.resx">
+      <DependentUpon>FallFm.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="About.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="as.h" />
-    <ClInclude Include="CfgForm.h" />
+    <!--<ClInclude Include="CfgForm.h" />-->
     <ClInclude Include="cfx.h" />
     <ClInclude Include="ClinkT.h" />
     <ClInclude Include="CservT.h" />
     <ClInclude Include="DbaseT.h" />
     <ClInclude Include="DbaseTB.h" />
-    <ClInclude Include="FallFm.h" />
-    <ClInclude Include="Form1.h" />
+    <!--<ClInclude Include="FallFm.h" />-->
     <ClInclude Include="framework.h" />
-    <ClInclude Include="InvForm.h" />
-    <ClInclude Include="IOForm.h" />
+    <!--<ClInclude Include="InvForm.h" />-->
+    <!--<ClInclude Include="IOForm.h" />-->
     <ClInclude Include="log.h" />
     <ClInclude Include="Opto.h" />
     <ClInclude Include="OptoT.h" />
     <ClInclude Include="OptoTP.h" />
-    <ClInclude Include="PreView.h" />
+    <!--<ClInclude Include="PreView.h" />-->
     <ClInclude Include="PrintT.h" />
-    <ClInclude Include="ReprintF.h" />
+    <!--<ClInclude Include="ReprintF.h" />-->
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ScaleT.h" />
     <ClInclude Include="ScaleTP.h" />
@@ -157,14 +266,15 @@
     <ClInclude Include="Silo.h" />
     <ClInclude Include="SimT.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="StopForm.h" />
+    <!--<ClInclude Include="StopForm.h" />-->
     <ClInclude Include="targetver.h" />
     <ClInclude Include="ticket.h" />
-    <ClInclude Include="TruckFm.h" />
+    <!--<ClInclude Include="TruckFm.h" />-->
     <ClInclude Include="UlinkT.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="as.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="as.rc" />
@@ -190,6 +300,11 @@
     <ProjectReference Include="..\ScaleCtl\ScaleCtl.csproj">
       <Project>{f916ad76-3175-4a66-aa32-ff1d2e481373}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="as.cfg" />
+    <None Include="as.inv" />
+    <None Include="as.truck" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
